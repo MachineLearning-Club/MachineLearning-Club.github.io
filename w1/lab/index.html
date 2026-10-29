@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive Week 1 lab: match real-world problems to rules, machine-learning methods, search and planning, reinforcement learning, or generative AI.">
+  <title>Types of AI · Week 1 Laboratory · Machine Learning Club</title>
+  <link rel="stylesheet" href="../week1.css">
+  <script src="../week1.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to laboratory</a>
+  <header class="site-header">
+    <a class="brand" href="/">Machine Learning Club <span>Seven Hills · 2026–27</span></a>
+    <nav class="site-nav" aria-label="Week 1 navigation">
+      <a href="/">All weeks</a>
+      <a href="/w1/course/">Course</a>
+      <a href="/w1/slides/">Week 1 slides</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="eyebrow">Week 01 · Laboratory</p>
+        <h1 id="page-title">Types of AI: match the method to the problem</h1>
+        <p>Look at the job, the kind of answer needed, and the evidence available. Then choose the approach that best fits.</p>
+        <div class="hero-meta" aria-label="Laboratory details">
+          <span class="pill">Session 1 · 2 November 2026</span>
+          <span class="pill">About 45 minutes</span>
+          <span class="pill">Work in pairs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="method-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">01</span>
+        <div>
+          <h2 id="method-title">Use three clues</h2>
+          <p class="section-intro">There is no need to guess from the product name. Read what the system is asked to do.</p>
+        </div>
+      </div>
+      <div class="routine" aria-label="Three questions for choosing an approach">
+        <div class="routine-step"><strong>What is the output?</strong><span>A category, number, group, plan, action, or new piece of content?</span></div>
+        <div class="routine-step"><strong>What evidence is available?</strong><span>Fixed rules, labelled examples, unlabelled data, or feedback?</span></div>
+        <div class="routine-step"><strong>What clue points to the method?</strong><span>Say the clue out loud before selecting an answer.</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="toolkit-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">02</span>
+        <div>
+          <h2 id="toolkit-title">Your approach cards</h2>
+          <p class="section-intro">Use these short definitions while you work. These are overlapping parts of a toolkit, not mutually exclusive types of AI. The same real system can combine more than one approach; choose the main fit described in each scenario.</p>
+        </div>
+      </div>
+      <div class="approach-grid">
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">R</span><div><h3>Rules and automation</h3><p>Apply a fixed condition or sequence written in advance.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">C</span><div><h3>Classification</h3><p>Use labelled examples to choose a category for a new case.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">#</span><div><h3>Regression</h3><p>Use examples to estimate a numeric value.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">G</span><div><h3>Clustering</h3><p>Group similar items when no group labels are given.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">P</span><div><h3>Search and planning</h3><p>Compare possible actions to find a plan under constraints.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">↗</span><div><h3>Reinforcement learning</h3><p>Learn actions by trying them and receiving rewards or other feedback.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">Aa</span><div><h3>Generative AI</h3><p>Create new text, images, audio, code, or other content.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="challenge-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">03</span>
+        <div>
+          <h2 id="challenge-title">Match the seven situations</h2>
+          <p class="section-intro">Choose one main approach for each situation. Judge each independently; options can be reused. Explain your clue to your partner, then check all seven choices. The first check gives hints for mismatches; the second reveals the intended answers and reasons. You can change choices and retry or start over.</p>
+        </div>
+      </div>
+
+      <div class="scenario-grid" data-matching-activity data-attempts="0">
+        <article class="scenario-card" data-scenario data-answer="rules" data-answer-label="Rules and automation" data-hint="The threshold and action are both fixed in advance." data-rationale="The threshold and action are specified directly. The problem does not ask the system to learn from examples.">
+          <div><h3>1 · Classroom lights</h3><p>At 19:00, turn on the classroom lights if the sensor reads below 300 lux. The threshold is fixed.</p></div>
+          <div><label for="match-1">Best fit for situation 1</label><select id="match-1" name="match-1" aria-describedby="feedback-1"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-1" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="classification" data-answer-label="Classification" data-hint="The output is one of two categories, and the training photos already have labels." data-rationale="The output is a category (healthy or diseased), and labelled examples are available to train a classifier.">
+          <div><h3>2 · Check a leaf photo</h3><p>Use a collection of photos labelled “healthy” or “diseased” to classify a new leaf photo.</p></div>
+          <div><label for="match-2">Best fit for situation 2</label><select id="match-2" name="match-2" aria-describedby="feedback-2"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-2" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="regression" data-answer-label="Regression" data-hint="The result is an amount of energy, so the answer is a number rather than a category." data-rationale="The requested output is a numeric estimate in kilowatt-hours, which is a regression task.">
+          <div><h3>3 · Estimate energy use</h3><p>Use past meter readings and weather data to estimate how many kilowatt-hours the school will use tomorrow.</p></div>
+          <div><label for="match-3">Best fit for situation 3</label><select id="match-3" name="match-3" aria-describedby="feedback-3"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-3" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="clustering" data-answer-label="Clustering" data-hint="No mood groups have been labelled; the task is to discover groups of similar songs." data-rationale="The data has no supplied group labels. Clustering can group songs by similar audio features; people can interpret the groups afterward.">
+          <div><h3>4 · Find groups of songs</h3><p>Group songs by tempo and other audio features. No mood or genre labels are supplied in advance.</p></div>
+          <div><label for="match-4">Best fit for situation 4</label><select id="match-4" name="match-4" aria-describedby="feedback-4"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-4" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="planning" data-answer-label="Search and planning" data-hint="The system must find a sequence of stops that satisfies a deadline and road constraint." data-rationale="This is a plan-finding problem with explicit constraints. Search or optimisation can compare possible routes; traffic estimates could be added as a separate component.">
+          <div><h3>5 · Plan a delivery route</h3><p>Choose a route for a van visiting four addresses before a deadline while avoiding a closed road.</p></div>
+          <div><label for="match-5">Best fit for situation 5</label><select id="match-5" name="match-5" aria-describedby="feedback-5"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-5" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="reinforcement" data-answer-label="Reinforcement learning" data-hint="The robot improves by trying actions in an environment and receiving a score for what happens." data-rationale="The robot learns a policy from actions and reward feedback in a simulated environment. It is not given a correct action label for every situation.">
+          <div><h3>6 · Train a warehouse robot</h3><p>In a simulation, a robot tries actions to reach a charging station. It earns points for a fast, safe arrival and loses points for hitting an obstacle. Over repeated trials, it uses those rewards to improve its action choices.</p></div>
+          <div><label for="match-6">Best fit for situation 6</label><select id="match-6" name="match-6" aria-describedby="feedback-6"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-6" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <article class="scenario-card" data-scenario data-answer="generative" data-answer-label="Generative AI" data-hint="The requested result is a newly written draft based on notes." data-rationale="The tool is asked to create new text. A teacher should verify names, dates, and claims against the original notes.">
+          <div><h3>7 · Draft a lesson summary</h3><p>Given a teacher’s outline and lesson notes, produce a first-draft summary for students to review.</p></div>
+          <div><label for="match-7">Best fit for situation 7</label><select id="match-7" name="match-7" aria-describedby="feedback-7"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-7" class="scenario-feedback" aria-live="polite"></p></div>
+        </article>
+
+        <div>
+          <div class="button-row">
+            <button class="button" type="button" data-check-matches>Check my matches</button>
+            <button class="button secondary" type="button" data-reset-matches>Start over</button>
+          </div>
+          <p class="status" data-match-status aria-live="polite"></p>
+        </div>
+      </div>
+      <p class="hint">This is practice, not a graded test. Your choices are not saved; reloading clears them. Record your final explanation in your own notes.</p>
+      <p class="hint"><strong>Pair prompt:</strong> Before checking, tell your partner one clue for each choice. A good explanation names the output and the evidence—not just the approach name.</p>
+      <noscript><p class="noscript">The matching choices need JavaScript for feedback. The approach cards and teacher answer key remain available without it.</p></noscript>
+    </section>
+
+    <section class="section" aria-labelledby="reflect-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">04</span>
+        <div><h2 id="reflect-title">One more question</h2><p class="section-intro">Choose one scenario and discuss with your partner:</p></div>
+      </div>
+      <div class="card-grid">
+        <article class="card"><h3>What might the system get wrong?</h3><p>Think about poor or missing data, a new situation, a badly chosen reward, or a plausible but inaccurate generated answer.</p></article>
+        <article class="card"><h3>How could a person check it?</h3><p>Name a practical check. For example, inspect the source photos, compare an estimate with actual readings, review the route constraints, or verify a draft against its notes.</p></article>
+      </div>
+    </section>
+
+    <div class="next-step">
+      <p><strong>Finish with a one-sentence explanation.</strong><br>“I chose ___ because the problem asks for ___ and provides ___.”</p>
+      <a class="button secondary" href="/w1/course/">Review the course →</a>
+    </div>
+
+    <details class="teacher-notes">
+      <summary>Teacher guide · facilitation and answer key</summary>
+      <div class="teacher-content">
+        <p>The activity is designed for pairs and takes about 45 minutes (minutes 60–105 of the 120-minute Week 1 session). It is formative: students can retry, there is no grade, and choices are not stored or sent anywhere. The teacher guide and answer key are public.</p>
+        <h3>Suggested lab sequence</h3>
+        <dl class="timeline">
+          <dt>60–68</dt><dd>Revisit “output, evidence, failure” from the course. Model spam classification from labelled emails, then read the approach cards together.</dd>
+          <dt>68–90</dt><dd>Pairs match the situations. Ask them to explain a clue before they select, especially for classification versus regression and planning versus reinforcement learning. Swap the device operator halfway through.</dd>
+          <dt>90–103</dt><dd>Review hints, retry, and discuss the explanations. Ask one pair to defend a match and another to name a limitation or possible human check.</dd>
+          <dt>103–105</dt><dd>Collect one exit sentence: “I chose ___ because the problem asks for ___ and provides ___.” Continue with the invented scenario and final exit ticket in the course guide.</dd>
+        </dl>
+        <h3>Answer key and rationale</h3>
+        <ol class="answer-key">
+          <li><strong>1 · Classroom lights — Rules and automation.</strong> Both the threshold and action are fixed; there is no learning evidence in the description.</li>
+          <li><strong>2 · Leaf photo — Classification.</strong> The output is a category, and training examples already have category labels. The image domain does not change the task type.</li>
+          <li><strong>3 · Energy use — Regression.</strong> The system estimates a numeric quantity from past examples.</li>
+          <li><strong>4 · Songs — Clustering.</strong> There are no supplied mood or genre labels; the goal is to find groups by similarity.</li>
+          <li><strong>5 · Delivery route — Search and planning.</strong> The system must find a sequence that satisfies explicit constraints. A real product may also predict traffic with a learned model.</li>
+          <li><strong>6 · Warehouse robot — Reinforcement learning.</strong> The robot tries actions and receives a reward signal; it is not simply given the correct action for each state.</li>
+          <li><strong>7 · Lesson summary — Generative AI.</strong> The requested output is new text based on supplied context. A human should check it against the original notes.</li>
+        </ol>
+        <h3>Facilitation notes</h3>
+        <p>If the activity cannot load, read or print the seven scenarios and have pairs write their approach and clue. Use this answer key for discussion; no external AI tools, student accounts, or coding environment are needed.</p>
+        <ul>
+          <li>Students may suggest another method that could work. Acknowledge it, then ask which method is best supported by the stated task and evidence.</li>
+          <li>For scenario 5, planning is the intended primary fit. Clarify that a real route product can combine search with regression for travel-time estimates.</li>
+          <li>For scenario 6, emphasise feedback from the environment. “It tried lots of routes” alone is not enough; the reward signal is the distinguishing clue.</li>
+          <li>If students struggle, hide the method names and sort scenarios by output first: category, number, group, plan, rewarded action, or new content.</li>
+          <li>For a stretch question, ask what extra data or constraints would make a hybrid solution useful, and how the team would test whether it helped.</li>
+        </ul>
+      </div>
+    </details>
+
+    <footer class="page-footer">Machine Learning Club · Seven Hills International School · <a href="/">Back to the club home</a></footer>
+  </main>
+</body>
+</html>

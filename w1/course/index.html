@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Week 1 of the Seven Hills Machine Learning Club: what AI means, how AI relates to machine learning, and how to choose an approach for a problem.">
+  <title>What Is Artificial Intelligence? · Week 1 · Machine Learning Club</title>
+  <link rel="stylesheet" href="../week1.css">
+  <script src="../week1.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson</a>
+  <header class="site-header">
+    <a class="brand" href="/">Machine Learning Club <span>Seven Hills · 2026–27</span></a>
+    <nav class="site-nav" aria-label="Week 1 navigation">
+      <a href="/">All weeks</a>
+      <a href="/w1/slides/">Week 1 slides</a>
+      <a href="/w1/lab/">Go to the lab →</a>
+    </nav>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="eyebrow">Week 01 · Course</p>
+        <h1 id="page-title">What is artificial intelligence?</h1>
+        <p>Start with a useful question: what task is a system doing, and what makes it produce its answer?</p>
+        <div class="hero-meta" aria-label="Lesson details">
+          <span class="pill">Session 1 · 2 November 2026</span>
+          <span class="pill">About 55 minutes</span>
+          <span class="pill">No coding required</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="outcomes-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">01</span>
+        <div>
+          <h2 id="outcomes-title">By the end, you can…</h2>
+          <p class="section-intro">You do not need a perfect one-sentence definition. You need a way to inspect a system carefully.</p>
+        </div>
+      </div>
+      <ul class="outcomes">
+        <li>Describe AI as a broad area of computing, not one single technique.</li>
+        <li>Explain that machine learning is one part of AI, not a synonym for it.</li>
+        <li>Use a problem’s output and available evidence to suggest an approach.</li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="meaning-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">02</span>
+        <div>
+          <h2 id="meaning-title">AI is a field, not a magic box</h2>
+        </div>
+      </div>
+      <p class="section-intro">Artificial intelligence is an area of computing concerned with systems that perform tasks often associated with intelligent behaviour: recognizing patterns, processing language, making predictions, choosing actions, or planning.</p>
+      <div class="callout"><strong>Our working question:</strong> What task does the system perform, and how is its behaviour produced? The answer might involve rules, search, learned patterns, or a combination.</div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">A useful clue</span>
+          <h3>Look at the job</h3>
+          <p>Recognising a face, suggesting a route, and drafting text are different tasks. They call for different methods and different checks.</p>
+        </article>
+        <article class="card">
+          <span class="tag">A useful caution</span>
+          <h3>Do not judge by appearance</h3>
+          <p>A product can have a polished interface without using AI. A system can use AI without looking human or “thinking” like a person.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="map-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">03</span>
+        <div>
+          <h2 id="map-title">A map of related ideas</h2>
+        </div>
+      </div>
+      <p class="section-intro">These labels are related, but they do not all mean the same thing.</p>
+      <div class="nesting" aria-label="Machine learning is part of artificial intelligence. Deep learning is part of machine learning.">
+        <div class="nesting-layer">
+          <strong>Artificial intelligence (AI)</strong>
+          <span>A broad area that includes rule-based reasoning, search and planning, and machine learning.</span>
+          <div class="nesting-layer ml">
+            <strong>Machine learning (ML)</strong>
+            <span>Methods that fit patterns from data so a system can make predictions or decisions.</span>
+            <div class="nesting-layer dl">
+              <strong>Deep learning</strong>
+              <span>Machine learning that uses neural networks with many layers.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="max-width:760px;margin:0 auto">
+        <span class="tag">Where generative AI fits</span>
+        <h3>It describes what a system produces</h3>
+        <p>Generative AI creates new content such as text, images, audio, or code. Many familiar generative tools use deep learning. “Generative” describes the kind of output, so it overlaps with the map above rather than adding a strict extra rung.</p>
+      </div>
+      <div class="callout"><strong>Remember:</strong> machine learning is part of AI; deep learning is part of machine learning. Not every AI system learns from data, and not every automated program is AI. Rule-based reasoning can be AI; a simple timer or light threshold alone is ordinary automation.</div>
+    </section>
+
+    <section class="section" aria-labelledby="examples-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">04</span>
+        <div>
+          <h2 id="examples-title">Same world, different methods</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">Fixed rule</span>
+          <h3>“If the room is dark, switch on the lamp.”</h3>
+          <p>The rule is written in advance. A sensor supplies a value, but the example does not show a system learning from examples.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Learned pattern</span>
+          <h3>“Does this email look like spam?”</h3>
+          <p>A classifier can learn from emails labelled “spam” or “not spam”. It can still make mistakes, especially on unfamiliar cases.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Search and planning</span>
+          <h3>“Which route meets these constraints?”</h3>
+          <p>A planner can compare possible routes using distance, closures, and deadlines. Route choice can use search even when it has not learned a route from examples.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Generated output</span>
+          <h3>“Draft a summary from these notes.”</h3>
+          <p>A generative model can produce fluent text, but fluent wording is not proof that every detail is accurate. A person should check it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="approaches-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">05</span>
+        <div>
+          <h2 id="approaches-title">Approach clues for the lab</h2>
+        </div>
+      </div>
+      <p class="section-intro">Ask what kind of answer the problem needs. That often narrows the options.</p>
+      <div class="callout"><strong>A toolkit, not seven separate boxes.</strong> These names describe different aspects of a system. Classification and regression are prediction tasks; clustering finds groups; reinforcement learning describes learning through action and reward; generative AI describes creating content. A product can combine them.</div>
+      <div class="approach-grid">
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">R</span><div><h3>Rules and automation</h3><p>Follow an explicitly programmed condition or sequence.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">C</span><div><h3>Classification</h3><p>Choose a category using examples with known labels.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">#</span><div><h3>Regression</h3><p>Estimate a number, such as energy use or journey time.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">G</span><div><h3>Clustering</h3><p>Group similar items when no group labels are supplied.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">P</span><div><h3>Search and planning</h3><p>Find a useful sequence of actions under constraints.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">↗</span><div><h3>Reinforcement learning</h3><p>Learn actions through feedback or rewards from an environment.</p></div></article>
+        <article class="approach-card"><span class="approach-icon" aria-hidden="true">Aa</span><div><h3>Generative AI</h3><p>Create a new draft, image, audio clip, or other content.</p></div></article>
+      </div>
+      <p><strong>Three ways to learn:</strong> supervised learning uses examples with known target answers (such as a category or a measured number); unsupervised learning looks for structure without supplied target labels; reinforcement learning uses actions and reward feedback. Classification and regression are common supervised tasks; clustering is a common unsupervised task.</p>
+      <details class="worked-example">
+        <summary>Worked examples · follow the evidence</summary>
+        <div class="teacher-content">
+          <p><strong>Classification:</strong> 500 emails are already labelled spam or not spam. A new email goes in; a category comes out. The labels provide training answers. A genuine school email could be wrongly blocked.</p>
+          <p><strong>Regression:</strong> past days have a temperature and the number of ice creams sold. Tomorrow’s temperature goes in; an estimated number of sales comes out. A rainy day or school closure could make the estimate unreliable. A number used as a category code, such as postcode, is not a regression target just because it contains digits.</p>
+          <p><strong>Clustering:</strong> group unlabelled books using similarities in their descriptions. The groups are discovered, not supplied as correct answers. A person must inspect and name them; the groups need not match school subjects.</p>
+          <p><strong>Planning versus reinforcement learning:</strong> comparing moves on a known maze map is search/planning. A simulated agent that improves its action choices over repeated trials using reward feedback is reinforcement learning. Merely trying many routes does not establish learning.</p>
+          <p><strong>Training versus use:</strong> fitting a spam model from labelled emails is training. Applying that model to a new email is prediction (also called inference). Predicting does not automatically retrain the model.</p>
+        </div>
+      </details>
+      <p class="section-intro" style="margin-top:1rem">Real products can combine approaches. In today’s lab, choose the <em>main approach suggested by the information in the scenario</em>, then explain your clue.</p>
+    </section>
+
+    <section class="section" aria-labelledby="check-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">06</span>
+        <div>
+          <h2 id="check-title">Quick understanding check</h2>
+          <p class="section-intro">Choose one answer in each question. You can change your answers and check again.</p>
+        </div>
+      </div>
+      <div class="quiz" data-quiz>
+        <fieldset class="quiz-question" data-explanation="Machine learning is one family of AI approaches. AI also includes approaches such as rules and search/planning.">
+          <legend>1. Which statement best describes machine learning?</legend>
+          <label><input type="radio" name="q1" value="same"> It is another name for all of AI.</label>
+          <label><input type="radio" name="q1" value="subset" data-correct="true"> It is a group of approaches within AI that fit patterns from data.</label>
+          <label><input type="radio" name="q1" value="automation"> It means any program that runs automatically.</label>
+          <p class="question-feedback" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-explanation="A fixed threshold rule is basic automation. A sensor alone does not mean the system learned from data; rules can also be part of larger AI systems.">
+          <legend>2. A lamp switches on whenever a light sensor reads below a fixed threshold. What is the best description of this example?</legend>
+          <label><input type="radio" name="q2" value="ml"> Machine learning, because the lamp has a sensor.</label>
+          <label><input type="radio" name="q2" value="rules" data-correct="true"> Rule-based automation; the example does not show learning from data.</label>
+          <label><input type="radio" name="q2" value="generation"> Generative AI, because the lamp produces light.</label>
+          <p class="question-feedback" aria-live="polite"></p>
+        </fieldset>
+        <fieldset class="quiz-question" data-explanation="Generating a new summary is a generative task. Check names, dates, and claims against the original notes.">
+          <legend>3. A tool drafts a paragraph from lesson notes. Which label best describes the output?</legend>
+          <label><input type="radio" name="q3" value="planning"> Search and planning.</label>
+          <label><input type="radio" name="q3" value="classification"> Classification.</label>
+          <label><input type="radio" name="q3" value="generative" data-correct="true"> Generative AI, with a person checking the draft.</label>
+          <p class="question-feedback" aria-live="polite"></p>
+        </fieldset>
+        <div class="button-row">
+          <button class="button" type="button" data-check-quiz>Check answers</button>
+          <button class="button secondary" type="button" data-reset-quiz>Start over</button>
+        </div>
+        <p class="status" data-quiz-status aria-live="polite"></p>
+      </div>
+      <noscript><p class="noscript">The lesson text and teacher answer key are available without JavaScript. Choose answers on paper and discuss them with your teacher; enable JavaScript for interactive feedback.</p></noscript>
+    </section>
+
+    <section class="section" aria-labelledby="routine-title">
+      <div class="section-heading">
+        <span class="section-number" aria-hidden="true">07</span>
+        <div><h2 id="routine-title">Take this thinking into the lab</h2></div>
+      </div>
+      <div class="routine" aria-label="Three questions to ask when matching an approach">
+        <div class="routine-step"><strong>What is the output?</strong><span>A label, number, group, plan, action, or new content?</span></div>
+        <div class="routine-step"><strong>What evidence is available?</strong><span>Fixed rules, labelled examples, unlabelled data, or feedback?</span></div>
+        <div class="routine-step"><strong>What could go wrong?</strong><span>Name one limitation and how a person could check the result.</span></div>
+      </div>
+    </section>
+
+    <div class="next-step">
+      <p><strong>Ready to apply the map?</strong><br>Match real-world problems to the approach that best fits each one.</p>
+      <a class="button" href="/w1/lab/">Start the Types of AI lab →</a>
+    </div>
+
+    <details class="teacher-notes">
+      <summary>Teacher guide · 120-minute Week 1 session</summary>
+      <div class="teacher-content">
+        <p>This course page supports the first half of the session; continue directly to the matching lab. The aim is to make students justify an approach using task, output, and evidence—not to memorise a rigid taxonomy.</p>
+        <h3>Before students arrive</h3>
+        <ul>
+          <li>Open the course and lab pages; project the course page for the warm-up.</li>
+          <li>Use pairs for the lab. One device per pair is enough; the activities need no account, external service, or saved data.</li>
+          <li>The 62-slide extended deck is an optional reference bank. PDF pages 3–4 support the warm-up (automation versus learning); pages 14–16 support the learning paradigms and rules-versus-training discussion; page 45 supports human checks and limitations. On page 4, explain that “not ML” does not automatically mean “not AI”. Save the detailed algorithms, gradient descent, Python, and model evaluation for later sessions.</li>
+        </ul>
+        <h3>Suggested session flow</h3>
+        <dl class="timeline">
+          <dt>00–08</dt><dd>Warm-up: ask students to classify a timer, a face unlock feature, and a route planner as AI, automation, both, or unsure. Accept “unsure” and ask what evidence would help.</dd>
+          <dt>08–20</dt><dd>Use the working question on this page: what task is done, and how is the answer produced? Distinguish a fixed rule from a system trained on examples.</dd>
+          <dt>20–35</dt><dd>Explain the AI → ML → deep learning relationship. Point out that generative AI describes generated output and commonly overlaps with deep learning.</dd>
+          <dt>35–48</dt><dd>Use the approach clues and worked examples. Contrast classification with regression, and planning with reward-based learning. Ask students to name the output, evidence, and one possible failure.</dd>
+          <dt>48–55</dt><dd>Students complete the quick check individually, then explain one answer to a partner.</dd>
+          <dt>55–60</dt><dd>Pause and form pairs. Ask everyone to bring the “output, evidence, failure” questions into the lab.</dd>
+          <dt>60–68</dt><dd>Launch the lab. Model an extra example: learn from emails labelled spam/not spam, then label a new email → classification. Ask pairs to give the output and training evidence.</dd>
+          <dt>68–90</dt><dd>Pairs match all seven scenarios. Ask them to name the clue before selecting an answer.</dd>
+          <dt>90–103</dt><dd>Review the matches. Invite more than one proposed method, then return to the wording that makes one answer the best fit.</dd>
+          <dt>103–105</dt><dd>Each pair gives one lab exit sentence: “I chose ___ because the problem asks for ___ and provides ___.”</dd>
+          <dt>105–115</dt><dd>Pairs invent a problem and specify its output, evidence, approach, and one limitation. Ask whether a hybrid system would be useful.</dd>
+          <dt>115–120</dt><dd>Exit ticket: “One approach I can now recognise is ____. I would check its result by ____.”</dd>
+        </dl>
+        <h3>Quick-check answer key</h3>
+        <p>1: ML is a family within AI that fits patterns from data. 2: The fixed sensor threshold is rule-based automation. 3: Drafting new text is a generative task; check the draft against its notes. These explanations also support a paper or projected activity without JavaScript.</p>
+        <h3>Practical delivery</h3>
+        <p>Answers are formative and stay only on the open page; reloading starts again. Ask pairs to record their exit sentence on paper or in their own notes. If devices or connectivity fail, read the scenarios aloud or print both pages and use the answer key for discussion. Teacher sections are visible to everyone and are not a protected assessment key.</p>
+        <h3>Listen for these misconceptions</h3>
+        <ul>
+          <li><strong>“AI and machine learning are the same.”</strong> Return to the set relationship: ML is one family inside the broader AI field.</li>
+          <li><strong>“A sensor makes it AI.”</strong> Ask whether the system follows a fixed threshold or learned a pattern from examples.</li>
+          <li><strong>“AI always learns while it is being used.”</strong> Many models are trained earlier and then used for prediction; some deployed systems update, many do not.</li>
+          <li><strong>“A fluent answer must be true.”</strong> Separate plausible output from verified evidence; name a check a person could make.</li>
+        </ul>
+        <h3>Support and stretch</h3>
+        <p>For support, ask students to sort by output first: category, number, group, plan, action, or content. For stretch, ask what could change in a scenario to make a second approach reasonable, and what evidence would be needed to compare the two.</p>
+      </div>
+    </details>
+
+    <footer class="page-footer">Machine Learning Club · Seven Hills International School · <a href="/">Back to the club home</a></footer>
+  </main>
+</body>
+</html>
