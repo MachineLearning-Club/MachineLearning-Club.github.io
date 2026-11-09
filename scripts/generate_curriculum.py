@@ -213,3 +213,6 @@ print('OK: 15 weeks, 60 objective pages, calendar, syllabus, projects, resources
 import runpy
 runpy.run_path(str(ROOT / "scripts/apply_classic_theme.py"))
 runpy.run_path(str(ROOT / "scripts/simplify_lessons.py"))
+runpy.run_path(str(ROOT / "scripts/generate_colab_starters.py"))
+runpy.run_path(str(ROOT / "scripts/render_curriculum_sources.py"))
+runpy.run_path(str(ROOT / "scripts/render_overview.py"))

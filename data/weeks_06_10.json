@@ -1,0 +1,308 @@
+[
+  {
+    "n": 6,
+    "sections": [
+      [
+        "Unsupervised learning",
+        "Unlabelled observations; clustering versus classification; meaningful similarity",
+        [
+          "RO",
+          "PY",
+          "IO"
+        ]
+      ],
+      [
+        "K-Means: assign and update",
+        "K initial centroids; nearest-centroid assignments; mean-centroid updates; convergence",
+        [
+          "RO",
+          "POL",
+          "KM"
+        ]
+      ],
+      [
+        "Where clustering fails",
+        "Choice of K, initialization, scaling, nonconvex groups and instability",
+        [
+          "RO",
+          "KM",
+          "IO"
+        ]
+      ]
+    ],
+    "app": [
+      "Visualizing K-Means",
+      "https://www.naftaliharris.com/blog/visualizing-k-means-clustering/",
+      "Try Gaussian and smiley datasets, different K and centroids; observe convergence"
+    ],
+    "external": [
+      "Polish Olympiad K-Means notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/04a_kmeans.ipynb"
+    ],
+    "lab": [
+      "Perform two manual assign/update iterations",
+      "Change initialization in the visualisation",
+      "Plot K-Means clusters and centres in Colab"
+    ],
+    "labRefs": [
+      "RO",
+      "KM",
+      "POL",
+      "PY"
+    ],
+    "hw": "Change starting centres or data geometry in the Colab; record two iterations and one nonconvex failure.",
+    "hwRefs": [
+      "RO",
+      "KM"
+    ],
+    "adv": "Create an elbow/inertia plot and investigate whether another clustering method better handles a smiley-shaped cluster.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  },
+  {
+    "n": 7,
+    "sections": [
+      [
+        "Predicting continuous outcomes",
+        "Regression versus classification; linear trends, slope and intercept; correlation versus causation",
+        [
+          "RO",
+          "CB",
+          "PY"
+        ]
+      ],
+      [
+        "Learning a linear relationship",
+        "Least squares, residuals and squared-error objective; model parameters",
+        [
+          "RO",
+          "OLS",
+          "IO"
+        ]
+      ],
+      [
+        "Checking predictions",
+        "MAE/MSE, interpolation and extrapolation, outliers and model assumptions",
+        [
+          "RO",
+          "POL",
+          "IO"
+        ]
+      ]
+    ],
+    "app": [
+      "Ordinary least squares interactive",
+      "https://setosa.io/ev/ordinary-least-squares-regression/",
+      "Move points and outliers; watch slope, intercept and errors"
+    ],
+    "external": [
+      "Polish Olympiad regression notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/05a_regresja_i_svm.ipynb"
+    ],
+    "lab": [
+      "Fit and plot a line in Colab",
+      "Compute residuals and a metric",
+      "Add an outlier and compare results"
+    ],
+    "labRefs": [
+      "RO",
+      "OLS",
+      "POL"
+    ],
+    "hw": "Replace the lab dataset with temperature/demand values, fit the model, calculate mean error and explain unreliable extrapolation.",
+    "hwRefs": [
+      "RO",
+      "CB"
+    ],
+    "adv": "Write a few gradient-descent updates and compare the result with least squares.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  },
+  {
+    "n": 8,
+    "sections": [
+      [
+        "Pixels are arrays",
+        "Grayscale/RGB pixels; array shape and channels; basic image preprocessing",
+        [
+          "RO",
+          "PY",
+          "UA"
+        ]
+      ],
+      [
+        "Kernels and local computation",
+        "3×3 neighbourhood, multiply-add, blur and edge detection, padding at borders",
+        [
+          "KERNEL",
+          "POL"
+        ]
+      ],
+      [
+        "Feature extraction to classification",
+        "Why filters highlight image structure; introduction to CNN layers; viewpoint and lighting limitations",
+        [
+          "POL",
+          "IO",
+          "UA"
+        ]
+      ]
+    ],
+    "app": [
+      "Image Kernels Explained Visually",
+      "https://setosa.io/ev/image-kernels/",
+      "Choose blur, sharpen and edge filters and inspect the computed pixels"
+    ],
+    "external": [
+      "pyml.ro image notebook",
+      "https://colab.research.google.com/drive/18hSWGSizpk33jFL-HjV_stLPJVxuN-4O"
+    ],
+    "lab": [
+      "Calculate a 3×3 filter value manually",
+      "Run an image filter on a small image array in Colab",
+      "Modify the filter and discuss the output"
+    ],
+    "labRefs": [
+      "RO",
+      "PY",
+      "KERNEL"
+    ],
+    "hw": "Apply an alternative blur or edge kernel with the lab code; provide two worked pixel calculations and before/after images.",
+    "hwRefs": [
+      "KERNEL",
+      "RO"
+    ],
+    "adv": "Compare padding choices or use a convolutional network explanation to connect filters with learned features.",
+    "advRefs": [
+      "POL",
+      "IO"
+    ]
+  },
+  {
+    "n": 9,
+    "sections": [
+      [
+        "A single neuron",
+        "Weighted inputs, bias, step and sigmoid activations; linear boundaries",
+        [
+          "CB",
+          "IO",
+          "POL"
+        ]
+      ],
+      [
+        "How parameters change",
+        "Prediction and loss, learning rate, gradient updates as an intuition",
+        [
+          "IO",
+          "POL"
+        ]
+      ],
+      [
+        "Layers and nonlinearity",
+        "Hidden layer, forward pass, XOR, capacity and overfitting",
+        [
+          "TF",
+          "POL",
+          "UA"
+        ]
+      ]
+    ],
+    "app": [
+      "TensorFlow Neural Network Playground",
+      "https://playground.tensorflow.org/",
+      "Compare one linear boundary with XOR; add hidden units and change activations"
+    ],
+    "external": [
+      "Polish Olympiad neural networks notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/06a_podstawy_sieci_neuronowych.ipynb"
+    ],
+    "lab": [
+      "Calculate weighted sums by hand",
+      "Visualise nonlinear decision boundaries",
+      "Run a compact perceptron/MLP example in Colab"
+    ],
+    "labRefs": [
+      "POL",
+      "TF",
+      "IO"
+    ],
+    "hw": "Run the same notebook on linear and XOR-like data, compare a linear neuron versus hidden layer, and explain the difference.",
+    "hwRefs": [
+      "TF",
+      "POL"
+    ],
+    "adv": "Implement one weight-gradient update or a simple XOR network with explicit parameters.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  },
+  {
+    "n": 10,
+    "sections": [
+      [
+        "How AI applications are assembled",
+        "Inputs, preprocessing, model prediction, decision rules, UI and confidence fallback",
+        [
+          "EAP",
+          "MI",
+          "UN"
+        ]
+      ],
+      [
+        "Software engineering for AI",
+        "File organisation, README, reproducible environments, tests, privacy and model cards",
+        [
+          "CP",
+          "IO",
+          "EAP"
+        ]
+      ],
+      [
+        "Git and GitHub I",
+        "Repository, commit, branch, README, issues and safe publishing without private data",
+        [
+          "GH",
+          "CP"
+        ]
+      ]
+    ],
+    "app": [
+      "GitHub Skills: Introduction to GitHub",
+      "https://github.com/skills/introduction-to-github",
+      "Create a repo, edit README and commit; inspect MIT App Inventor classifier project"
+    ],
+    "external": [
+      "pyml.ro images reference notebook",
+      "https://colab.research.google.com/drive/18hSWGSizpk33jFL-HjV_stLPJVxuN-4O"
+    ],
+    "lab": [
+      "Wire image data, model output, and a rule into one small notebook",
+      "Add a fallback for uncertain predictions and a testing log",
+      "Commit the notebook and README to a project repository"
+    ],
+    "labRefs": [
+      "EAP",
+      "MI",
+      "GH",
+      "CP"
+    ],
+    "hw": "Submit a GitHub repository with the modified vision-to-decision lab, README, three tests, and a note on model limitations.",
+    "hwRefs": [
+      "GH",
+      "MI",
+      "UN"
+    ],
+    "adv": "Add a user interface via MIT App Inventor or a small local web app; document privacy and low-confidence behaviour.",
+    "advRefs": [
+      "MI",
+      "CP",
+      "IO"
+    ]
+  }
+]

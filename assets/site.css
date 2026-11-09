@@ -93,3 +93,5 @@ main.shell h1 { margin-bottom: 12px; }
 main.shell ul, main.shell ol { padding-left: 24px; }
 main.shell li { margin: 7px 0; }
 @media (max-width: 680px) { .lesson-nav { gap: 7px 15px; } }
+
+.reference{font-size:.89rem;color:#666;line-height:1.5;margin:8px 0 20px}.reference-label{color:#666}.intro{margin:12px 0 25px}.note{color:#666;font-size:.9rem}

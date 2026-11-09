@@ -33,8 +33,7 @@ for n, date, name, summary in lessons:
     for k, label in [("course", "Course"), ("lab", "Laboratory"), ("homework", "Homework"), ("advanced", "Advanced")]:
         lines.extend([
             '          <li>',
-            f'            <span class="type">{label}</span>',
-            f'            <a href="/w{n}/{k}/">{ {"course": "Notes and concepts", "lab": "Guided practice", "homework": "Exercises", "advanced": "Further exploration"}[k]}</a>',
+            f'            <a href="/w{n}/{k}/">{label}</a>',
             '          </li>',
         ])
     lines.append("        </ul>")

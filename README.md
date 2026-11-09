@@ -1,21 +1,48 @@
 # Machine Learning Club — Seven Hills International School
 
-Static GitHub Pages website for the 2026–2027 club.
+Static GitHub Pages website for the 2026–2027 Machine Learning Club.
 
-- **15 weekly sessions**, Wednesday 16:00–17:00 (proposed), from **2 December 2026 to 7 April 2027**, excluding winter and February breaks.
-- **70 RON per student per session**; group size up to 10 students.
-- Weeks 1–9: fundamentals; Weeks 10–12: integrated AI systems; Weeks 13–15: FIICode preparation.
-- Each week has separate **Course**, **Laboratory**, **Homework**, and **Advanced** pages with measurable objectives and tasks.
-- The existing interactive Week 1 course, laboratory, slides and PDF are retained.
+The club has **15 planned one-hour weekly meetings**, from December 2026 to April 2027, with dates subject to school calendar confirmation. The programme includes three stages: ML fundamentals (Weeks 1–9), integrated AI systems with introductory Git/GitHub (Weeks 10–12), and competition/project work (Weeks 13–15).
 
-## Editing the programme
+## Learning materials
 
-The source of truth is `scripts/generate_curriculum.py`. Update its `DATA` and `TASKS` records, then regenerate all pages from the repository root:
+Each week has four separately linked, deliberately minimalist pages:
+
+- **Course** — three related conceptual sections, with source-specific bibliography for each.
+- **Laboratory** — a webapp, a runnable club-owned Colab starter, an external study notebook, and guided activities.
+- **Homework** — a transfer exercise based on the same lab code, including expected deliverables and references.
+- **Advanced** — optional experiments and adapted Olympiad-level work.
+
+The original extended Week 1 course and its interactive matching exercise are preserved, with a separate bibliography and notebook section.
+
+The `syllabus/` page maps stages to frameworks, and `resources/` is the consolidated source bibliography.
+
+### Colab notebooks
+
+Club notebooks live at `w1/lab/starter.ipynb` through `w15/lab/starter.ipynb`. Open any file using `https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/wN/lab/starter.ipynb`.
+
+They use CPU-only Python and small synthetic/public datasets. Typical dependencies: NumPy, matplotlib, pandas and scikit-learn. Additional public Olympiad notebooks are linked only as references; they can be longer and written in Polish.
+
+## Updating content
+
+Do not edit generated HTML directly if it should survive regeneration.
+
+- `scripts/generate_curriculum.py`: main week titles, dates and high-level objective lists.
+- `data/weeks_01_05.json`, `data/weeks_06_10.json`, `data/weeks_11_15.json`: course sections, lab webapps and references, homework and advanced tasks.
+- `data/bibliography.json`: source titles and URLs.
+- `scripts/generate_colab_starters.py`: working Python starter cells.
+- `scripts/render_curriculum_sources.py`: student-facing pages.
+- `scripts/render_overview.py`: syllabus and bibliography index.
+- `scripts/apply_classic_theme.py`: original homepage layout and plain styling.
+
+Regenerate the site from the repository root:
 
 ```bash
 python3 scripts/generate_curriculum.py
 ```
 
-No Node.js build step is needed. GitHub Pages serves the committed HTML/CSS files directly. The script is idempotent and preserves the detailed Week 1 interactive material.
+The generator is idempotent. The website uses static HTML and CSS without a Node.js build step.
 
-All dates are proposed and must be confirmed with the school's calendar. FIICode 2027 contest dates are not assumed.
+No external notebook, site or competition archive is represented as an official endorsement. The Romanian secondary-school ML optional programme is the principal technical anchor, while non-mandated topics (ID3, CNN internals and neural networks) are explicitly sourced from other courses or Olympiad material.
+
+Official dates of FIICode 2027 are not assumed.

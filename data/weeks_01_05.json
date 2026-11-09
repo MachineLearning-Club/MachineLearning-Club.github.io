@@ -1,0 +1,306 @@
+[
+  {
+    "n": 1,
+    "sections": [
+      [
+        "AI as a field",
+        "Automation vs AI; rules, search and learned behaviour; AI versus ML versus deep learning",
+        [
+          "EA",
+          "CB",
+          "UA"
+        ]
+      ],
+      [
+        "Learning from examples",
+        "Inputs and outputs; features and labels; supervised, unsupervised and feedback-based learning",
+        [
+          "RO",
+          "EA",
+          "PY"
+        ]
+      ],
+      [
+        "Image classification and reliability",
+        "Train/infer/test distinction; confidence vs accuracy; sampling bias and privacy",
+        [
+          "EA",
+          "EAP",
+          "UN"
+        ]
+      ]
+    ],
+    "app": [
+      "Teachable Machine image classification",
+      "https://teachablemachine.withgoogle.com/",
+      "Train on two objects; record five unseen predictions and a changed-background test"
+    ],
+    "external": [
+      "Polish Olympiad: Google Colab introduction",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/01a_wprowadzenie_do_srodowiska_google_colab.ipynb"
+    ],
+    "lab": [
+      "Label features and classes in the browser experiment",
+      "Inspect and change the same labels/test cases in the club Colab",
+      "Explain one failure and the limits of confidence"
+    ],
+    "labRefs": [
+      "EA",
+      "MI",
+      "PY"
+    ],
+    "hw": "Change the lab dataset or test examples: submit a five-row prediction log, updated Colab and an explanation of one error.",
+    "hwRefs": [
+      "EA",
+      "MI"
+    ],
+    "adv": "Test shortcuts using an intentionally skewed training set; compare with a balanced model and document the outcome.",
+    "advRefs": [
+      "UN",
+      "IO"
+    ]
+  },
+  {
+    "n": 2,
+    "sections": [
+      [
+        "Data representation",
+        "Records, attributes, units and labels; categorical vs numerical features; NumPy arrays and CSV tables",
+        [
+          "RO",
+          "PY",
+          "CB"
+        ]
+      ],
+      [
+        "Descriptive statistics",
+        "Mean, median, frequency tables, histograms and representative sampling",
+        [
+          "CB",
+          "POL",
+          "RO"
+        ]
+      ],
+      [
+        "Probabilities and information",
+        "Conditional frequency and probability; binary entropy; uncertainty and its reduction",
+        [
+          "IO",
+          "POL"
+        ]
+      ]
+    ],
+    "app": [
+      "CODAP tutorials",
+      "https://codap.concord.org/get-started/tutorials/",
+      "Import, group and plot a small dataset, then compare means and class balance"
+    ],
+    "external": [
+      "Polish Olympiad: Statistics and Pandas",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb"
+    ],
+    "lab": [
+      "Compute descriptive summaries and visualise them",
+      "Use Colab to inspect a small table and calculate class proportions",
+      "Vary one observation and describe changes in entropy"
+    ],
+    "labRefs": [
+      "RO",
+      "PY",
+      "POL",
+      "CD"
+    ],
+    "hw": "Append five rows to the lab dataset, recompute statistics and entropy, and explain the change.",
+    "hwRefs": [
+      "RO",
+      "CB"
+    ],
+    "adv": "Plot binary entropy as p varies; handle probabilities 0 and 1 without NaNs.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  },
+  {
+    "n": 3,
+    "sections": [
+      [
+        "Readable models",
+        "Decision nodes, features, branches and leaves; using trees to classify new examples",
+        [
+          "EA",
+          "R2",
+          "IO"
+        ]
+      ],
+      [
+        "How ID3 chooses a split",
+        "Entropy; conditional entropy; information gain; categorical root selection",
+        [
+          "IO",
+          "POL"
+        ]
+      ],
+      [
+        "How trees generalise",
+        "Recursive construction, stopping, depth, memorisation; ID3 versus CART distinction",
+        [
+          "EA",
+          "R2",
+          "TREE"
+        ]
+      ]
+    ],
+    "app": [
+      "Interactive ML decision tree (CART, not ID3)",
+      "https://interactiveml.org/tree",
+      "Step through CART splits and inspect gain; compare with a hand-built categorical ID3 tree"
+    ],
+    "external": [
+      "pyml.ro classification notebook",
+      "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp"
+    ],
+    "lab": [
+      "Compute root gains by hand",
+      "Inspect interactive CART splits; distinguish numeric CART and categorical ID3",
+      "Use the club notebook to compute entropy and build a tiny model"
+    ],
+    "labRefs": [
+      "EA",
+      "TREE",
+      "R2",
+      "IO"
+    ],
+    "hw": "For a new 10-row categorical dataset, compute every root information gain, draw the tree and trace four new samples.",
+    "hwRefs": [
+      "EA",
+      "IO"
+    ],
+    "adv": "Make a deliberately overfitted decision tree; compare training and held-out accuracy and explain why.",
+    "advRefs": [
+      "IO",
+      "R2"
+    ]
+  },
+  {
+    "n": 4,
+    "sections": [
+      [
+        "Continuous decision rules",
+        "Threshold tests; candidate midpoints; impurity or entropy reductions",
+        [
+          "TREE",
+          "IO"
+        ]
+      ],
+      [
+        "Model validation",
+        "Train/validation/test splits; overfitting; data leakage and class balance",
+        [
+          "RO",
+          "CB",
+          "IO"
+        ]
+      ],
+      [
+        "Error metrics",
+        "Confusion matrices; TP/FP/FN/TN; accuracy and precision/recall",
+        [
+          "RO",
+          "IO",
+          "EAP"
+        ]
+      ]
+    ],
+    "app": [
+      "Interactive ML tree: test accuracy and depth",
+      "https://interactiveml.org/tree",
+      "Increase label noise and tree depth; compare training and test scores"
+    ],
+    "external": [
+      "pyml.ro classification notebook",
+      "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp"
+    ],
+    "lab": [
+      "Test numeric threshold candidates on paper",
+      "Train a tree with unseen test data",
+      "Produce a confusion matrix and explain an error"
+    ],
+    "labRefs": [
+      "RO",
+      "TREE",
+      "IO"
+    ],
+    "hw": "Modify maximum depth or train/test split in the same Colab, compute accuracy and draw a confusion matrix; justify which result is trustworthy.",
+    "hwRefs": [
+      "RO",
+      "IO"
+    ],
+    "adv": "Compare precision and recall under an imbalanced class distribution and discuss threshold tuning.",
+    "advRefs": [
+      "IO",
+      "ON"
+    ]
+  },
+  {
+    "n": 5,
+    "sections": [
+      [
+        "Geometry and similarity",
+        "Two-feature scatterplots; Euclidean distance; feature scaling and irrelevant features",
+        [
+          "RO",
+          "SG",
+          "IO"
+        ]
+      ],
+      [
+        "K-nearest neighbour classifier",
+        "Ordering nearest samples; selecting K; majority votes and ties",
+        [
+          "RO",
+          "PY",
+          "KN"
+        ]
+      ],
+      [
+        "Practical model behaviour",
+        "Effects of K, outliers, imbalance and standardisation; training versus testing",
+        [
+          "SG",
+          "IO",
+          "KN"
+        ]
+      ]
+    ],
+    "app": [
+      "VizLearn interactive KNN",
+      "https://vizlearn.in/machine_learning/knn.html",
+      "Move the query point and adjust K; record when a class decision changes"
+    ],
+    "external": [
+      "pyml.ro classification notebook",
+      "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp"
+    ],
+    "lab": [
+      "Calculate distances and neighbour votes by hand",
+      "Run a KNN classifier with scaled and unscaled data",
+      "Compare K=1/3/7 in the club notebook"
+    ],
+    "labRefs": [
+      "RO",
+      "SG",
+      "KN"
+    ],
+    "hw": "Run the lab notebook on a new two-feature dataset; justify K and give one complete manual distance computation.",
+    "hwRefs": [
+      "RO",
+      "SG"
+    ],
+    "adv": "Use distance-weighted neighbours and cross-validation to select K; report whether the improvement is reliable.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  }
+]

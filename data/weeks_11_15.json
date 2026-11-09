@@ -1,0 +1,316 @@
+[
+  {
+    "n": 11,
+    "sections": [
+      [
+        "Data pipelines",
+        "Collection, cleaning, missing values, transformation; chronological data and future-data leakage",
+        [
+          "CB",
+          "CP",
+          "IO"
+        ]
+      ],
+      [
+        "Forecasting and monitoring",
+        "Naive baselines, regression, lagged features, actual versus predicted, MAE",
+        [
+          "RO",
+          "PY",
+          "CP"
+        ]
+      ],
+      [
+        "GitHub II: reproducible projects",
+        "Git branches, pull requests, experiment records, requirements and testing",
+        [
+          "GH",
+          "IO"
+        ]
+      ]
+    ],
+    "app": [
+      "CODAP data explorer",
+      "https://codap.concord.org/get-started/tutorials/",
+      "Explore chronological demand data and compare groups/graphs"
+    ],
+    "external": [
+      "Polish Olympiad regression notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/05a_regresja_i_svm.ipynb"
+    ],
+    "lab": [
+      "Prepare a time-aware train/test split",
+      "Compare a naive baseline with a linear regression forecast",
+      "Plot predictions against actuals and submit an experiment PR"
+    ],
+    "labRefs": [
+      "RO",
+      "CD",
+      "POL",
+      "GH"
+    ],
+    "hw": "Add one lag feature using the Week 11 notebook without exposing future values; compare MAE to the baseline and link a pull request.",
+    "hwRefs": [
+      "CP",
+      "IO",
+      "GH"
+    ],
+    "adv": "Implement expanding-window validation, inspect errors across time periods and document data leakage traps.",
+    "advRefs": [
+      "IO",
+      "POL"
+    ]
+  },
+  {
+    "n": 12,
+    "sections": [
+      [
+        "Inside a language model",
+        "Tokens, next-token prediction, context and attention, text generation settings",
+        [
+          "TX",
+          "CB",
+          "IO"
+        ]
+      ],
+      [
+        "Reliable evaluation",
+        "Hallucination, fabricated references, independent fact checks, evidence-based rubrics",
+        [
+          "EAP",
+          "UN",
+          "EA"
+        ]
+      ],
+      [
+        "Responsible use and project design",
+        "Privacy, fairness, model cards, AI lifecycle, human review and project scoping",
+        [
+          "UN",
+          "EAP",
+          "CP"
+        ]
+      ]
+    ],
+    "app": [
+      "Transformer Explainer",
+      "https://poloclub.github.io/transformer-explainer/",
+      "Vary prompt and temperature, inspect tokens/next-token predictions"
+    ],
+    "external": [
+      "Polish Olympiad Python notebook (prerequisite; club starter focuses on verification)",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/01c_wstep_do_pythona_praktyczny_notebook.ipynb"
+    ],
+    "lab": [
+      "Investigate prediction probabilities and temperature in the webapp",
+      "Collect and verify claims from a generated answer with external sources",
+      "Score the claims in a Colab-backed evidence table"
+    ],
+    "labRefs": [
+      "TX",
+      "UN",
+      "EAP"
+    ],
+    "hw": "Add three independent claims to the same verification table, cite evidence URLs, label supported/unsupported/uncertain and explain one failure.",
+    "hwRefs": [
+      "UN",
+      "EAP"
+    ],
+    "adv": "Create an evaluation rubric for grounded answers or contrast two temperature settings using the same prompt.",
+    "advRefs": [
+      "IO",
+      "TX"
+    ]
+  },
+  {
+    "n": 13,
+    "sections": [
+      [
+        "Reading competition specifications",
+        "Input, output, data splits, allowed tools, scoring, submission format and hidden tests",
+        [
+          "ON",
+          "IO26",
+          "KG"
+        ]
+      ],
+      [
+        "Reproducible baselines",
+        "Exploration and missingness, dummy predictors, simple classifiers and honest validation",
+        [
+          "CP",
+          "POL",
+          "RO"
+        ]
+      ],
+      [
+        "Team project organisation",
+        "GitHub issues, roles, baseline ledger, README and data dictionary",
+        [
+          "GH",
+          "IO",
+          "ON"
+        ]
+      ]
+    ],
+    "app": [
+      "Kaggle Titanic benchmark",
+      "https://www.kaggle.com/competitions/titanic",
+      "Read task, data schema, evaluation criteria and sample submission"
+    ],
+    "external": [
+      "Polish Olympiad exploratory statistics notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb"
+    ],
+    "lab": [
+      "Inspect a tabular dataset and select the target and metric",
+      "Fit a dummy baseline and a simple model",
+      "Record score, parameters and GitHub issue for improvement"
+    ],
+    "labRefs": [
+      "KG",
+      "ON",
+      "IO26",
+      "GH"
+    ],
+    "hw": "Adapt the Week 13 notebook to a new tabular problem (a scaffolded ONIA/IOAI-style practice dataset) and submit predictions with an honest validation metric.",
+    "hwRefs": [
+      "ON26",
+      "IO26",
+      "KG"
+    ],
+    "adv": "Read an official IOAI 2025/2026 task and identify the baseline, evaluator and data constraints; attempt a reduced version.",
+    "advRefs": [
+      "IO25",
+      "IO26",
+      "ON"
+    ]
+  },
+  {
+    "n": 14,
+    "sections": [
+      [
+        "Error analysis",
+        "Mistake types, subgroup error, residual distributions, outliers and imbalance",
+        [
+          "IO",
+          "ON",
+          "CP"
+        ]
+      ],
+      [
+        "Experiments that count",
+        "Feature selection, ablations, hyperparameters, cross-validation and avoiding test-set tuning",
+        [
+          "IO",
+          "POL",
+          "KG"
+        ]
+      ],
+      [
+        "GitHub collaboration",
+        "Issue tracking, controlled commits, PR review and reproducible comparison reports",
+        [
+          "GH",
+          "IO"
+        ]
+      ]
+    ],
+    "app": [
+      "Interactive ML tree (overfitting demonstration)",
+      "https://interactiveml.org/tree",
+      "Change noise and depth and compare performance while keeping the data fixed"
+    ],
+    "external": [
+      "Polish Olympiad regression and model-comparison notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/05a_regresja_i_svm.ipynb"
+    ],
+    "lab": [
+      "Inspect the errors from the Week 13 baseline",
+      "Change one feature or hyperparameter and rerun fair validation",
+      "Write an evidence-led comparison and open a pull request"
+    ],
+    "labRefs": [
+      "IO",
+      "TR",
+      "KG",
+      "GH"
+    ],
+    "hw": "Make one controlled improvement to the Week 13 notebook; submit a score comparison and error examples, avoiding hidden test data.",
+    "hwRefs": [
+      "ON26",
+      "IO26",
+      "GH"
+    ],
+    "adv": "Run a feature ablation or repeated validation to establish whether the improvement is robust; compare against an Olympiad reference solution.",
+    "advRefs": [
+      "IO25",
+      "IO26",
+      "POL"
+    ]
+  },
+  {
+    "n": 15,
+    "sections": [
+      [
+        "Complete AI solution",
+        "Data pipeline, model, interface, test cases and clean notebook execution",
+        [
+          "CP",
+          "EAP",
+          "IO"
+        ]
+      ],
+      [
+        "Valid results and communication",
+        "Baseline versus final performance, limitations, fair evaluation and a concise demo",
+        [
+          "UN",
+          "ON",
+          "CP"
+        ]
+      ],
+      [
+        "Software handover and next steps",
+        "Final GitHub README, review/merge, model card and competition preparation",
+        [
+          "GH",
+          "IO26",
+          "CP"
+        ]
+      ]
+    ],
+    "app": [
+      "GitHub Skills: repository workflow",
+      "https://github.com/skills/introduction-to-github",
+      "Review committed notebooks, close issues and demonstrate a clean GitHub workflow"
+    ],
+    "external": [
+      "Polish Olympiad data visualisation notebook",
+      "https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/02b_wizualizacja_danych.ipynb"
+    ],
+    "lab": [
+      "Restart Colab and reproduce the full team pipeline",
+      "Show baseline, result, error case and application/demo",
+      "Collect reviewer feedback and prioritise improvements"
+    ],
+    "labRefs": [
+      "CP",
+      "GH",
+      "EAP",
+      "ON26"
+    ],
+    "hw": "Deliver the final clean, reproducible mini-project: notebook, README, results table, limitations and short retrospective.",
+    "hwRefs": [
+      "CP",
+      "GH",
+      "UN"
+    ],
+    "adv": "Attempt a selected full IOAI or ONIA task or prepare for a later competition selection round; outside the required club workload.",
+    "advRefs": [
+      "IO25",
+      "IO26",
+      "ON"
+    ]
+  }
+]
