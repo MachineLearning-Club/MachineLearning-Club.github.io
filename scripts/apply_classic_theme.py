@@ -48,6 +48,7 @@ lines += [
     '        <li><a href="/syllabus/">Syllabus</a></li>',
     '        <li><a href="/calendar/">Calendar</a></li>',
     '        <li><a href="/resources/">Resources</a></li>',
+    '        <li><a href="/materials/">Teaching material map</a></li>',
     '        <li><a href="/projects/">Projects</a></li>',
     '      </ul>',
     '    </section>',

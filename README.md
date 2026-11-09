@@ -46,3 +46,5 @@ The generator is idempotent. The website uses static HTML and CSS without a Node
 No external notebook, site or competition archive is represented as an official endorsement. The Romanian secondary-school ML optional programme is the principal technical anchor, while non-mandated topics (ID3, CNN internals and neural networks) are explicitly sourced from other courses or Olympiad material.
 
 Official dates of FIICode 2027 are not assumed.
+
+The minimalist `/materials/` index maps concrete source chapters, teaching worksheets, interactive tools, external notebooks and optional competition tasks to each week. Its editable source is `data/week_materials_map.json`.

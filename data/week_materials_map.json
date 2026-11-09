@@ -1,0 +1,716 @@
+{
+  "last_reviewed": "2026-11-09",
+  "note": "Teacher-oriented selected subsections of source materials; not fully prepared lesson packets. See separate source register for 73 original catalog entries.",
+  "weeks": [
+    {
+      "n": 1,
+      "focus": "Rules, learning from data, classification and bias",
+      "course": [
+        {
+          "label": "Experience AI (2026), Module 1 Lessons 1–2",
+          "url": "https://experience-ai.org/ro/units/understanding-ai-11-14",
+          "note": "Use terminology and rule-based/data-driven comparison"
+        },
+        {
+          "label": "Experience AI Foundations, Lessons 1–3",
+          "url": "https://experience-ai.org/ro/units/foundations-of-ai-11-14",
+          "note": "Beginner activities: AI/not AI, training examples and bias"
+        },
+        {
+          "label": "CBSE Class XI, Unit 1",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Student-level introduction and application examples"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Teachable Machine",
+          "url": "https://teachablemachine.withgoogle.com/",
+          "note": "2-class image model; vary background"
+        },
+        {
+          "label": "Polish Olympiad 01a, Google Colab introduction",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/01a_wprowadzenie_do_srodowiska_google_colab.ipynb",
+          "note": "Optional Python/Colab orientation"
+        }
+      ],
+      "home": [
+        {
+          "label": "Experience AI Module 1 Lesson 4, Bias",
+          "url": "https://experience-ai.org/ro/units/understanding-ai-11-14",
+          "note": "Adapt the apple-versus-tomato dataset bias exercise"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft AI for Beginners, symbolic AI and expert systems",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/2-Symbolic",
+          "note": "Use only the concept comparison; linked library is more advanced"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "focus": "Data, features, NumPy, descriptive statistics and entropy",
+      "course": [
+        {
+          "label": "pyml.ro Part II.A, Lessons 1–2: Colab and NumPy",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "RO intro to arrays and shape"
+        },
+        {
+          "label": "CBSE XI, Units 3 and 5",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Python and data collection/analysis"
+        },
+        {
+          "label": "Polish Olympiad 02: Exploratory data analysis",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb",
+          "note": "Statistics, pandas and plots; PL"
+        }
+      ],
+      "lab": [
+        {
+          "label": "CODAP Data Explorer",
+          "url": "https://codap.concord.org/get-started/tutorials/",
+          "note": "Visualise numeric and categorical columns"
+        },
+        {
+          "label": "pyml.ro NumPy notebook",
+          "url": "https://colab.research.google.com/drive/1YkJ8BE9b617mb0dQFtHCeQJBj2ZKdpo8",
+          "note": "Reusable Colab for numeric features"
+        }
+      ],
+      "home": [
+        {
+          "label": "CBSE XI Unit 5 data literacy",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Change and visualise a second dataset"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Polish Olympiad training, NumPy and dimensionality reduction",
+          "url": "https://github.com/OlimpiadaAI/szkolenia",
+          "note": "Adapt a small entropy or scaling experiment"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "focus": "Decision trees, categorical ID3, entropy and information gain",
+      "course": [
+        {
+          "label": "Experience AI Foundations, Lesson 4: Decision Trees",
+          "url": "https://experience-ai.org/ro/units/foundations-of-ai-11-14",
+          "note": "Actual printable classroom activity and concept explanation"
+        },
+        {
+          "label": "Polish Olympiad 03: Introduction to Machine Learning",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/03_wstep_do_ml.pdf",
+          "note": "Advanced decision-boundary context"
+        },
+        {
+          "label": "IOAI syllabus: decision trees",
+          "url": "https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf",
+          "note": "Formal advanced algorithm objectives"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Interactive ML tree: CART visualiser",
+          "url": "https://interactiveml.org/tree",
+          "note": "Explicitly explain that CART is not categorical ID3"
+        },
+        {
+          "label": "pyml.ro Classification Lessons 8–10",
+          "url": "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp",
+          "note": "Use selected classification cells, not the whole notebook"
+        }
+      ],
+      "home": [
+        {
+          "label": "Experience AI Decision Trees activity",
+          "url": "https://experience-ai.org/ro/units/foundations-of-ai-11-14",
+          "note": "Replace its example with an original 10-row categorical dataset"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft ML for Beginners, Classification",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/4-Classification",
+          "note": "Compare entropy splits and tree overfitting"
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "focus": "Continuous splits, held-out testing, confusion matrices",
+      "course": [
+        {
+          "label": "Experience AI Module 2, Lesson 4: training and testing",
+          "url": "https://experience-ai.org/ro/units/solving-problems-with-ai-11-14",
+          "note": "Accuracy, confidence scores and thresholds"
+        },
+        {
+          "label": "CBSE Class XI, Unit 6",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Supervised learning"
+        },
+        {
+          "label": "Microsoft ML for Beginners, Classification",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/4-Classification",
+          "note": "Validation and performance"
+        }
+      ],
+      "lab": [
+        {
+          "label": "InteractiveML decision-tree controls",
+          "url": "https://interactiveml.org/tree",
+          "note": "Compare train/test under depth and noise"
+        },
+        {
+          "label": "pyml.ro Classification notebook",
+          "url": "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp",
+          "note": "Use a labelled holdout set"
+        }
+      ],
+      "home": [
+        {
+          "label": "CBSE Class X specimen examination",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/417_AI_SQP.pdf",
+          "note": "Select and adapt only relevant assessment questions"
+        },
+        {
+          "label": "Official Class X marking scheme",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/417_AI_MS.pdf",
+          "note": "Teacher checking resource"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Kaggle / supervised ML",
+          "url": "https://www.kaggle.com/competitions/titanic",
+          "note": "Precision and recall in imbalanced datasets"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "focus": "Vector distance, KNN voting and scaling",
+      "course": [
+        {
+          "label": "CBSE Class XI, Unit 6: K-nearest neighbour",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Primary school-level textbook source"
+        },
+        {
+          "label": "pyml.ro Classification Lessons 8–10",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "Classification practice, check algorithm used"
+        },
+        {
+          "label": "IOAI syllabus: KNN",
+          "url": "https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf",
+          "note": "Competition extension"
+        }
+      ],
+      "lab": [
+        {
+          "label": "VizLearn KNN",
+          "url": "https://vizlearn.in/machine_learning/knn.html",
+          "note": "Move a test point and vary K"
+        },
+        {
+          "label": "pyml.ro Classification Colab",
+          "url": "https://colab.research.google.com/drive/1ywrkqDK1ngazTgdIcvpHWtxcxypeLrKp",
+          "note": "Adapt student KNN notebook to different K"
+        }
+      ],
+      "home": [
+        {
+          "label": "CBSE Class XI, Unit 6 worked examples",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Solve a new two-feature neighbour table"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft ML for Beginners, Classification",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/4-Classification",
+          "note": "Weighted KNN and cross-validation"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "focus": "Unsupervised learning, centroid assignment and K-Means",
+      "course": [
+        {
+          "label": "pyml.ro II.C, Lessons 5–7: Clustering",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "Romanian programming source"
+        },
+        {
+          "label": "CBSE Class XI, Unit 6: K-Means",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "School-level core explanation"
+        },
+        {
+          "label": "Polish Olympiad 04: Clustering",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/04a_kmeans.ipynb",
+          "note": "Advanced lab reference"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Naftali Harris K-Means visualiser",
+          "url": "https://www.naftaliharris.com/blog/visualizing-k-means-clustering/",
+          "note": "Step through assign/update"
+        },
+        {
+          "label": "pyml.ro Clustering Colab",
+          "url": "https://colab.research.google.com/drive/1jd1gDTAWZWtbIPbvNM9IS_Swq6kV5tfy",
+          "note": "Run repeated starting-centre experiments"
+        }
+      ],
+      "home": [
+        {
+          "label": "pyml.ro clustering exercises",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "Recompute clusters for changed seeds; make a labelled figure"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft ML for Beginners, Clustering",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/5-Clustering",
+          "note": "Non-spherical data and alternative clustering"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "focus": "Linear regression, least squares and numeric prediction errors",
+      "course": [
+        {
+          "label": "pyml.ro II.E, Lessons 11–13: Regression",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "Main Romanian lesson sequence"
+        },
+        {
+          "label": "CBSE Class XI, Unit 6: Regression",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Correlation and linear model"
+        },
+        {
+          "label": "Microsoft ML for Beginners, Regression",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/2-Regression",
+          "note": "Pumpkin price example; coding reference"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Setosa interactive least squares",
+          "url": "https://setosa.io/ev/ordinary-least-squares-regression/",
+          "note": "Move observations and outliers"
+        },
+        {
+          "label": "pyml.ro Regression Colab",
+          "url": "https://colab.research.google.com/drive/12w_ra8ALoZG6GnYtFWEYorQDG9szF9fE",
+          "note": "Fit line and compare residuals"
+        }
+      ],
+      "home": [
+        {
+          "label": "Microsoft Pumpkin Prices regression exercises",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/2-Regression",
+          "note": "Replace original input with short synthetic demand data"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Polish Olympiad 05a: Regression / SVM",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/05a_regresja_i_svm.ipynb",
+          "note": "Explore gradient-descent/loss ideas; SVM optional"
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "focus": "Pixels, matrices, kernels, computer vision",
+      "course": [
+        {
+          "label": "pyml.ro II.A, Lesson 3: Images",
+          "url": "https://www.pyml.ro/machine-learning-lectii-online-in-python.php",
+          "note": "NumPy image matrices"
+        },
+        {
+          "label": "Microsoft AI for Beginners, CV 06–07",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/4-ComputerVision",
+          "note": "OpenCV and CNN concepts; teacher excerpts"
+        },
+        {
+          "label": "Polish Olympiad 07: CNN and Computer Vision",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/07_cnn_i_computer_vision.pdf",
+          "note": "More advanced source"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Setosa Image Kernels",
+          "url": "https://setosa.io/ev/image-kernels/",
+          "note": "Manual convolution intuition"
+        },
+        {
+          "label": "pyml.ro Images Colab",
+          "url": "https://colab.research.google.com/drive/18hSWGSizpk33jFL-HjV_stLPJVxuN-4O",
+          "note": "Blur and edge kernels in NumPy"
+        }
+      ],
+      "home": [
+        {
+          "label": "MIT App Inventor LOOK classifier lesson",
+          "url": "https://appinventor.mit.edu/explore/resources/ai/image-classification-look-extension",
+          "note": "Optional transfer into application image inputs"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Polish Olympiad 07a detection/segmentation notebook",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/07a_cnn_detekcja_i_segmentacja.ipynb",
+          "note": "Advanced, hardware may be required"
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "focus": "Perceptrons, activation, loss and multilayer networks",
+      "course": [
+        {
+          "label": "Microsoft AI for Beginners, Lesson 03: Perceptron",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/3-NeuralNetworks/03-Perceptron",
+          "note": "Formal weighted-sum and step activation"
+        },
+        {
+          "label": "Polish Olympiad 06: Neural Networks",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/06a_podstawy_sieci_neuronowych.ipynb",
+          "note": "Neural training and notebook"
+        },
+        {
+          "label": "TensorFlow Playground explanation",
+          "url": "https://playground.tensorflow.org/",
+          "note": "Visual separability and nonlinear boundary"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Neural Network Playground",
+          "url": "https://playground.tensorflow.org/",
+          "note": "Compare linear data with XOR"
+        },
+        {
+          "label": "Polish Olympiad neural-network notebook 06a",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/06a_podstawy_sieci_neuronowych.ipynb",
+          "note": "Optional study after club starter"
+        }
+      ],
+      "home": [
+        {
+          "label": "Microsoft perceptron lab",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/3-NeuralNetworks/03-Perceptron",
+          "note": "Modify a dataset and hidden layer count"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft AI for Beginners advanced neural labs",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/3-NeuralNetworks/03-Perceptron",
+          "note": "Implement one gradient update"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "focus": "AI project lifecycle, system integration and GitHub",
+      "course": [
+        {
+          "label": "Experience AI Module 2, Lessons 2–4",
+          "url": "https://experience-ai.org/ro/units/solving-problems-with-ai-11-14",
+          "note": "Project lifecycle, user problem, data preparation, testing"
+        },
+        {
+          "label": "CBSE Class XI, Unit 4 & Projects Cookbook",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Projects_Cookbook_XIXII.pdf",
+          "note": "Capstone scaffold and project planning"
+        },
+        {
+          "label": "Microsoft ML for Beginners, Web App",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/3-Web-App",
+          "note": "Deployment as selected demonstration"
+        }
+      ],
+      "lab": [
+        {
+          "label": "GitHub Skills: Introduction",
+          "url": "https://github.com/skills/introduction-to-github",
+          "note": "First repository and commit"
+        },
+        {
+          "label": "MIT App Inventor LOOK extension",
+          "url": "https://appinventor.mit.edu/explore/resources/ai/image-classification-look-extension",
+          "note": "A model integrated into an application"
+        }
+      ],
+      "home": [
+        {
+          "label": "Experience AI Module 2 project design",
+          "url": "https://experience-ai.org/ro/units/solving-problems-with-ai-11-14",
+          "note": "Create README, user story and three tests"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft ML for Beginners, Web App",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/3-Web-App",
+          "note": "Extend UI, fallback and reproducibility"
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "focus": "Data pipelines, time splits, baseline forecasts",
+      "course": [
+        {
+          "label": "CBSE Class XI, Unit 5 Data Literacy",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "Cleaning and preparing data"
+        },
+        {
+          "label": "Royal Society: Can AI predict climate change?",
+          "url": "https://www.royalsociety.org/news-resources/resources-for-schools/shared-resources/resources-machine-learning/",
+          "note": "Ready-made secondary lesson PDF"
+        },
+        {
+          "label": "Microsoft ML for Beginners, Time Series",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/7-TimeSeries",
+          "note": "Forecasting advanced code bank"
+        }
+      ],
+      "lab": [
+        {
+          "label": "CODAP",
+          "url": "https://codap.concord.org/get-started/tutorials/",
+          "note": "Plot trends, inspect missingness"
+        },
+        {
+          "label": "Polish Olympiad 02a Pandas notebook",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb",
+          "note": "Adapt to a chronological dataset"
+        }
+      ],
+      "home": [
+        {
+          "label": "Royal Society climate forecasting exercise",
+          "url": "https://www.royalsociety.org/news-resources/resources-for-schools/shared-resources/resources-machine-learning/",
+          "note": "Adapt to small safe demand series and compare naive vs regression MAE"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft Time Series",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/7-TimeSeries",
+          "note": "Rolling-window validation"
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "focus": "LLMs, source verification, responsible AI",
+      "course": [
+        {
+          "label": "Experience AI 2026 LLM module, Lessons 1–5",
+          "url": "https://experience-ai.org/en/units/using-llms-strategically-for-learning-13-16",
+          "note": "Generation, prompt evaluation and responsible learning"
+        },
+        {
+          "label": "CBSE Class XI, Units 7 and 8",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf",
+          "note": "NLP and ethics"
+        },
+        {
+          "label": "UNESCO AI competence framework",
+          "url": "https://www.unesco.org/en/articles/ai-competency-framework-students",
+          "note": "Ethics and system design, teacher reference"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Transformer Explainer",
+          "url": "https://poloclub.github.io/transformer-explainer/",
+          "note": "Tokens and sampling explanations"
+        },
+        {
+          "label": "Day of AI classroom resources",
+          "url": "https://dayofai.org/curriculum-resources",
+          "note": "Verification/evidence activities"
+        }
+      ],
+      "home": [
+        {
+          "label": "Experience AI LLM Lessons 4–5",
+          "url": "https://experience-ai.org/en/units/using-llms-strategically-for-learning-13-16",
+          "note": "Evaluate prompts and fact-check three claims"
+        }
+      ],
+      "adv": [
+        {
+          "label": "Microsoft AI for Beginners, NLP 18–20",
+          "url": "https://github.com/microsoft/AI-For-Beginners/tree/main/lessons/5-NLP",
+          "note": "Transformers and LLMs technically"
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "focus": "Competition specifications, baseline and submission file",
+      "course": [
+        {
+          "label": "Romanian ONIA problem and evaluator",
+          "url": "https://github.com/Olimpiada-AI/Propunere-probleme-si-solutii",
+          "note": "Genuine problem, beginner solution, dataset and scoring"
+        },
+        {
+          "label": "IOAI 2026 At-Home-Round",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "note": "Read task format, not full competition solution"
+        },
+        {
+          "label": "CBSE Projects Cookbook",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Projects_Cookbook_XIXII.pdf",
+          "note": "Data exploration and project template"
+        }
+      ],
+      "lab": [
+        {
+          "label": "Kaggle Titanic",
+          "url": "https://www.kaggle.com/competitions/titanic",
+          "note": "Accessible baseline example"
+        },
+        {
+          "label": "Polish Olympiad 02a statistics notebook",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb",
+          "note": "EDA/code transfer"
+        }
+      ],
+      "home": [
+        {
+          "label": "ONIA dataset and evaluator",
+          "url": "https://github.com/Olimpiada-AI/Propunere-probleme-si-solutii",
+          "note": "Adapted small prediction CSV plus honest validation score"
+        }
+      ],
+      "adv": [
+        {
+          "label": "IOAI 2026 At-Home-Round",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "note": "Choose one restricted subsection; GPU tasks not required"
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "focus": "Error analysis, controlled model improvements, code review",
+      "course": [
+        {
+          "label": "Microsoft ML for Beginners, Classification",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/4-Classification",
+          "note": "Model comparisons and parameter changes"
+        },
+        {
+          "label": "Polish Olympiad training and solutions",
+          "url": "https://github.com/OlimpiadaAI/szkolenia",
+          "note": "Techniques for higher-performing models"
+        },
+        {
+          "label": "IOAI 2025 official task solutions",
+          "url": "https://github.com/IOAI-official/IOAI-2025",
+          "note": "Research-grade reference; selective"
+        }
+      ],
+      "lab": [
+        {
+          "label": "InteractiveML depth/noise",
+          "url": "https://interactiveml.org/tree",
+          "note": "Visual evidence of overfitting"
+        },
+        {
+          "label": "Polish Olympiad regression/classification notebook",
+          "url": "https://github.com/OlimpiadaAI/szkolenia/blob/main/05a_regresja_i_svm.ipynb",
+          "note": "Change one experimental variable"
+        }
+      ],
+      "home": [
+        {
+          "label": "ONIA scoring and evaluator",
+          "url": "https://github.com/Olimpiada-AI/Propunere-probleme-si-solutii",
+          "note": "Compare the baseline to exactly one changed model"
+        }
+      ],
+      "adv": [
+        {
+          "label": "IOAI 2025 tasks and reference solutions",
+          "url": "https://github.com/IOAI-official/IOAI-2025",
+          "note": "Selected Radar/Pixel Efficiency subsections when appropriate"
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "focus": "Reproducible project, final demonstration, model card",
+      "course": [
+        {
+          "label": "CBSE AI Projects Cookbook",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Projects_Cookbook_XIXII.pdf",
+          "note": "Project/report structure"
+        },
+        {
+          "label": "Experience AI Module 2 Lesson 5: Model Cards",
+          "url": "https://experience-ai.org/ro/units/solving-problems-with-ai-11-14",
+          "note": "Purpose, tests, limits, user communication"
+        },
+        {
+          "label": "UNESCO AI competence framework",
+          "url": "https://www.unesco.org/en/articles/ai-competency-framework-students",
+          "note": "Competence outcomes and reflection"
+        }
+      ],
+      "lab": [
+        {
+          "label": "GitHub Skills and repository review",
+          "url": "https://github.com/skills/introduction-to-github",
+          "note": "Reproduce complete project from clean runtime"
+        },
+        {
+          "label": "Microsoft ML for Beginners Web App",
+          "url": "https://github.com/microsoft/ML-For-Beginners/tree/main/3-Web-App",
+          "note": "Optional visible demo format"
+        }
+      ],
+      "home": [
+        {
+          "label": "CBSE Projects Cookbook",
+          "url": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Projects_Cookbook_XIXII.pdf",
+          "note": "Final report, code, README, metrics and failure cases"
+        }
+      ],
+      "adv": [
+        {
+          "label": "IOAI 2025/2026 official tasks",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "note": "Optional post-club competition mentoring"
+        }
+      ]
+    }
+  ]
+}
