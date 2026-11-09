@@ -1,0 +1,81 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,geometry,enumitem,fancyhdr,microtype,hyperref}
+\geometry{margin=22mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Machine Learning Club}
+\fancyhead[R]{Advanced 01}
+\fancyfoot[C]{\thepage}
+\newcommand{\problem}[1]{\subsection*{Problem #1}}
+\newcommand{\worked}[1]{\subsection*{Worked Example #1}}
+\begin{document}
+{\small SEVEN HILLS INTERNATIONAL SCHOOL \hfill 2026--2027}
+
+{\Large\bfseries What can examples actually prove?}\par
+Progressive algorithmic reasoning about generalisation, alternative rules and missing observations.
+
+\section*{Preliminaries}
+Let an input be a pair of Boolean features $(x,y)\in\{0,1\}^2$. A classifier returns a label from $\{0,1\}$. A classifier is \emph{consistent} with a training sample when it produces the supplied labels on all observed examples. There are no assumptions about the classifier's behaviour on unseen examples. Ordinary truth tables and pseudocode are sufficient.
+
+\worked{A --- Two perfect models}
+Our training set contains $(0,0)\mapsto 0$ and $(1,1)\mapsto 1$. Consider:
+\begin{verbatim}
+def model_a(x, y): return x
+def model_b(x, y): return y
+\end{verbatim}
+\begin{center}
+\begin{tabular}{ccccc}\toprule
+$x$ & $y$ & model\_a & model\_b & observed?\\\midrule
+0&0&0&0&yes\\
+0&1&0&1&no\\
+1&0&1&0&no\\
+1&1&1&1&yes\\\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Solution.} Both models have perfect training accuracy but disagree on the two unobserved inputs. Thus perfect agreement with a training sample need not determine the true output on an unseen case.
+
+\problem{1 --- How many models are possible?}
+A binary classifier may choose its label independently on each of the four inputs.
+\begin{enumerate}[label=(\alph*)]
+\item How many classifiers are consistent with the sample above?
+\item Justify your count without listing every classifier.
+\item How many remain after one additional previously unobserved input is labelled?
+\end{enumerate}
+\textbf{Selected solution.} Two distinct inputs are still unobserved. Each may be labelled 0 or 1 independently, so $2^2=4$ consistent functions remain. After one new labelled input, $2$ remain.
+
+\problem{2 --- A distinguishing example}
+Suppose exactly two candidate target models remain: \texttt{model\_a} and \texttt{model\_b}.
+\begin{enumerate}[label=(\alph*)]
+\item Find one previously unobserved input on which they disagree.
+\item Explain how its true label identifies one of the two candidates.
+\item Explain why this would not establish correctness if the set of possible hypotheses were larger.
+\end{enumerate}
+\textbf{Hint.} Find a row with different outputs in the truth table.
+
+\problem{3 --- An irrelevant feature}
+Introduce a third Boolean input $z$, with the target output still determined by $x$ and $y$.
+\begin{enumerate}[label=(\alph*)]
+\item Give a pair of inputs that differ only in $z$ and must have equal outputs.
+\item Explain how tests of $z$ can be removed from a tree that computes a function independent of $z$ on the entire domain.
+\item Why can incomplete training data make $z$ appear useful even when it is irrelevant?
+\end{enumerate}
+\textbf{Hint.} Fix $z=0$ consistently in an equivalent full-domain representation.
+
+\problem{4 --- A generalisation counterexample}
+Suppose all inputs except $u$ have been observed and the learner must predict the label at $u$.
+\begin{enumerate}[label=(\alph*)]
+\item Construct two target functions identical on every observed input but opposite at $u$.
+\item Explain why no deterministic learner can guarantee a correct label at $u$ without further assumptions.
+\item Describe one useful additional assumption in an actual ML problem.
+\end{enumerate}
+\textbf{Hint.} Start from any target function and change only its label at $u$.
+
+\section*{Observation}
+Neither perfect training accuracy nor a large number of training examples logically establishes a unique label for an unobserved input without assumptions restricting the model or the data-generating process. Optional computational assistance: enumerate the four Boolean inputs in Python. No formal verification tools are required.
+
+\section*{References}
+Experience AI, \emph{Bias in, bias out}; IOAI classical ML foundations.
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,geometry,enumitem,fancyhdr,microtype,hyperref}
+\geometry{margin=22mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Machine Learning Club}
+\fancyhead[R]{Advanced 03}
+\fancyfoot[C]{\thepage}
+\newcommand{\problem}[1]{\subsection*{Problem #1}}
+\begin{document}
+{\small SEVEN HILLS INTERNATIONAL SCHOOL \hfill 2026--2027}
+
+{\Large\bfseries Constructing and questioning an ID3 tree}\par
+Worked information gain, minimality, irrelevant attributes and incomplete training.
+
+\section*{Preliminaries}
+A categorical decision tree asks a question at each internal node and returns a class at a leaf. Its \emph{size} means the number of internal decision nodes. We use the Week 3 synthetic outdoor-activity example.
+
+\begin{center}
+\begin{tabular}{cllll}
+\toprule
+\# & Sky & Wind & Temperature & Go?\\\midrule
+1 & sunny & calm & warm & yes\\
+2 & sunny & calm & cold & yes\\
+3 & sunny & windy & warm & yes\\
+4 & sunny & windy & cold & no\\
+5 & rainy & calm & warm & no\\
+6 & rainy & calm & cold & no\\
+7 & rainy & windy & warm & no\\
+8 & rainy & windy & cold & no\\\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Worked Example A --- Choose the root}
+For class proportions $p_i$, use Shannon entropy
+\[
+H(Y)=-\sum_i p_i\log_2 p_i,\qquad 0\log_2 0:=0.
+\]
+The dataset has three yes and five no labels:
+\[
+H(Y)=-\frac38\log_2\frac38-\frac58\log_2\frac58\approx0.9544.
+\]
+Among the four sunny examples, three are yes and one is no: $H(Y\mid\text{sunny})\approx0.8113$. The rainy subset is pure: $H(Y\mid\text{rainy})=0$. Thus
+\[
+H(Y\mid\text{sky})=\frac48(0.8113)+\frac48(0)=0.4056,
+\]
+\[
+\operatorname{Gain}(Y,\text{sky})\approx0.9544-0.4056=\boxed{0.5488}.
+\]
+
+\problem{1 --- Compare all first questions}
+\begin{enumerate}[label=(\alph*)]
+\item Count yes/no labels in the calm and windy groups.
+\item Calculate the weighted entropy and information gain of wind.
+\item Repeat for temperature. Which root is best?
+\end{enumerate}
+\textbf{Selected result.} Calm has (2 yes, 2 no), windy has (1 yes, 3 no). Its weighted entropy is $(1+0.8113)/2=0.9056$ and its gain is $0.0488$. Temperature gives the same gain. Sky has the greatest gain.
+
+\problem{2 --- Construct the complete tree}
+\begin{enumerate}[label=(\alph*)]
+\item Explain why rainy is immediately a no leaf.
+\item Calculate gains within the sunny subset.
+\item Break the resulting tie in favour of wind and draw the tree.
+\item Trace all eight records; count its internal decision nodes.
+\end{enumerate}
+\textbf{Hint.} The sunny subset has entropy $0.8113$; its conditional entropy after splitting on wind is $0.5$. Gain is $0.3113$.
+\begin{verbatim}
+if sky == "rainy": return "no"
+if wind == "calm": return "yes"
+if temperature == "warm": return "yes"
+return "no"
+\end{verbatim}
+This tree has three internal tests.
+
+\problem{3 --- Minimum number of questions}
+Assume every decision node tests one of sky, wind, temperature.
+\begin{enumerate}[label=(\alph*)]
+\item Find, for each feature, two records differing only in that feature whose labels are opposite.
+\item Prove the target depends on all three features.
+\item Prove that no tree with at most two internal nodes represents all eight examples correctly.
+\end{enumerate}
+\textbf{Selected proof.} Sky is relevant for fixed calm/cold; wind is relevant for sunny/cold; temperature is relevant for sunny/windy. Any tree with fewer than three decision nodes can test at most two distinct features; therefore it cannot represent a function that depends on all three. Problem 2 supplies a three-node construction. Three is necessary and sufficient.
+
+\problem{4 --- An irrelevant additional attribute}
+Add a fourth feature $z$, indoor-heating, which is genuinely irrelevant to the true target on the entire input domain.
+\begin{enumerate}[label=(\alph*)]
+\item Describe how to remove tests of $z$ from a tree without changing the function it computes.
+\item Explain why this requires more than observing that $z$ seems irrelevant on a limited sample.
+\end{enumerate}
+\textbf{Hint.} Fix the value of $z$ consistently through the tree; the target function must remain unchanged.
+
+\problem{5 --- One missing example}
+Remove record 4 (sunny, windy, cold $\mapsto$ no) before training.
+\begin{enumerate}[label=(\alph*)]
+\item Construct a tree consistent with the remaining seven rows that predicts no on record 4.
+\item Construct another consistent tree that predicts yes on record 4.
+\item Explain why 100\% training accuracy on seven records is insufficient.
+\end{enumerate}
+\textbf{Hint.} The second tree may predict yes whenever the sky is sunny, because all remaining sunny examples have label yes.
+
+\section*{Final observation}
+Selecting the largest local information gain is a greedy strategy and does not by definition prove a globally minimum-size decision tree. This particular example has a separate minimality argument. A Python truth-table check is optional, but the argument must be explained in words. No proof assistant or formal verification software is required.
+
+\section*{References}
+Experience AI, \emph{Decision trees}; IOAI classical ML syllabus; the eight-row dataset and worked calculations are original to this sheet.
+\end{document}

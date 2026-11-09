@@ -1,0 +1,13 @@
+sky,wind,temperature,go
+sunny,calm,warm,yes
+sunny,calm,cold,yes
+sunny,windy,warm,yes
+sunny,windy,cold,yes
+cloudy,calm,warm,yes
+cloudy,calm,cold,yes
+cloudy,windy,warm,no
+cloudy,windy,cold,no
+rainy,calm,warm,no
+rainy,calm,cold,no
+rainy,windy,warm,no
+rainy,windy,cold,no

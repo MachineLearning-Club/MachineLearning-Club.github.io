@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advanced sheet · Week 1</title>
+<link rel="stylesheet" href="/preview/assets/poc.css">
+</head><body class="printpage"><header class="site print-controls">
+<a href="/preview/w1/advanced/">← Advanced page</a> ·
+<a href="week-01-reasoning.pdf">PDF</a></header>
+<main><p class="eyebrow">Machine Learning Club · Advanced Exercises · Week 1</p>
+<h1>What can examples actually prove?</h1><p>Progressive reasoning about generalisation, alternative rules and missing observations.</p>
+<hr>
+
+<section><h2>Preliminaries and notation</h2>
+<p>Let an input be a pair of Boolean features <em>x</em>, <em>y</em> (each is either 0 or 1). A classifier returns a Boolean label 0 or 1. A <strong>training sample</strong> is a finite collection of labelled inputs. A classifier is <strong>consistent</strong> with a sample if it gives the supplied label on every observed input.</p>
+<p>We make no assumptions about the classifier's behaviour on inputs missing from the sample. Ordinary truth tables and pseudocode are sufficient to solve every problem.</p></section>
+
+<section class="problem"><h2>Worked Example A — Two perfect models</h2>
+<p>Consider the observed examples <strong>(0,0) → 0</strong> and <strong>(1,1) → 1</strong>. Two proposed classifiers are</p>
+<pre><code>def model_a(x, y): return x
+def model_b(x, y): return y
+</code></pre>
+<p>Both are correct on every available training example. Evaluate both on the entire finite input space:</p>
+<table><thead><tr><th>x</th><th>y</th><th>model_a</th><th>model_b</th><th>Training example?</th></tr></thead>
+<tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>yes</td></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>1</td><td>no</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>0</td><td>no</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>1</td><td>yes</td></tr></tbody></table>
+<div class="worked"><p><strong>Solution and conclusion.</strong> Both models have 100% training accuracy. However, they disagree on two unseen inputs. Therefore perfect agreement with the training data does <strong>not</strong> logically determine the true classifier outside the observed sample.</p></div></section>
+
+<section class="problem"><h2>Problem 1 — How many models are possible?</h2>
+<p>A binary classifier is allowed to choose independently between labels 0 and 1 on each of the four possible inputs. The labels of (0,0) and (1,1) are fixed by the training sample above.</p>
+<ol type="a"><li>How many different classifiers remain consistent with the two observations?</li>
+<li>Explain your count without enumerating all 16 possible classifiers.</li>
+<li>What happens if one of the two unobserved cases is also labelled?</li></ol>
+<div class="worked"><p><strong>Selected solution.</strong> Two inputs remain unobserved. Each may independently receive 0 or 1; hence there are 2 × 2 = <strong>4</strong> consistent classifiers. One additional correctly labelled distinct input leaves one unobserved case and thus <strong>2</strong> consistent classifiers. This counting argument assumes there are no other restrictions on the class of possible models.</p></div></section>
+
+<section class="problem"><h2>Problem 2 — The smallest distinguishing example</h2>
+<p>Assume the only possible true classifiers are model_a and model_b from Worked Example A.</p>
+<ol type="a"><li>Choose one unobserved input that distinguishes the two hypotheses.</li>
+<li>Explain how learning its correct label lets you reject one of the two hypotheses.</li>
+<li>Why would a single such example <em>not</em> establish correctness if many other hypotheses were possible?</li></ol>
+<p class="understated"><strong>Hint:</strong> Look for a row in the truth table with unequal predictions.</p></section>
+
+<section class="problem"><h2>Problem 3 — An irrelevant feature</h2>
+<p>Add another Boolean input <em>z</em>, but suppose the real output is still determined solely by <em>x</em> and <em>y</em>.</p>
+<ol type="a"><li>Give two records with different z values and identical x and y. What can you conclude about their labels?</li>
+<li>A decision tree unnecessarily asks about z. Explain how a tree computing a function independent of z can be simplified to avoid tests of z.</li>
+<li>Why might training data that are incomplete make a learner incorrectly conclude that z is important?</li></ol>
+<p class="understated"><strong>Hint:</strong> For a truly irrelevant feature, changing only that feature cannot change the correct output.</p></section>
+
+<section class="problem"><h2>Problem 4 — Generalisation requires an assumption</h2>
+<p>Suppose a learner has seen every input except one, denoted <em>u</em>, and must now predict its label.</p>
+<ol type="a"><li>Construct two target functions that give exactly the same labels on all observed inputs but opposite labels at u.</li>
+<li>Use this construction to explain why no deterministic learner can be guaranteed to predict the label of every unseen u correctly without assumptions about the target function.</li>
+<li>Give a practical example of an additional assumption that could make learning useful.</li></ol>
+<p class="understated"><strong>Hint:</strong> Start from any proposed target function and flip its value only at u.</p></section>
+
+<section><h2>Observations for further study</h2>
+<p>A model is neither automatically wrong nor automatically reliable because some inputs were omitted. Generalisation becomes possible when we make useful assumptions: similar inputs often have related labels, the training data are representative, and the feature representation captures information relevant to the target. These are assumptions to investigate, not logical consequences of perfect training accuracy.</p>
+<p>For additional practice: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI — Bias in, bias out</a>. Optional computational assistance: enumerate the four inputs in Python and compare the two models.</p></section>
+<footer class="site">Machine Learning Club · Seven Hills International School · November 2026</footer>
+</main></body></html>
