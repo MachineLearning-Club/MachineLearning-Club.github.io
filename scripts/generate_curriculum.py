@@ -127,7 +127,7 @@ for kind in ('course','lab'):
     text=text.replace('2 November 2026','2 December 2026')
     text=text.replace('About 55 minutes','Course reference · self-paced').replace('About 45 minutes','Lab reference · self-paced')
     nav=weeklynav(lessons[0],kind)
-    if "curriculum-nav" not in text:
+    if '<nav class="module-nav" aria-label="Week 1 materials">' not in text:
         text=text.replace('    <section class="section" aria-labelledby="'+('outcomes-title' if kind=='course' else 'method-title')+'">',nav+'\n    <section class="section" aria-labelledby="'+('outcomes-title' if kind=='course' else 'method-title')+'">',1)
     if kind=='course':
         if "Explain training labels" not in text:
@@ -208,3 +208,7 @@ for slug in ('calendar','syllabus','resources','projects'):
     assert (ROOT/slug/'index.html').exists()
 assert len(list(ROOT.glob('w*/**/index.html')))==61  # 60 lesson pages + existing week-1 slides page
 print('OK: 15 weeks, 60 objective pages, calendar, syllabus, projects, resources and existing slides.')
+
+# Apply the original plain Georgia/white homepage layout after page generation.
+import runpy
+runpy.run_path(str(ROOT / "scripts/apply_classic_theme.py"))

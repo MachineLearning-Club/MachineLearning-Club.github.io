@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Machine Learning Club</title>
+
+  <style>
+    body {
+      max-width: 780px;
+      margin: 60px auto;
+      padding: 0 24px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.55;
+
+      color: #222;
+      background: #fff;
+    }
+
+    header {
+      margin-bottom: 48px;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+
+    h2 {
+      margin-top: 42px;
+      padding-bottom: 6px;
+
+      font-size: 1.2rem;
+      font-weight: normal;
+
+      border-bottom: 1px solid #ddd;
+    }
+
+    a {
+      color: #174a7e;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .registration {
+      margin-top: 14px;
+    }
+
+    .week {
+      margin: 28px 0;
+    }
+
+    .week-title {
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .materials {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .materials li {
+      margin: 5px 0;
+    }
+
+    .type {
+      display: inline-block;
+      width: 105px;
+      color: #666;
+    }
+
+    .extra {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .extra a {
+      margin-right: 14px;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 14px;
+
+      font-size: 0.85rem;
+      color: #777;
+
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+    <h1>Machine Learning Club</h1>
+
+    <p>
+      Seven Hills International School · 2026–2027
+    </p>
+
+    <p class="registration">
+      <strong>Registration open.</strong>
+      <a href="https://forms.gle/Hk1vZM12i9vTF1zc9">Register here →</a>
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Course</h2>
+
+
+      <article class="week">
+
+        <div class="week-title">
+          Week 1 — What is AI?
+        </div>
+
+        <ul class="materials">
+
+          <li>
+            <span class="type">Course</span>
+            <a href="/w1/course/">What is Artificial Intelligence?</a>
+          </li>
+
+          <li>
+            <span class="type">Laboratory</span>
+            <a href="/w1/lab/">Types of AI</a>
+          </li>
+
+          <li>
+            <span class="type">Homework</span>
+            <a href="/w1/homework/">Classifying AI systems</a>
+          </li>
+
+          <li>
+            <span class="type">Advanced</span>
+            <a href="/w1/advanced/">Beyond the basic definitions</a>
+          </li>
+
+        </ul>
+
+        <div class="extra">
+          <a href="/w1/notes/">Notes</a>
+          <a href="/w1/slides/">Slides</a>
+          <a href="/w1/resources/">Resources</a>
+        </div>
+
+      </article>
+
+
+      <article class="week">
+
+        <div class="week-title">
+          Week 2 — Data, Features and Labels
+        </div>
+
+        <ul class="materials">
+
+          <li>
+            <span class="type">Course</span>
+            <a href="/w2/course/">How does a machine learn?</a>
+          </li>
+
+          <li>
+            <span class="type">Laboratory</span>
+            <a href="/w2/lab/">Features, labels and predictions</a>
+          </li>
+
+          <li>
+            <span class="type">Homework</span>
+            <a href="/w2/homework/">Build a small dataset</a>
+          </li>
+
+          <li>
+            <span class="type">Advanced</span>
+            <a href="/w2/advanced/">Training and generalisation</a>
+          </li>
+
+        </ul>
+
+        <div class="extra">
+          <a href="/w2/notes/">Notes</a>
+          <a href="/w2/slides/">Slides</a>
+        </div>
+
+      </article>
+
+
+      <article class="week">
+
+        <div class="week-title">
+          Week 3 — Classification
+        </div>
+
+        <ul class="materials">
+
+          <li>
+            <span class="type">Course</span>
+            <a href="/w3/course/">Making a decision from data</a>
+          </li>
+
+          <li>
+            <span class="type">Laboratory</span>
+            <a href="/w3/lab/">A first classifier</a>
+          </li>
+
+          <li>
+            <span class="type">Homework</span>
+            <a href="/w3/homework/">Classification exercises</a>
+          </li>
+
+          <li>
+            <span class="type">Advanced</span>
+            <a href="/w3/advanced/">Decision boundaries</a>
+          </li>
+
+        </ul>
+
+        <div class="extra">
+          <a href="/w3/notes/">Notes</a>
+          <a href="/w3/slides/">Slides</a>
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <section>
+      <h2>General resources</h2>
+
+      <ul>
+        <li><a href="/syllabus/">Syllabus</a></li>
+        <li><a href="/calendar/">Calendar</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/projects/">Projects</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+
+  <footer>
+    Machine Learning Club · Seven Hills International School
+  </footer>
+
+</body>
+
+</html>
