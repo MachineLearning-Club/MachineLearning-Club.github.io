@@ -145,5 +145,19 @@ footer.site {
   a { color: #000; }
 }
 """.strip() + "\n"
+# Minimal, fully wrapping text navigation on every generated lesson page.
+css += """
+.site-subtitle { margin: 6px 0 0; color: #666; font-size: .9rem; }
+.lesson-meta { margin: 0 0 8px; color: #666; font-size: .87rem; }
+.lesson-nav { display: flex; flex-wrap: wrap; gap: 7px 20px; margin: 23px 0 32px; padding: 0 0 12px; border-bottom: 1px solid #ddd; font-size: .95rem; }
+.lesson-nav a { display: inline-block; white-space: nowrap; }
+.lesson-nav a[aria-current="page"] { color: #222; font-weight: bold; text-decoration: underline; text-underline-offset: 3px; }
+.lesson-pagination { margin-top: 38px; padding-top: 14px; border-top: 1px solid #ddd; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+main.shell section { margin: 28px 0; }
+main.shell h1 { margin-bottom: 12px; }
+main.shell ul, main.shell ol { padding-left: 24px; }
+main.shell li { margin: 7px 0; }
+@media (max-width: 680px) { .lesson-nav { gap: 7px 15px; } }
+"""
 (root / "assets/site.css").write_text(css, encoding="utf-8")
 print("Restored original homepage structure; simplified CSS for curriculum pages.")

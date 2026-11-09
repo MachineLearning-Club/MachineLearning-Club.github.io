@@ -127,7 +127,7 @@ for kind in ('course','lab'):
     text=text.replace('2 November 2026','2 December 2026')
     text=text.replace('About 55 minutes','Course reference · self-paced').replace('About 45 minutes','Lab reference · self-paced')
     nav=weeklynav(lessons[0],kind)
-    if '<nav class="module-nav" aria-label="Week 1 materials">' not in text:
+    if 'aria-label="Week 1 materials"' not in text:
         text=text.replace('    <section class="section" aria-labelledby="'+('outcomes-title' if kind=='course' else 'method-title')+'">',nav+'\n    <section class="section" aria-labelledby="'+('outcomes-title' if kind=='course' else 'method-title')+'">',1)
     if kind=='course':
         if "Explain training labels" not in text:
@@ -212,3 +212,4 @@ print('OK: 15 weeks, 60 objective pages, calendar, syllabus, projects, resources
 # Apply the original plain Georgia/white homepage layout after page generation.
 import runpy
 runpy.run_path(str(ROOT / "scripts/apply_classic_theme.py"))
+runpy.run_path(str(ROOT / "scripts/simplify_lessons.py"))

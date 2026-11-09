@@ -1,0 +1,64 @@
+/* The detailed Week 1 activities use the same restrained typography as the original site. */
+:root{--ink:#222;--muted:#666;--paper:#fff;--surface:#fff;--line:#ddd;--forest:#174a7e;--forest-dark:#174a7e;--mint:#fff;--gold:#aaa;--rose:#fff;--shadow:none;font-family:Georgia,"Times New Roman",serif}
+html{scroll-behavior:auto}
+body{max-width:780px;margin:60px auto;padding:0 24px;background:#fff;color:#222;font:17px/1.55 Georgia,"Times New Roman",serif}
+a,.page-footer a{color:#174a7e;text-decoration:none}a:hover{text-decoration:underline}
+.site-header,.page-shell{width:100%;max-width:none;margin-left:0;margin-right:0}
+.site-header{display:block;padding:0;margin-bottom:44px}
+.brand{display:block;color:#222;font:normal 1.3rem/1.3 Georgia,"Times New Roman",serif;letter-spacing:normal}
+.brand span{display:block;color:#777;font-size:.82rem;margin-top:5px}
+.site-nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;font-size:.9rem}
+.hero{padding:0;margin:0 0 18px;background:transparent;box-shadow:none;border-radius:0;color:#222}
+.hero::after{display:none}
+.hero-content{max-width:none}
+.eyebrow{color:#777;letter-spacing:0;font-size:.85rem;font-weight:normal;text-transform:none}
+.hero h1{font:normal 2rem/1.18 Georgia,"Times New Roman",serif;letter-spacing:normal;color:#222}
+.hero p{margin:10px 0;color:#222;font-size:1rem}
+.hero-meta{margin-top:13px;gap:0 4px}
+.pill{min-height:auto;padding:0;border:0;border-radius:0;color:#777;font-size:.84rem}
+.pill+.pill::before{content:" · "}
+.curriculum-nav{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;padding:0 0 12px;margin:26px 0 32px;border-bottom:1px solid #ddd}
+.curriculum-nav a{display:inline-block;flex:0 0 auto;white-space:nowrap;padding:0;border:0;background:transparent;border-radius:0;color:#174a7e;font:normal .95rem/1.5 Georgia,"Times New Roman",serif;text-decoration:none}
+.curriculum-nav a[aria-current="page"]{background:transparent;color:#222;border:0;font-weight:bold;text-decoration:underline;text-underline-offset:3px}
+.section{margin:32px 0}
+.section-heading{display:block;margin-bottom:12px}
+.section-number{display:none}
+.section h2{margin:0 0 12px;padding:0 0 6px;border-bottom:1px solid #ddd;font:normal 1.2rem/1.3 Georgia,"Times New Roman",serif;letter-spacing:normal;color:#222}
+.section-intro{max-width:none;color:#555;margin:10px 0 14px}
+.section h3{margin:16px 0 6px;font-size:1.05rem}
+.outcomes{display:block;list-style:disc;background:transparent;padding:0 0 0 25px;margin:12px 0;border-radius:0}
+.outcomes li{display:list-item;margin:7px 0;padding:0;background:transparent;color:#222;border:0;border-radius:0;font-size:1rem}
+.card-grid,.approach-grid,.scenario-grid,.routine{display:block}
+.card,.approach-card,.scenario-card,.quiz-question{display:block;margin:0 0 12px;padding:12px 0;border:0;border-bottom:1px solid #ddd;border-radius:0;background:transparent}
+.card h3,.approach-card h3,.scenario-card h3{margin:0 0 5px}
+.card p,.approach-card p,.scenario-card p{color:#555}
+.card .tag{color:#777;font-weight:normal;font-size:.8rem}
+.approach-icon{display:none}
+.routine-step{min-height:auto;margin:0 0 10px;padding:5px 0;background:transparent;color:#222;border-radius:0}
+.routine-step strong{display:inline;margin-right:8px}
+.routine-step span{color:#555;font-size:1rem}
+.routine-step::before{display:none}
+.nesting{display:block;margin:15px 0;padding:0;border:0;border-radius:0;background:transparent}
+.nesting-layer,.nesting-layer.ml,.nesting-layer.dl,.nesting-layer.gen{margin:7px 0 7px 15px;padding:8px 12px;border:0;border-left:2px solid #ddd;border-radius:0;background:transparent}
+.nesting-layer strong{color:#222}
+.nesting-layer span,.nesting-caption{color:#555;font-size:.94rem}
+.callout,.hint,.noscript{margin:14px 0;padding:0 0 0 12px;border:0;border-left:2px solid #ccc;border-radius:0;background:transparent;color:#333}
+.callout strong{color:#222}
+.quiz-question legend{font-weight:bold}
+.quiz-question input{accent-color:#174a7e}
+.scenario-card label{color:#333}
+.scenario-card select{width:min(100%,440px);background:#fff;color:#222;border:1px solid #aaa;border-radius:3px}
+.scenario-card[data-state="correct"],.scenario-card[data-state="review"],.quiz-question[data-state="correct"],.quiz-question[data-state="incorrect"]{background:transparent;border-color:#ddd}
+.button{min-height:2.25rem;padding:.45rem .85rem;background:white;color:#174a7e;border:1px solid #174a7e;border-radius:3px;font:normal 1rem Georgia,"Times New Roman",serif}
+.button:hover,.button.secondary:hover{background:#f5f5f5;color:#174a7e}
+.button.secondary{background:white;color:#174a7e}
+.worked-example,.teacher-notes{background:transparent;border:0;border-top:1px solid #ddd;border-radius:0;margin:25px 0}
+.worked-example summary,.teacher-notes summary{padding:12px 0;color:#174a7e}
+.teacher-content{padding:0 0 12px}
+.answer-key{display:list-item;padding-left:25px;list-style:decimal}
+.answer-key li{padding:3px 0;background:transparent;border-radius:0}
+.next-step{display:block;padding:12px 0;background:transparent;border-radius:0;border-top:1px solid #ddd}
+.next-step p{color:#333}
+.page-footer{padding:14px 0;border-top:1px solid #ddd;color:#777}
+@media(max-width:680px){body{margin:28px auto;padding:0 18px;font-size:16px}.site-header{margin-bottom:26px}.curriculum-nav{column-gap:15px;row-gap:8px}.hero h1{font-size:1.9rem}}
+@media print{.curriculum-nav,.site-nav,.button-row{display:none}.hero,.outcomes,.quiz-question,.routine-step{background:transparent;border:0;color:#000}.outcomes li{color:#000}}
