@@ -55,11 +55,6 @@ lines += [
     '  </main>',
 ]
 homepage = template[:begin] + "\n".join(lines) + template[end:]
-homepage = homepage.replace(
-    '    </p>\n  </header>',
-    '    </p>\n    <p>15 weekly sessions · Wednesdays 16:00–17:00 (proposed) · 70 RON per session · Maximum 10 students</p>\n  </header>',
-    1,
-)
 assert "Week 15" in homepage and "Register here" in homepage
 (root / "index.html").write_text(homepage, encoding="utf-8")
 
