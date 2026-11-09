@@ -150,7 +150,7 @@ lab=r"""
 <p class="source-line">Teaching source: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 4 — Decision Trees</a>.</p>
 </section>
 <section class="lab-step"><h2>3. Inspect — your ID3 notebook</h2>
-<p>Open the Colab notebook and compare its output against the hand calculations. The implementation uses ordinary Python dictionaries, counting, logarithms and recursion. It does not require scikit-learn or any verification software.</p>
+<p>Open the Colab notebook and compare its output against the hand calculations. The implementation uses ordinary Python dictionaries, counting, logarithms and recursion. It does not require scikit-learn .</p>
 <p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/preview/w3/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Open ID3 notebook in Google Colab ↗</a> · <a href="starter.ipynb" download>Download notebook (.ipynb)</a></p>
 <div class="notebook-placeholder"></div>
 <ol><li>Compute and display the three candidate gains.</li><li>Run the tree-building function and inspect the nested dictionary.</li><li>Predict all eight rows and check the result.</li><li>Remove one record; predict the excluded combination. Explain why a mistake is possible even with perfect training accuracy.</li></ol>
@@ -188,7 +188,7 @@ with open("club-events.csv", newline="") as f:
 <li>Include an explanation of one limitation of training on such a small dataset.</li></ol></section>
 <hr>
 <section><h2>Advanced — optional reading</h2>
-<p><a href="/preview/w3/advanced/">Open the ID3 reasoning problem sheet</a>: minimal trees, irrelevant attributes, missing combinations, and why a learned tree is only as justified as the information available. No formal verifier is needed.</p></section>
+<p><a href="/preview/w3/advanced/">Open the ID3 reasoning problem sheet</a>: minimal trees, irrelevant attributes, missing combinations, and why a learned tree is only as justified as the information available. No additional software is needed.</p></section>
 <section class="submission"><h2>Submission</h2><p>Submit the modified Colab notebook or <code>.ipynb</code> file, a labelled tree diagram, and a short results table. GitHub remains optional until the engineering part of the course.</p></section>
 """
 page(3,"homework","Assignment 03 — An explainable event planner","Transfer the ID3 algorithm to a new categorical dataset and trace its decisions.",hw)

@@ -134,7 +134,7 @@ return "no"
 
 <section><h2>Final observation — Greedy is not globally optimal by definition</h2>
 <p>ID3 chooses the feature with maximum information gain at the current node. Its definition does not compare every possible completed decision tree, so <strong>local gain does not by itself prove a globally minimum-size tree in general</strong>. In this particular eight-row example, however, Problem 3 provides a separate minimality proof.</p>
-<p><strong>Optional computational assistant:</strong> Write a short Python loop to enumerate and compare the eight input combinations, but explain the minimality argument in words. No Dafny, proof assistant or theorem prover is required.</p>
+<p><strong>Optional computational assistant:</strong> Write a short Python loop to enumerate and compare the eight input combinations, but explain the minimality argument in words. The explanation itself is the essential result.</p>
 <p>References: <a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf">IOAI classical-ML syllabus</a> · <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI — Decision Trees</a>.</p></section>
 """)
 print("Created print-friendly advanced pages.")
