@@ -280,3 +280,5 @@ button, a, select, summary { -webkit-tap-highlight-color: transparent; }
   details > .teacher-content { content-visibility: visible; }
   .teacher-notes { break-before: page; }
 }
+
+.curriculum-nav{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0 2rem}.curriculum-nav a{padding:.55rem .9rem;border-radius:.65rem;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-weight:700;font-size:.9rem}.curriculum-nav a[aria-current=page]{background:var(--forest);color:white}

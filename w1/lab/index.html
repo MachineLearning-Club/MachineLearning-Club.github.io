@@ -26,14 +26,16 @@
         <h1 id="page-title">Types of AI: match the method to the problem</h1>
         <p>Look at the job, the kind of answer needed, and the evidence available. Then choose the approach that best fits.</p>
         <div class="hero-meta" aria-label="Laboratory details">
-          <span class="pill">Session 1 · 2 November 2026</span>
-          <span class="pill">About 45 minutes</span>
+          <span class="pill">Session 1 · 2 December 2026</span>
+          <span class="pill">Lab reference · self-paced</span>
           <span class="pill">Work in pairs</span>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="method-title">
+<nav class="module-nav" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a></nav>
+    <section class="section" aria-labelledby="lab-objectives"><div class="section-heading"><span class="section-number">00</span><div><h2 id="lab-objectives">Laboratory learning objectives</h2></div></div><ul class="outcomes"><li>Identify the method behind everyday software</li><li>Train a two-class image classifier</li><li>Test predictions on unseen examples</li></ul></section>
+<section class="section" aria-labelledby="method-title">
       <div class="section-heading">
         <span class="section-number" aria-hidden="true">01</span>
         <div>
@@ -141,38 +143,8 @@
       <a class="button secondary" href="/w1/course/">Review the course →</a>
     </div>
 
-    <details class="teacher-notes">
-      <summary>Teacher guide · facilitation and answer key</summary>
-      <div class="teacher-content">
-        <p>The activity is designed for pairs and takes about 45 minutes (minutes 60–105 of the 120-minute Week 1 session). It is formative: students can retry, there is no grade, and choices are not stored or sent anywhere. The teacher guide and answer key are public.</p>
-        <h3>Suggested lab sequence</h3>
-        <dl class="timeline">
-          <dt>60–68</dt><dd>Revisit “output, evidence, failure” from the course. Model spam classification from labelled emails, then read the approach cards together.</dd>
-          <dt>68–90</dt><dd>Pairs match the situations. Ask them to explain a clue before they select, especially for classification versus regression and planning versus reinforcement learning. Swap the device operator halfway through.</dd>
-          <dt>90–103</dt><dd>Review hints, retry, and discuss the explanations. Ask one pair to defend a match and another to name a limitation or possible human check.</dd>
-          <dt>103–105</dt><dd>Collect one exit sentence: “I chose ___ because the problem asks for ___ and provides ___.” Continue with the invented scenario and final exit ticket in the course guide.</dd>
-        </dl>
-        <h3>Answer key and rationale</h3>
-        <ol class="answer-key">
-          <li><strong>1 · Classroom lights — Rules and automation.</strong> Both the threshold and action are fixed; there is no learning evidence in the description.</li>
-          <li><strong>2 · Leaf photo — Classification.</strong> The output is a category, and training examples already have category labels. The image domain does not change the task type.</li>
-          <li><strong>3 · Energy use — Regression.</strong> The system estimates a numeric quantity from past examples.</li>
-          <li><strong>4 · Songs — Clustering.</strong> There are no supplied mood or genre labels; the goal is to find groups by similarity.</li>
-          <li><strong>5 · Delivery route — Search and planning.</strong> The system must find a sequence that satisfies explicit constraints. A real product may also predict traffic with a learned model.</li>
-          <li><strong>6 · Warehouse robot — Reinforcement learning.</strong> The robot tries actions and receives a reward signal; it is not simply given the correct action for each state.</li>
-          <li><strong>7 · Lesson summary — Generative AI.</strong> The requested output is new text based on supplied context. A human should check it against the original notes.</li>
-        </ol>
-        <h3>Facilitation notes</h3>
-        <p>If the activity cannot load, read or print the seven scenarios and have pairs write their approach and clue. Use this answer key for discussion; no external AI tools, student accounts, or coding environment are needed.</p>
-        <ul>
-          <li>Students may suggest another method that could work. Acknowledge it, then ask which method is best supported by the stated task and evidence.</li>
-          <li>For scenario 5, planning is the intended primary fit. Clarify that a real route product can combine search with regression for travel-time estimates.</li>
-          <li>For scenario 6, emphasise feedback from the environment. “It tried lots of routes” alone is not enough; the reward signal is the distinguishing clue.</li>
-          <li>If students struggle, hide the method names and sort scenarios by output first: category, number, group, plan, rewarded action, or new content.</li>
-          <li>For a stretch question, ask what extra data or constraints would make a hybrid solution useful, and how the team would test whether it helped.</li>
-        </ul>
-      </div>
-    </details>
+    <section class="section" aria-labelledby="teachable"><div class="section-heading"><span class="section-number">05</span><div><h2 id="teachable">Extension: image classification with Teachable Machine</h2></div></div><div class="card"><p>Train a small image model at <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> using two everyday objects. Do not collect classmates' faces, voices or private information.</p><ol><li>Collect varied labelled images of each object.</li><li>Train the model and test five unseen examples.</li><li>Record the predicted class, confidence and actual class.</li><li>Describe what happens when light or background changes.</li></ol><p>Confidence is not a guarantee of correctness.</p></div></section>
+<details class="teacher-notes"><summary>Teacher guide · 60-minute club session</summary><div class="teacher-content"><p>Use selected method-matching cards (around 10 minutes), then a short Teachable Machine object demo (around 10 minutes) during the last part of the one-hour session. The complete seven-card lab is a self-paced extension. Students should describe a predicted class, a confidence score and a failure case.</p></div></details>
 
     <footer class="page-footer">Machine Learning Club · Seven Hills International School · <a href="/">Back to the club home</a></footer>
   </main>
