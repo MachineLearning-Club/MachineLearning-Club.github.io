@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Machine Learning Club: weekly practice quizzes and local score review.">
+  <title>Weekly quizzes · Machine Learning Club</title>
+  <link rel="stylesheet" href="/quiz/quiz.css">
+  <script src="/quiz/quiz.js" defer></script>
+</head>
+<body>
+  <header class="quiz-header">
+    <div class="identity">
+      <a href="/" class="back-link">Machine Learning Club</a>
+      <span class="slash">/</span>
+      <strong>ML Quiz</strong>
+      <span class="draft-flag">Prototype</span>
+    </div>
+    <div class="head-actions">
+      <button type="button" class="button button-primary" id="take-test"><span aria-hidden="true">☑</span> Take a test</button>
+      <button type="button" class="button button-quiet" id="reset-local" title="Delete test attempts stored in this browser">Clear local history</button>
+      <span class="demo-profile" title="No account or password is used in this prototype">Demo learner</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="intro">
+      <div>
+        <p class="eyebrow">Seven Hills International School · 2026–2027</p>
+        <h1>Weekly quizzes</h1>
+        <p>Short knowledge checks beginning with Week 2. Ten multiple-choice questions, five minutes, and a scored answer review after submission.</p>
+      </div>
+      <div class="stats" aria-label="Quiz summary">
+        <div><strong id="available-count">2</strong><small>demo quizzes</small></div>
+        <div><strong id="attempt-count">0</strong><small>local attempts</small></div>
+        <div><strong id="highest-score">—</strong><small>highest score</small></div>
+      </div>
+    </div>
+
+    <p class="notice"><strong>Demo only.</strong> Questions for Weeks 2 and 3 are draft examples awaiting approval. Weeks 4–15 are planned but not yet written. Results are stored in this browser only—not sent to the school, and not official grades. Calendar dates are provisional.</p>
+
+    <section aria-labelledby="available-heading">
+      <div class="section-head">
+        <h2 id="available-heading">Tests</h2>
+        <label class="filter"><span>Filter</span><input id="filter" type="search" autocomplete="off" placeholder="Search week, topic or subject" aria-label="Search quizzes"></label>
+      </div>
+      <div class="table-scroll">
+        <table class="test-table">
+          <thead><tr><th scope="col">Week</th><th scope="col">Test</th><th scope="col">Duration</th><th scope="col">Questions</th><th scope="col">Subjects</th><th scope="col">Points</th><th scope="col">Action</th></tr></thead>
+          <tbody id="quiz-rows"><tr><td colspan="7">Loading quizzes…</td></tr></tbody>
+        </table>
+      </div>
+      <p id="load-error" role="alert" class="error" hidden></p>
+    </section>
+
+    <section class="history" aria-labelledby="history-heading">
+      <div class="section-head">
+        <h2 id="history-heading">My results</h2>
+        <button type="button" class="button button-quiet" id="export-results">Export CSV</button>
+      </div>
+      <div class="table-scroll">
+        <table class="test-table">
+          <thead><tr><th scope="col">Date</th><th scope="col">Test</th><th scope="col">Duration</th><th scope="col">Questions</th><th scope="col">Points</th><th scope="col">Review</th></tr></thead>
+          <tbody id="history-rows"><tr><td colspan="6">No attempts yet. Use Take a test to begin.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer"><a href="/">Return to Machine Learning Club</a> · <a href="/syllabus/">Syllabus</a> · <a href="/preview/">Teaching preview</a></footer>
+  </main>
+
+  <dialog id="access-dialog" class="small-dialog" aria-labelledby="access-title">
+    <form id="access-form">
+      <h2 id="access-title">Take a test</h2>
+      <label for="access-input">Access code <span class="required">*</span></label>
+      <input id="access-input" name="code" maxlength="20" autocomplete="off" spellcheck="false" required placeholder="Enter code">
+      <p class="hint">Demo codes: <code>MLC02</code> or <code>MLC03</code>. These are navigation shortcuts, not secure exam codes.</p>
+      <p id="access-error" class="error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button type="submit" class="button button-confirm">✓ Confirm</button>
+        <button type="button" class="button button-cancel" id="cancel-access">✕ Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="question-dialog" class="question-dialog" aria-labelledby="test-title">
+    <div class="exam">
+      <header class="exam-head">
+        <div>
+          <p class="eyebrow">Machine Learning Club · Knowledge check</p>
+          <h2 id="test-title">Quiz</h2>
+        </div>
+        <div class="exam-head-right">
+          <span class="time" id="time-remaining" role="timer" aria-label="Time remaining">05:00</span>
+          <span id="exam-status" class="exam-status">In progress</span>
+        </div>
+      </header>
+      <div class="exam-progress">
+        <span id="question-index">Question 1 / 10</span>
+        <span id="answered-index">0 / 10 answered</span>
+      </div>
+      <div id="question-nav" class="question-nav" aria-label="Go to a question"></div>
+      <section class="question-card" aria-live="polite">
+        <div class="question-header"><strong id="question-number">#1 / 10</strong><span id="question-points" class="points-chip">1 p</span></div>
+        <div class="question-body">
+          <p class="question-subject" id="question-topic">Topic</p>
+          <h3 id="question-text">Question</h3>
+          <p class="select-hint" id="selection-hint">Select one answer.</p>
+          <div id="answers" class="answers" role="group" aria-label="Answer choices"></div>
+          <div class="review-explanation" id="review-explanation" hidden></div>
+        </div>
+      </section>
+      <footer class="exam-footer">
+        <button type="button" class="button button-muted" id="jump-first" aria-label="First question">⇤</button>
+        <button type="button" class="button button-muted" id="prev-question">← Previous</button>
+        <button type="button" class="button button-primary" id="next-question">Next →</button>
+        <button type="button" class="button button-muted" id="jump-last" aria-label="Last question">⇥</button>
+        <button type="button" class="button button-confirm" id="finish-test">Submit test</button>
+        <button type="button" class="button button-cancel" id="close-test">Exit</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <dialog id="summary-dialog" class="small-dialog" aria-labelledby="summary-title">
+    <div class="summary-body">
+      <h2 id="summary-title">Test completed</h2>
+      <p class="summary-score"><strong id="summary-points">0 / 10</strong><span id="summary-percent">0%</span></p>
+      <p id="summary-description">Your answers have been scored.</p>
+      <p class="hint">The score is saved only to this browser. You can review every answer and its explanation.</p>
+      <div class="dialog-actions">
+        <button type="button" class="button button-primary" id="review-now">Review questions</button>
+        <button type="button" class="button button-quiet" id="summary-close">Back to results</button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>

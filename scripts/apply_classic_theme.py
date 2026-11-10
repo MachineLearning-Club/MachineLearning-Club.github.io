@@ -36,6 +36,8 @@ for n, date, name, summary in lessons:
             f'            <a href="/w{n}/{k}/">{label}</a>',
             '          </li>',
         ])
+    if n >= 2:
+        lines.append(f'          <li><a href="/quiz/?week={n}">Quiz</a></li>')
     lines.append("        </ul>")
     if n == 1:
         lines.append('        <div class="extra"><a href="/w1/slides/">Slides</a></div>')
@@ -49,6 +51,7 @@ lines += [
     '        <li><a href="/calendar/">Calendar</a></li>',
     '        <li><a href="/resources/">Resources</a></li>',
     '        <li><a href="/materials/">Teaching material map</a></li>',
+    '        <li><a href="/quiz/">Weekly quizzes</a></li>',
     '        <li><a href="/projects/">Projects</a></li>',
     '      </ul>',
     '    </section>',

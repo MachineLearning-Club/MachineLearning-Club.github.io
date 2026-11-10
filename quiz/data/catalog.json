@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "notice": "Draft prototype; calendar dates provisional. Only Weeks 2 and 3 have complete teacher-reviewable question banks.",
+  "quizzes": [
+    {
+      "week": 2,
+      "id": "mlc-02",
+      "title": "Mathematics for Machine Learning",
+      "subject": "Statistics, probability, entropy",
+      "plannedDate": "9 Dec 2026",
+      "status": "demo",
+      "durationMinutes": 5,
+      "questionCount": 10,
+      "maxPoints": 10
+    },
+    {
+      "week": 3,
+      "id": "mlc-03",
+      "title": "Decision Trees: ID3",
+      "subject": "Entropy, information gain, tree construction",
+      "plannedDate": "16 Dec 2026",
+      "status": "demo",
+      "durationMinutes": 5,
+      "questionCount": 10,
+      "maxPoints": 10
+    },
+    {
+      "week": 4,
+      "id": "mlc-04",
+      "title": "Numeric Splits and Evaluation",
+      "subject": "Validation, thresholds, confusion matrix",
+      "plannedDate": "13 Jan 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 5,
+      "id": "mlc-05",
+      "title": "K-Nearest Neighbours",
+      "subject": "Distance, scaling, neighbour voting",
+      "plannedDate": "20 Jan 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 6,
+      "id": "mlc-06",
+      "title": "K-Means Clustering",
+      "subject": "Centroids, iterations, clusters",
+      "plannedDate": "27 Jan 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 7,
+      "id": "mlc-07",
+      "title": "Linear Regression",
+      "subject": "Fitting, residuals, errors",
+      "plannedDate": "3 Feb 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 8,
+      "id": "mlc-08",
+      "title": "Computer Vision",
+      "subject": "Pixels, kernels, filtering",
+      "plannedDate": "10 Feb 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 9,
+      "id": "mlc-09",
+      "title": "Perceptrons and Neural Networks",
+      "subject": "Weights, activation, hidden layers",
+      "plannedDate": "17 Feb 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 10,
+      "id": "mlc-10",
+      "title": "Integrated AI Systems I",
+      "subject": "Pipelines, GitHub, fallback decisions",
+      "plannedDate": "3 Mar 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 11,
+      "id": "mlc-11",
+      "title": "Integrated AI Systems II",
+      "subject": "Forecasts, data cleaning, dashboards",
+      "plannedDate": "10 Mar 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 12,
+      "id": "mlc-12",
+      "title": "Language Models and Trust",
+      "subject": "Tokens, evidence, model cards",
+      "plannedDate": "17 Mar 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 13,
+      "id": "mlc-13",
+      "title": "FIICode: Baselines and Metrics",
+      "subject": "Baselines, benchmarks, leakage",
+      "plannedDate": "24 Mar 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 14,
+      "id": "mlc-14",
+      "title": "FIICode: Error Analysis and Tuning",
+      "subject": "Experiments, metrics, ablation",
+      "plannedDate": "31 Mar 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    },
+    {
+      "week": 15,
+      "id": "mlc-15",
+      "title": "FIICode: Mock Hackathon",
+      "subject": "Reproducibility, demo, reporting",
+      "plannedDate": "7 Apr 2027",
+      "status": "planned",
+      "durationMinutes": 5,
+      "questionCount": null,
+      "maxPoints": null
+    }
+  ]
+}

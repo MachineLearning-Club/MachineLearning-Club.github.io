@@ -54,7 +54,9 @@ def head(w,k):
 '''
 def tail(w,k):
     n=w["n"]
-    return f'''  <nav class="lesson-pagination" aria-label="Previous and next lessons">
+    quiz_link = f'<p class="weekly-quiz"><a href="/quiz/?week={n}">Week {n} quiz</a> · 10 questions (if prepared)</p>' if n>=2 else ''
+    return f'''  {quiz_link}
+  <nav class="lesson-pagination" aria-label="Previous and next lessons">
     {('<a href="/w'+str(n-1)+'/'+k+'/">← Week '+str(n-1)+'</a>') if n>1 else ""}
     {('<a href="/w'+str(n+1)+'/'+k+'/">Week '+str(n+1)+' →</a>') if n<15 else ""}
   </nav>

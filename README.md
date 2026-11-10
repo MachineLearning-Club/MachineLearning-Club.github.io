@@ -48,3 +48,7 @@ No external notebook, site or competition archive is represented as an official 
 Official dates of FIICode 2027 are not assumed.
 
 The minimalist `/materials/` index maps concrete source chapters, teaching worksheets, interactive tools, external notebooks and optional competition tasks to each week. Its editable source is `data/week_materials_map.json`.
+
+## Weekly quiz prototype
+
+Starting with Week 2, the homepage links to `/quiz/`. There are 14 catalogue entries and two complete **draft** quiz banks (Weeks 2 and 3), each with ten questions / five minutes / ten points. The frontend-only preview displays the eQuiz-style test history, access-code dialog, timed attempt, navigation, scoring, explanation review and CSV export. The demonstration has no authentication; scores are stored in the local browser and are **not** official grades. See `quiz/README.md` for the security and rollout requirements.

@@ -1,0 +1,182 @@
+{
+  "week": 2,
+  "title": "Mathematics for Machine Learning",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "DRAFT - teacher review required",
+  "instructions": "Ten questions. Some have more than one correct answer; select every correct option. Exact match earns one point. Answers are revealed only after submission in the interface.",
+  "questions": [
+    {
+      "id": "w2q1",
+      "type": "single",
+      "prompt": "Two measurements, height and reflectance, are used to predict whether an object belongs to class A or B. Which values are the input features?",
+      "options": [
+        "The measured height and reflectance",
+        "The classes A and B",
+        "The number of correct predictions",
+        "The final score of the classifier"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Features are the measured input properties. A/B is the target label.",
+      "topic": "Features and labels",
+      "points": 1
+    },
+    {
+      "id": "w2q2",
+      "type": "single",
+      "prompt": "A dataset contains measurements but no predefined categories. We want to discover groups of similar records. Which task fits?",
+      "options": [
+        "Supervised classification",
+        "Unsupervised clustering",
+        "Numerical regression with given targets",
+        "Evaluation on a labelled test set"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Clustering groups observations without supplied class labels.",
+      "topic": "Learning types",
+      "points": 1
+    },
+    {
+      "id": "w2q3",
+      "type": "single",
+      "prompt": "What is the arithmetic mean of the numbers 2, 4, 6 and 8?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "The sum is 20; dividing by four gives 5.",
+      "topic": "Descriptive statistics",
+      "points": 1
+    },
+    {
+      "id": "w2q4",
+      "type": "single",
+      "prompt": "What is the median of the sorted observations 2, 3, 4, 20, 21?",
+      "options": [
+        "3",
+        "4",
+        "10",
+        "20"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "There are five values, so the median is the central (third) value: 4.",
+      "topic": "Descriptive statistics",
+      "points": 1
+    },
+    {
+      "id": "w2q5",
+      "type": "single",
+      "prompt": "In a labelled dataset, three of four examples have class 'yes'. What fraction of the records are 'yes'?",
+      "options": [
+        "1/4",
+        "1/2",
+        "3/4",
+        "4/3"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Three yes labels out of four examples give 3/4 = 0.75.",
+      "topic": "Class proportions",
+      "points": 1
+    },
+    {
+      "id": "w2q6",
+      "type": "single",
+      "prompt": "What is the binary Shannon entropy (in bits) when two classes each have probability 1/2?",
+      "options": [
+        "0",
+        "0.5",
+        "1",
+        "2"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "−(1/2)log₂(1/2) − (1/2)log₂(1/2) = 1 bit.",
+      "topic": "Information theory",
+      "points": 1
+    },
+    {
+      "id": "w2q7",
+      "type": "single",
+      "prompt": "A group contains 12 examples and every label is 'A'. What is its class entropy?",
+      "options": [
+        "0 bits",
+        "0.5 bits",
+        "1 bit",
+        "12 bits"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "A pure class distribution has zero uncertainty about the class label; entropy is 0.",
+      "topic": "Information theory",
+      "points": 1
+    },
+    {
+      "id": "w2q8",
+      "type": "single",
+      "prompt": "A collected table contains a missing temperature value. What is the most defensible first step?",
+      "options": [
+        "Replace it with zero without checking the meaning",
+        "Delete the complete dataset",
+        "Inspect how missing values are encoded and decide a handling rule",
+        "Assume it equals the largest recorded temperature"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Missing values must be identified and handled deliberately, with the rule documented.",
+      "topic": "Data quality",
+      "points": 1
+    },
+    {
+      "id": "w2q9",
+      "type": "multiple",
+      "prompt": "Select ALL appropriate practices before sharing a small labelled classroom dataset.",
+      "options": [
+        "Remove direct personal identifiers if the data are shared",
+        "Inspect missing and inconsistent values",
+        "Assume the collected examples represent every student",
+        "Change uncertain labels to positive without checking"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Privacy-aware sharing and data-quality checks are appropriate. Representativeness and labels need evidence, not assumptions.",
+      "topic": "Data ethics",
+      "points": 1
+    },
+    {
+      "id": "w2q10",
+      "type": "multiple",
+      "prompt": "Select ALL actions that make comparisons between two groups' average sensor readings more meaningful.",
+      "options": [
+        "Compare values measured in the same units",
+        "Report the number of observations in each group",
+        "Treat every missing measurement as exactly zero without justification",
+        "Ignore that one group uses centimetres and the other uses metres"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Matching units and reporting sample sizes help interpret averages. Missingness and incompatible units cannot safely be ignored.",
+      "topic": "Sampling and measurement",
+      "points": 1
+    }
+  ]
+}

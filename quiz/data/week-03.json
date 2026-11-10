@@ -1,0 +1,182 @@
+{
+  "week": 3,
+  "title": "Decision Trees: ID3",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "DRAFT - teacher review required",
+  "instructions": "Ten questions. Some have more than one correct answer; select every correct option. Exact match earns one point. Answers are revealed only after submission in the interface.",
+  "questions": [
+    {
+      "id": "w3q1",
+      "type": "single",
+      "prompt": "In a classification decision tree, what does an internal node ordinarily represent?",
+      "options": [
+        "A test on one input feature",
+        "The final class prediction",
+        "The total number of records",
+        "The overall model accuracy"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "An internal node asks a question about a feature; branches follow possible answers.",
+      "topic": "Tree structure",
+      "points": 1
+    },
+    {
+      "id": "w3q2",
+      "type": "single",
+      "prompt": "What is the role of a leaf in a classification decision tree?",
+      "options": [
+        "It always calculates a new entropy",
+        "It provides a predicted class",
+        "It stores the full training dataset",
+        "It chooses the next feature automatically"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "A leaf is a terminal decision, typically holding a class label.",
+      "topic": "Tree structure",
+      "points": 1
+    },
+    {
+      "id": "w3q3",
+      "type": "single",
+      "prompt": "Eight training records have three 'yes' labels and five 'no' labels. Which is their Shannon entropy, approximately?",
+      "options": [
+        "0 bits",
+        "0.500 bits",
+        "0.954 bits",
+        "1.500 bits"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "H = −(3/8)log₂(3/8) − (5/8)log₂(5/8) ≈ 0.9544 bits.",
+      "topic": "Entropy",
+      "points": 1
+    },
+    {
+      "id": "w3q4",
+      "type": "single",
+      "prompt": "A candidate split has parent entropy 0.9544 bits and weighted child entropy 0.4056 bits. What is its information gain?",
+      "options": [
+        "0.4056 bits",
+        "0.5488 bits",
+        "0.9544 bits",
+        "1.3600 bits"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Information gain is parent entropy minus weighted child entropy: 0.9544 − 0.4056 = 0.5488 bits.",
+      "topic": "Information gain",
+      "points": 1
+    },
+    {
+      "id": "w3q5",
+      "type": "single",
+      "prompt": "The candidate root gains are sky: 0.5488, wind: 0.0488 and temperature: 0.0488 bits. Which feature does greedy ID3 choose?",
+      "options": [
+        "Wind",
+        "Temperature",
+        "Sky",
+        "Any feature with equal probability"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "ID3 chooses the available feature with the largest information gain, here sky.",
+      "topic": "Root choice",
+      "points": 1
+    },
+    {
+      "id": "w3q6",
+      "type": "single",
+      "prompt": "In the training subset where sky = rainy, all four outputs are 'no'. What does ID3 do with that branch?",
+      "options": [
+        "Create a terminal 'no' leaf",
+        "Split on the remaining features anyway",
+        "Return the most frequent class of the entire dataset",
+        "Remove the rainy examples"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "A pure subset already determines its target label; ID3 stops that branch.",
+      "topic": "Stopping conditions",
+      "points": 1
+    },
+    {
+      "id": "w3q7",
+      "type": "single",
+      "prompt": "A learned tree follows these rules: rainy → no; sunny and calm → yes; sunny, windy and warm → yes; sunny, windy and cold → no. What is its prediction for sunny, windy, cold?",
+      "options": [
+        "Yes",
+        "No",
+        "Both",
+        "Not enough information"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Following sunny → windy → cold reaches the 'no' leaf.",
+      "topic": "Prediction traces",
+      "points": 1
+    },
+    {
+      "id": "w3q8",
+      "type": "single",
+      "prompt": "What happens when every training example reaching a node has the same target label?",
+      "options": [
+        "That node becomes a leaf for the common label",
+        "ID3 must ask all remaining questions",
+        "The algorithm starts training over",
+        "The class probabilities become 1/2 and 1/2"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Pure nodes have no remaining classification uncertainty, so the branch terminates.",
+      "topic": "Stopping conditions",
+      "points": 1
+    },
+    {
+      "id": "w3q9",
+      "type": "multiple",
+      "prompt": "Select ALL statements that can be true for a categorical ID3 classification tree.",
+      "options": [
+        "A leaf can represent the predicted class",
+        "Two branches can have different depths",
+        "Every feature must be numerical",
+        "A perfect training score guarantees success on unseen inputs"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Leaves hold predictions and branches may terminate at different depths. Categorical features are supported; training fit does not guarantee generalisation.",
+      "topic": "Tree properties",
+      "points": 1
+    },
+    {
+      "id": "w3q10",
+      "type": "multiple",
+      "prompt": "A trained tree encounters a feature value absent from the examples at its current node. Select ALL defensible behaviours for an application.",
+      "options": [
+        "Return a documented majority-class fallback and flag uncertainty",
+        "Request further information or refer the case to human review",
+        "Always assume the unseen value implies 'yes'",
+        "Report that the fallback is guaranteed correct"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "A documented fallback or a request for review handles unseen values without pretending the prediction is certain.",
+      "topic": "Unseen inputs",
+      "points": 1
+    }
+  ]
+}
