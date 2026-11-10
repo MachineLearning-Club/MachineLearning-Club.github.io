@@ -1,230 +1,116 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Week 1 of the Seven Hills Machine Learning Club: what AI means, how AI relates to machine learning, and how to choose an approach for a problem.">
-  <title>What Is Artificial Intelligence? · Week 1 · Machine Learning Club</title>
-  <link rel="stylesheet" href="../week1.css">
-  <link rel="stylesheet" href="../classic.css">
-  <script src="../week1.js" defer></script>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Rules, examples, learning, prediction and the limits of a model.">
+<title>Week 1: Course · Machine Learning Club</title>
+<link rel="stylesheet" href="/assets/academic.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to lesson</a>
-  <header class="site-header">
-    <a class="brand" href="/">Machine Learning Club <span>Seven Hills · 2026–27</span></a>
-    <nav class="site-nav" aria-label="Week 1 navigation">
-      <a href="/">All weeks</a>
-      <a href="/w1/slides/">Week 1 slides</a>
-      <a href="/w1/lab/">Go to the lab →</a>
-    </nav>
-  </header>
+<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
+<p class="site-sub">Seven Hills International School · 2026–2027</p>
+<p class="breadcrumb"><a href="/">All lessons</a> / Week 1 / Course</p>
+</header>
+<main id="main">
+<p class="eyebrow">Week 01 · Course</p>
+<h1>What is artificial intelligence?</h1>
+<p class="deck">Rules, examples, learning, prediction and the limits of a model.</p>
+<nav class="lesson-tabs" aria-label="Week 1 materials"> <a href="/w1/course/" aria-current="page">Course</a> <a href="/w1/lab/">Laboratory</a> <a href="/w1/homework/">Homework</a> <a href="/w1/advanced/">Advanced</a><a href="/quiz/?week=1">Quiz</a></nav>
 
-  <main id="main" class="page-shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-content">
-        <p class="eyebrow">Week 01 · Course</p>
-        <h1 id="page-title">What is artificial intelligence?</h1>
-        <p>Start with a useful question: what task is a system doing, and what makes it produce its answer?</p>
-        <div class="hero-meta" aria-label="Lesson details">
-          <span class="pill">Session 1 · 2 December 2026</span>
-          <span class="pill">Course reference · self-paced</span>
-          <span class="pill">No coding required</span>
-        </div>
-      </div>
-    </section>
+<section class="summary">
+<h2>Course summary</h2>
+<p>A computer can perform intelligent-looking tasks by following rules written by a programmer, or by learning patterns from examples. This course explains the difference, introduces features and labels, and shows how a model turns training data into a prediction. The emphasis is not on the complexity of modern AI, but on understanding what an algorithm does and what its output can reasonably mean.</p>
+<p><strong>By the end:</strong> distinguish rules from learned predictions; identify input features, training labels and output; explain training versus testing; recognise why a confident or correct-looking prediction may still be wrong.</p>
+<p class="understated">Suggested class use: 15 minutes for the central ideas, then the Laboratory. This electronic course contains additional examples for independent reading.</p>
+</section>
+<nav class="toc" aria-label="Contents"><strong>Contents</strong>
+<ul><li><a href="#one">1.1. Programs, rules and AI</a></li>
+<li><a href="#two">1.2. Learning from examples</a></li>
+<li><a href="#three">1.3. Training, prediction and testing</a></li>
+<li><a href="#four">1.4. A complete small numerical model</a></li>
+<li><a href="#five">1.5. Mistakes, confidence and responsibility</a></li></ul></nav>
 
-<nav class="curriculum-nav" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a></nav>
-<section class="section" aria-labelledby="outcomes-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">01</span>
-        <div>
-          <h2 id="outcomes-title">By the end, you can…</h2>
-          <p class="section-intro">You do not need a perfect one-sentence definition. You need a way to inspect a system carefully.</p>
-        </div>
-      </div>
-      <ul class="outcomes">
-        <li>Describe AI as a broad area of computing, not one single technique.</li>
-        <li>Explain that machine learning is one part of AI, not a synonym for it.</li>
-        <li>Use a problem’s output and available evidence to suggest an approach.</li><li>Explain training labels, predictions and what confidence does not guarantee.</li>
-      </ul>
-    </section>
+<section id="one">
+<h2>1.1. Programs, rules and AI</h2>
+<p>Consider a program that switches on a light when the measured brightness falls below a fixed threshold. It may be useful, but the rule is explicitly supplied by its programmer. Nothing in the example requires the machine to learn from earlier observations.</p>
+<pre><code>def turn_on_light(brightness):
+    return brightness &lt; 300
+</code></pre>
+<p><span class="defined">Rule-based system:</span> a system whose decisions follow a set of conditions or procedures explicitly defined in advance. <span class="defined">Machine learning:</span> a family of methods that estimate useful patterns or parameters from data rather than requiring a separate programmer-written rule for every situation.</p>
+<p>Artificial intelligence is a broader field. It also includes search, planning, reasoning, language technologies and approaches that may or may not involve learning. Consequently, not every automated system uses ML, and not every AI system is a neural network.</p>
+<div class="example"><span class="example-title">Worked comparison.</span>
+<ul><li><strong>Heating controller:</strong> switch on below 18°C — a fixed rule.</li>
+<li><strong>Learned thermostat:</strong> estimate tomorrow's demand using past measurements — a prediction model.</li>
+<li><strong>Route planner:</strong> search possible routes under constraints — planning, which does not automatically imply ML.</li></ul></div>
+<p class="source-line">Read: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 1 — What is AI?</a> · <a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf">CBSE Class XI AI Handbook, introductory unit</a>.</p>
+</section>
 
-    <section class="section" aria-labelledby="meaning-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">02</span>
-        <div>
-          <h2 id="meaning-title">AI is a field, not a magic box</h2>
-        </div>
-      </div>
-      <p class="section-intro">Artificial intelligence is an area of computing concerned with systems that perform tasks often associated with intelligent behaviour: recognizing patterns, processing language, making predictions, choosing actions, or planning.</p>
-      <div class="callout"><strong>Our working question:</strong> What task does the system perform, and how is its behaviour produced? The answer might involve rules, search, learned patterns, or a combination.</div>
-      <div class="card-grid">
-        <article class="card">
-          <span class="tag">A useful clue</span>
-          <h3>Look at the job</h3>
-          <p>Recognising a face, suggesting a route, and drafting text are different tasks. They call for different methods and different checks.</p>
-        </article>
-        <article class="card">
-          <span class="tag">A useful caution</span>
-          <h3>Do not judge by appearance</h3>
-          <p>A product can have a polished interface without using AI. A system can use AI without looking human or “thinking” like a person.</p>
-        </article>
-      </div>
-    </section>
+<section id="two">
+<h2>1.2. Learning from examples</h2>
+<p>A model is trained using examples. Each example contains information about the object or situation. In <span class="defined">supervised learning</span>, the examples also contain an answer, called the <span class="defined">target</span> or <span class="defined">label</span>. In classification, the model predicts a category; in regression, it predicts a numerical value.</p>
+<h3>1.2.1. Features and labels</h3>
+<p>Suppose a fictional sensor sorts two kinds of classroom demonstration objects. It measures two properties: size and reflectance, both on arbitrary numerical scales. A teacher labels each example as class A or B.</p>
+<table><caption>Table 1.1 — Synthetic training examples</caption><thead><tr><th>Object</th><th>Size</th><th>Reflectance</th><th>Label</th></tr></thead>
+<tbody><tr><td>1</td><td>2.0</td><td>2.0</td><td>A</td></tr><tr><td>2</td><td>2.0</td><td>3.0</td><td>A</td></tr><tr><td>3</td><td>3.0</td><td>2.0</td><td>A</td></tr><tr><td>4</td><td>7.0</td><td>7.0</td><td>B</td></tr><tr><td>5</td><td>7.0</td><td>8.0</td><td>B</td></tr><tr><td>6</td><td>8.0</td><td>7.0</td><td>B</td></tr></tbody></table>
+<p>Here, <em>size</em> and <em>reflectance</em> are the features. The values A/B are training labels. The machine does not automatically understand the names: it only uses the information represented in the table.</p>
+<h3>1.2.2. Three families of learning</h3>
+<p><strong>Supervised learning:</strong> examples have target answers, such as A/B. <strong>Unsupervised learning:</strong> data have no supplied target categories, and the algorithm may instead discover groups. <strong>Reinforcement learning:</strong> an agent explores actions and learns from rewards or other feedback. These approaches solve different kinds of problems; they are not competing names for the same method.</p>
+<p class="source-line">Read: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 2 — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php">pyml.ro, Romanian Python and ML course</a>.</p>
+</section>
 
-    <section class="section" aria-labelledby="map-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">03</span>
-        <div>
-          <h2 id="map-title">A map of related ideas</h2>
-        </div>
-      </div>
-      <p class="section-intro">These labels are related, but they do not all mean the same thing.</p>
-      <div class="nesting" aria-label="Machine learning is part of artificial intelligence. Deep learning is part of machine learning.">
-        <div class="nesting-layer">
-          <strong>Artificial intelligence (AI)</strong>
-          <span>A broad area that includes rule-based reasoning, search and planning, and machine learning.</span>
-          <div class="nesting-layer ml">
-            <strong>Machine learning (ML)</strong>
-            <span>Methods that fit patterns from data so a system can make predictions or decisions.</span>
-            <div class="nesting-layer dl">
-              <strong>Deep learning</strong>
-              <span>Machine learning that uses neural networks with many layers.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="max-width:760px;margin:0 auto">
-        <span class="tag">Where generative AI fits</span>
-        <h3>It describes what a system produces</h3>
-        <p>Generative AI creates new content such as text, images, audio, or code. Many familiar generative tools use deep learning. “Generative” describes the kind of output, so it overlaps with the map above rather than adding a strict extra rung.</p>
-      </div>
-      <div class="callout"><strong>Remember:</strong> machine learning is part of AI; deep learning is part of machine learning. Not every AI system learns from data, and not every automated program is AI. Rule-based reasoning can be AI; a simple timer or light threshold alone is ordinary automation.</div>
-    </section>
+<section id="three">
+<h2>1.3. Training, prediction and testing</h2>
+<p>We should keep three processes conceptually separate:</p>
+<ol><li><strong>Training:</strong> compute a model from labelled examples.</li><li><strong>Inference:</strong> give the model a new input and obtain a predicted category.</li><li><strong>Testing:</strong> compare predictions with independent, known answers that were not used to fit the model.</li></ol>
+<figure class="figure">
+<svg viewBox="0 0 710 100" role="img" aria-label="Training examples lead to a trained model. A new example is supplied to the trained model, which produces a prediction.">
+<rect x="5" y="22" width="158" height="54" rx="2" fill="white" stroke="#777"/><text x="84" y="42" text-anchor="middle" font-size="15">Labelled examples</text><text x="84" y="61" text-anchor="middle" font-size="12" fill="#555">Training data</text>
+<path d="M170 49H242" stroke="#777" stroke-width="1.5"/><path d="M236 44l8 5-8 5" fill="none" stroke="#777"/>
+<rect x="247" y="22" width="136" height="54" rx="2" fill="white" stroke="#777"/><text x="315" y="43" text-anchor="middle" font-size="15">Trained model</text><text x="315" y="61" text-anchor="middle" font-size="12" fill="#555">Learned pattern</text>
+<path d="M390 49H463" stroke="#777" stroke-width="1.5"/><path d="M457 44l8 5-8 5" fill="none" stroke="#777"/>
+<rect x="469" y="22" width="116" height="54" rx="2" fill="white" stroke="#777"/><text x="527" y="43" text-anchor="middle" font-size="15">Prediction</text><text x="527" y="61" text-anchor="middle" font-size="12" fill="#555">A or B</text>
+<text x="315" y="12" text-anchor="middle" font-size="11" fill="#666">Training</text><text x="437" y="85" text-anchor="middle" font-size="11" fill="#666">New input →</text>
+</svg><figcaption>Figure 1.1 — A simplified model-development pipeline. Training and inference are different steps.</figcaption>
+</figure>
+<p>If we test only on the training examples, the accuracy may look perfect even when the algorithm has memorised misleading details. A model may also learn from a biased selection of examples. For a classroom experiment, a separate test set and a short log of mistakes are more useful than a single impressive prediction.</p>
+<p class="source-line">Read: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lessons 2–3 — How computers learn / Bias in, bias out</a>.</p>
+</section>
 
-    <section class="section" aria-labelledby="examples-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">04</span>
-        <div>
-          <h2 id="examples-title">Same world, different methods</h2>
-        </div>
-      </div>
-      <div class="card-grid">
-        <article class="card">
-          <span class="tag">Fixed rule</span>
-          <h3>“If the room is dark, switch on the lamp.”</h3>
-          <p>The rule is written in advance. A sensor supplies a value, but the example does not show a system learning from examples.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Learned pattern</span>
-          <h3>“Does this email look like spam?”</h3>
-          <p>A classifier can learn from emails labelled “spam” or “not spam”. It can still make mistakes, especially on unfamiliar cases.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Search and planning</span>
-          <h3>“Which route meets these constraints?”</h3>
-          <p>A planner can compare possible routes using distance, closures, and deadlines. Route choice can use search even when it has not learned a route from examples.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Generated output</span>
-          <h3>“Draft a summary from these notes.”</h3>
-          <p>A generative model can produce fluent text, but fluent wording is not proof that every detail is accurate. A person should check it.</p>
-        </article>
-      </div>
-    </section>
+<section id="four">
+<h2>1.4. A complete small numerical model</h2>
+<p>We will not attempt to reproduce the image model behind Quick, Draw! in the first session. Instead, we can train a tiny transparent classifier that makes the idea of a learned parameter visible.</p>
+<h3>1.4.1. Learn class prototypes</h3>
+<p>For each class, calculate the average of its feature values. The average pair becomes the class <span class="defined">prototype</span>. From Table 1.1, the two prototypes are approximately A = (2.33, 2.33) and B = (7.33, 7.33).</p>
+<h3>1.4.2. Predict from the nearest prototype</h3>
+<p>For an unseen input (2.5, 2.2), compare its straight-line distance to A and B. It is much closer to A, so the model predicts A. The Python function below performs the same operation; its class prototypes were calculated from training examples.</p>
+<pre><code>from math import dist
 
-    <section class="section" aria-labelledby="approaches-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">05</span>
-        <div>
-          <h2 id="approaches-title">Approach clues for the lab</h2>
-        </div>
-      </div>
-      <p class="section-intro">Ask what kind of answer the problem needs. That often narrows the options.</p>
-      <div class="callout"><strong>A toolkit, not seven separate boxes.</strong> These names describe different aspects of a system. Classification and regression are prediction tasks; clustering finds groups; reinforcement learning describes learning through action and reward; generative AI describes creating content. A product can combine them.</div>
-      <div class="approach-grid">
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">R</span><div><h3>Rules and automation</h3><p>Follow an explicitly programmed condition or sequence.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">C</span><div><h3>Classification</h3><p>Choose a category using examples with known labels.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">#</span><div><h3>Regression</h3><p>Estimate a number, such as energy use or journey time.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">G</span><div><h3>Clustering</h3><p>Group similar items when no group labels are supplied.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">P</span><div><h3>Search and planning</h3><p>Find a useful sequence of actions under constraints.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">↗</span><div><h3>Reinforcement learning</h3><p>Learn actions through feedback or rewards from an environment.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">Aa</span><div><h3>Generative AI</h3><p>Create a new draft, image, audio clip, or other content.</p></div></article>
-      </div>
-      <p><strong>Three ways to learn:</strong> supervised learning uses examples with known target answers (such as a category or a measured number); unsupervised learning looks for structure without supplied target labels; reinforcement learning uses actions and reward feedback. Classification and regression are common supervised tasks; clustering is a common unsupervised task.</p>
-      <details class="worked-example">
-        <summary>Worked examples · follow the evidence</summary>
-        <div class="teacher-content">
-          <p><strong>Classification:</strong> 500 emails are already labelled spam or not spam. A new email goes in; a category comes out. The labels provide training answers. A genuine school email could be wrongly blocked.</p>
-          <p><strong>Regression:</strong> past days have a temperature and the number of ice creams sold. Tomorrow’s temperature goes in; an estimated number of sales comes out. A rainy day or school closure could make the estimate unreliable. A number used as a category code, such as postcode, is not a regression target just because it contains digits.</p>
-          <p><strong>Clustering:</strong> group unlabelled books using similarities in their descriptions. The groups are discovered, not supplied as correct answers. A person must inspect and name them; the groups need not match school subjects.</p>
-          <p><strong>Planning versus reinforcement learning:</strong> comparing moves on a known maze map is search/planning. A simulated agent that improves its action choices over repeated trials using reward feedback is reinforcement learning. Merely trying many routes does not establish learning.</p>
-          <p><strong>Training versus use:</strong> fitting a spam model from labelled emails is training. Applying that model to a new email is prediction (also called inference). Predicting does not automatically retrain the model.</p>
-        </div>
-      </details>
-      <p class="section-intro" style="margin-top:1rem">Real products can combine approaches. In today’s lab, choose the <em>main approach suggested by the information in the scenario</em>, then explain your clue.</p>
-    </section>
+prototypes = {"A": (2.33, 2.33), "B": (7.33, 7.33)}
 
-    <section class="section" aria-labelledby="check-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">06</span>
-        <div>
-          <h2 id="check-title">Quick understanding check</h2>
-          <p class="section-intro">Choose one answer in each question. You can change your answers and check again.</p>
-        </div>
-      </div>
-      <div class="quiz" data-quiz>
-        <fieldset class="quiz-question" data-explanation="Machine learning is one family of AI approaches. AI also includes approaches such as rules and search/planning.">
-          <legend>1. Which statement best describes machine learning?</legend>
-          <label><input type="radio" name="q1" value="same"> It is another name for all of AI.</label>
-          <label><input type="radio" name="q1" value="subset" data-correct="true"> It is a group of approaches within AI that fit patterns from data.</label>
-          <label><input type="radio" name="q1" value="automation"> It means any program that runs automatically.</label>
-          <p class="question-feedback" aria-live="polite"></p>
-        </fieldset>
-        <fieldset class="quiz-question" data-explanation="A fixed threshold rule is basic automation. A sensor alone does not mean the system learned from data; rules can also be part of larger AI systems.">
-          <legend>2. A lamp switches on whenever a light sensor reads below a fixed threshold. What is the best description of this example?</legend>
-          <label><input type="radio" name="q2" value="ml"> Machine learning, because the lamp has a sensor.</label>
-          <label><input type="radio" name="q2" value="rules" data-correct="true"> Rule-based automation; the example does not show learning from data.</label>
-          <label><input type="radio" name="q2" value="generation"> Generative AI, because the lamp produces light.</label>
-          <p class="question-feedback" aria-live="polite"></p>
-        </fieldset>
-        <fieldset class="quiz-question" data-explanation="Generating a new summary is a generative task. Check names, dates, and claims against the original notes.">
-          <legend>3. A tool drafts a paragraph from lesson notes. Which label best describes the output?</legend>
-          <label><input type="radio" name="q3" value="planning"> Search and planning.</label>
-          <label><input type="radio" name="q3" value="classification"> Classification.</label>
-          <label><input type="radio" name="q3" value="generative" data-correct="true"> Generative AI, with a person checking the draft.</label>
-          <p class="question-feedback" aria-live="polite"></p>
-        </fieldset>
-        <div class="button-row">
-          <button class="button" type="button" data-check-quiz>Check answers</button>
-          <button class="button secondary" type="button" data-reset-quiz>Start over</button>
-        </div>
-        <p class="status" data-quiz-status aria-live="polite"></p>
-      </div>
-      <noscript><p class="noscript">The lesson text and teacher answer key are available without JavaScript. Choose answers on paper and discuss them with your teacher; enable JavaScript for interactive feedback.</p></noscript>
-    </section>
+def predict(size, reflectance):
+    point = (size, reflectance)
+    return min(prototypes, key=lambda name: dist(point, prototypes[name]))
 
-    <section class="section" aria-labelledby="routine-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">07</span>
-        <div><h2 id="routine-title">Take this thinking into the lab</h2></div>
-      </div>
-      <div class="routine" aria-label="Three questions to ask when matching an approach">
-        <div class="routine-step"><strong>What is the output?</strong><span>A label, number, group, plan, action, or new content?</span></div>
-        <div class="routine-step"><strong>What evidence is available?</strong><span>Fixed rules, labelled examples, unlabelled data, or feedback?</span></div>
-        <div class="routine-step"><strong>What could go wrong?</strong><span>Name one limitation and how a person could check the result.</span></div>
-      </div>
-    </section>
+print(predict(2.5, 2.2))  # A
+</code></pre>
+<p><strong>Important distinction:</strong> this is a nearest-<em>prototype</em> model, not a neural network, and not a reproduction of Google's classifier. It exists to expose the training–prediction mechanism in a few lines.</p>
+<div class="example"><span class="example-title">Check your understanding.</span> What happens if we add many misleading training examples to class A? Will its learned prototype move? Could that change a prediction on the same test point?</div>
+<p class="source-line">Practice: <a href="https://teachablemachine.withgoogle.com/">Google Teachable Machine</a> · <a href="/w1/lab/">Week 1 laboratory notebook</a>.</p>
+</section>
 
-    <div class="next-step">
-      <p><strong>Ready to apply the map?</strong><br>Match real-world problems to the approach that best fits each one.</p>
-      <a class="button" href="/w1/lab/">Start the Types of AI lab →</a>
-    </div>
+<section id="five">
+<h2>1.5. Mistakes, confidence and responsibility</h2>
+<p>A model may predict a class even when it has never seen a similar input. For example, the nearest-prototype program still returns A or B for a sample far outside the observed range. That is not evidence the result is dependable.</p>
+<p>A classification system may display a <em>confidence</em> score. In many systems this is a model-dependent score, not a guarantee of correctness. We should not confuse an output with an explanation, and we should not trust a demonstration simply because it succeeds on the teacher's first example.</p>
+<ol><li>Were the training examples varied enough?</li><li>What is different about the failed examples?</li><li>Was the test example genuinely unseen?</li><li>Does the system process personal data, faces or voices?</li></ol>
+<p>For the school lab, use ordinary objects and synthetic data. Do not upload images of classmates or any personally identifying information.</p>
+<p class="source-line">Read: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 3 — Bias in, bias out</a> · <a href="https://www.unesco.org/en/articles/ai-competency-framework-students">UNESCO AI Competency Framework for Students</a>.</p>
+</section>
 
-    <details class="teacher-notes"><summary>Teacher guide · 60-minute club session</summary><div class="teacher-content"><p>Use selected course sections and a short lab activity in the same 60-minute meeting. The full interactive course, laboratory and extended slides remain useful for self-paced study.</p><ol><li>00–05: rule versus learned prediction warm-up.</li><li>05–20: AI, ML, labels and confidence.</li><li>20–35: manual classification and evidence exercise.</li><li>35–55: selected matching cases and/or object-classifier demo.</li><li>55–60: exit ticket explaining one model failure.</li></ol></div></details>
+<section><h2>Bibliography and further study</h2>
+<ol><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Raspberry Pi Foundation &amp; Google DeepMind, Experience AI: Foundations of AI</a>, Lessons 1–3 (free teacher resources; access conditions vary).</li>
+<li><a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf">CBSE, Class XI AI Student Handbook</a>, introductory AI and data units.</li>
+<li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php">pyml.ro, Python &amp; Machine Learning for high-school students</a>.</li></ol></section>
 
-    <!-- SOURCED OUTLINE START --><section class="section" aria-labelledby="course-bibliography-title"><div class="section-heading"><div><h2 id="course-bibliography-title">Curriculum topics and sources</h2></div></div><h3>1. AI as a field</h3><ul><li>Automation vs AI</li><li>rules, search and learned behaviour</li><li>AI versus ML versus deep learning</li></ul><p class="reference"><span class="reference-label">References: </span><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI: Foundations of AI</a> · <a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a> · <a href="https://ai4k12.org/" target="_blank" rel="noopener noreferrer">AI4K12 Five Big Ideas</a></p><h3>2. Learning from examples</h3><ul><li>Inputs and outputs</li><li>features and labels</li><li>supervised, unsupervised and feedback-based learning</li></ul><p class="reference"><span class="reference-label">References: </span><a href="https://legislatie.just.ro/public/DetaliiDocument/256856" target="_blank" rel="noopener noreferrer">Romania: Introduction to Machine Learning, OME 4049/2022</a> · <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI: Foundations of AI</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a></p><h3>3. Image classification and reliability</h3><ul><li>Train/infer/test distinction</li><li>confidence vs accuracy</li><li>sampling bias and privacy</li></ul><p class="reference"><span class="reference-label">References: </span><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI: Foundations of AI</a> · <a href="https://experience-ai.org/en-US/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI: AI Project Cycle and problem solving</a> · <a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a></p></section><!-- SOURCED OUTLINE END --><footer class="page-footer">Machine Learning Club · Seven Hills International School · <a href="/">Back to the club home</a></footer>
-  <!-- WEEK SOURCE MAP --><p class="reference"><a href="/materials/#w1">Specific textbooks, lesson plans and source exercises for this week</a></p><!-- /WEEK SOURCE MAP --></main>
-</body>
-</html>
+</main>
+<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
+</body></html>

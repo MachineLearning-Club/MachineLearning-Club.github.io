@@ -1,28 +1,29 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Syllabus-aligned advanced outline for ML Club Week 1.">
-  <title>Week 1 — Advanced · Machine Learning Club</title>
-  <link rel="stylesheet" href="/assets/site.css">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A progressive collection on generalisation, counterexamples and unobserved cases.">
+<title>Week 1: Advanced · Machine Learning Club</title>
+<link rel="stylesheet" href="/assets/academic.css">
 </head>
 <body>
-  <header class="site">
-    <a class="brand" href="/">Machine Learning Club</a>
-    <p class="site-subtitle">Seven Hills International School · 2026–2027</p>
-    <p><a href="/">← All weeks</a></p>
-  </header>
-  <main class="shell">
-    <p class="lesson-meta">Week 1 · Advanced</p>
-    <h1>What Is AI? Rules and Learning</h1>
-    <nav class="lesson-nav" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/" aria-current="page">Advanced</a></nav>
-<p class="intro">Optional further exploration, intended for students who finish the required work or want competition-level practice.</p><section><h2>Challenge</h2><p>Test shortcuts using an intentionally skewed training set; compare with a balanced model and document the outcome.</p></section><section><h2>External tasks and training</h2><p><a href="https://github.com/IOAI-official/IOAI-2026" target="_blank" rel="noopener noreferrer">IOAI 2026 official competition archive</a> · <a href="https://github.com/OlimpiadaAI/szkolenia" target="_blank" rel="noopener noreferrer">Polish AI Olympiad training notebooks</a></p><p class="note">Olympiad originals are usually substantially harder than the club tasks. Choose a suitable subsection or use the supplied starter code.</p></section><section><h2>Sources</h2><p class="reference"><span class="reference-label">References: </span><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a> · <a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf" target="_blank" rel="noopener noreferrer">IOAI 2026 Syllabus</a></p></section>
-  <nav class="lesson-pagination" aria-label="Previous and next lessons">
+<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
+<p class="site-sub">Seven Hills International School · 2026–2027</p>
+<p class="breadcrumb"><a href="/">All lessons</a> / Week 1 / Advanced</p>
+</header>
+<main id="main">
+<p class="eyebrow">Week 01 · Advanced</p>
+<h1>Advanced 01 — What data cannot prove</h1>
+<p class="deck">A progressive collection on generalisation, counterexamples and unobserved cases.</p>
+<nav class="lesson-tabs" aria-label="Week 1 materials"> <a href="/w1/course/">Course</a> <a href="/w1/lab/">Laboratory</a> <a href="/w1/homework/">Homework</a> <a href="/w1/advanced/" aria-current="page">Advanced</a><a href="/quiz/?week=1">Quiz</a></nav>
 
-    <a href="/w2/advanced/">Week 2 →</a>
-  </nav>
-  <!-- WEEK SOURCE MAP --><p class="reference"><a href="/materials/#w1">Specific textbooks, lesson plans and source exercises for this week</a></p><!-- /WEEK SOURCE MAP --></main>
-  <footer class="site">Machine Learning Club · Seven Hills International School</footer>
-</body>
-</html>
+<section><h2>Reasoning exercises</h2>
+<p>This sheet develops a single idea through small, related problems: <em>different models can agree on the training examples and disagree on an unseen example</em>. It uses truth tables, ordinary pseudocode and counterexamples; there is no formal verification software or installation.</p>
+<p><a href="week-01-reasoning.pdf">Read the A4 exercise sheet (PDF)</a> · <a href="week-01-reasoning.tex">LaTeX source</a> · <a href="print.html">Accessible print version</a>.</p>
+<iframe class="pdf-view" title="Week 1 advanced reasoning exercises PDF" src="week-01-reasoning.pdf"></iframe>
+<p class="understated">The PDF contains one complete worked example, four progressive problems, hints and a selected worked solution. All exercises can be solved with a pencil and a four-row table.</p></section>
+<section><h2>How this connects to the course</h2><p>The Laboratory asks why a learned prediction may fail. The Advanced sheet asks a more precise question: can the supplied examples logically rule out a competing model? The answer uses a concrete counterexample, not abstract proof machinery.</p>
+<p class="source-line">Further reading: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Bias in, bias out</a> · <a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf">IOAI classical machine-learning foundations</a>.</p></section>
+
+</main>
+<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
+</body></html>

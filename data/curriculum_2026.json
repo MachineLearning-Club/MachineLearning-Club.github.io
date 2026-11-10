@@ -1,0 +1,384 @@
+{
+  "status": "Working curriculum for teacher review",
+  "weeks": [
+    {
+      "n": 1,
+      "title": "What Is AI? Rules and Learning",
+      "course": [
+        "Classical programming and explicit rules",
+        "Artificial intelligence and search",
+        "Machine learning from data",
+        "Supervised, unsupervised and reinforcement learning",
+        "Natural language processing"
+      ],
+      "lab": [
+        "Quick, Draw! and Teachable Machine",
+        "Compare rules, search and learned classifiers"
+      ],
+      "hw": [
+        "Build a visual Python thermostat",
+        "Train a supplied ID3 component on labelled heating decisions",
+        "Repair a smart-home application that compares the two approaches"
+      ],
+      "advanced": [
+        "State transitions",
+        "Constraint satisfaction",
+        "Generalisation"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Probabilistic Learning and Iterative Dichotomiser 3 (ID3)",
+      "course": [
+        "Uncertainty and frequency",
+        "Shannon entropy",
+        "Information gain",
+        "Recursive categorical ID3",
+        "Predictions and limitations"
+      ],
+      "lab": [
+        "Explore entropy with class sliders",
+        "Build and visualise a categorical ID3 tree"
+      ],
+      "hw": [
+        "Calculate information gain",
+        "Apply ID3 to a second dataset",
+        "Handle missing and unseen feature values"
+      ],
+      "advanced": [
+        "Recursive construction",
+        "Overfitting and stopping",
+        "Worked calculations"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "ID3 Extensions and Introduction to K-Means",
+      "course": [
+        "Numerical attributes and thresholds",
+        "Training and test data",
+        "Unsupervised learning",
+        "Distances and centroids",
+        "K-Means iteration"
+      ],
+      "lab": [
+        "Compare decision tree depths",
+        "Experiment with K-Means clusters"
+      ],
+      "hw": [
+        "Evaluate a learned tree on unseen records",
+        "Work through two centroid updates",
+        "Compare initial centroids"
+      ],
+      "advanced": [
+        "Tree stopping strategies",
+        "K-Means objective function",
+        "Centroid calculations"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "K-Means and K-Nearest Neighbours",
+      "course": [
+        "Clustering versus classification",
+        "Distance between data points",
+        "K-Means centroid updates",
+        "KNN classification by voting",
+        "Feature scaling and choosing K"
+      ],
+      "lab": [
+        "Use K-Means and KNN side by side",
+        "Move points and change K"
+      ],
+      "hw": [
+        "Calculate neighbour distances",
+        "Complete a KNN implementation",
+        "Investigate feature scaling"
+      ],
+      "advanced": [
+        "KNN decision boundaries",
+        "Distance metrics",
+        "K-Means convergence"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Working with Images as Input",
+      "course": [
+        "Pixels and grids",
+        "RGB and grayscale",
+        "Multidimensional NumPy arrays",
+        "Reading and resizing images",
+        "Thresholds brightness and contrast"
+      ],
+      "lab": [
+        "Use a pixel-grid editor",
+        "Change images with NumPy"
+      ],
+      "hw": [
+        "Modify individual pixels",
+        "Build an image transformation pipeline",
+        "Make a pixel-matrix editor"
+      ],
+      "advanced": [
+        "Matrices and channels",
+        "Transforms",
+        "Computational cost"
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Computer Vision Techniques",
+      "course": [
+        "Image recognition",
+        "Kernels and filters",
+        "Convolution",
+        "Edge detection",
+        "Handcrafted versus learned features"
+      ],
+      "lab": [
+        "Change an image kernel",
+        "Apply blur and edge detection"
+      ],
+      "hw": [
+        "Calculate convolution outputs",
+        "Compare filters",
+        "Invent and explain a filter"
+      ],
+      "advanced": [
+        "Padding and stride",
+        "Spatial locality",
+        "Convolution mathematics"
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Predicting Handwriting",
+      "course": [
+        "Handwriting as pixel data",
+        "Classification labels",
+        "Training and testing",
+        "Confusion matrices",
+        "Misclassification and robustness"
+      ],
+      "lab": [
+        "Draw digits in a browser recogniser",
+        "Train a small prepared handwriting classifier"
+      ],
+      "hw": [
+        "Test digits",
+        "Improve preprocessing",
+        "Analyse noisy examples"
+      ],
+      "advanced": [
+        "Image features",
+        "Classification mathematics",
+        "Confusion matrices"
+      ]
+    },
+    {
+      "n": 8,
+      "title": "Perceptron and Neural Networks",
+      "course": [
+        "The computational neuron",
+        "Weights and bias",
+        "Activation functions",
+        "Linear classification",
+        "Feed-forward networks"
+      ],
+      "lab": [
+        "TensorFlow Playground",
+        "Adjust weights and bias in a neuron"
+      ],
+      "hw": [
+        "Calculate a perceptron output",
+        "Train a small supplied model",
+        "Study linear inseparability"
+      ],
+      "advanced": [
+        "Linear boundaries",
+        "Perceptron updates",
+        "XOR"
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Backpropagation in Neural Networks",
+      "course": [
+        "Predictions and errors",
+        "Loss functions",
+        "Gradient descent",
+        "The chain rule",
+        "Backpropagation and training loops"
+      ],
+      "lab": [
+        "Explore a loss function",
+        "Visualise gradient descent and loss history"
+      ],
+      "hw": [
+        "Update one model parameter",
+        "Compare learning rates",
+        "Implement a simplified backward step"
+      ],
+      "advanced": [
+        "Partial derivatives",
+        "Computational graphs",
+        "Worked backpropagation"
+      ]
+    },
+    {
+      "n": 10,
+      "title": "Generative Pre-Trained Transformers (GPT)",
+      "course": [
+        "Tokens and numerical text",
+        "Embeddings",
+        "Transformers",
+        "Attention",
+        "Next-token prediction",
+        "Limits and reliability"
+      ],
+      "lab": [
+        "Try a tokenizer",
+        "Explore Transformer Explainer",
+        "Compare next-token baselines"
+      ],
+      "hw": [
+        "Tokenise short passages",
+        "Compare generator outputs",
+        "Fact-check generated answers"
+      ],
+      "advanced": [
+        "Vectors and similarity",
+        "Attention scores",
+        "Generation mathematics"
+      ]
+    },
+    {
+      "n": 11,
+      "title": "Object-Oriented Programming",
+      "course": [
+        "Objects and classes",
+        "Attributes and constructors",
+        "Methods",
+        "Composition",
+        "Encapsulation and interfaces"
+      ],
+      "lab": [
+        "Build sensor agent and controller objects",
+        "Reuse a classifier as an object"
+      ],
+      "hw": [
+        "Implement a Python class",
+        "Combine classes in a simulation",
+        "Refactor procedural code"
+      ],
+      "advanced": [
+        "Object invariants",
+        "Interfaces",
+        "Design trade-offs"
+      ]
+    },
+    {
+      "n": 12,
+      "title": "Software Engineering: Architecture, Workflows and Pipelines",
+      "course": [
+        "User stories and requirements",
+        "Data-to-prediction pipelines",
+        "Testing and debugging",
+        "Modular architecture",
+        "Git and GitHub",
+        "Reproducibility"
+      ],
+      "lab": [
+        "Build a small ML application",
+        "Experiment with visual Git operations"
+      ],
+      "hw": [
+        "Draw an AI pipeline",
+        "Improve and document an app",
+        "Add tests and a component"
+      ],
+      "advanced": [
+        "Architecture patterns",
+        "Testing strategies",
+        "Reproducible experiments"
+      ]
+    },
+    {
+      "n": 13,
+      "title": "FIICode I: Building the First Solution",
+      "course": [
+        "Read a problem specification",
+        "Explore data",
+        "Define metrics",
+        "Choose a baseline",
+        "Plan the team"
+      ],
+      "lab": [
+        "Start a competition-style project",
+        "Implement a baseline"
+      ],
+      "hw": [
+        "Explain a dataset",
+        "Deliver a baseline",
+        "Compare alternatives"
+      ],
+      "advanced": [
+        "Competition reasoning",
+        "Baseline analysis",
+        "Selected IOAI problems"
+      ]
+    },
+    {
+      "n": 14,
+      "title": "FIICode II: Improving the Solution",
+      "course": [
+        "Find prediction errors",
+        "Engineer features",
+        "Tune hyperparameters",
+        "Compare models fairly",
+        "Measure performance",
+        "Integrate improvements"
+      ],
+      "lab": [
+        "Continue the FIICode project",
+        "Evaluate controlled changes"
+      ],
+      "hw": [
+        "Explain model errors",
+        "Implement a measured improvement",
+        "Research a larger alternative"
+      ],
+      "advanced": [
+        "Optimisation",
+        "Ablations",
+        "Experiment design"
+      ]
+    },
+    {
+      "n": 15,
+      "title": "FIICode III: Mock Hackathon",
+      "course": [
+        "Finish and test the application",
+        "Write documentation",
+        "Demonstrate behaviour",
+        "Present limitations",
+        "Reflect on decisions"
+      ],
+      "lab": [
+        "Present final projects",
+        "Test peers' applications"
+      ],
+      "hw": [
+        "Submit a working project",
+        "Write a technical report and demonstration",
+        "Extend the project"
+      ],
+      "advanced": [
+        "Selected IOAI and ONIA exercises",
+        "Worked solutions",
+        "Further-study directions"
+      ]
+    }
+  ]
+}

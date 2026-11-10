@@ -1,28 +1,65 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Syllabus-aligned laboratory outline for ML Club Week 2.">
-  <title>Week 2 — Laboratory · Machine Learning Club</title>
-  <link rel="stylesheet" href="/assets/site.css">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Predict a split, calculate information gain, then build and test categorical ID3 in Colab.">
+<title>Week 2: Laboratory · Machine Learning Club</title>
+<link rel="stylesheet" href="/assets/academic.css">
 </head>
 <body>
-  <header class="site">
-    <a class="brand" href="/">Machine Learning Club</a>
-    <p class="site-subtitle">Seven Hills International School · 2026–2027</p>
-    <p><a href="/">← All weeks</a></p>
-  </header>
-  <main class="shell">
-    <p class="lesson-meta">Week 2 · Laboratory</p>
-    <h1>Mathematics for Machine Learning</h1>
-    <nav class="lesson-nav" aria-label="Week 2 materials"><a href="/w2/course/">Course</a><a href="/w2/lab/" aria-current="page">Laboratory</a><a href="/w2/homework/">Homework</a><a href="/w2/advanced/">Advanced</a></nav>
-<p class="intro">Every practical meeting includes an interactive webapp and a runnable Colab starter notebook. The external notebook is a source reference, not a required prerequisite.</p><section><h2>1. Interactive webapp</h2><p><a href="https://codap.concord.org/get-started/tutorials/" target="_blank" rel="noopener noreferrer">CODAP tutorials</a></p><p>Import, group and plot a small dataset, then compare means and class balance</p></section><section><h2>2. Colab laboratory</h2><p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/w2/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Open Week 2 starter notebook in Colab</a> · <a href="/w2/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Download notebook (.ipynb)</a></p><ol><li>Compute descriptive summaries and visualise them</li><li>Use Colab to inspect a small table and calculate class proportions</li><li>Vary one observation and describe changes in entropy</li></ol><p class="note">A working starter notebook is supplied; students should modify the code and explain the result, not merely execute it.</p></section><section><h2>3. Existing notebook to study</h2><p><a href="https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/02a_statystyka_pandas.ipynb" target="_blank" rel="noopener noreferrer">Polish Olympiad: Statistics and Pandas</a></p><p>Additional reading. Open separately; third-party notebooks may be longer, in Polish or designed for more advanced students.</p></section><section><h2>Sources</h2><p class="reference"><span class="reference-label">References: </span><a href="https://legislatie.just.ro/public/DetaliiDocument/256856" target="_blank" rel="noopener noreferrer">Romania: Introduction to Machine Learning, OME 4049/2022</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> · <a href="https://github.com/OlimpiadaAI/szkolenia" target="_blank" rel="noopener noreferrer">Polish AI Olympiad: high-school training</a> · <a href="https://codap.concord.org/get-started/tutorials/" target="_blank" rel="noopener noreferrer">CODAP Data Exploration Tutorials</a></p></section>  <p class="weekly-quiz"><a href="/quiz/?week=2">Week 2 quiz</a> · 10 questions (if prepared)</p>
-  <nav class="lesson-pagination" aria-label="Previous and next lessons">
-    <a href="/w1/lab/">← Week 1</a>
-    <a href="/w3/lab/">Week 3 →</a>
-  </nav>
-  <!-- WEEK SOURCE MAP --><p class="reference"><a href="/materials/#w2">Specific textbooks, lesson plans and source exercises for this week</a></p><!-- /WEEK SOURCE MAP --></main>
-  <footer class="site">Machine Learning Club · Seven Hills International School</footer>
-</body>
-</html>
+<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
+<p class="site-sub">Seven Hills International School · 2026–2027</p>
+<p class="breadcrumb"><a href="/">All lessons</a> / Week 2 / Laboratory</p>
+</header>
+<main id="main">
+<p class="eyebrow">Week 02 · Laboratory</p>
+<h1>A decision tree built from data</h1>
+<p class="deck">Predict a split, calculate information gain, then build and test categorical ID3 in Colab.</p>
+<nav class="lesson-tabs" aria-label="Week 2 materials"> <a href="/w2/course/">Course</a> <a href="/w2/lab/" aria-current="page">Laboratory</a> <a href="/w2/homework/">Homework</a> <a href="/w2/advanced/">Advanced</a><a href="/quiz/?week=2">Quiz</a></nav>
+
+<section><h2>Laboratory objectives</h2>
+<p>Compare feature questions using information gain, distinguish the interactive CART demonstration from categorical ID3, and implement a small decision tree in Python without hiding the algorithm behind a library call.</p>
+<p class="understated">Suggested hour: 8 min paper prediction · 12 min interactive · 23 min Colab · 12 min modification · 5 min conclusion.</p></section>
+<section class="lab-step"><h2>1. Predict — before using a computer</h2>
+<p>From the eight-row table in the <a href="/w2/course/">Course</a>, count the number of yes/no answers. Guess which of sky, wind and temperature should be the first question and justify the guess using the labels.</p>
+<p>Do not calculate every logarithm immediately. First describe what it means for a split to make a subset pure.</p>
+</section>
+<section class="lab-step">
+<h2>2. Experiment — information gain</h2>
+<p>The exercise below uses the <em>same</em> eight records from the Course. Select a candidate first question. The entropy and information gain are recalculated locally in your browser; no data is sent to a server.</p>
+<div class="interactive" data-id3-explorer>
+<fieldset><label for="attribute">Choose the first question</label>
+<select id="attribute" data-id3-feature><option value="sky">Sky</option><option value="wind">Wind</option><option value="temperature">Temperature</option></select></fieldset>
+<button type="button" data-id3-compute>Calculate information gain</button>
+<output data-id3-result aria-live="polite">Select a feature and calculate its gain.</output>
+<div data-id3-detail class="mini"></div>
+</div>
+<p>Then compare the result with a visual tree-building app. This external app illustrates <strong>CART</strong> rather than the categorical ID3 procedure we are calculating here.</p>
+<p class="launch"><a href="https://interactiveml.org/tree" target="_blank" rel="noopener noreferrer">Launch interactive decision-tree visualiser ↗</a></p>
+<p class="source-line">Teaching source: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 4 — Decision Trees</a>.</p>
+</section>
+<section class="lab-step"><h2>3. Inspect — your ID3 notebook</h2>
+<p>Open the Colab notebook and compare its output against the hand calculations. The implementation uses ordinary Python dictionaries, counting, logarithms and recursion. It does not require scikit-learn .</p>
+<p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/w2/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Open ID3 notebook in Google Colab ↗</a> · <a href="starter.ipynb" download>Download notebook (.ipynb)</a></p>
+<details class="notebook-preview"><summary>Preview a real executable cell from the notebook</summary><pre><code>from collections import Counter
+from math import log2
+examples = [
+    {&quot;sky&quot;:&quot;sunny&quot;,&quot;wind&quot;:&quot;calm&quot;,&quot;temperature&quot;:&quot;warm&quot;,&quot;go&quot;:&quot;yes&quot;},
+    {&quot;sky&quot;:&quot;sunny&quot;,&quot;wind&quot;:&quot;calm&quot;,&quot;temperature&quot;:&quot;cold&quot;,&quot;go&quot;:&quot;yes&quot;},
+    {&quot;sky&quot;:&quot;sunny&quot;,&quot;wind&quot;:&quot;windy&quot;,&quot;temperature&quot;:&quot;warm&quot;,&quot;go&quot;:&quot;yes&quot;},
+    {&quot;sky&quot;:&quot;sunny&quot;,&quot;wind&quot;:&quot;windy&quot;,&quot;temperature&quot;:&quot;cold&quot;,&quot;go&quot;:&quot;no&quot;},
+    {&quot;sky&quot;:&quot;rainy&quot;,&quot;wind&quot;:&quot;calm&quot;,&quot;temperature&quot;:&quot;warm&quot;,&quot;go&quot;:&quot;no&quot;},
+    {&quot;sky&quot;:&quot;rainy&quot;,&quot;wind&quot;:&quot;calm&quot;,&quot;temperature&quot;:&quot;cold&quot;,&quot;go&quot;:&quot;no&quot;},
+    {&quot;sky&quot;:&quot;rainy&quot;,&quot;wind&quot;:&quot;windy&quot;,&quot;temperature&quot;:&quot;warm&quot;,&quot;go&quot;:&quot;no&quot;},
+    {&quot;sky&quot;:&quot;rainy&quot;,&quot;wind&quot;:&quot;windy&quot;,&quot;temperature&quot;:&quot;cold&quot;,&quot;go&quot;:&quot;no&quot;},
+]
+features = [&quot;sky&quot;,&quot;wind&quot;,&quot;temperature&quot;]
+for i,row in enumerate(examples,1):print(i,row)</code></pre></details>
+<ol><li>Compute and display the three candidate gains.</li><li>Run the tree-building function and inspect the nested dictionary.</li><li>Predict all eight rows and check the result.</li><li>Remove one record; predict the excluded combination. Explain why a mistake is possible even with perfect training accuracy.</li></ol>
+</section>
+<section><h2>4. Reflection</h2>
+<p>Why does ID3 terminate immediately when a node contains only one class? What can happen if a training example is missing? Which parts of the tree were chosen by data rather than by a human writing the final rules?</p>
+<p><strong>Exit ticket:</strong> Explain why sky is chosen as the root and give one reason the resulting model could still fail on new observations.</p></section>
+<script src="/assets/academic-experiments.js" defer></script>
+</main>
+<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
+</body></html>

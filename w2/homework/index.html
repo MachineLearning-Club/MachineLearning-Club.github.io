@@ -1,28 +1,48 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Syllabus-aligned homework outline for ML Club Week 2.">
-  <title>Week 2 — Homework · Machine Learning Club</title>
-  <link rel="stylesheet" href="/assets/site.css">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Transfer the ID3 algorithm to a new categorical dataset and trace its decisions.">
+<title>Week 2: Homework · Machine Learning Club</title>
+<link rel="stylesheet" href="/assets/academic.css">
 </head>
 <body>
-  <header class="site">
-    <a class="brand" href="/">Machine Learning Club</a>
-    <p class="site-subtitle">Seven Hills International School · 2026–2027</p>
-    <p><a href="/">← All weeks</a></p>
-  </header>
-  <main class="shell">
-    <p class="lesson-meta">Week 2 · Homework</p>
-    <h1>Mathematics for Machine Learning</h1>
-    <nav class="lesson-nav" aria-label="Week 2 materials"><a href="/w2/course/">Course</a><a href="/w2/lab/">Laboratory</a><a href="/w2/homework/" aria-current="page">Homework</a><a href="/w2/advanced/">Advanced</a></nav>
-<p class="intro">Required transfer task: reuse the laboratory notebook on a new input, dataset or test case, then explain your result.</p><section><h2>Assignment</h2><p>Append five rows to the lab dataset, recompute statistics and entropy, and explain the change.</p></section><section><h2>Starting materials</h2><p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/w2/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Week 2 laboratory Colab</a> · <a href="/w2/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Notebook file</a></p></section><section><h2>Expected submission</h2><ul><li>Modified notebook (or GitHub repository from Week 10 onward)</li><li>Small table, figure or worked calculation showing the result</li><li>Your own explanation of an error, assumption or limitation</li></ul></section><section><h2>Sources</h2><p class="reference"><span class="reference-label">References: </span><a href="https://legislatie.just.ro/public/DetaliiDocument/256856" target="_blank" rel="noopener noreferrer">Romania: Introduction to Machine Learning, OME 4049/2022</a> · <a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a></p></section>  <p class="weekly-quiz"><a href="/quiz/?week=2">Week 2 quiz</a> · 10 questions (if prepared)</p>
-  <nav class="lesson-pagination" aria-label="Previous and next lessons">
-    <a href="/w1/homework/">← Week 1</a>
-    <a href="/w3/homework/">Week 3 →</a>
-  </nav>
-  <!-- WEEK SOURCE MAP --><p class="reference"><a href="/materials/#w2">Specific textbooks, lesson plans and source exercises for this week</a></p><!-- /WEEK SOURCE MAP --></main>
-  <footer class="site">Machine Learning Club · Seven Hills International School</footer>
-</body>
-</html>
+<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
+<p class="site-sub">Seven Hills International School · 2026–2027</p>
+<p class="breadcrumb"><a href="/">All lessons</a> / Week 2 / Homework</p>
+</header>
+<main id="main">
+<p class="eyebrow">Week 02 · Homework</p>
+<h1>Assignment 03 — An explainable event planner</h1>
+<p class="deck">Transfer the ID3 algorithm to a new categorical dataset and trace its decisions.</p>
+<nav class="lesson-tabs" aria-label="Week 2 materials"> <a href="/w2/course/">Course</a> <a href="/w2/lab/">Laboratory</a> <a href="/w2/homework/" aria-current="page">Homework</a> <a href="/w2/advanced/">Advanced</a><a href="/quiz/?week=2">Quiz</a></nav>
+
+<p class="assignment-meta">Version 2026–2027 · Individual work · Adapt the Week 2 ID3 implementation</p>
+<section><h2>Context</h2>
+<p>A student club has to decide whether an equipment demonstration should be held in a courtyard or inside. Its archive contains examples with three categorical observations: sky (sunny/cloudy/rainy), wind (calm/windy) and temperature (warm/cold). Historical decisions were recorded as <strong>yes</strong> (outdoors) or <strong>no</strong> (indoors).</p>
+<p>This is synthetic training data for an algorithm exercise, not a real outdoor-safety decision system.</p>
+<p>Resources: <a href="/w2/course/">Course</a> · <a href="/w2/lab/">Laboratory</a> · <a href="/w2/lab/starter.ipynb">Starter ID3 notebook</a> · <a href="club-events.csv" download>Club events dataset (12 records)</a>.</p><details class="notebook-preview"><summary>Provided Colab code: load the new dataset</summary><pre><code>from google.colab import files
+files.upload()  # Upload club-events.csv
+import csv
+with open("club-events.csv", newline="") as f:
+    all_rows = list(csv.DictReader(f))
+# Next: reserve rows 4, 7 and 11; fit ID3 on the other rows.
+</code></pre></details></section>
+<section><h2>Mandatory <span class="point-value">(1p)</span></h2>
+<ol><li>Load the new <a href="club-events.csv">dataset</a> into the ID3 notebook without changing the original algorithm.</li>
+<li>Reserve the records with numbers <strong>4, 7 and 11</strong> for evaluation. Do not train on those three records.</li>
+<li>Calculate the root information gains on the nine training records and select the best question.</li>
+<li>Draw the learned tree, predict the three held-out answers, and report how many were correct.</li></ol></section>
+<hr>
+<section><h2>Homework <span class="point-value">(2p)</span></h2>
+<ol><li>Add a function that prints the <em>decision path</em> for one prediction (for example, <code>sky = cloudy → wind = calm → yes</code>).</li>
+<li>Handle an unseen category such as <code>sky = foggy</code> by reporting the fallback label and an explicit warning.</li>
+<li>Compare the root question with the question chosen by a simple human rule. Explain whether both approaches give the same predictions on the evaluation records.</li>
+<li>Include an explanation of one limitation of training on such a small dataset.</li></ol></section>
+<hr>
+<section><h2>Advanced — optional reading</h2>
+<p><a href="/w2/advanced/">Open the ID3 reasoning problem sheet</a>: minimal trees, irrelevant attributes, missing combinations, and why a learned tree is only as justified as the information available. No additional software is needed.</p></section>
+<section class="submission"><h2>Submission</h2><p>Submit the modified Colab notebook or <code>.ipynb</code> file, a labelled tree diagram, and a short results table. GitHub remains optional until the engineering part of the course.</p></section>
+
+</main>
+<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
+</body></html>

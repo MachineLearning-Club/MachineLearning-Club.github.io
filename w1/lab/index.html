@@ -1,153 +1,62 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An interactive Week 1 lab: match real-world problems to rules, machine-learning methods, search and planning, reinforcement learning, or generative AI.">
-  <title>Types of AI · Week 1 Laboratory · Machine Learning Club</title>
-  <link rel="stylesheet" href="../week1.css">
-  <link rel="stylesheet" href="../classic.css">
-  <script src="../week1.js" defer></script>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore a real interactive system; then run, modify and explain a tiny transparent classifier.">
+<title>Week 1: Laboratory · Machine Learning Club</title>
+<link rel="stylesheet" href="/assets/academic.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to laboratory</a>
-  <header class="site-header">
-    <a class="brand" href="/">Machine Learning Club <span>Seven Hills · 2026–27</span></a>
-    <nav class="site-nav" aria-label="Week 1 navigation">
-      <a href="/">All weeks</a>
-      <a href="/w1/course/">Course</a>
-      <a href="/w1/slides/">Week 1 slides</a>
-    </nav>
-  </header>
+<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
+<p class="site-sub">Seven Hills International School · 2026–2027</p>
+<p class="breadcrumb"><a href="/">All lessons</a> / Week 1 / Laboratory</p>
+</header>
+<main id="main">
+<p class="eyebrow">Week 01 · Laboratory</p>
+<h1>Experiencing artificial intelligence</h1>
+<p class="deck">Explore a real interactive system; then run, modify and explain a tiny transparent classifier.</p>
+<nav class="lesson-tabs" aria-label="Week 1 materials"> <a href="/w1/course/">Course</a> <a href="/w1/lab/" aria-current="page">Laboratory</a> <a href="/w1/homework/">Homework</a> <a href="/w1/advanced/">Advanced</a><a href="/quiz/?week=1">Quiz</a></nav>
 
-  <main id="main" class="page-shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div class="hero-content">
-        <p class="eyebrow">Week 01 · Laboratory</p>
-        <h1 id="page-title">Types of AI: match the method to the problem</h1>
-        <p>Look at the job, the kind of answer needed, and the evidence available. Then choose the approach that best fits.</p>
-        <div class="hero-meta" aria-label="Laboratory details">
-          <span class="pill">Session 1 · 2 December 2026</span>
-          <span class="pill">Lab reference · self-paced</span>
-          <span class="pill">Work in pairs</span>
-        </div>
-      </div>
-    </section>
-
-<nav class="curriculum-nav" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a></nav>
-    <section class="section" aria-labelledby="lab-objectives"><div class="section-heading"><span class="section-number">00</span><div><h2 id="lab-objectives">Laboratory learning objectives</h2></div></div><ul class="outcomes"><li>Identify the method behind everyday software</li><li>Train a two-class image classifier</li><li>Test predictions on unseen examples</li></ul></section>
-<section class="section" aria-labelledby="method-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">01</span>
-        <div>
-          <h2 id="method-title">Use three clues</h2>
-          <p class="section-intro">There is no need to guess from the product name. Read what the system is asked to do.</p>
-        </div>
-      </div>
-      <div class="routine" aria-label="Three questions for choosing an approach">
-        <div class="routine-step"><strong>What is the output?</strong><span>A category, number, group, plan, action, or new piece of content?</span></div>
-        <div class="routine-step"><strong>What evidence is available?</strong><span>Fixed rules, labelled examples, unlabelled data, or feedback?</span></div>
-        <div class="routine-step"><strong>What clue points to the method?</strong><span>Say the clue out loud before selecting an answer.</span></div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="toolkit-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">02</span>
-        <div>
-          <h2 id="toolkit-title">Your approach cards</h2>
-          <p class="section-intro">Use these short definitions while you work. These are overlapping parts of a toolkit, not mutually exclusive types of AI. The same real system can combine more than one approach; choose the main fit described in each scenario.</p>
-        </div>
-      </div>
-      <div class="approach-grid">
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">R</span><div><h3>Rules and automation</h3><p>Apply a fixed condition or sequence written in advance.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">C</span><div><h3>Classification</h3><p>Use labelled examples to choose a category for a new case.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">#</span><div><h3>Regression</h3><p>Use examples to estimate a numeric value.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">G</span><div><h3>Clustering</h3><p>Group similar items when no group labels are given.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">P</span><div><h3>Search and planning</h3><p>Compare possible actions to find a plan under constraints.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">↗</span><div><h3>Reinforcement learning</h3><p>Learn actions by trying them and receiving rewards or other feedback.</p></div></article>
-        <article class="approach-card"><span class="approach-icon" aria-hidden="true">Aa</span><div><h3>Generative AI</h3><p>Create new text, images, audio, code, or other content.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="challenge-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">03</span>
-        <div>
-          <h2 id="challenge-title">Match the seven situations</h2>
-          <p class="section-intro">Choose one main approach for each situation. Judge each independently; options can be reused. Explain your clue to your partner, then check all seven choices. The first check gives hints for mismatches; the second reveals the intended answers and reasons. You can change choices and retry or start over.</p>
-        </div>
-      </div>
-
-      <div class="scenario-grid" data-matching-activity data-attempts="0">
-        <article class="scenario-card" data-scenario data-answer="rules" data-answer-label="Rules and automation" data-hint="The threshold and action are both fixed in advance." data-rationale="The threshold and action are specified directly. The problem does not ask the system to learn from examples.">
-          <div><h3>1 · Classroom lights</h3><p>At 19:00, turn on the classroom lights if the sensor reads below 300 lux. The threshold is fixed.</p></div>
-          <div><label for="match-1">Best fit for situation 1</label><select id="match-1" name="match-1" aria-describedby="feedback-1"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-1" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="classification" data-answer-label="Classification" data-hint="The output is one of two categories, and the training photos already have labels." data-rationale="The output is a category (healthy or diseased), and labelled examples are available to train a classifier.">
-          <div><h3>2 · Check a leaf photo</h3><p>Use a collection of photos labelled “healthy” or “diseased” to classify a new leaf photo.</p></div>
-          <div><label for="match-2">Best fit for situation 2</label><select id="match-2" name="match-2" aria-describedby="feedback-2"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-2" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="regression" data-answer-label="Regression" data-hint="The result is an amount of energy, so the answer is a number rather than a category." data-rationale="The requested output is a numeric estimate in kilowatt-hours, which is a regression task.">
-          <div><h3>3 · Estimate energy use</h3><p>Use past meter readings and weather data to estimate how many kilowatt-hours the school will use tomorrow.</p></div>
-          <div><label for="match-3">Best fit for situation 3</label><select id="match-3" name="match-3" aria-describedby="feedback-3"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-3" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="clustering" data-answer-label="Clustering" data-hint="No mood groups have been labelled; the task is to discover groups of similar songs." data-rationale="The data has no supplied group labels. Clustering can group songs by similar audio features; people can interpret the groups afterward.">
-          <div><h3>4 · Find groups of songs</h3><p>Group songs by tempo and other audio features. No mood or genre labels are supplied in advance.</p></div>
-          <div><label for="match-4">Best fit for situation 4</label><select id="match-4" name="match-4" aria-describedby="feedback-4"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-4" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="planning" data-answer-label="Search and planning" data-hint="The system must find a sequence of stops that satisfies a deadline and road constraint." data-rationale="This is a plan-finding problem with explicit constraints. Search or optimisation can compare possible routes; traffic estimates could be added as a separate component.">
-          <div><h3>5 · Plan a delivery route</h3><p>Choose a route for a van visiting four addresses before a deadline while avoiding a closed road.</p></div>
-          <div><label for="match-5">Best fit for situation 5</label><select id="match-5" name="match-5" aria-describedby="feedback-5"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-5" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="reinforcement" data-answer-label="Reinforcement learning" data-hint="The robot improves by trying actions in an environment and receiving a score for what happens." data-rationale="The robot learns a policy from actions and reward feedback in a simulated environment. It is not given a correct action label for every situation.">
-          <div><h3>6 · Train a warehouse robot</h3><p>In a simulation, a robot tries actions to reach a charging station. It earns points for a fast, safe arrival and loses points for hitting an obstacle. Over repeated trials, it uses those rewards to improve its action choices.</p></div>
-          <div><label for="match-6">Best fit for situation 6</label><select id="match-6" name="match-6" aria-describedby="feedback-6"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-6" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <article class="scenario-card" data-scenario data-answer="generative" data-answer-label="Generative AI" data-hint="The requested result is a newly written draft based on notes." data-rationale="The tool is asked to create new text. A teacher should verify names, dates, and claims against the original notes.">
-          <div><h3>7 · Draft a lesson summary</h3><p>Given a teacher’s outline and lesson notes, produce a first-draft summary for students to review.</p></div>
-          <div><label for="match-7">Best fit for situation 7</label><select id="match-7" name="match-7" aria-describedby="feedback-7"><option value="">Choose an approach…</option><option value="rules">Rules and automation</option><option value="classification">Classification</option><option value="regression">Regression</option><option value="clustering">Clustering</option><option value="planning">Search and planning</option><option value="reinforcement">Reinforcement learning</option><option value="generative">Generative AI</option></select><p id="feedback-7" class="scenario-feedback" aria-live="polite"></p></div>
-        </article>
-
-        <div>
-          <div class="button-row">
-            <button class="button" type="button" data-check-matches>Check my matches</button>
-            <button class="button secondary" type="button" data-reset-matches>Start over</button>
-          </div>
-          <p class="status" data-match-status aria-live="polite"></p>
-        </div>
-      </div>
-      <p class="hint">This is practice, not a graded test. Your choices are not saved; reloading clears them. Record your final explanation in your own notes.</p>
-      <p class="hint"><strong>Pair prompt:</strong> Before checking, tell your partner one clue for each choice. A good explanation names the output and the evidence—not just the approach name.</p>
-      <noscript><p class="noscript">The matching choices need JavaScript for feedback. The approach cards and teacher answer key remain available without it.</p></noscript>
-    </section>
-
-    <section class="section" aria-labelledby="reflect-title">
-      <div class="section-heading">
-        <span class="section-number" aria-hidden="true">04</span>
-        <div><h2 id="reflect-title">One more question</h2><p class="section-intro">Choose one scenario and discuss with your partner:</p></div>
-      </div>
-      <div class="card-grid">
-        <article class="card"><h3>What might the system get wrong?</h3><p>Think about poor or missing data, a new situation, a badly chosen reward, or a plausible but inaccurate generated answer.</p></article>
-        <article class="card"><h3>How could a person check it?</h3><p>Name a practical check. For example, inspect the source photos, compare an estimate with actual readings, review the route constraints, or verify a draft against its notes.</p></article>
-      </div>
-    </section>
-
-    <div class="next-step">
-      <p><strong>Finish with a one-sentence explanation.</strong><br>“I chose ___ because the problem asks for ___ and provides ___.”</p>
-      <a class="button secondary" href="/w1/course/">Review the course →</a>
-    </div>
-
-    <section class="section" aria-labelledby="teachable"><div class="section-heading"><span class="section-number">05</span><div><h2 id="teachable">Extension: image classification with Teachable Machine</h2></div></div><div class="card"><p>Train a small image model at <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> using two everyday objects. Do not collect classmates' faces, voices or private information.</p><ol><li>Collect varied labelled images of each object.</li><li>Train the model and test five unseen examples.</li><li>Record the predicted class, confidence and actual class.</li><li>Describe what happens when light or background changes.</li></ol><p>Confidence is not a guarantee of correctness.</p></div></section>
-<details class="teacher-notes"><summary>Teacher guide · 60-minute club session</summary><div class="teacher-content"><p>Use selected method-matching cards (around 10 minutes), then a short Teachable Machine object demo (around 10 minutes) during the last part of the one-hour session. The complete seven-card lab is a self-paced extension. Students should describe a predicted class, a confidence score and a failure case.</p></div></details>
-
-    <!-- SOURCED OUTLINE START --><section class="section" aria-labelledby="week1-guided-lab"><div class="section-heading"><div><h2 id="week1-guided-lab">Colab laboratory and references</h2></div></div><p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/w1/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Week 1 starter notebook (Colab)</a></p><ol><li>Label features and classes in the browser experiment</li><li>Inspect and change the same labels/test cases in the club Colab</li><li>Explain one failure and the limits of confidence</li></ol><p><a href="https://colab.research.google.com/github/OlimpiadaAI/szkolenia/blob/main/01a_wprowadzenie_do_srodowiska_google_colab.ipynb" target="_blank" rel="noopener noreferrer">Polish Olympiad: Google Colab introduction</a></p><p class="reference"><span class="reference-label">References: </span><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI: Foundations of AI</a> · <a href="https://appinventor.mit.edu/explore/resources/ai/image-classification-look-extension" target="_blank" rel="noopener noreferrer">MIT App Inventor: Image Classification Extension</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a></p></section><!-- SOURCED OUTLINE END --><footer class="page-footer">Machine Learning Club · Seven Hills International School · <a href="/">Back to the club home</a></footer>
-  <!-- WEEK SOURCE MAP --><p class="reference"><a href="/materials/#w1">Specific textbooks, lesson plans and source exercises for this week</a></p><!-- /WEEK SOURCE MAP --></main>
-</body>
-</html>
+<section><h2>Laboratory objectives</h2><p>Experience an AI prediction, train a two-class model using ordinary objects, and inspect a much smaller Python model to see what learning actually changes.</p>
+<p class="understated">In-class route: 10 min drawing · 15 min object classifier · 20 min notebook · 10 min comparisons · 5 min exit ticket.</p></section>
+<section class="lab-step">
+<h2>1. Explore — Quick, Draw!</h2>
+<p>Play two or three rounds. Before finishing a sketch, watch the changing guesses. Record one correct and one incorrect guess. Do not assume it recognises the object in the same way a human does.</p>
+<p class="launch"><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Launch Quick, Draw! ↗</a></p>
+<ol><li>Choose one drawing the system guessed quickly.</li><li>Choose one it failed to recognise.</li><li>Suggest a difference between the training sketches and yours.</li></ol>
+<p class="source-line">Source: <a href="https://experiments.withgoogle.com/collection/ai">Experiments with Google — AI collection</a>.</p>
+</section>
+<section class="lab-step">
+<h2>2. Experiment — Teachable Machine</h2>
+<p>Use two ordinary classroom objects (for example, a pencil case and a notebook), not students' faces. Collect about ten different camera frames for each object. Train a model and test on a new background.</p>
+<p class="launch"><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Launch Teachable Machine ↗</a></p>
+<ol><li>Collect and label examples of A and B.</li><li>Train the image classifier.</li><li>Test each object at least three times on backgrounds that were <em>not</em> used for training.</li><li>Record the predicted class and whether it was correct. What changed?</li></ol>
+<p class="lab-note">Teachable Machine uses a more complicated underlying model than the toy Python classifier. Do not try to interpret its displayed scores as calibrated probabilities.</p>
+</section>
+<section class="lab-step">
+<h2>3. Inspect — your first Colab notebook</h2>
+<p>Open the prepared notebook. It introduces two synthetic numerical features, labelled training examples and a transparent nearest-prototype classifier. Predict the output before you run each cell.</p>
+<p><a href="https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/w1/lab/starter.ipynb" target="_blank" rel="noopener noreferrer">Open Week 1 notebook in Google Colab ↗</a> · <a href="starter.ipynb" download>Download notebook</a></p>
+<details class="notebook-preview"><summary>Preview a real executable cell from the notebook</summary><pre><code>training = [
+    {&quot;size&quot;: 2.0, &quot;reflectance&quot;: 2.0, &quot;label&quot;: &quot;A&quot;},
+    {&quot;size&quot;: 2.0, &quot;reflectance&quot;: 3.0, &quot;label&quot;: &quot;A&quot;},
+    {&quot;size&quot;: 3.0, &quot;reflectance&quot;: 2.0, &quot;label&quot;: &quot;A&quot;},
+    {&quot;size&quot;: 7.0, &quot;reflectance&quot;: 7.0, &quot;label&quot;: &quot;B&quot;},
+    {&quot;size&quot;: 7.0, &quot;reflectance&quot;: 8.0, &quot;label&quot;: &quot;B&quot;},
+    {&quot;size&quot;: 8.0, &quot;reflectance&quot;: 7.0, &quot;label&quot;: &quot;B&quot;},
+]
+print(&quot;Training examples:&quot;, len(training))
+print(&quot;Classes:&quot;, sorted({row[&quot;label&quot;] for row in training}))
+for row in training: print(row)</code></pre></details>
+<ol><li>Run the original notebook and find the learned class prototypes.</li><li>Move two training examples closer to the middle and retrain.</li><li>Identify at least one prediction that changed.</li><li>Test an input far from all training points. Explain what the prediction does <em>not</em> tell you.</li></ol>
+</section>
+<section><h2>4. Compare and reflect</h2>
+<table><thead><tr><th>System</th><th>Input</th><th>What can change?</th></tr></thead><tbody>
+<tr><td>Fixed threshold</td><td>Brightness number</td><td>Only the programmer-written threshold</td></tr>
+<tr><td>Teachable Machine</td><td>Image</td><td>Model learned from supplied image examples</td></tr>
+<tr><td>Club notebook</td><td>Two numbers</td><td>Prototypes calculated from data</td></tr></tbody></table>
+<p><strong>Exit ticket:</strong> In two sentences, describe the difference between a programmer writing a rule and an algorithm learning from examples. Give one reason a model may fail on new data.</p>
+</section>
+<script src="/assets/academic-experiments.js" defer></script>
+</main>
+<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
+</body></html>
