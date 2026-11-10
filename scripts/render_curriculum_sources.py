@@ -126,9 +126,12 @@ for k in ("course","lab"):
 # Make clear that the bibliography labels are plain inline links, no new visual styles.
 css=root/'assets/site.css'
 s=css.read_text()
-s+='\n.reference{font-size:.89rem;color:#666;line-height:1.5;margin:8px 0 20px}.reference-label{color:#666}.intro{margin:12px 0 25px}.note{color:#666;font-size:.9rem}\n'
+if '.reference-label{color:#666}' not in s:
+    s+='\n.reference{font-size:.89rem;color:#666;line-height:1.5;margin:8px 0 20px}.reference-label{color:#666}.intro{margin:12px 0 25px}.note{color:#666;font-size:.9rem}\n'
 css.write_text(s)
 css=root/'w1/classic.css'
-s=css.read_text()+'\n.reference{font-size:.89rem;color:#666;line-height:1.5;margin:8px 0 20px}.reference-label{color:#666}\n'
+s=css.read_text()
+if '.reference-label{color:#666}' not in s:
+    s+='\n.reference{font-size:.89rem;color:#666;line-height:1.5;margin:8px 0 20px}.reference-label{color:#666}\n'
 css.write_text(s)
 print("Rendered sourced curriculum for",len(raw),"weeks")
