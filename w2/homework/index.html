@@ -1,32 +1,4 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Transfer the ID3 algorithm to a new categorical dataset and trace its decisions.">
-<title>Week 2: Homework · Machine Learning Club</title>
-<link rel="stylesheet" href="/assets/academic.css">
-</head>
-<body>
-<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
-<p class="site-sub">Seven Hills International School · 2026–2027</p>
-<p class="breadcrumb"><a href="/">All lessons</a> / Week 2 / Homework</p>
-</header>
-<main id="main">
-<p class="eyebrow">Week 02 · Homework</p>
-<h1>Assignment 03 — An explainable event planner</h1>
-<p class="deck">Transfer the ID3 algorithm to a new categorical dataset and trace its decisions.</p>
-<nav class="lesson-tabs" aria-label="Week 2 materials"> <a href="/w2/course/">Course</a> <a href="/w2/lab/">Laboratory</a> <a href="/w2/homework/" aria-current="page">Homework</a> <a href="/w2/advanced/">Advanced</a><a href="/quiz/?week=2">Quiz</a></nav>
-
-<p class="assignment-meta">Version 2026–2027 · Individual work · Adapt the Week 2 ID3 implementation</p>
-<section><h2>Context</h2>
-<p>A student club has to decide whether an equipment demonstration should be held in a courtyard or inside. Its archive contains examples with three categorical observations: sky (sunny/cloudy/rainy), wind (calm/windy) and temperature (warm/cold). Historical decisions were recorded as <strong>yes</strong> (outdoors) or <strong>no</strong> (indoors).</p>
-<p>This is synthetic training data for an algorithm exercise, not a real outdoor-safety decision system.</p>
-<p>Resources: <a href="/w2/course/">Course</a> · <a href="/w2/lab/">Laboratory</a> · <a href="/w2/lab/starter.ipynb">Starter ID3 notebook</a> · <a href="club-events.csv" download>Club events dataset (12 records)</a>.</p><details class="notebook-preview"><summary>Provided Colab code: load the new dataset</summary><pre><code>from google.colab import files
-files.upload()  # Upload club-events.csv
-import csv
-with open("club-events.csv", newline="") as f:
-    all_rows = list(csv.DictReader(f))
-# Next: reserve rows 4, 7 and 11; fit ID3 on the other rows.
-</code></pre></details></section>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Supervised Learning: ID3 — Homework"><title>Supervised Learning: ID3 — Homework · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><script defer src="/assets/academic-ui.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="homework" aria-label="Select a week"><option value="1">Week 01 — What Is AI? Rules and Learning</option><option value="2" selected>Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/w1/homework/">← Week 1</a> <span>·</span> <a href="/w3/homework/">Week 3 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 2 materials"><a href="/w2/course/">Course</a><a href="/w2/lab/">Laboratory</a><a href="/w2/homework/" aria-current="page">Homework</a><a href="/w2/advanced/">Advanced</a><a href="/w2/quiz/">Quiz</a></nav></header><main class="lesson-content"><p class="eyebrow">Week 02 · Homework</p><h1>Supervised Learning: ID3</h1><p class="deck">Learn a tree by asking the most informative questions.</p><section class="scenario"><h2>Real-life situation</h2><p>The school must decide whether to move an outdoor activity indoors when weather changes.</p></section>
 <section><h2>Mandatory <span class="point-value">(1p)</span></h2>
 <ol><li>Load the new <a href="club-events.csv">dataset</a> into the ID3 notebook without changing the original algorithm.</li>
 <li>Reserve the records with numbers <strong>4, 7 and 11</strong> for evaluation. Do not train on those three records.</li>
@@ -42,7 +14,4 @@ with open("club-events.csv", newline="") as f:
 <section><h2>Advanced — optional reading</h2>
 <p><a href="/w2/advanced/">Open the ID3 reasoning problem sheet</a>: minimal trees, irrelevant attributes, missing combinations, and why a learned tree is only as justified as the information available. No additional software is needed.</p></section>
 <section class="submission"><h2>Submission</h2><p>Submit the modified Colab notebook or <code>.ipynb</code> file, a labelled tree diagram, and a short results table. GitHub remains optional until the engineering part of the course.</p></section>
-
-</main>
-<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
-</body></html>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf" target="_blank" rel="noopener noreferrer">IOAI 2026 Syllabus</a> <span class="reference-note">— Teacher/advanced reference</span></li><li><a href="https://github.com/OlimpiadaAI/szkolenia" target="_blank" rel="noopener noreferrer">Polish AI Olympiad: high-school training</a> <span class="reference-note">— Teacher/advanced reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w2/course/">Course</a><a href="/w2/lab/">Laboratory</a><a href="/w2/homework/">Homework</a><a href="/w2/advanced/">Advanced</a><a href="/w2/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

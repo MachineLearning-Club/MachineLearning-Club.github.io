@@ -1,0 +1,397 @@
+[
+  {
+    "n": 6,
+    "title": "Perceptrons: A First Learning Neuron",
+    "subtitle": "Understand weights, bias and a decision boundary before a large neural network.",
+    "scenario": "An automatic recycling sorter learns whether a sensor reading looks like metal or paper.",
+    "sections": [
+      [
+        "A neuron computes a weighted sum",
+        "A sensor measures brightness and reflectance for a recyclable object.",
+        "A perceptron multiplies inputs by weights, adds a bias, then applies a simple activation rule.",
+        "For x=(2,1), w=(1,-1), bias=-0.5, weighted total=2-1-0.5=0.5.",
+        [
+          "Multiply each input by its weight",
+          "Add the bias",
+          "Apply the step rule"
+        ],
+        "x = [2,1]; w = [1,-1]; bias=-.5\nscore = sum(a*b for a,b in zip(x,w))+bias\nprint(score>=0)"
+      ],
+      [
+        "Weights change the decision",
+        "A sorter mistakes one sample for metal.",
+        "Positive and negative weights pull decisions in different directions; the bias shifts the threshold.",
+        "Increasing the brightness weight may move some samples to the 'metal' side.",
+        [
+          "Change one weight",
+          "Predict a border case",
+          "Compare old/new decisions"
+        ],
+        "def output(x,w,b):\n    return int(sum(a*c for a,c in zip(x,w))+b>=0)\nprint(output([1,1],[1,-1],-.5))"
+      ],
+      [
+        "A perceptron can learn from errors",
+        "A labelled training example was misclassified.",
+        "A basic perceptron update adjusts weights toward the desired label when a mistake occurs. It is not the same as backpropagation through a multilayer network.",
+        "For target 1 and prediction 0, a positive learning rate increases weights along the input vector.",
+        [
+          "Predict",
+          "Compare with label",
+          "Apply a small update"
+        ],
+        "weights = [0.0,0.0]\nx=[1,2]; target=1; prediction=0; lr=.1\nprint([w+lr*(target-prediction)*xi for w,xi in zip(weights,x)])"
+      ]
+    ],
+    "sources": [
+      "MSAI",
+      "POL",
+      "TF",
+      "CB"
+    ],
+    "app": {
+      "title": "TensorFlow Playground",
+      "url": "https://playground.tensorflow.org/"
+    },
+    "lab": {
+      "context": "A toy recycling station sorts objects using two sensor features.",
+      "steps": [
+        "Calculate a single neuron's weighted sum by hand.",
+        "Move weights in a browser neural-network visualiser.",
+        "Run a tiny perceptron on six labelled examples.",
+        "Find one observation that a straight-line boundary handles poorly."
+      ],
+      "research": "Write one perceptron weight update and show how the boundary changes."
+    },
+    "homework": {
+      "context": "A recycling station must separate two kinds of objects using simple measurements.",
+      "mandatory": "Compute neuron outputs for three inputs.",
+      "homework": "Modify two weights and a bias in the lab notebook to classify new examples."
+    },
+    "advanced": [
+      "Show that a single straight line cannot separate every pattern.",
+      "Trace a short perceptron update sequence."
+    ],
+    "diagram": "perceptron"
+  },
+  {
+    "n": 7,
+    "title": "Neural Networks and Training",
+    "subtitle": "Combine neurons into layers and watch a tiny network improve.",
+    "scenario": "A handwritten symbol recogniser must distinguish simple patterns that one line cannot separate.",
+    "sections": [
+      [
+        "Why a network needs hidden layers",
+        "Four 2D points form a checkerboard pattern.",
+        "One linear perceptron cannot perfectly represent XOR; combining nonlinear neurons makes richer boundaries possible.",
+        "For points (0,0),(1,1) → 0 and (0,1),(1,0) → 1, no single straight line separates the classes.",
+        [
+          "Plot four points",
+          "Try a straight dividing line",
+          "Add hidden neurons"
+        ],
+        "points = {(0,0):0,(0,1):1,(1,0):1,(1,1):0}\nprint(points)"
+      ],
+      [
+        "From input to output: forward pass",
+        "Two measurements enter a small neural network.",
+        "Each neuron forms a weighted sum plus bias, applies an activation function and sends its result to the next layer.",
+        "An input passes through a hidden layer, then an output layer that estimates its class.",
+        [
+          "Write inputs",
+          "Compute a hidden activation",
+          "Compute an output"
+        ],
+        "def relu(x):return max(0,x)\nprint(relu(2*1+(-1)*2+0.5))"
+      ],
+      [
+        "Learning means reducing error",
+        "Predictions are sometimes wrong during training.",
+        "Loss measures mismatch between predictions and known answers. Training updates parameters to reduce the loss across examples.",
+        "Squared error for target 1.0 and prediction 0.6 is (1-0.6)^2=0.16.",
+        [
+          "Predict",
+          "Calculate loss",
+          "Adjust a parameter and repeat"
+        ],
+        "target,prediction=1.0,.6\nprint((target-prediction)**2)"
+      ],
+      [
+        "Backpropagation, without overwhelming calculus",
+        "A model has several layers that contribute to one wrong prediction.",
+        "Backpropagation efficiently calculates how changes to each weight affect the loss. Gradient descent then performs a small update.",
+        "If increasing a weight increases loss, the update reduces that weight; if it decreases loss, update goes the other way.",
+        [
+          "Follow the error backward",
+          "Determine a change direction",
+          "Watch loss over several rounds"
+        ],
+        "weight,gradient,rate=.8,.3,.1\nprint(weight-rate*gradient)"
+      ]
+    ],
+    "sources": [
+      "MSAI",
+      "POL",
+      "TF",
+      "IO"
+    ],
+    "app": {
+      "title": "Neural Network Playground",
+      "url": "https://playground.tensorflow.org/"
+    },
+    "lab": {
+      "context": "Train a small network to recognise a toy XOR-like handwritten-symbol pattern.",
+      "steps": [
+        "Try XOR with no hidden layer and record the result.",
+        "Add hidden neurons in the visual playground.",
+        "Run the notebook and plot training loss over iterations.",
+        "Change the learning rate and compare convergence."
+      ],
+      "research": "Compare two network sizes and explain overfitting risk using the same training data."
+    },
+    "homework": {
+      "context": "A handwriting app confuses two simple symbols because their features overlap.",
+      "mandatory": "Calculate one neuron activation and loss.",
+      "homework": "Change the hidden layer size in the supplied notebook and compare accuracy."
+    },
+    "advanced": [
+      "Work out a one-parameter gradient-descent update.",
+      "Explain why nonlinear activations are necessary for XOR."
+    ],
+    "diagram": "network"
+  },
+  {
+    "n": 8,
+    "title": "Revision: Computer Vision and Neural Networks",
+    "subtitle": "Connect image pixels, learned features and predictions.",
+    "scenario": "A classroom sketch-recognition demo must be accurate on drawings it has never seen.",
+    "sections": [
+      [
+        "From pixels to predictions",
+        "A student draws a digit on a small canvas.",
+        "Image pixels become input numbers, a preprocessing step rescales them, and a learned classifier predicts a label.",
+        "A grayscale 8×8 image contains 64 values; a digit model might use those 64 numbers as features.",
+        [
+          "Draw a shape",
+          "Read its pixels",
+          "Predict its class"
+        ],
+        "image = [[0]*8 for _ in range(8)]\nimage[3][4]=255\nprint(image[3][4])"
+      ],
+      [
+        "Revision: what models actually learn",
+        "A digit looks different when tilted.",
+        "Thresholding filters adjust pixels by a rule; neural networks learn weighted transformations from examples.",
+        "Changing brightness can affect a rule-based threshold and the neural model differently.",
+        [
+          "Observe an input transformation",
+          "Compare two model predictions",
+          "Identify the source of the difference"
+        ],
+        "print('Pixels → preprocessing → model → label')"
+      ],
+      [
+        "Reading an evaluation result",
+        "A model correctly recognises 18 of 20 held-out digits.",
+        "Accuracy = correct / total; a confusion matrix shows which types of mistakes happened. Test data must not be used during training.",
+        "18/20=90%, but both mistakes might involve the same digit, so inspect errors by class.",
+        [
+          "Calculate accuracy",
+          "Count errors by class",
+          "Describe one weak case"
+        ],
+        "correct,total=18,20\nprint(f'{100*correct/total:.0f}%')"
+      ]
+    ],
+    "sources": [
+      "MSAI",
+      "PY",
+      "POL",
+      "IO"
+    ],
+    "app": {
+      "title": "Google Quick, Draw! and visual comparisons",
+      "url": "https://quickdraw.withgoogle.com/"
+    },
+    "lab": {
+      "context": "Review a small handwritten-digit classifier and its mistakes.",
+      "steps": [
+        "Draw two variants of the same digit.",
+        "Inspect an 8×8 pixel representation.",
+        "Run the supplied classifier on held-out examples.",
+        "Explain one error and try a preprocessing change."
+      ],
+      "research": "Build a small error gallery: three wrong predictions with possible causes."
+    },
+    "homework": {
+      "context": "A school app claims it recognises handwritten classroom labels accurately.",
+      "mandatory": "Interpret the model's confusion table and compute accuracy.",
+      "homework": "Use the evaluation notebook to compare predictions before and after image preprocessing."
+    },
+    "advanced": [
+      "Compare training and test errors on a small dataset.",
+      "Explain how class imbalance can make accuracy misleading."
+    ],
+    "diagram": "pixels"
+  },
+  {
+    "n": 9,
+    "title": "Mid-Term Evaluation",
+    "subtitle": "Demonstrate your understanding through practical tasks and short explanations.",
+    "scenario": "A small team must assess an ML system before showing it at a school fair.",
+    "sections": [
+      [
+        "Review the core ideas",
+        "An evaluator asks whether a solution should use fixed rules, ID3, K-Means or a neural network.",
+        "Choose algorithms based on the form of available data and the desired result, not their popularity.",
+        "Known class labels → supervised learning; unknown groups → clustering; known sensor rules → conventional programming.",
+        [
+          "Identify inputs",
+          "Check for labels",
+          "Choose the solution type"
+        ],
+        "problems = ['thermostat','cluster points','classify labelled points']\nprint(problems)"
+      ],
+      [
+        "A practical evaluation procedure",
+        "A classifier receives new points and produces labels.",
+        "A fair evaluation uses examples that were not included in training and reports results clearly.",
+        "If 7 of 10 held-out cases are correct, accuracy is 70%; explain two failures.",
+        [
+          "Keep test data separate",
+          "Run predictions",
+          "Record both successes and failures"
+        ],
+        "predictions=['A','B','A']; actual=['A','A','A']\nprint(sum(a==b for a,b in zip(predictions,actual)))"
+      ],
+      [
+        "Explain a model visually",
+        "The teacher sees a model's answer but does not know how it was produced.",
+        "A useful technical explanation names the input, transformation, output and limitation. Diagrams are as valuable as code for this task.",
+        "A pixel image becomes a number grid, then hidden neuron activations, then a predicted digit.",
+        [
+          "Draw the pipeline",
+          "Show one intermediate value",
+          "State a limitation"
+        ],
+        "print('Input → transform → predict → evaluate')"
+      ]
+    ],
+    "sources": [
+      "CB",
+      "EA",
+      "PY",
+      "IO"
+    ],
+    "app": {
+      "title": "Neural Network Playground for recap",
+      "url": "https://playground.tensorflow.org/"
+    },
+    "lab": {
+      "context": "A practical mid-term activity using small datasets and visual models.",
+      "steps": [
+        "Choose a suitable algorithm for three real-life scenarios.",
+        "Repair a small classifier example by filling missing values.",
+        "Run predictions on a held-out set.",
+        "Explain a chosen decision in a short diagram."
+      ],
+      "research": "Compare two eligible algorithms and defend the choice using evaluation evidence."
+    },
+    "homework": {
+      "context": "A science-fair panel asks for proof that a student's model works on unfamiliar inputs.",
+      "mandatory": "Prepare a one-page visual explanation of a model.",
+      "homework": "Correct a small notebook and add an honest evaluation table."
+    },
+    "advanced": [
+      "Solve a cumulative algorithm-selection problem.",
+      "Compare a supervised classifier with an unsupervised clustering result."
+    ],
+    "diagram": "bars"
+  },
+  {
+    "n": 10,
+    "title": "Generative AI: GPT, Data and Society",
+    "subtitle": "Tokens, next-word prediction, social-media data, ethics and responsible use.",
+    "scenario": "A social-media platform recommends posts and a language model writes a summary of them.",
+    "sections": [
+      [
+        "How language models predict text",
+        "A phone suggests the next word while you type.",
+        "A language model learns statistical patterns of tokens; tokens may be words, parts of words or punctuation.",
+        "Given 'The weather is', a model may assign different scores to 'sunny', 'cold' and 'changing'.",
+        [
+          "Split a sentence into tokens",
+          "Inspect possible continuations",
+          "Choose one token"
+        ],
+        "sentence = 'The weather is'\nprint(sentence.split())"
+      ],
+      [
+        "Where training data come from",
+        "A recommendation platform records which posts people click.",
+        "Large-scale data may contain preferences, biases, copyrighted materials and personal information. Having data does not always give permission to reuse it.",
+        "Two users who click on different posts can receive very different recommended content.",
+        [
+          "Identify data being recorded",
+          "Ask who benefits",
+          "Discuss consent and representation"
+        ],
+        "clicks = {'sports':4,'music':2}\nprint(max(clicks,key=clicks.get))"
+      ],
+      [
+        "Behaviour and recommendation systems",
+        "Someone watches three football videos, so the platform offers a fourth.",
+        "Recommenders may rank content based on observed behaviour; recommendation is not the same as knowing a person's intentions or values.",
+        "A click is a noisy signal: curiosity and disagreement can both cause clicks.",
+        [
+          "Observe the suggested content",
+          "List alternative explanations",
+          "Question a recommendation loop"
+        ],
+        "print('Clicks ≠ complete understanding of a person')"
+      ],
+      [
+        "Reliability, ethics and control",
+        "A generated answer invents a source it cannot actually provide.",
+        "Language-model output must be checked against evidence. Discuss hallucination, privacy, misinformation, environmental costs, labour and social impacts.",
+        "A confident-sounding claim without a verifiable source is still uncertain.",
+        [
+          "Find a claim",
+          "Look for independent evidence",
+          "Mark it supported/uncertain/unsupported"
+        ],
+        "claims = {'claim one':'supported','claim two':'uncertain'}\nprint(claims)"
+      ]
+    ],
+    "sources": [
+      "UN",
+      "EA",
+      "TX",
+      "CB",
+      "OECD"
+    ],
+    "app": {
+      "title": "Transformer Explainer",
+      "url": "https://poloclub.github.io/transformer-explainer/"
+    },
+    "lab": {
+      "context": "Investigate a text generator and a personalised-feed toy simulation.",
+      "steps": [
+        "Inspect how a short sentence is tokenised.",
+        "Change the text-generation sampling setting in the visual explainer.",
+        "Compare two hypothetical recommendation feeds generated from different click histories.",
+        "Check three claims against independent references."
+      ],
+      "research": "Design a small evaluation rubric for harmful or misleading recommendations."
+    },
+    "homework": {
+      "context": "A school's media team is considering using an AI assistant to write newsletter summaries.",
+      "mandatory": "Tokenise a short sentence and identify two risks of trusting its generated completion.",
+      "homework": "Build a table of three generated claims, their source evidence and a verdict."
+    },
+    "advanced": [
+      "Explain how selection bias can create recommendation feedback loops.",
+      "Compare a rule-based chatbot with a language model."
+    ],
+    "diagram": "pipeline"
+  }
+]

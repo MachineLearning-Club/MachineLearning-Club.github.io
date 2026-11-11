@@ -1,181 +1,181 @@
 {
   "week": 2,
-  "title": "Mathematics for Machine Learning",
+  "title": "Supervised Learning: ID3",
   "durationSeconds": 300,
   "maximumPoints": 10,
   "status": "DRAFT - teacher review required",
   "instructions": "Ten questions. Some have more than one correct answer; select every correct option. Exact match earns one point. Answers are revealed only after submission in the interface.",
   "questions": [
     {
-      "id": "w2q1",
+      "id": "w3q1",
       "type": "single",
-      "prompt": "Two measurements, height and reflectance, are used to predict whether an object belongs to class A or B. Which values are the input features?",
+      "prompt": "In a classification decision tree, what does an internal node ordinarily represent?",
       "options": [
-        "The measured height and reflectance",
-        "The classes A and B",
-        "The number of correct predictions",
-        "The final score of the classifier"
+        "A test on one input feature",
+        "The final class prediction",
+        "The total number of records",
+        "The overall model accuracy"
       ],
       "correct": [
         0
       ],
-      "explanation": "Features are the measured input properties. A/B is the target label.",
-      "topic": "Features and labels",
+      "explanation": "An internal node asks a question about a feature; branches follow possible answers.",
+      "topic": "Tree structure",
       "points": 1
     },
     {
-      "id": "w2q2",
+      "id": "w3q2",
       "type": "single",
-      "prompt": "A dataset contains measurements but no predefined categories. We want to discover groups of similar records. Which task fits?",
+      "prompt": "What is the role of a leaf in a classification decision tree?",
       "options": [
-        "Supervised classification",
-        "Unsupervised clustering",
-        "Numerical regression with given targets",
-        "Evaluation on a labelled test set"
+        "It always calculates a new entropy",
+        "It provides a predicted class",
+        "It stores the full training dataset",
+        "It chooses the next feature automatically"
       ],
       "correct": [
         1
       ],
-      "explanation": "Clustering groups observations without supplied class labels.",
-      "topic": "Learning types",
+      "explanation": "A leaf is a terminal decision, typically holding a class label.",
+      "topic": "Tree structure",
       "points": 1
     },
     {
-      "id": "w2q3",
+      "id": "w3q3",
       "type": "single",
-      "prompt": "What is the arithmetic mean of the numbers 2, 4, 6 and 8?",
-      "options": [
-        "4",
-        "5",
-        "6",
-        "8"
-      ],
-      "correct": [
-        1
-      ],
-      "explanation": "The sum is 20; dividing by four gives 5.",
-      "topic": "Descriptive statistics",
-      "points": 1
-    },
-    {
-      "id": "w2q4",
-      "type": "single",
-      "prompt": "What is the median of the sorted observations 2, 3, 4, 20, 21?",
-      "options": [
-        "3",
-        "4",
-        "10",
-        "20"
-      ],
-      "correct": [
-        1
-      ],
-      "explanation": "There are five values, so the median is the central (third) value: 4.",
-      "topic": "Descriptive statistics",
-      "points": 1
-    },
-    {
-      "id": "w2q5",
-      "type": "single",
-      "prompt": "In a labelled dataset, three of four examples have class 'yes'. What fraction of the records are 'yes'?",
-      "options": [
-        "1/4",
-        "1/2",
-        "3/4",
-        "4/3"
-      ],
-      "correct": [
-        2
-      ],
-      "explanation": "Three yes labels out of four examples give 3/4 = 0.75.",
-      "topic": "Class proportions",
-      "points": 1
-    },
-    {
-      "id": "w2q6",
-      "type": "single",
-      "prompt": "What is the binary Shannon entropy (in bits) when two classes each have probability 1/2?",
-      "options": [
-        "0",
-        "0.5",
-        "1",
-        "2"
-      ],
-      "correct": [
-        2
-      ],
-      "explanation": "−(1/2)log₂(1/2) − (1/2)log₂(1/2) = 1 bit.",
-      "topic": "Information theory",
-      "points": 1
-    },
-    {
-      "id": "w2q7",
-      "type": "single",
-      "prompt": "A group contains 12 examples and every label is 'A'. What is its class entropy?",
+      "prompt": "Eight training records have three 'yes' labels and five 'no' labels. Which is their Shannon entropy, approximately?",
       "options": [
         "0 bits",
-        "0.5 bits",
-        "1 bit",
-        "12 bits"
-      ],
-      "correct": [
-        0
-      ],
-      "explanation": "A pure class distribution has zero uncertainty about the class label; entropy is 0.",
-      "topic": "Information theory",
-      "points": 1
-    },
-    {
-      "id": "w2q8",
-      "type": "single",
-      "prompt": "A collected table contains a missing temperature value. What is the most defensible first step?",
-      "options": [
-        "Replace it with zero without checking the meaning",
-        "Delete the complete dataset",
-        "Inspect how missing values are encoded and decide a handling rule",
-        "Assume it equals the largest recorded temperature"
+        "0.500 bits",
+        "0.954 bits",
+        "1.500 bits"
       ],
       "correct": [
         2
       ],
-      "explanation": "Missing values must be identified and handled deliberately, with the rule documented.",
-      "topic": "Data quality",
+      "explanation": "H = −(3/8)log₂(3/8) − (5/8)log₂(5/8) ≈ 0.9544 bits.",
+      "topic": "Entropy",
       "points": 1
     },
     {
-      "id": "w2q9",
-      "type": "multiple",
-      "prompt": "Select ALL appropriate practices before sharing a small labelled classroom dataset.",
+      "id": "w3q4",
+      "type": "single",
+      "prompt": "A candidate split has parent entropy 0.9544 bits and weighted child entropy 0.4056 bits. What is its information gain?",
       "options": [
-        "Remove direct personal identifiers if the data are shared",
-        "Inspect missing and inconsistent values",
-        "Assume the collected examples represent every student",
-        "Change uncertain labels to positive without checking"
+        "0.4056 bits",
+        "0.5488 bits",
+        "0.9544 bits",
+        "1.3600 bits"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Information gain is parent entropy minus weighted child entropy: 0.9544 − 0.4056 = 0.5488 bits.",
+      "topic": "Information gain",
+      "points": 1
+    },
+    {
+      "id": "w3q5",
+      "type": "single",
+      "prompt": "The candidate root gains are sky: 0.5488, wind: 0.0488 and temperature: 0.0488 bits. Which feature does greedy ID3 choose?",
+      "options": [
+        "Wind",
+        "Temperature",
+        "Sky",
+        "Any feature with equal probability"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "ID3 chooses the available feature with the largest information gain, here sky.",
+      "topic": "Root choice",
+      "points": 1
+    },
+    {
+      "id": "w3q6",
+      "type": "single",
+      "prompt": "In the training subset where sky = rainy, all four outputs are 'no'. What does ID3 do with that branch?",
+      "options": [
+        "Create a terminal 'no' leaf",
+        "Split on the remaining features anyway",
+        "Return the most frequent class of the entire dataset",
+        "Remove the rainy examples"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "A pure subset already determines its target label; ID3 stops that branch.",
+      "topic": "Stopping conditions",
+      "points": 1
+    },
+    {
+      "id": "w3q7",
+      "type": "single",
+      "prompt": "A learned tree follows these rules: rainy → no; sunny and calm → yes; sunny, windy and warm → yes; sunny, windy and cold → no. What is its prediction for sunny, windy, cold?",
+      "options": [
+        "Yes",
+        "No",
+        "Both",
+        "Not enough information"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Following sunny → windy → cold reaches the 'no' leaf.",
+      "topic": "Prediction traces",
+      "points": 1
+    },
+    {
+      "id": "w3q8",
+      "type": "single",
+      "prompt": "What happens when every training example reaching a node has the same target label?",
+      "options": [
+        "That node becomes a leaf for the common label",
+        "ID3 must ask all remaining questions",
+        "The algorithm starts training over",
+        "The class probabilities become 1/2 and 1/2"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Pure nodes have no remaining classification uncertainty, so the branch terminates.",
+      "topic": "Stopping conditions",
+      "points": 1
+    },
+    {
+      "id": "w3q9",
+      "type": "multiple",
+      "prompt": "Select ALL statements that can be true for a categorical ID3 classification tree.",
+      "options": [
+        "A leaf can represent the predicted class",
+        "Two branches can have different depths",
+        "Every feature must be numerical",
+        "A perfect training score guarantees success on unseen inputs"
       ],
       "correct": [
         0,
         1
       ],
-      "explanation": "Privacy-aware sharing and data-quality checks are appropriate. Representativeness and labels need evidence, not assumptions.",
-      "topic": "Data ethics",
+      "explanation": "Leaves hold predictions and branches may terminate at different depths. Categorical features are supported; training fit does not guarantee generalisation.",
+      "topic": "Tree properties",
       "points": 1
     },
     {
-      "id": "w2q10",
+      "id": "w3q10",
       "type": "multiple",
-      "prompt": "Select ALL actions that make comparisons between two groups' average sensor readings more meaningful.",
+      "prompt": "A trained tree encounters a feature value absent from the examples at its current node. Select ALL defensible behaviours for an application.",
       "options": [
-        "Compare values measured in the same units",
-        "Report the number of observations in each group",
-        "Treat every missing measurement as exactly zero without justification",
-        "Ignore that one group uses centimetres and the other uses metres"
+        "Return a documented majority-class fallback and flag uncertainty",
+        "Request further information or refer the case to human review",
+        "Always assume the unseen value implies 'yes'",
+        "Report that the fallback is guaranteed correct"
       ],
       "correct": [
         0,
         1
       ],
-      "explanation": "Matching units and reporting sample sizes help interpret averages. Missingness and incompatible units cannot safely be ignored.",
-      "topic": "Sampling and measurement",
+      "explanation": "A documented fallback or a request for review handles unseen values without pretending the prediction is certain.",
+      "topic": "Unseen inputs",
       "points": 1
     }
   ]

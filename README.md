@@ -1,54 +1,68 @@
-# Machine Learning Club — Seven Hills International School
+# Machine Learning Club
 
-Static GitHub Pages website for the 2026–2027 Machine Learning Club.
+Independent educational project operated by **BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ**.
 
-The club has **15 planned one-hour weekly meetings**, from December 2026 to April 2027, with dates subject to school calendar confirmation. The programme includes three stages: ML fundamentals (Weeks 1–9), integrated AI systems with introductory Git/GitHub (Weeks 10–12), and competition/project work (Weeks 13–15).
+Website: https://machinelearning-club.github.io/ · Source: https://github.com/MachineLearning-Club/MachineLearning-Club.github.io
 
-## Learning materials
+The club can partner with multiple schools. The first listed partner is Seven Hills International School, Iași, 2026–2027. Partner details, registration links, teachers and *unconfirmed* session assignments are configured in `data/schools.json`; they are not a statement that the school owns the club.
 
-Each week has four separately linked, deliberately minimalist pages:
+## Current academic plan: 3 + 6 + 6 weeks
 
-- **Course** — three related conceptual sections, with source-specific bibliography for each.
-- **Laboratory** — a webapp, a runnable club-owned Colab starter, an external study notebook, and guided activities.
-- **Homework** — a transfer exercise based on the same lab code, including expected deliverables and references.
-- **Advanced** — optional experiments and adapted Olympiad-level work.
+- **Module I (1–3):** What Is AI? Rules and Learning; Supervised Learning: ID3; Unsupervised Learning: K-Means.
+- **Module II (4–9):** Revision: supervised/unsupervised ML including KNN; images and computer vision; perceptrons; neural networks; revision; mid-term evaluation.
+- **Module III (10–15):** GPT and its social/ethical impact; software engineering including elementary OOP; four FIICode weeks, culminating in the real hackathon.
 
-The original extended Week 1 course and its interactive matching exercise are preserved, with a separate bibliography and notebook section.
+The syllabus is a **working draft** and will be reviewed with the teacher one week at a time. Do not imply that the final competition challenge, school meeting times, student groups or rooms are fixed.
 
-The `syllabus/` page maps stages to frameworks, and `resources/` is the consolidated source bibliography.
+Each week has **Course**, **Laboratory**, **Homework**, **Advanced** and **Quiz**. Quiz banks exist as draft practice for Weeks 1–3; the other weeks explicitly await content approval.
 
-### Colab notebooks
+## Authoring and regeneration
 
-Club notebooks live at `w1/lab/starter.ipynb` through `w15/lab/starter.ipynb`. Open any file using `https://colab.research.google.com/github/MachineLearning-Club/MachineLearning-Club.github.io/blob/main/wN/lab/starter.ipynb`.
+The publisher is `scripts/publish_v3.py`, with compatible aliases in `scripts/generate_curriculum.py` and `scripts/publish_academic.py`.
 
-They use CPU-only Python and small synthetic/public datasets. Typical dependencies: NumPy, matplotlib, pandas and scikit-learn. Additional public Olympiad notebooks are linked only as references; they can be longer and written in Polish.
+To update course content, edit:
+- `data/outline_v3_01_05.json`
+- `data/outline_v3_06_10.json`
+- `data/outline_v3_11_15.json`
 
-## Updating content
+Each week defines a title, motivating real-life scenario, worked course sections, runnable examples, app, laboratory steps, homework context and task, research challenge and selected bibliography IDs.
 
-Do not edit generated HTML directly if it should survive regeneration.
+The detailed Week 1 and ID3 course/lab/homework/advanced bodies are preserved as source fragments in `data/legacy_content/`. They can be refined individually without rewriting the entire site.
 
-- `scripts/generate_curriculum.py`: main week titles, dates and high-level objective lists.
-- `data/weeks_01_05.json`, `data/weeks_06_10.json`, `data/weeks_11_15.json`: course sections, lab webapps and references, homework and advanced tasks.
-- `data/bibliography.json`: source titles and URLs.
-- `scripts/generate_colab_starters.py`: working Python starter cells.
-- `scripts/render_curriculum_sources.py`: student-facing pages.
-- `scripts/render_overview.py`: syllabus and bibliography index.
-- `scripts/apply_classic_theme.py`: original homepage layout and plain styling.
+Useful commands:
 
-Regenerate the site from the repository root:
-
-```bash
-python3 scripts/generate_curriculum.py
+```sh
+python3 scripts/generate_curriculum.py      # Generate HTML, navigation, timetable, bibliography, guide pages
+python3 scripts/generate_v3_notebooks.py    # Refresh aligned student notebook files for Weeks 3–15
+node quiz/test_quiz.js                      # Run the older catalogue / test-dialog regression suite (Chromium required)
 ```
 
-The generator is idempotent. The website uses static HTML and CSS without a Node.js build step.
+All public pages are **static HTML, CSS and JavaScript**, styled with `assets/academic.css` and `assets/v3.css`. No framework build or database is needed.
 
-No external notebook, site or competition archive is represented as an official endorsement. The Romanian secondary-school ML optional programme is the principal technical anchor, while non-mandated topics (ID3, CNN internals and neural networks) are explicitly sourced from other courses or Olympiad material.
+## Student work without accounts
 
-Official dates of FIICode 2027 are not assumed.
+- Laboratories include a short, in-page Python exercise powered by **Pyodide in a Web Worker**. It loads on demand from a version-pinned CDN. No account, and student code runs in the student's own browser.
+- Each lab supplies an editable notebook `wN/lab/starter.ipynb`. Students may download it and open it in **JupyterLite** (no account) by dragging the file into JupyterLite's file browser. Google Colab is optional and needs an account for execution.
+- Before Module II: `/guides/notebooks/` explains the notebook workflow step by step.
+- Before Module III: `/guides/github-ai/` contains an account-free Git-history simulation and a guide to collaborating with a code editor and optional AI assistance.
+- A valid but **local-only** laboratory submission workflow asks for the student's name and files, then downloads a named ZIP with `README.txt`. It does **not** upload anything.
 
-The minimalist `/materials/` index maps concrete source chapters, teaching worksheets, interactive tools, external notebooks and optional competition tasks to each week. Its editable source is `data/week_materials_map.json`.
+For real submissions, create a school-approved **Dropbox File Request** and add its URL to `data/submissions.json` (field `request_url`). The UI then exposes an external upload link. No Dropbox credentials, access tokens or secrets belong in public files. Until this is configured, students should keep their prepared ZIP locally.
 
-## Weekly quiz prototype
+## Timetable
 
-Starting with Week 2, the homepage links to `/quiz/`. There are 14 catalogue entries and two complete **draft** quiz banks (Weeks 2 and 3), each with ten questions / five minutes / ten points. The frontend-only preview displays the eQuiz-style test history, access-code dialog, timed attempt, navigation, scoring, explanation review and CSV export. The demonstration has no authentication; scores are stored in the local browser and are **not** official grades. See `quiz/README.md` for the security and rollout requirements.
+The internal `/timetable/` page mimics a clean university timetable grid and links each activity to Course, Lab, Homework, Advanced and Quiz. All unknown day/time, room and group slots remain explicitly unassigned. No external eOra licence or integration is used. `data/schools.json` is the school-partner registry for later expansion.
+
+## Quizzes
+
+The primary student experience is a **lightweight inline quiz** at `/wN/quiz/`, visually integrated with that week's lesson. An optional legacy `/quiz/` catalogue remains available with a more compact layout. Draft practice banks and notes live in `quiz/data/`.
+
+There is **no backend, secure examination mode, authentication, server-side grading or official gradebook**. Public static JSON contains correct answers, so quiz scores are practice-only and kept in the current browser. An optional emailed copy of results is a future feature requiring a protected sending endpoint, consent and limits.
+
+## Academic references
+
+The `/resources/` page is titled **Bibliography**. Each Course, Lab, Homework and Advanced page includes a *selected*, relevant bibliography rather than a generic list. Sources include Experience AI, Romanian ML materials, CBSE school AI handbooks, the Polish AI Olympiad course, IOAI/ONIA references, Microsoft AI/ML for Beginners and educational browser visualisers.
+
+## Ownership and contact
+
+The club and website are independently operated by **BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ**. The hosting repository is maintained by the [MachineLearning-Club GitHub organisation](https://github.com/MachineLearning-Club). The participating school is a programme partner, not the owner of the club.

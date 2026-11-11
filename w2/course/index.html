@@ -1,35 +1,17 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="From a labelled table to a complete categorical ID3 tree, step by step.">
-<title>Week 2: Course · Machine Learning Club</title>
-<link rel="stylesheet" href="/assets/academic.css">
-</head>
-<body>
-<header class="site"><a class="site-name" href="/">Machine Learning Club</a>
-<p class="site-sub">Seven Hills International School · 2026–2027</p>
-<p class="breadcrumb"><a href="/">All lessons</a> / Week 2 / Course</p>
-</header>
-<main id="main">
-<p class="eyebrow">Week 02 · Course</p>
-<h1>Decision trees and information gain</h1>
-<p class="deck">From a labelled table to a complete categorical ID3 tree, step by step.</p>
-<nav class="lesson-tabs" aria-label="Week 2 materials"> <a href="/w2/course/" aria-current="page">Course</a> <a href="/w2/lab/">Laboratory</a> <a href="/w2/homework/">Homework</a> <a href="/w2/advanced/">Advanced</a><a href="/quiz/?week=2">Quiz</a></nav>
-
-<section class="summary"><h2>Course summary</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Supervised Learning: ID3 — Course"><title>Supervised Learning: ID3 — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><script defer src="/assets/academic-ui.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1">Week 01 — What Is AI? Rules and Learning</option><option value="2" selected>Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/w1/course/">← Week 1</a> <span>·</span> <a href="/w3/course/">Week 3 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 2 materials"><a href="/w2/course/" aria-current="page">Course</a><a href="/w2/lab/">Laboratory</a><a href="/w2/homework/">Homework</a><a href="/w2/advanced/">Advanced</a><a href="/w2/quiz/">Quiz</a></nav></header><main class="lesson-content"><p class="eyebrow">Week 02 · Course</p><h1>Supervised Learning: ID3</h1><p class="deck">Learn a tree by asking the most informative questions.</p><section class="summary"><h2>Course summary</h2>
 <p>Decision trees make predictions by asking a sequence of questions. This lesson builds a categorical ID3 tree using eight training examples, rather than treating the algorithm as a black box. The key idea is <strong>information gain</strong>: at each node, choose the question that most reduces uncertainty about the target label. We then examine how a greedy algorithm constructs a tree and what perfect training accuracy does and does not establish.</p>
 <p><strong>Outcomes:</strong> interpret nodes, edges and leaves; calculate binary entropy and weighted conditional entropy; compare information gain; manually build a small ID3 tree; trace predictions and identify an incomplete-training counterexample.</p>
 <p class="understated">Teaching note: 20 minutes can introduce the worked root split; students can study the full derivation separately. Prior mathematical material is optional—only fractions and logarithms are introduced as needed.</p>
 </section>
 <nav class="toc"><strong>Contents</strong><ul>
-<li><a href="#tree">3.1. What a decision tree computes</a></li>
-<li><a href="#data">3.2. The complete training example</a></li>
-<li><a href="#entropy">3.3. Entropy and information gain</a></li>
-<li><a href="#id3">3.4. Building the ID3 tree</a></li>
-<li><a href="#limits">3.5. Generalisation, ID3 and CART</a></li>
+<li><a href="#tree">2.1. What a decision tree computes</a></li>
+<li><a href="#data">2.2. The complete training example</a></li>
+<li><a href="#entropy">2.3. Entropy and information gain</a></li>
+<li><a href="#id3">2.4. Building the ID3 tree</a></li>
+<li><a href="#limits">2.5. Generalisation, ID3 and CART</a></li>
 </ul></nav>
 
-<section id="tree"><h2>3.1. What a decision tree computes</h2>
+<section id="tree"><h2>2.1. What a decision tree computes</h2>
 <p>A <strong>decision tree</strong> is a program whose internal nodes ask questions about an input, whose branches correspond to answers, and whose leaves produce decisions. For example: is the sky rainy? If yes, do not hold an outdoor demonstration. If no, another question might be needed.</p>
 <p>In a hand-written rule system, the developer chooses the tree. In machine learning, a tree-building algorithm chooses questions from labelled training examples. The finished tree is still a simple program: the learning happened when the questions and leaves were selected.</p>
 <pre><code>def predict_example(sky, wind, temperature):
@@ -45,7 +27,7 @@
 <p class="source-line">Teaching sequence: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 4: Decision Trees</a> — distinguish a rule-based tree from a tree learned from data.</p>
 </section>
 
-<section id="data"><h2>3.2. The complete training example</h2>
+<section id="data"><h2>2.2. The complete training example</h2>
 <p>A school plans a fictional outdoor activity. Each past case has three categorical features: <em>sky</em> (sunny/rainy), <em>wind</em> (calm/windy), and <em>temperature</em> (warm/cold). The target label <em>go</em> means whether the activity should take place outdoors, according to our synthetic training examples.</p>
 <table><caption>Table 3.1 — Eight labelled examples; every feature combination appears once</caption>
 <thead><tr><th>#</th><th>Sky</th><th>Wind</th><th>Temperature</th><th>Go?</th></tr></thead><tbody>
@@ -62,8 +44,8 @@
 <p class="source-line">Relevant specification: <a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf">IOAI classical machine-learning syllabus, decision trees</a>. The eight-row dataset above is an original teaching example.</p>
 </section>
 
-<section id="entropy"><h2>3.3. Entropy and information gain</h2>
-<h3>3.3.1. Measuring uncertainty</h3>
+<section id="entropy"><h2>2.3. Entropy and information gain</h2>
+<h3>2.2.1. Measuring uncertainty</h3>
 <p>If all examples in a group have the same label, we are certain which label should be predicted for that group. If the labels are evenly split, uncertainty is greater. A common numerical measure is <strong>Shannon entropy</strong>.</p>
 <div class="math">H(Y) = − ∑ pᵢ log₂(pᵢ)</div>
 <p>For two classes with proportions <em>p</em> and <em>1 − p</em>, entropy is zero when either class has proportion one, and equals one bit at 50:50. We define <em>0 log₂ 0 = 0</em>.</p>
@@ -72,7 +54,7 @@
 <div class="math">H(Y) = −(3/8)log₂(3/8) − (5/8)log₂(5/8) ≈ 0.9544 bits.</div>
 <p>The result is close to one bit because the dataset is relatively mixed.</p>
 </div>
-<h3>3.3.2. Information gain of a question</h3>
+<h3>3.2.2. Information gain of a question</h3>
 <p>To evaluate a candidate question, split the dataset into its possible answers, calculate the entropy of each subset, then average those entropies weighted by the number of examples. The decrease in entropy is the <strong>information gain</strong>.</p>
 <div class="math">Gain(Y, X) = H(Y) − ∑<sub>v</sub> (|S<sub>v</sub>|/|S|) H(Y | X = v).</div>
 <div class="example"><span class="example-title">Worked calculation B — Should the root ask about sky?</span>
@@ -80,7 +62,7 @@
 <div class="math">H(Y | sky) = (4/8)(0.8113) + (4/8)(0) = 0.4056.</div>
 <div class="math">Gain(Y, sky) = 0.9544 − 0.4056 = 0.5488 bits.</div>
 <p>Asking about sky reduces uncertainty by approximately 0.5488 bits.</p></div>
-<h3>3.3.3. Compare every candidate root</h3>
+<h3>2.3.3. Compare every candidate root</h3>
 <p>Wind divides the data into a calm group containing two yes and two no, and a windy group containing one yes and three no. Their weighted entropy is approximately 0.9056, so the gain is only 0.0488 bits. Temperature produces the same result.</p>
 <table><caption>Table 3.2 — Candidate root questions</caption><thead><tr><th>Question</th><th>Weighted entropy after split</th><th>Gain</th></tr></thead><tbody>
 <tr><td>Sky</td><td>0.4056</td><td><strong>0.5488</strong></td></tr>
@@ -90,15 +72,15 @@
 <p class="source-line">Further explanation: <a href="https://github.com/OlimpiadaAI/szkolenia">Polish AI Olympiad training</a> · <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI: decision trees</a>.</p>
 </section>
 
-<section id="id3"><h2>3.4. Constructing the ID3 tree</h2>
-<h3>3.4.1. The recursive idea</h3>
+<section id="id3"><h2>2.4. Constructing the ID3 tree</h2>
+<h3>2.4.1. The recursive idea</h3>
 <ol><li>If a node contains only one label, stop and create a leaf.</li>
 <li>Otherwise calculate the gain of each unused categorical feature.</li>
 <li>Choose the feature with the highest gain.</li>
 <li>Create one branch for each observed value of that feature, and repeat.</li>
 <li>If no features remain, use the majority label.</li></ol>
 <p>This is a greedy algorithm: it makes the best immediate split according to its local criterion, not an exhaustive search over all possible trees.</p>
-<h3>3.4.2. Continue the sunny branch</h3>
+<h3>2.4.2. Continue the sunny branch</h3>
 <p>The rainy branch already contains only no answers. The sunny branch still contains three yes and one no, entropy 0.8113. Within this subset, splitting by wind gives a calm group containing two yes answers, and a windy group containing one yes and one no. The weighted entropy is 0.5, so the gain is 0.3113 bits.</p>
 <p>Temperature gives the same gain. With the fixed feature order (sky, wind, temperature), we choose wind in a tie. The calm branch becomes a yes leaf. For sunny and windy cases, temperature distinguishes warm → yes from cold → no.</p>
 <figure class="figure">
@@ -124,16 +106,13 @@
 <p class="lab-note">The diagram is a static representation of the result. The <a href="/w2/lab/">Laboratory</a> contains a clickable information-gain demonstration and the full runnable ID3 implementation.</p>
 </section>
 
-<section id="limits"><h2>3.5. Generalisation, stopping and other tree algorithms</h2>
-<h3>3.5.1. Perfect training fit is not a guarantee</h3>
+<section id="limits"><h2>2.5. Generalisation, stopping and other tree algorithms</h2>
+<h3>2.5.1. Perfect training fit is not a guarantee</h3>
 <p>The tree classifies every row in Table 3.1 correctly. But imagine we had not observed the sunny/windy/cold case. A different tree might still fit all the remaining examples while giving an incorrect answer for that unseen combination. This is not a bug in Python; it is a limitation of what the supplied data can establish.</p>
-<h3>3.5.2. ID3 is not the same thing as CART</h3>
+<h3>2.5.2. ID3 is not the same thing as CART</h3>
 <p>Classical ID3 chooses categorical tests using information gain and can create a branch for each category. The interactive tree demonstration used in the lab visualises <strong>CART</strong>, which commonly makes binary splits and can handle numerical thresholds. The shared intuition—reducing disorder—is valuable, but we should not claim the two implementations are identical.</p>
-<h3>3.5.3. How to avoid misleading conclusions</h3>
+<h3>2.5.3. How to avoid misleading conclusions</h3>
 <p>Large trees may fit noise, and the best greedy split is not necessarily part of the smallest possible global tree. In Week 4 we will introduce evaluation on held-out examples, error tables and the distinction between fitting and generalising.</p>
 <p class="source-line">Bibliography: <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14">Experience AI, Lesson 4</a> · <a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf">IOAI syllabus</a> · <a href="https://interactiveml.org/tree">Interactive CART visualisation</a>.</p>
 </section>
-
-</main>
-<footer class="site">Machine Learning Club · A teaching-material proof of concept, not the final weekly programme · <a href="/">Preview index</a></footer>
-</body></html>
+<figure class="teaching-figure"><svg viewBox="0 0 680 240" role="img" aria-label="A simple decision tree: Sky? Rainy leads to No, Sunny leads to Wind?"><g stroke="#999" fill="none" stroke-width="2"><path d="M340 54L160 136M340 54L515 136M515 158L450 213M515 158L580 213"/></g><g fill="#fff" stroke="#666"><rect x="288" y="16" width="104" height="42"/><rect x="116" y="134" width="88" height="42"/><rect x="465" y="133" width="100" height="44"/></g><g font-size="17" fill="#333" text-anchor="middle"><text x="340" y="43">Sky?</text><text x="160" y="162">No</text><text x="515" y="161">Wind?</text><text x="450" y="235">Yes</text><text x="590" y="235">No</text></g><g font-size="13" fill="#777"><text x="223" y="90">rainy</text><text x="430" y="90">sunny</text></g></svg><figcaption>A decision tree makes a sequence of simple tests.</figcaption></figure><section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://ioai-official.org/wp-content/uploads/2025/10/Syllabus.pdf" target="_blank" rel="noopener noreferrer">IOAI 2026 Syllabus</a> <span class="reference-note">— Teacher/advanced reference</span></li><li><a href="https://github.com/OlimpiadaAI/szkolenia" target="_blank" rel="noopener noreferrer">Polish AI Olympiad: high-school training</a> <span class="reference-note">— Teacher/advanced reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w2/course/">Course</a><a href="/w2/lab/">Laboratory</a><a href="/w2/homework/">Homework</a><a href="/w2/advanced/">Advanced</a><a href="/w2/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

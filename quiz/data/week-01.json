@@ -1,0 +1,182 @@
+{
+  "week": 1,
+  "title": "What Is AI? Rules and Learning",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz; teacher review required",
+  "instructions": "Ten questions. Select all correct options in multiple-choice items. One point for an exact match.",
+  "questions": [
+    {
+      "id": "w1q1",
+      "type": "single",
+      "prompt": "What makes a fixed thermostat different from a learning system?",
+      "options": [
+        "It explicitly follows a temperature condition",
+        "It needs labelled pictures to run",
+        "It predicts weather from big datasets",
+        "It always uses a neural network"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "A conventional thermostat checks a rule written by a person.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q2",
+      "type": "single",
+      "prompt": "A program explores possible paths in a maze until it finds an exit. Which approach is most directly illustrated?",
+      "options": [
+        "Unsupervised clustering",
+        "Search and planning",
+        "A language model",
+        "Supervised regression"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "A maze solver explores possible states and paths according to rules; it need not be trained.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q3",
+      "type": "single",
+      "prompt": "A table contains temperature, time of day and the user's desired heating state. What is the target label?",
+      "options": [
+        "The temperature measurement",
+        "Time of day",
+        "Desired heating state (ON or OFF)",
+        "Number of training rows"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "In supervised learning, the known desired output is the label.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q4",
+      "type": "single",
+      "prompt": "Six unlabelled objects are divided into two groups by similarity. Which type of learning is this?",
+      "options": [
+        "Supervised learning",
+        "Unsupervised learning",
+        "Reinforcement learning",
+        "Fixed control logic"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Clustering seeks structure without supplied class labels.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q5",
+      "type": "single",
+      "prompt": "An agent learns which move to take by receiving rewards after actions. Which training setup does this describe?",
+      "options": [
+        "Reinforcement learning",
+        "Supervised classification",
+        "String tokenisation",
+        "Image thresholding"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Reinforcement learning uses reward feedback to improve actions/policies.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q6",
+      "type": "single",
+      "prompt": "A classifier trained on pictures of notebooks and pencil cases is shown a new notebook. What is happening?",
+      "options": [
+        "Data collection for training",
+        "Inference/prediction",
+        "Writing a new condition",
+        "Deleting the model"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Using a trained model on a new input is inference.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q7",
+      "type": "single",
+      "prompt": "Which example is primarily a classical algorithm rather than a learned prediction?",
+      "options": [
+        "A phone learns your favourite next word",
+        "A program turns on a lamp when brightness < 200",
+        "An image network learns cats from photos",
+        "A classifier infers class from learned prototypes"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Checking a fixed threshold is classical control logic.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q8",
+      "type": "single",
+      "prompt": "What is tokenisation in natural-language processing?",
+      "options": [
+        "Assigning colours to photos",
+        "Splitting text into tokens such as words or word pieces",
+        "Guaranteeing that a sentence is true",
+        "Sorting numbers into ascending order"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "A tokenizer maps text to a sequence of tokens; it does not by itself understand the sentence.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q9",
+      "type": "multiple",
+      "prompt": "Select ALL statements that are correct about machine learning.",
+      "options": [
+        "Some models learn from labelled examples",
+        "K-Means can discover groups without labels",
+        "Every ML algorithm must use a neural network",
+        "Perfect training accuracy guarantees correct answers on all new data"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Supervised models may use labelled data, and clustering can use unlabelled data. Neither a neural network nor universal accuracy is guaranteed.",
+      "topic": "AI foundations",
+      "points": 1
+    },
+    {
+      "id": "w1q10",
+      "type": "multiple",
+      "prompt": "Select ALL sensible steps when evaluating a trained classroom image classifier.",
+      "options": [
+        "Test ordinary objects not shown during training",
+        "Record some failed predictions and possible causes",
+        "Only test pictures already used for training",
+        "Photograph classmates without asking permission"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "New test examples and documented errors help evaluate generalisation. Respect privacy and consent.",
+      "topic": "AI foundations",
+      "points": 1
+    }
+  ]
+}

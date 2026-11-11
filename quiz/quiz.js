@@ -359,10 +359,10 @@
   $("access-form").addEventListener("submit",e=>{
     e.preventDefault();
     const code=$("access-input").value.trim().toUpperCase();
-    const match=/^MLC(0[2-9]|1[0-5])$/.exec(code);
+    const match=/^MLC(0[1-9]|1[0-5])$/.exec(code);
     if(!match){
       $("access-error").hidden=false;
-      $("access-error").textContent="No demo quiz matches that code. Try MLC02 or MLC03.";
+      $("access-error").textContent="No demo quiz matches that code. Try MLC01, MLC02 or MLC03.";
       return;
     }
     const week=Number(match[1]);
@@ -400,7 +400,7 @@
       const response=await fetch(DATA_ROOT+"catalog.json",{cache:"no-store"});
       if(!response.ok)throw new Error("HTTP "+response.status);
       const data=await response.json();
-      if(!Array.isArray(data.quizzes)||data.quizzes.length!==14)throw new Error("Invalid quiz catalogue");
+      if(!Array.isArray(data.quizzes)||data.quizzes.length!==15)throw new Error("Invalid quiz catalogue");
       state.catalog=data.quizzes;
       refresh();
       const week=Number(new URLSearchParams(location.search).get("week"));

@@ -1,0 +1,5 @@
+{
+  "service": "Dropbox File Requests",
+  "request_url": null,
+  "note": "Set request_url to a teacher-approved https://www.dropbox.com/request/... link. Never add access tokens or credentials here."
+}

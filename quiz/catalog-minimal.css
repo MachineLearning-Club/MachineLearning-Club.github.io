@@ -1,0 +1,24 @@
+/* Quiz catalogue: same academic whitespace and typography as the club.
+   The actual question dialog retains its familiar eQuiz layout. */
+html{font-family:Georgia,"Times New Roman",serif;color:#233747}
+body{background:#fff}
+.quiz-header{max-width:1100px;margin:0 auto;padding:14px 20px;border-bottom:1px solid #dbe4ec;box-shadow:none}
+.identity strong{font-family:Georgia,serif;font-size:1.25rem;letter-spacing:0;font-weight:500}
+.identity .slash,.draft-flag,.demo-profile{display:none}
+.quiz-header .head-actions .button{font-family:Georgia,serif;font-size:.84rem}
+.page{max-width:1000px;padding:27px 20px}
+.intro{display:block;margin:0 0 18px}
+.intro h1{font:400 1.8rem/1.3 Georgia,serif}
+.intro p:not(.eyebrow){max-width:730px}
+.stats{display:none}
+.notice{border-left:2px solid #b6cddd;background:#fafcfe;color:#5c6d7e;font-size:.86rem;margin:17px 0 27px}
+.section-head h2{font:400 1.25rem Georgia,serif}
+.test-table{font-family:Georgia,serif}
+.test-table thead th{font-weight:500;background:#f8fbfd}
+.test-table td{font-size:.88rem}
+#take-test{background:white;border:1px solid #b8cad7;border-radius:3px;color:#175381;font-weight:500}
+#take-test:hover{background:#f0f5fa}
+.table-link,.button-primary{border-radius:3px}
+.history{margin-top:26px}
+.footer{border-top:1px solid #e4e9ef;padding-top:15px}
+@media(max-width:680px){.page{padding:22px 14px}.quiz-header{padding:12px 14px}.intro h1{font-size:1.55rem}}

@@ -1,384 +1,338 @@
 {
-  "status": "Working curriculum for teacher review",
+  "status": "Draft classroom materials; teacher approval required per lesson",
+  "modules": [
+    {
+      "number": "I",
+      "title": "Foundations of Artificial Intelligence",
+      "weeks": [
+        1,
+        3
+      ]
+    },
+    {
+      "number": "II",
+      "title": "Machine Learning and Neural Networks",
+      "weeks": [
+        4,
+        9
+      ]
+    },
+    {
+      "number": "III",
+      "title": "Generative AI and Software Engineering",
+      "weeks": [
+        10,
+        15
+      ]
+    }
+  ],
   "weeks": [
     {
       "n": 1,
       "title": "What Is AI? Rules and Learning",
       "course": [
-        "Classical programming and explicit rules",
-        "Artificial intelligence and search",
-        "Machine learning from data",
-        "Supervised, unsupervised and reinforcement learning",
-        "Natural language processing"
+        "Programming a fixed rule",
+        "Search is not the same as learning",
+        "Learning from examples",
+        "Language as input"
       ],
       "lab": [
-        "Quick, Draw! and Teachable Machine",
-        "Compare rules, search and learned classifiers"
+        "Predict one Quick, Draw! guess before it finishes.",
+        "Train two object categories in Teachable Machine without photographing people.",
+        "Run the small nearest-prototype Python notebook; change two training examples.",
+        "Record one misleading prediction and explain why it occurs."
       ],
-      "hw": [
-        "Build a visual Python thermostat",
-        "Train a supplied ID3 component on labelled heating decisions",
-        "Repair a smart-home application that compares the two approaches"
+      "homework": [
+        "Implement the fixed thermostat rule and test it at 17°C, 19°C and 22°C.",
+        "Use a supplied trained ID3 component to learn from a simple heating decision log; plot predictions. You are not required to implement ID3 from scratch yet."
       ],
-      "advanced": [
-        "State transitions",
-        "Constraint satisfaction",
-        "Generalisation"
-      ]
+      "research": "Compare fixed threshold and supplied learned classifier on a new heating CSV and explain any disagreement."
     },
     {
       "n": 2,
-      "title": "Probabilistic Learning and Iterative Dichotomiser 3 (ID3)",
+      "title": "Supervised Learning: ID3",
       "course": [
-        "Uncertainty and frequency",
-        "Shannon entropy",
-        "Information gain",
-        "Recursive categorical ID3",
-        "Predictions and limitations"
+        "From labelled examples to questions",
+        "Entropy: how mixed is a group?",
+        "Information gain and a greedy tree",
+        "Predictions and unknown categories"
       ],
       "lab": [
-        "Explore entropy with class sliders",
-        "Build and visualise a categorical ID3 tree"
+        "Predict whether sky or wind will be the best first question.",
+        "Calculate the gain for every root feature.",
+        "Run a categorical ID3 notebook and compare its learned tree.",
+        "Remove one example and predict it as a held-out case."
       ],
-      "hw": [
-        "Calculate information gain",
-        "Apply ID3 to a second dataset",
-        "Handle missing and unseen feature values"
+      "homework": [
+        "Compute the information gain of at least two feature tests.",
+        "Load the provided weather decisions, fit the supplied ID3 code and trace three unseen examples."
       ],
-      "advanced": [
-        "Recursive construction",
-        "Overfitting and stopping",
-        "Worked calculations"
-      ]
+      "research": "Test the learner on an unseen category and explain how your fallback behaves."
     },
     {
       "n": 3,
-      "title": "ID3 Extensions and Introduction to K-Means",
+      "title": "Unsupervised Learning: K-Means",
       "course": [
-        "Numerical attributes and thresholds",
-        "Training and test data",
-        "Unsupervised learning",
-        "Distances and centroids",
-        "K-Means iteration"
+        "No labels: a different learning problem",
+        "Distance and centroid",
+        "The K-Means loop",
+        "What K-Means cannot tell you"
       ],
       "lab": [
-        "Compare decision tree depths",
-        "Experiment with K-Means clusters"
+        "Plot six delivery points on a grid.",
+        "Manually calculate the centre for one proposed cluster.",
+        "Open the K-Means visualisation; change the starting centres.",
+        "Run the supplied notebook and compare its final grouping to your guess."
       ],
-      "hw": [
-        "Evaluate a learned tree on unseen records",
-        "Work through two centroid updates",
-        "Compare initial centroids"
+      "homework": [
+        "Calculate the centroid of three given locations.",
+        "Use the K-Means notebook to cluster new delivery addresses and produce a labelled scatterplot."
       ],
-      "advanced": [
-        "Tree stopping strategies",
-        "K-Means objective function",
-        "Centroid calculations"
-      ]
+      "research": "Find a point arrangement where K=2 produces a misleading grouping."
     },
     {
       "n": 4,
-      "title": "K-Means and K-Nearest Neighbours",
+      "title": "Revision: Supervised and Unsupervised Learning",
       "course": [
-        "Clustering versus classification",
-        "Distance between data points",
-        "K-Means centroid updates",
-        "KNN classification by voting",
-        "Feature scaling and choosing K"
+        "Which algorithm fits the question?",
+        "K-nearest neighbours",
+        "A fair revision experiment"
       ],
       "lab": [
-        "Use K-Means and KNN side by side",
-        "Move points and change K"
+        "Label a few points with known categories.",
+        "Predict a new point with K=3 nearest neighbours.",
+        "Remove labels and group the points with K-Means.",
+        "Compare what each result answers, and inspect an ID3 classification trace."
       ],
-      "hw": [
-        "Calculate neighbour distances",
-        "Complete a KNN implementation",
-        "Investigate feature scaling"
+      "homework": [
+        "Explain which method serves each of the two needs.",
+        "Modify the lab KNN code to classify new points and compare K=1 vs K=3."
       ],
-      "advanced": [
-        "KNN decision boundaries",
-        "Distance metrics",
-        "K-Means convergence"
-      ]
+      "research": "Investigate a dataset where the choice of K changes the KNN prediction."
     },
     {
       "n": 5,
-      "title": "Working with Images as Input",
+      "title": "Computer Vision: Images as Data",
       "course": [
-        "Pixels and grids",
-        "RGB and grayscale",
-        "Multidimensional NumPy arrays",
-        "Reading and resizing images",
-        "Thresholds brightness and contrast"
+        "The picture is a grid of numbers",
+        "Colours, channels and dimensions",
+        "Thresholding and simple filters",
+        "Seeing what changes"
       ],
       "lab": [
-        "Use a pixel-grid editor",
-        "Change images with NumPy"
+        "Experiment with a tiny grayscale pixel grid.",
+        "Use an interactive filter to compare blur and edges.",
+        "Run the image notebook to convert pixels to black and white.",
+        "Explain which filter preserves the handwriting best."
       ],
-      "hw": [
-        "Modify individual pixels",
-        "Build an image transformation pipeline",
-        "Make a pixel-matrix editor"
+      "homework": [
+        "Apply a threshold to five pixel values.",
+        "Modify the supplied image-preprocessing notebook and show side-by-side images."
       ],
-      "advanced": [
-        "Matrices and channels",
-        "Transforms",
-        "Computational cost"
-      ]
+      "research": "Implement a custom 3×3 edge kernel on a tiny matrix and show the result."
     },
     {
       "n": 6,
-      "title": "Computer Vision Techniques",
+      "title": "Perceptrons: A First Learning Neuron",
       "course": [
-        "Image recognition",
-        "Kernels and filters",
-        "Convolution",
-        "Edge detection",
-        "Handcrafted versus learned features"
+        "A neuron computes a weighted sum",
+        "Weights change the decision",
+        "A perceptron can learn from errors"
       ],
       "lab": [
-        "Change an image kernel",
-        "Apply blur and edge detection"
+        "Calculate a single neuron's weighted sum by hand.",
+        "Move weights in a browser neural-network visualiser.",
+        "Run a tiny perceptron on six labelled examples.",
+        "Find one observation that a straight-line boundary handles poorly."
       ],
-      "hw": [
-        "Calculate convolution outputs",
-        "Compare filters",
-        "Invent and explain a filter"
+      "homework": [
+        "Compute neuron outputs for three inputs.",
+        "Modify two weights and a bias in the lab notebook to classify new examples."
       ],
-      "advanced": [
-        "Padding and stride",
-        "Spatial locality",
-        "Convolution mathematics"
-      ]
+      "research": "Write one perceptron weight update and show how the boundary changes."
     },
     {
       "n": 7,
-      "title": "Predicting Handwriting",
+      "title": "Neural Networks and Training",
       "course": [
-        "Handwriting as pixel data",
-        "Classification labels",
-        "Training and testing",
-        "Confusion matrices",
-        "Misclassification and robustness"
+        "Why a network needs hidden layers",
+        "From input to output: forward pass",
+        "Learning means reducing error",
+        "Backpropagation, without overwhelming calculus"
       ],
       "lab": [
-        "Draw digits in a browser recogniser",
-        "Train a small prepared handwriting classifier"
+        "Try XOR with no hidden layer and record the result.",
+        "Add hidden neurons in the visual playground.",
+        "Run the notebook and plot training loss over iterations.",
+        "Change the learning rate and compare convergence."
       ],
-      "hw": [
-        "Test digits",
-        "Improve preprocessing",
-        "Analyse noisy examples"
+      "homework": [
+        "Calculate one neuron activation and loss.",
+        "Change the hidden layer size in the supplied notebook and compare accuracy."
       ],
-      "advanced": [
-        "Image features",
-        "Classification mathematics",
-        "Confusion matrices"
-      ]
+      "research": "Compare two network sizes and explain overfitting risk using the same training data."
     },
     {
       "n": 8,
-      "title": "Perceptron and Neural Networks",
+      "title": "Revision: Computer Vision and Neural Networks",
       "course": [
-        "The computational neuron",
-        "Weights and bias",
-        "Activation functions",
-        "Linear classification",
-        "Feed-forward networks"
+        "From pixels to predictions",
+        "Revision: what models actually learn",
+        "Reading an evaluation result"
       ],
       "lab": [
-        "TensorFlow Playground",
-        "Adjust weights and bias in a neuron"
+        "Draw two variants of the same digit.",
+        "Inspect an 8×8 pixel representation.",
+        "Run the supplied classifier on held-out examples.",
+        "Explain one error and try a preprocessing change."
       ],
-      "hw": [
-        "Calculate a perceptron output",
-        "Train a small supplied model",
-        "Study linear inseparability"
+      "homework": [
+        "Interpret the model's confusion table and compute accuracy.",
+        "Use the evaluation notebook to compare predictions before and after image preprocessing."
       ],
-      "advanced": [
-        "Linear boundaries",
-        "Perceptron updates",
-        "XOR"
-      ]
+      "research": "Build a small error gallery: three wrong predictions with possible causes."
     },
     {
       "n": 9,
-      "title": "Backpropagation in Neural Networks",
+      "title": "Mid-Term Evaluation",
       "course": [
-        "Predictions and errors",
-        "Loss functions",
-        "Gradient descent",
-        "The chain rule",
-        "Backpropagation and training loops"
+        "Review the core ideas",
+        "A practical evaluation procedure",
+        "Explain a model visually"
       ],
       "lab": [
-        "Explore a loss function",
-        "Visualise gradient descent and loss history"
+        "Choose a suitable algorithm for three real-life scenarios.",
+        "Repair a small classifier example by filling missing values.",
+        "Run predictions on a held-out set.",
+        "Explain a chosen decision in a short diagram."
       ],
-      "hw": [
-        "Update one model parameter",
-        "Compare learning rates",
-        "Implement a simplified backward step"
+      "homework": [
+        "Prepare a one-page visual explanation of a model.",
+        "Correct a small notebook and add an honest evaluation table."
       ],
-      "advanced": [
-        "Partial derivatives",
-        "Computational graphs",
-        "Worked backpropagation"
-      ]
+      "research": "Compare two eligible algorithms and defend the choice using evaluation evidence."
     },
     {
       "n": 10,
-      "title": "Generative Pre-Trained Transformers (GPT)",
+      "title": "Generative AI: GPT, Data and Society",
       "course": [
-        "Tokens and numerical text",
-        "Embeddings",
-        "Transformers",
-        "Attention",
-        "Next-token prediction",
-        "Limits and reliability"
+        "How language models predict text",
+        "Where training data come from",
+        "Behaviour and recommendation systems",
+        "Reliability, ethics and control"
       ],
       "lab": [
-        "Try a tokenizer",
-        "Explore Transformer Explainer",
-        "Compare next-token baselines"
+        "Inspect how a short sentence is tokenised.",
+        "Change the text-generation sampling setting in the visual explainer.",
+        "Compare two hypothetical recommendation feeds generated from different click histories.",
+        "Check three claims against independent references."
       ],
-      "hw": [
-        "Tokenise short passages",
-        "Compare generator outputs",
-        "Fact-check generated answers"
+      "homework": [
+        "Tokenise a short sentence and identify two risks of trusting its generated completion.",
+        "Build a table of three generated claims, their source evidence and a verdict."
       ],
-      "advanced": [
-        "Vectors and similarity",
-        "Attention scores",
-        "Generation mathematics"
-      ]
+      "research": "Design a small evaluation rubric for harmful or misleading recommendations."
     },
     {
       "n": 11,
-      "title": "Object-Oriented Programming",
+      "title": "Software Engineering Techniques",
       "course": [
-        "Objects and classes",
-        "Attributes and constructors",
-        "Methods",
-        "Composition",
-        "Encapsulation and interfaces"
+        "From one long script to several components",
+        "Objects and methods",
+        "The ML pipeline",
+        "Saving and collaborating"
       ],
       "lab": [
-        "Build sensor agent and controller objects",
-        "Reuse a classifier as an object"
+        "Run a project made of three small Python classes.",
+        "Change the behaviour of one class and check its outputs.",
+        "Use the accountless Git simulation to create and compare versions.",
+        "Demonstrate one test that catches an invalid measurement."
       ],
-      "hw": [
-        "Implement a Python class",
-        "Combine classes in a simulation",
-        "Refactor procedural code"
+      "homework": [
+        "Create a Sensor class with a method that returns a reading.",
+        "Add input validation and a classifier component, then test normal and missing data."
       ],
-      "advanced": [
-        "Object invariants",
-        "Interfaces",
-        "Design trade-offs"
-      ]
+      "research": "Add a fourth component and explain which other components it depends on."
     },
     {
       "n": 12,
-      "title": "Software Engineering: Architecture, Workflows and Pipelines",
+      "title": "FIICode I: Understanding the Challenge",
       "course": [
-        "User stories and requirements",
-        "Data-to-prediction pipelines",
-        "Testing and debugging",
-        "Modular architecture",
-        "Git and GitHub",
-        "Reproducibility"
+        "Turn a problem into inputs and outputs",
+        "Inspect data before modelling",
+        "Choose a simple baseline"
       ],
       "lab": [
-        "Build a small ML application",
-        "Experiment with visual Git operations"
+        "Read the exact challenge rules and identify allowed inputs.",
+        "Inspect a small CSV without changing the provided answer column.",
+        "Choose a baseline and run it on held-out examples.",
+        "Write down the model's first score and one weakness."
       ],
-      "hw": [
-        "Draw an AI pipeline",
-        "Improve and document an app",
-        "Add tests and a component"
+      "homework": [
+        "Write a one-paragraph problem statement and a data dictionary.",
+        "Deliver a runnable baseline notebook with a metric and a description of its input/output."
       ],
-      "advanced": [
-        "Architecture patterns",
-        "Testing strategies",
-        "Reproducible experiments"
-      ]
+      "research": "Compare two possible baselines and justify which is easier to maintain."
     },
     {
       "n": 13,
-      "title": "FIICode I: Building the First Solution",
+      "title": "FIICode II: Implementing the Application",
       "course": [
-        "Read a problem specification",
-        "Explore data",
-        "Define metrics",
-        "Choose a baseline",
-        "Plan the team"
+        "Start with a vertical slice",
+        "Separate responsibilities",
+        "Test ordinary and unusual cases"
       ],
       "lab": [
-        "Start a competition-style project",
-        "Implement a baseline"
+        "Load an example input and validate its fields.",
+        "Connect the prepared model to a simple interface.",
+        "Test the main success path and one error path.",
+        "Save a working version before extending anything else."
       ],
-      "hw": [
-        "Explain a dataset",
-        "Deliver a baseline",
-        "Compare alternatives"
+      "homework": [
+        "Expose a simple input and readable prediction.",
+        "Add one validation rule and three small tests."
       ],
-      "advanced": [
-        "Competition reasoning",
-        "Baseline analysis",
-        "Selected IOAI problems"
-      ]
+      "research": "Design a second output format, for example a report CSV with an explanation."
     },
     {
       "n": 14,
-      "title": "FIICode II: Improving the Solution",
+      "title": "FIICode III: Improving and Testing",
       "course": [
-        "Find prediction errors",
-        "Engineer features",
-        "Tune hyperparameters",
-        "Compare models fairly",
-        "Measure performance",
-        "Integrate improvements"
+        "Measure the current weakness",
+        "Controlled experiments",
+        "Make the demo reliable"
       ],
       "lab": [
-        "Continue the FIICode project",
-        "Evaluate controlled changes"
+        "Choose one reproducible failure case.",
+        "Make one model or input-processing change.",
+        "Compare results on the same held-out samples.",
+        "Write one brief test report and decide whether to keep the change."
       ],
-      "hw": [
-        "Explain model errors",
-        "Implement a measured improvement",
-        "Research a larger alternative"
+      "homework": [
+        "Record the baseline metric and two failed cases.",
+        "Implement one controlled change and explain its measured effect."
       ],
-      "advanced": [
-        "Optimisation",
-        "Ablations",
-        "Experiment design"
-      ]
+      "research": "Run an ablation or a repeated evaluation to see whether the improvement is stable."
     },
     {
       "n": 15,
-      "title": "FIICode III: Mock Hackathon",
+      "title": "FIICode IV: Hackathon",
       "course": [
-        "Finish and test the application",
-        "Write documentation",
-        "Demonstrate behaviour",
-        "Present limitations",
-        "Reflect on decisions"
+        "Plan the final sprint",
+        "Present a result with evidence",
+        "Deliver something someone else can run"
       ],
       "lab": [
-        "Present final projects",
-        "Test peers' applications"
+        "Confirm the project works from a clean start.",
+        "Execute representative and edge test cases.",
+        "Present the demo with baseline/final scores.",
+        "Collect reviewer feedback and record next improvements."
       ],
-      "hw": [
-        "Submit a working project",
-        "Write a technical report and demonstration",
-        "Extend the project"
+      "homework": [
+        "Submit a reproducible build or notebook with a README.",
+        "Provide a brief demo, validation evidence and an honest limitations section."
       ],
-      "advanced": [
-        "Selected IOAI and ONIA exercises",
-        "Worked solutions",
-        "Further-study directions"
-      ]
+      "research": "Attempt a suitable official competition extension or produce a full technical postmortem."
     }
   ]
 }

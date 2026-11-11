@@ -1,0 +1,138 @@
+{
+  "partners": [
+    {
+      "id": "seven-hills",
+      "name": "Seven Hills International School",
+      "website": "https://sevenhills.ro/",
+      "schoolYear": "2026–2027",
+      "registration": {
+        "label": "Registration open",
+        "url": "https://forms.gle/Hk1vZM12i9vTF1zc9"
+      },
+      "timetable": "/timetable/",
+      "teacher": "Dragoș-Andrei Bobu",
+      "sessions": [
+        {
+          "week": 1,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 2,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 3,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 4,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 5,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 6,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 7,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 8,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 9,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 10,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 11,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 12,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 13,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 14,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        },
+        {
+          "week": 15,
+          "day": null,
+          "start": null,
+          "end": null,
+          "group": null,
+          "room": null
+        }
+      ]
+    }
+  ]
+}

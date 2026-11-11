@@ -1,0 +1,389 @@
+[
+  {
+    "n": 11,
+    "title": "Software Engineering Techniques",
+    "subtitle": "Objects, project structure, testing and simple AI pipelines.",
+    "scenario": "A smart classroom combines temperature sensors, a trained classifier and an information display.",
+    "sections": [
+      [
+        "From one long script to several components",
+        "A monitoring program now contains sensor code, decisions and screen output.",
+        "Break a program into parts with clear responsibilities. Object-oriented programming is one way to organise related data and behaviour.",
+        "A Sensor supplies a measurement; a Controller decides an action; a Dashboard displays it.",
+        [
+          "Name three responsibilities",
+          "Define inputs/outputs",
+          "Connect the parts"
+        ],
+        "class Sensor:\n    def read(self): return 18\nprint(Sensor().read())"
+      ],
+      [
+        "Objects and methods",
+        "The same app reads from several temperature sensors.",
+        "A class describes a type of object; an instance stores its own state and exposes methods. Keep examples small and practical.",
+        "Two Sensor objects can each have a different current value.",
+        [
+          "Create a class",
+          "Instantiate two objects",
+          "Call a method"
+        ],
+        "class Sensor:\n    def __init__(self,value):self.value=value\n    def read(self):return self.value\nprint(Sensor(17).read(), Sensor(21).read())"
+      ],
+      [
+        "The ML pipeline",
+        "A classifier receives poorly formatted measurements.",
+        "An AI application has stages: collect → clean → predict → decide → display → test. Each stage should be testable independently.",
+        "Bad data should be rejected before a classifier makes an unreliable prediction.",
+        [
+          "Check the input",
+          "Run the model",
+          "Record the output and any warning"
+        ],
+        "def clean(value):\n    if value is None: raise ValueError('Missing temperature')\n    return float(value)\nprint(clean(18))"
+      ],
+      [
+        "Saving and collaborating",
+        "Two students edit the same application at different times.",
+        "Versions track changes; Git commits store meaningful snapshots, while branches and pull requests support review. GitHub is optional for students without accounts.",
+        "'Add missing-data warning' is more informative than 'update'.",
+        [
+          "Save a version",
+          "Describe the change",
+          "Review a test"
+        ],
+        "print('Commit message: Handle missing sensor readings')"
+      ]
+    ],
+    "sources": [
+      "CP",
+      "GH",
+      "MSML",
+      "EA",
+      "PY"
+    ],
+    "app": {
+      "title": "GitHub Skills (optional account)",
+      "url": "https://github.com/skills/introduction-to-github"
+    },
+    "lab": {
+      "context": "Build a small classroom monitor with a Sensor, Classifier and Dashboard.",
+      "steps": [
+        "Run a project made of three small Python classes.",
+        "Change the behaviour of one class and check its outputs.",
+        "Use the accountless Git simulation to create and compare versions.",
+        "Demonstrate one test that catches an invalid measurement."
+      ],
+      "research": "Add a fourth component and explain which other components it depends on."
+    },
+    "homework": {
+      "context": "A classroom monitor should continue to display useful information when a sensor fails.",
+      "mandatory": "Create a Sensor class with a method that returns a reading.",
+      "homework": "Add input validation and a classifier component, then test normal and missing data."
+    },
+    "advanced": [
+      "Compare a procedural script with a class-based design.",
+      "Identify one test for each stage of a prediction pipeline."
+    ],
+    "diagram": "pipeline"
+  },
+  {
+    "n": 12,
+    "title": "FIICode I: Understanding the Challenge",
+    "subtitle": "Read the specification, examine the data and plan a real hackathon project.",
+    "scenario": "A small team receives a dataset and must propose a genuinely useful AI-powered tool.",
+    "sections": [
+      [
+        "Turn a problem into inputs and outputs",
+        "A challenge says 'help students choose study sessions'.",
+        "Translate a story into a precise deliverable: what data do we have, what decision is expected, and how will success be measured?",
+        "Input: student availability and preferences; output: a recommended timetable.",
+        [
+          "Write the user's need",
+          "List available columns",
+          "Specify a testable result"
+        ],
+        "challenge = {'input':'availability.csv','output':'recommendations.csv'}\nprint(challenge)"
+      ],
+      [
+        "Inspect data before modelling",
+        "A file has duplicate rows, missing values and unclear units.",
+        "Use a small data dictionary and simple plots to understand a dataset before selecting an algorithm.",
+        "Ten records with two missing labels do not give ten labelled training examples.",
+        [
+          "Count records",
+          "Inspect missingness",
+          "Identify target column"
+        ],
+        "rows=[{'label':'A'},{'label':None}]\nprint(sum(r['label'] is None for r in rows))"
+      ],
+      [
+        "Choose a simple baseline",
+        "The team is tempted to start with a neural network.",
+        "A baseline is a small system that already works and can be measured. It may be a rule, a most-frequent-class prediction, or a simple tree.",
+        "If 7/10 training labels are 'yes', always guessing 'yes' is a baseline; it may be inadequate but it sets a comparison point.",
+        [
+          "Implement the simplest method",
+          "Measure its score fairly",
+          "Document its weaknesses"
+        ],
+        "labels=['yes']*7+['no']*3\nprint(labels.count('yes')/len(labels))"
+      ]
+    ],
+    "sources": [
+      "ON",
+      "IO",
+      "CP",
+      "POL",
+      "MSML"
+    ],
+    "app": {
+      "title": "Kaggle competition format (reference)",
+      "url": "https://www.kaggle.com/competitions/titanic"
+    },
+    "lab": {
+      "context": "Team-based FIICode project: a clear problem, a reproducible dataset and an initial baseline.",
+      "steps": [
+        "Read the exact challenge rules and identify allowed inputs.",
+        "Inspect a small CSV without changing the provided answer column.",
+        "Choose a baseline and run it on held-out examples.",
+        "Write down the model's first score and one weakness."
+      ],
+      "research": "Compare two possible baselines and justify which is easier to maintain."
+    },
+    "homework": {
+      "context": "A hackathon team has only limited time to turn a dataset into a demonstrable solution.",
+      "mandatory": "Write a one-paragraph problem statement and a data dictionary.",
+      "homework": "Deliver a runnable baseline notebook with a metric and a description of its input/output."
+    },
+    "advanced": [
+      "Find a hidden assumption in a competition statement.",
+      "Design a fair validation plan without using hidden test answers."
+    ],
+    "diagram": "pipeline"
+  },
+  {
+    "n": 13,
+    "title": "FIICode II: Implementing the Application",
+    "subtitle": "Make the data pipeline, model and interface work together.",
+    "scenario": "A hackathon project predicts a category but has no usable application yet.",
+    "sections": [
+      [
+        "Start with a vertical slice",
+        "The model works in a notebook but nobody can interact with it.",
+        "Build the smallest complete path from input to useful output before adding features.",
+        "One CSV row → one prediction → a clear label on screen is a valid starting demo.",
+        [
+          "Choose one valid input",
+          "Execute all stages",
+          "Show one trustworthy output"
+        ],
+        "def predict(value):return 'high' if value>20 else 'normal'\nprint(predict(23))"
+      ],
+      [
+        "Separate responsibilities",
+        "Data cleaning and user-interface code are mixed together.",
+        "Keep input validation, prediction and display in small testable functions or classes. OOP can help but is not mandatory.",
+        "If the input is missing, return an understandable error instead of a stack trace.",
+        [
+          "Validate",
+          "Predict",
+          "Format result"
+        ],
+        "def normalise(value):\n    if value is None: return None\n    return float(value)\nprint(normalise('12.5'))"
+      ],
+      [
+        "Test ordinary and unusual cases",
+        "A demo crashes if someone enters a blank value.",
+        "Write tests for normal inputs, boundary values and missing data. Testing is cheaper than explaining a crash during a presentation.",
+        "Try values below, equal to, and above a decision threshold.",
+        [
+          "List test cases",
+          "Run each case",
+          "Fix a failure and rerun"
+        ],
+        "threshold=20\nfor n in (19,20,21): print(n,n>threshold)"
+      ]
+    ],
+    "sources": [
+      "CP",
+      "GH",
+      "EA",
+      "MSML"
+    ],
+    "app": {
+      "title": "MIT App Inventor AI activities",
+      "url": "https://appinventor.mit.edu/explore/resources/ai/image-classification-look-extension"
+    },
+    "lab": {
+      "context": "Turn the Week 12 baseline into an end-to-end interactive demonstration.",
+      "steps": [
+        "Load an example input and validate its fields.",
+        "Connect the prepared model to a simple interface.",
+        "Test the main success path and one error path.",
+        "Save a working version before extending anything else."
+      ],
+      "research": "Design a second output format, for example a report CSV with an explanation."
+    },
+    "homework": {
+      "context": "Judges need to try a prototype without learning how its internal notebook is organised.",
+      "mandatory": "Expose a simple input and readable prediction.",
+      "homework": "Add one validation rule and three small tests."
+    },
+    "advanced": [
+      "Sketch a complete request-to-prediction diagram.",
+      "Describe how a change in data format propagates through the pipeline."
+    ],
+    "diagram": "pipeline"
+  },
+  {
+    "n": 14,
+    "title": "FIICode III: Improving and Testing",
+    "subtitle": "Improve one thing at a time, using actual measurements.",
+    "scenario": "A prototype works for most test inputs but fails on some important cases.",
+    "sections": [
+      [
+        "Measure the current weakness",
+        "An app gets seven of ten categories right.",
+        "An average score does not identify which errors matter; inspect mistakes by input type and class.",
+        "If all three failures occur on night-time readings, investigate that feature before changing the entire model.",
+        [
+          "Find failed examples",
+          "Group by cause",
+          "State a hypothesis"
+        ],
+        "actual=['A','A','B','B']; pred=['A','B','B','B']\nprint(sum(a==b for a,b in zip(actual,pred)))"
+      ],
+      [
+        "Controlled experiments",
+        "Two students independently change parameters and features.",
+        "Change one factor at a time and compare results on the same validation data. Avoid choosing a model based on final hidden test answers.",
+        "Baseline: 0.70; one feature added: 0.75; check whether improvement repeats.",
+        [
+          "Record baseline",
+          "Make one change",
+          "Compare on identical data"
+        ],
+        "before,after=.70,.75\nprint(round(after-before,2))"
+      ],
+      [
+        "Make the demo reliable",
+        "The project works only on the author's computer.",
+        "Keep a reproducible environment, sample inputs and clear steps. Handle missing data and explain limitations.",
+        "A README should let another student run the same notebook and understand the outputs.",
+        [
+          "Restart from clean state",
+          "Run a sample case",
+          "Record expected output"
+        ],
+        "print('README: inputs, how to run, known limitations')"
+      ]
+    ],
+    "sources": [
+      "ON",
+      "IO",
+      "POL",
+      "CP",
+      "GH"
+    ],
+    "app": {
+      "title": "Kaggle ML intro (model evaluation)",
+      "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+    },
+    "lab": {
+      "context": "Continue the same FIICode project and report a measured improvement.",
+      "steps": [
+        "Choose one reproducible failure case.",
+        "Make one model or input-processing change.",
+        "Compare results on the same held-out samples.",
+        "Write one brief test report and decide whether to keep the change."
+      ],
+      "research": "Run an ablation or a repeated evaluation to see whether the improvement is stable."
+    },
+    "homework": {
+      "context": "A hackathon project must persuade reviewers that its claimed improvement is real.",
+      "mandatory": "Record the baseline metric and two failed cases.",
+      "homework": "Implement one controlled change and explain its measured effect."
+    },
+    "advanced": [
+      "Explain why test-set tuning produces misleading results.",
+      "Create an ablation plan for two competing features."
+    ],
+    "diagram": "bars"
+  },
+  {
+    "n": 15,
+    "title": "FIICode IV: Hackathon",
+    "subtitle": "A real challenge, a functioning application and an evidence-based presentation.",
+    "scenario": "Your team must present a working solution, not just a model trained once.",
+    "sections": [
+      [
+        "Plan the final sprint",
+        "A working project still has unfinished features.",
+        "Choose the tasks that make the demo reliable and understandable. Avoid major untested rewrites near presentation.",
+        "Prioritise 'runs on a fresh browser' before 'add five new model types'.",
+        [
+          "List critical tasks",
+          "Assign responsibility",
+          "Verify finished work"
+        ],
+        "tasks=['test inputs','README','demo script']\nprint(tasks)"
+      ],
+      [
+        "Present a result with evidence",
+        "A judge asks what improved and how the team knows.",
+        "Show the problem, baseline, method, validation metric, a real example and one limitation. A demonstration is an argument supported by observable outputs.",
+        "'Accuracy improved from 70% to 78% on the same 50 held-out examples' is stronger than 'our AI is very accurate'.",
+        [
+          "Demonstrate input and output",
+          "Show a comparable metric",
+          "Name one failure mode"
+        ],
+        "print('Problem → solution → evidence → limitation')"
+      ],
+      [
+        "Deliver something someone else can run",
+        "The team members want to reuse the project later.",
+        "Package source code or notebooks, a small example dataset, usage instructions and a short changelog. Protect private data.",
+        "A clean project can be restarted and reproduced by someone who did not write it.",
+        [
+          "Run from clean state",
+          "Review README and permissions",
+          "Export the final artefact"
+        ],
+        "print('Deliver: code, README, sample data, result summary')"
+      ]
+    ],
+    "sources": [
+      "ON",
+      "IO",
+      "IO25",
+      "CP",
+      "UN",
+      "GH"
+    ],
+    "app": {
+      "title": "Official AI Olympiad task archive (reference)",
+      "url": "https://github.com/IOAI-official/IOAI-2025"
+    },
+    "lab": {
+      "context": "FIICode hackathon activity: implement, test and demonstrate the project under the actual event rules.",
+      "steps": [
+        "Confirm the project works from a clean start.",
+        "Execute representative and edge test cases.",
+        "Present the demo with baseline/final scores.",
+        "Collect reviewer feedback and record next improvements."
+      ],
+      "research": "Attempt a suitable official competition extension or produce a full technical postmortem."
+    },
+    "homework": {
+      "context": "A real hackathon team must hand over code and demonstrate what its solution does.",
+      "mandatory": "Submit a reproducible build or notebook with a README.",
+      "homework": "Provide a brief demo, validation evidence and an honest limitations section."
+    },
+    "advanced": [
+      "Evaluate trade-offs between model quality and practical usability.",
+      "Develop a clear technical report for a competition reviewer."
+    ],
+    "diagram": "pipeline"
+  }
+]
