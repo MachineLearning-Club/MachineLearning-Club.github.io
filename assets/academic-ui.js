@@ -1,6 +1,18 @@
 /* Shared, dependency-free site interactions. */
 (() => {
 "use strict";
+const REGISTRATION_DISMISS_KEY='mlclub-registration-dismissed-session';
+const registrationNotice=document.querySelector('.registration-announcement');
+if(registrationNotice){
+  try{
+    if(sessionStorage.getItem(REGISTRATION_DISMISS_KEY)==='1')registrationNotice.hidden=true;
+  }catch(_){/* Page remains usable even if storage is disabled. */}
+  const dismiss=registrationNotice.querySelector('[data-dismiss-registration]');
+  if(dismiss)dismiss.addEventListener('click',()=>{
+    registrationNotice.hidden=true;
+    try{sessionStorage.setItem(REGISTRATION_DISMISS_KEY,'1');}catch(_){/* optional persistence */}
+  });
+}
 const by=(q,root=document)=>root.querySelector(q);
 const all=(q,root=document)=>Array.from(root.querySelectorAll(q));
 all('[data-week-picker]').forEach(select=>{

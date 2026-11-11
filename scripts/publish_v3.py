@@ -51,7 +51,7 @@ def page_start(title,styles="/assets/academic.css",extra=""):
       '<meta name="viewport" content="width=device-width,initial-scale=1">'
       '<meta name="description" content="'+E(title,quote=True)+'">'
       '<title>'+E(title)+' · Machine Learning Club</title>'
-      '<link rel="stylesheet" href="'+styles+'"><link rel="stylesheet" href="/assets/v3.css">'+extra+'</head><body>')
+      '<link rel="stylesheet" href="'+styles+'"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css">'+extra+'</head><body>')
 
 def footer():
     return ('<footer class="site"><span>Independent educational project operated by '
@@ -77,9 +77,9 @@ def week_start(w,kind):
     n=w["n"]; kind_label=dict(KINDS)[kind]
     return (page_start(w["title"]+" — "+kind_label,extra='<script defer src="/assets/academic-ui.js"></script>')
        +toolbar(n,kind)
-       +'<main class="lesson-content"><p class="eyebrow">Week '+str(n).zfill(2)+' · '+kind_label+'</p>'
+       +'<main class="lesson-content'+(' course-lesson' if kind=='course' else '')+'"><p class="eyebrow">Week '+str(n).zfill(2)+' · '+kind_label+'</p>'
        +'<h1>'+E(w["title"])+'</h1>'
-       +'<p class="deck">'+E(w["subtitle"])+'</p>')
+       +('<p class="deck">'+E(w["subtitle"])+'</p>' if kind!="course" else ''))
 
 def week_end(w):
     n=w["n"]
@@ -99,7 +99,7 @@ def bibliography(w,short=False):
 def one_source(w,index=0):
     sid=w["sources"][index%len(w["sources"])]
     name,url=REGISTRY[sid][:2]
-    return '<p class="source-line">Read alongside this topic: '+a(url,name)+'.</p>'
+    return '<p class="source-line"><strong>Bibliography:</strong> '+a(url,name)+'.</p>'
 
 def list_html(items,ordered=True):
     tag='ol' if ordered else 'ul'
@@ -158,6 +158,42 @@ def diagram(w):
         if i<2:rectangles.append(f'<path d="M{x+214} 65h18m-7 -6 7 6 -7 6" fill="none" stroke="#7e8b95" stroke-width="1.5"/>')
     return '<figure class="teaching-figure"><svg viewBox="0 0 710 135" role="img" aria-label="Input, processing, output pipeline">'+''.join(rectangles)+'</svg><figcaption>Trace information from the input through an algorithm to its result.</figcaption></figure>'
 
+def teacher_guide(w,legacy_summary=None):
+    """Teacher-only overview is available on demand, not a student-visible introduction."""
+    parts=['<details class="teacher-guide"><summary>Teacher Guide <span class="teacher-guide-hint">Course overview and teaching sequence</span></summary>']
+    parts.append('<div class="teacher-guide-body">')
+    if legacy_summary:
+        parts.append(legacy_summary)
+    else:
+        parts.append('<h2>Course summary</h2><p>'+E(w["subtitle"])+' This lesson uses a practical classroom situation: '+E(w["scenario"])+'</p>')
+        parts.append('<p><strong>By the end:</strong> learners should be able to describe each topic using an input, an algorithmic step and an observable result, then run a small Python example and identify one limitation.</p>')
+    parts.append('<h3>Pedagogical sequence</h3>')
+    parts.append('<div class="pedagogical-table-scroll"><table class="pedagogical-table"><thead><tr><th scope="col">Topic</th><th scope="col">Situation / demonstration</th><th scope="col">Student evidence</th></tr></thead><tbody>')
+    for idx,item in enumerate(w["sections"],1):
+        parts.append('<tr><th scope="row">'+str(idx)+'. '+E(item["title"])+'</th><td>'+E(item["problem"])+'</td><td>'+E(item["steps"][-1])+'</td></tr>')
+    parts.append('</tbody></table></div></div></details>')
+    return ''.join(parts)
+
+def reference_links_new_tab(body):
+    """Only external bibliography sources should open separately; preserve internal navigation."""
+    def patch(m):
+        tag=m.group(0)
+        if 'target=' in tag:
+            return tag
+        return tag[:-1]+' target="_blank" rel="noopener noreferrer">'
+    return re.sub(r'<a\s+href="https?://[^"]+"[^>]*>',patch,body,flags=re.I)
+
+def tidy_legacy_references(body):
+    """Retain authored citations, but use consistent bibliography terminology."""
+    def rewrite(match):
+        text=match.group(0)
+        text=re.sub(r'(?<![\w])Read:', '<strong>Bibliography:</strong>',text)
+        text=re.sub(r'(?<![\w])Practice:', '<strong>Bibliography:</strong>',text)
+        text=re.sub(r'(?<![\w])Teaching sequence:', '<strong>Bibliography:</strong>',text)
+        text=re.sub(r'(?<![\w])Relevant specification:', '<strong>Bibliography:</strong>',text)
+        return text
+    return re.sub(r'<p class="source-line">.*?</p>',rewrite,body,flags=re.S)
+
 def course_content(w):
     n=w["n"]
     if n in (1,2):
@@ -165,23 +201,33 @@ def course_content(w):
         if n==2:
             for i in range(1,6):
                 body=body.replace(f'{3}.{i}.',f'{2}.{i}.')
-        # Preserve long-form authored examples and correct theoretical distinctions.
+            body=body.replace('Table 3.1','Table 2.1')
+        summary=re.search(r'<section class="summary">.*?</section>',body,flags=re.S)
+        if not summary:
+            raise RuntimeError(f"Missing authored course summary for Week {n}")
+        teacher=teacher_guide(w, summary.group(0))
+        body=body[:summary.start()]+body[summary.end():]
+        body=re.sub(r'<section><h2>Bibliography and further study</h2>.*?</section>','',body,flags=re.S)
+        body=tidy_legacy_references(body)
+        body=reference_links_new_tab(body)
         body+=diagram(w)
     else:
+        teacher=teacher_guide(w)
         body='<section class="scenario"><h2>Start with a problem</h2><p>'+E(w["scenario"])+'</p><p>Try to predict what a useful program should do before looking at its code.</p></section>'
-        body+='<nav class="toc" aria-label="Course contents"><strong>Contents</strong>'+list_html([s["title"] for s in w["sections"]])+'</nav>'
-        for i,s in enumerate(w["sections"],1):
-            body+='<section class="topic-section" id="part'+str(i)+'"><h2>'+str(i)+'. '+E(s["title"])+'</h2>'
-            body+='<p><strong>Real-life question.</strong> '+E(s["problem"])+'</p>'
-            body+='<p>'+E(s["concept"])+'</p>'
-            body+='<div class="worked"><strong>Worked example.</strong><p>'+E(s["example"])+'</p></div>'
+        toc='<ol>'+''.join(f'<li><a href="#part{i}">{E(part["title"])}</a></li>' for i,part in enumerate(w["sections"],1))+'</ol>'
+        body+='<nav class="toc" aria-label="Course contents"><strong>Contents</strong>'+toc+'</nav>'
+        for i,item in enumerate(w["sections"],1):
+            body+='<section class="topic-section" id="part'+str(i)+'"><h2>'+str(i)+'. '+E(item["title"])+'</h2>'
+            body+='<div class="topic-subsection"><h3>'+str(i)+'.1. Real-life situation</h3><p>'+E(item["problem"])+'</p></div>'
+            body+='<div class="topic-subsection"><h3>'+str(i)+'.2. Understanding the concept</h3><p>'+E(item["concept"])+'</p></div>'
+            body+='<div class="topic-subsection"><h3>'+str(i)+'.3. Worked example</h3><p>'+E(item["example"])+'</p></div>'
             if i==2 or (i==3 and len(w["sections"])>=4):body+=diagram(w)
-            body+='<pre><code>'+E(s["code"])+'</code></pre>'
-            body+='<details class="lesson-details"><summary>Show the process step by step</summary>'+list_html(s["steps"])+'<p><strong>Try this:</strong> change one input or value in the code, then predict the new output before running.</p></details>'
+            body+='<div class="topic-subsection"><h3>'+str(i)+'.4. Try it in Python</h3><pre><code>'+E(item["code"])+'</code></pre>'
+            body+='<details class="lesson-details"><summary>See the algorithm step by step</summary>'+list_html(item["steps"])+'<p><strong>Try this:</strong> change one input or value in the code, then predict the new output before running.</p></details></div>'
             body+=one_source(w,i-1)+'</section>'
         body+='<section><h2>Check your understanding</h2><p>Explain the input, the processing step and the expected output for the problem at the start of this lesson. Then identify one case where the model or rule may fail.</p>'
         body+=a(f'/w{n}/lab/','Continue to the laboratory')+'</section>'
-    return body+bibliography(w)
+    return teacher+body+bibliography(w)
 
 def lab_content(w):
     n=w["n"]
@@ -256,23 +302,37 @@ def make_week(w,kind):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(body,encoding="utf-8")
 
+def registration_banner(partner):
+    reg=partner.get("registration",{})
+    if not reg.get("url") or reg.get("active") is False:
+        return ''
+    label=reg.get("label","Registration open").rstrip(".")+"."
+    # The announcement is first in the DOM, with a no-JavaScript fallback.
+    return ('<aside class="registration-announcement" id="registration-announcement" role="region" '
+        'aria-label="Registration announcement">'
+        '<div class="registration-inner"><div class="registration-message">'
+        '<span class="registration-icon" aria-hidden="true">!</span>'
+        '<div><strong>'+E(label)+'</strong>'
+        '<span class="registration-school">'+a(partner["website"],partner["name"])+' · '+E(partner["schoolYear"])+'</span></div>'
+        '</div><a class="registration-cta" href="'+E(reg["url"],quote=True)+'" target="_blank" rel="noopener noreferrer">Register here <span aria-hidden="true">↗</span></a>'
+        '<button class="registration-dismiss" type="button" data-dismiss-registration aria-label="Dismiss registration announcement">×</button>'
+        '</div></aside>')
+
 def render_home():
     result=page_start("Machine Learning Club",extra='<script defer src="/assets/academic-ui.js"></script>')
-    result+='<header class="homepage-header"><h1>Machine Learning Club</h1>'
     for partner in SCHOOLS:
-        reg=partner.get("registration",{})
-        result+='<div class="school-line"><span class="school-name">'+a(partner["website"],partner["name"])+          '</span><span class="year">'+E(partner["schoolYear"] )+'</span>'
-        if reg.get("url"):
-            result+='<span><strong>'+E(reg.get("label","Registration open"))+'.</strong> '+a(reg["url"],"Register here")+'</span>'
+        result+=registration_banner(partner)
+    result+='<header class="homepage-header"><h1>Machine Learning Club</h1>'
+    result+='<nav class="homepage-shortcuts" aria-label="Club schedule">'
+    for partner in SCHOOLS:
         if partner.get("timetable"):
-            result+='<span>'+a(partner["timetable"],"Timetable")+'</span>'
-        result+='</div>'
-    result+='</header><main class="homepage-content">'
+            result+=a(partner["timetable"],"Timetable")
+    result+='</nav></header><main class="homepage-content">'
     for roman,name,first,last in MODULES:
         if first==4:
-            result+='<section class="prerequisite"><h2>Before Module II — Running Python notebooks</h2><p>Learn what an <code>.ipynb</code> file is, how to upload it in JupyterLite, run cells in order, fix a small error and save your work.</p><p>'+a('/guides/notebooks/','Step-by-step notebook guide')+'</p></section>'
+            result+='<aside class="prerequisite-strip" aria-label="Module II prerequisite"><span class="prerequisite-label">Before Module II</span>'+a('/guides/notebooks/','Python Notebooks · Step-by-step guide')+'</aside>'
         if first==10:
-            result+='<section class="prerequisite"><h2>Before Module III — Projects, Git and AI-assisted editing</h2><p>Begin with a guided Git version-history simulation; then explore managing a repository and using an AI code editor responsibly. Accounts are optional.</p><p>'+a('/guides/github-ai/','Beginner Git/GitHub and AI code editing guide')+'</p></section>'
+            result+='<aside class="prerequisite-strip" aria-label="Module III prerequisite"><span class="prerequisite-label">Before Module III</span>'+a('/guides/github-ai/','Git, GitHub & AI Code Editing')+'</aside>'
         result+='<section class="module" id="module-'+roman.lower()+'"><h2>Module '+roman+' — '+E(name)+'</h2>'
         for n in range(first,last+1):
             w=W[n-1]

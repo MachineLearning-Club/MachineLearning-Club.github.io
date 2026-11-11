@@ -1,0 +1,202 @@
+/* Registration and teacher-facing teaching structure; keeps the site's quiet academic style. */
+body:has(.registration-announcement){margin-top:0}
+.registration-announcement{
+  position:relative;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  background:#b42332;
+  color:#fff;
+  box-shadow:0 3px 12px rgba(75,10,20,.13);
+  z-index:10;
+}
+.registration-announcement[hidden]{display:none!important}
+.registration-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px 23px;
+  max-width:950px;
+  margin:0 auto;
+  min-height:78px;
+  padding:15px 26px;
+}
+.registration-message{display:flex;gap:13px;align-items:center;min-width:0}
+.registration-icon{
+  display:grid;place-items:center;
+  width:30px;height:30px;flex:0 0 30px;
+  border:1px solid #ffffffa6;border-radius:50%;
+  font:bold 20px Georgia,serif;line-height:1
+}
+.registration-message strong{display:block;font:bold 1.15rem/1.3 Georgia,serif}
+.registration-school{display:block;color:#fff2f3;font-size:.86rem;margin-top:2px;line-height:1.4}
+.registration-school a{color:white;text-decoration:underline;text-underline-offset:2px}
+.registration-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  color:#a31c2c!important;background:#fff;
+  border:1px solid #fff;
+  border-radius:4px;
+  padding:9px 18px;
+  text-decoration:none!important;
+  font:bold .94rem/1.2 Georgia,serif;
+  white-space:nowrap;
+  transition:background .12s ease;
+  margin-left:auto
+}
+.registration-cta:hover{background:#ffeded}
+.registration-dismiss{
+  appearance:none;
+  border:1px solid #ffffff80;
+  color:#fff;background:transparent;border-radius:4px;
+  font:24px/1 Arial,sans-serif;
+  width:35px;height:35px;padding:0;
+  flex:0 0 35px;
+  margin:0;
+}
+.registration-dismiss:hover{background:#ffffff25}
+body:has(.registration-announcement) .homepage-header{margin-top:38px}
+.homepage-header{margin-bottom:42px}
+.homepage-header h1{margin-bottom:8px}
+.homepage-shortcuts{
+  display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:center;
+  color:#335f80;font-size:.93rem
+}
+.homepage-shortcuts a{text-decoration:underline;text-underline-offset:3px}
+.prerequisite-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:8px 22px;
+  margin:43px 0 37px;
+  padding:15px 18px;
+  background:#f6f8fa;
+  border-top:1px solid #dce3e9;
+  border-bottom:1px solid #dce3e9;
+  font-size:.92rem;
+  flex-wrap:wrap;
+}
+.prerequisite-label{
+  font-variant:small-caps;
+  letter-spacing:.04em;
+  color:#5b7182;
+  font-size:.88rem
+}
+.prerequisite-strip a{font-weight:500;text-underline-offset:3px}
+.course-lesson > h1{margin-bottom:20px}
+.course-lesson .teacher-guide{
+  display:block;
+  margin:21px 0 32px;
+  padding:0;
+  border:1px solid #dce3e9;
+  background:#fafbfd;
+  border-radius:3px
+}
+.course-lesson .teacher-guide>summary{
+  cursor:pointer;
+  padding:13px 17px;
+  color:#274f6d;
+  display:list-item;
+  font-size:.96rem;
+  font-weight:600;
+}
+.course-lesson .teacher-guide>summary:hover{background:#f1f6fa}
+.course-lesson .teacher-guide-hint{
+  font-size:.78rem;
+  font-weight:400;
+  margin-left:9px;
+  color:#728496
+}
+.course-lesson .teacher-guide-body{
+  border-top:1px solid #dce3e9;
+  background:#fff;
+  padding:17px 20px 19px
+}
+.course-lesson .teacher-guide-body h2{
+  font-size:1.13rem;
+  margin:4px 0 14px;border:0;padding:0
+}
+.course-lesson .teacher-guide-body h3{
+  font-size:1rem;
+  margin:21px 0 10px;
+}
+.course-lesson .teacher-guide-body p{margin:10px 0}
+.course-lesson .teacher-guide .summary{margin:0}
+.pedagogical-table-scroll{overflow-x:auto;max-width:100%}
+.pedagogical-table{width:100%;border-collapse:collapse;font-size:.86rem;line-height:1.45;margin:12px 0}
+.pedagogical-table thead th{background:#eff4f8;border-top:1px solid #cad6e1;font-weight:600}
+.pedagogical-table th,.pedagogical-table td{padding:10px 11px;text-align:left;vertical-align:top;border-bottom:1px solid #e0e7ed}
+.pedagogical-table tbody th{font-weight:500;min-width:130px;color:#263d50}
+.pedagogical-table td{min-width:170px}
+.course-lesson .toc{margin:30px 0 45px}
+.course-lesson .toc li{margin:7px 0}
+.course-lesson>section:not(.page-bibliography):not(.scenario){
+  border-top:1px solid #d8e1e8;
+  margin-top:43px;
+  padding-top:13px;
+}
+.course-lesson>section:not(.page-bibliography):not(.scenario)>h2{
+  margin:8px 0 20px;
+  font-size:1.43rem;
+  line-height:1.34;
+  color:#203f58;
+  border-bottom:none;
+  padding:0;
+}
+.course-lesson>section h3{
+  font-size:1.08rem;
+  line-height:1.35;
+  margin:30px 0 10px;
+  color:#283f50
+}
+.course-lesson .topic-subsection{
+  margin:20px 0 28px;
+  padding:0 0 3px;
+}
+.course-lesson .topic-subsection>h3{
+  font-size:1.04rem;margin:21px 0 8px;
+  font-weight:600;
+}
+.course-lesson .topic-section>.source-line{margin:26px 0 8px}
+.course-lesson .source-line strong{font-weight:600;color:#526e82}
+.course-lesson .page-bibliography{
+  border-top:1px solid #cdd8e2;
+  padding-top:14px;
+  margin-top:56px;
+}
+.course-lesson .page-bibliography h2{margin:8px 0 16px}
+.course-lesson .figure{margin:30px auto}
+.course-lesson h2,.course-lesson h3{scroll-margin-top:18px}
+@media(max-width:680px){
+  .registration-inner{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 34px;
+    column-gap:9px;
+    row-gap:12px;
+    padding:14px 16px;
+  }
+  .registration-message{grid-column:1;grid-row:1;gap:9px}
+  .registration-message strong{font-size:1.08rem}
+  .registration-school{font-size:.79rem}
+  .registration-icon{height:27px;width:27px;flex-basis:27px;font-size:17px}
+  .registration-dismiss{grid-column:2;grid-row:1;align-self:start}
+  .registration-cta{
+    grid-column:1/-1;grid-row:2;margin:0;
+    width:100%;min-height:44px;font-size:1rem
+  }
+  body:has(.registration-announcement) .homepage-header{margin-top:24px}
+  .prerequisite-strip{align-items:flex-start;gap:6px;flex-direction:column;padding:13px 15px;margin:31px 0}
+  .course-lesson .teacher-guide>summary{padding:12px 14px}
+  .course-lesson .teacher-guide-hint{display:block;margin:3px 0 0 0}
+  .course-lesson .teacher-guide-body{padding:14px 12px}
+  .course-lesson>section:not(.page-bibliography):not(.scenario)>h2{font-size:1.27rem}
+  .course-lesson>section h3{font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){.registration-cta{transition:none}}
+@media print{.registration-announcement{display:none!important}.teacher-guide:not([open]){display:none}}
+@media(max-width:680px){
+ .pedagogical-table{display:block;margin:8px 0}
+ .pedagogical-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .pedagogical-table tbody,.pedagogical-table tr{display:block}
+ .pedagogical-table tbody tr{padding:9px 0 12px;border-bottom:1px solid #dbe4eb}
+ .pedagogical-table tbody th,.pedagogical-table tbody td{display:block;border:0;padding:3px 0;min-width:0}
+ .pedagogical-table tbody th{font-size:.93rem;font-weight:600}
+ .pedagogical-table tbody td:before{display:block;color:#738695;font:normal .74rem/1.4 Georgia,serif;letter-spacing:.02em}
+ .pedagogical-table tbody td:nth-of-type(1):before{content:'Situation / demonstration'}
+ .pedagogical-table tbody td:nth-of-type(2):before{content:'Student evidence'}
+}
