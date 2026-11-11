@@ -315,7 +315,6 @@ def registration_banner(partner):
         '<div><strong>'+E(label)+'</strong>'
         '<span class="registration-school">'+a(partner["website"],partner["name"])+' · '+E(partner["schoolYear"])+'</span></div>'
         '</div><a class="registration-cta" href="'+E(reg["url"],quote=True)+'" target="_blank" rel="noopener noreferrer">Register here <span aria-hidden="true">↗</span></a>'
-        '<button class="registration-dismiss" type="button" data-dismiss-registration aria-label="Dismiss registration announcement">×</button>'
         '</div></aside>')
 
 def render_home():
