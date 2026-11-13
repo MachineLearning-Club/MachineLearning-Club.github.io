@@ -1,11 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/course-martian.css"><link rel="stylesheet" href="/assets/course-examples.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/course-martian.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/week1-foundations.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson week1-foundations"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
 <p class="deck">From fixed rules to models learned from data.</p>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
 <ul><li><a href="#one">1.1. Programs, rules and artificial intelligence</a></li>
 <li><a href="#two">1.2. Learning from data</a></li>
-<li><a href="#three">1.3. Training, prediction and testing</a></li>
-<li><a href="#four">1.4. Two visual worked examples</a></li>
-<li><a href="#five">1.5. Does the model actually work?</a></li></ul></details></nav></aside><article class="course-article">
+<li><a href="#three">1.3. Probability</a></li>
+<li><a href="#four">1.4. Information theory</a></li>
+<li><a href="#five">1.5. Machine learning methods</a></li></ul></details></nav></aside><article class="course-article">
 <section id="one" class="chapter-section">
   <h2>1.1. Programs, rules and artificial intelligence</h2>
   <p>A computer takes <strong>input data</strong>, processes them using an algorithm, and produces <strong>output data</strong>. This basic structure remains useful even when the algorithm uses machine learning.</p>
@@ -79,7 +79,7 @@ ENDIF</code></pre>
   <p>In machine learning, input data are often represented as a <strong>table of examples</strong>. Each column describes an attribute. Depending on the task, the algorithm may predict a label, form groups or choose actions.</p>
 
   <div class="flow-diagram flow-data" aria-label="A table of input attributes is processed by a learning algorithm to produce a result">
-    <div class="flow-table"><strong>Input data</strong><table aria-label="Two features from the Martian classification problem"><thead><tr><th>Green</th><th>Legs</th></tr></thead><tbody><tr><td>N</td><td>3</td></tr><tr><td>Y</td><td>2</td></tr><tr><td>N</td><td>2</td></tr></tbody></table></div>
+    <div class="flow-table"><strong>Input data</strong><table aria-label="Example table of input attributes"><thead><tr><th>Temp.</th><th>Rain?</th></tr></thead><tbody><tr><td>18</td><td>Yes</td></tr><tr><td>24</td><td>No</td></tr><tr><td>12</td><td>Yes</td></tr></tbody></table></div>
     <span class="flow-arrow" aria-hidden="true">→</span>
     <div><strong>Processing</strong><small>Learning algorithm</small></div>
     <span class="flow-arrow" aria-hidden="true">→</span>
@@ -90,7 +90,7 @@ ENDIF</code></pre>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Feature:</strong> a measurable property used as input to a model.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Label:</strong> the known answer attached to a supervised training example.</p></div>
 
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>In Problem 40, the visitor’s properties are features, and Species (M or H) is the label. The algorithm learns from labelled visitors.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>A feature might be an image pixel, temperature or word. A supervised label could be “cat”, “dog” or a known number.</p></div>
 
   <h3>1.2.2. Three families of machine learning</h3>
   <p class="visual-intro">The central difference is the <strong>information available during learning</strong>. Compare the three diagrams before reading the definitions.</p>
@@ -147,361 +147,131 @@ ENDIF</code></pre>
   <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro — Machine Learning</a>.</p>
 </section>
 
-<section id="three" class="chapter-section">
-  <h2>1.3. Training, prediction and testing</h2>
-  <p>The same model is used in different ways at different stages. Look at what enters and leaves each process.</p>
-  <div class="training-stages">
-    <div class="training-stage">
-      <div class="stage-counter">01</div>
-      <div class="stage-body">
-        <h3>Training</h3>
-        <div class="stage-process"><span>Examples + known answers</span><span class="stage-arrow">→</span><strong>Learning algorithm</strong><span class="stage-arrow">→</span><span>Trained model</span></div>
-        <p>The algorithm determines the model's parameters from examples.</p>
-      </div>
+<section id="three" class="chapter-section foundations-section">
+  <h2>1.3. Probability — reasoning under uncertainty</h2>
+  <p>Before choosing a learning method, we need a way to describe <strong>what might happen</strong> and <strong>how likely each outcome is</strong>.</p>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Probability:</strong> a number between 0 and 1 describing how likely an event is.</p></div>
+  <div class="concept-formula"><span>For equally likely outcomes</span><strong>P(event) = favourable outcomes ÷ all possible outcomes</strong></div>
+  <h3>1.3.1. Events and sample spaces</h3>
+  <p>Roll two fair six-sided dice. There are <strong>6 × 6 = 36</strong> equally likely ordered results. The sum is 11 only in <strong>(5, 6)</strong> and <strong>(6, 5)</strong>.</p>
+  <div class="dice-lab" data-dice-demo>
+    <div class="dice-plot">
+      <strong>36 possible outcomes</strong>
+      <div class="dice-matrix" data-dice-grid role="img" aria-label="A six-by-six grid of ordered dice outcomes, highlighting the outcomes that sum to 11"></div>
+      <div class="dice-key"><span class="dice-key-target"></span> Sum = 11 <span class="dice-key-possible"></span> Possible after condition</div>
     </div>
-    <div class="training-stage">
-      <div class="stage-counter">02</div>
-      <div class="stage-body">
-        <h3>Prediction (inference)</h3>
-        <div class="stage-process"><span>New input + trained model</span><span class="stage-arrow">→</span><strong>Predicted output</strong></div>
-        <p>Use the model on a new example. Its parameters do not change merely because it makes a prediction.</p>
-      </div>
-    </div>
-    <div class="training-stage">
-      <div class="stage-counter">03</div>
-      <div class="stage-body">
-        <h3>Testing</h3>
-        <div class="stage-process"><span>Prediction + known test answer</span><span class="stage-arrow">→</span><strong>Correct / incorrect</strong></div>
-        <p>Compare predictions with examples that were <em>not used</em> to train the model.</p>
+    <div class="dice-controls">
+      <label for="dice-condition">What do we know?</label>
+      <select id="dice-condition" data-dice-condition>
+        <option value="all">Nothing else: all 36 outcomes are possible</option>
+        <option value="prime">The sum is prime: 15 outcomes remain</option>
+      </select>
+      <div class="dice-math" aria-live="polite">
+        <small>PROBABILITY THAT THE SUM IS 11</small>
+        <strong data-dice-result>2 / 36 = 1 / 18</strong>
+        <p data-dice-explanation>Two favourable outcomes out of 36 possible outcomes.</p>
       </div>
     </div>
   </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Training:</strong> using examples to determine a model's parameters.</p></div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Inference:</strong> applying a trained model to obtain a prediction.</p></div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Testing:</strong> evaluating predictions on separate examples with known correct answers.</p></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>A model can be correct on every training example and still fail on unfamiliar inputs. Training accuracy alone does not demonstrate generalisation.</p></div>
-  <div class="notes"><span class="label-word notes-label">Notes</span>
-    <ul><li>For a fair test, the answers in the test set must not influence how the model is trained.</li><li>During inference, the input is new but the trained model can stay unchanged.</li></ul>
+  <h3>1.3.2. Conditional probability</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Conditional probability:</strong> the chance of A after learning that B happened, written P(A | B).</p></div>
+  <p>Knowing that the dice sum is <em>prime</em> leaves sums 2, 3, 5, 7 and 11. Exactly <strong>15 of the 36</strong> ordered outcomes qualify; two of those give 11.</p>
+  <div class="formula-row"><div><span>Before new information</span><strong>P(S = 11) = 2/36 = 1/18</strong></div><div><span>Given that S is prime</span><strong>P(S = 11 | S prime) = 2/15</strong></div></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>New evidence can change a probability because it changes the set of possible outcomes. This idea is central to probabilistic reasoning.</p></div>
+  <h3>1.3.3. From evidence to beliefs: Bayes' rule</h3>
+  <p>Suppose a student either <strong>knows</strong> the answer to a true/false question or <strong>guesses</strong>. Someone who guesses has a 50% chance of being correct. After a correct answer, how confident should we be that the student knew it?</p>
+  <div class="bayes-example">
+    <div><span>Prior probability</span><strong>P(knows) = 0.60</strong><small>Assume 60% chance they knew it before hearing the answer.</small></div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div><span>Observed evidence</span><strong>Answer = correct</strong><small>Knowing gives 100% correctness; guessing gives 50%.</small></div>
+    <div class="flow-arrow" aria-hidden="true">→</div>
+    <div><span>Updated probability</span><strong>P(knows | correct) = 0.75</strong><small>(1 × 0.60) / (1 × 0.60 + 0.5 × 0.40)</small></div>
   </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Bayes' rule:</strong> a way to update probabilities when new evidence becomes available.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span><ul><li>Probabilities refer to <em>events</em>; model outputs can also be probabilities, scores or labels.</li><li>Do not confuse “more likely” with “certain”.</li></ul></div>
   <div class="exercise"><span class="label-word exercise-label">Exercise 3</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>Why should we keep some labelled examples separate from the training set?</li>
-    <li>A model correctly classifies all six objects it trained on. What evidence would you collect before saying it works on new objects?</li>
-  </ol></div>
-  <details><summary>Show a possible solution</summary><p><strong>a)</strong> To test whether the model handles unseen examples instead of memorising training examples. <strong>b)</strong> Record predictions and errors for a separate, varied labelled test set.</p></details></div>
-  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Bias in, bias out</a>.</p>
+    <li>Why are (5, 6) and (6, 5) two different outcomes?</li>
+    <li>Use the grid to explain why P(S = 11 | S prime) is greater than P(S = 11).</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> The dice are distinguishable, so the ordered outcomes differ. <strong>b)</strong> Conditioning on a prime sum removes 21 impossible outcomes, leaving the same two favourable outcomes among only 15 possibilities.</p></details></div>
+  <p class="source-line"><strong>Reading:</strong> provided <em>Random Events and Bayes' Formula</em>, worked exercises 2 and 7 (printed pp. 24 and 28).</p>
 </section>
 
-<section id="four" class="chapter-section">
-  <h2>1.4. Two visual worked examples</h2>
-  <p>Apply two algorithms step by step: an ID3 decision tree for labelled visitors, followed by a simple K-means clustering exercise.</p>
-
-  <h3>1.4.1. Supervised example — Alien or Human?</h3>
-<p class="visual-intro">In this fictional example, each visitor is an <strong>alien (M)</strong> or a <strong>human (H)</strong>. Four recorded traits describe each visitor. Our goal is to learn a decision tree from labelled examples.</p>
-
-<div class="trait-comparison" aria-label="Two illustrated example visitors, with arrows identifying the four recorded traits">
-  <figure class="trait-card">
-    <figcaption><strong>Human</strong><span>Training example 7 · Label H</span></figcaption>
-    <svg viewBox="0 0 470 340" role="img" aria-label="Human with arrows: green no, two legs, short, not smelly. Example 7 from the training table.">
-      <defs><marker id="trait-human-tip" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#64859c"/></marker></defs>
-      <line x1="298" y1="54" x2="298" y2="292" stroke="#aebbc5" strokeWidth="1.5"/>
-      <path d="M291 54H305M291 292H305" stroke="#aebbc5" strokeWidth="1.5"/>
-      <circle cx="235" cy="94" r="34" fill="#ead1bb" stroke="#8b7e78" strokeWidth="2"/>
-      <path d="M201 91Q208 53 235 57Q265 57 269 91" fill="#617180" stroke="#50616f" strokeWidth="2"/>
-      <circle cx="221" cy="92" r="2.3" fill="#394d5c"/><circle cx="249" cy="92" r="2.3" fill="#394d5c"/>
-      <path d="M225 111Q235 118 245 111" fill="none" stroke="#9c6c57" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M204 131L265 131L273 210L196 210Z" fill="#c6d6e0" stroke="#708fa3" strokeWidth="2"/>
-      <path d="M203 144L177 213M264 144L289 213" fill="none" stroke="#b4c9d6" strokeWidth="17" strokeLinecap="round"/>
-      <path d="M214 217L211 283M251 217L254 283" fill="none" stroke="#677e8f" strokeWidth="17" strokeLinecap="round"/>
-      <path d="M211 282L193 292M254 282L270 292" fill="none" stroke="#506779" strokeWidth="13" strokeLinecap="round"/>
-      <g fill="none" stroke="#64859c" strokeWidth="1.7" markerEnd="url(#trait-human-tip)">
-        <path d="M128 62L198 87"/>
-        <path d="M128 147L211 113"/>
-        <path d="M128 255L207 269"/>
-        <path d="M344 167L301 167"/>
-      </g>
-      <g fill="#344e61" fontSize="15" fontFamily="Georgia,serif">
-        <text x="14" y="39" fontWeight="bold">Color</text><text x="14" y="59">Not green</text>
-        <text x="14" y="126" fontWeight="bold">Smelly?</text><text x="14" y="146">No</text>
-        <text x="14" y="232" fontWeight="bold">Number of legs</text><text x="14" y="252">2</text>
-        <text x="355" y="151" fontWeight="bold">Height</text><text x="355" y="171">Short</text>
-      </g>
-    </svg>
-  </figure>
-  <figure class="trait-card">
-    <figcaption><strong>Alien</strong><span>Training example 3 · Label M</span></figcaption>
-    <svg viewBox="0 0 470 340" role="img" aria-label="Green alien with arrows: green yes, three legs, tall, not smelly. Example 3 from the training table.">
-      <defs><marker id="trait-alien-tip" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#64859c"/></marker></defs>
-      <line x1="314" y1="26" x2="314" y2="300" stroke="#aebbc5" strokeWidth="1.5"/>
-      <path d="M307 26H321M307 300H321" stroke="#aebbc5" strokeWidth="1.5"/>
-      <path d="M217 54L204 30M260 54L274 30" fill="none" stroke="#528c6a" strokeWidth="5" strokeLinecap="round"/>
-      <circle cx="203" cy="29" r="5" fill="#76b98b"/><circle cx="275" cy="29" r="5" fill="#76b98b"/>
-      <ellipse cx="239" cy="93" rx="48" ry="43" fill="#a7dabc" stroke="#4f8663" strokeWidth="2"/>
-      <ellipse cx="220" cy="91" rx="12" ry="17" fill="#21483b" transform="rotate(-12 220 91)"/>
-      <ellipse cx="258" cy="91" rx="12" ry="17" fill="#21483b" transform="rotate(12 258 91)"/>
-      <path d="M227 118Q239 125 251 118" fill="none" stroke="#4f8663" strokeWidth="2"/>
-      <path d="M211 135L268 135L287 214L191 214Z" fill="#79b797" stroke="#4f8663" strokeWidth="2"/>
-      <path d="M208 149L174 206M269 149L305 206" fill="none" stroke="#8ac4a6" strokeWidth="13" strokeLinecap="round"/>
-      <path d="M210 214L191 293M239 214L239 297M265 214L290 293" fill="none" stroke="#5e9b77" strokeWidth="13" strokeLinecap="round"/>
-      <path d="M191 293L179 298M239 297L229 302M290 293L301 298" fill="none" stroke="#3f805c" strokeWidth="11" strokeLinecap="round"/>
-      <g fill="none" stroke="#64859c" strokeWidth="1.7" markerEnd="url(#trait-alien-tip)">
-        <path d="M128 62L192 84"/>
-        <path d="M128 145L211 112"/>
-        <path d="M128 257L205 283"/>
-        <path d="M359 166L318 166"/>
-      </g>
-      <g fill="#344e61" fontSize="15" fontFamily="Georgia,serif">
-        <text x="14" y="39" fontWeight="bold">Color</text><text x="14" y="59">Green</text>
-        <text x="14" y="126" fontWeight="bold">Smelly?</text><text x="14" y="146">No</text>
-        <text x="14" y="232" fontWeight="bold">Number of legs</text><text x="14" y="252">3</text>
-        <text x="359" y="151" fontWeight="bold">Height</text><text x="359" y="171">Tall</text>
-      </g>
-    </svg>
-  </figure>
-</div>
-<p class="trait-footnote">These are <strong>two examples from the dataset</strong>, not rules that describe every human or every alien. The decision tree learns from all ten records.</p>
-
-<div class="mars-flow" aria-label="Alien classification: labelled examples lead to an ID3 decision tree, then a new visitor receives a prediction">
-  <div><strong>10 labelled visitors</strong><small>Green · Legs · Height · Smelly · Species</small></div>
-  <span aria-hidden="true">→</span>
-  <div><strong>ID3 learning algorithm</strong><small>Choose informative attributes</small></div>
-  <span aria-hidden="true">→</span>
-  <div><strong>Decision tree</strong><small>Predict M or H</small></div>
-</div>
-
-<div class="example-step-title"><span>Step 1</span><strong>Learn from the source data</strong></div>
-<p>Each row is one visitor. <strong>Species</strong> is the target label; the other four columns are input features. These ten examples come from Exercise 40 of the provided ID3 collection.</p>
-<div class="mars-data-wrap">
-<table class="mars-data">
-<caption>Ten labelled training examples — Alien (M) or Human (H)</caption>
-<thead><tr><th>#</th><th>Species <small>label</small></th><th>Green</th><th>Legs</th><th>Height</th><th>Smelly</th></tr></thead>
-<tbody>
-<tr><th>1</th><td class="mars-m">M</td><td>N</td><td>3</td><td>S</td><td>Y</td></tr>
-<tr><th>2</th><td class="mars-m">M</td><td>Y</td><td>2</td><td>T</td><td>N</td></tr>
-<tr><th>3</th><td class="mars-m">M</td><td>Y</td><td>3</td><td>T</td><td>N</td></tr>
-<tr><th>4</th><td class="mars-m">M</td><td>N</td><td>2</td><td>S</td><td>Y</td></tr>
-<tr><th>5</th><td class="mars-m">M</td><td>Y</td><td>3</td><td>T</td><td>N</td></tr>
-<tr><th>6</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>Y</td></tr>
-<tr><th>7</th><td class="mars-h">H</td><td>N</td><td>2</td><td>S</td><td>N</td></tr>
-<tr><th>8</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>N</td></tr>
-<tr><th>9</th><td class="mars-h">H</td><td>Y</td><td>2</td><td>S</td><td>N</td></tr>
-<tr><th>10</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>Y</td></tr>
-</tbody></table></div>
-
-<div class="example-step-title"><span>Step 2</span><strong>Select the most informative first question</strong></div>
-<p>ID3 compares how much each attribute reduces uncertainty about <strong>Species</strong>. The largest information gain determines the first test.</p>
-<div class="mars-gains" role="img" aria-label="Information gains: Legs 0.3958 bits, Green 0.1245, Height 0, Smelly 0. Legs has the highest information gain.">
-  <div class="gain-row winning"><span>Legs</span><div class="gain-track"><span style="width:100%"></span></div><strong>0.396</strong></div>
-  <div class="gain-row"><span>Green</span><div class="gain-track"><span style="width:31.46%"></span></div><strong>0.125</strong></div>
-  <div class="gain-row"><span>Height</span><div class="gain-track"><span style="width:0%"></span></div><strong>0.000</strong></div>
-  <div class="gain-row"><span>Smelly</span><div class="gain-track"><span style="width:0%"></span></div><strong>0.000</strong></div>
-  <small>Information gain in bits, rounded to three decimals</small>
-</div>
-<div class="gain-calculations" aria-label="Four short worked information-gain calculations">
-  <p class="gain-first">Start with <strong>5 aliens</strong> and <strong>5 humans</strong>: uncertainty <strong>H(5,5) = 1.000 bit</strong>. Here H(a,b) measures how mixed two classes are: a pure group has uncertainty 0; an even mix has uncertainty 1.</p>
-  <div class="gain-examples">
-    <article class="gain-example gain-best">
-      <h4><span>Legs</span><strong>Gain 0.396</strong></h4>
-      <p class="gain-groups">3 legs: <strong>3 M, 0 H</strong> · 2 legs: <strong>2 M, 5 H</strong></p>
-      <p><span>After the split</span><code>(3/10 × 0) + (7/10 × 0.863) = 0.604</code></p>
-      <p class="gain-answer"><span>Information gain</span><code>1.000 − 0.604 = <strong>0.396</strong></code></p>
-    </article>
-    <article class="gain-example">
-      <h4><span>Green</span><strong>Gain 0.125</strong></h4>
-      <p class="gain-groups">Yes: <strong>3 M, 1 H</strong> · No: <strong>2 M, 4 H</strong></p>
-      <p><span>After the split</span><code>(4/10 × 0.811) + (6/10 × 0.918) = 0.875</code></p>
-      <p class="gain-answer"><span>Information gain</span><code>1.000 − 0.875 = <strong>0.125</strong></code></p>
-    </article>
-    <article class="gain-example">
-      <h4><span>Height</span><strong>Gain 0.000</strong></h4>
-      <p class="gain-groups">Tall: <strong>3 M, 3 H</strong> · Short: <strong>2 M, 2 H</strong></p>
-      <p><span>After the split</span><code>(6/10 × 1) + (4/10 × 1) = 1.000</code></p>
-      <p class="gain-answer"><span>Information gain</span><code>1.000 − 1.000 = <strong>0.000</strong></code></p>
-    </article>
-    <article class="gain-example">
-      <h4><span>Smelly</span><strong>Gain 0.000</strong></h4>
-      <p class="gain-groups">Yes: <strong>2 M, 2 H</strong> · No: <strong>3 M, 3 H</strong></p>
-      <p><span>After the split</span><code>(4/10 × 1) + (6/10 × 1) = 1.000</code></p>
-      <p class="gain-answer"><span>Information gain</span><code>1.000 − 1.000 = <strong>0.000</strong></code></p>
-    </article>
+<section id="four" class="chapter-section foundations-section">
+  <h2>1.4. Information theory — measuring uncertainty</h2>
+  <p>Probability tells us how likely something is. <strong>Information theory</strong> lets us measure how surprising an outcome is, and how much uncertainty disappears when we learn something new.</p>
+  <h3>1.4.1. Surprise</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Information content (surprise):</strong> I(x) = −log₂ P(x), measured in bits. A rarer event carries more information when observed.</p></div>
+  <div class="surprise-compare">
+    <div><span>Two dice sum to 2</span><strong>1 / 36</strong><div class="surprise-bar"><span style="width:100%"></span></div><small>−log₂(1/36) ≈ <b>5.170 bits</b></small></div>
+    <div><span>Two dice sum to 7</span><strong>6 / 36</strong><div class="surprise-bar"><span style="width:50%"></span></div><small>−log₂(6/36) ≈ <b>2.585 bits</b></small></div>
   </div>
-  <p class="gain-afterword"><strong>Choose Legs.</strong> It removes more uncertainty than the other three attributes, so ID3 uses it as the first question.</p>
-</div>
-<div class="mars-split">
-  <div><strong>All 10 visitors</strong><small>5 aliens · 5 humans</small></div><span aria-hidden="true">→</span>
-  <div class="mars-green"><strong>Legs = 3</strong><small>3 aliens · 0 humans</small><em>Pure group → M</em></div>
-  <div class="mars-blue"><strong>Legs = 2</strong><small>2 aliens · 5 humans</small><em>Ask another question</em></div>
-</div>
-
-<div class="example-step-title"><span>Step 3</span><strong>Build the complete ID3 tree</strong></div>
-<p>The <strong>Legs = 3</strong> branch is already decided. The other branch needs additional questions. Follow the lines through the tree to see how each answer narrows down the possible class.</p>
-<div class="mars-tree-scroll" role="region" tabindex="0" aria-label="Scrollable decision-tree diagram">
-  <svg viewBox="0 0 940 565" class="mars-tree" role="img" aria-label="ID3 classification tree: first Legs; three legs always Martian, two legs tests Green, then Height, and if needed Smelly.">
-    <g class="tree-edges">
-      <path data-mars-edge="root-3" d="M450 74V112H175V146"/>
-      <path data-mars-edge="root-2" d="M450 74V112H635V146"/>
-      <path data-mars-edge="green-N" d="M635 191V214H450V246"/>
-      <path data-mars-edge="green-Y" d="M635 191V214H780V246"/>
-      <path data-mars-edge="heightN-T" d="M450 291V314H335V348"/>
-      <path data-mars-edge="heightN-S" d="M450 291V314H560V348"/>
-      <path data-mars-edge="heightY-S" d="M780 291V314H720V348"/>
-      <path data-mars-edge="heightY-T" d="M780 291V314H870V348"/>
-      <path data-mars-edge="smelly-N" d="M560 393V427H480V456"/>
-      <path data-mars-edge="smelly-Y" d="M560 393V427H630V456"/>
-    </g>
-    <g class="tree-edge-labels">
-      <text x="285" y="101">3</text><text x="558" y="101">2</text>
-      <text x="530" y="204">N</text><text x="708" y="204">Y</text>
-      <text x="378" y="304">T</text><text x="506" y="304">S</text>
-      <text x="744" y="304">S</text><text x="825" y="304">T</text>
-      <text x="510" y="418">N</text><text x="602" y="418">Y</text>
-    </g>
-    <g data-mars-node="root" class="tree-test"><rect x="384" y="29" width="132" height="45" rx="5"/><text x="450" y="56">Legs?</text></g>
-    <g data-mars-node="leaf3" class="tree-leaf leaf-m"><rect x="120" y="146" width="110" height="45" rx="5"/><text x="175" y="174">M</text></g>
-    <g data-mars-node="green" class="tree-test"><rect x="569" y="146" width="132" height="45" rx="5"/><text x="635" y="174">Green?</text></g>
-    <g data-mars-node="heightN" class="tree-test"><rect x="385" y="246" width="130" height="45" rx="5"/><text x="450" y="274">Height?</text></g>
-    <g data-mars-node="heightY" class="tree-test"><rect x="715" y="246" width="130" height="45" rx="5"/><text x="780" y="274">Height?</text></g>
-    <g data-mars-node="leafNT" class="tree-leaf leaf-h"><rect x="285" y="348" width="100" height="45" rx="5"/><text x="335" y="376">H</text></g>
-    <g data-mars-node="smelly" class="tree-test"><rect x="495" y="348" width="130" height="45" rx="5"/><text x="560" y="376">Smelly?</text></g>
-    <g data-mars-node="leafYS" class="tree-leaf leaf-h"><rect x="670" y="348" width="100" height="45" rx="5"/><text x="720" y="376">H</text></g>
-    <g data-mars-node="leafYT" class="tree-leaf leaf-m"><rect x="820" y="348" width="100" height="45" rx="5"/><text x="870" y="376">M</text></g>
-    <g data-mars-node="leafNSN" class="tree-leaf leaf-h"><rect x="430" y="456" width="100" height="45" rx="5"/><text x="480" y="484">H</text></g>
-    <g data-mars-node="leafNSY" class="tree-leaf leaf-m"><rect x="580" y="456" width="100" height="45" rx="5"/><text x="630" y="484">M</text></g>
-    <g class="tree-caption"><text x="470" y="540">Each question uses one feature. The final leaf predicts a class.</text></g>
-  </svg>
-</div>
-
-<div class="example-step-title"><span>Step 4</span><strong>Classify a new visitor</strong></div>
-<div class="mars-predictor" data-mars-demo>
-  <div class="mars-fields">
-    <label>Green
-      <select data-mars-feature="Green"><option value="N" selected>No (N)</option><option value="Y">Yes (Y)</option></select>
-    </label>
-    <label>Legs
-      <select data-mars-feature="Legs"><option value="2" selected>2</option><option value="3">3</option></select>
-    </label>
-    <label>Height
-      <select data-mars-feature="Height"><option value="S" selected>Short (S)</option><option value="T">Tall (T)</option></select>
-    </label>
-    <label>Smelly
-      <select data-mars-feature="Smelly"><option value="N">No (N)</option><option value="Y" selected>Yes (Y)</option></select>
-    </label>
-  </div>
-  <div class="mars-output">
-    <small>PREDICTED SPECIES</small>
-    <strong data-mars-result class="mars-m">M — Alien</strong>
-    <p data-mars-path aria-live="polite">Legs = 2 → Green = N → Height = S → Smelly = Y → Martian</p>
-    <span data-mars-training>Matches a labelled training example.</span>
-    <button type="button" data-mars-reset>Reset visitor</button>
-  </div>
-</div>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>The tree classifies all ten training examples correctly. This does not guarantee it will correctly classify every possible new visitor.</p></div>
-<div class="notes"><span class="label-word notes-label">Notes</span><ul>
-  <li><strong>Supervised learning:</strong> Species (M or H) is the known answer during training.</li>
-  <li><strong>ID3:</strong> tests the attribute with greatest information gain at each decision node.</li>
-  <li><strong>Inference:</strong> follows the completed tree for a new visitor, without rebuilding the tree.</li>
-</ul></div>
-
-  <h3>1.4.2. Unsupervised example — K-means clustering</h3>
-<p class="visual-intro">Here the six points have <strong>no class labels</strong>. We want to form <strong>two groups</strong> using the K-means algorithm. Work from the same points at every step.</p>
-
-<div class="kmeans-input">
-  <div>
-    <strong>Six input points</strong>
-    <div class="kmeans-point-table" role="table" aria-label="Six two-dimensional observations">
-      <div role="row"><span role="cell">A (1, 1)</span><span role="cell">B (1, 2)</span><span role="cell">C (2, 1)</span></div>
-      <div role="row"><span role="cell">D (6, 5)</span><span role="cell">E (7, 5)</span><span role="cell">F (6, 6)</span></div>
+  <h3>1.4.2. Entropy</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Entropy:</strong> the average amount of surprise in a probability distribution.</p></div>
+  <p>For two possible outcomes with probabilities p and 1 − p, entropy is <strong>H(p) = −p log₂ p − (1 − p) log₂(1 − p)</strong>, with 0 log₂ 0 defined as 0.</p>
+  <div class="entropy-experiment" data-entropy-demo>
+    <div class="entropy-controls">
+      <label for="entropy-p">Probability of outcome A <strong data-entropy-p>50%</strong></label>
+      <input type="range" id="entropy-p" min="0" max="100" step="5" value="50" data-entropy-slider>
+      <div class="entropy-distribution" aria-hidden="true"><span data-entropy-a></span><span data-entropy-b></span></div>
+      <div class="entropy-key"><span>A</span><span>B</span></div>
+      <div class="entropy-number"><small>ENTROPY</small><strong data-entropy-value>1.000 bits</strong></div>
+      <p data-entropy-note role="status" aria-live="polite">A fair two-outcome process is maximally uncertain.</p>
     </div>
+    <svg viewBox="0 0 420 260" data-entropy-chart role="img" aria-label="Entropy curve. Binary entropy is zero at probabilities 0 and 1 and highest at probability 0.5."><path d="M45 24V215H399" stroke="#a4b5c0" stroke-width="1.6" fill="none"/><g stroke="#e0e8ed"><line x1="45" y1="119" x2="399" y2="119"/><line x1="45" y1="24" x2="399" y2="24"/></g><g fill="#5a7587" font-size="12"><text x="37" y="219" text-anchor="end">0</text><text x="37" y="123" text-anchor="end">0.5</text><text x="37" y="28" text-anchor="end">1 bit</text><text x="45" y="234" text-anchor="middle">0</text><text x="222" y="234" text-anchor="middle">0.5</text><text x="399" y="234" text-anchor="middle">1</text><text x="222" y="254" text-anchor="middle">P(A)</text></g><path data-entropy-curve fill="none" stroke="#427fa7" stroke-width="3"/><circle data-entropy-point cx="222" cy="24" r="7" fill="#2a678b" stroke="#fff" stroke-width="2"/></svg>
   </div>
-  <div>
-    <strong>Two initial centres</strong>
-    <p><span class="kmeans-dot blue"></span> Centre 1 = <strong>(1, 1)</strong></p>
-    <p><span class="kmeans-dot orange"></span> Centre 2 = <strong>(7, 5)</strong></p>
-  </div>
-</div>
-
-<div class="clustering-steps kmeans-four-steps">
-  <figure class="cluster-stage">
-    <h4>1. Start with two centres</h4>
-    <svg data-cluster-plot="raw" viewBox="0 0 360 270" role="img" aria-label="Six unlabelled points A through F, with two initial centroids at 1,1 and 7,5"></svg>
-    <figcaption>All points are unlabelled. The <strong>outlined + symbols</strong> show the two initial centres.</figcaption>
-  </figure>
-  <figure class="cluster-stage">
-    <h4>2. Assign each point</h4>
-    <svg data-cluster-plot="assigned" viewBox="0 0 360 270" role="img" aria-label="The same six points A through F, coloured by the nearest initial centroid"></svg>
-    <figcaption><strong>A, B, C → Group 1.</strong> <strong>D, E, F → Group 2.</strong> The centres have not moved yet.</figcaption>
-  </figure>
-  <figure class="cluster-stage">
-    <h4>3. Update the centres</h4>
-    <svg data-cluster-plot="recentered" viewBox="0 0 360 270" role="img" aria-label="The same groups, now with centroids moved to 1.33,1.33 and 6.33,5.33"></svg>
-    <figcaption>Move each centre to the <strong>average position</strong> of the three assigned points.</figcaption>
-  </figure>
-  <figure class="cluster-stage">
-    <h4>4. Assign again, then stop</h4>
-    <svg data-cluster-plot="stable" viewBox="0 0 360 270" role="img" aria-label="Cluster assignments remain unchanged after updating the centroids; K-means has converged"></svg>
-    <figcaption>Every point stays in the same group. <strong>Nothing changes → stop.</strong></figcaption>
-  </figure>
-</div>
-
-<div class="kmeans-working">
-  <h4>The two calculations you need</h4>
-  <div class="kmeans-working-grid">
-    <div>
-      <strong>Assign to the nearest centre</strong>
-      <p>For C = (2, 1), compare <em>squared distances</em> (no square roots needed):</p>
-      <div class="math-line">To Centre 1: (2 − 1)² + (1 − 1)² = <strong>1</strong></div>
-      <div class="math-line">To Centre 2: (2 − 7)² + (1 − 5)² = <strong>41</strong></div>
-      <p>1 is smaller than 41, so <strong>C belongs to Group 1</strong>.</p>
-    </div>
-    <div>
-      <strong>Calculate each new centre</strong>
-      <p>Take the average of the x-coordinates and y-coordinates separately.</p>
-      <div class="math-line">Centre 1: ((1+1+2)/3, (1+2+1)/3) = <strong>(1.33, 1.33)</strong></div>
-      <div class="math-line">Centre 2: ((6+7+6)/3, (5+5+6)/3) = <strong>(6.33, 5.33)</strong></div>
-      <p>The next assignment is unchanged, so <strong>K-means stops</strong>.</p>
-    </div>
-  </div>
-</div>
-<div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Clustering:</strong> grouping examples by similarity without supplied target labels.</p></div>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>K-means repeats just two operations: <strong>assign to the nearest centre</strong> and <strong>recalculate the centres</strong>. Stop when assignments no longer change.</p></div>
-<div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
-  <li>For the alien-versus-human problem, name the four input features and the target label.</li>
-  <li>Which initial K-means centre is closer to point C = (2, 1)? Show the squared distances.</li>
-  <li>Calculate the updated centre of the group containing A, B and C.</li>
-  <li>After updating both centres, no point changes groups. What should the algorithm do?</li>
-</ol></div>
-<details><summary>Show a possible solution</summary><p><strong>a)</strong> Green, Legs, Height and Smelly are features; Species (M or H) is the label. <strong>b)</strong> Centre 1: 1; Centre 2: 41, so C belongs to Group 1. <strong>c)</strong> ((1+1+2)/3, (1+2+1)/3) = (1.33, 1.33). <strong>d)</strong> Stop: the grouping has converged.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> Ciortuz, <em>Decision Trees: ID3</em>, Exercise 40 (provided collection) · <a href="https://tue-ml.github.io/book/clustering-exercises/" target="_blank" rel="noopener noreferrer">TU/e — K-means exercises</a> (adapted to six 2D points) · <a href="/w1/lab/">Flight-delay laboratory</a>.</p>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>If an outcome is certain, entropy is <strong>0 bits</strong>. If two outcomes are equally likely, entropy is <strong>1 bit</strong>.</p></div>
+  <h3>1.4.3. Information gain</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Information gain:</strong> the decrease in entropy after receiving new information.</p></div>
+  <div class="formula-row"><div><span>Uncertainty before</span><strong>H(sum of two dice) ≈ 3.274 bits</strong></div><div><span>After seeing first die = 4</span><strong>H(sum | first die = 4) = log₂6 ≈ 2.585 bits</strong></div></div>
+  <div class="info-gain-result"><span>Information gained from observing the first die</span><strong>3.274 − 2.585 ≈ 0.690 bits</strong></div>
+  <p>Information gain also helps select informative features in machine learning. That application is explored in later lessons.</p>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
+    <li>Which gives more surprise: an event with probability 1/2 or one with probability 1/8?</li>
+    <li>Use the slider to find the probability that maximises binary entropy.</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Probability 1/8: I = 3 bits, versus 1 bit for probability 1/2. <strong>b)</strong> p = 0.5 produces H = 1 bit.</p></details></div>
+  <p class="source-line"><strong>Reading:</strong> provided <em>Elements of Information Theory</em>, exercises 55 and 56 (printed pp. 129–133). Logarithms are base 2.</p>
 </section>
 
-<section id="five" class="chapter-section">
-  <h2>1.5. Does the model actually work?</h2>
-  <p>A demonstration tells us what happened on a few inputs. Testing tells us how reliably a model behaves on <em>new</em> inputs.</p>
-  <div class="evaluation-contrast">
-    <div>
-      <div class="evaluation-symbol">✓</div>
-      <h3>Training examples</h3>
-      <p>The model may recognise examples it has already seen.</p>
-      <strong>This does not prove generalisation.</strong>
-    </div>
-    <div>
-      <div class="evaluation-symbol question-symbol">?</div>
-      <h3>New test examples</h3>
-      <p>Use unfamiliar inputs with independently known correct answers.</p>
-      <strong>Record successes and failures.</strong>
-    </div>
+<section id="five" class="chapter-section foundations-section">
+  <h2>1.5. A map of machine learning methods</h2>
+  <p>Now that we have a language for <strong>data, probability, and information</strong>, we can recognise common AI approaches. This is a visual overview, not an implementation lesson.</p>
+  <div class="model-gallery">
+    <article class="model-tile"><span class="model-kind">TASK · IMAGES</span><h3>Computer vision</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="A small pixel grid leads to a picture classification."><g data-visual="pixels"><rect x="8" y="10" width="106" height="96" fill="#f4f8fa" stroke="#a7b9c5"/><g fill="#89b2cd"><rect x="22" y="24" width="20" height="20"/><rect x="44" y="24" width="20" height="20"/><rect x="66" y="24" width="20" height="20"/><rect x="22" y="46" width="20" height="20"/><rect x="66" y="46" width="20" height="20"/><rect x="22" y="68" width="20" height="20"/><rect x="44" y="68" width="20" height="20"/><rect x="66" y="68" width="20" height="20"/></g></g><path d="M122 58h34m-8-6 8 6-8 6" stroke="#728d9f" fill="none" stroke-width="2"/><rect x="166" y="35" width="75" height="44" rx="5" fill="#edf4f8" stroke="#abc3d1"/><text x="203" y="61" text-anchor="middle" fill="#355974" font-size="14">Object</text></svg>
+      <p>Use images as input to identify, locate or describe objects.</p><small>Example: recognise a handwritten digit.</small></article>
+    <article class="model-tile"><span class="model-kind">SUPERVISED · NUMBER</span><h3>Linear regression</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="A straight line follows points and predicts a numerical value."><path d="M17 10V95H233" fill="none" stroke="#a3b5c2" stroke-width="2"/><path d="M29 85L221 18" stroke="#4a83ae" stroke-width="3"/><g fill="#c58d59"><circle cx="40" cy="77" r="5"/><circle cx="65" cy="75" r="5"/><circle cx="95" cy="56" r="5"/><circle cx="132" cy="58" r="5"/><circle cx="180" cy="36" r="5"/><circle cx="214" cy="23" r="5"/></g></svg>
+      <p>Fit a line to predict a numeric output from input measurements.</p><small>Example: predict a house's price.</small></article>
+    <article class="model-tile"><span class="model-kind">MODEL · ONE NEURON</span><h3>Perceptron</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="Three weighted inputs feed one threshold unit which produces a binary output."><g stroke="#8da6b7" stroke-width="2"><path d="M47 22L148 58M47 58L148 58M47 94L148 58M177 58H232"/></g><g fill="#eaf1f6" stroke="#81a4bb" stroke-width="2"><circle cx="37" cy="22" r="14"/><circle cx="37" cy="58" r="14"/><circle cx="37" cy="94" r="14"/><circle cx="161" cy="58" r="22"/></g><g fill="#31556e" text-anchor="middle" font-size="12"><text x="37" y="26">x₁</text><text x="37" y="62">x₂</text><text x="37" y="98">x₃</text><text x="161" y="62">Σ</text><text x="229" y="52">0/1</text></g></svg>
+      <p>Combine weighted inputs and apply a threshold to make a binary decision.</p><small>Example: classify a simple pattern.</small></article>
+    <article class="model-tile"><span class="model-kind">MODEL · MULTIPLE LAYERS</span><h3>Neural network</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="Input, hidden and output layers connected by many weighted edges."><g stroke="#a9bdc9" stroke-width="1.5"><path d="M35 26L118 20M35 26L118 58M35 26L118 96M35 86L118 20M35 86L118 58M35 86L118 96M118 20L213 40M118 20L213 78M118 58L213 40M118 58L213 78M118 96L213 40M118 96L213 78"/></g><g fill="#e6f0f7" stroke="#5684a5" stroke-width="2"><circle cx="35" cy="26" r="11"/><circle cx="35" cy="86" r="11"/><circle cx="118" cy="20" r="11"/><circle cx="118" cy="58" r="11"/><circle cx="118" cy="96" r="11"/><circle cx="213" cy="40" r="11"/><circle cx="213" cy="78" r="11"/></g></svg>
+      <p>Connect many simple computational units into layers that learn complex relationships.</p><small>Example: recognise objects in images.</small></article>
+    <article class="model-tile"><span class="model-kind">SUPERVISED · ENSEMBLE</span><h3>Random forest</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="Three small decision trees combine their votes into one final output."><g fill="none" stroke="#6c99b4" stroke-width="2"><path d="M42 22V44H20V65M42 44H64V65M122 22V44H100V65M122 44H144V65M202 22V44H180V65M202 44H224V65"/></g><g fill="#e6f0f7" stroke="#7a9eb4"><circle cx="42" cy="22" r="11"/><circle cx="122" cy="22" r="11"/><circle cx="202" cy="22" r="11"/><circle cx="20" cy="65" r="7"/><circle cx="64" cy="65" r="7"/><circle cx="100" cy="65" r="7"/><circle cx="144" cy="65" r="7"/><circle cx="180" cy="65" r="7"/><circle cx="224" cy="65" r="7"/></g><text x="122" y="98" font-size="13" fill="#436b86" text-anchor="middle">Tree votes → final prediction</text></svg>
+      <p>Combine predictions from many decision trees.</p><small>Example: estimate whether a transaction is unusual.</small></article>
+    <article class="model-tile"><span class="model-kind">UNSUPERVISED · GROUPS</span><h3>Hierarchical clustering</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="A dendrogram shows four individual examples merging into pairs then into a larger group."><g fill="none" stroke="#779cb5" stroke-width="2.5"><path d="M30 95V69H92V95M61 69V37H181V69M150 95V69H212V95M181 69V37"/></g><g fill="#436b86" font-size="13" text-anchor="middle"><text x="30" y="109">A</text><text x="92" y="109">B</text><text x="150" y="109">C</text><text x="212" y="109">D</text></g></svg>
+      <p>Build a hierarchy of groups according to similarity.</p><small>Example: organise similar documents.</small></article>
+    <article class="model-tile"><span class="model-kind">UNSUPERVISED · CENTRES</span><h3>K-means clustering</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="Two groups of points cluster around two centres."><g fill="#6f9bb9"><circle cx="40" cy="37" r="6"/><circle cx="58" cy="54" r="6"/><circle cx="35" cy="73" r="6"/><circle cx="71" cy="73" r="6"/></g><g fill="#c19873"><circle cx="174" cy="31" r="6"/><circle cx="195" cy="51" r="6"/><circle cx="168" cy="77" r="6"/><circle cx="209" cy="77" r="6"/></g><circle cx="51" cy="59" r="19" fill="none" stroke="#4e86a8" stroke-width="2"/><circle cx="187" cy="59" r="19" fill="none" stroke="#be8c63" stroke-width="2"/></svg>
+      <p>Group nearby points around representative centres.</p><small>Example: segment products with similar characteristics.</small></article>
+    <article class="model-tile"><span class="model-kind">GENERATIVE · CONTENT</span><h3>Generative AI</h3>
+      <svg viewBox="0 0 250 116" role="img" aria-label="A short text prompt leads to generated paragraphs."><rect x="9" y="29" width="97" height="54" rx="4" fill="#f6f8fa" stroke="#acc0cf"/><text x="57" y="49" text-anchor="middle" fill="#405f75" font-size="13">Prompt</text><path d="M120 56h29m-7-6 7 6-7 6" stroke="#7394a9" stroke-width="2" fill="none"/><rect x="164" y="22" width="77" height="68" rx="4" fill="#eaf2f7" stroke="#95b3c6"/><g stroke="#6186a2" stroke-width="3"><line x1="175" y1="40" x2="231" y2="40"/><line x1="175" y1="51" x2="230" y2="51"/><line x1="175" y1="62" x2="216" y2="62"/><line x1="175" y1="73" x2="225" y2="73"/></g></svg>
+      <p>Generate text, images, sounds or other content from learned patterns.</p><small>Example: draft a paragraph from a prompt.</small></article>
   </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Generalisation:</strong> performing well on relevant examples not used in training.</p></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>A confidence score is not proof that a prediction is correct. Its meaning depends on the model and how that score was produced.</p></div>
-  <div class="notes"><span class="label-word notes-label">Notes</span><ul>
-    <li>Check whether the training and test data represent the situations where the model will be used.</li>
-    <li>Inspect failures, not only successful demonstrations.</li>
-    <li>For classroom activities, use ordinary objects or synthetic data rather than classmates' faces, voices or private information.</li>
-  </ul></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Tasks</strong> (like computer vision) and <strong>model families</strong> (like neural networks) are different kinds of labels. A computer-vision system can use a neural network; a supervised problem can use a random forest or neural network.</p></div>
   <div class="exercise"><span class="label-word exercise-label">Exercise 5</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>A model gets every training example right. Design a fair test to check whether it has actually learned something useful.</li>
-    <li>The model makes mistakes on some new examples. State two questions you should investigate before improving it.</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Keep a separate set of varied examples whose labels were not used during training and compare every prediction to its correct answer. <strong>b)</strong> Are the training examples representative? Do errors occur for particular features, conditions or categories?</p></details></div>
-  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Bias in, bias out</a> · <a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO — AI Competency Framework for Students</a>.</p>
+    <li>Which output is a <strong>number</strong>: fruit name, future temperature, or group membership? Which technique above naturally fits this prediction?</li>
+    <li>Which method produces a <strong>hierarchy</strong> rather than a single flat grouping?</li>
+    <li>Can computer vision and neural networks describe the same application? Explain.</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Future temperature; regression is appropriate. <strong>b)</strong> Hierarchical clustering. <strong>c)</strong> Yes: vision describes the image-related task, while a neural network can be the model used for that task.</p></details></div>
+  <p class="source-line"><strong>Reading:</strong> this overview introduces terminology beyond the supplied handouts; later ML Club weeks develop selected methods in detail.</p>
 </section>
-<section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section>
+<section class="page-bibliography"><h2>Bibliography</h2>
+<ul><li>Provided <em>Random Events and Bayes' Formula</em> — solved exercises 2 and 7 (pp. 24 and 28). <span class="reference-note">Probability and conditional inference</span></li>
+<li>Provided <em>Elements of Information Theory</em> — solved exercises 55 and 56 (pp. 129–133). <span class="reference-note">Entropy, surprise and information gain</span></li>
+<li><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Teachable Machine</a> <span class="reference-note">Introductory model training demonstration</span></li>
+<li><a href="https://experiments.withgoogle.com/collection/ai" target="_blank" rel="noopener noreferrer">Google AI Experiments</a> <span class="reference-note">Visual demonstrations of AI applications</span></li></ul></section>
 </article></div><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

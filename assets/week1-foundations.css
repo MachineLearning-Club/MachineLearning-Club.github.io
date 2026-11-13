@@ -1,0 +1,124 @@
+
+/* Week 01 foundations and cross-page activities. Serif-led textbook aesthetic. */
+.week1-foundations .definition,.week1-foundations .observation,.week1-foundations .notes,.week1-foundations .exercise{border-top:1px solid #dce5eb;padding:12px 0;margin:17px 0;display:flex;gap:16px;align-items:flex-start}
+.week1-foundations .definition p,.week1-foundations .observation p{margin:0;flex:1}
+.week1-foundations .notes ul{flex:1;margin:0;padding-left:20px}
+.week1-foundations .label-word{flex:0 0 108px;font-size:.83rem;font-weight:700}
+.week1-foundations .definition-label{color:#b12e35}
+.week1-foundations .observation-label{color:#9a730f}
+.week1-foundations .notes-label{color:#27734d}
+.week1-foundations .exercise-label{color:#2c6485}
+.week1-foundations .exercise{flex-wrap:wrap}
+.week1-foundations .exercise-parts{flex:1;display:flex;gap:11px}
+.week1-foundations .exercise-parts>span{font-weight:700}
+.week1-foundations .exercise-parts ol{margin:0;padding-left:25px}
+.week1-foundations .exercise>details{width:calc(100% - 124px);margin-left:124px;font-size:.9rem}
+.week1-foundations .source-line{border-top:1px solid #e4eaf0;margin:25px 0 5px;padding-top:10px;font-size:.84rem;color:#667b8a}
+.week1-foundations section{scroll-margin-top:24px}
+.week1-foundations h2{color:#264a64}
+.week1-foundations .foundations-section>h2{font-size:1.43rem}
+.week1-foundations h3{font-size:1.08rem;color:#2e5068}
+.concept-formula{background:#f7fafc;border:1px solid #d8e5ed;margin:18px 0 30px;padding:15px 17px;display:grid;gap:7px}
+.concept-formula span{color:#667f90;font-size:.81rem}
+.concept-formula strong{font-family:Georgia,serif;font-size:1.09rem;color:#285674}
+.dice-lab{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:22px;align-items:start;margin:23px 0}
+.dice-plot,.dice-controls{border:1px solid #d7e3eb;padding:18px;min-width:0}
+.dice-plot>strong{display:block;color:#345d77;font-size:.9rem;margin-bottom:14px}
+.dice-matrix{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;max-width:356px}
+.dice-cell{display:grid;place-items:center;aspect-ratio:1/1;background:#eef3f7;color:#3e617a;border:1px solid #e0e9ef;font: .72rem "Courier New",monospace;font-variant-numeric:tabular-nums}
+.dice-cell:not(.possible){background:#f8f9fa;color:#a3adb6}
+.dice-cell.hit{background:#e3edf4;color:#1d567a;border:2px solid #3d7fab;font-weight:700}
+.dice-cell:not(.possible).hit{opacity:1}
+.dice-key{margin-top:12px;font-size:.77rem;color:#5e7989;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.dice-key-target,.dice-key-possible{display:inline-block;width:12px;height:12px;border:1px solid #5386a6;background:#e3edf4}
+.dice-key-possible{border:1px solid #d7e1e9;background:#eef3f7;margin-left:12px}
+.dice-controls label{font-size:.84rem;font-weight:600;color:#345c76;display:block;margin-bottom:9px}
+.dice-controls select{width:100%;border:1px solid #aec2d0;padding:9px;font:.85rem Georgia,serif;color:#264a64;background:#fff}
+.dice-math{margin-top:18px;border-top:1px solid #dce5eb;padding-top:15px}
+.dice-math small,.entropy-number small{color:#698296;font-size:.73rem;letter-spacing:.05em;display:block}
+.dice-math>strong,.entropy-number>strong{font-size:1.4rem;display:block;margin:9px 0;color:#285d7f;font-variant-numeric:tabular-nums}
+.dice-math p,.entropy-controls>p{font-size:.87rem;color:#647b8b;line-height:1.55}
+.formula-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.formula-row>div{border:1px solid #d8e3eb;padding:15px;min-width:0}
+.formula-row span{font-size:.8rem;display:block;color:#667e8f;margin-bottom:8px}
+.formula-row strong{display:block;font:.95rem/1.45 Georgia,serif;color:#28546f}
+.bayes-example{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr) 18px minmax(0,1fr);gap:9px;margin:20px 0;align-items:center}
+.bayes-example>div:not(.flow-arrow){border:1px solid #d7e2e9;min-height:145px;padding:15px 11px}
+.bayes-example span,.bayes-example small{display:block;color:#677f90;font-size:.79rem;line-height:1.5}
+.bayes-example strong{display:block;color:#315c79;font-size:.94rem;margin:10px 0}
+.bayes-example .flow-arrow{color:#819eae;font-size:1.4rem}
+.surprise-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:20px 0}
+.surprise-compare>div{border:1px solid #d9e5eb;padding:15px}
+.surprise-compare span{display:block;color:#597383;font-size:.84rem}
+.surprise-compare strong{display:block;margin:6px 0;font-size:1.15rem;color:#2f5470}
+.surprise-compare small{display:block;font-size:.83rem;margin-top:8px;color:#526a7a}
+.surprise-bar{width:100%;height:13px;background:#eef2f6}
+.surprise-bar>span{height:100%;display:block;background:#5e8cab}
+.entropy-experiment{display:grid;grid-template-columns:1fr 1.2fr;gap:20px;align-items:center;border:1px solid #d6e3ea;padding:18px;margin:18px 0}
+.entropy-controls label{font-size:.88rem;display:flex;justify-content:space-between;gap:10px}
+.entropy-controls input[type=range]{width:100%;accent-color:#3d789d;margin:12px 0 17px}
+.entropy-distribution{height:31px;border:1px solid #cbdce6;display:flex;overflow:hidden}
+.entropy-distribution span:first-child{background:#4c84ad;width:50%}
+.entropy-distribution span:last-child{background:#c19166;width:50%}
+.entropy-key{display:flex;justify-content:space-between;font-size:.78rem;color:#667b89;margin:4px 0 15px}
+.entropy-number{padding:11px 0;border-top:1px solid #e0e8ed}
+.entropy-experiment svg{display:block;width:100%;height:auto;min-width:0}
+.info-gain-result{border-left:3px solid #628bab;background:#f6f9fb;padding:14px 16px;margin:16px 0 23px}
+.info-gain-result span{display:block;font-size:.83rem;color:#5d798b;margin-bottom:6px}
+.info-gain-result strong{color:#2e5872;font-size:1.08rem}
+.model-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:25px 0}
+.model-tile{border:1px solid #d9e4eb;min-width:0;padding:17px 16px 15px;background:#fff}
+.model-tile .model-kind{font-size:.71rem;font-weight:600;color:#6c8190;letter-spacing:.05em}
+.course-article .model-tile h3{font-size:1.07rem;margin:7px 0 10px;color:#2b516d}
+.model-tile svg{width:100%;height:auto;display:block;max-height:142px;margin:9px 0}
+.model-tile p{font-size:.91rem;margin:9px 0 5px;line-height:1.55}
+.model-tile small{display:block;color:#657e8e;font-size:.81rem;line-height:1.5}
+.lab-ground-rules{border-left:3px solid #7896aa;background:#f8fafc;padding:12px 16px;margin:17px 0}
+.lab-ground-rules>strong{color:#305c77}
+.lab-ground-rules p{margin:5px 0;font-size:.92rem}
+.lab-tool{border:1px solid #d7e3eb;padding:15px 18px;margin:13px 0}
+.lab-tool-label{font-size:.72rem;font-weight:600;letter-spacing:.05em;color:#677f92;margin-bottom:6px}
+.lab-tool>strong{display:block;font-size:1.05rem;margin-bottom:5px;color:#2d536e}
+.lab-tool a{font-size:.89rem}
+.lab-tool p{font-size:.86rem;margin:8px 0 0;color:#607889}
+.lab-tool-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.lab-tool-list>.lab-tool{margin:0}
+.lab-summary,.lab-comparison-table table,.assignment-table,.advanced-counts,.formula-sheet table{max-width:100%;width:100%;border-collapse:collapse}
+.lab-summary th,.lab-summary td,.lab-comparison-table td,.lab-comparison-table th,.assignment-table td,.assignment-table th,.advanced-counts td,.advanced-counts th,.formula-sheet th,.formula-sheet td{padding:8px 10px;border:1px solid #dce5eb;font-size:.87rem;vertical-align:top;text-align:left}
+.lab-summary thead,.lab-comparison-table thead,.assignment-table thead,.advanced-counts thead{background:#f2f6f9}
+.assignment-table th:first-child{width:28px}
+.homework-problems>article,.advanced-problems>article{border-top:1px solid #d9e4eb;padding:17px 0;margin:0}
+.homework-problems h3,.advanced-problems h3{margin:0 0 9px}
+.homework-problems p,.advanced-problems p{margin:8px 0}
+.homework-problems small{font-size:.78rem;color:#657b89}
+.advanced-problems details{margin:11px 0;font-size:.89rem}
+.advanced-problems details summary{color:#315d7b}
+.advanced-problems code,.formula-sheet code{font-family:Consolas,monospace;white-space:normal;overflow-wrap:anywhere}
+.formula-sheet{border:1px solid #dce5ec;padding:14px;margin:17px 0}
+.formula-sheet h3{margin:0 0 10px}
+.formula-sheet table th{width:38%}
+.worked-math{background:#f8fafc;border-left:3px solid #81a3bb;padding:13px 15px;font: .9rem/1.7 Consolas,monospace;overflow-wrap:anywhere}
+@media(max-width:700px){
+ .dice-lab,.entropy-experiment,.model-gallery,.surprise-compare,.formula-row,.lab-tool-list{grid-template-columns:1fr}
+ .bayes-example{grid-template-columns:1fr;gap:5px}
+ .bayes-example .flow-arrow{transform:rotate(90deg);text-align:center}
+ .bayes-example>div:not(.flow-arrow){min-height:0}
+ .week1-foundations .definition,.week1-foundations .observation,.week1-foundations .notes,.week1-foundations .exercise{display:block}
+ .week1-foundations .label-word{display:block;margin-bottom:7px}
+ .week1-foundations .exercise-parts{margin:7px 0;display:flex}
+ .week1-foundations .exercise>details{margin:8px 0;width:100%}
+ .dice-matrix{max-width:390px}
+ .assignment-table{font-size:.83rem}
+ .entropy-experiment svg{max-width:450px}
+}
+@media print{
+ .dice-controls select,.entropy-controls input,.submission-form{display:none!important}
+ .model-tile,.homework-problems article,.advanced-problems article{break-inside:avoid}
+ .model-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Keep wide comparison tables inside a scrollable frame on small screens. */
+.table-hscroll,.lab-comparison-table{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+.table-hscroll .lab-summary{min-width:430px}
+.lab-comparison-table table{min-width:420px}
+@media print{.table-hscroll{overflow:visible}.table-hscroll .lab-summary{min-width:0}}

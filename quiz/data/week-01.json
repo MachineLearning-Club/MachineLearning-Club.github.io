@@ -1,6 +1,6 @@
 {
   "week": 1,
-  "title": "What Is AI? Rules and Learning",
+  "title": "Rules, Learning, Probability and AI Methods",
   "durationSeconds": 300,
   "maximumPoints": 10,
   "status": "Draft practice quiz; teacher review required",
@@ -94,18 +94,18 @@
     {
       "id": "w1q6",
       "type": "single",
-      "prompt": "A classifier trained on pictures of notebooks and pencil cases is shown a new notebook. What is happening?",
+      "prompt": "Two fair dice have a prime sum. What is the probability that their sum is 11?",
       "options": [
-        "Data collection for training",
-        "Inference/prediction",
-        "Writing a new condition",
-        "Deleting the model"
+        "2/36",
+        "2/15",
+        "2/6",
+        "11/36"
       ],
       "correct": [
         1
       ],
-      "explanation": "Using a trained model on a new input is inference.",
-      "topic": "AI foundations",
+      "explanation": "There are 15 ordered outcomes with prime sums and 2 of them total 11. Conditional probability is 2/15.",
+      "topic": "Probability",
       "points": 1
     },
     {
@@ -128,18 +128,18 @@
     {
       "id": "w1q8",
       "type": "single",
-      "prompt": "What is tokenisation in natural-language processing?",
+      "prompt": "A fair coin has two equally likely outcomes. What is its entropy?",
       "options": [
-        "Assigning colours to photos",
-        "Splitting text into tokens such as words or word pieces",
-        "Guaranteeing that a sentence is true",
-        "Sorting numbers into ascending order"
+        "0 bits",
+        "0.5 bits",
+        "1 bit",
+        "2 bits"
       ],
       "correct": [
-        1
+        2
       ],
-      "explanation": "A tokenizer maps text to a sequence of tokens; it does not by itself understand the sentence.",
-      "topic": "AI foundations",
+      "explanation": "Binary entropy is highest at equal probabilities: −0.5 log₂0.5 −0.5 log₂0.5 = 1 bit.",
+      "topic": "Information theory",
       "points": 1
     },
     {

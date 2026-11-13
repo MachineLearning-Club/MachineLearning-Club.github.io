@@ -32,7 +32,7 @@ if(git){
   display();
 }
 const normaliseName=str=>str.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9 _-]/g,'').trim().replace(/[\s_]+/g,'_').slice(0,75);
-const allowed=/\.(ipynb|py|csv|zip|txt)$/i;
+const allowed=/\.(ipynb|py|csv|zip|txt|pdf|md)$/i;
 const u16=(dv,offset,val)=>dv.setUint16(offset,val,true);
 const u32=(dv,offset,val)=>dv.setUint32(offset,val>>>0,true);
 const crcTable=Array.from({length:256},(_,n)=>{
@@ -73,7 +73,7 @@ all('.submission-form').forEach(form=>{
   let chosen=[];
   const pick=files=>{
     chosen=Array.from(files).slice(0,6).filter(file=>allowed.test(file.name)&&file.size<=12*1024*1024);
-    selected.textContent=chosen.length?chosen.map(f=>f.name+' ('+Math.round(f.size/1024)+' KB)').join(' · '):'No supported file selected (.ipynb, .py, .csv, .zip or .txt; ≤12 MB each).';
+    selected.textContent=chosen.length?chosen.map(f=>f.name+' ('+Math.round(f.size/1024)+' KB)').join(' · '):'No supported file selected (.ipynb, .py, .csv, .zip, .txt, .pdf or .md; ≤12 MB each).';
   };
   input.addEventListener('change',()=>pick(input.files));
   label.addEventListener('dragover',e=>{e.preventDefault();label.classList.add('dragover');});

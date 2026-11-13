@@ -1,99 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Laboratory"><title>What Is AI? Rules and Learning — Laboratory · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/flight-lab.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/flight-lab.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="lab" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/lab/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content"><p class="eyebrow">Week 01 · Laboratory</p><h1>What Is AI? Rules and Learning</h1><p class="deck">Problem 42 — Va întârzia avionul? A laboratory on reading training data and selecting the first ID3 split.</p>
-<section class="scenario"><h2>Lab challenge</h2><p>Imagine you work with an airline and need a first decision rule for predicting flight delays. You have summaries from <strong>80 flights</strong>, but not the complete individual-flight records. Can you choose the best question to ask first?</p></section>
-<section id="flight-lab-intro"><h2>Learning objectives</h2><p>Read a contingency table, compare information gain across attributes, build a one-question decision tree (<em>decision stump</em>), and identify what the summary table cannot tell us.</p></section>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Laboratory"><title>What Is AI? Rules and Learning — Laboratory · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="lab" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/lab/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content week1-foundations"><p class="eyebrow">Week 01 · Laboratory</p><h1>AI Tools — Exploration Laboratory</h1><p class="deck">Explore several real AI systems, compare what they do, and record where they succeed or fail. No coding required.</p>
+<section class="scenario"><h2>Laboratory — explore AI in practice</h2><p>Work individually or in pairs. Try a drawing recogniser, train a small image classifier, then compare a generative assistant with another AI system. Your goal is to <strong>observe the different tasks</strong>, not just click through demos.</p></section>
+<section><h2>Before you start</h2>
+<div class="lab-ground-rules"><strong>Use safe examples</strong><p>Draw simple objects and use ordinary classroom objects such as a pen, ruler, bottle or notebook. Do not upload classmates' faces, voices, personal messages, or private information. Accounts and cameras may be optional; ask the teacher before signing into third-party services.</p></div>
+<p>Record observations in a text document or on paper. If a website is unavailable or blocked, use another activity below and record the reason.</p></section>
 
-<section id="flight-step-one">
-<h2>1. Inspect the flight observations</h2>
-<p>Each weather or time attribute is considered separately. Under each value, count how many flights were <strong>delayed</strong> and <strong>not delayed</strong>. These numbers are taken from Problem 42 in the supplied ID3 collection.</p>
-<div class="flight-table-wrap">
-<table class="flight-source-table">
-<caption>Problem 42 — Recorded flights, grouped separately by attribute</caption>
-<thead><tr><th rowspan="2">Attribute</th><th colspan="2">Value = Yes</th><th colspan="2">Value = No</th></tr><tr><th>Delayed</th><th>Not delayed</th><th>Delayed</th><th>Not delayed</th></tr></thead>
-<tbody>
-<tr><th>Rain</th><td>30</td><td>10</td><td>10</td><td>30</td></tr>
-<tr><th>Wind</th><td>25</td><td>15</td><td>15</td><td>25</td></tr>
-<tr><th>Summer</th><td>5</td><td>35</td><td>35</td><td>5</td></tr>
-<tr><th>Winter</th><td>20</td><td>10</td><td>20</td><td>30</td></tr>
-<tr><th>Daytime</th><td>20</td><td>20</td><td>20</td><td>20</td></tr>
-<tr><th>Nighttime</th><td>15</td><td>10</td><td>25</td><td>30</td></tr>
-</tbody></table></div>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>The table contains <strong>six separate two-way summaries</strong> of the same 80 flights. A row does not identify an individual flight or tell us whether, for example, rainy flights were also in summer.</p></div>
+<section id="lab-draw"><h2>1. Quick, Draw! — an AI recognises sketches</h2>
+<div class="lab-tool"><div class="lab-tool-label">GOOGLE · COMPUTER VISION</div><strong>Quick, Draw!</strong><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Open Quick, Draw!</a></div>
+<ol><li>Play at least <strong>five rounds</strong>. Draw the prompted objects as normally as you can.</li><li>Record <strong>two correct guesses</strong> and <strong>one unsuccessful or late guess</strong>.</li><li>Explain why a recogniser may fail even when the drawing is understandable to a person.</li></ol>
+<div class="observation"><span class="label-word observation-label">Observation</span><p>The tool predicts categories from a drawing. This is an example of <strong>computer vision and classification</strong>.</p></div>
 </section>
 
-<section id="flight-step-two">
-<h2>2. Compare possible first questions</h2>
-<p>Select an attribute to see how it splits the 80 flights. A useful question should produce groups with fewer mixed outcomes.</p>
-<div class="flight-activity" data-flight-demo>
-  <div class="flight-chooser">
-    <label for="flight-root-choice">Possible root attribute</label>
-    <select id="flight-root-choice" data-flight-feature>
-      <option value="Rain">Rain</option><option value="Wind">Wind</option><option value="Summer">Summer</option><option value="Winter">Winter</option><option value="Daytime">Daytime</option><option value="Nighttime">Nighttime</option>
-    </select>
-    <div class="flight-legend"><span class="flight-dot delayed"></span> Delayed <span class="flight-dot punctual"></span> Not delayed</div>
-  </div>
-  <div class="flight-branches">
-    <div><strong data-flight-left-label>Rain = Yes</strong><div class="flight-stacked" data-flight-left-bar role="img" aria-label="30 delayed and 10 not delayed"></div><p data-flight-left-count>30 delayed · 10 not delayed</p></div>
-    <div><strong data-flight-right-label>Rain = No</strong><div class="flight-stacked" data-flight-right-bar role="img" aria-label="10 delayed and 30 not delayed"></div><p data-flight-right-count>10 delayed · 30 not delayed</p></div>
-  </div>
-  <div class="flight-information">
-    <div><span>Information gain</span><strong data-flight-gain>0.189 bits</strong></div>
-    <div><span>Training accuracy of this one-question tree</span><strong data-flight-accuracy>75%</strong></div>
-  </div>
-  <p class="flight-feedback" data-flight-feedback role="status" aria-live="polite">Rain separates the data somewhat, but is it the best first test?</p>
-  <div class="flight-action"><button type="button" data-flight-check>Check my choice</button><button type="button" data-flight-reveal>Compare all gains</button></div>
-  <div class="flight-gains-panel" data-flight-gains-panel hidden>
-    <table><caption>Information gain for each attribute (bits)</caption>
-      <thead><tr><th>Attribute</th><th>Gain</th></tr></thead>
-      <tbody><tr><td>Summer</td><td>0.4564</td></tr><tr><td>Rain</td><td>0.1887</td></tr><tr><td>Winter</td><td>0.0488</td></tr><tr><td>Wind</td><td>0.0456</td></tr><tr><td>Nighttime</td><td>0.0132</td></tr><tr><td>Daytime</td><td>0.0000</td></tr></tbody>
-    </table>
-  </div>
+<section id="lab-teach"><h2>2. Teachable Machine — train your own classifier</h2>
+<div class="lab-tool"><div class="lab-tool-label">GOOGLE · SUPERVISED LEARNING</div><strong>Teachable Machine</strong><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Open Teachable Machine</a></div>
+<ol><li>Choose an <strong>Image Project</strong> with two classes, for example <strong>Pen</strong> and <strong>Notebook</strong>.</li><li>Provide around <strong>10 varied examples for each class</strong> using ordinary objects. Change the angle, position or background.</li><li>Select <strong>Train Model</strong> and test at least four fresh examples.</li><li>Record the predicted category, whether it was correct, and any displayed prediction scores.</li></ol>
+<div class="lab-comparison-table"><table><caption>Record your four new tests</caption><thead><tr><th>Test</th><th>Actual object</th><th>Predicted class</th><th>Correct?</th></tr></thead><tbody><tr><td>1</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>2</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>3</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>4</td><td>________</td><td>________</td><td>_____</td></tr></tbody></table></div>
+<p class="understated">If image capture or uploads are not permitted, observe the teacher's demonstration and describe which examples would help each class. Do not upload personal photographs.</p></section>
+
+<section id="lab-assistant"><h2>3. Generative AI — test a claim, not just a response</h2>
+<div class="lab-tool"><div class="lab-tool-label">GOOGLE · GENERATIVE AI</div><strong>Gemini</strong><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Open Gemini (if available)</a></div>
+<p>Use this <strong>non-personal</strong> prompt with a generative assistant:</p>
+<blockquote>“Explain in 80 words how a neural network differs from a rule-based program. Give one real example of each.”</blockquote>
+<ol><li>Record the two examples the assistant gives.</li><li>Check one claim against the course definitions or another reliable source.</li><li>Ask a follow-up that requests a clearer or shorter explanation. Did the answer become more useful?</li></ol>
+<div class="observation"><span class="label-word observation-label">Observation</span><p>A fluent answer is <strong>not proof of correctness</strong>. A generative model produces content; it does not necessarily verify every statement it makes.</p></div></section>
+
+<section id="lab-other"><h2>4. Compare another AI tool</h2>
+<div class="lab-tool-list">
+<div class="lab-tool"><div class="lab-tool-label">OTHER PROVIDER · GENERATIVE AI</div><strong>ChatGPT</strong><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT</a><p>Try the same prompt as in activity 3 and compare the explanations.</p></div>
+<div class="lab-tool"><div class="lab-tool-label">OTHER PROVIDER · AI DEMOS</div><strong>Hugging Face Spaces</strong><a href="https://huggingface.co/spaces" target="_blank" rel="noopener noreferrer">Browse Spaces</a><p>Find a public demo of classification, translation, or image recognition. Use only examples you may share.</p></div>
+<div class="lab-tool"><div class="lab-tool-label">GOOGLE · OPTIONAL EXPERIMENT</div><strong>Google Arts & Culture</strong><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Explore AI games</a><p>Try a creative experiment and identify its likely input and output.</p></div>
 </div>
-<div class="exercise"><span class="label-word exercise-label">Exercise 1</span><div class="exercise-parts"><span>1)</span><ol type="a">
-  <li>Which attribute produces the highest information gain? What does that tell you about the quality of its two groups?</li>
-  <li>Identify one attribute that gives no information about delay status.</li>
-</ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Summer has the largest gain (approximately 0.4564 bits). Its two groups are strongly skewed toward opposite outcomes. <strong>b)</strong> Daytime: both branches contain exactly 20 delayed and 20 not-delayed flights, giving zero information gain.</p></details></div>
-</section>
+<p>Choose <strong>one</strong> alternative. Record the task, the input you supplied, the output obtained, and one limitation.</p></section>
 
-<section id="flight-step-three">
-<h2>3. Draw the decision stump</h2>
-<p>Choosing <strong>Summer</strong> as the root produces this one-question tree. Each leaf predicts the <em>majority</em> outcome for its branch.</p>
-<figure class="flight-tree">
-<svg viewBox="0 0 690 255" role="img" aria-label="One-level tree with Summer at root: yes leads to Not delayed, 5 delayed and 35 not delayed; no leads to Delayed, 35 delayed and 5 not delayed.">
-  <g fill="none" stroke="#91a5b3" stroke-width="2.5"><path d="M345 73V106H173V153"/><path d="M345 106H517V153"/></g>
-  <g fill="#677f91" font-size="17"><text x="252" y="100">Yes</text><text x="439" y="100">No</text></g>
-  <rect x="257" y="25" width="176" height="50" rx="5" fill="#eaf2f7" stroke="#7198b4" stroke-width="2"/>
-  <text x="345" y="55" font-size="21" fill="#2e5470" text-anchor="middle">Summer?</text>
-  <rect x="69" y="153" width="210" height="69" rx="5" fill="#eef5ef" stroke="#8caa8d" stroke-width="2"/>
-  <text x="174" y="182" font-size="20" fill="#356643" text-anchor="middle">Not delayed</text>
-  <text x="174" y="207" font-size="13" fill="#52755c" text-anchor="middle">5 delayed · 35 not</text>
-  <rect x="412" y="153" width="210" height="69" rx="5" fill="#fbf0e9" stroke="#c69c7e" stroke-width="2"/>
-  <text x="517" y="182" font-size="20" fill="#9a5935" text-anchor="middle">Delayed</text>
-  <text x="517" y="207" font-size="13" fill="#a16f55" text-anchor="middle">35 delayed · 5 not</text>
-</svg><figcaption>One test, two leaves. This is a decision stump rather than a complete multi-level tree.</figcaption>
-</figure>
-<div class="flight-score"><strong>70 / 80</strong><span>correct on the supplied summaries</span><strong>87.5%</strong><span>training accuracy</span></div>
-<div class="exercise"><span class="label-word exercise-label">Exercise 2</span><div class="exercise-parts"><span>2)</span><ol type="a">
-  <li>Explain why the <strong>Summer = Yes</strong> branch predicts <em>Not delayed</em>.</li>
-  <li>How many of the 80 recorded flights does this one-question tree misclassify?</li>
-</ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Among summer flights, 35 were not delayed and only 5 were delayed. <strong>b)</strong> Ten flights: five errors in the Yes branch and five in the No branch.</p></details></div>
-</section>
-
-<section id="flight-step-four">
-<h2>4. Can we choose a second-level attribute?</h2>
-<div class="flight-limitation">
-<span class="label-word observation-label">Observation</span>
-<p>The table only shows <strong>separate counts</strong> for Rain, Wind, Summer, Winter, Daytime and Nighttime. It does not tell us how attributes occur together. To choose the second split under <strong>Summer = Yes</strong>, we would need counts such as <em>rainy summer flights delayed / not delayed</em>.</p>
-</div>
-<div class="flight-missing">
-<div><strong>What we know</strong><p>Summer = Yes: 5 delayed, 35 not delayed.</p><p>Rain = Yes: 30 delayed, 10 not delayed.</p></div>
-<div class="flight-question-mark" aria-hidden="true">?</div>
-<div><strong>What we do not know</strong><p>Summer = Yes <em>and</em> Rain = Yes: how many delayed and not delayed?</p></div>
-</div>
-<div class="exercise"><span class="label-word exercise-label">Exercise 3</span><div class="exercise-parts"><span>3)</span><ol type="a">
-  <li>Why is it impossible to determine the best second-level attribute from this summary table alone?</li>
-  <li>Give one joint count that would help you decide how to split the Summer = Yes branch.</li>
-</ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Information gain at level two requires conditional counts within each Summer branch. The marginal counts in the table do not supply them. <strong>b)</strong> For example, the number of flights with Summer = Yes and Rain = Yes that were delayed, and the corresponding not-delayed number.</p></details></div>
-</section>
-
-<section class="flight-lab-reflection"><h2>Exit ticket</h2><p>In two sentences, explain why Summer is a useful first question and why the available table is insufficient to construct the complete ID3 tree.</p></section>
-<section id="submission" class="submission-drop"><h2>Submit your laboratory work</h2><p>Write your answers in a <code>.txt</code> file (or attach your <code>.py</code>, <code>.csv</code> or <code>.zip</code> work), then prepare your named submission. You can prepare a clearly named file for the teacher.</p><div class="submission-form" data-submission-week="1"><label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label><label class="file-drop">Drop a file here or choose one<input class="submission-files" type="file" accept=".ipynb,.py,.csv,.zip,.txt" multiple></label><p class="submission-selected" aria-live="polite">No file selected.</p><button type="button" class="prepare-submission">Download named submission</button><p class="submission-status" aria-live="polite"></p></div><p class="understated">Uploads are not enabled yet. This prepares files locally; it does not send them to the teacher. When a teacher-approved Dropbox File Request is configured, its collection link appears here. Until then, keep the ZIP locally.</p></section><section class="page-bibliography"><h2>Bibliography</h2><p>Primary source: Liviu Ciortuz and collaborators, <em>Algoritmul ID3</em>, Problem 42 — <em>Va întârzia avionul?</em> (supplied exercise collection).</p><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>
+<section id="lab-reflection"><h2>5. Compare the systems</h2>
+<div class="table-hscroll"><table class="lab-summary"><thead><tr><th>System</th><th>Input</th><th>Output</th><th>Learning task</th></tr></thead>
+<tbody><tr><th>Quick, Draw!</th><td>Sketch</td><td>Object label</td><td>Image classification</td></tr>
+<tr><th>Teachable Machine</th><td>Examples + new image</td><td>Predicted class</td><td>Supervised classification</td></tr>
+<tr><th>Gemini / ChatGPT</th><td>Text prompt</td><td>Generated text</td><td>Language generation</td></tr>
+<tr><th>Your fourth tool</th><td>________</td><td>________</td><td>________</td></tr></tbody></table></div>
+<div class="exercise"><span class="label-word exercise-label">Exit ticket</span><div class="exercise-parts"><span>1)</span><ol type="a">
+<li>Which tool did you provide training examples to directly?</li>
+<li>Which tools used models that were already trained before you opened them?</li>
+<li>Give one observed failure and one change that might improve the result.</li></ol></div></div></section>
+<section id="submission" class="submission-drop"><h2>Submit your laboratory work</h2><p>Save your brief experiment notes as a <code>.txt</code> or <code>.pdf</code> file, and prepare the named local submission. Include the comparison table and exit ticket. You can prepare a clearly named file for the teacher.</p><div class="submission-form" data-submission-week="1"><label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label><label class="file-drop">Drop a file here or choose one<input class="submission-files" type="file" accept=".txt,.pdf,.md,.zip" multiple></label><p class="submission-selected" aria-live="polite">No file selected.</p><button type="button" class="prepare-submission">Download named submission</button><p class="submission-status" aria-live="polite"></p></div><p class="understated">Uploads are not enabled yet. This prepares files locally; it does not send them to the teacher. When a teacher-approved Dropbox File Request is configured, its collection link appears here. Until then, keep the ZIP locally.</p></section><section class="page-bibliography"><h2>Bibliography</h2><ul>
+<li><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Quick, Draw!</a></li>
+<li><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Teachable Machine</a></li>
+<li><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Google Arts &amp; Culture — Play with AI</a></li>
+<li><a href="https://huggingface.co/spaces" target="_blank" rel="noopener noreferrer">Hugging Face Spaces</a></li></ul></section><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>
