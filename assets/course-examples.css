@@ -1,0 +1,66 @@
+
+/* Week 1 visual worked examples — lean academic layout, source data intact. */
+.course-lesson>h1{margin:0 0 8px}
+.course-lesson>.deck{max-width:720px;margin:0 0 26px;color:#5d7585;font-size:.96rem}
+.trait-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:23px 0 8px}
+.trait-card{min-width:0;border:1px solid #d4e0e8;background:#fff;margin:0;padding:15px 10px 8px}
+.trait-card figcaption{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;margin:0 0 5px}
+.trait-card figcaption strong{font:1.15rem Georgia,serif;color:#234b65}
+.trait-card figcaption span{font-size:.78rem;color:#67808f}
+.trait-card svg{display:block;width:100%;height:auto;max-height:340px}
+.trait-footnote{font-size:.83rem;line-height:1.55;color:#617787;margin:10px 0 23px}
+.gain-calculations{margin:17px 0 24px}
+.gain-first{margin:0 0 17px;font-size:.94rem;color:#405c70}
+.gain-examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.gain-example{min-width:0;border:1px solid #d5e1e9;padding:15px 14px;background:#fff}
+.gain-example.gain-best{border-color:#91b2c9}
+.gain-example h4{margin:0 0 12px;display:flex;align-items:baseline;justify-content:space-between;gap:8px;font:1rem Georgia,serif;color:#2f526d}
+.gain-example h4 strong{font-size:.87rem;color:#386786;white-space:nowrap}
+.gain-example .gain-groups{color:#536f82;font-size:.87rem;margin:0 0 13px;line-height:1.55}
+.gain-example>p:not(.gain-groups){font-size:.83rem;line-height:1.45;margin:10px 0 0}
+.gain-example>p>span{display:block;color:#5e7383;font-size:.78rem;margin-bottom:4px}
+.gain-example code{display:block;padding:6px 0;font-family:Consolas,"Courier New",monospace;white-space:normal;overflow-wrap:anywhere;font-size:.82rem;color:#314e66;background:transparent}
+.gain-example .gain-answer{border-top:1px solid #e1e8ee;padding-top:10px}
+.gain-example .gain-answer code{color:#264f6d}
+.gain-afterword{margin:16px 0 6px;font-size:.93rem}
+.kmeans-input{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;align-items:stretch;margin:19px 0 26px}
+.kmeans-input>div{padding:15px;border:1px solid #d7e2ea}
+.kmeans-input>div>strong{color:#315672;font-size:.92rem;display:block;margin-bottom:9px}
+.kmeans-point-table{display:grid;gap:7px}
+.kmeans-point-table [role=row]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.kmeans-point-table [role=cell]{background:#f7f9fb;border:1px solid #e4ebef;text-align:center;padding:8px 4px;color:#3a5970;font-size:.86rem;white-space:nowrap}
+.kmeans-input p{margin:9px 0;color:#536e80;font-size:.87rem}
+.kmeans-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+.kmeans-dot.blue{background:#437eaf}.kmeans-dot.orange{background:#bc864e}
+.clustering-steps.kmeans-four-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:19px 0 27px}
+.kmeans-four-steps .cluster-stage{padding:15px 14px 17px;min-width:0}
+.kmeans-four-steps .cluster-stage h4{font-size:1rem}
+.kmeans-four-steps .cluster-stage svg{max-width:100%;display:block;margin:0 auto}
+.kmeans-four-steps .cluster-stage figcaption{font-size:.86rem;line-height:1.6;color:#566e80}
+.kmeans-working{margin:23px 0 29px;border-top:1px solid #ccdce6;border-bottom:1px solid #ccdce6;padding:15px 0 18px}
+.kmeans-working>h4{font-size:1.06rem;color:#2e526c;margin:0 0 14px}
+.kmeans-working-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
+.kmeans-working-grid>div{min-width:0}
+.kmeans-working-grid>div>strong{display:block;font-size:.94rem;color:#315c78;margin-bottom:8px}
+.kmeans-working-grid p{font-size:.85rem;line-height:1.55;margin:9px 0}
+.math-line{font-size:.82rem;font-family:Consolas,"Courier New",monospace;line-height:1.7;color:#2f4d61;margin:8px 0;overflow-wrap:anywhere}
+.math-line strong{color:#214d68}
+@media(max-width:750px){
+ .gain-examples{grid-template-columns:1fr}
+ .kmeans-working-grid{grid-template-columns:1fr;gap:16px}
+}
+@media(max-width:680px){
+ .trait-comparison{grid-template-columns:1fr;gap:12px}
+ .trait-card{padding:12px 7px 5px}
+ .trait-card svg{max-width:470px;margin:0 auto}
+ .kmeans-input{grid-template-columns:1fr;gap:9px}
+ .clustering-steps.kmeans-four-steps{grid-template-columns:1fr;gap:13px}
+ .kmeans-four-steps .cluster-stage{padding:13px 12px 16px}
+ .gain-example{padding:13px}
+}
+@media print{
+ .trait-card,.gain-example,.kmeans-four-steps .cluster-stage{break-inside:avoid-page}
+ .clustering-steps.kmeans-four-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .gain-examples{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .trait-comparison{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

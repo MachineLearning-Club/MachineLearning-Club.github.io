@@ -60,10 +60,10 @@
   const render = () => {
     const values = Object.fromEntries(Object.entries(fields).map(([k,input])=>[k,input.value]));
     const predicted=decision(values);
-    result.textContent=(predicted.label==="M"?"M — Martian":"H — Earthling");
+    result.textContent=(predicted.label==="M"?"M — Alien":"H — Human");
     result.classList.toggle("mars-m",predicted.label==="M");
     result.classList.toggle("mars-h",predicted.label==="H");
-    path.textContent=predicted.trace.join(" → ")+" → "+(predicted.label==="M"?"Martian":"Earthling");
+    path.textContent=predicted.trace.join(" → ")+" → "+(predicted.label==="M"?"Alien":"Human");
     const matched=examples.filter(row=>row[1]===values.Green && row[2]===values.Legs &&
       row[3]===values.Height && row[4]===values.Smelly);
     if(matched.length) {

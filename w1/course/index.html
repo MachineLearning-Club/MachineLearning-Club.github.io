@@ -1,21 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Course"><title>What Is AI? Rules and Learning — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/course-martian.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/course-martian.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>What Is AI? Rules and Learning</h1>
-<p class="deck">How can a computer make a decision, and what changes when it learns from examples instead of following a fixed rule?</p>
-<div class="course-introduction"><strong>Essential question</strong>
-<p>A programmer can specify a rule directly. A learning algorithm instead calculates a model from observed data. In this lesson, you will follow both approaches from input to output.</p>
-<div class="course-next-actions"><a href="#one">Start reading</a><a href="#model-experiment">Try the model</a><a href="/w1/lab/">Continue to the laboratory</a></div></div>
-<details class="teacher-guide"><summary>Teacher Guide <span class="teacher-guide-hint">Course overview and teaching sequence</span></summary><div class="teacher-guide-body"><section class="summary">
-<h2>Course summary</h2>
-<p>Start from input data → processing → output data, using an interactive button-controlled lamp. Compare supervised, unsupervised and reinforcement learning visually. Separate training, inference and testing, then study a supervised ID3 decision tree for Martian-versus-Earthling classification and a one-iteration K-means clustering demonstration.</p>
-<p><strong>By the end:</strong> identify input, processing and output; distinguish the three learning families by their feedback; identify training, inference and testing; interpret source-labelled visitor data and build an ID3 tree; understand one K-means iteration; design a fair evaluation.</p>
-</section><h3>Pedagogical sequence</h3><div class="pedagogical-table-scroll"><table class="pedagogical-table">
-<thead><tr><th scope="col">Topic</th><th scope="col">Demonstration</th><th scope="col">Student evidence</th></tr></thead>
-<tbody>
-<tr><th scope="row">Input → processing → output</th><td>Click the light switch and trace the IF rule.</td><td>Identify inputs and the corresponding action.</td></tr>
-<tr><th scope="row">Learning families</th><td>Read the three pictorial models; inspect the labelled object table.</td><td>Choose supervised, unsupervised or reinforcement learning for a scenario.</td></tr>
-<tr><th scope="row">Model life cycle</th><td>Compare training, prediction and independent testing.</td><td>Explain why evaluating on training examples is insufficient.</td></tr>
-<tr><th scope="row">Supervised worked example</th><td>Use Problem 40 to compare information gains and construct the Martian-versus-Earthling ID3 tree.</td><td>Change visitor features and follow the resulting branch to a prediction.</td></tr>
-<tr><th scope="row">Unsupervised worked example</th><td>Three successive K-means diagrams: unlabelled → assigned → updated centres.</td><td>Name the one change made at each step.</td></tr>
-</tbody></table></div></div></details>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/course-martian.css"><link rel="stylesheet" href="/assets/course-examples.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/course-martian.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
+<p class="deck">From fixed rules to models learned from data.</p>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
 <ul><li><a href="#one">1.1. Programs, rules and artificial intelligence</a></li>
 <li><a href="#two">1.2. Learning from data</a></li>
@@ -209,12 +193,74 @@ ENDIF</code></pre>
 
 <section id="four" class="chapter-section">
   <h2>1.4. Two visual worked examples</h2>
-  <p>We now construct a decision tree from labelled Martian and Earthling examples, then examine an unsupervised algorithm that discovers groups without labels.</p>
+  <p>Apply two algorithms step by step: an ID3 decision tree for labelled visitors, followed by a simple K-means clustering exercise.</p>
 
-  <h3>1.4.1. Supervised example — Martian or Earthling?</h3>
-<p class="visual-intro"><strong>Problem 40 — Marțian sau pământean?</strong> In this fictional NASA classification exercise, each visitor has four recorded properties. Our goal is to learn a <strong>decision tree</strong> that predicts whether the visitor is Martian (<strong>M</strong>) or human (<strong>H</strong>).</p>
+  <h3>1.4.1. Supervised example — Alien or Human?</h3>
+<p class="visual-intro">In this fictional example, each visitor is an <strong>alien (M)</strong> or a <strong>human (H)</strong>. Four recorded traits describe each visitor. Our goal is to learn a decision tree from labelled examples.</p>
 
-<div class="mars-flow" aria-label="Martian classification: labelled examples lead to an ID3 decision tree, then a new visitor receives a prediction">
+<div class="trait-comparison" aria-label="Two illustrated example visitors, with arrows identifying the four recorded traits">
+  <figure class="trait-card">
+    <figcaption><strong>Human</strong><span>Training example 7 · Label H</span></figcaption>
+    <svg viewBox="0 0 470 340" role="img" aria-label="Human with arrows: green no, two legs, short, not smelly. Example 7 from the training table.">
+      <defs><marker id="trait-human-tip" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#64859c"/></marker></defs>
+      <line x1="298" y1="54" x2="298" y2="292" stroke="#aebbc5" strokeWidth="1.5"/>
+      <path d="M291 54H305M291 292H305" stroke="#aebbc5" strokeWidth="1.5"/>
+      <circle cx="235" cy="94" r="34" fill="#ead1bb" stroke="#8b7e78" strokeWidth="2"/>
+      <path d="M201 91Q208 53 235 57Q265 57 269 91" fill="#617180" stroke="#50616f" strokeWidth="2"/>
+      <circle cx="221" cy="92" r="2.3" fill="#394d5c"/><circle cx="249" cy="92" r="2.3" fill="#394d5c"/>
+      <path d="M225 111Q235 118 245 111" fill="none" stroke="#9c6c57" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M204 131L265 131L273 210L196 210Z" fill="#c6d6e0" stroke="#708fa3" strokeWidth="2"/>
+      <path d="M203 144L177 213M264 144L289 213" fill="none" stroke="#b4c9d6" strokeWidth="17" strokeLinecap="round"/>
+      <path d="M214 217L211 283M251 217L254 283" fill="none" stroke="#677e8f" strokeWidth="17" strokeLinecap="round"/>
+      <path d="M211 282L193 292M254 282L270 292" fill="none" stroke="#506779" strokeWidth="13" strokeLinecap="round"/>
+      <g fill="none" stroke="#64859c" strokeWidth="1.7" markerEnd="url(#trait-human-tip)">
+        <path d="M128 62L198 87"/>
+        <path d="M128 147L211 113"/>
+        <path d="M128 255L207 269"/>
+        <path d="M344 167L301 167"/>
+      </g>
+      <g fill="#344e61" fontSize="15" fontFamily="Georgia,serif">
+        <text x="14" y="39" fontWeight="bold">Color</text><text x="14" y="59">Not green</text>
+        <text x="14" y="126" fontWeight="bold">Smelly?</text><text x="14" y="146">No</text>
+        <text x="14" y="232" fontWeight="bold">Number of legs</text><text x="14" y="252">2</text>
+        <text x="355" y="151" fontWeight="bold">Height</text><text x="355" y="171">Short</text>
+      </g>
+    </svg>
+  </figure>
+  <figure class="trait-card">
+    <figcaption><strong>Alien</strong><span>Training example 3 · Label M</span></figcaption>
+    <svg viewBox="0 0 470 340" role="img" aria-label="Green alien with arrows: green yes, three legs, tall, not smelly. Example 3 from the training table.">
+      <defs><marker id="trait-alien-tip" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="#64859c"/></marker></defs>
+      <line x1="314" y1="26" x2="314" y2="300" stroke="#aebbc5" strokeWidth="1.5"/>
+      <path d="M307 26H321M307 300H321" stroke="#aebbc5" strokeWidth="1.5"/>
+      <path d="M217 54L204 30M260 54L274 30" fill="none" stroke="#528c6a" strokeWidth="5" strokeLinecap="round"/>
+      <circle cx="203" cy="29" r="5" fill="#76b98b"/><circle cx="275" cy="29" r="5" fill="#76b98b"/>
+      <ellipse cx="239" cy="93" rx="48" ry="43" fill="#a7dabc" stroke="#4f8663" strokeWidth="2"/>
+      <ellipse cx="220" cy="91" rx="12" ry="17" fill="#21483b" transform="rotate(-12 220 91)"/>
+      <ellipse cx="258" cy="91" rx="12" ry="17" fill="#21483b" transform="rotate(12 258 91)"/>
+      <path d="M227 118Q239 125 251 118" fill="none" stroke="#4f8663" strokeWidth="2"/>
+      <path d="M211 135L268 135L287 214L191 214Z" fill="#79b797" stroke="#4f8663" strokeWidth="2"/>
+      <path d="M208 149L174 206M269 149L305 206" fill="none" stroke="#8ac4a6" strokeWidth="13" strokeLinecap="round"/>
+      <path d="M210 214L191 293M239 214L239 297M265 214L290 293" fill="none" stroke="#5e9b77" strokeWidth="13" strokeLinecap="round"/>
+      <path d="M191 293L179 298M239 297L229 302M290 293L301 298" fill="none" stroke="#3f805c" strokeWidth="11" strokeLinecap="round"/>
+      <g fill="none" stroke="#64859c" strokeWidth="1.7" markerEnd="url(#trait-alien-tip)">
+        <path d="M128 62L192 84"/>
+        <path d="M128 145L211 112"/>
+        <path d="M128 257L205 283"/>
+        <path d="M359 166L318 166"/>
+      </g>
+      <g fill="#344e61" fontSize="15" fontFamily="Georgia,serif">
+        <text x="14" y="39" fontWeight="bold">Color</text><text x="14" y="59">Green</text>
+        <text x="14" y="126" fontWeight="bold">Smelly?</text><text x="14" y="146">No</text>
+        <text x="14" y="232" fontWeight="bold">Number of legs</text><text x="14" y="252">3</text>
+        <text x="359" y="151" fontWeight="bold">Height</text><text x="359" y="171">Tall</text>
+      </g>
+    </svg>
+  </figure>
+</div>
+<p class="trait-footnote">These are <strong>two examples from the dataset</strong>, not rules that describe every human or every alien. The decision tree learns from all ten records.</p>
+
+<div class="mars-flow" aria-label="Alien classification: labelled examples lead to an ID3 decision tree, then a new visitor receives a prediction">
   <div><strong>10 labelled visitors</strong><small>Green · Legs · Height · Smelly · Species</small></div>
   <span aria-hidden="true">→</span>
   <div><strong>ID3 learning algorithm</strong><small>Choose informative attributes</small></div>
@@ -223,10 +269,10 @@ ENDIF</code></pre>
 </div>
 
 <div class="example-step-title"><span>Step 1</span><strong>Learn from the source data</strong></div>
-<p>Each row is one visitor. <strong>Species</strong> is the target label; the other four columns are input features. The ten entries below are the data from Problem 40.</p>
+<p>Each row is one visitor. <strong>Species</strong> is the target label; the other four columns are input features. These ten examples come from Exercise 40 of the provided ID3 collection.</p>
 <div class="mars-data-wrap">
 <table class="mars-data">
-<caption>Problem 40 — Original labelled training examples</caption>
+<caption>Ten labelled training examples — Alien (M) or Human (H)</caption>
 <thead><tr><th>#</th><th>Species <small>label</small></th><th>Green</th><th>Legs</th><th>Height</th><th>Smelly</th></tr></thead>
 <tbody>
 <tr><th>1</th><td class="mars-m">M</td><td>N</td><td>3</td><td>S</td><td>Y</td></tr>
@@ -250,10 +296,40 @@ ENDIF</code></pre>
   <div class="gain-row"><span>Smelly</span><div class="gain-track"><span style="width:0%"></span></div><strong>0.000</strong></div>
   <small>Information gain in bits, rounded to three decimals</small>
 </div>
+<div class="gain-calculations" aria-label="Four short worked information-gain calculations">
+  <p class="gain-first">Start with <strong>5 aliens</strong> and <strong>5 humans</strong>: uncertainty <strong>H(5,5) = 1.000 bit</strong>. Here H(a,b) measures how mixed two classes are: a pure group has uncertainty 0; an even mix has uncertainty 1.</p>
+  <div class="gain-examples">
+    <article class="gain-example gain-best">
+      <h4><span>Legs</span><strong>Gain 0.396</strong></h4>
+      <p class="gain-groups">3 legs: <strong>3 M, 0 H</strong> · 2 legs: <strong>2 M, 5 H</strong></p>
+      <p><span>After the split</span><code>(3/10 × 0) + (7/10 × 0.863) = 0.604</code></p>
+      <p class="gain-answer"><span>Information gain</span><code>1.000 − 0.604 = <strong>0.396</strong></code></p>
+    </article>
+    <article class="gain-example">
+      <h4><span>Green</span><strong>Gain 0.125</strong></h4>
+      <p class="gain-groups">Yes: <strong>3 M, 1 H</strong> · No: <strong>2 M, 4 H</strong></p>
+      <p><span>After the split</span><code>(4/10 × 0.811) + (6/10 × 0.918) = 0.875</code></p>
+      <p class="gain-answer"><span>Information gain</span><code>1.000 − 0.875 = <strong>0.125</strong></code></p>
+    </article>
+    <article class="gain-example">
+      <h4><span>Height</span><strong>Gain 0.000</strong></h4>
+      <p class="gain-groups">Tall: <strong>3 M, 3 H</strong> · Short: <strong>2 M, 2 H</strong></p>
+      <p><span>After the split</span><code>(6/10 × 1) + (4/10 × 1) = 1.000</code></p>
+      <p class="gain-answer"><span>Information gain</span><code>1.000 − 1.000 = <strong>0.000</strong></code></p>
+    </article>
+    <article class="gain-example">
+      <h4><span>Smelly</span><strong>Gain 0.000</strong></h4>
+      <p class="gain-groups">Yes: <strong>2 M, 2 H</strong> · No: <strong>3 M, 3 H</strong></p>
+      <p><span>After the split</span><code>(4/10 × 1) + (6/10 × 1) = 1.000</code></p>
+      <p class="gain-answer"><span>Information gain</span><code>1.000 − 1.000 = <strong>0.000</strong></code></p>
+    </article>
+  </div>
+  <p class="gain-afterword"><strong>Choose Legs.</strong> It removes more uncertainty than the other three attributes, so ID3 uses it as the first question.</p>
+</div>
 <div class="mars-split">
-  <div><strong>All 10 visitors</strong><small>5 Martians · 5 Humans</small></div><span aria-hidden="true">→</span>
-  <div class="mars-green"><strong>Legs = 3</strong><small>3 Martians · 0 Humans</small><em>Pure group → M</em></div>
-  <div class="mars-blue"><strong>Legs = 2</strong><small>2 Martians · 5 Humans</small><em>Ask another question</em></div>
+  <div><strong>All 10 visitors</strong><small>5 aliens · 5 humans</small></div><span aria-hidden="true">→</span>
+  <div class="mars-green"><strong>Legs = 3</strong><small>3 aliens · 0 humans</small><em>Pure group → M</em></div>
+  <div class="mars-blue"><strong>Legs = 2</strong><small>2 aliens · 5 humans</small><em>Ask another question</em></div>
 </div>
 
 <div class="example-step-title"><span>Step 3</span><strong>Build the complete ID3 tree</strong></div>
@@ -312,45 +388,89 @@ ENDIF</code></pre>
   </div>
   <div class="mars-output">
     <small>PREDICTED SPECIES</small>
-    <strong data-mars-result class="mars-m">M — Martian</strong>
+    <strong data-mars-result class="mars-m">M — Alien</strong>
     <p data-mars-path aria-live="polite">Legs = 2 → Green = N → Height = S → Smelly = Y → Martian</p>
     <span data-mars-training>Matches a labelled training example.</span>
     <button type="button" data-mars-reset>Reset visitor</button>
   </div>
 </div>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>The tree correctly classifies all ten supplied training examples. That does <strong>not</strong> guarantee correct classifications for every possible visitor. The exercise also asks whether simpler logical rules can fit these examples.</p></div>
+<div class="observation"><span class="label-word observation-label">Observation</span><p>The tree classifies all ten training examples correctly. This does not guarantee it will correctly classify every possible new visitor.</p></div>
 <div class="notes"><span class="label-word notes-label">Notes</span><ul>
   <li><strong>Supervised learning:</strong> Species (M or H) is the known answer during training.</li>
   <li><strong>ID3:</strong> tests the attribute with greatest information gain at each decision node.</li>
   <li><strong>Inference:</strong> follows the completed tree for a new visitor, without rebuilding the tree.</li>
 </ul></div>
 
-  <h3>1.4.2. Unsupervised example — find groups without labels</h3>
-  <p class="visual-intro">All three diagrams use <strong>exactly the same eight input points</strong>. From one diagram to the next, change <strong>one operation</strong> at a time.</p>
-  <div class="clustering-steps">
-    <figure class="cluster-stage">
-      <h4>1. Unlabelled data</h4>
-      <svg data-cluster-plot="raw" viewBox="0 0 360 270" role="img" aria-label="Eight grey unlabelled observations and two initial reference centres"></svg>
-      <figcaption>We know the two attributes, not the group labels. Choose two initial centres.</figcaption>
-    </figure>
-    <figure class="cluster-stage">
-      <h4>2. Assign to a centre</h4>
-      <svg data-cluster-plot="assigned" viewBox="0 0 360 270" role="img" aria-label="The same eight points coloured by proximity to one of two unchanged initial centres"></svg>
-      <figcaption>Only the <strong>point assignments</strong> change. Each point joins its nearest centre.</figcaption>
-    </figure>
-    <figure class="cluster-stage">
-      <h4>3. Recompute the centres</h4>
-      <svg data-cluster-plot="recentered" viewBox="0 0 360 270" role="img" aria-label="The same two coloured groups and reference centres moved to each group mean"></svg>
-      <figcaption>Only the <strong>centre positions</strong> change. Move each centre to the average of its group.</figcaption>
-    </figure>
+  <h3>1.4.2. Unsupervised example — K-means clustering</h3>
+<p class="visual-intro">Here the six points have <strong>no class labels</strong>. We want to form <strong>two groups</strong> using the K-means algorithm. Work from the same points at every step.</p>
+
+<div class="kmeans-input">
+  <div>
+    <strong>Six input points</strong>
+    <div class="kmeans-point-table" role="table" aria-label="Six two-dimensional observations">
+      <div role="row"><span role="cell">A (1, 1)</span><span role="cell">B (1, 2)</span><span role="cell">C (2, 1)</span></div>
+      <div role="row"><span role="cell">D (6, 5)</span><span role="cell">E (7, 5)</span><span role="cell">F (6, 6)</span></div>
+    </div>
   </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Clustering:</strong> grouping examples by similarity without supplied target labels.</p></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>These diagrams show one iteration of <strong>K-means</strong>. Repeating assignment and centre updates can stabilise the groups; the names “Group 1” and “Group 2” are created by the algorithm, not supplied as correct answers.</p></div>
-  <div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>In the Martian example, which attributes describe each visitor, and which attribute is the target label?</li>
-    <li>In the clustering example, explain exactly what changed between diagrams 1 and 2, and between diagrams 2 and 3.</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Green, Legs, Height and Smelly are the input features. Species (M or H) is the label provided in the exercise. <strong>b)</strong> First, assign unchanged points to nearest centres; next, move the centres to the means of their assigned points, keeping the assignments fixed for that update.</p></details></div>
-  <p class="source-line"><strong>Bibliography:</strong> Liviu Ciortuz and collaborators, <em>Algoritmul ID3</em>, Problem 40 (supplied exercise collection) · <a href="/w1/lab/">Flight-delay laboratory, Problem 42</a>.</p>
+  <div>
+    <strong>Two initial centres</strong>
+    <p><span class="kmeans-dot blue"></span> Centre 1 = <strong>(1, 1)</strong></p>
+    <p><span class="kmeans-dot orange"></span> Centre 2 = <strong>(7, 5)</strong></p>
+  </div>
+</div>
+
+<div class="clustering-steps kmeans-four-steps">
+  <figure class="cluster-stage">
+    <h4>1. Start with two centres</h4>
+    <svg data-cluster-plot="raw" viewBox="0 0 360 270" role="img" aria-label="Six unlabelled points A through F, with two initial centroids at 1,1 and 7,5"></svg>
+    <figcaption>All points are unlabelled. The <strong>outlined + symbols</strong> show the two initial centres.</figcaption>
+  </figure>
+  <figure class="cluster-stage">
+    <h4>2. Assign each point</h4>
+    <svg data-cluster-plot="assigned" viewBox="0 0 360 270" role="img" aria-label="The same six points A through F, coloured by the nearest initial centroid"></svg>
+    <figcaption><strong>A, B, C → Group 1.</strong> <strong>D, E, F → Group 2.</strong> The centres have not moved yet.</figcaption>
+  </figure>
+  <figure class="cluster-stage">
+    <h4>3. Update the centres</h4>
+    <svg data-cluster-plot="recentered" viewBox="0 0 360 270" role="img" aria-label="The same groups, now with centroids moved to 1.33,1.33 and 6.33,5.33"></svg>
+    <figcaption>Move each centre to the <strong>average position</strong> of the three assigned points.</figcaption>
+  </figure>
+  <figure class="cluster-stage">
+    <h4>4. Assign again, then stop</h4>
+    <svg data-cluster-plot="stable" viewBox="0 0 360 270" role="img" aria-label="Cluster assignments remain unchanged after updating the centroids; K-means has converged"></svg>
+    <figcaption>Every point stays in the same group. <strong>Nothing changes → stop.</strong></figcaption>
+  </figure>
+</div>
+
+<div class="kmeans-working">
+  <h4>The two calculations you need</h4>
+  <div class="kmeans-working-grid">
+    <div>
+      <strong>Assign to the nearest centre</strong>
+      <p>For C = (2, 1), compare <em>squared distances</em> (no square roots needed):</p>
+      <div class="math-line">To Centre 1: (2 − 1)² + (1 − 1)² = <strong>1</strong></div>
+      <div class="math-line">To Centre 2: (2 − 7)² + (1 − 5)² = <strong>41</strong></div>
+      <p>1 is smaller than 41, so <strong>C belongs to Group 1</strong>.</p>
+    </div>
+    <div>
+      <strong>Calculate each new centre</strong>
+      <p>Take the average of the x-coordinates and y-coordinates separately.</p>
+      <div class="math-line">Centre 1: ((1+1+2)/3, (1+2+1)/3) = <strong>(1.33, 1.33)</strong></div>
+      <div class="math-line">Centre 2: ((6+7+6)/3, (5+5+6)/3) = <strong>(6.33, 5.33)</strong></div>
+      <p>The next assignment is unchanged, so <strong>K-means stops</strong>.</p>
+    </div>
+  </div>
+</div>
+<div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Clustering:</strong> grouping examples by similarity without supplied target labels.</p></div>
+<div class="observation"><span class="label-word observation-label">Observation</span><p>K-means repeats just two operations: <strong>assign to the nearest centre</strong> and <strong>recalculate the centres</strong>. Stop when assignments no longer change.</p></div>
+<div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
+  <li>For the alien-versus-human problem, name the four input features and the target label.</li>
+  <li>Which initial K-means centre is closer to point C = (2, 1)? Show the squared distances.</li>
+  <li>Calculate the updated centre of the group containing A, B and C.</li>
+  <li>After updating both centres, no point changes groups. What should the algorithm do?</li>
+</ol></div>
+<details><summary>Show a possible solution</summary><p><strong>a)</strong> Green, Legs, Height and Smelly are features; Species (M or H) is the label. <strong>b)</strong> Centre 1: 1; Centre 2: 41, so C belongs to Group 1. <strong>c)</strong> ((1+1+2)/3, (1+2+1)/3) = (1.33, 1.33). <strong>d)</strong> Stop: the grouping has converged.</p></details></div>
+<p class="source-line"><strong>Bibliography:</strong> Ciortuz, <em>Decision Trees: ID3</em>, Exercise 40 (provided collection) · <a href="https://tue-ml.github.io/book/clustering-exercises/" target="_blank" rel="noopener noreferrer">TU/e — K-means exercises</a> (adapted to six 2D points) · <a href="/w1/lab/">Flight-delay laboratory</a>.</p>
 </section>
 
 <section id="five" class="chapter-section">
