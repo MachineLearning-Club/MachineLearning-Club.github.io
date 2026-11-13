@@ -1,9 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><link rel="stylesheet" href="/assets/week1-d10.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/week1-d10.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson week1-foundations"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><link rel="stylesheet" href="/assets/week1-d10.css"><link rel="stylesheet" href="/assets/week1-visual-methods.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/week1-d10.js"></script><script defer src="/assets/week1-visual-methods.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson week1-foundations"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
 <p class="deck">Rules, learning families, probability and mathematical expectations.</p>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
 <ul><li><a href="#one">1.1. Programs, rules and artificial intelligence</a></li>
-<li><a href="#two">1.2. Learning from data</a></li>
-<li><a href="#three">1.3. The machine learning methods map</a></li>
+<li><a href="#two">1.2. Learning families and methods</a></li>
+<li><a href="#three">1.3. Camera: from image to action</a></li>
 <li><a href="#four">1.4. Probability and Bayes’ theorem</a></li>
 <li><a href="#five">1.5. Distributions and expected value</a></li></ul></details></nav></aside><article class="course-article">
 <section id="one" class="chapter-section">
@@ -67,40 +67,40 @@ ENDIF</code></pre>
   <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Foundations of AI</a>.</p>
 </section>
 
-<section id="two" class="chapter-section">
-  <h2>1.2. Learning from data</h2>
-  <p>In machine learning, input data are often represented as a <strong>table of examples</strong>. Each column describes an attribute. Depending on the task, the algorithm may predict a label, form groups or choose actions.</p>
 
-  <div class="flow-diagram flow-data" aria-label="A table of input attributes is processed by a learning algorithm to produce a result">
-    <div class="flow-table"><strong>Input data</strong><table aria-label="Example table of input attributes"><thead><tr><th>Temp.</th><th>Rain?</th></tr></thead><tbody><tr><td>18</td><td>Yes</td></tr><tr><td>24</td><td>No</td></tr><tr><td>12</td><td>Yes</td></tr></tbody></table></div>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <div><strong>Processing</strong><small>Learning algorithm</small></div>
-    <span class="flow-arrow" aria-hidden="true">→</span>
-    <div><strong>Output</strong><small>A predicted label, a group or a selected action</small></div>
-  </div>
-
-  <h3>1.2.1. Features and labels</h3>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Feature:</strong> a measurable property used as input to a model.</p></div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Label:</strong> the known answer attached to a supervised training example.</p></div>
-
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>A feature might be an image pixel, temperature or word. A supervised label could be “cat”, “dog” or a known number.</p></div>
-
-  <h3>1.2.2. Three families of learning</h3>
-<p>All three methods learn from data, but <strong>what is provided during learning</strong> is different.</p>
-<div class="learning-paths">
-  <article class="learning-path" id="family-supervised">
+<section id="two" class="chapter-section foundations-section merged-methods">
+<h2>1.2. Learning families and their methods</h2>
+<p><strong>Features</strong> describe an example, while <strong>labels</strong> provide known target answers when available. A method's purpose and the information it receives determine which learning family it belongs to.</p>
+<h3>1.2.1. Features and labels</h3>
+<div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Feature:</strong> a measurable attribute used as model input.</p></div>
+<div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Label:</strong> the known target attached to a supervised training example.</p></div>
+<p>For example, temperature and whether it is raining are two features. A decision such as whether to play outside can be a target label; numerical targets are also possible.</p>
+<h3>1.2.2. Supervised learning — labelled examples</h3>
+<article class="learning-path" id="family-supervised">
     <div class="learning-path-heading"><span class="path-number">01</span><h4>Supervised learning</h4><span class="path-tag">Known answers</span></div>
     <div class="learning-story">
-      <div class="story-stage"><strong>Training examples</strong><table aria-label="Examples with features and their known labels"><thead><tr><th>Weight</th><th>Shape</th><th>Label</th></tr></thead><tbody><tr><td>140 g</td><td>Round</td><td>Apple</td></tr><tr><td>120 g</td><td>Long</td><td>Banana</td></tr></tbody></table></div>
+      <div class="story-stage"><strong>Training examples</strong><table aria-label="Examples with features and their known labels"><thead><tr><th>Temp. (°C)</th><th>Rain?</th><th>Outdoor play?</th></tr></thead><tbody><tr><td>18</td><td>Yes</td><td>No</td></tr><tr><td>24</td><td>No</td><td>Yes</td></tr><tr><td>12</td><td>Yes</td><td>No</td></tr></tbody></table></div>
       <span class="story-arrow" aria-hidden="true">→</span>
       <div class="story-stage story-model"><strong>Learn a predictor</strong><div class="story-machine">f<sub>θ</sub>(x)</div><small>Learn from features and answers</small></div>
       <span class="story-arrow" aria-hidden="true">→</span>
-      <div class="story-stage story-output"><strong>New input</strong><p>135 g · Round</p><strong class="story-result">Predicted: Apple</strong></div>
+      <div class="story-stage story-output"><strong>New input</strong><p>20°C · No rain</p><strong class="story-result">Predicted: Yes</strong></div>
     </div>
     <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Supervised learning:</strong> learn a mapping from inputs to known targets. Formally, given <code>D = {(xᵢ, yᵢ)}</code>, construct <code>f(x) → ŷ</code>.</p></div>
-    <small>In the methods map: <a href="#map-supervised">classification, regression, perceptrons, neural networks and random forests</a>.</small>
-  </article>
-  <article class="learning-path" id="family-unsupervised">
+
+  <div class="family-methods"><h5>Models often used for supervised tasks</h5><div class="model-gallery merged-gallery"><article class="model-tile" data-model-interactive data-method="linear" data-model-group="supervised"><span class="model-kind">SUPERVISED · NUMBER</span><h3>Linear regression</h3>
+      <div class="method-figure" data-method-stage="linear"><svg viewBox="0 0 250 116" role="img" aria-label="A straight line follows points and predicts a numerical value."><path d="M17 10V95H233" fill="none" stroke="#a3b5c2" stroke-width="2"/><path d="M29 85L221 18" stroke="#4a83ae" stroke-width="3"/><g fill="#c58d59"><circle cx="40" cy="77" r="5"/><circle cx="65" cy="75" r="5"/><circle cx="95" cy="56" r="5"/><circle cx="132" cy="58" r="5"/><circle cx="180" cy="36" r="5"/><circle cx="214" cy="23" r="5"/></g></svg></div><p class="method-hint">Select any plotted observation to move it; the regression line adjusts.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Fit a line to predict a numeric output from input measurements.</p><small>Example: predict a house's price.</small></article>
+<article class="model-tile" data-model-interactive data-method="perceptron" data-model-group="supervised"><span class="model-kind">MODEL · ONE NEURON</span><h3>Perceptron</h3>
+      <div class="method-figure" data-method-stage="perceptron"><svg viewBox="0 0 250 116" role="img" aria-label="Three weighted inputs feed one threshold unit which produces a binary output."><g stroke="#8da6b7" stroke-width="2"><path d="M47 22L148 58M47 58L148 58M47 94L148 58M177 58H232"/></g><g fill="#eaf1f6" stroke="#81a4bb" stroke-width="2"><circle cx="37" cy="22" r="14"/><circle cx="37" cy="58" r="14"/><circle cx="37" cy="94" r="14"/><circle cx="161" cy="58" r="22"/></g><g fill="#31556e" text-anchor="middle" font-size="12"><text x="37" y="26">x₁</text><text x="37" y="62">x₂</text><text x="37" y="98">x₃</text><text x="161" y="62">Σ</text><text x="229" y="52">0/1</text></g></svg></div><p class="method-hint">Select an input circle to toggle 0 or 1 and watch the output.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Combine weighted inputs and apply a threshold to make a binary decision.</p><small>Example: classify a simple pattern.</small></article>
+<article class="model-tile" data-model-interactive data-method="network" data-model-group="supervised"><span class="model-kind">MODEL · MULTIPLE LAYERS</span><h3>Neural network</h3>
+      <div class="method-figure" data-method-stage="network"><svg viewBox="0 0 250 116" role="img" aria-label="Input, hidden and output layers connected by many weighted edges."><g stroke="#a9bdc9" stroke-width="1.5"><path d="M35 26L118 20M35 26L118 58M35 26L118 96M35 86L118 20M35 86L118 58M35 86L118 96M118 20L213 40M118 20L213 78M118 58L213 40M118 58L213 78M118 96L213 40M118 96L213 78"/></g><g fill="#e6f0f7" stroke="#5684a5" stroke-width="2"><circle cx="35" cy="26" r="11"/><circle cx="35" cy="86" r="11"/><circle cx="118" cy="20" r="11"/><circle cx="118" cy="58" r="11"/><circle cx="118" cy="96" r="11"/><circle cx="213" cy="40" r="11"/><circle cx="213" cy="78" r="11"/></g></svg></div><p class="method-hint">Select an input neuron to change the activations in the next layers.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Connect many simple computational units into layers that learn complex relationships.</p><small>Example: recognise objects in images.</small></article>
+<article class="model-tile" data-model-interactive data-method="forest" data-model-group="supervised"><span class="model-kind">SUPERVISED · ENSEMBLE</span><h3>Random forest</h3>
+      <div class="method-figure" data-method-stage="forest"><svg viewBox="0 0 250 116" role="img" aria-label="Three small decision trees combine their votes into one final output."><g fill="none" stroke="#6c99b4" stroke-width="2"><path d="M42 22V44H20V65M42 44H64V65M122 22V44H100V65M122 44H144V65M202 22V44H180V65M202 44H224V65"/></g><g fill="#e6f0f7" stroke="#7a9eb4"><circle cx="42" cy="22" r="11"/><circle cx="122" cy="22" r="11"/><circle cx="202" cy="22" r="11"/><circle cx="20" cy="65" r="7"/><circle cx="64" cy="65" r="7"/><circle cx="100" cy="65" r="7"/><circle cx="144" cy="65" r="7"/><circle cx="180" cy="65" r="7"/><circle cx="224" cy="65" r="7"/></g><text x="122" y="98" font-size="13" fill="#436b86" text-anchor="middle">Tree votes → final prediction</text></svg></div><p class="method-hint">Select a tree to change its vote and the majority decision.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Combine predictions from many decision trees.</p><small>Example: estimate whether a transaction is unusual.</small></article></div></div></article>
+<h3>1.2.3. Unsupervised learning — unlabelled examples</h3>
+<article class="learning-path" id="family-unsupervised">
     <div class="learning-path-heading"><span class="path-number">02</span><h4>Unsupervised learning</h4><span class="path-tag">No target labels</span></div>
     <div class="learning-story">
       <div class="story-stage"><strong>Input data</strong><div class="mini-dots" aria-label="Eight grey observations without target labels"><span style="left:13%;top:26%"></span><span style="left:30%;top:42%"></span><span style="left:18%;top:73%"></span><span style="left:41%;top:60%"></span><span style="left:62%;top:25%"></span><span style="left:81%;top:33%"></span><span style="left:65%;top:67%"></span><span style="left:87%;top:75%"></span></div></div>
@@ -110,54 +110,23 @@ ENDIF</code></pre>
       <div class="story-stage story-output"><strong>Discovered groups</strong><div class="mini-dots grouped" aria-label="The observations are separated into two visually distinct groups"><span style="left:13%;top:26%"></span><span style="left:30%;top:42%"></span><span style="left:18%;top:73%"></span><span style="left:41%;top:60%"></span><span style="left:62%;top:25%"></span><span style="left:81%;top:33%"></span><span style="left:65%;top:67%"></span><span style="left:87%;top:75%"></span></div></div>
     </div>
     <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Unsupervised learning:</strong> discover structure from inputs without supplied target labels. Formally, given <code>D = {xᵢ}</code>, find patterns or groups in <code>D</code>.</p></div>
-    <small>In the methods map: <a href="#map-unsupervised">K-means and hierarchical clustering</a>. Grouping is one unsupervised task, not the only one.</small>
-  </article>
-  <article class="learning-path" id="family-reinforcement">
+
+  <div class="family-methods"><h5>Unsupervised methods — discovering structure</h5><div class="model-gallery merged-gallery"><article class="model-tile" data-model-interactive data-method="kmeans" data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · CENTRES</span><h3>K-means clustering</h3>
+      <div class="method-figure" data-method-stage="kmeans"><svg viewBox="0 0 250 116" role="img" aria-label="Two groups of points cluster around two centres."><g fill="#6f9bb9"><circle cx="40" cy="37" r="6"/><circle cx="58" cy="54" r="6"/><circle cx="35" cy="73" r="6"/><circle cx="71" cy="73" r="6"/></g><g fill="#c19873"><circle cx="174" cy="31" r="6"/><circle cx="195" cy="51" r="6"/><circle cx="168" cy="77" r="6"/><circle cx="209" cy="77" r="6"/></g><circle cx="51" cy="59" r="19" fill="none" stroke="#4e86a8" stroke-width="2"/><circle cx="187" cy="59" r="19" fill="none" stroke="#be8c63" stroke-width="2"/></svg></div><p class="method-hint">Select a point to move it and update the two cluster centres.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Group nearby points around representative centres.</p><small>Example: segment products with similar characteristics.</small></article>
+<article class="model-tile" data-model-interactive data-method="hierarchical" data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · GROUPS</span><h3>Hierarchical clustering</h3>
+      <div class="method-figure" data-method-stage="hierarchical"><svg viewBox="0 0 250 116" role="img" aria-label="A dendrogram shows four individual examples merging into pairs then into a larger group."><g fill="none" stroke="#779cb5" stroke-width="2.5"><path d="M30 95V69H92V95M61 69V37H181V69M150 95V69H212V95M181 69V37"/></g><g fill="#436b86" font-size="13" text-anchor="middle"><text x="30" y="109">A</text><text x="92" y="109">B</text><text x="150" y="109">C</text><text x="212" y="109">D</text></g></svg></div><p class="method-hint">Select a leaf to highlight its closest group in the hierarchy.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Build a hierarchy of groups according to similarity.</p><small>Example: organise similar documents.</small></article></div></div></article>
+<h3>1.2.4. Reinforcement learning — actions and rewards</h3>
+<article class="learning-path" id="family-reinforcement">
     <div class="learning-path-heading"><span class="path-number">03</span><h4>Reinforcement learning</h4><span class="path-tag">Rewards from actions</span></div>
     <div class="rl-story" aria-label="An agent chooses right or down in a small grid, eventually reaching a reward">
       <div class="rl-board"><span class="rl-player">Agent</span><span></span><span class="rl-goal">+10</span><span></span><span class="rl-wall">−1</span><span></span><span></span><span></span><span></span></div>
       <div class="rl-arrows"><div><strong>Agent chooses an action</strong><span>Move right / down</span></div><span>→</span><div><strong>Environment responds</strong><span>New position + reward</span></div></div>
     </div>
     <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Reinforcement learning:</strong> learn a strategy from actions and rewards. Formally, an agent learns a <strong>policy</strong> <code>π(state) → action</code> to maximise expected cumulative reward.</p></div>
-    <small>In the methods map: <a href="#map-reinforcement">agents, environments and reward feedback</a>.</small>
-  </article>
-</div>
-<div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Classification</strong> predicts categories, <strong>regression</strong> predicts numbers, <strong>clustering</strong> discovers groups, and <strong>reinforcement learning</strong> improves choices using feedback. They describe different goals and learning setups.</p></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro — Machine Learning</a>.</p>
-</section>
 
-<section id="three" class="chapter-section foundations-section methods-chapter">
-<h2>1.3. The machine learning methods map</h2>
-<p>Some terms name a <strong>learning setup</strong>; others name a <strong>task</strong>, a <strong>model</strong> or an <strong>application area</strong>. Use the three families above as a map for the methods below. Select any diagram to follow one example of how it operates.</p>
-<h3 id="map-supervised">1.3.1. Supervised — learn from known targets</h3>
-<p><strong>Input:</strong> examples paired with answers <code>(x, y)</code>. <strong>Goal:</strong> predict <code>ŷ</code> for a new input. <strong>Classification</strong> outputs categories; <strong>regression</strong> outputs numbers.</p>
-<div class="model-gallery">
-<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">SUPERVISED · NUMBER</span><h3>Linear regression</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Linear regression diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A straight line follows points and predicts a numerical value."><path d="M17 10V95H233" fill="none" stroke="#a3b5c2" stroke-width="2"/><path d="M29 85L221 18" stroke="#4a83ae" stroke-width="3"/><g fill="#c58d59"><circle cx="40" cy="77" r="5"/><circle cx="65" cy="75" r="5"/><circle cx="95" cy="56" r="5"/><circle cx="132" cy="58" r="5"/><circle cx="180" cy="36" r="5"/><circle cx="214" cy="23" r="5"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">New input follows the learned line to a numerical prediction.</p>
-      <p>Fit a line to predict a numeric output from input measurements.</p><small>Example: predict a house's price.</small></article>
-<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">MODEL · ONE NEURON</span><h3>Perceptron</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Perceptron diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Three weighted inputs feed one threshold unit which produces a binary output."><g stroke="#8da6b7" stroke-width="2"><path d="M47 22L148 58M47 58L148 58M47 94L148 58M177 58H232"/></g><g fill="#eaf1f6" stroke="#81a4bb" stroke-width="2"><circle cx="37" cy="22" r="14"/><circle cx="37" cy="58" r="14"/><circle cx="37" cy="94" r="14"/><circle cx="161" cy="58" r="22"/></g><g fill="#31556e" text-anchor="middle" font-size="12"><text x="37" y="26">x₁</text><text x="37" y="62">x₂</text><text x="37" y="98">x₃</text><text x="161" y="62">Σ</text><text x="229" y="52">0/1</text></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Input values are weighted and combined, then a threshold produces a decision.</p>
-      <p>Combine weighted inputs and apply a threshold to make a binary decision.</p><small>Example: classify a simple pattern.</small></article>
-<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">MODEL · MULTIPLE LAYERS</span><h3>Neural network</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Neural network diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Input, hidden and output layers connected by many weighted edges."><g stroke="#a9bdc9" stroke-width="1.5"><path d="M35 26L118 20M35 26L118 58M35 26L118 96M35 86L118 20M35 86L118 58M35 86L118 96M118 20L213 40M118 20L213 78M118 58L213 40M118 58L213 78M118 96L213 40M118 96L213 78"/></g><g fill="#e6f0f7" stroke="#5684a5" stroke-width="2"><circle cx="35" cy="26" r="11"/><circle cx="35" cy="86" r="11"/><circle cx="118" cy="20" r="11"/><circle cx="118" cy="58" r="11"/><circle cx="118" cy="96" r="11"/><circle cx="213" cy="40" r="11"/><circle cx="213" cy="78" r="11"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Information flows through several layers of connected computational units.</p>
-      <p>Connect many simple computational units into layers that learn complex relationships.</p><small>Example: recognise objects in images.</small></article>
-<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">SUPERVISED · ENSEMBLE</span><h3>Random forest</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Random forest diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Three small decision trees combine their votes into one final output."><g fill="none" stroke="#6c99b4" stroke-width="2"><path d="M42 22V44H20V65M42 44H64V65M122 22V44H100V65M122 44H144V65M202 22V44H180V65M202 44H224V65"/></g><g fill="#e6f0f7" stroke="#7a9eb4"><circle cx="42" cy="22" r="11"/><circle cx="122" cy="22" r="11"/><circle cx="202" cy="22" r="11"/><circle cx="20" cy="65" r="7"/><circle cx="64" cy="65" r="7"/><circle cx="100" cy="65" r="7"/><circle cx="144" cy="65" r="7"/><circle cx="180" cy="65" r="7"/><circle cx="224" cy="65" r="7"/></g><text x="122" y="98" font-size="13" fill="#436b86" text-anchor="middle">Tree votes → final prediction</text></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Several decision trees each vote; their combined votes determine the answer.</p>
-      <p>Combine predictions from many decision trees.</p><small>Example: estimate whether a transaction is unusual.</small></article>
-</div><h3 id="map-unsupervised">1.3.2. Unsupervised — discover structure</h3>
-<p><strong>Input:</strong> examples <code>x</code> without known answers. <strong>Goal:</strong> discover useful patterns such as flat groups or nested groups. No target label tells the algorithm how to classify each input.</p>
-<div class="model-gallery">
-<article class="model-tile" data-model-card data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · CENTRES</span><h3>K-means clustering</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the K-means clustering diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Two groups of points cluster around two centres."><g fill="#6f9bb9"><circle cx="40" cy="37" r="6"/><circle cx="58" cy="54" r="6"/><circle cx="35" cy="73" r="6"/><circle cx="71" cy="73" r="6"/></g><g fill="#c19873"><circle cx="174" cy="31" r="6"/><circle cx="195" cy="51" r="6"/><circle cx="168" cy="77" r="6"/><circle cx="209" cy="77" r="6"/></g><circle cx="51" cy="59" r="19" fill="none" stroke="#4e86a8" stroke-width="2"/><circle cx="187" cy="59" r="19" fill="none" stroke="#be8c63" stroke-width="2"/></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Points are assigned to their nearest centre; the centre then moves to their average.</p>
-      <p>Group nearby points around representative centres.</p><small>Example: segment products with similar characteristics.</small></article>
-<article class="model-tile" data-model-card data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · GROUPS</span><h3>Hierarchical clustering</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Hierarchical clustering diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A dendrogram shows four individual examples merging into pairs then into a larger group."><g fill="none" stroke="#779cb5" stroke-width="2.5"><path d="M30 95V69H92V95M61 69V37H181V69M150 95V69H212V95M181 69V37"/></g><g fill="#436b86" font-size="13" text-anchor="middle"><text x="30" y="109">A</text><text x="92" y="109">B</text><text x="150" y="109">C</text><text x="212" y="109">D</text></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Pairs of similar items merge into larger groups in a tree-like hierarchy.</p>
-      <p>Build a hierarchy of groups according to similarity.</p><small>Example: organise similar documents.</small></article>
-</div><h3 id="map-reinforcement">1.3.3. Reinforcement — improve actions using rewards</h3>
-<p><strong>Input:</strong> observations of the environment and reward feedback. <strong>Goal:</strong> learn a policy <code>π(state) → action</code> that earns high long-term reward, rather than predicting a provided target label.</p>
-<div class="model-gallery">
-<article class="model-tile" data-model-card data-model-group="reinforcement"><span class="model-kind">AGENT · REWARD</span><h3>Reinforcement learning</h3><button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the reinforcement learning feedback loop">
-<svg viewBox="0 0 250 116" role="img" aria-label="An agent chooses actions in an environment and receives rewards in a feedback loop">
+  <div class="family-methods"><h5>Reinforcement methods — actions and reward</h5><div class="model-gallery merged-gallery"><article class="model-tile" data-model-interactive data-method="reinforcement" data-model-group="reinforcement"><span class="model-kind">AGENT · REWARD</span><h3>Reinforcement learning</h3><div class="method-figure" data-method-stage="reinforcement"><svg viewBox="0 0 250 116" role="img" aria-label="An agent chooses actions in an environment and receives rewards in a feedback loop">
 <rect x="9" y="29" width="90" height="55" rx="4" fill="#e5f0f6" stroke="#8eafc3"/>
 <text x="54" y="61" text-anchor="middle" fill="#2e5c79" font-size="14">Agent</text>
 <rect x="159" y="29" width="82" height="55" rx="4" fill="#f3f5eb" stroke="#abb68f"/>
@@ -166,22 +135,63 @@ ENDIF</code></pre>
 <path d="M159 72H125V101H54V85m-5 8 5-8 5 8" fill="none" stroke="#6b937d" stroke-width="2"/>
 <text x="128" y="31" text-anchor="middle" fill="#5b7890" font-size="10">Action</text>
 <text x="123" y="113" text-anchor="middle" fill="#5c8067" font-size="10">Reward + feedback</text>
-</svg><span class="model-diagram-action">Explore diagram</span></button>
-<p class="model-diagram-note" data-model-note hidden aria-live="polite">The agent chooses an action, receives a reward and next state, then improves its policy.</p>
-<p>Learn which actions bring the greatest future reward by interacting with an environment.</p><small>Example: a simulated robot learning to reach a goal.</small></article>
-</div><h3 id="map-applications">1.3.4. Application areas — what AI is used for</h3>
-<p><strong>Computer vision</strong> describes working with images, while <strong>generative AI</strong> describes creating new content. These are not alternatives to supervised, unsupervised or reinforcement learning: an application can combine several approaches.</p>
-<div class="model-gallery">
-<article class="model-tile" data-model-card data-model-group="application"><span class="model-kind">TASK · IMAGES</span><h3>Computer vision</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Computer vision diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A small pixel grid leads to a picture classification."><g data-visual="pixels"><rect x="8" y="10" width="106" height="96" fill="#f4f8fa" stroke="#a7b9c5"/><g fill="#89b2cd"><rect x="22" y="24" width="20" height="20"/><rect x="44" y="24" width="20" height="20"/><rect x="66" y="24" width="20" height="20"/><rect x="22" y="46" width="20" height="20"/><rect x="66" y="46" width="20" height="20"/><rect x="22" y="68" width="20" height="20"/><rect x="44" y="68" width="20" height="20"/><rect x="66" y="68" width="20" height="20"/></g></g><path d="M122 58h34m-8-6 8 6-8 6" stroke="#728d9f" fill="none" stroke-width="2"/><rect x="166" y="35" width="75" height="44" rx="5" fill="#edf4f8" stroke="#abc3d1"/><text x="203" y="61" text-anchor="middle" fill="#355974" font-size="14">Object</text></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">An image enters a recogniser, which identifies a category or location.</p>
+</svg></div><p class="method-hint">Choose an adjacent square to move the agent and collect a reward.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+<p>Learn which actions bring the greatest future reward by interacting with an environment.</p><small>Example: a simulated robot learning to reach a goal.</small></article></div></div></article>
+<h3>1.2.5. Application areas</h3>
+<p><strong>Computer vision</strong> means processing images, while <strong>generative AI</strong> produces new content. These describe <em>applications or capabilities</em>, not a single learning family. Select the elements of the diagrams below.</p>
+<div class="model-gallery merged-gallery"><article class="model-tile" data-model-interactive data-method="vision" data-model-group="application"><span class="model-kind">TASK · IMAGES</span><h3>Computer vision</h3>
+      <div class="method-figure" data-method-stage="vision"><svg viewBox="0 0 250 116" role="img" aria-label="A small pixel grid leads to a picture classification."><g data-visual="pixels"><rect x="8" y="10" width="106" height="96" fill="#f4f8fa" stroke="#a7b9c5"/><g fill="#89b2cd"><rect x="22" y="24" width="20" height="20"/><rect x="44" y="24" width="20" height="20"/><rect x="66" y="24" width="20" height="20"/><rect x="22" y="46" width="20" height="20"/><rect x="66" y="46" width="20" height="20"/><rect x="22" y="68" width="20" height="20"/><rect x="44" y="68" width="20" height="20"/><rect x="66" y="68" width="20" height="20"/></g></g><path d="M122 58h34m-8-6 8 6-8 6" stroke="#728d9f" fill="none" stroke-width="2"/><rect x="166" y="35" width="75" height="44" rx="5" fill="#edf4f8" stroke="#abc3d1"/><text x="203" y="61" text-anchor="middle" fill="#355974" font-size="14">Object</text></svg></div><p class="method-hint">Select individual pixels to change the image and its toy pattern reading.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
       <p>Use images as input to identify, locate or describe objects.</p><small>Example: recognise a handwritten digit.</small></article>
-<article class="model-tile" data-model-card data-model-group="application"><span class="model-kind">GENERATIVE · CONTENT</span><h3>Generative AI</h3>
-      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Generative AI diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A short text prompt leads to generated paragraphs."><rect x="9" y="29" width="97" height="54" rx="4" fill="#f6f8fa" stroke="#acc0cf"/><text x="57" y="49" text-anchor="middle" fill="#405f75" font-size="13">Prompt</text><path d="M120 56h29m-7-6 7 6-7 6" stroke="#7394a9" stroke-width="2" fill="none"/><rect x="164" y="22" width="77" height="68" rx="4" fill="#eaf2f7" stroke="#95b3c6"/><g stroke="#6186a2" stroke-width="3"><line x1="175" y1="40" x2="231" y2="40"/><line x1="175" y1="51" x2="230" y2="51"/><line x1="175" y1="62" x2="216" y2="62"/><line x1="175" y1="73" x2="225" y2="73"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">A prompt guides a model to produce a new output such as a paragraph.</p>
-      <p>Generate text, images, sounds or other content from learned patterns.</p><small>Example: draft a paragraph from a prompt.</small></article>
-</div><div class="map-recap">
-<strong>One application can combine several ideas.</strong>
-<p>A camera identifies an object (<em>computer vision</em>) using a trained neural network (<em>model</em>). If it predicts a known category, the training task is <em>supervised classification</em>. These labels describe different aspects of the same system.</p>
+<article class="model-tile" data-model-interactive data-method="generation" data-model-group="application"><span class="model-kind">GENERATIVE · CONTENT</span><h3>Generative AI</h3>
+      <div class="method-figure" data-method-stage="generation"><svg viewBox="0 0 250 116" role="img" aria-label="A short text prompt leads to generated paragraphs."><rect x="9" y="29" width="97" height="54" rx="4" fill="#f6f8fa" stroke="#acc0cf"/><text x="57" y="49" text-anchor="middle" fill="#405f75" font-size="13">Prompt</text><path d="M120 56h29m-7-6 7 6-7 6" stroke="#7394a9" stroke-width="2" fill="none"/><rect x="164" y="22" width="77" height="68" rx="4" fill="#eaf2f7" stroke="#95b3c6"/><g stroke="#6186a2" stroke-width="3"><line x1="175" y1="40" x2="231" y2="40"/><line x1="175" y1="51" x2="230" y2="51"/><line x1="175" y1="62" x2="216" y2="62"/><line x1="175" y1="73" x2="225" y2="73"/></g></svg></div><p class="method-hint">Select a prompt to switch between illustrative prepared responses.</p><p class="method-output" data-method-output aria-live="polite">Select an element of the diagram.</p>
+      <p>Generate text, images, sounds or other content from learned patterns.</p><small>Example: draft a paragraph from a prompt.</small></article></div>
+<p class="source-line"><strong>Further reading:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Foundations of AI</a>.</p>
+</section>
+<section id="three" class="chapter-section foundations-section camera-chapter">
+<h2>1.3. From camera pixels to a controlled action</h2>
+<p>One practical system can use multiple ideas together. A camera supplies an image, a neural-network classifier recognises a situation, and a programmed rule determines what the machine does next.</p>
+<div class="camera-demo" data-camera-system>
+  <div class="camera-pipeline">
+    <div class="camera-step">
+      <div class="camera-step-number">01 · INPUT</div>
+      <strong>Camera image</strong>
+      <div class="camera-pixels" data-camera-pixels role="group" aria-label="Editable seven by seven camera image"></div>
+      <small>Tap a pixel to turn it on or off.</small>
+    </div>
+    <div class="camera-pipeline-arrow" aria-hidden="true">→</div>
+    <div class="camera-step camera-brain">
+      <div class="camera-step-number">02 · MODEL</div>
+      <strong>Image classifier</strong>
+      <svg viewBox="0 0 210 160" data-camera-network role="img" aria-label="Simplified neural network with input, hidden and output nodes">
+        <g stroke="#adbdc9" stroke-width="2">
+        <path d="M28 35L105 32M28 35L105 79M28 35L105 126M28 82L105 32M28 82L105 79M28 82L105 126M28 129L105 32M28 129L105 79M28 129L105 126M105 32L183 60M105 79L183 60M105 126L183 60M105 32L183 110M105 79L183 110M105 126L183 110"/>
+        </g><g data-network-nodes fill="#eff4f7" stroke="#81a5bb" stroke-width="2">
+          <circle cx="28" cy="35" r="12"/><circle cx="28" cy="82" r="12"/><circle cx="28" cy="129" r="12"/>
+          <circle cx="105" cy="32" r="12"/><circle cx="105" cy="79" r="12"/><circle cx="105" cy="126" r="12"/>
+          <circle cx="183" cy="60" r="12"/><circle cx="183" cy="110" r="12"/>
+        </g>
+      </svg>
+      <small>Illustrative classifier signal</small>
+    </div>
+    <div class="camera-pipeline-arrow" aria-hidden="true">→</div>
+    <div class="camera-step camera-control">
+      <div class="camera-step-number">03 · OUTPUT</div>
+      <strong>Class + programmed action</strong>
+      <div class="camera-diagnosis">Predicted: <strong data-camera-class>Clear</strong></div>
+      <div class="camera-rule"><code>IF obstacle THEN STOP ELSE GO</code></div>
+      <div class="camera-action" data-camera-action>GO</div>
+      <small>Rule-based control uses the classifier's result.</small>
+    </div>
+  </div>
+  <div class="camera-quick-actions">
+    <button type="button" data-camera-preset="obstacle">Show obstacle</button>
+    <button type="button" data-camera-preset="empty">Clear image</button>
+    <button type="button" data-camera-preset="reset">Reset picture</button>
+  </div>
+  <p class="camera-disclaimer"><strong>Teaching simulation:</strong> the interactive classifier uses a transparent pixel-count threshold rather than a trained neural network. In a real system, the classification comes from learned model parameters. The final STOP/GO controller is a programmed rule in either case.</p>
 </div>
+<div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Image classification:</strong> assigning a category to an image. It is a computer-vision task that can be implemented by a neural network trained with labels.</p></div>
+<div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Camera</strong> is the data source, <strong>computer vision</strong> is the task, <strong>supervised learning</strong> describes how a labelled classifier can be trained, a <strong>neural network</strong> may be its model, and <strong>rule-based control</strong> decides how the machine responds. These are complementary descriptions of one system.</p></div>
 </section>
 
 <section id="four" class="chapter-section foundations-section probability-chapter">
@@ -196,30 +206,36 @@ ENDIF</code></pre>
     <span class="equation-caption">A fair ten-sided die: Ω = {1, 2, 3, …, 10} and |Ω| = 10.</span>
   </div>
   <p>Choose a face on a fair ten-sided die. The experiment has ten equally likely results. Then reveal that the die showed an <strong>even</strong> number: what changes?</p>
-  <div class="d10-lab" data-d10-probability>
-    <div class="d10-matrix-block">
-      <div class="d10-topline"><strong>Ten possible faces</strong><small>Selected outcomes remain visible</small></div>
-      <div class="d10-matrix" data-d10-cells aria-label="Ten-sided die outcomes 1 to 10"></div>
-      <div class="d10-legend"><span class="d10-legend-available"></span> Still possible <span class="d10-legend-picked"></span> Your guessed face</div>
-    </div>
-    <div class="d10-controls">
-      <label for="d10-guess">Guess one face</label>
-      <select id="d10-guess" data-d10-guess><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
-      <label class="d10-condition"><input type="checkbox" data-d10-even> Reveal: the result is even</label>
-      <div class="d10-prob-output" aria-live="polite"><small data-d10-formula-label>Unconditional probability</small><strong data-d10-fraction>1 / 10 = 10%</strong><p data-d10-reason>One favourable outcome among ten equally likely outcomes.</p></div>
+  <div class="d10-lab d10-quick" data-d10-probability>
+  <div class="d10-instruction"><strong>Pick a number from 1 to 10.</strong><span>Tap a face to make your guess.</span></div>
+  <div class="d10-quick-faces" data-d10-cells role="group" aria-label="Choose one face on a ten-sided die"></div>
+  <div class="d10-reveal">
+    <span>What do we know about the result?</span>
+    <div class="d10-modes" role="group" aria-label="Amount of information known">
+      <button type="button" data-d10-mode="all" aria-pressed="true">Nothing yet</button>
+      <button type="button" data-d10-mode="even" aria-pressed="false">It is even</button>
     </div>
   </div>
+  <div class="d10-quick-result" aria-live="polite">
+    <div><small data-d10-formula-label>Before the clue</small><strong data-d10-fraction>1 in 10 · 10%</strong></div>
+    <p data-d10-reason>Your number is one of ten equally likely results.</p>
+  </div>
+</div>
 
   <h3>1.4.2. Conditional probability</h3>
-  <p>Before receiving new information, we count within all of <math><mi>Ω</mi></math>. After learning that event <strong>B</strong> occurred, outcomes outside <strong>B</strong> are ruled out. We keep only the possibilities in <strong>B</strong> and count favourable results within them.</p>
-  <div class="math-derivation">
-    <div><span>Original sample space</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>Ω</mi><mo>|</mo></mrow></mfrac></math></div>
-    <span class="derivation-arrow" aria-hidden="true">→</span>
-    <div><span>Reduced sample space: B</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>B</mi><mo>|</mo></mrow></mfrac></math></div>
+  <p>Imagine guessing <strong>4</strong> on a ten-sided die. Without any clue, there are <strong>10 possible faces</strong>. If somebody tells you that the result was <strong>even</strong>, only <strong>five</strong> possibilities remain: 2, 4, 6, 8 and 10.</p>
+  <p>The die has not changed. <strong>Only the set of outcomes we consider has become smaller.</strong> Your chance of having guessed 4 therefore changes from <strong>1/10</strong> to <strong>1/5</strong>.</p>
+  <div class="condition-example">
+    <div><span>Event A — you guessed 4</span><strong>A = {4}</strong></div>
+    <div><span>Event B — an even result</span><strong>B = {2, 4, 6, 8, 10}</strong></div>
+    <div><span>Favourable outcomes within B</span><strong>A ∩ B = {4}</strong></div>
   </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Conditional probability:</strong> the probability of A when B is known to have happened. In general, for <math><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></math>:</p></div>
-  <div class="academic-math compact" aria-label="P of A given B equals P of A intersection B divided by P of B"><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></math></div>
-  <p><strong>Example:</strong> guess the number 4. Before learning anything, P(4) = 1/10. After learning that the result was even, exactly five faces remain possible (2, 4, 6, 8, 10). Now P(4 | even) = 1/5. Guessing an odd face would instead have probability 0.</p>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Conditional probability:</strong> the probability of an event A given that another event B has happened. For P(B) &gt; 0:</p></div>
+  <div class="academic-math compact" aria-label="Conditional probability of A given B equals the probability of A intersection B divided by the probability of B">
+    <math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></math>
+    <span class="equation-caption">For equally likely outcomes, this is |A ∩ B| / |B| = 1/5.</span>
+  </div>
+  <p>Try guessing an <strong>odd</strong> number and then revealing that the result is even. The probability becomes <strong>zero</strong>, because the guess is impossible under that clue.</p>
 
   <h3>1.4.3. Deriving Bayes' theorem</h3>
   <p>Write the definition of conditional probability in <strong>both directions</strong>. Both expressions contain the same joint probability <math><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></math>.</p>
@@ -282,7 +298,7 @@ ENDIF</code></pre>
       <div class="rigged-chart-box">
         <h4>Probability of each face</h4>
         <svg data-die-chart viewBox="0 0 550 300" role="img" aria-label="Bar chart showing ten discrete probabilities for the selected die"></svg>
-        <div class="pmf-face-values" data-die-values aria-label="Probability of every face"></div>
+        <div class="pmf-face-inspector" data-die-values aria-live="polite">Tap a bar to inspect the probability of that face.</div>
         <p class="rigged-pmf" data-die-pmf aria-live="polite">P(X = x) = 0.10 for every face.</p>
       </div>
       <div class="rigged-stats">

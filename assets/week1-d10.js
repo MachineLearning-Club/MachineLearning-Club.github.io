@@ -6,59 +6,43 @@
   const probability=q("[data-d10-probability]");
   if(probability){
     const grid=q("[data-d10-cells]",probability);
-    const select=q("[data-d10-guess]",probability);
-    const checkbox=q("[data-d10-even]",probability);
     const fraction=q("[data-d10-fraction]",probability);
     const reason=q("[data-d10-reason]",probability);
-    const formula=q("[data-d10-formula-label]",probability);
-    const cells=[];
-    for(let face=1;face<=10;face++){
-      const el=document.createElement("span");
-      el.textContent=String(face);
-      el.className="d10-face";
-      grid.appendChild(el);
-      cells.push(el);
+    const label=q("[data-d10-formula-label]",probability);
+    const modes=[...probability.querySelectorAll("[data-d10-mode]")];
+    const faces=[];
+    let chosen=4,mode="all";
+    for(let n=1;n<=10;n++){
+      const button=document.createElement("button");
+      button.type="button";
+      button.className="d10-number";
+      button.textContent=String(n);
+      button.setAttribute("aria-label","Guess face "+n);
+      button.addEventListener("click",()=>{chosen=n;render()});
+      grid.appendChild(button);
+      faces.push(button);
     }
     function render(){
-      const chosen=Number(select.value);
-      const onlyEven=checkbox.checked;
-      let possible=0,favourable=0;
-      cells.forEach((el,i)=>{
-        const face=i+1;
-        const eligible=!onlyEven||face%2===0;
-        const match=eligible&&face===chosen;
-        possible+=eligible?1:0;
-        favourable+=match?1:0;
-        el.classList.toggle("eligible",eligible);
-        el.classList.toggle("excluded",!eligible);
-        el.classList.toggle("hit",match);
-        el.setAttribute("aria-label","Face "+face+(eligible?" still possible":" excluded")+(match?", guessed face":""));
+      const even=mode==="even";
+      const eligible=even?5:10;
+      const won=!even||chosen%2===0;
+      const favorable=won?1:0;
+      faces.forEach((button,index)=>{
+        const number=index+1;
+        button.classList.toggle("excluded",even&&number%2===1);
+        button.classList.toggle("chosen",chosen===number);
+        button.setAttribute("aria-pressed",String(chosen===number));
       });
-      formula.textContent=onlyEven?"Conditional probability (given even)":"Unconditional probability";
-      fraction.textContent=favourable+" / "+possible+" = "+(100*favourable/possible).toFixed(0)+"%";
-      reason.textContent=onlyEven
-        ?chosen%2===0
-          ?"The even-number condition leaves five outcomes. Your guessed face is one of them."
-          :"The condition rules out odd faces, so your guess is impossible."
-        :"One guessed face out of ten equally likely possibilities.";
-      grid.setAttribute("aria-label",possible+" possible faces, "+favourable+" favourable");
+      modes.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.d10Mode===mode)));
+      label.textContent=even?"After the clue: the result is even":"Before the clue";
+      fraction.textContent=favorable+" in "+eligible+" · "+(100*favorable/eligible).toFixed(0)+"%";
+      reason.textContent=even
+       ?won?"Face "+chosen+" is one of the five remaining even outcomes.":"Face "+chosen+" is odd, so it is ruled out by the clue."
+       :"Face "+chosen+" is one of ten equally likely outcomes.";
     }
-    select.addEventListener("change",render);
-    checkbox.addEventListener("change",render);
+    modes.forEach(button=>button.addEventListener("click",()=>{mode=button.dataset.d10Mode;render()}));
     render();
   }
-  document.querySelectorAll("[data-model-card]").forEach(card=>{
-    const button=q(".model-diagram-toggle",card);
-    const note=q("[data-model-note]",card);
-    if(!button||!note)return;
-    button.addEventListener("click",()=>{
-      const active=!card.classList.contains("is-demonstrating");
-      card.classList.toggle("is-demonstrating",active);
-      button.setAttribute("aria-pressed",String(active));
-      q(".model-diagram-action",button).textContent=active?"Reset diagram":"Explore diagram";
-      note.hidden=!active;
-    });
-  });
   const demo=q("[data-die-demo]");
   if(!demo)return;
   const distributions={
@@ -103,10 +87,27 @@
         make("text",{x:43,y:y+5,"text-anchor":"end","font-size":12,fill:"#6f8596"},tick.toFixed(1))
       );
     }
+    const inspector=q("[data-die-values]",demo);
+    function inspect(i){
+      const probability=data.probs[i],face=i+1;
+      inspector.textContent="Face "+face+": probability "+(100*probability).toFixed(0)+"% · contribution to E[X]: "+face+" × "+probability.toFixed(2)+" = "+(face*probability).toFixed(2)+".";
+      chart.querySelectorAll("[data-face]").forEach(bar=>{
+        const chosen=bar.dataset.face===String(face);
+        bar.setAttribute("stroke",chosen?"#275b7a":"none");
+        bar.setAttribute("stroke-width",chosen?"3":"0");
+      });
+    }
     data.probs.forEach((p,i)=>{
       const x=52+i*47.0;
       const h=p*scale;
       const bar=make("rect",{x,y:base-h,width:31,height:h,fill:selected==="fair"?"#79a4bc":selected==="loaded"?(i===0?"#bf8659":"#89acc0"):(i===0||i===9?"#bd895b":"#89acc0"),rx:2});
+      bar.dataset.face=String(i+1);
+      bar.setAttribute("role","button");
+      bar.setAttribute("tabindex","0");
+      bar.setAttribute("aria-label","Inspect face "+(i+1)+" probability");
+      bar.style.cursor="pointer";
+      bar.addEventListener("click",()=>inspect(i));
+      bar.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();inspect(i)}});
       bar.appendChild(make("title",{},"Face "+(i+1)+": "+(p*100).toFixed(0)+"%"));
       chart.appendChild(bar,
         make("text",{x:x+15.5,y:base-h-8,"text-anchor":"middle","font-size":16,fill:"#365d76"},(100*p).toFixed(0)+"%"),
@@ -117,14 +118,7 @@
       make("text",{x:285,y:295,"text-anchor":"middle","font-size":16,fill:"#59788a"},"Die face"),
       make("text",{x:14,y:145,transform:"rotate(-90 14 145)","text-anchor":"middle","font-size":16,fill:"#59788a"},"Probability")
     );
-    const values=q("[data-die-values]",demo);
-    values.replaceChildren();
-    data.probs.forEach((prob,i)=>{
-      const cell=document.createElement("div"),label=document.createElement("span"),val=document.createElement("strong");
-      label.textContent="Face "+(i+1);
-      val.textContent=(100*prob).toFixed(0)+"%";
-      cell.append(label,val);values.appendChild(cell);
-    });
+    inspect(0);
     const avg=expected(data.probs);
     if(Math.abs(data.probs.reduce((a,b)=>a+b,0)-1)>1e-8)throw new Error("Invalid PMF");
     meanEl.textContent=avg.toFixed(2);
