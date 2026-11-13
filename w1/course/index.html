@@ -1,11 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/week1-foundations.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson week1-foundations"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
-<p class="deck">From fixed rules to models learned from data.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Rules, Learning, and Simple Models — Course"><title>Rules, Learning, and Simple Models — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><link rel="stylesheet" href="/assets/week1-d10.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/week1-d10.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson week1-foundations"><p class="eyebrow">Week 01 · Course</p><h1>Rules, Learning, and Simple Models</h1>
+<p class="deck">Rules, learning families, probability and mathematical expectations.</p>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
 <ul><li><a href="#one">1.1. Programs, rules and artificial intelligence</a></li>
 <li><a href="#two">1.2. Learning from data</a></li>
-<li><a href="#three">1.3. Probability</a></li>
-<li><a href="#four">1.4. Information theory</a></li>
-<li><a href="#five">1.5. Machine learning methods</a></li></ul></details></nav></aside><article class="course-article">
+<li><a href="#three">1.3. The machine learning methods map</a></li>
+<li><a href="#four">1.4. Probability and Bayes’ theorem</a></li>
+<li><a href="#five">1.5. Distributions and expected value</a></li></ul></details></nav></aside><article class="course-article">
 <section id="one" class="chapter-section">
   <h2>1.1. Programs, rules and artificial intelligence</h2>
   <p>A computer takes <strong>input data</strong>, processes them using an algorithm, and produces <strong>output data</strong>. This basic structure remains useful even when the algorithm uses machine learning.</p>
@@ -64,13 +64,6 @@ ENDIF</code></pre>
       <li><strong>Learning from data</strong> means building part of the decision-making process from examples. The resulting model still takes inputs and produces outputs.</li>
     </ul>
   </div>
-  <div class="exercise"><span class="label-word exercise-label">Exercise 1</span>
-    <div class="exercise-parts"><span>1)</span><ol type="a">
-      <li>Identify the input, processing rule and output of the lightbulb program.</li>
-      <li>Describe one way a smart lamp could <em>learn</em> a person's preferred brightness instead of following a fixed button rule.</li>
-    </ol></div>
-    <details><summary>Show a possible solution</summary><p><strong>a)</strong> Input: whether the button is pressed. Processing: an IF condition. Output: ON or OFF. <strong>b)</strong> Collect examples of conditions and a person's chosen brightness, then train a model that predicts a preferred brightness for new conditions.</p></details>
-  </div>
   <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Foundations of AI</a>.</p>
 </section>
 
@@ -92,186 +85,241 @@ ENDIF</code></pre>
 
   <div class="observation"><span class="label-word observation-label">Observation</span><p>A feature might be an image pixel, temperature or word. A supervised label could be “cat”, “dog” or a known number.</p></div>
 
-  <h3>1.2.2. Three families of machine learning</h3>
-  <p class="visual-intro">The central difference is the <strong>information available during learning</strong>. Compare the three diagrams before reading the definitions.</p>
-  <div class="learning-families" aria-label="Visual comparison of supervised, unsupervised and reinforcement learning">
-    <div class="family">
-      <h4>Supervised learning</h4>
-      <svg viewBox="0 0 300 220" role="img" aria-label="Blue and orange labelled examples form two groups, with a new question-mark input and predicted class A">
-        <circle cx="90" cy="112" r="72" fill="#e9f1f8" stroke="#739bb8" stroke-width="1.5"/>
-        <circle cx="208" cy="112" r="72" fill="#fcf0e4" stroke="#c49765" stroke-width="1.5"/>
-        <g fill="#477fb3"><circle cx="72" cy="87" r="7"/><circle cx="104" cy="108" r="7"/><circle cx="72" cy="139" r="7"/><circle cx="101" cy="151" r="7"/></g>
-        <g fill="#bb824c"><circle cx="192" cy="83" r="7"/><circle cx="230" cy="111" r="7"/><circle cx="187" cy="138" r="7"/><circle cx="229" cy="152" r="7"/></g>
-        <circle cx="113" cy="68" r="13" fill="#fff" stroke="#477fb3" stroke-width="2"/><text x="113" y="73" text-anchor="middle" fill="#2e668e" font-weight="bold" font-size="16">?</text>
-        <text x="90" y="199" font-size="16" fill="#2e668e" text-anchor="middle">Label A</text><text x="210" y="199" font-size="16" fill="#a06834" text-anchor="middle">Label B</text>
-      </svg>
-      <p class="family-caption">Examples already have answers. Predict the label of a new example.</p>
+  <h3>1.2.2. Three families of learning</h3>
+<p>All three methods learn from data, but <strong>what is provided during learning</strong> is different.</p>
+<div class="learning-paths">
+  <article class="learning-path" id="family-supervised">
+    <div class="learning-path-heading"><span class="path-number">01</span><h4>Supervised learning</h4><span class="path-tag">Known answers</span></div>
+    <div class="learning-story">
+      <div class="story-stage"><strong>Training examples</strong><table aria-label="Examples with features and their known labels"><thead><tr><th>Weight</th><th>Shape</th><th>Label</th></tr></thead><tbody><tr><td>140 g</td><td>Round</td><td>Apple</td></tr><tr><td>120 g</td><td>Long</td><td>Banana</td></tr></tbody></table></div>
+      <span class="story-arrow" aria-hidden="true">→</span>
+      <div class="story-stage story-model"><strong>Learn a predictor</strong><div class="story-machine">f<sub>θ</sub>(x)</div><small>Learn from features and answers</small></div>
+      <span class="story-arrow" aria-hidden="true">→</span>
+      <div class="story-stage story-output"><strong>New input</strong><p>135 g · Round</p><strong class="story-result">Predicted: Apple</strong></div>
     </div>
-    <div class="family">
-      <h4>Unsupervised learning</h4>
-      <svg viewBox="0 0 300 220" role="img" aria-label="Unlabelled examples organised by the algorithm into two spatial clusters">
-        <ellipse cx="93" cy="112" rx="69" ry="73" fill="#f3f6f8" stroke="#8da0ad" stroke-dasharray="5 5" stroke-width="2"/>
-        <ellipse cx="208" cy="112" rx="69" ry="73" fill="#f3f6f8" stroke="#8da0ad" stroke-dasharray="5 5" stroke-width="2"/>
-        <g fill="#718796"><circle cx="62" cy="80" r="8"/><circle cx="105" cy="99" r="8"/><circle cx="70" cy="142" r="8"/><circle cx="114" cy="149" r="8"/><circle cx="187" cy="84" r="8"/><circle cx="224" cy="100" r="8"/><circle cx="183" cy="147" r="8"/><circle cx="235" cy="154" r="8"/></g>
-        <text x="93" y="199" font-size="16" fill="#506576" text-anchor="middle">Group 1</text><text x="208" y="199" font-size="16" fill="#506576" text-anchor="middle">Group 2</text>
-      </svg>
-      <p class="family-caption">No target labels are given. Discover similarities and groups.</p>
+    <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Supervised learning:</strong> learn a mapping from inputs to known targets. Formally, given <code>D = {(xᵢ, yᵢ)}</code>, construct <code>f(x) → ŷ</code>.</p></div>
+    <small>In the methods map: <a href="#map-supervised">classification, regression, perceptrons, neural networks and random forests</a>.</small>
+  </article>
+  <article class="learning-path" id="family-unsupervised">
+    <div class="learning-path-heading"><span class="path-number">02</span><h4>Unsupervised learning</h4><span class="path-tag">No target labels</span></div>
+    <div class="learning-story">
+      <div class="story-stage"><strong>Input data</strong><div class="mini-dots" aria-label="Eight grey observations without target labels"><span style="left:13%;top:26%"></span><span style="left:30%;top:42%"></span><span style="left:18%;top:73%"></span><span style="left:41%;top:60%"></span><span style="left:62%;top:25%"></span><span style="left:81%;top:33%"></span><span style="left:65%;top:67%"></span><span style="left:87%;top:75%"></span></div></div>
+      <span class="story-arrow" aria-hidden="true">→</span>
+      <div class="story-stage story-model"><strong>Find structure</strong><div class="story-machine">g(D)</div><small>Compare similarities</small></div>
+      <span class="story-arrow" aria-hidden="true">→</span>
+      <div class="story-stage story-output"><strong>Discovered groups</strong><div class="mini-dots grouped" aria-label="The observations are separated into two visually distinct groups"><span style="left:13%;top:26%"></span><span style="left:30%;top:42%"></span><span style="left:18%;top:73%"></span><span style="left:41%;top:60%"></span><span style="left:62%;top:25%"></span><span style="left:81%;top:33%"></span><span style="left:65%;top:67%"></span><span style="left:87%;top:75%"></span></div></div>
     </div>
-    <div class="family">
-      <h4>Reinforcement learning</h4>
-      <svg viewBox="0 0 300 220" role="img" aria-label="An agent selects actions in an environment and receives a reward feedback signal">
-        <rect x="22" y="72" width="94" height="64" rx="6" fill="#e9f1f8" stroke="#739bb8"/><text x="69" y="109" font-size="16" text-anchor="middle" fill="#284e6d">Agent</text>
-        <rect x="182" y="72" width="96" height="64" rx="6" fill="#f5f1ea" stroke="#b6a18a"/><text x="230" y="102" font-size="15" text-anchor="middle" fill="#554638">World</text><text x="230" y="120" font-size="12" text-anchor="middle" fill="#554638">environment</text>
-        <path d="M117 89H180m-9-5 9 5-9 5" fill="none" stroke="#426b8a" stroke-width="2"/><text x="149" y="78" text-anchor="middle" fill="#426b8a" font-size="12">Action</text>
-        <path d="M181 123H140V161H69V137m-5 10 5-10 5 10" fill="none" stroke="#568267" stroke-width="2"/><text x="158" y="181" text-anchor="middle" fill="#437450" font-size="13">Reward + feedback</text>
-      </svg>
-      <p class="family-caption">An agent acts, receives feedback, and improves its choices.</p>
+    <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Unsupervised learning:</strong> discover structure from inputs without supplied target labels. Formally, given <code>D = {xᵢ}</code>, find patterns or groups in <code>D</code>.</p></div>
+    <small>In the methods map: <a href="#map-unsupervised">K-means and hierarchical clustering</a>. Grouping is one unsupervised task, not the only one.</small>
+  </article>
+  <article class="learning-path" id="family-reinforcement">
+    <div class="learning-path-heading"><span class="path-number">03</span><h4>Reinforcement learning</h4><span class="path-tag">Rewards from actions</span></div>
+    <div class="rl-story" aria-label="An agent chooses right or down in a small grid, eventually reaching a reward">
+      <div class="rl-board"><span class="rl-player">Agent</span><span></span><span class="rl-goal">+10</span><span></span><span class="rl-wall">−1</span><span></span><span></span><span></span><span></span></div>
+      <div class="rl-arrows"><div><strong>Agent chooses an action</strong><span>Move right / down</span></div><span>→</span><div><strong>Environment responds</strong><span>New position + reward</span></div></div>
     </div>
-  </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Supervised learning:</strong> learning from examples whose correct targets are provided.</p></div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Unsupervised learning:</strong> finding structure in data without supplied target labels.</p></div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Reinforcement learning:</strong> learning which actions to take from rewards and interaction with an environment.</p></div>
-
-  <div class="notes"><span class="label-word notes-label">Notes</span>
-    <ul><li><strong>Classification</strong> is supervised learning with a category as output.</li>
-    <li><strong>Clustering</strong> is an unsupervised task that groups similar examples.</li>
-    <li><strong>Playing to maximise a score</strong> can be formulated as a reinforcement learning task, but it can also be solved without learning, by searching a game tree.</li></ul>
-  </div>
-  <div class="exercise"><span class="label-word exercise-label">Exercise 2</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>A dataset contains fruit measurements and the correct fruit name for each row. Which family of learning is suitable, and what would the model output?</li>
-    <li>The same measurements have <em>no</em> fruit names. You want to group similar fruits. Which family is suitable, and why?</li>
-    <li>A game agent receives points after its actions. Which family uses this feedback to improve decisions?</li>
-  </ol></div>
-    <details><summary>Show a possible solution</summary><p><strong>a)</strong> Supervised learning, predicting fruit labels. <strong>b)</strong> Unsupervised learning, because the algorithm receives no target categories. <strong>c)</strong> Reinforcement learning, because actions are evaluated through rewards.</p></details>
-  </div>
-  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro — Machine Learning</a>.</p>
+    <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Reinforcement learning:</strong> learn a strategy from actions and rewards. Formally, an agent learns a <strong>policy</strong> <code>π(state) → action</code> to maximise expected cumulative reward.</p></div>
+    <small>In the methods map: <a href="#map-reinforcement">agents, environments and reward feedback</a>.</small>
+  </article>
+</div>
+<div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Classification</strong> predicts categories, <strong>regression</strong> predicts numbers, <strong>clustering</strong> discovers groups, and <strong>reinforcement learning</strong> improves choices using feedback. They describe different goals and learning setups.</p></div>
+<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro — Machine Learning</a>.</p>
 </section>
 
-<section id="three" class="chapter-section foundations-section">
-  <h2>1.3. Probability — reasoning under uncertainty</h2>
-  <p>Before choosing a learning method, we need a way to describe <strong>what might happen</strong> and <strong>how likely each outcome is</strong>.</p>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Probability:</strong> a number between 0 and 1 describing how likely an event is.</p></div>
-  <div class="concept-formula"><span>For equally likely outcomes</span><strong>P(event) = favourable outcomes ÷ all possible outcomes</strong></div>
-  <h3>1.3.1. Events and sample spaces</h3>
-  <p>Roll two fair six-sided dice. There are <strong>6 × 6 = 36</strong> equally likely ordered results. The sum is 11 only in <strong>(5, 6)</strong> and <strong>(6, 5)</strong>.</p>
-  <div class="dice-lab" data-dice-demo>
-    <div class="dice-plot">
-      <strong>36 possible outcomes</strong>
-      <div class="dice-matrix" data-dice-grid role="img" aria-label="A six-by-six grid of ordered dice outcomes, highlighting the outcomes that sum to 11"></div>
-      <div class="dice-key"><span class="dice-key-target"></span> Sum = 11 <span class="dice-key-possible"></span> Possible after condition</div>
+<section id="three" class="chapter-section foundations-section methods-chapter">
+<h2>1.3. The machine learning methods map</h2>
+<p>Some terms name a <strong>learning setup</strong>; others name a <strong>task</strong>, a <strong>model</strong> or an <strong>application area</strong>. Use the three families above as a map for the methods below. Select any diagram to follow one example of how it operates.</p>
+<h3 id="map-supervised">1.3.1. Supervised — learn from known targets</h3>
+<p><strong>Input:</strong> examples paired with answers <code>(x, y)</code>. <strong>Goal:</strong> predict <code>ŷ</code> for a new input. <strong>Classification</strong> outputs categories; <strong>regression</strong> outputs numbers.</p>
+<div class="model-gallery">
+<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">SUPERVISED · NUMBER</span><h3>Linear regression</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Linear regression diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A straight line follows points and predicts a numerical value."><path d="M17 10V95H233" fill="none" stroke="#a3b5c2" stroke-width="2"/><path d="M29 85L221 18" stroke="#4a83ae" stroke-width="3"/><g fill="#c58d59"><circle cx="40" cy="77" r="5"/><circle cx="65" cy="75" r="5"/><circle cx="95" cy="56" r="5"/><circle cx="132" cy="58" r="5"/><circle cx="180" cy="36" r="5"/><circle cx="214" cy="23" r="5"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">New input follows the learned line to a numerical prediction.</p>
+      <p>Fit a line to predict a numeric output from input measurements.</p><small>Example: predict a house's price.</small></article>
+<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">MODEL · ONE NEURON</span><h3>Perceptron</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Perceptron diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Three weighted inputs feed one threshold unit which produces a binary output."><g stroke="#8da6b7" stroke-width="2"><path d="M47 22L148 58M47 58L148 58M47 94L148 58M177 58H232"/></g><g fill="#eaf1f6" stroke="#81a4bb" stroke-width="2"><circle cx="37" cy="22" r="14"/><circle cx="37" cy="58" r="14"/><circle cx="37" cy="94" r="14"/><circle cx="161" cy="58" r="22"/></g><g fill="#31556e" text-anchor="middle" font-size="12"><text x="37" y="26">x₁</text><text x="37" y="62">x₂</text><text x="37" y="98">x₃</text><text x="161" y="62">Σ</text><text x="229" y="52">0/1</text></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Input values are weighted and combined, then a threshold produces a decision.</p>
+      <p>Combine weighted inputs and apply a threshold to make a binary decision.</p><small>Example: classify a simple pattern.</small></article>
+<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">MODEL · MULTIPLE LAYERS</span><h3>Neural network</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Neural network diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Input, hidden and output layers connected by many weighted edges."><g stroke="#a9bdc9" stroke-width="1.5"><path d="M35 26L118 20M35 26L118 58M35 26L118 96M35 86L118 20M35 86L118 58M35 86L118 96M118 20L213 40M118 20L213 78M118 58L213 40M118 58L213 78M118 96L213 40M118 96L213 78"/></g><g fill="#e6f0f7" stroke="#5684a5" stroke-width="2"><circle cx="35" cy="26" r="11"/><circle cx="35" cy="86" r="11"/><circle cx="118" cy="20" r="11"/><circle cx="118" cy="58" r="11"/><circle cx="118" cy="96" r="11"/><circle cx="213" cy="40" r="11"/><circle cx="213" cy="78" r="11"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Information flows through several layers of connected computational units.</p>
+      <p>Connect many simple computational units into layers that learn complex relationships.</p><small>Example: recognise objects in images.</small></article>
+<article class="model-tile" data-model-card data-model-group="supervised"><span class="model-kind">SUPERVISED · ENSEMBLE</span><h3>Random forest</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Random forest diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Three small decision trees combine their votes into one final output."><g fill="none" stroke="#6c99b4" stroke-width="2"><path d="M42 22V44H20V65M42 44H64V65M122 22V44H100V65M122 44H144V65M202 22V44H180V65M202 44H224V65"/></g><g fill="#e6f0f7" stroke="#7a9eb4"><circle cx="42" cy="22" r="11"/><circle cx="122" cy="22" r="11"/><circle cx="202" cy="22" r="11"/><circle cx="20" cy="65" r="7"/><circle cx="64" cy="65" r="7"/><circle cx="100" cy="65" r="7"/><circle cx="144" cy="65" r="7"/><circle cx="180" cy="65" r="7"/><circle cx="224" cy="65" r="7"/></g><text x="122" y="98" font-size="13" fill="#436b86" text-anchor="middle">Tree votes → final prediction</text></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Several decision trees each vote; their combined votes determine the answer.</p>
+      <p>Combine predictions from many decision trees.</p><small>Example: estimate whether a transaction is unusual.</small></article>
+</div><h3 id="map-unsupervised">1.3.2. Unsupervised — discover structure</h3>
+<p><strong>Input:</strong> examples <code>x</code> without known answers. <strong>Goal:</strong> discover useful patterns such as flat groups or nested groups. No target label tells the algorithm how to classify each input.</p>
+<div class="model-gallery">
+<article class="model-tile" data-model-card data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · CENTRES</span><h3>K-means clustering</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the K-means clustering diagram"><svg viewBox="0 0 250 116" role="img" aria-label="Two groups of points cluster around two centres."><g fill="#6f9bb9"><circle cx="40" cy="37" r="6"/><circle cx="58" cy="54" r="6"/><circle cx="35" cy="73" r="6"/><circle cx="71" cy="73" r="6"/></g><g fill="#c19873"><circle cx="174" cy="31" r="6"/><circle cx="195" cy="51" r="6"/><circle cx="168" cy="77" r="6"/><circle cx="209" cy="77" r="6"/></g><circle cx="51" cy="59" r="19" fill="none" stroke="#4e86a8" stroke-width="2"/><circle cx="187" cy="59" r="19" fill="none" stroke="#be8c63" stroke-width="2"/></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Points are assigned to their nearest centre; the centre then moves to their average.</p>
+      <p>Group nearby points around representative centres.</p><small>Example: segment products with similar characteristics.</small></article>
+<article class="model-tile" data-model-card data-model-group="unsupervised"><span class="model-kind">UNSUPERVISED · GROUPS</span><h3>Hierarchical clustering</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Hierarchical clustering diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A dendrogram shows four individual examples merging into pairs then into a larger group."><g fill="none" stroke="#779cb5" stroke-width="2.5"><path d="M30 95V69H92V95M61 69V37H181V69M150 95V69H212V95M181 69V37"/></g><g fill="#436b86" font-size="13" text-anchor="middle"><text x="30" y="109">A</text><text x="92" y="109">B</text><text x="150" y="109">C</text><text x="212" y="109">D</text></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">Pairs of similar items merge into larger groups in a tree-like hierarchy.</p>
+      <p>Build a hierarchy of groups according to similarity.</p><small>Example: organise similar documents.</small></article>
+</div><h3 id="map-reinforcement">1.3.3. Reinforcement — improve actions using rewards</h3>
+<p><strong>Input:</strong> observations of the environment and reward feedback. <strong>Goal:</strong> learn a policy <code>π(state) → action</code> that earns high long-term reward, rather than predicting a provided target label.</p>
+<div class="model-gallery">
+<article class="model-tile" data-model-card data-model-group="reinforcement"><span class="model-kind">AGENT · REWARD</span><h3>Reinforcement learning</h3><button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the reinforcement learning feedback loop">
+<svg viewBox="0 0 250 116" role="img" aria-label="An agent chooses actions in an environment and receives rewards in a feedback loop">
+<rect x="9" y="29" width="90" height="55" rx="4" fill="#e5f0f6" stroke="#8eafc3"/>
+<text x="54" y="61" text-anchor="middle" fill="#2e5c79" font-size="14">Agent</text>
+<rect x="159" y="29" width="82" height="55" rx="4" fill="#f3f5eb" stroke="#abb68f"/>
+<text x="200" y="61" text-anchor="middle" fill="#526344" font-size="12">World</text>
+<path d="M100 42H158m-7-5 7 5-7 5" fill="none" stroke="#6689a2" stroke-width="2"/>
+<path d="M159 72H125V101H54V85m-5 8 5-8 5 8" fill="none" stroke="#6b937d" stroke-width="2"/>
+<text x="128" y="31" text-anchor="middle" fill="#5b7890" font-size="10">Action</text>
+<text x="123" y="113" text-anchor="middle" fill="#5c8067" font-size="10">Reward + feedback</text>
+</svg><span class="model-diagram-action">Explore diagram</span></button>
+<p class="model-diagram-note" data-model-note hidden aria-live="polite">The agent chooses an action, receives a reward and next state, then improves its policy.</p>
+<p>Learn which actions bring the greatest future reward by interacting with an environment.</p><small>Example: a simulated robot learning to reach a goal.</small></article>
+</div><h3 id="map-applications">1.3.4. Application areas — what AI is used for</h3>
+<p><strong>Computer vision</strong> describes working with images, while <strong>generative AI</strong> describes creating new content. These are not alternatives to supervised, unsupervised or reinforcement learning: an application can combine several approaches.</p>
+<div class="model-gallery">
+<article class="model-tile" data-model-card data-model-group="application"><span class="model-kind">TASK · IMAGES</span><h3>Computer vision</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Computer vision diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A small pixel grid leads to a picture classification."><g data-visual="pixels"><rect x="8" y="10" width="106" height="96" fill="#f4f8fa" stroke="#a7b9c5"/><g fill="#89b2cd"><rect x="22" y="24" width="20" height="20"/><rect x="44" y="24" width="20" height="20"/><rect x="66" y="24" width="20" height="20"/><rect x="22" y="46" width="20" height="20"/><rect x="66" y="46" width="20" height="20"/><rect x="22" y="68" width="20" height="20"/><rect x="44" y="68" width="20" height="20"/><rect x="66" y="68" width="20" height="20"/></g></g><path d="M122 58h34m-8-6 8 6-8 6" stroke="#728d9f" fill="none" stroke-width="2"/><rect x="166" y="35" width="75" height="44" rx="5" fill="#edf4f8" stroke="#abc3d1"/><text x="203" y="61" text-anchor="middle" fill="#355974" font-size="14">Object</text></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">An image enters a recogniser, which identifies a category or location.</p>
+      <p>Use images as input to identify, locate or describe objects.</p><small>Example: recognise a handwritten digit.</small></article>
+<article class="model-tile" data-model-card data-model-group="application"><span class="model-kind">GENERATIVE · CONTENT</span><h3>Generative AI</h3>
+      <button type="button" class="model-diagram-toggle" aria-pressed="false" aria-label="Highlight the Generative AI diagram"><svg viewBox="0 0 250 116" role="img" aria-label="A short text prompt leads to generated paragraphs."><rect x="9" y="29" width="97" height="54" rx="4" fill="#f6f8fa" stroke="#acc0cf"/><text x="57" y="49" text-anchor="middle" fill="#405f75" font-size="13">Prompt</text><path d="M120 56h29m-7-6 7 6-7 6" stroke="#7394a9" stroke-width="2" fill="none"/><rect x="164" y="22" width="77" height="68" rx="4" fill="#eaf2f7" stroke="#95b3c6"/><g stroke="#6186a2" stroke-width="3"><line x1="175" y1="40" x2="231" y2="40"/><line x1="175" y1="51" x2="230" y2="51"/><line x1="175" y1="62" x2="216" y2="62"/><line x1="175" y1="73" x2="225" y2="73"/></g></svg><span class="model-diagram-action">Explore diagram</span></button><p class="model-diagram-note" data-model-note hidden aria-live="polite">A prompt guides a model to produce a new output such as a paragraph.</p>
+      <p>Generate text, images, sounds or other content from learned patterns.</p><small>Example: draft a paragraph from a prompt.</small></article>
+</div><div class="map-recap">
+<strong>One application can combine several ideas.</strong>
+<p>A camera identifies an object (<em>computer vision</em>) using a trained neural network (<em>model</em>). If it predicts a known category, the training task is <em>supervised classification</em>. These labels describe different aspects of the same system.</p>
+</div>
+</section>
+
+<section id="four" class="chapter-section foundations-section probability-chapter">
+  <h2>1.4. Probability — from counting to evidence</h2>
+  <p>A probability describes how likely an event is. We start by counting equally likely outcomes, then learn what changes after receiving more information.</p>
+  <h3>1.4.1. Events and the sample space</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Sample space</strong> <math><mi>Ω</mi></math>: the set of all possible outcomes of an experiment.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Event</strong> <math><mi>A</mi><mo>⊆</mo><mi>Ω</mi></math>: the collection of outcomes satisfying a particular condition.</p></div>
+  <div class="academic-math" aria-label="For equally likely outcomes, P of A is the number of favourable outcomes divided by the number of all possible outcomes">
+    <span class="equation-caption">For equally likely outcomes</span>
+    <math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>#</mo><mtext> favourable outcomes</mtext></mrow><mrow><mo>#</mo><mtext> all possible outcomes</mtext></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>Ω</mi><mo>|</mo></mrow></mfrac></math>
+    <span class="equation-caption">A fair ten-sided die: Ω = {1, 2, 3, …, 10} and |Ω| = 10.</span>
+  </div>
+  <p>Choose a face on a fair ten-sided die. The experiment has ten equally likely results. Then reveal that the die showed an <strong>even</strong> number: what changes?</p>
+  <div class="d10-lab" data-d10-probability>
+    <div class="d10-matrix-block">
+      <div class="d10-topline"><strong>Ten possible faces</strong><small>Selected outcomes remain visible</small></div>
+      <div class="d10-matrix" data-d10-cells aria-label="Ten-sided die outcomes 1 to 10"></div>
+      <div class="d10-legend"><span class="d10-legend-available"></span> Still possible <span class="d10-legend-picked"></span> Your guessed face</div>
     </div>
-    <div class="dice-controls">
-      <label for="dice-condition">What do we know?</label>
-      <select id="dice-condition" data-dice-condition>
-        <option value="all">Nothing else: all 36 outcomes are possible</option>
-        <option value="prime">The sum is prime: 15 outcomes remain</option>
-      </select>
-      <div class="dice-math" aria-live="polite">
-        <small>PROBABILITY THAT THE SUM IS 11</small>
-        <strong data-dice-result>2 / 36 = 1 / 18</strong>
-        <p data-dice-explanation>Two favourable outcomes out of 36 possible outcomes.</p>
+    <div class="d10-controls">
+      <label for="d10-guess">Guess one face</label>
+      <select id="d10-guess" data-d10-guess><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+      <label class="d10-condition"><input type="checkbox" data-d10-even> Reveal: the result is even</label>
+      <div class="d10-prob-output" aria-live="polite"><small data-d10-formula-label>Unconditional probability</small><strong data-d10-fraction>1 / 10 = 10%</strong><p data-d10-reason>One favourable outcome among ten equally likely outcomes.</p></div>
+    </div>
+  </div>
+
+  <h3>1.4.2. Conditional probability</h3>
+  <p>Before receiving new information, we count within all of <math><mi>Ω</mi></math>. After learning that event <strong>B</strong> occurred, outcomes outside <strong>B</strong> are ruled out. We keep only the possibilities in <strong>B</strong> and count favourable results within them.</p>
+  <div class="math-derivation">
+    <div><span>Original sample space</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>Ω</mi><mo>|</mo></mrow></mfrac></math></div>
+    <span class="derivation-arrow" aria-hidden="true">→</span>
+    <div><span>Reduced sample space: B</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mo>|</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>B</mi><mo>|</mo></mrow></mfrac></math></div>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Conditional probability:</strong> the probability of A when B is known to have happened. In general, for <math><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></math>:</p></div>
+  <div class="academic-math compact" aria-label="P of A given B equals P of A intersection B divided by P of B"><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></math></div>
+  <p><strong>Example:</strong> guess the number 4. Before learning anything, P(4) = 1/10. After learning that the result was even, exactly five faces remain possible (2, 4, 6, 8, 10). Now P(4 | even) = 1/5. Guessing an odd face would instead have probability 0.</p>
+
+  <h3>1.4.3. Deriving Bayes' theorem</h3>
+  <p>Write the definition of conditional probability in <strong>both directions</strong>. Both expressions contain the same joint probability <math><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></math>.</p>
+  <div class="bayes-proof">
+    <div class="bayes-proof-line"><span>Condition on B</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></math></div>
+    <div class="bayes-proof-line"><span>Condition on A</span><math display="block"><mi>P</mi><mo>(</mo><mi>B</mi><mo>|</mo><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow></mfrac></math></div>
+    <div class="bayes-proof-line"><span>Rearrange and equate</span><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>|</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo></math></div>
+    <div class="bayes-theorem"><strong>Bayes' theorem</strong><math display="block"><mi>P</mi><mo>(</mo><mi>A</mi><mo>|</mo><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>|</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></math></div>
+  </div>
+  <p>Bayes' theorem lets us <strong>update a belief</strong> about A after observing B. The denominator P(B) includes all ways the evidence B could occur.</p>
+
+  <h3>1.4.4. Did the student know or guess?</h3>
+  <p>Suppose 60% of students know the answer to a true/false question; the other 40% guess. Students who know are correct, while students who guess are correct half the time. A student answered correctly. What is the probability they <em>knew</em> it?</p>
+  <div class="bayes-people">
+    <div class="bayes-population"><strong>Imagine 100 students</strong>
+      <div class="bayes-people-bars" aria-label="60 students knew the answer; 20 guessed correctly; 20 guessed incorrectly"><span class="know" style="width:60%">60</span><span class="lucky" style="width:20%">20</span><span class="wrong" style="width:20%">20</span></div>
+      <div class="bayes-people-key"><span class="know"></span> Knew and correct <span class="lucky"></span> Guessed and correct <span class="wrong"></span> Guessed incorrectly</div>
+    </div>
+    <div class="bayes-population"><strong>Among correct answers</strong><p><strong>80</strong> correct answers = 60 known + 20 lucky guesses.</p><p><strong>60 / 80 = 75%</strong> were from students who knew.</p></div>
+  </div>
+  <div class="academic-math compact"><math display="block"><mi>P</mi><mo>(</mo><mtext>Knew</mtext><mo>|</mo><mtext>Correct</mtext><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn><mo>×</mo><mn>0.6</mn></mrow><mrow><mn>1</mn><mo>×</mo><mn>0.6</mn><mo>+</mo><mn>0.5</mn><mo>×</mo><mn>0.4</mn></mrow></mfrac><mo>=</mo><mn>0.75</mn></math></div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 3</span><div class="exercise-parts"><span>1)</span><ol type="a"><li>A different class has a 40% chance of <em>knowing</em> a true/false answer. If a correct answer is observed, what is P(knew | correct)?</li><li>Why can a correct answer never prove by itself that the student knew it?</li></ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> (1 × 0.4)/(1 × 0.4 + 0.5 × 0.6) = 0.4/0.7 = <strong>4/7 ≈ 57.14%</strong>. <strong>b)</strong> Correct answers can also come from guesses.</p></details></div>
+  <p class="source-line"><strong>Source:</strong> provided <em>Random Events and Bayes' Formula</em>, solved exercise 7 (printed p. 28), adapted to a concrete class of 100 students.</p>
+</section>
+
+<section id="five" class="chapter-section foundations-section distributions-chapter">
+  <h2>1.5. Probability distributions and expected value</h2>
+  <p>A single probability describes one event. A <strong>probability distribution</strong> describes every possible value of a random variable and how likely each value is.</p>
+  <h3>1.5.1. From outcomes to distributions</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Random variable:</strong> a numerical value determined by a random experiment. For a ten-sided die, let <math><mi>X</mi><mo>∈</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo><mo>,</mo><mn>10</mn><mo>}</mo></math> be the rolled face.</p></div>
+  <div class="distribution-types">
+    <div><strong>Discrete — probability mass function (PMF)</strong>
+      <div class="distribution-icons" aria-label="A discrete distribution has individual bars for separate values"><i style="height:37%"></i><i style="height:64%"></i><i style="height:91%"></i><i style="height:54%"></i><i style="height:29%"></i></div>
+      <p>Each possible value gets a probability <math><mi>p</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo></math>. Bar heights sum to <strong>1</strong>.</p>
+      <small>Examples: dice faces, number of successes, number of visitors.</small>
+    </div>
+    <div><strong>Continuous — probability density function (PDF)</strong>
+      <svg viewBox="0 0 280 116" class="density-illustration" role="img" aria-label="A smooth probability density curve with a shaded interval beneath it">
+        <path d="M21 97H265" fill="none" stroke="#9aaeba" stroke-width="1.5"/>
+        <path d="M21 96C54 95 70 80 91 54S139 9 155 20S198 77 218 88S249 95 265 97" fill="none" stroke="#467e9f" stroke-width="2.5"/>
+        <path d="M114 27C134 10 147 15 155 20S198 77 218 88V97H114Z" fill="#d7e7f0" opacity=".8"/>
+        <path d="M114 97V27M218 97V88" stroke="#7ca0b9" stroke-dasharray="4 3"/>
+      </svg>
+      <p>Probabilities correspond to <strong>areas under the curve</strong> over intervals, not to the height at one point.</p>
+      <small>Examples: continuous lengths or temperatures.</small>
+    </div>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Expected value:</strong> the probability-weighted average of a random variable. For a discrete random variable:</p></div>
+  <div class="academic-math compact" aria-label="E of X equals the sum of each value x times its probability"><math display="block"><mi mathvariant="normal">E</mi><mo>[</mo><mi>X</mi><mo>]</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>x</mi><mo>∈</mo><mtext>values of X</mtext></mrow><mrow></mrow></munderover><mi>x</mi><mo>·</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo></math></div>
+
+  <h3>1.5.2. Is this ten-sided die rigged?</h3>
+  <p>Adapted from the Mickey rigged-die investigation (Exercise 26, printed p. 59). We use <strong>ten faces</strong>, three possible distributions, and a bar chart showing the <strong>PMF</strong> — not a PDF, because a die has discrete outcomes.</p>
+  <div class="rigged-die-demo" data-die-demo>
+    <div class="rigged-toolbar" role="group" aria-label="Choose a die distribution">
+      <button type="button" data-die-type="fair" aria-pressed="true">Fair die</button>
+      <button type="button" data-die-type="loaded" aria-pressed="false">Loaded die</button>
+      <button type="button" data-die-type="tricky" aria-pressed="false">Tricky die</button>
+    </div>
+    <div class="rigged-layout">
+      <div class="rigged-chart-box">
+        <h4>Probability of each face</h4>
+        <svg data-die-chart viewBox="0 0 550 300" role="img" aria-label="Bar chart showing ten discrete probabilities for the selected die"></svg>
+        <div class="pmf-face-values" data-die-values aria-label="Probability of every face"></div>
+        <p class="rigged-pmf" data-die-pmf aria-live="polite">P(X = x) = 0.10 for every face.</p>
+      </div>
+      <div class="rigged-stats">
+        <div><small>EXPECTED VALUE PER ROLL</small><strong data-die-mean>5.50</strong></div>
+        <div><small>EXPECTED SUM OF 30 ROLLS</small><strong data-die-sum>165</strong></div>
+        <div class="rigged-reason"><p data-die-note>Every face is equally likely: (1 + 2 + … + 10) / 10 = 5.5.</p></div>
       </div>
     </div>
-  </div>
-  <h3>1.3.2. Conditional probability</h3>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Conditional probability:</strong> the chance of A after learning that B happened, written P(A | B).</p></div>
-  <p>Knowing that the dice sum is <em>prime</em> leaves sums 2, 3, 5, 7 and 11. Exactly <strong>15 of the 36</strong> ordered outcomes qualify; two of those give 11.</p>
-  <div class="formula-row"><div><span>Before new information</span><strong>P(S = 11) = 2/36 = 1/18</strong></div><div><span>Given that S is prime</span><strong>P(S = 11 | S prime) = 2/15</strong></div></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>New evidence can change a probability because it changes the set of possible outcomes. This idea is central to probabilistic reasoning.</p></div>
-  <h3>1.3.3. From evidence to beliefs: Bayes' rule</h3>
-  <p>Suppose a student either <strong>knows</strong> the answer to a true/false question or <strong>guesses</strong>. Someone who guesses has a 50% chance of being correct. After a correct answer, how confident should we be that the student knew it?</p>
-  <div class="bayes-example">
-    <div><span>Prior probability</span><strong>P(knows) = 0.60</strong><small>Assume 60% chance they knew it before hearing the answer.</small></div>
-    <div class="flow-arrow" aria-hidden="true">→</div>
-    <div><span>Observed evidence</span><strong>Answer = correct</strong><small>Knowing gives 100% correctness; guessing gives 50%.</small></div>
-    <div class="flow-arrow" aria-hidden="true">→</div>
-    <div><span>Updated probability</span><strong>P(knows | correct) = 0.75</strong><small>(1 × 0.60) / (1 × 0.60 + 0.5 × 0.40)</small></div>
-  </div>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Bayes' rule:</strong> a way to update probabilities when new evidence becomes available.</p></div>
-  <div class="notes"><span class="label-word notes-label">Notes</span><ul><li>Probabilities refer to <em>events</em>; model outputs can also be probabilities, scores or labels.</li><li>Do not confuse “more likely” with “certain”.</li></ul></div>
-  <div class="exercise"><span class="label-word exercise-label">Exercise 3</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>Why are (5, 6) and (6, 5) two different outcomes?</li>
-    <li>Use the grid to explain why P(S = 11 | S prime) is greater than P(S = 11).</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> The dice are distinguishable, so the ordered outcomes differ. <strong>b)</strong> Conditioning on a prime sum removes 21 impossible outcomes, leaving the same two favourable outcomes among only 15 possibilities.</p></details></div>
-  <p class="source-line"><strong>Reading:</strong> provided <em>Random Events and Bayes' Formula</em>, worked exercises 2 and 7 (printed pp. 24 and 28).</p>
-</section>
-
-<section id="four" class="chapter-section foundations-section">
-  <h2>1.4. Information theory — measuring uncertainty</h2>
-  <p>Probability tells us how likely something is. <strong>Information theory</strong> lets us measure how surprising an outcome is, and how much uncertainty disappears when we learn something new.</p>
-  <h3>1.4.1. Surprise</h3>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Information content (surprise):</strong> I(x) = −log₂ P(x), measured in bits. A rarer event carries more information when observed.</p></div>
-  <div class="surprise-compare">
-    <div><span>Two dice sum to 2</span><strong>1 / 36</strong><div class="surprise-bar"><span style="width:100%"></span></div><small>−log₂(1/36) ≈ <b>5.170 bits</b></small></div>
-    <div><span>Two dice sum to 7</span><strong>6 / 36</strong><div class="surprise-bar"><span style="width:50%"></span></div><small>−log₂(6/36) ≈ <b>2.585 bits</b></small></div>
-  </div>
-  <h3>1.4.2. Entropy</h3>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Entropy:</strong> the average amount of surprise in a probability distribution.</p></div>
-  <p>For two possible outcomes with probabilities p and 1 − p, entropy is <strong>H(p) = −p log₂ p − (1 − p) log₂(1 − p)</strong>, with 0 log₂ 0 defined as 0.</p>
-  <div class="entropy-experiment" data-entropy-demo>
-    <div class="entropy-controls">
-      <label for="entropy-p">Probability of outcome A <strong data-entropy-p>50%</strong></label>
-      <input type="range" id="entropy-p" min="0" max="100" step="5" value="50" data-entropy-slider>
-      <div class="entropy-distribution" aria-hidden="true"><span data-entropy-a></span><span data-entropy-b></span></div>
-      <div class="entropy-key"><span>A</span><span>B</span></div>
-      <div class="entropy-number"><small>ENTROPY</small><strong data-entropy-value>1.000 bits</strong></div>
-      <p data-entropy-note role="status" aria-live="polite">A fair two-outcome process is maximally uncertain.</p>
+    <div class="rigged-simulation">
+      <div><strong>Try 30 independent rolls</strong><p>Run a simulated sample. Does the observed average match the theoretical average exactly?</p></div>
+      <button type="button" data-roll-30>Roll 30 times</button>
     </div>
-    <svg viewBox="0 0 420 260" data-entropy-chart role="img" aria-label="Entropy curve. Binary entropy is zero at probabilities 0 and 1 and highest at probability 0.5."><path d="M45 24V215H399" stroke="#a4b5c0" stroke-width="1.6" fill="none"/><g stroke="#e0e8ed"><line x1="45" y1="119" x2="399" y2="119"/><line x1="45" y1="24" x2="399" y2="24"/></g><g fill="#5a7587" font-size="12"><text x="37" y="219" text-anchor="end">0</text><text x="37" y="123" text-anchor="end">0.5</text><text x="37" y="28" text-anchor="end">1 bit</text><text x="45" y="234" text-anchor="middle">0</text><text x="222" y="234" text-anchor="middle">0.5</text><text x="399" y="234" text-anchor="middle">1</text><text x="222" y="254" text-anchor="middle">P(A)</text></g><path data-entropy-curve fill="none" stroke="#427fa7" stroke-width="3"/><circle data-entropy-point cx="222" cy="24" r="7" fill="#2a678b" stroke="#fff" stroke-width="2"/></svg>
+    <div class="rigged-observed" data-die-observed hidden aria-live="polite">
+      <div><small>OBSERVED SUM</small><strong data-observed-sum>—</strong></div>
+      <div><small>OBSERVED MEAN</small><strong data-observed-mean>—</strong></div>
+      <div><small>FACE 1 COUNT</small><strong data-observed-ones>—</strong></div>
+      <p>These are results of one random sample. Even a fair die can produce an unusual-looking sample.</p>
+    </div>
   </div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>If an outcome is certain, entropy is <strong>0 bits</strong>. If two outcomes are equally likely, entropy is <strong>1 bit</strong>.</p></div>
-  <h3>1.4.3. Information gain</h3>
-  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Information gain:</strong> the decrease in entropy after receiving new information.</p></div>
-  <div class="formula-row"><div><span>Uncertainty before</span><strong>H(sum of two dice) ≈ 3.274 bits</strong></div><div><span>After seeing first die = 4</span><strong>H(sum | first die = 4) = log₂6 ≈ 2.585 bits</strong></div></div>
-  <div class="info-gain-result"><span>Information gained from observing the first die</span><strong>3.274 − 2.585 ≈ 0.690 bits</strong></div>
-  <p>Information gain also helps select informative features in machine learning. That application is explored in later lessons.</p>
+  <div class="die-three-cases">
+    <div><span>Fair</span><strong>P(1–10) = 0.10 each</strong><small>E[X] = 5.50</small></div>
+    <div><span>Loaded toward 1</span><strong>P(1) = 0.55; others = 0.05</strong><small>E[X] = 3.25</small></div>
+    <div><span>Tricky: loaded at both ends</span><strong>P(1) = P(10) = 0.30; others = 0.05</strong><small>E[X] = 5.50</small></div>
+  </div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>The <strong>fair</strong> and <strong>tricky</strong> dice have the same expected value, <strong>5.50</strong>, but clearly different probabilities. Matching an average does <strong>not</strong> establish that a die is fair. The frequency of individual faces and the amount of variation also matter.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span><ul><li>For 30 independent rolls, the expected <em>sum</em> is <math><mn>30</mn><mo>×</mo><mi>E</mi><mo>[</mo><mi>X</mi><mo>]</mo></math>.</li><li>A mathematical expectation describes what we anticipate on average across repeated experiments; it is not a promise about one sample.</li><li>The three ten-sided distributions are <strong>teaching adaptations</strong>. The source problem describes a <strong>six-sided</strong> die with different probabilities.</li></ul></div>
   <div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>Which gives more surprise: an event with probability 1/2 or one with probability 1/8?</li>
-    <li>Use the slider to find the probability that maximises binary entropy.</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Probability 1/8: I = 3 bits, versus 1 bit for probability 1/2. <strong>b)</strong> p = 0.5 produces H = 1 bit.</p></details></div>
-  <p class="source-line"><strong>Reading:</strong> provided <em>Elements of Information Theory</em>, exercises 55 and 56 (printed pp. 129–133). Logarithms are base 2.</p>
+    <li>Calculate E[X] for the loaded die: P(1) = 0.55, and each other face has probability 0.05.</li>
+    <li>For the tricky die, show that its probabilities sum to 1 and that its expected value equals 5.5.</li>
+    <li>Explain why observing an average near 5.5 after 30 rolls would not prove the die is fair.</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> E[X] = 1 × 0.55 + 0.05 × (2 + … + 10) = 0.55 + 2.70 = <strong>3.25</strong>. <strong>b)</strong> 0.30 + 8 × 0.05 + 0.30 = 1; E[X] = 1 × 0.30 + 10 × 0.30 + 0.05 × (2 + … + 9) = 3.30 + 2.20 = <strong>5.50</strong>. <strong>c)</strong> Both fair and non-uniform distributions can produce the same expected average; sample averages also vary by chance.</p></details></div>
+  <p class="source-line"><strong>Source:</strong> provided <em>Random Variables</em>, Exercise 9 (expected value), and <em>Common Probability Distributions</em>, Exercise 26 (rigged-die scenario, printed p. 59). This page adapts the original six-sided example to ten faces and introduces a new tricky distribution.</p>
 </section>
-
-<section id="five" class="chapter-section foundations-section">
-  <h2>1.5. A map of machine learning methods</h2>
-  <p>Now that we have a language for <strong>data, probability, and information</strong>, we can recognise common AI approaches. This is a visual overview, not an implementation lesson.</p>
-  <div class="model-gallery">
-    <article class="model-tile"><span class="model-kind">TASK · IMAGES</span><h3>Computer vision</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="A small pixel grid leads to a picture classification."><g data-visual="pixels"><rect x="8" y="10" width="106" height="96" fill="#f4f8fa" stroke="#a7b9c5"/><g fill="#89b2cd"><rect x="22" y="24" width="20" height="20"/><rect x="44" y="24" width="20" height="20"/><rect x="66" y="24" width="20" height="20"/><rect x="22" y="46" width="20" height="20"/><rect x="66" y="46" width="20" height="20"/><rect x="22" y="68" width="20" height="20"/><rect x="44" y="68" width="20" height="20"/><rect x="66" y="68" width="20" height="20"/></g></g><path d="M122 58h34m-8-6 8 6-8 6" stroke="#728d9f" fill="none" stroke-width="2"/><rect x="166" y="35" width="75" height="44" rx="5" fill="#edf4f8" stroke="#abc3d1"/><text x="203" y="61" text-anchor="middle" fill="#355974" font-size="14">Object</text></svg>
-      <p>Use images as input to identify, locate or describe objects.</p><small>Example: recognise a handwritten digit.</small></article>
-    <article class="model-tile"><span class="model-kind">SUPERVISED · NUMBER</span><h3>Linear regression</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="A straight line follows points and predicts a numerical value."><path d="M17 10V95H233" fill="none" stroke="#a3b5c2" stroke-width="2"/><path d="M29 85L221 18" stroke="#4a83ae" stroke-width="3"/><g fill="#c58d59"><circle cx="40" cy="77" r="5"/><circle cx="65" cy="75" r="5"/><circle cx="95" cy="56" r="5"/><circle cx="132" cy="58" r="5"/><circle cx="180" cy="36" r="5"/><circle cx="214" cy="23" r="5"/></g></svg>
-      <p>Fit a line to predict a numeric output from input measurements.</p><small>Example: predict a house's price.</small></article>
-    <article class="model-tile"><span class="model-kind">MODEL · ONE NEURON</span><h3>Perceptron</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="Three weighted inputs feed one threshold unit which produces a binary output."><g stroke="#8da6b7" stroke-width="2"><path d="M47 22L148 58M47 58L148 58M47 94L148 58M177 58H232"/></g><g fill="#eaf1f6" stroke="#81a4bb" stroke-width="2"><circle cx="37" cy="22" r="14"/><circle cx="37" cy="58" r="14"/><circle cx="37" cy="94" r="14"/><circle cx="161" cy="58" r="22"/></g><g fill="#31556e" text-anchor="middle" font-size="12"><text x="37" y="26">x₁</text><text x="37" y="62">x₂</text><text x="37" y="98">x₃</text><text x="161" y="62">Σ</text><text x="229" y="52">0/1</text></g></svg>
-      <p>Combine weighted inputs and apply a threshold to make a binary decision.</p><small>Example: classify a simple pattern.</small></article>
-    <article class="model-tile"><span class="model-kind">MODEL · MULTIPLE LAYERS</span><h3>Neural network</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="Input, hidden and output layers connected by many weighted edges."><g stroke="#a9bdc9" stroke-width="1.5"><path d="M35 26L118 20M35 26L118 58M35 26L118 96M35 86L118 20M35 86L118 58M35 86L118 96M118 20L213 40M118 20L213 78M118 58L213 40M118 58L213 78M118 96L213 40M118 96L213 78"/></g><g fill="#e6f0f7" stroke="#5684a5" stroke-width="2"><circle cx="35" cy="26" r="11"/><circle cx="35" cy="86" r="11"/><circle cx="118" cy="20" r="11"/><circle cx="118" cy="58" r="11"/><circle cx="118" cy="96" r="11"/><circle cx="213" cy="40" r="11"/><circle cx="213" cy="78" r="11"/></g></svg>
-      <p>Connect many simple computational units into layers that learn complex relationships.</p><small>Example: recognise objects in images.</small></article>
-    <article class="model-tile"><span class="model-kind">SUPERVISED · ENSEMBLE</span><h3>Random forest</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="Three small decision trees combine their votes into one final output."><g fill="none" stroke="#6c99b4" stroke-width="2"><path d="M42 22V44H20V65M42 44H64V65M122 22V44H100V65M122 44H144V65M202 22V44H180V65M202 44H224V65"/></g><g fill="#e6f0f7" stroke="#7a9eb4"><circle cx="42" cy="22" r="11"/><circle cx="122" cy="22" r="11"/><circle cx="202" cy="22" r="11"/><circle cx="20" cy="65" r="7"/><circle cx="64" cy="65" r="7"/><circle cx="100" cy="65" r="7"/><circle cx="144" cy="65" r="7"/><circle cx="180" cy="65" r="7"/><circle cx="224" cy="65" r="7"/></g><text x="122" y="98" font-size="13" fill="#436b86" text-anchor="middle">Tree votes → final prediction</text></svg>
-      <p>Combine predictions from many decision trees.</p><small>Example: estimate whether a transaction is unusual.</small></article>
-    <article class="model-tile"><span class="model-kind">UNSUPERVISED · GROUPS</span><h3>Hierarchical clustering</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="A dendrogram shows four individual examples merging into pairs then into a larger group."><g fill="none" stroke="#779cb5" stroke-width="2.5"><path d="M30 95V69H92V95M61 69V37H181V69M150 95V69H212V95M181 69V37"/></g><g fill="#436b86" font-size="13" text-anchor="middle"><text x="30" y="109">A</text><text x="92" y="109">B</text><text x="150" y="109">C</text><text x="212" y="109">D</text></g></svg>
-      <p>Build a hierarchy of groups according to similarity.</p><small>Example: organise similar documents.</small></article>
-    <article class="model-tile"><span class="model-kind">UNSUPERVISED · CENTRES</span><h3>K-means clustering</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="Two groups of points cluster around two centres."><g fill="#6f9bb9"><circle cx="40" cy="37" r="6"/><circle cx="58" cy="54" r="6"/><circle cx="35" cy="73" r="6"/><circle cx="71" cy="73" r="6"/></g><g fill="#c19873"><circle cx="174" cy="31" r="6"/><circle cx="195" cy="51" r="6"/><circle cx="168" cy="77" r="6"/><circle cx="209" cy="77" r="6"/></g><circle cx="51" cy="59" r="19" fill="none" stroke="#4e86a8" stroke-width="2"/><circle cx="187" cy="59" r="19" fill="none" stroke="#be8c63" stroke-width="2"/></svg>
-      <p>Group nearby points around representative centres.</p><small>Example: segment products with similar characteristics.</small></article>
-    <article class="model-tile"><span class="model-kind">GENERATIVE · CONTENT</span><h3>Generative AI</h3>
-      <svg viewBox="0 0 250 116" role="img" aria-label="A short text prompt leads to generated paragraphs."><rect x="9" y="29" width="97" height="54" rx="4" fill="#f6f8fa" stroke="#acc0cf"/><text x="57" y="49" text-anchor="middle" fill="#405f75" font-size="13">Prompt</text><path d="M120 56h29m-7-6 7 6-7 6" stroke="#7394a9" stroke-width="2" fill="none"/><rect x="164" y="22" width="77" height="68" rx="4" fill="#eaf2f7" stroke="#95b3c6"/><g stroke="#6186a2" stroke-width="3"><line x1="175" y1="40" x2="231" y2="40"/><line x1="175" y1="51" x2="230" y2="51"/><line x1="175" y1="62" x2="216" y2="62"/><line x1="175" y1="73" x2="225" y2="73"/></g></svg>
-      <p>Generate text, images, sounds or other content from learned patterns.</p><small>Example: draft a paragraph from a prompt.</small></article>
-  </div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Tasks</strong> (like computer vision) and <strong>model families</strong> (like neural networks) are different kinds of labels. A computer-vision system can use a neural network; a supervised problem can use a random forest or neural network.</p></div>
-  <div class="exercise"><span class="label-word exercise-label">Exercise 5</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>Which output is a <strong>number</strong>: fruit name, future temperature, or group membership? Which technique above naturally fits this prediction?</li>
-    <li>Which method produces a <strong>hierarchy</strong> rather than a single flat grouping?</li>
-    <li>Can computer vision and neural networks describe the same application? Explain.</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Future temperature; regression is appropriate. <strong>b)</strong> Hierarchical clustering. <strong>c)</strong> Yes: vision describes the image-related task, while a neural network can be the model used for that task.</p></details></div>
-  <p class="source-line"><strong>Reading:</strong> this overview introduces terminology beyond the supplied handouts; later ML Club weeks develop selected methods in detail.</p>
-</section>
-<section class="page-bibliography"><h2>Bibliography</h2>
-<ul><li>Provided <em>Random Events and Bayes' Formula</em> — solved exercises 2 and 7 (pp. 24 and 28). <span class="reference-note">Probability and conditional inference</span></li>
-<li>Provided <em>Elements of Information Theory</em> — solved exercises 55 and 56 (pp. 129–133). <span class="reference-note">Entropy, surprise and information gain</span></li>
-<li><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Teachable Machine</a> <span class="reference-note">Introductory model training demonstration</span></li>
-<li><a href="https://experiments.withgoogle.com/collection/ai" target="_blank" rel="noopener noreferrer">Google AI Experiments</a> <span class="reference-note">Visual demonstrations of AI applications</span></li></ul></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul>
+<li>Provided <em>Random Events and Bayes' Formula</em>, Exercise 7 (printed p. 28): the student guessing example.</li>
+<li>Provided <em>Random Variables</em>, Exercise 9: expected value for discrete random variables.</li>
+<li>Provided <em>Common Probability Distributions</em>, Exercise 26 (printed p. 59): Mickey's rigged-die investigation. Our ten-sided cases are explicitly adapted.</li>
+<li><a href="/w2/course/">Week 2 — Supervised Learning: ID3</a>, for entropy and information gain.</li>
+</ul></section>
 </article></div><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

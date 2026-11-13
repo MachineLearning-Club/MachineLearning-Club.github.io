@@ -1,6 +1,6 @@
 {
   "week": 1,
-  "title": "Rules, Learning, Probability and AI Methods",
+  "title": "Learning Families, Conditional Probability and Distributions",
   "durationSeconds": 300,
   "maximumPoints": 10,
   "status": "Draft practice quiz; teacher review required",
@@ -94,18 +94,18 @@
     {
       "id": "w1q6",
       "type": "single",
-      "prompt": "Two fair dice have a prime sum. What is the probability that their sum is 11?",
+      "prompt": "You guess one face of a fair ten-sided die. You are told that the rolled face is even. If your guessed face was 4, what is the probability you guessed correctly?",
       "options": [
-        "2/36",
-        "2/15",
-        "2/6",
-        "11/36"
+        "1/10",
+        "1/5",
+        "1/2",
+        "1/4"
       ],
       "correct": [
         1
       ],
-      "explanation": "There are 15 ordered outcomes with prime sums and 2 of them total 11. Conditional probability is 2/15.",
-      "topic": "Probability",
+      "explanation": "The even-number condition leaves five possible results: 2, 4, 6, 8, 10. Only one matches face 4, so P(4 | even) = 1/5.",
+      "topic": "Conditional probability",
       "points": 1
     },
     {
@@ -128,18 +128,18 @@
     {
       "id": "w1q8",
       "type": "single",
-      "prompt": "A fair coin has two equally likely outcomes. What is its entropy?",
+      "prompt": "What is the expected value of the face shown by a fair ten-sided die labelled 1 to 10?",
       "options": [
-        "0 bits",
-        "0.5 bits",
-        "1 bit",
-        "2 bits"
+        "5",
+        "5.5",
+        "6",
+        "10"
       ],
       "correct": [
-        2
+        1
       ],
-      "explanation": "Binary entropy is highest at equal probabilities: −0.5 log₂0.5 −0.5 log₂0.5 = 1 bit.",
-      "topic": "Information theory",
+      "explanation": "Each face has probability 0.1, so E[X] = (1 + 2 + ... + 10)/10 = 55/10 = 5.5.",
+      "topic": "Expected value",
       "points": 1
     },
     {

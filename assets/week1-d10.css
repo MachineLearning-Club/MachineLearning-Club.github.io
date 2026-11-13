@@ -1,0 +1,191 @@
+
+/* Week 01 — visual foundations, formal mathematics, and D10 experiments. */
+.week1-foundations .chapter-section>h2{font-size:1.52rem}
+.week1-foundations .learning-paths{display:grid;gap:21px;margin:20px 0 26px}
+.learning-path{border:1px solid #d5e2eb;padding:18px 19px;background:#fff}
+.learning-path-heading{display:flex;align-items:baseline;gap:13px;border-bottom:1px solid #e4ebf0;padding-bottom:11px;margin-bottom:17px}
+.learning-path-heading h4{margin:0!important;color:#294f6a;font:1.16rem Georgia,serif}
+.learning-path-heading .path-number{font: .79rem Georgia,serif;color:#688296}
+.learning-path-heading .path-tag{margin-left:auto;font-size:.76rem;color:#607e91}
+.learning-story{display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr) 18px minmax(0,1fr);align-items:stretch;gap:8px;margin-bottom:15px}
+.story-stage{min-width:0;border:1px solid #e0e9ee;background:#fbfcfd;padding:12px 10px;text-align:center}
+.story-stage>strong{display:block;color:#31546a;font-size:.81rem;margin-bottom:9px}
+.story-stage table{font: .73rem Georgia,serif;border-collapse:collapse;margin:0 auto}
+.story-stage th,.story-stage td{padding:6px 5px;border:1px solid #dce5eb;white-space:nowrap}
+.story-stage th{color:#406985;background:#eef4f8}
+.story-stage small{font-size:.72rem;color:#607b8d;line-height:1.4}
+.story-stage p{font-size:.82rem;margin:4px 0 10px}
+.story-stage .story-result{font-size:.82rem;color:#2a7251}
+.story-machine{width:72px;height:66px;border:2px solid #7c9cb5;background:#edf4f8;border-radius:12px;display:grid;place-items:center;margin:12px auto 9px;font:1.15rem Georgia,serif;color:#2c5976}
+.story-arrow{color:#8aa0af;font-size:1.35rem;align-self:center;text-align:center}
+.mini-dots{height:82px;width:100%;position:relative;min-width:100px;border:1px solid #e3eaf0;background:#fff}
+.mini-dots span{width:10px;height:10px;border-radius:50%;background:#8b9da9;position:absolute;transform:translate(-50%,-50%)}
+.mini-dots.grouped span:nth-child(-n+4){background:#4d83ac}
+.mini-dots.grouped span:nth-child(n+5){background:#c18c58}
+.learning-path .definition{margin:12px 0!important;border-top:1px solid #dde7ec!important}
+.learning-path>small{font-size:.8rem;color:#607c8f;display:block;line-height:1.6}
+.rl-story{display:grid;grid-template-columns:155px 1fr;gap:19px;align-items:center;margin-bottom:16px}
+.rl-board{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);height:153px;border:1px solid #d8e4eb;gap:3px;padding:4px;background:#f6f9fb}
+.rl-board>span{display:grid;place-items:center;border:1px solid #dbe4ea;background:#fff;font-size:.74rem;color:#3d617b}
+.rl-board .rl-player{background:#e4f0f8;border-color:#8cadc4;color:#265779;font-weight:700}
+.rl-board .rl-goal{background:#e6f3e9;border-color:#9ac6a4;color:#257042;font-weight:700}
+.rl-board .rl-wall{background:#f9e9e2;border-color:#d5aa96;color:#994e36;font-weight:700}
+.rl-arrows{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rl-arrows>div{flex:1;min-width:0;border:1px solid #dce6ec;padding:12px 9px}
+.rl-arrows strong,.rl-arrows span{display:block;color:#345f78;font-size:.81rem;line-height:1.45}
+.rl-arrows>div span{color:#617989;font-size:.77rem;margin-top:6px}
+.rl-arrows>span{font-size:1.3rem}
+.methods-chapter>h3{margin-top:32px}
+.methods-chapter .model-gallery{margin:16px 0 21px}
+.model-diagram-toggle{display:block!important;width:100%;padding:0!important;margin:8px 0!important;border:0!important;border-radius:0!important;background:transparent!important;color:inherit;cursor:pointer}
+.model-diagram-toggle:focus-visible{outline:2px solid #366f94!important;outline-offset:4px}
+.model-diagram-toggle svg{max-height:143px;transition:filter .18s ease,transform .18s ease}
+.model-diagram-toggle:hover svg,.model-tile.is-demonstrating svg{filter:saturate(1.25) contrast(1.03)}
+.model-tile.is-demonstrating{border-color:#90b6cb;background:#fafdff}
+.model-tile.is-demonstrating svg{transform:scale(1.025)}
+.model-diagram-action{display:block;text-align:center;font-size:.74rem;color:#567a90;padding-top:3px}
+.model-tile .model-diagram-note{margin:7px 0 12px;font-size:.82rem;color:#2e5e79;line-height:1.5;padding:10px;background:#eef6fa}
+.model-tile [hidden]{display:none!important}
+.model-tile p{font-size:.9rem}
+.map-recap{border-top:1px solid #d2e1e9;border-bottom:1px solid #d2e1e9;padding:15px 0;margin:24px 0}
+.map-recap strong{color:#315a75}
+.map-recap p{font-size:.88rem;margin:8px 0 0}
+.academic-math{margin:18px 0 27px;padding:18px 14px;background:#f9fbfc;border:1px solid #d4e2ea;text-align:center;overflow-x:auto}
+.academic-math.compact{padding:14px 12px;margin:17px 0 21px}
+.academic-math math{font-size:1.38rem;margin:7px auto;max-width:100%;color:#264d68}
+.equation-caption{display:block;color:#607b8d;font-size:.81rem;line-height:1.6}
+.math-derivation{display:grid;grid-template-columns:minmax(0,1fr) 23px minmax(0,1fr);gap:9px;margin:18px 0 24px;align-items:center}
+.math-derivation>div{border:1px solid #d7e5ed;padding:15px 11px;min-width:0;overflow-x:auto;text-align:center}
+.math-derivation>div>span{font-size:.79rem;color:#637e8f}
+.math-derivation math{font-size:1.28rem;margin:8px auto;color:#264e69}
+.derivation-arrow{font-size:1.3rem;color:#8aa2b1;text-align:center}
+.bayes-proof{border:1px solid #dce5ec;margin:22px 0 20px}
+.bayes-proof-line{display:grid;grid-template-columns:165px minmax(0,1fr);align-items:center;gap:13px;padding:13px 16px;border-bottom:1px solid #e3ebf0;overflow-x:auto}
+.bayes-proof-line>span{color:#59798d;font-size:.85rem}
+.bayes-proof math{font-size:1.12rem;color:#2c4f67}
+.bayes-proof-line math{margin:0 auto 0 0}
+.bayes-theorem{padding:15px;background:#f1f7fa;text-align:center;overflow-x:auto}
+.bayes-theorem>strong{color:#315b77;display:block;font-size:.88rem;margin-bottom:9px}
+.bayes-theorem math{font-size:1.35rem;margin:0 auto}
+.bayes-people{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin:20px 0}
+.bayes-population{border:1px solid #d7e3eb;padding:16px;min-width:0}
+.bayes-population>strong{display:block;color:#315a75;font-size:.92rem;margin-bottom:12px}
+.bayes-population p{font-size:.91rem;margin:9px 0}
+.bayes-people-bars{display:flex;height:49px;overflow:hidden}
+.bayes-people-bars span{display:grid;place-items:center;font-size:.91rem;font-weight:700;color:#fff}
+.bayes-people-bars span.know{background:#4a86a8}
+.bayes-people-bars span.lucky{background:#8cae8c}
+.bayes-people-bars span.wrong{background:#c5a079}
+.bayes-people-key{margin-top:14px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:.72rem;color:#607b8d}
+.bayes-people-key span{width:10px;height:10px;display:inline-block}
+.bayes-people-key .know{background:#4a86a8}
+.bayes-people-key .lucky{background:#8cae8c}
+.bayes-people-key .wrong{background:#c5a079}
+.d10-lab{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:18px;align-items:start;margin:21px 0 25px}
+.d10-matrix-block,.d10-controls{border:1px solid #d9e5eb;min-width:0;padding:16px}
+.d10-topline{display:flex;justify-content:space-between;gap:9px;flex-wrap:wrap;margin-bottom:13px}
+.d10-topline strong{font-size:.91rem;color:#315e79}
+.d10-topline small{color:#728596;font-size:.75rem}
+.d10-matrix{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.d10-face{min-width:0;min-height:57px;display:grid;place-items:center;border:1px solid #dce5ec;background:#f5f8fa;color:#668396;font:1.1rem Georgia,serif;transition:background .16s ease,opacity .16s ease}
+.d10-face.eligible{background:#e7f0f7;color:#275a7a;border-color:#a0b9ca}
+.d10-face.hit{background:#dae8f1;color:#14587e;border:2px solid #33769f;font-weight:700}
+.d10-face.excluded{opacity:.29}
+.d10-legend{display:flex;align-items:center;gap:7px;flex-wrap:wrap;color:#657c8b;font-size:.76rem;margin-top:12px}
+.d10-legend>span{display:inline-block;width:11px;height:11px;background:#e7f0f7;border:1px solid #a0b9ca}
+.d10-legend .d10-legend-picked{background:#dae8f1;border:2px solid #33769f;margin-left:10px}
+.d10-controls>label:first-child{display:block;font-weight:600;color:#315a75;font-size:.87rem;margin-bottom:7px}
+.d10-controls select{display:block;width:100%;min-height:37px;border:1px solid #b6cbd8;background:#fff;padding:8px;font: .88rem Georgia,serif}
+.d10-condition{display:flex;align-items:center;gap:8px;line-height:1.5;font-size:.87rem;margin:18px 0 16px;color:#3c6179}
+.d10-condition input{accent-color:#447d9f}
+.d10-prob-output{border-top:1px solid #dce6ec;padding-top:13px}
+.d10-prob-output small{color:#71889a;font-size:.76rem;text-transform:uppercase}
+.d10-prob-output strong{display:block;font-size:1.4rem;margin:9px 0;color:#2a6586}
+.d10-prob-output p{color:#657d8d;font-size:.85rem;line-height:1.6}
+.distribution-types{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:19px 0 24px}
+.distribution-types>div{border:1px solid #d8e5eb;padding:15px}
+.distribution-types>div>strong{color:#315a78;display:block;min-height:2.7em;font-size:.88rem;line-height:1.5}
+.distribution-types p{font-size:.87rem;line-height:1.55}
+.distribution-types small{color:#627b8d;font-size:.78rem}
+.distribution-icons{display:flex;gap:12px;align-items:flex-end;height:108px;padding:12px 22px 0;border-bottom:1px solid #bacbd5}
+.distribution-icons i{display:block;background:#82a9c1;flex:1;max-width:43px}
+.density-illustration{display:block;width:100%;height:108px}
+.rigged-die-demo{border:1px solid #d2e2eb;margin:20px 0 23px;padding:18px}
+.rigged-toolbar{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid #e0e9ef;padding-bottom:16px}
+.rigged-toolbar button{background:#fff;border:1px solid #b8ccd8;font:.88rem Georgia,serif;color:#315b75;padding:9px 14px;cursor:pointer}
+.rigged-toolbar button[aria-pressed=true]{background:#eaf2f8;border-color:#6b9db9;font-weight:700}
+.rigged-toolbar button:focus-visible,.rigged-simulation button:focus-visible{outline:2px solid #376e92;outline-offset:2px}
+.rigged-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:18px;margin-top:16px;align-items:start}
+.rigged-chart-box{min-width:0}
+.rigged-chart-box h4{font:.96rem Georgia,serif;color:#2c536d;margin:0 0 9px}
+.rigged-chart-box svg{width:100%;height:auto;display:block}
+.rigged-pmf{font-size:.83rem;line-height:1.5;color:#57758a;margin:5px 0}
+.rigged-stats>div{border-bottom:1px solid #e2eaf0;padding:12px 0}
+.rigged-stats>div:first-child{padding-top:0}
+.rigged-stats small,.rigged-observed small{font-size:.73rem;letter-spacing:.05em;color:#6b8597;display:block}
+.rigged-stats strong,.rigged-observed strong{font-size:1.45rem;color:#295d7c;display:block;margin-top:7px;font-variant-numeric:tabular-nums}
+.rigged-stats p{font-size:.84rem;line-height:1.55;margin:0;color:#536f80}
+.rigged-simulation{border-top:1px solid #dce6ec;padding-top:14px;margin-top:14px;display:flex;gap:18px;align-items:center;justify-content:space-between}
+.rigged-simulation strong{font-size:.9rem;color:#315a76}
+.rigged-simulation p{font-size:.81rem;color:#617b8d;margin:4px 0}
+.rigged-simulation button{border:1px solid #7ea2b9;background:#f5f9fb;padding:9px 13px;color:#315f7a;font:.88rem Georgia,serif;white-space:nowrap;cursor:pointer}
+.rigged-observed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:14px;padding:11px;background:#f6fafc}
+.rigged-observed>div{padding:9px}
+.rigged-observed p{grid-column:1/-1;color:#60798b;font-size:.82rem;margin:0}
+.rigged-observed[hidden]{display:none}
+.die-three-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:19px 0}
+.die-three-cases>div{border:1px solid #dae5ed;padding:11px;min-width:0}
+.die-three-cases span,.die-three-cases strong,.die-three-cases small{display:block}
+.die-three-cases span{color:#2d5875;font-weight:600;font-size:.81rem;margin-bottom:7px}
+.die-three-cases strong{font-size:.78rem;font-weight:500;color:#4e6a7c;line-height:1.5}
+.die-three-cases small{font-weight:700;color:#265e79;margin-top:7px}
+@media(max-width:800px){
+ .learning-story{grid-template-columns:minmax(0,1fr) 13px minmax(0,1fr) 13px minmax(0,1fr);gap:5px}
+ .story-stage{padding:10px 6px}
+ .story-stage table{font-size:.66rem}
+ .story-stage th,.story-stage td{padding:5px 2px}
+ .bayes-proof-line{grid-template-columns:1fr;gap:3px}
+ .die-three-cases{grid-template-columns:1fr}
+ .rigged-layout{grid-template-columns:1fr}
+ .rigged-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ .rigged-stats>div.rigged-reason{grid-column:1/-1}
+}
+@media(max-width:680px){
+ .learning-story{grid-template-columns:1fr;gap:7px}
+ .story-arrow{transform:rotate(90deg);font-size:1.1rem}
+ .learning-path{padding:14px 12px}
+ .learning-path-heading{gap:8px;flex-wrap:wrap}
+ .learning-path-heading .path-tag{margin-left:0}
+ .story-stage{padding:12px}
+ .rl-story{grid-template-columns:1fr}
+ .rl-board{width:155px;margin:0 auto}
+ .rl-arrows>div{padding:10px 7px}
+ .math-derivation{grid-template-columns:1fr;gap:6px}
+ .derivation-arrow{transform:rotate(90deg)}
+ .bayes-people,.distribution-types,.d10-lab{grid-template-columns:1fr}
+ .academic-math math{font-size:1.15rem}
+ .bayes-proof math{font-size:.98rem}
+ .d10-face{min-height:49px}
+ .rigged-die-demo{padding:11px}
+ .rigged-toolbar button{flex:1;padding:9px 7px}
+ .rigged-simulation{display:block}
+ .rigged-simulation button{margin-top:10px}
+ .rigged-observed{grid-template-columns:1fr 1fr}
+ .rigged-observed>div:nth-child(3){grid-column:1/-1}
+}
+@media print{
+ .learning-path,.model-tile,.rigged-die-demo,.bayes-proof{break-inside:avoid-page}
+ .rigged-toolbar button,.rigged-simulation button{display:none!important}
+}
+
+/* Keep the model's mathematical notation on one clear line. */
+.story-machine{width:118px;max-width:95%;min-height:66px;height:auto;padding:8px;white-space:nowrap;font-size:1.2rem;line-height:1.2}
+.story-machine sub{font-size:.65em;line-height:0}
+
+/* Mathematical notation is inline, not separate CSS grid items. */
+.story-machine{display:block!important;text-align:center;padding-top:19px}
+.pmf-face-values{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;margin:0 0 12px}
+.pmf-face-values>div{border-top:1px solid #dce7ed;padding:7px 1px;text-align:center;min-width:0}
+.pmf-face-values span,.pmf-face-values strong{display:block;font-size:.73rem;color:#688192;font-weight:400;white-space:nowrap}
+.pmf-face-values strong{font-size:.81rem;color:#2f617e;font-weight:700;margin-top:4px}
+@media(max-width:680px){.pmf-face-values{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px}.pmf-face-values>div{padding:7px 1px}}
