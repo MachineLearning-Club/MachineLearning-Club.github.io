@@ -1,0 +1,363 @@
+{
+  "version": 1,
+  "source": "Independent English teaching material aligned with concepts in Informatica 9 (Corint), chapters 1, 2.1 and 4; all examples are original.",
+  "lessons": [
+    {
+      "group": "Programming foundations",
+      "title": "Algorithms and the input–process–output model",
+      "tag": "Start here",
+      "lead": "Before coding, identify the input, the transformation, and the output. An algorithm is a finite, precise plan that works beyond one example.",
+      "steps": [
+        "Write down what the program receives.",
+        "Describe the calculation in everyday language.",
+        "Decide which result must be displayed."
+      ],
+      "demo": "A small shop sells four notebooks for 28 lei. Calculate the cost of six at the same unit price.",
+      "code": "notebooks = 4\ntotal_price = 28\nwanted = 6\nunit_price = total_price / notebooks\nprint('Price for six:', unit_price * wanted)",
+      "question": "Change the order to eight notebooks. Keep the unit price calculation reusable.",
+      "solution": "notebooks = 4\ntotal_price = 28\nwanted = 8\nunit_price = total_price / notebooks\nprint('Price for eight:', unit_price * wanted)",
+      "tip": "A step-by-step plan is more important than knowing a particular Python keyword.",
+      "ml": "An ML workflow similarly receives data, transforms it and produces a prediction."
+    },
+    {
+      "group": "Programming foundations",
+      "title": "Your first Python program: printing, comments and indentation",
+      "tag": "Essential",
+      "lead": "Python executes statements in order. Comments begin with #, and indentation groups statements into blocks.",
+      "steps": [
+        "Use print(...) to display information.",
+        "Write comments for a reason, not to repeat every line.",
+        "Indent consistently with four spaces inside a block."
+      ],
+      "demo": "Print a labelled result and a friendly message.",
+      "code": "# This is a comment.\nname = 'Avery'\nscore = 9\nprint('Hello,', name)\nprint(f'Your score is {score}/10')",
+      "question": "Print a student's name and their score increased by one.",
+      "solution": "student = 'Mira'\nscore = 7\nprint(student)\nprint('Updated score:', score + 1)",
+      "tip": "Python distinguishes uppercase and lowercase names: score and Score are different variables.",
+      "ml": "Readable code helps you reproduce experiments."
+    },
+    {
+      "group": "Programming foundations",
+      "title": "Variables and basic data types",
+      "tag": "Essential",
+      "lead": "A variable is a name bound to a value. Python's everyday types include int, float, str and bool.",
+      "steps": [
+        "Use = for assignment, not comparison.",
+        "A string is text in quotes; a number is not.",
+        "Use type(...) when you are unsure what kind of value you have."
+      ],
+      "demo": "Inspect several types and update a counter.",
+      "code": "count = 3\nweight = 2.5\nlabel = 'cat'\nis_valid = True\ncount = count + 1\nprint(count, type(count).__name__)\nprint(type(weight).__name__, type(label).__name__)\nprint(type(is_valid).__name__)",
+      "question": "Store a temperature as a float and a city as text. Print both types.",
+      "solution": "temperature = 19.5\ncity = 'Iasi'\nprint(city, temperature)\nprint(type(temperature).__name__)\nprint(type(city).__name__)",
+      "tip": "Naming matters: choose total_score instead of vague names such as x1.",
+      "ml": "Features can be numbers, categories or labels; their types affect how we process them."
+    },
+    {
+      "group": "Programming foundations",
+      "title": "Reading input and converting values",
+      "tag": "Essential",
+      "lead": "In a normal terminal, input(...) reads text. Convert it with int(...) or float(...) before doing arithmetic.",
+      "steps": [
+        "Remember input() returns a string.",
+        "Use int(...) for whole numbers and float(...) for decimal values.",
+        "In this browser runner, edit the example input value instead of waiting for terminal input."
+      ],
+      "demo": "Simulate the text a student would enter; then convert it before using it.",
+      "code": "typed_age = '14'  # Imagine input('Age: ') returned this text.\nage = int(typed_age)\nprint('Next year:', age + 1)\nprint('Original type:', type(typed_age).__name__)",
+      "question": "Pretend a user typed '3.75'. Convert it and multiply by four.",
+      "solution": "typed_price = '3.75'\nprice = float(typed_price)\nprint('Total:', price * 4)",
+      "tip": "The terminal version is age = int(input('Age: ')). Live examples here use preset inputs because the embedded runner does not provide an input prompt.",
+      "ml": "Most datasets start as text that must be parsed into usable values."
+    },
+    {
+      "group": "Programming foundations",
+      "title": "Arithmetic expressions, division and remainders",
+      "tag": "Essential",
+      "lead": "Use +, -, *, /, //, %, and ** to calculate. Parentheses make evaluation order explicit.",
+      "steps": [
+        "/ is true division; // is floor division.",
+        "% gives the remainder and ** gives a power.",
+        "Use remainder to test even/odd numbers or extract a digit."
+      ],
+      "demo": "Split 23 items into packs of five.",
+      "code": "items = 23\npack_size = 5\nprint('Full packs:', items // pack_size)\nprint('Left over:', items % pack_size)\nprint('Square of packs:', (items // pack_size) ** 2)",
+      "question": "How many full groups of three can be made from 20 students, and how many remain?",
+      "solution": "students = 20\nprint('Groups:', students // 3)\nprint('Remaining:', students % 3)",
+      "tip": "Negative inputs make // and % behave differently from simple truncation; begin with non-negative integers.",
+      "ml": "Arithmetic operators are used in averages, distances and simple error measures."
+    },
+    {
+      "group": "Programming foundations",
+      "title": "Comparisons and Boolean logic",
+      "tag": "Essential",
+      "lead": "Conditions evaluate to True or False. Combine tests with and, or and not.",
+      "steps": [
+        "Use == to compare values; = is assignment.",
+        "Test a range with and.",
+        "Parenthesise compound conditions when readability improves."
+      ],
+      "demo": "Decide whether a quiz score is within an accepted range.",
+      "code": "score = 8\nvalid = 0 <= score <= 10\npassed = valid and score >= 6\nprint('Valid:', valid)\nprint('Passed:', passed)\nprint('Needs review:', not passed)",
+      "question": "Test if an integer is divisible by two or five.",
+      "solution": "number = 18\nmatches = number % 2 == 0 or number % 5 == 0\nprint(matches)",
+      "tip": "and requires both conditions; or requires at least one.",
+      "ml": "Boolean conditions can become simple classification rules."
+    },
+    {
+      "group": "Decisions and repetition",
+      "title": "Choosing a path with if, elif and else",
+      "tag": "Essential",
+      "lead": "Selection lets an algorithm execute different instructions depending on a condition.",
+      "steps": [
+        "Start with if and a colon.",
+        "Use elif for additional mutually exclusive branches.",
+        "Use else for all remaining cases; indentation defines each branch."
+      ],
+      "demo": "Translate a measured value into a category.",
+      "code": "temperature = 21\nif temperature < 15:\n    label = 'cold'\nelif temperature < 25:\n    label = 'mild'\nelse:\n    label = 'hot'\nprint(label)",
+      "question": "Print 'positive', 'zero' or 'negative' for a given integer.",
+      "solution": "value = -4\nif value > 0:\n    print('positive')\nelif value == 0:\n    print('zero')\nelse:\n    print('negative')",
+      "tip": "Conditions are checked from top to bottom. Only the first matching branch of an if/elif/else chain runs.",
+      "ml": "A decision tree repeatedly asks questions of this form."
+    },
+    {
+      "group": "Decisions and repetition",
+      "title": "Fixed repetition with for and range",
+      "tag": "Essential",
+      "lead": "A for loop visits a sequence. range(n) begins at zero and excludes n.",
+      "steps": [
+        "Use range(5) for 0, 1, 2, 3, 4.",
+        "Use range(start, stop, step) for more control.",
+        "An accumulator stores a running total; a counter tracks occurrences."
+      ],
+      "demo": "Find the sum of the first five positive integers and count the even values.",
+      "code": "total = 0\neven_count = 0\nfor number in range(1, 6):\n    total += number\n    if number % 2 == 0:\n        even_count += 1\nprint('Sum:', total)\nprint('Even values:', even_count)",
+      "question": "Add the squares of the integers from 1 through 4.",
+      "solution": "total = 0\nfor n in range(1, 5):\n    total += n ** 2\nprint(total)",
+      "tip": "The stop value is excluded: range(1, 6) includes 5, but not 6.",
+      "ml": "Loops let you process each sample in a dataset."
+    },
+    {
+      "group": "Decisions and repetition",
+      "title": "Conditional repetition with while",
+      "tag": "Essential",
+      "lead": "A while loop repeats as long as its condition is true. Ensure something changes so it can terminate.",
+      "steps": [
+        "Initialise the condition's variables.",
+        "Update them inside the loop.",
+        "Check the loop stops for the smallest and largest expected inputs."
+      ],
+      "demo": "Repeatedly halve a positive number using integer division.",
+      "code": "number = 75\nsteps = 0\nwhile number > 1:\n    number //= 2\n    steps += 1\n    print('After step', steps, ':', number)\nprint('Total steps:', steps)",
+      "question": "Use while to count down from 5 to 1.",
+      "solution": "count = 5\nwhile count > 0:\n    print(count)\n    count -= 1",
+      "tip": "If a loop's condition never becomes false, the loop may run forever. The runner has a Stop button.",
+      "ml": "Many training procedures repeat until they reach a specified number of steps or a stopping condition."
+    },
+    {
+      "group": "Decisions and repetition",
+      "title": "Tracing code, testing and intuitive efficiency",
+      "tag": "Essential",
+      "lead": "A trace records how values change. Tests should include normal, boundary and unusual cases; also consider how many steps an algorithm takes.",
+      "steps": [
+        "Predict the output before running.",
+        "Trace state changes one iteration at a time.",
+        "Compare short inputs with longer ones to reason about work."
+      ],
+      "demo": "Watch an accumulator after each iteration.",
+      "code": "total = 0\nfor value in [3, 1, 4]:\n    total += value\n    print('Read', value, '-> total', total)\nprint('Final:', total)",
+      "question": "Trace the running maximum of [2, 9, 5, 11], printing the value each step.",
+      "solution": "values = [2, 9, 5, 11]\nmaximum = values[0]\nfor value in values:\n    if value > maximum:\n        maximum = value\n    print('Current maximum:', maximum)",
+      "tip": "Print traces help you debug, but they are not a replacement for checking expected results. For a list of n values, one pass takes O(n) time.",
+      "ml": "Testing model code is as important as choosing the model."
+    },
+    {
+      "group": "Working with numbers",
+      "title": "Processing the digits of an integer",
+      "tag": "Core algorithm",
+      "lead": "For a non-negative integer, n % 10 returns its last digit and n // 10 removes that digit.",
+      "steps": [
+        "Copy the number if you need the original later.",
+        "Process a digit inside a while loop.",
+        "Handle zero separately when counting digits."
+      ],
+      "demo": "Sum the digits of a positive integer.",
+      "code": "number = 50723\noriginal = number\ndigit_sum = 0\nwhile number > 0:\n    digit_sum += number % 10\n    number //= 10\nprint('Digit sum of', original, 'is', digit_sum)",
+      "question": "Count how many even digits appear in 406280.",
+      "solution": "number = 406280\neven_digits = 0\nwhile number > 0:\n    digit = number % 10\n    if digit % 2 == 0:\n        even_digits += 1\n    number //= 10\nprint(even_digits)",
+      "tip": "This loop scans digits from right to left. The value zero needs a special case if the task asks for a digit count.",
+      "ml": "Digit processing is algorithmic practice; for real-world data we more often process list elements."
+    },
+    {
+      "group": "Working with numbers",
+      "title": "Divisibility and prime numbers",
+      "tag": "Core algorithm",
+      "lead": "A prime number is greater than one and has no positive divisors other than 1 and itself. Testing divisors up to the square root is sufficient.",
+      "steps": [
+        "Return False for n <= 1.",
+        "Try divisors while d*d <= n.",
+        "Stop as soon as a divisor is found."
+      ],
+      "demo": "Implement a reusable primality test.",
+      "code": "def is_prime(n):\n    if n <= 1:\n        return False\n    divisor = 2\n    while divisor * divisor <= n:\n        if n % divisor == 0:\n            return False\n        divisor += 1\n    return True\n\nfor value in [1, 2, 9, 17, 21]:\n    print(value, is_prime(value))",
+      "question": "Use the function to print prime numbers between 10 and 20.",
+      "solution": "def is_prime(n):\n    if n <= 1:\n        return False\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return True\n\nfor n in range(10, 21):\n    if is_prime(n):\n        print(n)",
+      "tip": "For beginners, trying all divisors from 2 to n-1 is correct but slower.",
+      "ml": "This demonstrates the value of choosing a better algorithm, even when the result stays the same."
+    },
+    {
+      "group": "Functions and data",
+      "title": "Writing functions with parameters and return",
+      "tag": "Essential",
+      "lead": "Functions turn a solution into a named, reusable component. Parameters accept inputs; return sends a result back to the caller.",
+      "steps": [
+        "Use def name(parameters): to define a function.",
+        "Use return to communicate results.",
+        "Call the function with different inputs to test generality."
+      ],
+      "demo": "Write a function that computes a mean.",
+      "code": "def mean(a, b, c):\n    return (a + b + c) / 3\n\nprint(mean(6, 8, 10))\nprint(mean(3, 9, 9))",
+      "question": "Create a function larger(a, b) that returns the larger value.",
+      "solution": "def larger(a, b):\n    if a >= b:\n        return a\n    return b\n\nprint(larger(4, 7))\nprint(larger(12, 3))",
+      "tip": "A function that prints a number is not the same as a function that returns a number; returning makes composition easier.",
+      "ml": "You can write your own feature-extraction or prediction function."
+    },
+    {
+      "group": "Functions and data",
+      "title": "Local variables, scope and built-in functions",
+      "tag": "Essential",
+      "lead": "Values defined inside a function usually stay local to that function. Python also provides useful functions such as len, abs, min, max and sum.",
+      "steps": [
+        "Prefer parameters to depending on global variables.",
+        "Keep temporary calculations local.",
+        "Use built-ins instead of recreating basic operations."
+      ],
+      "demo": "Compare local and outer variables without changing shared state.",
+      "code": "score = 4\n\ndef improve(value):\n    improved = min(10, value + 3)\n    return improved\n\nprint('Before:', score)\nprint('After:', improve(score))\nprint('Original still:', score)",
+      "question": "Write a function that returns the absolute difference between two numbers.",
+      "solution": "def difference(a, b):\n    return abs(a - b)\n\nprint(difference(8, 3))\nprint(difference(3, 8))",
+      "tip": "Use global only when you truly need to rebind a module-level name; most beginner problems are clearer with parameters.",
+      "ml": "Small pure functions are easier to test and reuse across experiments."
+    },
+    {
+      "group": "Functions and data",
+      "title": "Lists: storing and accessing sequences",
+      "tag": "Essential",
+      "lead": "A list holds ordered values. Its indexes start at zero and can be used to read or replace elements.",
+      "steps": [
+        "Create a list with square brackets.",
+        "Use len(values) to learn its length.",
+        "Use append to add a value and slicing to select a range."
+      ],
+      "demo": "Explore a small list of measurements.",
+      "code": "measurements = [18, 20, 17]\nprint('First:', measurements[0])\nmeasurements.append(21)\nmeasurements[1] = 19\nprint('Length:', len(measurements))\nprint('Last two:', measurements[-2:])\nprint('Full list:', measurements)",
+      "question": "Start with [2, 4, 6], add 8, and print the second and last elements.",
+      "solution": "values = [2, 4, 6]\nvalues.append(8)\nprint(values[1])\nprint(values[-1])",
+      "tip": "values[len(values)] is out of bounds for reading. The final valid index is len(values) - 1.",
+      "ml": "Datasets are collections of observations, and many basic algorithms operate on sequences."
+    },
+    {
+      "group": "Functions and data",
+      "title": "List traversal, filtering, searching and frequencies",
+      "tag": "Core algorithm",
+      "lead": "One pass through a list can calculate totals, locate a target, count matching values or build a frequency table.",
+      "steps": [
+        "Start counters and accumulators before the loop.",
+        "Inspect each element exactly once for a linear scan.",
+        "Use a dictionary or frequency list when you need counts by value."
+      ],
+      "demo": "Analyse a small set of integer labels.",
+      "code": "labels = [1, 0, 2, 1, 0, 1]\ncounts = [0, 0, 0]\nfor label in labels:\n    counts[label] += 1\nprint('Frequencies:', counts)\nprint('Largest count:', max(counts))\nprint('Contains 2:', 2 in labels)",
+      "question": "Count how many temperatures in [17, 25, 31, 20, 29] are at least 25.",
+      "solution": "temperatures = [17, 25, 31, 20, 29]\ncount = 0\nfor value in temperatures:\n    if value >= 25:\n        count += 1\nprint(count)",
+      "tip": "A frequency list assumes values fall in known integer indexes. For arbitrary labels, a dictionary is usually more flexible.",
+      "ml": "Frequency counts are the foundation of simple class distributions."
+    },
+    {
+      "group": "Further algorithmic practice",
+      "title": "Euclid's algorithm and prime factorisation",
+      "tag": "Optional",
+      "lead": "Number-theoretic algorithms illustrate repetition and the advantage of reducing a problem at each step.",
+      "steps": [
+        "Euclid replaces (a,b) with (b, a % b) until b becomes zero.",
+        "To factorise a positive number, repeatedly divide by small factors.",
+        "Use these examples to practise loop conditions and correctness."
+      ],
+      "demo": "Find the greatest common divisor of two positive integers.",
+      "code": "a, b = 84, 30\nwhile b != 0:\n    a, b = b, a % b\nprint('GCD:', a)",
+      "question": "Build the list of prime factors (with repeats) of 84.",
+      "solution": "number = 84\nfactors = []\ndivisor = 2\nwhile divisor * divisor <= number:\n    while number % divisor == 0:\n        factors.append(divisor)\n        number //= divisor\n    divisor += 1\nif number > 1:\n    factors.append(number)\nprint(factors)",
+      "tip": "The inner factorisation loop repeats a divisor until it no longer divides the remaining number.",
+      "ml": "The same idea of shrinking the remaining problem appears in more advanced algorithms."
+    },
+    {
+      "group": "Further algorithmic practice",
+      "title": "Stacks and queues",
+      "tag": "Optional",
+      "lead": "A stack removes the most recently added item (LIFO). A queue removes the earliest added item (FIFO).",
+      "steps": [
+        "For a small stack, list.append adds and list.pop removes.",
+        "For a queue, collections.deque supports append and popleft.",
+        "Choose the abstraction that matches the required order."
+      ],
+      "demo": "See last-in-first-out and first-in-first-out behaviour.",
+      "code": "from collections import deque\nstack = []\nstack.append('A')\nstack.append('B')\nprint('Stack removes:', stack.pop())\nqueue = deque(['A', 'B'])\nqueue.append('C')\nprint('Queue removes:', queue.popleft())",
+      "question": "Add 3, 5, 7 to a stack and print the numbers as they are removed.",
+      "solution": "stack = []\nfor value in [3, 5, 7]:\n    stack.append(value)\nwhile stack:\n    print(stack.pop())",
+      "tip": "Removing the first element of a normal list is slower for large queues; deque is a better queue implementation.",
+      "ml": "Stacks and queues show up in algorithmic search and workflow scheduling, though not in our first ML exercises."
+    },
+    {
+      "group": "Further algorithmic practice",
+      "title": "Sorting: selection sort and bubble sort",
+      "tag": "Optional",
+      "lead": "Elementary sorting methods help explain comparisons, exchanges and loop invariants, even though built-in sorted(...) is normally preferable.",
+      "steps": [
+        "Selection sort puts the smallest remaining value into its next final position.",
+        "Bubble sort repeatedly swaps neighbouring values in the wrong order.",
+        "Both have quadratic worst-case time for lists of length n."
+      ],
+      "demo": "Compare two algorithms on the same small input.",
+      "code": "values = [7, 2, 5, 1]\na = values[:]\nfor i in range(len(a)):\n    smallest = i\n    for j in range(i + 1, len(a)):\n        if a[j] < a[smallest]:\n            smallest = j\n    a[i], a[smallest] = a[smallest], a[i]\nprint('Selection:', a)\n\nb = values[:]\nfor stop in range(len(b) - 1, 0, -1):\n    for j in range(stop):\n        if b[j] > b[j + 1]:\n            b[j], b[j + 1] = b[j + 1], b[j]\nprint('Bubble:', b)",
+      "question": "Sort a small list in descending order using Python's built-in sorted function.",
+      "solution": "values = [7, 2, 5, 1]\nprint(sorted(values, reverse=True))",
+      "tip": "Use sorted(values) in normal Python projects. Study manual sorting to understand the underlying comparisons.",
+      "ml": "Sorting can prepare ranked lists, such as the highest scores or nearest points."
+    },
+    {
+      "group": "Further algorithmic practice",
+      "title": "Counting sort and systematic generation",
+      "tag": "Optional",
+      "lead": "When integer values come from a small known range, a frequency list can also reconstruct a sorted sequence.",
+      "steps": [
+        "Count how many times each value occurs.",
+        "Visit the possible values in order.",
+        "Repeat each value according to its frequency."
+      ],
+      "demo": "Sort a list of tiny integer categories using counts.",
+      "code": "values = [2, 0, 3, 1, 2, 0, 2]\nfrequency = [0] * 4\nfor value in values:\n    frequency[value] += 1\nordered = []\nfor value in range(len(frequency)):\n    ordered.extend([value] * frequency[value])\nprint('Frequencies:', frequency)\nprint('Ordered:', ordered)",
+      "question": "Generate the first six squares (0² through 5²) with a loop.",
+      "solution": "squares = []\nfor i in range(6):\n    squares.append(i * i)\nprint(squares)",
+      "tip": "Frequency-list approaches are appropriate only when values are small non-negative integers (or have been mapped to such indexes).",
+      "ml": "Count distributions help inspect class imbalance and categorical data."
+    },
+    {
+      "group": "Bridge to Machine Learning",
+      "title": "Mini-project: a rule-based classifier",
+      "tag": "Apply it",
+      "lead": "Put the pieces together: input data, loops, decisions, functions, lists and evaluation. This is a hand-written rule, not a trained ML model.",
+      "steps": [
+        "Represent each example as a value and its correct label.",
+        "Write a reusable prediction function.",
+        "Compare predicted labels to the expected ones."
+      ],
+      "demo": "Evaluate a temperature threshold rule against labelled examples.",
+      "code": "temperatures = [12, 18, 23, 29]\nactual = ['cold', 'cold', 'warm', 'warm']\n\ndef predict(temp):\n    return 'warm' if temp >= 20 else 'cold'\n\ncorrect = 0\nfor temperature, expected in zip(temperatures, actual):\n    guessed = predict(temperature)\n    print(temperature, guessed, 'expected:', expected)\n    if guessed == expected:\n        correct += 1\nprint('Accuracy:', correct / len(actual))",
+      "question": "Modify the threshold to 25 and observe how accuracy changes.",
+      "solution": "temperatures = [12, 18, 23, 29]\nactual = ['cold', 'cold', 'warm', 'warm']\n\ndef predict(temp):\n    return 'warm' if temp >= 25 else 'cold'\n\ncorrect = sum(predict(t) == expected for t, expected in zip(temperatures, actual))\nprint('Accuracy:', correct / len(actual))",
+      "tip": "The next ML lessons will ask a different question: can we learn a rule from examples instead of manually choosing the threshold?",
+      "ml": "You are now ready to discuss features, labels, predictions and simple evaluation."
+    }
+  ]
+}

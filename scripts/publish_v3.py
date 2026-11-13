@@ -327,6 +327,7 @@ def render_home():
         if partner.get("timetable"):
             result+=a(partner["timetable"],"Timetable")
     result+='</nav></header><main class="homepage-content">'
+    result+='<aside class="prerequisite-strip" aria-label="Module I prerequisite"><span class="prerequisite-label">Before Module I</span>'+a('/guides/python/','Python Programming Foundations · Interactive tutorial')+'</aside>'
     for roman,name,first,last in MODULES:
         if first==4:
             result+='<aside class="prerequisite-strip" aria-label="Module II prerequisite"><span class="prerequisite-label">Before Module II</span>'+a('/guides/notebooks/','Python Notebooks · Step-by-step guide')+'</aside>'

@@ -33,6 +33,8 @@ Useful commands:
 
 ```sh
 python3 scripts/generate_curriculum.py      # Generate HTML, navigation, timetable, bibliography, guide pages
+python3 scripts/build_python_foundations.py # Generate the beginner Python guide from its editable JSON content
+python3 scripts/test_python_foundations.py  # Check all 42 runnable example and solution programs
 python3 scripts/generate_v3_notebooks.py    # Refresh aligned student notebook files for Weeks 3–15
 node quiz/test_quiz.js                      # Run the older catalogue / test-dialog regression suite (Chromium required)
 ```
@@ -43,6 +45,7 @@ All public pages are **static HTML, CSS and JavaScript**, styled with `assets/ac
 
 - Laboratories include a short, in-page Python exercise powered by **Pyodide in a Web Worker**. It loads on demand from a version-pinned CDN. No account, and student code runs in the student's own browser.
 - Each lab supplies an editable notebook `wN/lab/starter.ipynb`. Students may download it and open it in **JupyterLite** (no account) by dragging the file into JupyterLite's file browser. Google Colab is optional and needs an account for execution.
+- Before Module I: `/guides/python/` teaches the English-language Python and algorithmic foundations in 21 short expandable topics. Source data lives in `data/python_foundations_lessons.json`; all 42 runnable examples are checked offline. The tutorial draws on Grade 9 `Informatică 9` topics but uses original explanations and programs.
 - Before Module II: `/guides/notebooks/` explains the notebook workflow step by step.
 - Before Module III: `/guides/github-ai/` contains an account-free Git-history simulation and a guide to collaborating with a code editor and optional AI assistance.
 - A valid but **local-only** laboratory submission workflow asks for the student's name and files, then downloads a named ZIP with `README.txt`. It does **not** upload anything.
