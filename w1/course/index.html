@@ -1,160 +1,349 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Course"><title>What Is AI? Rules and Learning — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-interactive.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>What Is AI? Rules and Learning</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Course"><title>What Is AI? Rules and Learning — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>What Is AI? Rules and Learning</h1>
 <p class="deck">How can a computer make a decision, and what changes when it learns from examples instead of following a fixed rule?</p>
 <div class="course-introduction"><strong>Essential question</strong>
 <p>A programmer can specify a rule directly. A learning algorithm instead calculates a model from observed data. In this lesson, you will follow both approaches from input to output.</p>
 <div class="course-next-actions"><a href="#one">Start reading</a><a href="#model-experiment">Try the model</a><a href="/w1/lab/">Continue to the laboratory</a></div></div>
 <details class="teacher-guide"><summary>Teacher Guide <span class="teacher-guide-hint">Course overview and teaching sequence</span></summary><div class="teacher-guide-body"><section class="summary">
 <h2>Course summary</h2>
-<p>A computer can perform intelligent-looking tasks by following rules written by a programmer, or by learning patterns from examples. This course explains the difference, introduces features and labels, and shows how a model turns training data into a prediction. The emphasis is not on the complexity of modern AI, but on understanding what an algorithm does and what its output can reasonably mean.</p>
-<p><strong>By the end:</strong> distinguish rules from learned predictions; identify input features, training labels and output; explain training versus testing; recognise why a confident or correct-looking prediction may still be wrong.</p>
-
+<p>Start from input data → processing → output data, using an interactive button-controlled lamp. Compare supervised, unsupervised and reinforcement learning visually. Separate training, inference and testing, then study a complete supervised decision tree for tic-tac-toe and a one-iteration K-means clustering demonstration.</p>
+<p><strong>By the end:</strong> identify input, processing and output; distinguish the three learning families by their feedback; identify training, inference and testing; explain how optimal game-tree search can generate supervised labels; understand one K-means iteration; design a fair evaluation.</p>
 </section><h3>Pedagogical sequence</h3><div class="pedagogical-table-scroll"><table class="pedagogical-table">
-<thead><tr><th scope="col">Step</th><th scope="col">Demonstration</th><th scope="col">Evidence of learning</th></tr></thead>
+<thead><tr><th scope="col">Topic</th><th scope="col">Demonstration</th><th scope="col">Student evidence</th></tr></thead>
 <tbody>
-<tr><th scope="row">1. Fixed rule</th><td>Use a brightness threshold to turn on a light.</td><td>Identify the programmed condition and predict the output.</td></tr>
-<tr><th scope="row">2. Learning from labelled examples</th><td>Compare ordinary objects in Teachable Machine; inspect a six-row numerical dataset.</td><td>Distinguish a feature from a label.</td></tr>
-<tr><th scope="row">3. Training and inference</th><td>Calculate class prototypes, then classify a new point.</td><td>Explain what is learned and what stays fixed during prediction.</td></tr>
-<tr><th scope="row">4. Test and reflect</th><td>Test unfamiliar drawings in Quick, Draw! and move an observation in the interactive model.</td><td>Identify a failure and explain why a prediction need not be reliable.</td></tr>
+<tr><th scope="row">Input → processing → output</th><td>Click the light switch and trace the IF rule.</td><td>Identify inputs and the corresponding action.</td></tr>
+<tr><th scope="row">Learning families</th><td>Read the three pictorial models; inspect the labelled object table.</td><td>Choose supervised, unsupervised or reinforcement learning for a scenario.</td></tr>
+<tr><th scope="row">Model life cycle</th><td>Compare training, prediction and independent testing.</td><td>Explain why evaluating on training examples is insufficient.</td></tr>
+<tr><th scope="row">Supervised worked example</th><td>Minimax labels tic-tac-toe positions; a complete tree learns the labelled mapping.</td><td>Play O against the optimal X decision tree.</td></tr>
+<tr><th scope="row">Unsupervised worked example</th><td>Three successive K-means diagrams: unlabelled → assigned → updated centres.</td><td>Name the one change made at each step.</td></tr>
 </tbody></table></div></div></details>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
-<ul><li><a href="#one">1.1. Programs, rules and AI</a></li>
-<li><a href="#two">1.2. Learning from examples</a></li>
+<ul><li><a href="#one">1.1. Programs, rules and artificial intelligence</a></li>
+<li><a href="#two">1.2. Learning from data</a></li>
 <li><a href="#three">1.3. Training, prediction and testing</a></li>
-<li><a href="#four">1.4. A complete small numerical model</a></li>
-<li><a href="#five">1.5. Mistakes, confidence and responsibility</a></li></ul></details></nav></aside><article class="course-article">
+<li><a href="#four">1.4. Two visual worked examples</a></li>
+<li><a href="#five">1.5. Does the model actually work?</a></li></ul></details></nav></aside><article class="course-article">
+<section id="one" class="chapter-section">
+  <h2>1.1. Programs, rules and artificial intelligence</h2>
+  <p>A computer takes <strong>input data</strong>, processes them using an algorithm, and produces <strong>output data</strong>. This basic structure remains useful even when the algorithm uses machine learning.</p>
 
-<section id="one">
-<h2>1.1. Programs, rules and AI</h2>
-<div class="core-idea"><strong>Core idea</strong><p>A fixed-rule program follows conditions written in advance. Machine learning estimates a decision-making model from examples; both can be parts of AI systems.</p></div>
-<p>Consider a program that switches on a light when the measured brightness falls below a fixed threshold. It may be useful, but the rule is explicitly supplied by its programmer. Nothing in the example requires the machine to learn from earlier observations.</p>
-<pre><code>def turn_on_light(brightness):
-    return brightness &lt; 300
-</code></pre>
-<p><span class="defined">Rule-based system:</span> a system whose decisions follow a set of conditions or procedures explicitly defined in advance. <span class="defined">Machine learning:</span> a family of methods that estimate useful patterns or parameters from data rather than requiring a separate programmer-written rule for every situation.</p>
-<p>Artificial intelligence is a broader field. It also includes search, planning, reasoning, language technologies and approaches that may or may not involve learning. Consequently, not every automated system uses ML, and not every AI system is a neural network.</p>
-<div class="concept-contrast" aria-label="Three types of computer decisions">
-<div><strong>Programmed rule</strong><p>Switch a lamp on when brightness is below 300.</p><small>The condition is written by a programmer.</small></div>
-<div><strong>Learned model</strong><p>Estimate a person's preferred light level from labelled observations.</p><small>The model's parameters come from data.</small></div>
-<div><strong>Search and planning</strong><p>Find a path through a maze using a search algorithm.</p><small>Search can be AI without using machine learning.</small></div>
-</div>
-<div class="practice-check"><strong>Check your understanding</strong><p>A light switches on when brightness falls below 300. Is that necessarily machine learning? What would need to change?</p><details><summary>Reveal the reasoning</summary><p>No. The programmer supplied the condition. A learning-based version could calculate a threshold or predictive function from labelled observations.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI, Lesson 1 — What is AI?</a> · <a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Handbook, introductory unit</a>.</p>
+  <div class="flow-diagram" aria-label="Input data flows through processing to output data">
+    <div><strong>Input data</strong><small>Information supplied to the system</small></div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div><strong>Processing</strong><small>Instructions or a model</small></div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div><strong>Output data</strong><small>The resulting value or action</small></div>
+  </div>
+
+  <h3>1.1.1. A rule you can control</h3>
+  <p>Press the button. The light responds to the condition in the program; it does not need to learn anything.</p>
+  <div class="lamp-activity" data-lamp-demo>
+    <div class="lamp-control">
+      <span class="activity-kicker">INPUT DATA</span>
+      <button type="button" class="lamp-switch" data-lamp-toggle aria-pressed="false">Press the button</button>
+      <span class="lamp-input-text">button_pressed = <output data-lamp-pressed>False</output></span>
+    </div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="lamp-logic">
+      <span class="activity-kicker">PROCESSING</span>
+      <pre><code>IF button_pressed THEN
+    light ← ON
+ELSE
+    light ← OFF
+ENDIF</code></pre>
+    </div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div class="lamp-display">
+      <span class="activity-kicker">OUTPUT DATA</span>
+      <svg viewBox="0 0 180 180" class="bulb-svg" role="img" aria-label="Lightbulb currently off" data-lamp-svg>
+        <circle class="bulb-halo" cx="90" cy="79" r="62"></circle>
+        <path class="bulb-glass" d="M90 27c-28 0-47 20-47 46 0 18 10 29 20 41 5 6 7 10 7 15h40c0-5 2-9 7-15 10-12 20-23 20-41 0-26-19-46-47-46z"></path>
+        <path class="bulb-filament" d="M73 84l17 15 17-15m-17 15v30"></path>
+        <rect class="bulb-base" x="69" y="128" width="42" height="11" rx="3"></rect>
+        <rect class="bulb-base" x="72" y="141" width="36" height="10" rx="3"></rect>
+        <path class="bulb-base" d="M81 153h18l-4 7H85z"></path>
+        <g class="bulb-rays"><path d="M90 9V2M46 23l-7-8M134 23l7-8M28 67h-9M152 67h9M44 117l-9 8M136 117l9 8"></path></g>
+      </svg>
+      <strong class="lamp-result">Light <output data-lamp-result>OFF</output></strong>
+    </div>
+  </div>
+
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Rule-based system:</strong> a system that produces outputs using explicitly programmed conditions.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Machine learning:</strong> algorithms that learn patterns from data to make predictions or decisions.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Artificial intelligence (AI):</strong> the field of designing systems that perform tasks involving reasoning, planning, perception or learning.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>Not all automated systems use machine learning, and not every AI system is a neural network.</p></div>
+
+  <div class="notes">
+    <span class="label-word notes-label">Notes</span>
+    <ul>
+      <li><strong>Following a rule</strong> means applying a condition chosen by a programmer. The rule is unchanged by past use.</li>
+      <li><strong>Searching for an answer</strong> means exploring possibilities, as in finding a route through a maze. Search is not necessarily learning.</li>
+      <li><strong>Learning from data</strong> means building part of the decision-making process from examples. The resulting model still takes inputs and produces outputs.</li>
+    </ul>
+  </div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 1</span>
+    <div class="exercise-parts"><span>1)</span><ol type="a">
+      <li>Identify the input, processing rule and output of the lightbulb program.</li>
+      <li>Describe one way a smart lamp could <em>learn</em> a person's preferred brightness instead of following a fixed button rule.</li>
+    </ol></div>
+    <details><summary>Show a possible solution</summary><p><strong>a)</strong> Input: whether the button is pressed. Processing: an IF condition. Output: ON or OFF. <strong>b)</strong> Collect examples of conditions and a person's chosen brightness, then train a model that predicts a preferred brightness for new conditions.</p></details>
+  </div>
+  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Foundations of AI</a>.</p>
 </section>
 
-<section id="two">
-<h2>1.2. Learning from examples</h2>
-<div class="core-idea"><strong>Core idea</strong><p>A training example contains input features; supervised examples also contain a known answer (the label). The learned model uses these to predict answers for new inputs.</p></div>
-<p>A model is trained using examples. Each example contains information about the object or situation. In <span class="defined">supervised learning</span>, the examples also contain an answer, called the <span class="defined">target</span> or <span class="defined">label</span>. In classification, the model predicts a category; in regression, it predicts a numerical value.</p>
-<h3>1.2.1. Features and labels</h3>
-<p>Suppose a fictional sensor sorts two kinds of classroom demonstration objects. It measures two properties: size and reflectance, both on arbitrary numerical scales. A teacher labels each example as class A or B.</p>
-<table><caption>Table 1.1 — Synthetic training examples</caption><thead><tr><th>Object</th><th>Size</th><th>Reflectance</th><th>Label</th></tr></thead>
-<tbody><tr><td>1</td><td>2.0</td><td>2.0</td><td>A</td></tr><tr><td>2</td><td>2.0</td><td>3.0</td><td>A</td></tr><tr><td>3</td><td>3.0</td><td>2.0</td><td>A</td></tr><tr><td>4</td><td>7.0</td><td>7.0</td><td>B</td></tr><tr><td>5</td><td>7.0</td><td>8.0</td><td>B</td></tr><tr><td>6</td><td>8.0</td><td>7.0</td><td>B</td></tr></tbody></table>
-<p>Here, <em>size</em> and <em>reflectance</em> are the features. The values A/B are training labels. The machine does not automatically understand the names: it only uses the information represented in the table.</p>
-<h3>1.2.2. Three families of learning</h3>
-<p><strong>Supervised learning:</strong> examples have target answers, such as A/B. <strong>Unsupervised learning:</strong> data have no supplied target categories, and the algorithm may instead discover groups. <strong>Reinforcement learning:</strong> an agent explores actions and learns from rewards or other feedback. These approaches solve different kinds of problems; they are not competing names for the same method.</p>
-<div class="practice-check"><strong>Check your understanding</strong><p>In Table 1.1, which values are features, and which are labels? Why are labels useful?</p><details><summary>Reveal the reasoning</summary><p>Size and reflectance are input features. A and B are labels: they tell a supervised learning algorithm which category each example belongs to.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI, Lesson 2 — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro, Romanian Python and ML course</a>.</p>
+<section id="two" class="chapter-section">
+  <h2>1.2. Learning from data</h2>
+  <p>In machine learning, input data are often represented as a <strong>table of examples</strong>. Each column describes an attribute. Depending on the task, the algorithm may predict a label, form groups or choose actions.</p>
+
+  <div class="flow-diagram flow-data" aria-label="A table of input attributes is processed by a learning algorithm to produce a result">
+    <div class="flow-table"><strong>Input data</strong><table aria-label="Example table with attributes"><thead><tr><th>Size</th><th>Shape</th></tr></thead><tbody><tr><td>2</td><td>Round</td></tr><tr><td>7</td><td>Square</td></tr><tr><td>3</td><td>Round</td></tr></tbody></table></div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div><strong>Processing</strong><small>Learning algorithm</small></div>
+    <span class="flow-arrow" aria-hidden="true">→</span>
+    <div><strong>Output</strong><small>A predicted label, a group or a selected action</small></div>
+  </div>
+
+  <h3>1.2.1. Features and labels</h3>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Feature:</strong> a measurable property used as input to a model.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Label:</strong> the known answer attached to a supervised training example.</p></div>
+  <p>The following invented objects have two numerical features and a known class label.</p>
+  <table class="training-table"><caption>Table 1.1 — Synthetic labelled examples</caption><thead><tr><th>Object</th><th>Size <span class="column-type">feature</span></th><th>Reflectance <span class="column-type">feature</span></th><th>Class <span class="column-type">label</span></th></tr></thead>
+  <tbody><tr><td>1</td><td>2</td><td>2</td><td>A</td></tr><tr><td>2</td><td>2</td><td>3</td><td>A</td></tr><tr><td>3</td><td>3</td><td>2</td><td>A</td></tr><tr><td>4</td><td>7</td><td>7</td><td>B</td></tr><tr><td>5</td><td>7</td><td>8</td><td>B</td></tr><tr><td>6</td><td>8</td><td>7</td><td>B</td></tr></tbody></table>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>A column of labels tells a model which answers to learn. Without labels, a grouping algorithm must discover structure without being given the desired categories.</p></div>
+
+  <h3>1.2.2. Three families of machine learning</h3>
+  <p class="visual-intro">The central difference is the <strong>information available during learning</strong>. Compare the three diagrams before reading the definitions.</p>
+  <div class="learning-families" aria-label="Visual comparison of supervised, unsupervised and reinforcement learning">
+    <div class="family">
+      <h4>Supervised learning</h4>
+      <svg viewBox="0 0 300 220" role="img" aria-label="Blue and orange labelled examples form two groups, with a new question-mark input and predicted class A">
+        <circle cx="90" cy="112" r="72" fill="#e9f1f8" stroke="#739bb8" stroke-width="1.5"/>
+        <circle cx="208" cy="112" r="72" fill="#fcf0e4" stroke="#c49765" stroke-width="1.5"/>
+        <g fill="#477fb3"><circle cx="72" cy="87" r="7"/><circle cx="104" cy="108" r="7"/><circle cx="72" cy="139" r="7"/><circle cx="101" cy="151" r="7"/></g>
+        <g fill="#bb824c"><circle cx="192" cy="83" r="7"/><circle cx="230" cy="111" r="7"/><circle cx="187" cy="138" r="7"/><circle cx="229" cy="152" r="7"/></g>
+        <circle cx="113" cy="68" r="13" fill="#fff" stroke="#477fb3" stroke-width="2"/><text x="113" y="73" text-anchor="middle" fill="#2e668e" font-weight="bold" font-size="16">?</text>
+        <text x="90" y="199" font-size="16" fill="#2e668e" text-anchor="middle">Label A</text><text x="210" y="199" font-size="16" fill="#a06834" text-anchor="middle">Label B</text>
+      </svg>
+      <p class="family-caption">Examples already have answers. Predict the label of a new example.</p>
+    </div>
+    <div class="family">
+      <h4>Unsupervised learning</h4>
+      <svg viewBox="0 0 300 220" role="img" aria-label="Unlabelled examples organised by the algorithm into two spatial clusters">
+        <ellipse cx="93" cy="112" rx="69" ry="73" fill="#f3f6f8" stroke="#8da0ad" stroke-dasharray="5 5" stroke-width="2"/>
+        <ellipse cx="208" cy="112" rx="69" ry="73" fill="#f3f6f8" stroke="#8da0ad" stroke-dasharray="5 5" stroke-width="2"/>
+        <g fill="#718796"><circle cx="62" cy="80" r="8"/><circle cx="105" cy="99" r="8"/><circle cx="70" cy="142" r="8"/><circle cx="114" cy="149" r="8"/><circle cx="187" cy="84" r="8"/><circle cx="224" cy="100" r="8"/><circle cx="183" cy="147" r="8"/><circle cx="235" cy="154" r="8"/></g>
+        <text x="93" y="199" font-size="16" fill="#506576" text-anchor="middle">Group 1</text><text x="208" y="199" font-size="16" fill="#506576" text-anchor="middle">Group 2</text>
+      </svg>
+      <p class="family-caption">No target labels are given. Discover similarities and groups.</p>
+    </div>
+    <div class="family">
+      <h4>Reinforcement learning</h4>
+      <svg viewBox="0 0 300 220" role="img" aria-label="An agent selects actions in an environment and receives a reward feedback signal">
+        <rect x="22" y="72" width="94" height="64" rx="6" fill="#e9f1f8" stroke="#739bb8"/><text x="69" y="109" font-size="16" text-anchor="middle" fill="#284e6d">Agent</text>
+        <rect x="182" y="72" width="96" height="64" rx="6" fill="#f5f1ea" stroke="#b6a18a"/><text x="230" y="102" font-size="15" text-anchor="middle" fill="#554638">World</text><text x="230" y="120" font-size="12" text-anchor="middle" fill="#554638">environment</text>
+        <path d="M117 89H180m-9-5 9 5-9 5" fill="none" stroke="#426b8a" stroke-width="2"/><text x="149" y="78" text-anchor="middle" fill="#426b8a" font-size="12">Action</text>
+        <path d="M181 123H140V161H69V137m-5 10 5-10 5 10" fill="none" stroke="#568267" stroke-width="2"/><text x="158" y="181" text-anchor="middle" fill="#437450" font-size="13">Reward + feedback</text>
+      </svg>
+      <p class="family-caption">An agent acts, receives feedback, and improves its choices.</p>
+    </div>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Supervised learning:</strong> learning from examples whose correct targets are provided.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Unsupervised learning:</strong> finding structure in data without supplied target labels.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Reinforcement learning:</strong> learning which actions to take from rewards and interaction with an environment.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>Labels, groups and rewards are not interchangeable. The methods address different learning problems, although real systems may combine them.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span>
+    <ul><li><strong>Classification</strong> is supervised learning with a category as output.</li>
+    <li><strong>Clustering</strong> is an unsupervised task that groups similar examples.</li>
+    <li><strong>Playing to maximise a score</strong> can be formulated as a reinforcement learning task, but it can also be solved without learning, by searching a game tree.</li></ul>
+  </div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 2</span><div class="exercise-parts"><span>1)</span><ol type="a">
+    <li>A dataset contains fruit measurements and the correct fruit name for each row. Which family of learning is suitable, and what would the model output?</li>
+    <li>The same measurements have <em>no</em> fruit names. You want to group similar fruits. Which family is suitable, and why?</li>
+    <li>A game agent receives points after its actions. Which family uses this feedback to improve decisions?</li>
+  </ol></div>
+    <details><summary>Show a possible solution</summary><p><strong>a)</strong> Supervised learning, predicting fruit labels. <strong>b)</strong> Unsupervised learning, because the algorithm receives no target categories. <strong>c)</strong> Reinforcement learning, because actions are evaluated through rewards.</p></details>
+  </div>
+  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — How computers learn</a> · <a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro — Machine Learning</a>.</p>
 </section>
 
-<section id="three">
-<h2>1.3. Training, prediction and testing</h2>
-<div class="core-idea"><strong>Core idea</strong><p>Training constructs the model, inference uses it, and testing checks predictions against independent known answers. These are three different operations.</p></div>
-<p>We should keep three processes conceptually separate:</p>
-<ol><li><strong>Training:</strong> compute a model from labelled examples.</li><li><strong>Inference:</strong> give the model a new input and obtain a predicted category.</li><li><strong>Testing:</strong> compare predictions with independent, known answers that were not used to fit the model.</li></ol>
-<div class="process-overview" role="group" aria-label="Training, inference and evaluation are three separate processes">
-<div class="process-row"><div class="process-label">Training</div><div><p class="process-steps">Labelled examples → Learning algorithm → Trained model</p><p class="process-note">The training data determine the model parameters. New examples may change them.</p></div></div>
-<div class="process-row"><div class="process-label">Inference</div><div><p class="process-steps">New input + Trained model → Prediction</p><p class="process-note">The trained model is used without changing its parameters.</p></div></div>
-<div class="process-row"><div class="process-label">Testing</div><div><p class="process-steps">Prediction + Known test label → Correct / incorrect</p><p class="process-note">A held-out example gives evidence about performance on unseen cases.</p></div></div></div>
-<p>If we test only on the training examples, the accuracy may look perfect even when the algorithm has memorised misleading details. A model may also learn from a biased selection of examples. For a classroom experiment, a separate test set and a short log of mistakes are more useful than a single impressive prediction.</p>
-<div class="practice-check"><strong>Check your understanding</strong><p>A classifier correctly predicts all six training samples. Does that prove it will work on a seventh, unfamiliar sample?</p><details><summary>Reveal the reasoning</summary><p>No. Training-set accuracy does not show generalisation. Use separate labelled test examples that were not used to train the model.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI, Lessons 2–3 — How computers learn / Bias in, bias out</a>.</p>
+<section id="three" class="chapter-section">
+  <h2>1.3. Training, prediction and testing</h2>
+  <p>The same model is used in different ways at different stages. Look at what enters and leaves each process.</p>
+  <div class="training-stages">
+    <div class="training-stage">
+      <div class="stage-counter">01</div>
+      <div class="stage-body">
+        <h3>Training</h3>
+        <div class="stage-process"><span>Examples + known answers</span><span class="stage-arrow">→</span><strong>Learning algorithm</strong><span class="stage-arrow">→</span><span>Trained model</span></div>
+        <p>The algorithm determines the model's parameters from examples.</p>
+      </div>
+    </div>
+    <div class="training-stage">
+      <div class="stage-counter">02</div>
+      <div class="stage-body">
+        <h3>Prediction (inference)</h3>
+        <div class="stage-process"><span>New input + trained model</span><span class="stage-arrow">→</span><strong>Predicted output</strong></div>
+        <p>Use the model on a new example. Its parameters do not change merely because it makes a prediction.</p>
+      </div>
+    </div>
+    <div class="training-stage">
+      <div class="stage-counter">03</div>
+      <div class="stage-body">
+        <h3>Testing</h3>
+        <div class="stage-process"><span>Prediction + known test answer</span><span class="stage-arrow">→</span><strong>Correct / incorrect</strong></div>
+        <p>Compare predictions with examples that were <em>not used</em> to train the model.</p>
+      </div>
+    </div>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Training:</strong> using examples to determine a model's parameters.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Inference:</strong> applying a trained model to obtain a prediction.</p></div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Testing:</strong> evaluating predictions on separate examples with known correct answers.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>A model can be correct on every training example and still fail on unfamiliar inputs. Training accuracy alone does not demonstrate generalisation.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span>
+    <ul><li>For a fair test, the answers in the test set must not influence how the model is trained.</li><li>During inference, the input is new but the trained model can stay unchanged.</li></ul>
+  </div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 3</span><div class="exercise-parts"><span>1)</span><ol type="a">
+    <li>Why should we keep some labelled examples separate from the training set?</li>
+    <li>A model correctly classifies all six objects it trained on. What evidence would you collect before saying it works on new objects?</li>
+  </ol></div>
+  <details><summary>Show a possible solution</summary><p><strong>a)</strong> To test whether the model handles unseen examples instead of memorising training examples. <strong>b)</strong> Record predictions and errors for a separate, varied labelled test set.</p></details></div>
+  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Bias in, bias out</a>.</p>
 </section>
 
-<section id="four">
-<h2>1.4. A complete small numerical model</h2>
-<div class="core-idea"><strong>Core idea</strong><p>Learn a representative point (prototype) for each class from the training examples. Predict a new point&#x27;s class by finding the nearest learned prototype.</p></div>
-<p>We will not attempt to reproduce the image model behind Quick, Draw! in the first session. Instead, we can train a tiny transparent classifier that makes the idea of a learned parameter visible.</p>
-<h3>1.4.1. Learn class prototypes</h3>
-<p>For each class, calculate the average of its feature values. The average pair becomes the class <span class="defined">prototype</span>. From Table 1.1, the two prototypes are approximately A = (2.33, 2.33) and B = (7.33, 7.33).</p>
-<h3>1.4.2. Predict from the nearest prototype</h3>
-<p>For an unseen input (2.5, 2.2), compare its straight-line distance to A and B. It is much closer to A, so the model predicts A. The Python function below performs the same operation; its class prototypes were calculated from training examples.</p>
-<p class="code-step-caption">Complete example: the prototypes are calculated from training data, not entered manually.</p>
-<pre><code>from math import dist
+<section id="four" class="chapter-section">
+  <h2>1.4. Two visual worked examples</h2>
+  <p>We now follow a supervised example from labelled decisions to a model, then an unsupervised example where the algorithm has to discover groups without labels.</p>
 
-training = [
-    ((2.0, 2.0), "A"), ((2.0, 3.0), "A"), ((3.0, 2.0), "A"),
-    ((7.0, 7.0), "B"), ((7.0, 8.0), "B"), ((8.0, 7.0), "B"),
-]
+  <h3>1.4.1. Supervised example — an unbeatable tic-tac-toe decision tree</h3>
+  <p class="visual-intro">A perfect <strong>minimax search</strong> can supply the correct move for every legal position. Those positions and best moves become a <strong>labelled training table</strong>. A decision tree can then learn the exact mapping.</p>
 
-# TRAIN: calculate a representative point for each class.
-def learn_prototype(label):
-    group = [point for point, answer in training if answer == label]
-    return (
-        sum(point[0] for point in group) / len(group),
-        sum(point[1] for point in group) / len(group),
-    )
+  <div class="game-example-steps">
+    <div class="example-step-title"><span>Step 1</span><strong>Choose the best move for a position</strong></div>
+    <div class="board-branches">
+      <div class="board-branch input-branch">
+        <div class="branch-caption">INPUT: board position</div>
+        <div class="sample-board" aria-label="X X blank, O O blank, blank blank blank">
+          <span>X</span><span>X</span><span>·</span><span>O</span><span>O</span><span>·</span><span>·</span><span>·</span><span>·</span>
+        </div>
+        <small>X to play</small>
+      </div>
+      <div class="branch-arrow" aria-hidden="true">→</div>
+      <div class="board-branch good-branch">
+        <div class="branch-caption">OPTIMAL MOVE</div>
+        <div class="sample-board" aria-label="X X X, O O blank, blank blank blank">
+          <span>X</span><span>X</span><span class="new-x">X</span><span>O</span><span>O</span><span>·</span><span>·</span><span>·</span><span>·</span>
+        </div>
+        <small>Top-right: X wins</small>
+      </div>
+      <div class="board-branch other-branch">
+        <div class="branch-caption">OTHER LEGAL MOVE</div>
+        <div class="sample-board" aria-label="X X blank, O O X, blank blank blank">
+          <span>X</span><span>X</span><span>·</span><span>O</span><span>O</span><span class="new-x">X</span><span>·</span><span>·</span><span>·</span>
+        </div>
+        <small>Does not win immediately</small>
+      </div>
+    </div>
+    <div class="example-step-title"><span>Step 2</span><strong>Generate labelled examples</strong></div>
+    <div class="supervised-dataset">
+      <div class="training-data-label"><strong>Input features</strong><span>Cell 1, Cell 2, …, Cell 9</span></div>
+      <span aria-hidden="true" class="arrow-inline">→</span>
+      <div class="training-data-label"><strong>Correct output label</strong><span>Best legal move (1–9)</span></div>
+    </div>
+    <div class="example-step-title"><span>Step 3</span><strong>Build a decision tree from the complete training set</strong></div>
+    <figure class="tic-tree-figure">
+      <svg viewBox="0 0 750 285" role="img" aria-label="Diagram of a decision tree that tests individual board cells, follows branches according to X, O or empty and reaches an optimal-move leaf. The picture shows only a small portion of the full tree.">
+        <g stroke="#8699a7" fill="none" stroke-width="2"><path d="M375 67v30H207v27M375 97h183v27M207 174v25H98v20M207 199h109v20M558 174v25h-24v20"></path></g>
+        <g font-size="13" fill="#5d7383"><text x="278" y="88">X</text><text x="461" y="88">O or empty</text><text x="132" y="192">X</text><text x="244" y="192">Other</text><text x="544" y="195">…</text></g>
+        <rect x="280" y="15" width="190" height="54" rx="5" fill="#edf3f8" stroke="#779bb6"/><text x="375" y="47" font-size="17" fill="#254a64" text-anchor="middle">Cell 1 = X?</text>
+        <rect x="112" y="124" width="190" height="54" rx="5" fill="#edf3f8" stroke="#779bb6"/><text x="207" y="156" font-size="17" fill="#254a64" text-anchor="middle">Cell 2 = X?</text>
+        <rect x="463" y="124" width="190" height="54" rx="5" fill="#f5f7f8" stroke="#9baab5"/><text x="558" y="156" font-size="17" fill="#4c606e" text-anchor="middle">More cell tests…</text>
+        <rect x="18" y="220" width="165" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="100" y="250" font-size="14" fill="#366744" text-anchor="middle">More cell tests…</text>
+        <rect x="211" y="220" width="211" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="316" y="250" font-size="14" fill="#366744" text-anchor="middle">Optimal-move leaf</text>
+        <rect x="445" y="220" width="180" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="535" y="250" font-size="14" fill="#366744" text-anchor="middle">More cell tests…</text>
+      </svg>
+      <figcaption>Schematic only: the actual tree tests all nine cell attributes and has a leaf for each reachable X-turn board. This diagram omits most branches.</figcaption>
+    </figure>
+    <div class="example-step-title"><span>Step 4</span><strong>Play against the resulting tree</strong></div>
+  </div>
 
-model = {label: learn_prototype(label) for label in ("A", "B")}
+  <div class="ttt-activity" data-ttt-game>
+    <div class="ttt-play-area"><div class="ttt-board" role="group" aria-label="Tic-tac-toe board. You are O, the tree plays X.">
+      <button type="button" data-ttt-cell="0" aria-label="Top-left cell"></button><button type="button" data-ttt-cell="1" aria-label="Top-middle cell"></button><button type="button" data-ttt-cell="2" aria-label="Top-right cell"></button>
+      <button type="button" data-ttt-cell="3" aria-label="Middle-left cell"></button><button type="button" data-ttt-cell="4" aria-label="Center cell"></button><button type="button" data-ttt-cell="5" aria-label="Middle-right cell"></button>
+      <button type="button" data-ttt-cell="6" aria-label="Bottom-left cell"></button><button type="button" data-ttt-cell="7" aria-label="Bottom-middle cell"></button><button type="button" data-ttt-cell="8" aria-label="Bottom-right cell"></button>
+    </div></div>
+    <div class="ttt-explainer">
+      <span class="activity-kicker">SUPERVISED MODEL DEMONSTRATION</span>
+      <h4>Your opponent uses a complete decision tree</h4>
+      <p>You play <strong>O</strong>. The model plays <strong>X</strong>, using labels generated by exhaustive optimal game-tree search.</p>
+      <strong data-ttt-status role="status" aria-live="polite">Choose an empty square.</strong>
+      <p class="model-counter"><output data-ttt-count>—</output> legal X-turn board positions labelled and stored in the tree.</p>
+      <p class="model-counter">Optimal-move verification: <output data-ttt-verified>—</output>.</p>
+      <button type="button" data-ttt-reset>Start a new game</button>
+    </div>
+  </div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Where the supervision comes from matters:</strong> minimax is search, not learning. Here it generates optimal <em>labels</em>, and the decision tree memorises the complete mapping from board attributes to those labels. Complete coverage and verification make the tree unbeatable; a small tree trained on only a few games would not have that guarantee.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span><ul>
+    <li>This is a <strong>categorical decision tree built by exhaustive lookup</strong>, rather than a compact ID3 tree. Week 2 introduces how a smaller tree is learned from examples.</li>
+    <li>It plays perfectly only for the ordinary 3 × 3 game with X moving first and legal alternating turns.</li>
+  </ul></div>
 
-# PREDICT: use the trained model on an unseen point.
-def predict(point):
-    return min(model, key=lambda label: dist(point, model[label]))
-
-print(model)  # A and B prototypes learned from the six rows
-print(predict((2.5, 2.2)))  # A
-</code></pre>
-
-<section class="classifier-demo" id="model-experiment" data-prototype-demo aria-labelledby="experiment-heading">
-<h3 id="experiment-heading">Experiment — move the data, retrain the model</h3>
-<p class="experiment-intro">The six points above are the original training examples. Change a <em>new input</em> to make a prediction, or change a <em>training example</em> and press <strong>Retrain model</strong> to update the learned prototypes.</p>
-<div class="classifier-layout">
-<figure class="classifier-figure">
-<svg viewBox="0 0 610 380" role="img" data-experiment-chart aria-label="Plot of size and reflectance for six labelled examples, class prototypes, the decision boundary and a movable test input. Text results are shown alongside the graph.">
-<g data-chart-grid></g><g data-chart-boundary></g><g data-chart-distances></g><g data-chart-points></g><g data-chart-prototypes></g><g data-chart-query></g>
-</svg>
-<div class="classifier-legend" aria-hidden="true"><span class="class-a"><i></i> Class A</span><span class="class-b"><i></i> Class B</span><span class="query-point"><i></i> New input</span><span>○ Learned prototype</span><span>┄ Decision boundary</span></div>
-<figcaption>The coloured dots are labelled training examples. Circles indicate learned prototypes; the dashed boundary shows where the two class distances are equal. The green point is a new input.</figcaption>
-</figure>
-<div class="classifier-controls">
-<fieldset><legend>1. Predict from a new input</legend>
-<label for="exp-test-x">Size <output for="exp-test-x" data-test-x-value>2.5</output></label>
-<input id="exp-test-x" data-test-x type="range" min="0" max="10" step=".1" value="2.5">
-<label for="exp-test-y">Reflectance <output for="exp-test-y" data-test-y-value>2.2</output></label>
-<input id="exp-test-y" data-test-y type="range" min="0" max="10" step=".1" value="2.2">
-<button type="button" data-try-middle>Try a point near the boundary</button>
-</fieldset>
-<div class="classifier-result"><p>Prediction: <strong data-prediction>A</strong></p><small data-result-details>Distance to A: 0.19 · Distance to B: 7.05</small><small data-learned-centroids>Learned prototypes: A = (2.33, 2.33), B = (7.33, 7.33)</small></div>
-<fieldset><legend>2. Edit the training data</legend>
-<label for="exp-edit-point">Training example <span data-selected-class>Class A</span></label>
-<select id="exp-edit-point" data-edit-point>
-<option value="0">A1 — example 1</option><option value="1">A2 — example 2</option><option value="2">A3 — example 3</option>
-<option value="3">B1 — example 4</option><option value="4">B2 — example 5</option><option value="5">B3 — example 6</option></select>
-<label for="exp-edit-x">Size <output for="exp-edit-x" data-edit-x-value>2.0</output></label>
-<input id="exp-edit-x" data-edit-x type="range" min="0" max="10" step=".1" value="2">
-<label for="exp-edit-y">Reflectance <output for="exp-edit-y" data-edit-y-value>2.0</output></label>
-<input id="exp-edit-y" data-edit-y type="range" min="0" max="10" step=".1" value="2">
-<div class="experiment-button-row"><button type="button" data-retrain>Retrain model</button><button type="button" data-reset-model>Reset examples</button></div>
-<p class="experiment-status" data-experiment-status role="status" aria-live="polite">The model is trained on the six original examples.</p>
-</fieldset>
-</div></div>
-<p class="experiment-note"><strong>Notice:</strong> changing the test input does not train anything. Editing training data does not affect the predictions until you retrain. This demonstration uses a nearest-prototype classifier; it is not a neural network or Google's Teachable Machine.</p>
+  <h3>1.4.2. Unsupervised example — find groups without labels</h3>
+  <p class="visual-intro">All three diagrams use <strong>exactly the same eight input points</strong>. From one diagram to the next, change <strong>one operation</strong> at a time.</p>
+  <div class="clustering-steps">
+    <figure class="cluster-stage">
+      <h4>1. Unlabelled data</h4>
+      <svg data-cluster-plot="raw" viewBox="0 0 360 270" role="img" aria-label="Eight grey unlabelled observations and two initial reference centres"></svg>
+      <figcaption>We know the two attributes, not the group labels. Choose two initial centres.</figcaption>
+    </figure>
+    <figure class="cluster-stage">
+      <h4>2. Assign to a centre</h4>
+      <svg data-cluster-plot="assigned" viewBox="0 0 360 270" role="img" aria-label="The same eight points coloured by proximity to one of two unchanged initial centres"></svg>
+      <figcaption>Only the <strong>point assignments</strong> change. Each point joins its nearest centre.</figcaption>
+    </figure>
+    <figure class="cluster-stage">
+      <h4>3. Recompute the centres</h4>
+      <svg data-cluster-plot="recentered" viewBox="0 0 360 270" role="img" aria-label="The same two coloured groups and reference centres moved to each group mean"></svg>
+      <figcaption>Only the <strong>centre positions</strong> change. Move each centre to the average of its group.</figcaption>
+    </figure>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Clustering:</strong> grouping examples by similarity without supplied target labels.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>These diagrams show one iteration of <strong>K-means</strong>. Repeating assignment and centre updates can stabilise the groups; the names “Group 1” and “Group 2” are created by the algorithm, not supplied as correct answers.</p></div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
+    <li>In the tic-tac-toe example, identify the input attributes and the output label. Who supplied the correct answers?</li>
+    <li>In the clustering example, explain exactly what changed between diagrams 1 and 2, and between diagrams 2 and 3.</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> The nine cell values are the features; the optimal move is the label, supplied by exact minimax search. <strong>b)</strong> First, assign unchanged points to nearest centres; next, move the centres to the means of their assigned points, keeping the assignments fixed for that update.</p></details></div>
+  <p class="source-line"><strong>Bibliography:</strong> <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Teachable Machine</a> · <a href="/w1/lab/">Week 1 laboratory</a>.</p>
 </section>
-<p><strong>Important distinction:</strong> this is a nearest-<em>prototype</em> model, not a neural network, and not a reproduction of Google's classifier. It exists to expose the training–prediction mechanism in a few lines.</p>
 
-<div class="practice-check"><strong>Check your understanding</strong><p>Move training example A1 closer to class B. What changes before retraining? What changes after retraining?</p><details><summary>Reveal the reasoning</summary><p>Before retraining, the dot moves but the learned class A prototype does not. After retraining, the prototype shifts toward the edited point and some predictions can change.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Teachable Machine</a> · <a href="/w1/lab/">Week 1 laboratory notebook</a>.</p>
+<section id="five" class="chapter-section">
+  <h2>1.5. Does the model actually work?</h2>
+  <p>A demonstration tells us what happened on a few inputs. Testing tells us how reliably a model behaves on <em>new</em> inputs.</p>
+  <div class="evaluation-contrast">
+    <div>
+      <div class="evaluation-symbol">✓</div>
+      <h3>Training examples</h3>
+      <p>The model may recognise examples it has already seen.</p>
+      <strong>This does not prove generalisation.</strong>
+    </div>
+    <div>
+      <div class="evaluation-symbol question-symbol">?</div>
+      <h3>New test examples</h3>
+      <p>Use unfamiliar inputs with independently known correct answers.</p>
+      <strong>Record successes and failures.</strong>
+    </div>
+  </div>
+  <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Generalisation:</strong> performing well on relevant examples not used in training.</p></div>
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>A confidence score is not proof that a prediction is correct. Its meaning depends on the model and how that score was produced.</p></div>
+  <div class="notes"><span class="label-word notes-label">Notes</span><ul>
+    <li>Check whether the training and test data represent the situations where the model will be used.</li>
+    <li>Inspect failures, not only successful demonstrations.</li>
+    <li>For classroom activities, use ordinary objects or synthetic data rather than classmates' faces, voices or private information.</li>
+  </ul></div>
+  <div class="exercise"><span class="label-word exercise-label">Exercise 5</span><div class="exercise-parts"><span>1)</span><ol type="a">
+    <li>A model gets every training example right. Design a fair test to check whether it has actually learned something useful.</li>
+    <li>The model makes mistakes on some new examples. State two questions you should investigate before improving it.</li>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Keep a separate set of varied examples whose labels were not used during training and compare every prediction to its correct answer. <strong>b)</strong> Are the training examples representative? Do errors occur for particular features, conditions or categories?</p></details></div>
+  <p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — Bias in, bias out</a> · <a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO — AI Competency Framework for Students</a>.</p>
 </section>
-
-<section id="five">
-<h2>1.5. Mistakes, confidence and responsibility</h2>
-<div class="core-idea"><strong>Core idea</strong><p>A prediction is an algorithmic output, not a guarantee. Good evaluation asks when and why a model fails, not only when it succeeds.</p></div>
-<p>A model may predict a class even when it has never seen a similar input. For example, the nearest-prototype program still returns A or B for a sample far outside the observed range. That is not evidence the result is dependable.</p>
-<p>A classification system may display a <em>confidence</em> score. In many systems this is a model-dependent score, not a guarantee of correctness. We should not confuse an output with an explanation, and we should not trust a demonstration simply because it succeeds on the teacher's first example.</p>
-<ol><li>Were the training examples varied enough?</li><li>What is different about the failed examples?</li><li>Was the test example genuinely unseen?</li><li>Does the system process personal data, faces or voices?</li></ol>
-<p>For the school lab, use ordinary objects and synthetic data. Do not upload images of classmates or any personally identifying information.</p>
-<div class="practice-check"><strong>Check your understanding</strong><p>The model assigns class A to a point far outside the training data. Why should you be cautious?</p><details><summary>Reveal the reasoning</summary><p>Nearest-prototype classification always returns the closest class, even for unfamiliar inputs. A class label alone does not establish that the model has seen relevant examples or is reliable.</p></details></div>
-<p class="source-line"><strong>Bibliography:</strong> <a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI, Lesson 3 — Bias in, bias out</a> · <a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a>.</p>
-</section>
-
-
-<section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section></article></div><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — school activities and worksheets</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/AI_Student_HandbookXI.pdf" target="_blank" rel="noopener noreferrer">CBSE Class XI AI Student Handbook</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php" target="_blank" rel="noopener noreferrer">pyml.ro: Python &amp; Machine Learning for high-school students</a> <span class="reference-note">— Student / teacher reference</span></li><li><a href="https://www.unesco.org/en/articles/ai-competency-framework-students" target="_blank" rel="noopener noreferrer">UNESCO AI Competency Framework for Students</a> <span class="reference-note">— Student / teacher reference</span></li></ul></section>
+</article></div><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>
