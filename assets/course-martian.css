@@ -1,0 +1,80 @@
+
+/* Week 1 Problem 40: labelled visitor data and a full ID3 tree. */
+.mars-flow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);gap:9px;align-items:center;margin:23px 0;padding:17px 0;border-top:1px solid #dce5eb;border-bottom:1px solid #dce5eb}
+.mars-flow>div{padding:15px 10px;border:1px solid #d4e0e8;min-width:0;text-align:center}
+.mars-flow strong{display:block;color:#315772;font-size:.91rem}
+.mars-flow small{display:block;color:#668092;font-size:.76rem;margin-top:7px;line-height:1.5}
+.mars-flow>span{color:#738c9f;font-size:1.4rem}
+.mars-data-wrap{max-width:100%;overflow-x:auto;margin:18px 0 26px}
+.mars-data{margin:0;border-collapse:collapse;font-size:.9rem}
+.mars-data th,.mars-data td{text-align:center;padding:7px 10px}
+.mars-data thead th{background:#f7f9fb;border-top:1px solid #bbcfda}
+.mars-data thead small{display:block;font-weight:400;color:#6c8190}
+.mars-data tbody th{font-weight:normal;color:#647987}
+.mars-data .mars-m{font-weight:700;color:#25734b;background:#f1f7f3}
+.mars-data .mars-h{font-weight:700;color:#8b5d36;background:#faf4ed}
+.mars-gains{max-width:680px;margin:20px 0 17px}
+.gain-row{display:grid;grid-template-columns:75px minmax(0,1fr) 58px;gap:12px;align-items:center;padding:7px 0;font-size:.88rem}
+.gain-row>strong{font-variant-numeric:tabular-nums;color:#3a5970;text-align:right}
+.gain-track{height:13px;background:#eef3f7;border:1px solid #dee8ee;overflow:hidden}
+.gain-track span{display:block;height:100%;background:#b2c4d1}
+.gain-row.winning .gain-track span{background:#477c9d}
+.gain-row.winning>span{color:#295c7e;font-weight:700}
+.mars-gains>small{color:#7a8993;font-size:.77rem}
+.mars-split{display:grid;grid-template-columns:minmax(0,1fr) 21px minmax(0,1fr) minmax(0,1fr);gap:11px;align-items:center;margin:22px 0 31px}
+.mars-split>div{border:1px solid #d7e2e9;padding:14px;text-align:center;min-width:0}
+.mars-split>span{font-size:1.5rem;color:#879eaf}
+.mars-split strong{display:block;font-size:.88rem;color:#315772}
+.mars-split small{display:block;font-size:.77rem;color:#698193;margin:6px 0}
+.mars-split em{display:block;font-style:normal;color:#456a78;font-size:.77rem}
+.mars-split .mars-green{background:#f3f8f3;border-color:#c6dbc9}
+.mars-split .mars-blue{background:#f6f9fc;border-color:#ccdae5}
+.mars-tree-scroll{overflow-x:auto;max-width:100%;margin:20px 0 31px;border:1px solid #d7e3eb;background:#fcfdfd}
+.mars-tree{display:block;width:100%;height:auto;min-width:720px}
+.mars-tree .tree-edges path{stroke:#a0b2c0;stroke-width:2.5;fill:none;transition:stroke .12s}
+.mars-tree .tree-edge-labels{text-anchor:middle;font:16px Georgia,serif;fill:#627c8d}
+.mars-tree .tree-test rect{fill:#eef4f8;stroke:#87a9bf;stroke-width:2}
+.mars-tree .tree-leaf rect{stroke-width:2}
+.mars-tree .leaf-m rect{fill:#eef7f0;stroke:#92bb9a}
+.mars-tree .leaf-h rect{fill:#faf3eb;stroke:#d0ac88}
+.mars-tree .tree-test text,.mars-tree .tree-leaf text{text-anchor:middle;fill:#2b4e66;font:20px Georgia,serif}
+.mars-tree .leaf-m text{fill:#246a42;font-weight:700}
+.mars-tree .leaf-h text{fill:#8f592d;font-weight:700}
+.mars-tree .tree-caption{text-anchor:middle;font:14px Georgia,serif;fill:#647988}
+.mars-tree .tree-edges path.is-active{stroke:#287ca1;stroke-width:5}
+.mars-tree [data-mars-node].is-active rect{stroke:#257da7;stroke-width:4}
+.mars-tree [data-mars-node].is-active text{font-weight:700}
+.mars-predictor{border-top:1px solid #c7d9e3;border-bottom:1px solid #c7d9e3;margin:18px 0 28px;padding:21px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:25px}
+.mars-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;align-content:start}
+.mars-fields label{font-size:.84rem;color:#4a6476;font-weight:600}
+.mars-fields select{display:block;max-width:100%;width:100%;min-height:39px;font: .9rem Georgia,serif;color:#263f53;background:#fff;border:1px solid #a9bdcb;padding:8px;margin-top:5px}
+.mars-output{background:#f7fafc;border:1px solid #dce5eb;padding:17px 19px}
+.mars-output>small{display:block;color:#6b8190;font-weight:600;font-size:.76rem;letter-spacing:.06em}
+.mars-output>strong{display:block;font:1.25rem Georgia,serif;margin:9px 0}
+.mars-output .mars-m{color:#247247}.mars-output .mars-h{color:#98623b}
+.mars-output p{font-size:.9rem;line-height:1.65}
+.mars-output>span{display:block;font-size:.8rem;color:#647a88;margin:13px 0}
+.mars-output button{font-size:.85rem}
+.mars-tree-scroll:focus-visible{outline:2px solid #2d6483;outline-offset:3px}
+@media(max-width:680px){
+ .mars-flow{gap:4px}
+ .mars-flow>div{padding:10px 6px}
+ .mars-flow strong{font-size:.76rem}
+ .mars-flow small{font-size:.66rem}
+ .mars-flow>span{font-size:.95rem}
+ .mars-split{grid-template-columns:1fr 12px 1fr 1fr;gap:4px}
+ .mars-split>div{padding:9px 3px}
+ .mars-split strong{font-size:.75rem}
+ .mars-split small,.mars-split em{font-size:.68rem}
+ .mars-tree{width:900px;min-width:900px}
+ .mars-tree-scroll:before{content:"Swipe horizontally to explore the decision tree →";display:block;padding:8px 11px;font-size:.78rem;color:#5b798d;border-bottom:1px solid #dce5eb}
+ .mars-predictor{grid-template-columns:1fr;gap:14px}
+ .mars-fields{gap:10px}
+}
+@media print{
+ .mars-tree-scroll{overflow:visible;border:0}
+ .mars-tree-scroll:before{display:none!important}
+ .mars-tree{width:100%!important;min-width:0!important}
+ .mars-output button{display:none}
+ .mars-gains,.mars-data,.mars-flow{break-inside:avoid}
+}

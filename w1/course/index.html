@@ -1,19 +1,19 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Course"><title>What Is AI? Rules and Learning — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>What Is AI? Rules and Learning</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Course"><title>What Is AI? Rules and Learning — Course · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/course-rebuild.css"><link rel="stylesheet" href="/assets/course-martian.css"><script defer src="/assets/academic-ui.js"></script><script defer src="/assets/course-rebuild.js"></script><script defer src="/assets/course-martian.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="course" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/course/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/" aria-current="page">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content course-lesson"><p class="eyebrow">Week 01 · Course</p><h1>What Is AI? Rules and Learning</h1>
 <p class="deck">How can a computer make a decision, and what changes when it learns from examples instead of following a fixed rule?</p>
 <div class="course-introduction"><strong>Essential question</strong>
 <p>A programmer can specify a rule directly. A learning algorithm instead calculates a model from observed data. In this lesson, you will follow both approaches from input to output.</p>
 <div class="course-next-actions"><a href="#one">Start reading</a><a href="#model-experiment">Try the model</a><a href="/w1/lab/">Continue to the laboratory</a></div></div>
 <details class="teacher-guide"><summary>Teacher Guide <span class="teacher-guide-hint">Course overview and teaching sequence</span></summary><div class="teacher-guide-body"><section class="summary">
 <h2>Course summary</h2>
-<p>Start from input data → processing → output data, using an interactive button-controlled lamp. Compare supervised, unsupervised and reinforcement learning visually. Separate training, inference and testing, then study a complete supervised decision tree for tic-tac-toe and a one-iteration K-means clustering demonstration.</p>
-<p><strong>By the end:</strong> identify input, processing and output; distinguish the three learning families by their feedback; identify training, inference and testing; explain how optimal game-tree search can generate supervised labels; understand one K-means iteration; design a fair evaluation.</p>
+<p>Start from input data → processing → output data, using an interactive button-controlled lamp. Compare supervised, unsupervised and reinforcement learning visually. Separate training, inference and testing, then study a supervised ID3 decision tree for Martian-versus-Earthling classification and a one-iteration K-means clustering demonstration.</p>
+<p><strong>By the end:</strong> identify input, processing and output; distinguish the three learning families by their feedback; identify training, inference and testing; interpret source-labelled visitor data and build an ID3 tree; understand one K-means iteration; design a fair evaluation.</p>
 </section><h3>Pedagogical sequence</h3><div class="pedagogical-table-scroll"><table class="pedagogical-table">
 <thead><tr><th scope="col">Topic</th><th scope="col">Demonstration</th><th scope="col">Student evidence</th></tr></thead>
 <tbody>
 <tr><th scope="row">Input → processing → output</th><td>Click the light switch and trace the IF rule.</td><td>Identify inputs and the corresponding action.</td></tr>
 <tr><th scope="row">Learning families</th><td>Read the three pictorial models; inspect the labelled object table.</td><td>Choose supervised, unsupervised or reinforcement learning for a scenario.</td></tr>
 <tr><th scope="row">Model life cycle</th><td>Compare training, prediction and independent testing.</td><td>Explain why evaluating on training examples is insufficient.</td></tr>
-<tr><th scope="row">Supervised worked example</th><td>Minimax labels tic-tac-toe positions; a complete tree learns the labelled mapping.</td><td>Play O against the optimal X decision tree.</td></tr>
+<tr><th scope="row">Supervised worked example</th><td>Use Problem 40 to compare information gains and construct the Martian-versus-Earthling ID3 tree.</td><td>Change visitor features and follow the resulting branch to a prediction.</td></tr>
 <tr><th scope="row">Unsupervised worked example</th><td>Three successive K-means diagrams: unlabelled → assigned → updated centres.</td><td>Name the one change made at each step.</td></tr>
 </tbody></table></div></div></details>
 <div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary>
@@ -70,7 +70,7 @@ ENDIF</code></pre>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Rule-based system:</strong> a system that produces outputs using explicitly programmed conditions.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Machine learning:</strong> algorithms that learn patterns from data to make predictions or decisions.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Artificial intelligence (AI):</strong> the field of designing systems that perform tasks involving reasoning, planning, perception or learning.</p></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>Not all automated systems use machine learning, and not every AI system is a neural network.</p></div>
+
 
   <div class="notes">
     <span class="label-word notes-label">Notes</span>
@@ -95,7 +95,7 @@ ENDIF</code></pre>
   <p>In machine learning, input data are often represented as a <strong>table of examples</strong>. Each column describes an attribute. Depending on the task, the algorithm may predict a label, form groups or choose actions.</p>
 
   <div class="flow-diagram flow-data" aria-label="A table of input attributes is processed by a learning algorithm to produce a result">
-    <div class="flow-table"><strong>Input data</strong><table aria-label="Example table with attributes"><thead><tr><th>Size</th><th>Shape</th></tr></thead><tbody><tr><td>2</td><td>Round</td></tr><tr><td>7</td><td>Square</td></tr><tr><td>3</td><td>Round</td></tr></tbody></table></div>
+    <div class="flow-table"><strong>Input data</strong><table aria-label="Two features from the Martian classification problem"><thead><tr><th>Green</th><th>Legs</th></tr></thead><tbody><tr><td>N</td><td>3</td></tr><tr><td>Y</td><td>2</td></tr><tr><td>N</td><td>2</td></tr></tbody></table></div>
     <span class="flow-arrow" aria-hidden="true">→</span>
     <div><strong>Processing</strong><small>Learning algorithm</small></div>
     <span class="flow-arrow" aria-hidden="true">→</span>
@@ -105,10 +105,8 @@ ENDIF</code></pre>
   <h3>1.2.1. Features and labels</h3>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Feature:</strong> a measurable property used as input to a model.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Label:</strong> the known answer attached to a supervised training example.</p></div>
-  <p>The following invented objects have two numerical features and a known class label.</p>
-  <table class="training-table"><caption>Table 1.1 — Synthetic labelled examples</caption><thead><tr><th>Object</th><th>Size <span class="column-type">feature</span></th><th>Reflectance <span class="column-type">feature</span></th><th>Class <span class="column-type">label</span></th></tr></thead>
-  <tbody><tr><td>1</td><td>2</td><td>2</td><td>A</td></tr><tr><td>2</td><td>2</td><td>3</td><td>A</td></tr><tr><td>3</td><td>3</td><td>2</td><td>A</td></tr><tr><td>4</td><td>7</td><td>7</td><td>B</td></tr><tr><td>5</td><td>7</td><td>8</td><td>B</td></tr><tr><td>6</td><td>8</td><td>7</td><td>B</td></tr></tbody></table>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>A column of labels tells a model which answers to learn. Without labels, a grouping algorithm must discover structure without being given the desired categories.</p></div>
+
+  <div class="observation"><span class="label-word observation-label">Observation</span><p>In Problem 40, the visitor’s properties are features, and Species (M or H) is the label. The algorithm learns from labelled visitors.</p></div>
 
   <h3>1.2.2. Three families of machine learning</h3>
   <p class="visual-intro">The central difference is the <strong>information available during learning</strong>. Compare the three diagrams before reading the definitions.</p>
@@ -149,7 +147,7 @@ ENDIF</code></pre>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Supervised learning:</strong> learning from examples whose correct targets are provided.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Unsupervised learning:</strong> finding structure in data without supplied target labels.</p></div>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Reinforcement learning:</strong> learning which actions to take from rewards and interaction with an environment.</p></div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p>Labels, groups and rewards are not interchangeable. The methods address different learning problems, although real systems may combine them.</p></div>
+
   <div class="notes"><span class="label-word notes-label">Notes</span>
     <ul><li><strong>Classification</strong> is supervised learning with a category as output.</li>
     <li><strong>Clustering</strong> is an unsupervised task that groups similar examples.</li>
@@ -211,81 +209,121 @@ ENDIF</code></pre>
 
 <section id="four" class="chapter-section">
   <h2>1.4. Two visual worked examples</h2>
-  <p>We now follow a supervised example from labelled decisions to a model, then an unsupervised example where the algorithm has to discover groups without labels.</p>
+  <p>We now construct a decision tree from labelled Martian and Earthling examples, then examine an unsupervised algorithm that discovers groups without labels.</p>
 
-  <h3>1.4.1. Supervised example — an unbeatable tic-tac-toe decision tree</h3>
-  <p class="visual-intro">A perfect <strong>minimax search</strong> can supply the correct move for every legal position. Those positions and best moves become a <strong>labelled training table</strong>. A decision tree can then learn the exact mapping.</p>
+  <h3>1.4.1. Supervised example — Martian or Earthling?</h3>
+<p class="visual-intro"><strong>Problem 40 — Marțian sau pământean?</strong> In this fictional NASA classification exercise, each visitor has four recorded properties. Our goal is to learn a <strong>decision tree</strong> that predicts whether the visitor is Martian (<strong>M</strong>) or human (<strong>H</strong>).</p>
 
-  <div class="game-example-steps">
-    <div class="example-step-title"><span>Step 1</span><strong>Choose the best move for a position</strong></div>
-    <div class="board-branches">
-      <div class="board-branch input-branch">
-        <div class="branch-caption">INPUT: board position</div>
-        <div class="sample-board" aria-label="X X blank, O O blank, blank blank blank">
-          <span>X</span><span>X</span><span>·</span><span>O</span><span>O</span><span>·</span><span>·</span><span>·</span><span>·</span>
-        </div>
-        <small>X to play</small>
-      </div>
-      <div class="branch-arrow" aria-hidden="true">→</div>
-      <div class="board-branch good-branch">
-        <div class="branch-caption">OPTIMAL MOVE</div>
-        <div class="sample-board" aria-label="X X X, O O blank, blank blank blank">
-          <span>X</span><span>X</span><span class="new-x">X</span><span>O</span><span>O</span><span>·</span><span>·</span><span>·</span><span>·</span>
-        </div>
-        <small>Top-right: X wins</small>
-      </div>
-      <div class="board-branch other-branch">
-        <div class="branch-caption">OTHER LEGAL MOVE</div>
-        <div class="sample-board" aria-label="X X blank, O O X, blank blank blank">
-          <span>X</span><span>X</span><span>·</span><span>O</span><span>O</span><span class="new-x">X</span><span>·</span><span>·</span><span>·</span>
-        </div>
-        <small>Does not win immediately</small>
-      </div>
-    </div>
-    <div class="example-step-title"><span>Step 2</span><strong>Generate labelled examples</strong></div>
-    <div class="supervised-dataset">
-      <div class="training-data-label"><strong>Input features</strong><span>Cell 1, Cell 2, …, Cell 9</span></div>
-      <span aria-hidden="true" class="arrow-inline">→</span>
-      <div class="training-data-label"><strong>Correct output label</strong><span>Best legal move (1–9)</span></div>
-    </div>
-    <div class="example-step-title"><span>Step 3</span><strong>Build a decision tree from the complete training set</strong></div>
-    <figure class="tic-tree-figure">
-      <svg viewBox="0 0 750 285" role="img" aria-label="Diagram of a decision tree that tests individual board cells, follows branches according to X, O or empty and reaches an optimal-move leaf. The picture shows only a small portion of the full tree.">
-        <g stroke="#8699a7" fill="none" stroke-width="2"><path d="M375 67v30H207v27M375 97h183v27M207 174v25H98v20M207 199h109v20M558 174v25h-24v20"></path></g>
-        <g font-size="13" fill="#5d7383"><text x="278" y="88">X</text><text x="461" y="88">O or empty</text><text x="132" y="192">X</text><text x="244" y="192">Other</text><text x="544" y="195">…</text></g>
-        <rect x="280" y="15" width="190" height="54" rx="5" fill="#edf3f8" stroke="#779bb6"/><text x="375" y="47" font-size="17" fill="#254a64" text-anchor="middle">Cell 1 = X?</text>
-        <rect x="112" y="124" width="190" height="54" rx="5" fill="#edf3f8" stroke="#779bb6"/><text x="207" y="156" font-size="17" fill="#254a64" text-anchor="middle">Cell 2 = X?</text>
-        <rect x="463" y="124" width="190" height="54" rx="5" fill="#f5f7f8" stroke="#9baab5"/><text x="558" y="156" font-size="17" fill="#4c606e" text-anchor="middle">More cell tests…</text>
-        <rect x="18" y="220" width="165" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="100" y="250" font-size="14" fill="#366744" text-anchor="middle">More cell tests…</text>
-        <rect x="211" y="220" width="211" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="316" y="250" font-size="14" fill="#366744" text-anchor="middle">Optimal-move leaf</text>
-        <rect x="445" y="220" width="180" height="48" rx="5" fill="#eef5ef" stroke="#8eab92"/><text x="535" y="250" font-size="14" fill="#366744" text-anchor="middle">More cell tests…</text>
-      </svg>
-      <figcaption>Schematic only: the actual tree tests all nine cell attributes and has a leaf for each reachable X-turn board. This diagram omits most branches.</figcaption>
-    </figure>
-    <div class="example-step-title"><span>Step 4</span><strong>Play against the resulting tree</strong></div>
+<div class="mars-flow" aria-label="Martian classification: labelled examples lead to an ID3 decision tree, then a new visitor receives a prediction">
+  <div><strong>10 labelled visitors</strong><small>Green · Legs · Height · Smelly · Species</small></div>
+  <span aria-hidden="true">→</span>
+  <div><strong>ID3 learning algorithm</strong><small>Choose informative attributes</small></div>
+  <span aria-hidden="true">→</span>
+  <div><strong>Decision tree</strong><small>Predict M or H</small></div>
+</div>
+
+<div class="example-step-title"><span>Step 1</span><strong>Learn from the source data</strong></div>
+<p>Each row is one visitor. <strong>Species</strong> is the target label; the other four columns are input features. The ten entries below are the data from Problem 40.</p>
+<div class="mars-data-wrap">
+<table class="mars-data">
+<caption>Problem 40 — Original labelled training examples</caption>
+<thead><tr><th>#</th><th>Species <small>label</small></th><th>Green</th><th>Legs</th><th>Height</th><th>Smelly</th></tr></thead>
+<tbody>
+<tr><th>1</th><td class="mars-m">M</td><td>N</td><td>3</td><td>S</td><td>Y</td></tr>
+<tr><th>2</th><td class="mars-m">M</td><td>Y</td><td>2</td><td>T</td><td>N</td></tr>
+<tr><th>3</th><td class="mars-m">M</td><td>Y</td><td>3</td><td>T</td><td>N</td></tr>
+<tr><th>4</th><td class="mars-m">M</td><td>N</td><td>2</td><td>S</td><td>Y</td></tr>
+<tr><th>5</th><td class="mars-m">M</td><td>Y</td><td>3</td><td>T</td><td>N</td></tr>
+<tr><th>6</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>Y</td></tr>
+<tr><th>7</th><td class="mars-h">H</td><td>N</td><td>2</td><td>S</td><td>N</td></tr>
+<tr><th>8</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>N</td></tr>
+<tr><th>9</th><td class="mars-h">H</td><td>Y</td><td>2</td><td>S</td><td>N</td></tr>
+<tr><th>10</th><td class="mars-h">H</td><td>N</td><td>2</td><td>T</td><td>Y</td></tr>
+</tbody></table></div>
+
+<div class="example-step-title"><span>Step 2</span><strong>Select the most informative first question</strong></div>
+<p>ID3 compares how much each attribute reduces uncertainty about <strong>Species</strong>. The largest information gain determines the first test.</p>
+<div class="mars-gains" role="img" aria-label="Information gains: Legs 0.3958 bits, Green 0.1245, Height 0, Smelly 0. Legs has the highest information gain.">
+  <div class="gain-row winning"><span>Legs</span><div class="gain-track"><span style="width:100%"></span></div><strong>0.396</strong></div>
+  <div class="gain-row"><span>Green</span><div class="gain-track"><span style="width:31.46%"></span></div><strong>0.125</strong></div>
+  <div class="gain-row"><span>Height</span><div class="gain-track"><span style="width:0%"></span></div><strong>0.000</strong></div>
+  <div class="gain-row"><span>Smelly</span><div class="gain-track"><span style="width:0%"></span></div><strong>0.000</strong></div>
+  <small>Information gain in bits, rounded to three decimals</small>
+</div>
+<div class="mars-split">
+  <div><strong>All 10 visitors</strong><small>5 Martians · 5 Humans</small></div><span aria-hidden="true">→</span>
+  <div class="mars-green"><strong>Legs = 3</strong><small>3 Martians · 0 Humans</small><em>Pure group → M</em></div>
+  <div class="mars-blue"><strong>Legs = 2</strong><small>2 Martians · 5 Humans</small><em>Ask another question</em></div>
+</div>
+
+<div class="example-step-title"><span>Step 3</span><strong>Build the complete ID3 tree</strong></div>
+<p>The <strong>Legs = 3</strong> branch is already decided. The other branch needs additional questions. Follow the lines through the tree to see how each answer narrows down the possible class.</p>
+<div class="mars-tree-scroll" role="region" tabindex="0" aria-label="Scrollable decision-tree diagram">
+  <svg viewBox="0 0 940 565" class="mars-tree" role="img" aria-label="ID3 classification tree: first Legs; three legs always Martian, two legs tests Green, then Height, and if needed Smelly.">
+    <g class="tree-edges">
+      <path data-mars-edge="root-3" d="M450 74V112H175V146"/>
+      <path data-mars-edge="root-2" d="M450 74V112H635V146"/>
+      <path data-mars-edge="green-N" d="M635 191V214H450V246"/>
+      <path data-mars-edge="green-Y" d="M635 191V214H780V246"/>
+      <path data-mars-edge="heightN-T" d="M450 291V314H335V348"/>
+      <path data-mars-edge="heightN-S" d="M450 291V314H560V348"/>
+      <path data-mars-edge="heightY-S" d="M780 291V314H720V348"/>
+      <path data-mars-edge="heightY-T" d="M780 291V314H870V348"/>
+      <path data-mars-edge="smelly-N" d="M560 393V427H480V456"/>
+      <path data-mars-edge="smelly-Y" d="M560 393V427H630V456"/>
+    </g>
+    <g class="tree-edge-labels">
+      <text x="285" y="101">3</text><text x="558" y="101">2</text>
+      <text x="530" y="204">N</text><text x="708" y="204">Y</text>
+      <text x="378" y="304">T</text><text x="506" y="304">S</text>
+      <text x="744" y="304">S</text><text x="825" y="304">T</text>
+      <text x="510" y="418">N</text><text x="602" y="418">Y</text>
+    </g>
+    <g data-mars-node="root" class="tree-test"><rect x="384" y="29" width="132" height="45" rx="5"/><text x="450" y="56">Legs?</text></g>
+    <g data-mars-node="leaf3" class="tree-leaf leaf-m"><rect x="120" y="146" width="110" height="45" rx="5"/><text x="175" y="174">M</text></g>
+    <g data-mars-node="green" class="tree-test"><rect x="569" y="146" width="132" height="45" rx="5"/><text x="635" y="174">Green?</text></g>
+    <g data-mars-node="heightN" class="tree-test"><rect x="385" y="246" width="130" height="45" rx="5"/><text x="450" y="274">Height?</text></g>
+    <g data-mars-node="heightY" class="tree-test"><rect x="715" y="246" width="130" height="45" rx="5"/><text x="780" y="274">Height?</text></g>
+    <g data-mars-node="leafNT" class="tree-leaf leaf-h"><rect x="285" y="348" width="100" height="45" rx="5"/><text x="335" y="376">H</text></g>
+    <g data-mars-node="smelly" class="tree-test"><rect x="495" y="348" width="130" height="45" rx="5"/><text x="560" y="376">Smelly?</text></g>
+    <g data-mars-node="leafYS" class="tree-leaf leaf-h"><rect x="670" y="348" width="100" height="45" rx="5"/><text x="720" y="376">H</text></g>
+    <g data-mars-node="leafYT" class="tree-leaf leaf-m"><rect x="820" y="348" width="100" height="45" rx="5"/><text x="870" y="376">M</text></g>
+    <g data-mars-node="leafNSN" class="tree-leaf leaf-h"><rect x="430" y="456" width="100" height="45" rx="5"/><text x="480" y="484">H</text></g>
+    <g data-mars-node="leafNSY" class="tree-leaf leaf-m"><rect x="580" y="456" width="100" height="45" rx="5"/><text x="630" y="484">M</text></g>
+    <g class="tree-caption"><text x="470" y="540">Each question uses one feature. The final leaf predicts a class.</text></g>
+  </svg>
+</div>
+
+<div class="example-step-title"><span>Step 4</span><strong>Classify a new visitor</strong></div>
+<div class="mars-predictor" data-mars-demo>
+  <div class="mars-fields">
+    <label>Green
+      <select data-mars-feature="Green"><option value="N" selected>No (N)</option><option value="Y">Yes (Y)</option></select>
+    </label>
+    <label>Legs
+      <select data-mars-feature="Legs"><option value="2" selected>2</option><option value="3">3</option></select>
+    </label>
+    <label>Height
+      <select data-mars-feature="Height"><option value="S" selected>Short (S)</option><option value="T">Tall (T)</option></select>
+    </label>
+    <label>Smelly
+      <select data-mars-feature="Smelly"><option value="N">No (N)</option><option value="Y" selected>Yes (Y)</option></select>
+    </label>
   </div>
-
-  <div class="ttt-activity" data-ttt-game>
-    <div class="ttt-play-area"><div class="ttt-board" role="group" aria-label="Tic-tac-toe board. You are O, the tree plays X.">
-      <button type="button" data-ttt-cell="0" aria-label="Top-left cell"></button><button type="button" data-ttt-cell="1" aria-label="Top-middle cell"></button><button type="button" data-ttt-cell="2" aria-label="Top-right cell"></button>
-      <button type="button" data-ttt-cell="3" aria-label="Middle-left cell"></button><button type="button" data-ttt-cell="4" aria-label="Center cell"></button><button type="button" data-ttt-cell="5" aria-label="Middle-right cell"></button>
-      <button type="button" data-ttt-cell="6" aria-label="Bottom-left cell"></button><button type="button" data-ttt-cell="7" aria-label="Bottom-middle cell"></button><button type="button" data-ttt-cell="8" aria-label="Bottom-right cell"></button>
-    </div></div>
-    <div class="ttt-explainer">
-      <span class="activity-kicker">SUPERVISED MODEL DEMONSTRATION</span>
-      <h4>Your opponent uses a complete decision tree</h4>
-      <p>You play <strong>O</strong>. The model plays <strong>X</strong>, using labels generated by exhaustive optimal game-tree search.</p>
-      <strong data-ttt-status role="status" aria-live="polite">Choose an empty square.</strong>
-      <p class="model-counter"><output data-ttt-count>—</output> legal X-turn board positions labelled and stored in the tree.</p>
-      <p class="model-counter">Optimal-move verification: <output data-ttt-verified>—</output>.</p>
-      <button type="button" data-ttt-reset>Start a new game</button>
-    </div>
+  <div class="mars-output">
+    <small>PREDICTED SPECIES</small>
+    <strong data-mars-result class="mars-m">M — Martian</strong>
+    <p data-mars-path aria-live="polite">Legs = 2 → Green = N → Height = S → Smelly = Y → Martian</p>
+    <span data-mars-training>Matches a labelled training example.</span>
+    <button type="button" data-mars-reset>Reset visitor</button>
   </div>
-  <div class="observation"><span class="label-word observation-label">Observation</span><p><strong>Where the supervision comes from matters:</strong> minimax is search, not learning. Here it generates optimal <em>labels</em>, and the decision tree memorises the complete mapping from board attributes to those labels. Complete coverage and verification make the tree unbeatable; a small tree trained on only a few games would not have that guarantee.</p></div>
-  <div class="notes"><span class="label-word notes-label">Notes</span><ul>
-    <li>This is a <strong>categorical decision tree built by exhaustive lookup</strong>, rather than a compact ID3 tree. Week 2 introduces how a smaller tree is learned from examples.</li>
-    <li>It plays perfectly only for the ordinary 3 × 3 game with X moving first and legal alternating turns.</li>
-  </ul></div>
+</div>
+<div class="observation"><span class="label-word observation-label">Observation</span><p>The tree correctly classifies all ten supplied training examples. That does <strong>not</strong> guarantee correct classifications for every possible visitor. The exercise also asks whether simpler logical rules can fit these examples.</p></div>
+<div class="notes"><span class="label-word notes-label">Notes</span><ul>
+  <li><strong>Supervised learning:</strong> Species (M or H) is the known answer during training.</li>
+  <li><strong>ID3:</strong> tests the attribute with greatest information gain at each decision node.</li>
+  <li><strong>Inference:</strong> follows the completed tree for a new visitor, without rebuilding the tree.</li>
+</ul></div>
 
   <h3>1.4.2. Unsupervised example — find groups without labels</h3>
   <p class="visual-intro">All three diagrams use <strong>exactly the same eight input points</strong>. From one diagram to the next, change <strong>one operation</strong> at a time.</p>
@@ -309,10 +347,10 @@ ENDIF</code></pre>
   <div class="definition"><span class="label-word definition-label">Definition</span><p><strong>Clustering:</strong> grouping examples by similarity without supplied target labels.</p></div>
   <div class="observation"><span class="label-word observation-label">Observation</span><p>These diagrams show one iteration of <strong>K-means</strong>. Repeating assignment and centre updates can stabilise the groups; the names “Group 1” and “Group 2” are created by the algorithm, not supplied as correct answers.</p></div>
   <div class="exercise"><span class="label-word exercise-label">Exercise 4</span><div class="exercise-parts"><span>1)</span><ol type="a">
-    <li>In the tic-tac-toe example, identify the input attributes and the output label. Who supplied the correct answers?</li>
+    <li>In the Martian example, which attributes describe each visitor, and which attribute is the target label?</li>
     <li>In the clustering example, explain exactly what changed between diagrams 1 and 2, and between diagrams 2 and 3.</li>
-  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> The nine cell values are the features; the optimal move is the label, supplied by exact minimax search. <strong>b)</strong> First, assign unchanged points to nearest centres; next, move the centres to the means of their assigned points, keeping the assignments fixed for that update.</p></details></div>
-  <p class="source-line"><strong>Bibliography:</strong> <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Teachable Machine</a> · <a href="/w1/lab/">Week 1 laboratory</a>.</p>
+  </ol></div><details><summary>Show a possible solution</summary><p><strong>a)</strong> Green, Legs, Height and Smelly are the input features. Species (M or H) is the label provided in the exercise. <strong>b)</strong> First, assign unchanged points to nearest centres; next, move the centres to the means of their assigned points, keeping the assignments fixed for that update.</p></details></div>
+  <p class="source-line"><strong>Bibliography:</strong> Liviu Ciortuz and collaborators, <em>Algoritmul ID3</em>, Problem 40 (supplied exercise collection) · <a href="/w1/lab/">Flight-delay laboratory, Problem 42</a>.</p>
 </section>
 
 <section id="five" class="chapter-section">
