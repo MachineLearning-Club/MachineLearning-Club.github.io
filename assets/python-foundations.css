@@ -1,19 +1,13 @@
 /* Python preparation guide — academic white, low visual weight, accessible toggles. */
 .foundations-skip{position:absolute;left:-10000px;top:auto}
 .foundations-skip:focus{left:16px;top:12px;background:#fff;z-index:100;padding:6px 10px;border:2px solid #174a7e}
-.foundations-head{margin:0 auto 40px}
+.foundations-head{margin:0 auto 16px}
 .foundations-back{margin:0 0 31px;font-size:.88rem}
 .foundations-overline{color:#607589;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;margin-bottom:11px}
-.foundations-head h1{font-size:2.3rem;line-height:1.19;margin:0 0 17px;font-weight:400;color:#233b50}
-.foundations-lede{max-width:680px;font-size:1.04rem;line-height:1.7;color:#354b5b}
-.foundations-meta{font-size:.83rem;color:#647889}
+.foundations-head h1{font-size:2.3rem;line-height:1.19;margin:0 0 8px;font-weight:400;color:#233b50}
 .foundations-page{margin:0}
 .foundations-page h2{border:0;margin:0 0 17px;font-size:1.34rem;color:#2b455b;padding:0}
-.foundations-intro{border-top:1px solid #dce3e9;padding-top:26px;margin-bottom:42px}
-.foundations-intro ol{padding-left:23px}
-.foundations-intro li{margin:9px 0}
-.foundations-note{font-size:.88rem;color:#50687b;border-left:2px solid #a6b6c4;padding:9px 13px;background:#f9fbfd}
-.foundations-toc{border-top:1px solid #dce4ea;border-bottom:1px solid #dce4ea;padding:25px 0 19px;margin:0 0 55px}
+.foundations-toc{border-top:1px solid #dce4ea;border-bottom:1px solid #dce4ea;padding:18px 0 19px;margin:0 0 48px}
 .foundations-toc h2{margin-bottom:21px}
 .foundations-toc-group{margin-bottom:17px}
 .foundations-toc-group h3{font-size:.94rem;font-weight:600;margin:0 0 8px;color:#314a5c}
@@ -31,11 +25,14 @@
 .foundation-no{font-size:.81rem;font-variant-numeric:tabular-nums;color:#8294a2;min-width:23px;padding-top:2px}
 .foundation-summary{flex:1;min-width:0}
 .foundation-summary strong{display:block;font-size:1.02rem;line-height:1.43;font-weight:600}
-.foundation-summary small{display:block;font-size:.84rem;line-height:1.56;color:#6b7c88;margin-top:5px}
 .foundation-tag{font-size:.72rem;white-space:nowrap;border:1px solid #d7e0e7;color:#637785;padding:3px 7px;margin-top:2px}
 .foundation-lesson[open]>summary .foundation-summary strong{color:#174f76}
 .foundation-body{padding:1px 13px 25px 40px}
 .foundation-body h3{font-size:1rem;color:#314d62;font-weight:600;margin:17px 0 5px}
+.foundation-core{margin:6px 0 17px}
+.foundation-core-label{display:block;color:#566d7f;font-size:.77rem;font-variant:small-caps;letter-spacing:.035em;font-weight:600}
+.foundation-algorithm{overflow-x:auto;white-space:pre;font:.85rem/1.65 "Liberation Mono",Consolas,monospace;color:#254357;background:#f8fafc;border-left:2px solid #a6bac8;padding:13px 16px;margin:9px 0 0;tab-size:4}
+.foundation-algorithm code{font:inherit;color:inherit}
 .foundation-body p,.foundation-body li{font-size:.94rem;line-height:1.67}
 .foundation-steps{margin:12px 0 22px;padding-left:24px}
 .foundation-steps li{margin:4px 0}
@@ -60,14 +57,12 @@
 .foundations-source{color:#6b7985;font-size:.8rem!important;line-height:1.6;margin-top:35px}
 @media(max-width:680px){
  .foundations-head h1{font-size:1.88rem}
- .foundations-lede{font-size:1rem}
- .foundations-meta{line-height:1.6}
  .foundations-toc-group ol{grid-template-columns:1fr}
  .foundation-lesson>summary{gap:9px}
  .foundation-tag{font-size:.68rem;padding:2px 5px}
  .foundation-summary strong{font-size:.98rem}
- .foundation-summary small{font-size:.81rem}
  .foundation-body{padding:1px 0 20px 9px}
+ .foundation-algorithm{font-size:.77rem;padding:11px 9px}
  .foundation-subdetail .python-runner{margin:10px 9px 13px}
  .foundation-lesson .py-source{font-size:.77rem}
  .foundation-lesson .py-output{font-size:.78rem}

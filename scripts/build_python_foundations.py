@@ -47,24 +47,8 @@ def page() -> str:
         '<p class="foundations-back"><a href="/">← Machine Learning Club</a></p>',
         '<p class="foundations-overline">Before Module I · Preparation</p>',
         '<h1>Python Programming Foundations</h1>',
-        '<p class="foundations-lede">From your first program to the algorithms behind data processing. '
-        'Read a short explanation, expand a worked example, edit the code, and run it directly in your browser.</p>',
-        '<p class="foundations-meta">Beginner-friendly · 21 short topics · 42 editable programs · No account required</p>',
         '</header>',
         '<main class="foundations-page">',
-        '<section class="foundations-intro" aria-labelledby="how-to-use">',
-        '<h2 id="how-to-use">How to use this guide</h2>',
-        '<ol><li>Start with Topics 1–16 if you are new to programming. '
-        'You can skip anything you already know.</li>',
-        '<li>For each topic, predict what the sample prints, then select <strong>Run Python</strong>. '
-        'Change an input value and run it again.</li>',
-        '<li>Try the challenge before expanding its solution. Topics 17–20 are optional deeper algorithms; '
-        'Topic 21 connects the basics with Machine Learning.</li></ol>',
-        '<p class="foundations-note"><strong>Browser execution:</strong> The first run downloads a Python engine '
-        '(Pyodide) over the internet. Programs run in an isolated browser worker. '
-        'The examples use editable preset inputs, because interactive terminal input prompts are not supported here. '
-        'Use <strong>Stop</strong> to interrupt a long-running program.</p>',
-        '</section>',
         '<nav class="foundations-toc" aria-label="Python foundations contents">',
         '<h2>Contents</h2>',
     ]
@@ -89,16 +73,22 @@ def page() -> str:
             html_parts.append(
                 '<summary>'
                 f'<span class="foundation-no">{i:02d}</span>'
-                f'<span class="foundation-summary"><strong>{e(lesson["title"])}</strong>'
-                f'<small>{e(lesson["lead"])}</small></span>'
+                f'<span class="foundation-summary"><strong>{e(lesson["title"])}</strong></span>'
                 f'<span class="foundation-tag">{e(lesson["tag"])}</span>'
                 '</summary>'
             )
             html_parts.append('<div class="foundation-body">')
-            html_parts.append('<h3>Core idea</h3><p>'+e(lesson["lead"])+'</p><ol class="foundation-steps">')
+            html_parts.append(
+                '<div class="foundation-core" aria-label="Core algorithmic takeaway">'
+                '<span class="foundation-core-label">Core idea · algorithmic notation</span>'
+                f'<pre class="foundation-algorithm"><code>{e(lesson["algorithm"])}</code></pre>'
+                '</div>'
+            )
+            html_parts.append('<details class="foundation-subdetail"><summary>Explanation</summary>'
+                              '<p>'+e(lesson["lead"])+'</p><ol class="foundation-steps">')
             for step in lesson["steps"]:
                 html_parts.append('<li>'+e(step)+'</li>')
-            html_parts.append('</ol>')
+            html_parts.append('</ol></details>')
             html_parts.append(f'<details class="foundation-subdetail"{" open" if i == 1 else ""}>'
                               '<summary>Worked example · Run and modify</summary>'
                               f'<p>{e(lesson["demo"])}</p>'

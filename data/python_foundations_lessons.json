@@ -17,7 +17,8 @@
       "question": "Change the order to eight notebooks. Keep the unit price calculation reusable.",
       "solution": "notebooks = 4\ntotal_price = 28\nwanted = 8\nunit_price = total_price / notebooks\nprint('Price for eight:', unit_price * wanted)",
       "tip": "A step-by-step plan is more important than knowing a particular Python keyword.",
-      "ml": "An ML workflow similarly receives data, transforms it and produces a prediction."
+      "ml": "An ML workflow similarly receives data, transforms it and produces a prediction.",
+      "algorithm": "ALGORITHM PriceForQuantity\nINPUT known_quantity, known_total, wanted_quantity\nunit_price ← known_total / known_quantity\nOUTPUT unit_price × wanted_quantity"
     },
     {
       "group": "Programming foundations",
@@ -34,7 +35,8 @@
       "question": "Print a student's name and their score increased by one.",
       "solution": "student = 'Mira'\nscore = 7\nprint(student)\nprint('Updated score:', score + 1)",
       "tip": "Python distinguishes uppercase and lowercase names: score and Score are different variables.",
-      "ml": "Readable code helps you reproduce experiments."
+      "ml": "Readable code helps you reproduce experiments.",
+      "algorithm": "BEGIN\n    name ← \"Avery\"          // text\n    score ← 9               // integer\n    OUTPUT name, score\nEND"
     },
     {
       "group": "Programming foundations",
@@ -51,7 +53,8 @@
       "question": "Store a temperature as a float and a city as text. Print both types.",
       "solution": "temperature = 19.5\ncity = 'Iasi'\nprint(city, temperature)\nprint(type(temperature).__name__)\nprint(type(city).__name__)",
       "tip": "Naming matters: choose total_score instead of vague names such as x1.",
-      "ml": "Features can be numbers, categories or labels; their types affect how we process them."
+      "ml": "Features can be numbers, categories or labels; their types affect how we process them.",
+      "algorithm": "count ← 3                  // integer\nweight ← 2.5               // real\nlabel ← \"cat\"              // text\nvalid ← TRUE               // boolean\ncount ← count + 1"
     },
     {
       "group": "Programming foundations",
@@ -68,7 +71,8 @@
       "question": "Pretend a user typed '3.75'. Convert it and multiply by four.",
       "solution": "typed_price = '3.75'\nprice = float(typed_price)\nprint('Total:', price * 4)",
       "tip": "The terminal version is age = int(input('Age: ')). Live examples here use preset inputs because the embedded runner does not provide an input prompt.",
-      "ml": "Most datasets start as text that must be parsed into usable values."
+      "ml": "Most datasets start as text that must be parsed into usable values.",
+      "algorithm": "INPUT age_text\nage ← TO_INTEGER(age_text)\nOUTPUT age + 1"
     },
     {
       "group": "Programming foundations",
@@ -85,7 +89,8 @@
       "question": "How many full groups of three can be made from 20 students, and how many remain?",
       "solution": "students = 20\nprint('Groups:', students // 3)\nprint('Remaining:', students % 3)",
       "tip": "Negative inputs make // and % behave differently from simple truncation; begin with non-negative integers.",
-      "ml": "Arithmetic operators are used in averages, distances and simple error measures."
+      "ml": "Arithmetic operators are used in averages, distances and simple error measures.",
+      "algorithm": "quotient ← items DIV pack_size\nremainder ← items MOD pack_size\nsquare ← quotient ^ 2\nOUTPUT quotient, remainder, square"
     },
     {
       "group": "Programming foundations",
@@ -102,7 +107,8 @@
       "question": "Test if an integer is divisible by two or five.",
       "solution": "number = 18\nmatches = number % 2 == 0 or number % 5 == 0\nprint(matches)",
       "tip": "and requires both conditions; or requires at least one.",
-      "ml": "Boolean conditions can become simple classification rules."
+      "ml": "Boolean conditions can become simple classification rules.",
+      "algorithm": "valid ← (0 ≤ score ≤ 10)\npassed ← valid AND (score ≥ 6)\nOUTPUT NOT passed"
     },
     {
       "group": "Decisions and repetition",
@@ -119,7 +125,8 @@
       "question": "Print 'positive', 'zero' or 'negative' for a given integer.",
       "solution": "value = -4\nif value > 0:\n    print('positive')\nelif value == 0:\n    print('zero')\nelse:\n    print('negative')",
       "tip": "Conditions are checked from top to bottom. Only the first matching branch of an if/elif/else chain runs.",
-      "ml": "A decision tree repeatedly asks questions of this form."
+      "ml": "A decision tree repeatedly asks questions of this form.",
+      "algorithm": "IF temperature < 15 THEN\n    label ← \"cold\"\nELSE IF temperature < 25 THEN\n    label ← \"mild\"\nELSE\n    label ← \"hot\"\nEND IF\nOUTPUT label"
     },
     {
       "group": "Decisions and repetition",
@@ -136,7 +143,8 @@
       "question": "Add the squares of the integers from 1 through 4.",
       "solution": "total = 0\nfor n in range(1, 5):\n    total += n ** 2\nprint(total)",
       "tip": "The stop value is excluded: range(1, 6) includes 5, but not 6.",
-      "ml": "Loops let you process each sample in a dataset."
+      "ml": "Loops let you process each sample in a dataset.",
+      "algorithm": "total ← 0\nFOR i ← 1 TO 5 DO\n    total ← total + i\nEND FOR\nOUTPUT total"
     },
     {
       "group": "Decisions and repetition",
@@ -153,7 +161,8 @@
       "question": "Use while to count down from 5 to 1.",
       "solution": "count = 5\nwhile count > 0:\n    print(count)\n    count -= 1",
       "tip": "If a loop's condition never becomes false, the loop may run forever. The runner has a Stop button.",
-      "ml": "Many training procedures repeat until they reach a specified number of steps or a stopping condition."
+      "ml": "Many training procedures repeat until they reach a specified number of steps or a stopping condition.",
+      "algorithm": "number ← 75\nWHILE number > 1 DO\n    number ← number DIV 2\nEND WHILE\nOUTPUT number"
     },
     {
       "group": "Decisions and repetition",
@@ -170,7 +179,8 @@
       "question": "Trace the running maximum of [2, 9, 5, 11], printing the value each step.",
       "solution": "values = [2, 9, 5, 11]\nmaximum = values[0]\nfor value in values:\n    if value > maximum:\n        maximum = value\n    print('Current maximum:', maximum)",
       "tip": "Print traces help you debug, but they are not a replacement for checking expected results. For a list of n values, one pass takes O(n) time.",
-      "ml": "Testing model code is as important as choosing the model."
+      "ml": "Testing model code is as important as choosing the model.",
+      "algorithm": "total ← 0\nFOR EACH value IN data DO\n    total ← total + value\n    TRACE(value, total)\nEND FOR\nOUTPUT total"
     },
     {
       "group": "Working with numbers",
@@ -187,7 +197,8 @@
       "question": "Count how many even digits appear in 406280.",
       "solution": "number = 406280\neven_digits = 0\nwhile number > 0:\n    digit = number % 10\n    if digit % 2 == 0:\n        even_digits += 1\n    number //= 10\nprint(even_digits)",
       "tip": "This loop scans digits from right to left. The value zero needs a special case if the task asks for a digit count.",
-      "ml": "Digit processing is algorithmic practice; for real-world data we more often process list elements."
+      "ml": "Digit processing is algorithmic practice; for real-world data we more often process list elements.",
+      "algorithm": "WHILE number > 0 DO\n    digit ← number MOD 10\n    PROCESS(digit)\n    number ← number DIV 10\nEND WHILE"
     },
     {
       "group": "Working with numbers",
@@ -204,7 +215,8 @@
       "question": "Use the function to print prime numbers between 10 and 20.",
       "solution": "def is_prime(n):\n    if n <= 1:\n        return False\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return True\n\nfor n in range(10, 21):\n    if is_prime(n):\n        print(n)",
       "tip": "For beginners, trying all divisors from 2 to n-1 is correct but slower.",
-      "ml": "This demonstrates the value of choosing a better algorithm, even when the result stays the same."
+      "ml": "This demonstrates the value of choosing a better algorithm, even when the result stays the same.",
+      "algorithm": "IF n ≤ 1 THEN RETURN FALSE\ndivisor ← 2\nWHILE divisor × divisor ≤ n DO\n    IF n MOD divisor = 0 THEN RETURN FALSE\n    divisor ← divisor + 1\nEND WHILE\nRETURN TRUE"
     },
     {
       "group": "Functions and data",
@@ -221,7 +233,8 @@
       "question": "Create a function larger(a, b) that returns the larger value.",
       "solution": "def larger(a, b):\n    if a >= b:\n        return a\n    return b\n\nprint(larger(4, 7))\nprint(larger(12, 3))",
       "tip": "A function that prints a number is not the same as a function that returns a number; returning makes composition easier.",
-      "ml": "You can write your own feature-extraction or prediction function."
+      "ml": "You can write your own feature-extraction or prediction function.",
+      "algorithm": "FUNCTION mean(a, b, c)\n    RETURN (a + b + c) / 3\nEND FUNCTION\nOUTPUT mean(6, 8, 10)"
     },
     {
       "group": "Functions and data",
@@ -238,7 +251,8 @@
       "question": "Write a function that returns the absolute difference between two numbers.",
       "solution": "def difference(a, b):\n    return abs(a - b)\n\nprint(difference(8, 3))\nprint(difference(3, 8))",
       "tip": "Use global only when you truly need to rebind a module-level name; most beginner problems are clearer with parameters.",
-      "ml": "Small pure functions are easier to test and reuse across experiments."
+      "ml": "Small pure functions are easier to test and reuse across experiments.",
+      "algorithm": "FUNCTION improve(value)\n    improved ← MIN(10, value + 3)  // local\n    RETURN improved\nEND FUNCTION\nscore ← 4\nOUTPUT improve(score), score"
     },
     {
       "group": "Functions and data",
@@ -255,7 +269,8 @@
       "question": "Start with [2, 4, 6], add 8, and print the second and last elements.",
       "solution": "values = [2, 4, 6]\nvalues.append(8)\nprint(values[1])\nprint(values[-1])",
       "tip": "values[len(values)] is out of bounds for reading. The final valid index is len(values) - 1.",
-      "ml": "Datasets are collections of observations, and many basic algorithms operate on sequences."
+      "ml": "Datasets are collections of observations, and many basic algorithms operate on sequences.",
+      "algorithm": "values ← [18, 20, 17]\nfirst ← values[0]           // index begins at 0\nAPPEND(values, 21)\nOUTPUT LENGTH(values), first"
     },
     {
       "group": "Functions and data",
@@ -272,7 +287,8 @@
       "question": "Count how many temperatures in [17, 25, 31, 20, 29] are at least 25.",
       "solution": "temperatures = [17, 25, 31, 20, 29]\ncount = 0\nfor value in temperatures:\n    if value >= 25:\n        count += 1\nprint(count)",
       "tip": "A frequency list assumes values fall in known integer indexes. For arbitrary labels, a dictionary is usually more flexible.",
-      "ml": "Frequency counts are the foundation of simple class distributions."
+      "ml": "Frequency counts are the foundation of simple class distributions.",
+      "algorithm": "counts ← [0, 0, 0]\nFOR EACH label IN labels DO\n    counts[label] ← counts[label] + 1\nEND FOR\nOUTPUT counts"
     },
     {
       "group": "Further algorithmic practice",
@@ -289,7 +305,8 @@
       "question": "Build the list of prime factors (with repeats) of 84.",
       "solution": "number = 84\nfactors = []\ndivisor = 2\nwhile divisor * divisor <= number:\n    while number % divisor == 0:\n        factors.append(divisor)\n        number //= divisor\n    divisor += 1\nif number > 1:\n    factors.append(number)\nprint(factors)",
       "tip": "The inner factorisation loop repeats a divisor until it no longer divides the remaining number.",
-      "ml": "The same idea of shrinking the remaining problem appears in more advanced algorithms."
+      "ml": "The same idea of shrinking the remaining problem appears in more advanced algorithms.",
+      "algorithm": "WHILE b ≠ 0 DO\n    (a, b) ← (b, a MOD b)\nEND WHILE\nOUTPUT a                   // greatest common divisor"
     },
     {
       "group": "Further algorithmic practice",
@@ -306,7 +323,8 @@
       "question": "Add 3, 5, 7 to a stack and print the numbers as they are removed.",
       "solution": "stack = []\nfor value in [3, 5, 7]:\n    stack.append(value)\nwhile stack:\n    print(stack.pop())",
       "tip": "Removing the first element of a normal list is slower for large queues; deque is a better queue implementation.",
-      "ml": "Stacks and queues show up in algorithmic search and workflow scheduling, though not in our first ML exercises."
+      "ml": "Stacks and queues show up in algorithmic search and workflow scheduling, though not in our first ML exercises.",
+      "algorithm": "PUSH(stack, \"A\")\nPUSH(stack, \"B\")\nOUTPUT POP(stack)           // \"B\" (LIFO)\n\nENQUEUE(queue, \"A\")\nENQUEUE(queue, \"B\")\nOUTPUT DEQUEUE(queue)       // \"A\" (FIFO)"
     },
     {
       "group": "Further algorithmic practice",
@@ -323,7 +341,8 @@
       "question": "Sort a small list in descending order using Python's built-in sorted function.",
       "solution": "values = [7, 2, 5, 1]\nprint(sorted(values, reverse=True))",
       "tip": "Use sorted(values) in normal Python projects. Study manual sorting to understand the underlying comparisons.",
-      "ml": "Sorting can prepare ranked lists, such as the highest scores or nearest points."
+      "ml": "Sorting can prepare ranked lists, such as the highest scores or nearest points.",
+      "algorithm": "// Selection sort: move the minimum into place\nFOR i ← 0 TO n - 2 DO\n    min_pos ← INDEX_OF_MINIMUM(A, i, n - 1)\n    SWAP(A[i], A[min_pos])\nEND FOR\n\n// Bubble sort: swap out-of-order neighbours\nIF A[j] > A[j + 1] THEN SWAP(A[j], A[j + 1])"
     },
     {
       "group": "Further algorithmic practice",
@@ -340,7 +359,8 @@
       "question": "Generate the first six squares (0² through 5²) with a loop.",
       "solution": "squares = []\nfor i in range(6):\n    squares.append(i * i)\nprint(squares)",
       "tip": "Frequency-list approaches are appropriate only when values are small non-negative integers (or have been mapped to such indexes).",
-      "ml": "Count distributions help inspect class imbalance and categorical data."
+      "ml": "Count distributions help inspect class imbalance and categorical data.",
+      "algorithm": "FOR EACH value IN data DO\n    frequency[value] ← frequency[value] + 1\nEND FOR\nFOR value ← 0 TO max_value DO\n    REPEAT frequency[value] TIMES:\n        OUTPUT value\nEND FOR"
     },
     {
       "group": "Bridge to Machine Learning",
@@ -357,7 +377,8 @@
       "question": "Modify the threshold to 25 and observe how accuracy changes.",
       "solution": "temperatures = [12, 18, 23, 29]\nactual = ['cold', 'cold', 'warm', 'warm']\n\ndef predict(temp):\n    return 'warm' if temp >= 25 else 'cold'\n\ncorrect = sum(predict(t) == expected for t, expected in zip(temperatures, actual))\nprint('Accuracy:', correct / len(actual))",
       "tip": "The next ML lessons will ask a different question: can we learn a rule from examples instead of manually choosing the threshold?",
-      "ml": "You are now ready to discuss features, labels, predictions and simple evaluation."
+      "ml": "You are now ready to discuss features, labels, predictions and simple evaluation.",
+      "algorithm": "FUNCTION predict(temperature)\n    IF temperature ≥ 20 THEN RETURN \"warm\"\n    RETURN \"cold\"\nEND FUNCTION\n\naccuracy ← correct_predictions / total_examples\nOUTPUT accuracy"
     }
   ]
 }

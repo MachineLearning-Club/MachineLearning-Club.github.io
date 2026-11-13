@@ -12,17 +12,8 @@
 <p class="foundations-back"><a href="/">← Machine Learning Club</a></p>
 <p class="foundations-overline">Before Module I · Preparation</p>
 <h1>Python Programming Foundations</h1>
-<p class="foundations-lede">From your first program to the algorithms behind data processing. Read a short explanation, expand a worked example, edit the code, and run it directly in your browser.</p>
-<p class="foundations-meta">Beginner-friendly · 21 short topics · 42 editable programs · No account required</p>
 </header>
 <main class="foundations-page">
-<section class="foundations-intro" aria-labelledby="how-to-use">
-<h2 id="how-to-use">How to use this guide</h2>
-<ol><li>Start with Topics 1–16 if you are new to programming. You can skip anything you already know.</li>
-<li>For each topic, predict what the sample prints, then select <strong>Run Python</strong>. Change an input value and run it again.</li>
-<li>Try the challenge before expanding its solution. Topics 17–20 are optional deeper algorithms; Topic 21 connects the basics with Machine Learning.</li></ol>
-<p class="foundations-note"><strong>Browser execution:</strong> The first run downloads a Python engine (Pyodide) over the internet. Programs run in an isolated browser worker. The examples use editable preset inputs, because interactive terminal input prompts are not supported here. Use <strong>Stop</strong> to interrupt a long-running program.</p>
-</section>
 <nav class="foundations-toc" aria-label="Python foundations contents">
 <h2>Contents</h2>
 <div class="foundations-toc-group"><h3>Programming foundations</h3><ol>
@@ -63,13 +54,17 @@
 <section class="foundations-group" aria-labelledby="group-1">
 <h2 id="group-1">Programming foundations</h2>
 <details class="foundation-lesson" id="topic-01" open>
-<summary><span class="foundation-no">01</span><span class="foundation-summary"><strong>Algorithms and the input–process–output model</strong><small>Before coding, identify the input, the transformation, and the output. An algorithm is a finite, precise plan that works beyond one example.</small></span><span class="foundation-tag">Start here</span></summary>
+<summary><span class="foundation-no">01</span><span class="foundation-summary"><strong>Algorithms and the input–process–output model</strong></span><span class="foundation-tag">Start here</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Before coding, identify the input, the transformation, and the output. An algorithm is a finite, precise plan that works beyond one example.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>ALGORITHM PriceForQuantity
+INPUT known_quantity, known_total, wanted_quantity
+unit_price ← known_total / known_quantity
+OUTPUT unit_price × wanted_quantity</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Before coding, identify the input, the transformation, and the output. An algorithm is a finite, precise plan that works beyond one example.</p><ol class="foundation-steps">
 <li>Write down what the program receives.</li>
 <li>Describe the calculation in everyday language.</li>
 <li>Decide which result must be displayed.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail" open><summary>Worked example · Run and modify</summary><p>A small shop sells four notebooks for 28 lei. Calculate the cost of six at the same unit price.</p><div class="python-runner"><label for="foundation-1-example">Editable Python program</label><textarea id="foundation-1-example" class="py-source" rows="6" spellcheck="false" aria-label="Python example 1: example">notebooks = 4
 total_price = 28
 wanted = 6
@@ -84,13 +79,18 @@ print(&#x27;Price for eight:&#x27;, unit_price * wanted)</textarea><div class="r
 <p class="foundation-connection"><strong>Connection to ML:</strong> An ML workflow similarly receives data, transforms it and produces a prediction.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-02">
-<summary><span class="foundation-no">02</span><span class="foundation-summary"><strong>Your first Python program: printing, comments and indentation</strong><small>Python executes statements in order. Comments begin with #, and indentation groups statements into blocks.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">02</span><span class="foundation-summary"><strong>Your first Python program: printing, comments and indentation</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Python executes statements in order. Comments begin with #, and indentation groups statements into blocks.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>BEGIN
+    name ← &quot;Avery&quot;          // text
+    score ← 9               // integer
+    OUTPUT name, score
+END</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Python executes statements in order. Comments begin with #, and indentation groups statements into blocks.</p><ol class="foundation-steps">
 <li>Use print(...) to display information.</li>
 <li>Write comments for a reason, not to repeat every line.</li>
 <li>Indent consistently with four spaces inside a block.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Print a labelled result and a friendly message.</p><div class="python-runner"><label for="foundation-2-example">Editable Python program</label><textarea id="foundation-2-example" class="py-source" rows="6" spellcheck="false" aria-label="Python example 2: example"># This is a comment.
 name = &#x27;Avery&#x27;
 score = 9
@@ -104,13 +104,18 @@ print(&#x27;Updated score:&#x27;, score + 1)</textarea><div class="runner-action
 <p class="foundation-connection"><strong>Connection to ML:</strong> Readable code helps you reproduce experiments.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-03">
-<summary><span class="foundation-no">03</span><span class="foundation-summary"><strong>Variables and basic data types</strong><small>A variable is a name bound to a value. Python&#x27;s everyday types include int, float, str and bool.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">03</span><span class="foundation-summary"><strong>Variables and basic data types</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A variable is a name bound to a value. Python&#x27;s everyday types include int, float, str and bool.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>count ← 3                  // integer
+weight ← 2.5               // real
+label ← &quot;cat&quot;              // text
+valid ← TRUE               // boolean
+count ← count + 1</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A variable is a name bound to a value. Python&#x27;s everyday types include int, float, str and bool.</p><ol class="foundation-steps">
 <li>Use = for assignment, not comparison.</li>
 <li>A string is text in quotes; a number is not.</li>
 <li>Use type(...) when you are unsure what kind of value you have.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Inspect several types and update a counter.</p><div class="python-runner"><label for="foundation-3-example">Editable Python program</label><textarea id="foundation-3-example" class="py-source" rows="9" spellcheck="false" aria-label="Python example 3: example">count = 3
 weight = 2.5
 label = &#x27;cat&#x27;
@@ -128,13 +133,16 @@ print(type(city).__name__)</textarea><div class="runner-actions"><button type="b
 <p class="foundation-connection"><strong>Connection to ML:</strong> Features can be numbers, categories or labels; their types affect how we process them.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-04">
-<summary><span class="foundation-no">04</span><span class="foundation-summary"><strong>Reading input and converting values</strong><small>In a normal terminal, input(...) reads text. Convert it with int(...) or float(...) before doing arithmetic.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">04</span><span class="foundation-summary"><strong>Reading input and converting values</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>In a normal terminal, input(...) reads text. Convert it with int(...) or float(...) before doing arithmetic.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>INPUT age_text
+age ← TO_INTEGER(age_text)
+OUTPUT age + 1</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>In a normal terminal, input(...) reads text. Convert it with int(...) or float(...) before doing arithmetic.</p><ol class="foundation-steps">
 <li>Remember input() returns a string.</li>
 <li>Use int(...) for whole numbers and float(...) for decimal values.</li>
 <li>In this browser runner, edit the example input value instead of waiting for terminal input.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Simulate the text a student would enter; then convert it before using it.</p><div class="python-runner"><label for="foundation-4-example">Editable Python program</label><textarea id="foundation-4-example" class="py-source" rows="5" spellcheck="false" aria-label="Python example 4: example">typed_age = &#x27;14&#x27;  # Imagine input(&#x27;Age: &#x27;) returned this text.
 age = int(typed_age)
 print(&#x27;Next year:&#x27;, age + 1)
@@ -146,13 +154,17 @@ print(&#x27;Total:&#x27;, price * 4)</textarea><div class="runner-actions"><butt
 <p class="foundation-connection"><strong>Connection to ML:</strong> Most datasets start as text that must be parsed into usable values.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-05">
-<summary><span class="foundation-no">05</span><span class="foundation-summary"><strong>Arithmetic expressions, division and remainders</strong><small>Use +, -, *, /, //, %, and ** to calculate. Parentheses make evaluation order explicit.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">05</span><span class="foundation-summary"><strong>Arithmetic expressions, division and remainders</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Use +, -, *, /, //, %, and ** to calculate. Parentheses make evaluation order explicit.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>quotient ← items DIV pack_size
+remainder ← items MOD pack_size
+square ← quotient ^ 2
+OUTPUT quotient, remainder, square</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Use +, -, *, /, //, %, and ** to calculate. Parentheses make evaluation order explicit.</p><ol class="foundation-steps">
 <li>/ is true division; // is floor division.</li>
 <li>% gives the remainder and ** gives a power.</li>
 <li>Use remainder to test even/odd numbers or extract a digit.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Split 23 items into packs of five.</p><div class="python-runner"><label for="foundation-5-example">Editable Python program</label><textarea id="foundation-5-example" class="py-source" rows="6" spellcheck="false" aria-label="Python example 5: example">items = 23
 pack_size = 5
 print(&#x27;Full packs:&#x27;, items // pack_size)
@@ -165,13 +177,16 @@ print(&#x27;Remaining:&#x27;, students % 3)</textarea><div class="runner-actions
 <p class="foundation-connection"><strong>Connection to ML:</strong> Arithmetic operators are used in averages, distances and simple error measures.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-06">
-<summary><span class="foundation-no">06</span><span class="foundation-summary"><strong>Comparisons and Boolean logic</strong><small>Conditions evaluate to True or False. Combine tests with and, or and not.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">06</span><span class="foundation-summary"><strong>Comparisons and Boolean logic</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Conditions evaluate to True or False. Combine tests with and, or and not.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>valid ← (0 ≤ score ≤ 10)
+passed ← valid AND (score ≥ 6)
+OUTPUT NOT passed</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Conditions evaluate to True or False. Combine tests with and, or and not.</p><ol class="foundation-steps">
 <li>Use == to compare values; = is assignment.</li>
 <li>Test a range with and.</li>
 <li>Parenthesise compound conditions when readability improves.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Decide whether a quiz score is within an accepted range.</p><div class="python-runner"><label for="foundation-6-example">Editable Python program</label><textarea id="foundation-6-example" class="py-source" rows="7" spellcheck="false" aria-label="Python example 6: example">score = 8
 valid = 0 &lt;= score &lt;= 10
 passed = valid and score &gt;= 6
@@ -188,13 +203,21 @@ print(matches)</textarea><div class="runner-actions"><button type="button" class
 <section class="foundations-group" aria-labelledby="group-2">
 <h2 id="group-2">Decisions and repetition</h2>
 <details class="foundation-lesson" id="topic-07">
-<summary><span class="foundation-no">07</span><span class="foundation-summary"><strong>Choosing a path with if, elif and else</strong><small>Selection lets an algorithm execute different instructions depending on a condition.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">07</span><span class="foundation-summary"><strong>Choosing a path with if, elif and else</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Selection lets an algorithm execute different instructions depending on a condition.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>IF temperature &lt; 15 THEN
+    label ← &quot;cold&quot;
+ELSE IF temperature &lt; 25 THEN
+    label ← &quot;mild&quot;
+ELSE
+    label ← &quot;hot&quot;
+END IF
+OUTPUT label</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Selection lets an algorithm execute different instructions depending on a condition.</p><ol class="foundation-steps">
 <li>Start with if and a colon.</li>
 <li>Use elif for additional mutually exclusive branches.</li>
 <li>Use else for all remaining cases; indentation defines each branch.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Translate a measured value into a category.</p><div class="python-runner"><label for="foundation-7-example">Editable Python program</label><textarea id="foundation-7-example" class="py-source" rows="9" spellcheck="false" aria-label="Python example 7: example">temperature = 21
 if temperature &lt; 15:
     label = &#x27;cold&#x27;
@@ -214,13 +237,18 @@ else:
 <p class="foundation-connection"><strong>Connection to ML:</strong> A decision tree repeatedly asks questions of this form.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-08">
-<summary><span class="foundation-no">08</span><span class="foundation-summary"><strong>Fixed repetition with for and range</strong><small>A for loop visits a sequence. range(n) begins at zero and excludes n.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">08</span><span class="foundation-summary"><strong>Fixed repetition with for and range</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A for loop visits a sequence. range(n) begins at zero and excludes n.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>total ← 0
+FOR i ← 1 TO 5 DO
+    total ← total + i
+END FOR
+OUTPUT total</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A for loop visits a sequence. range(n) begins at zero and excludes n.</p><ol class="foundation-steps">
 <li>Use range(5) for 0, 1, 2, 3, 4.</li>
 <li>Use range(start, stop, step) for more control.</li>
 <li>An accumulator stores a running total; a counter tracks occurrences.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Find the sum of the first five positive integers and count the even values.</p><div class="python-runner"><label for="foundation-8-example">Editable Python program</label><textarea id="foundation-8-example" class="py-source" rows="9" spellcheck="false" aria-label="Python example 8: example">total = 0
 even_count = 0
 for number in range(1, 6):
@@ -237,13 +265,18 @@ print(total)</textarea><div class="runner-actions"><button type="button" class="
 <p class="foundation-connection"><strong>Connection to ML:</strong> Loops let you process each sample in a dataset.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-09">
-<summary><span class="foundation-no">09</span><span class="foundation-summary"><strong>Conditional repetition with while</strong><small>A while loop repeats as long as its condition is true. Ensure something changes so it can terminate.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">09</span><span class="foundation-summary"><strong>Conditional repetition with while</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A while loop repeats as long as its condition is true. Ensure something changes so it can terminate.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>number ← 75
+WHILE number &gt; 1 DO
+    number ← number DIV 2
+END WHILE
+OUTPUT number</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A while loop repeats as long as its condition is true. Ensure something changes so it can terminate.</p><ol class="foundation-steps">
 <li>Initialise the condition&#x27;s variables.</li>
 <li>Update them inside the loop.</li>
 <li>Check the loop stops for the smallest and largest expected inputs.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Repeatedly halve a positive number using integer division.</p><div class="python-runner"><label for="foundation-9-example">Editable Python program</label><textarea id="foundation-9-example" class="py-source" rows="8" spellcheck="false" aria-label="Python example 9: example">number = 75
 steps = 0
 while number &gt; 1:
@@ -259,13 +292,19 @@ while count &gt; 0:
 <p class="foundation-connection"><strong>Connection to ML:</strong> Many training procedures repeat until they reach a specified number of steps or a stopping condition.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-10">
-<summary><span class="foundation-no">10</span><span class="foundation-summary"><strong>Tracing code, testing and intuitive efficiency</strong><small>A trace records how values change. Tests should include normal, boundary and unusual cases; also consider how many steps an algorithm takes.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">10</span><span class="foundation-summary"><strong>Tracing code, testing and intuitive efficiency</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A trace records how values change. Tests should include normal, boundary and unusual cases; also consider how many steps an algorithm takes.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>total ← 0
+FOR EACH value IN data DO
+    total ← total + value
+    TRACE(value, total)
+END FOR
+OUTPUT total</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A trace records how values change. Tests should include normal, boundary and unusual cases; also consider how many steps an algorithm takes.</p><ol class="foundation-steps">
 <li>Predict the output before running.</li>
 <li>Trace state changes one iteration at a time.</li>
 <li>Compare short inputs with longer ones to reason about work.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Watch an accumulator after each iteration.</p><div class="python-runner"><label for="foundation-10-example">Editable Python program</label><textarea id="foundation-10-example" class="py-source" rows="6" spellcheck="false" aria-label="Python example 10: example">total = 0
 for value in [3, 1, 4]:
     total += value
@@ -284,13 +323,18 @@ for value in values:
 <section class="foundations-group" aria-labelledby="group-3">
 <h2 id="group-3">Working with numbers</h2>
 <details class="foundation-lesson" id="topic-11">
-<summary><span class="foundation-no">11</span><span class="foundation-summary"><strong>Processing the digits of an integer</strong><small>For a non-negative integer, n % 10 returns its last digit and n // 10 removes that digit.</small></span><span class="foundation-tag">Core algorithm</span></summary>
+<summary><span class="foundation-no">11</span><span class="foundation-summary"><strong>Processing the digits of an integer</strong></span><span class="foundation-tag">Core algorithm</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>For a non-negative integer, n % 10 returns its last digit and n // 10 removes that digit.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>WHILE number &gt; 0 DO
+    digit ← number MOD 10
+    PROCESS(digit)
+    number ← number DIV 10
+END WHILE</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>For a non-negative integer, n % 10 returns its last digit and n // 10 removes that digit.</p><ol class="foundation-steps">
 <li>Copy the number if you need the original later.</li>
 <li>Process a digit inside a while loop.</li>
 <li>Handle zero separately when counting digits.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Sum the digits of a positive integer.</p><div class="python-runner"><label for="foundation-11-example">Editable Python program</label><textarea id="foundation-11-example" class="py-source" rows="8" spellcheck="false" aria-label="Python example 11: example">number = 50723
 original = number
 digit_sum = 0
@@ -310,13 +354,20 @@ print(even_digits)</textarea><div class="runner-actions"><button type="button" c
 <p class="foundation-connection"><strong>Connection to ML:</strong> Digit processing is algorithmic practice; for real-world data we more often process list elements.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-12">
-<summary><span class="foundation-no">12</span><span class="foundation-summary"><strong>Divisibility and prime numbers</strong><small>A prime number is greater than one and has no positive divisors other than 1 and itself. Testing divisors up to the square root is sufficient.</small></span><span class="foundation-tag">Core algorithm</span></summary>
+<summary><span class="foundation-no">12</span><span class="foundation-summary"><strong>Divisibility and prime numbers</strong></span><span class="foundation-tag">Core algorithm</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A prime number is greater than one and has no positive divisors other than 1 and itself. Testing divisors up to the square root is sufficient.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>IF n ≤ 1 THEN RETURN FALSE
+divisor ← 2
+WHILE divisor × divisor ≤ n DO
+    IF n MOD divisor = 0 THEN RETURN FALSE
+    divisor ← divisor + 1
+END WHILE
+RETURN TRUE</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A prime number is greater than one and has no positive divisors other than 1 and itself. Testing divisors up to the square root is sufficient.</p><ol class="foundation-steps">
 <li>Return False for n &lt;= 1.</li>
 <li>Try divisors while d*d &lt;= n.</li>
 <li>Stop as soon as a divisor is found.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Implement a reusable primality test.</p><div class="python-runner"><label for="foundation-12-example">Editable Python program</label><textarea id="foundation-12-example" class="py-source" rows="13" spellcheck="false" aria-label="Python example 12: example">def is_prime(n):
     if n &lt;= 1:
         return False
@@ -349,13 +400,17 @@ for n in range(10, 21):
 <section class="foundations-group" aria-labelledby="group-4">
 <h2 id="group-4">Functions and data</h2>
 <details class="foundation-lesson" id="topic-13">
-<summary><span class="foundation-no">13</span><span class="foundation-summary"><strong>Writing functions with parameters and return</strong><small>Functions turn a solution into a named, reusable component. Parameters accept inputs; return sends a result back to the caller.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">13</span><span class="foundation-summary"><strong>Writing functions with parameters and return</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Functions turn a solution into a named, reusable component. Parameters accept inputs; return sends a result back to the caller.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>FUNCTION mean(a, b, c)
+    RETURN (a + b + c) / 3
+END FUNCTION
+OUTPUT mean(6, 8, 10)</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Functions turn a solution into a named, reusable component. Parameters accept inputs; return sends a result back to the caller.</p><ol class="foundation-steps">
 <li>Use def name(parameters): to define a function.</li>
 <li>Use return to communicate results.</li>
 <li>Call the function with different inputs to test generality.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Write a function that computes a mean.</p><div class="python-runner"><label for="foundation-13-example">Editable Python program</label><textarea id="foundation-13-example" class="py-source" rows="6" spellcheck="false" aria-label="Python example 13: example">def mean(a, b, c):
     return (a + b + c) / 3
 
@@ -372,13 +427,19 @@ print(larger(12, 3))</textarea><div class="runner-actions"><button type="button"
 <p class="foundation-connection"><strong>Connection to ML:</strong> You can write your own feature-extraction or prediction function.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-14">
-<summary><span class="foundation-no">14</span><span class="foundation-summary"><strong>Local variables, scope and built-in functions</strong><small>Values defined inside a function usually stay local to that function. Python also provides useful functions such as len, abs, min, max and sum.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">14</span><span class="foundation-summary"><strong>Local variables, scope and built-in functions</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Values defined inside a function usually stay local to that function. Python also provides useful functions such as len, abs, min, max and sum.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>FUNCTION improve(value)
+    improved ← MIN(10, value + 3)  // local
+    RETURN improved
+END FUNCTION
+score ← 4
+OUTPUT improve(score), score</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Values defined inside a function usually stay local to that function. Python also provides useful functions such as len, abs, min, max and sum.</p><ol class="foundation-steps">
 <li>Prefer parameters to depending on global variables.</li>
 <li>Keep temporary calculations local.</li>
 <li>Use built-ins instead of recreating basic operations.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Compare local and outer variables without changing shared state.</p><div class="python-runner"><label for="foundation-14-example">Editable Python program</label><textarea id="foundation-14-example" class="py-source" rows="10" spellcheck="false" aria-label="Python example 14: example">score = 4
 
 def improve(value):
@@ -397,13 +458,17 @@ print(difference(3, 8))</textarea><div class="runner-actions"><button type="butt
 <p class="foundation-connection"><strong>Connection to ML:</strong> Small pure functions are easier to test and reuse across experiments.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-15">
-<summary><span class="foundation-no">15</span><span class="foundation-summary"><strong>Lists: storing and accessing sequences</strong><small>A list holds ordered values. Its indexes start at zero and can be used to read or replace elements.</small></span><span class="foundation-tag">Essential</span></summary>
+<summary><span class="foundation-no">15</span><span class="foundation-summary"><strong>Lists: storing and accessing sequences</strong></span><span class="foundation-tag">Essential</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A list holds ordered values. Its indexes start at zero and can be used to read or replace elements.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>values ← [18, 20, 17]
+first ← values[0]           // index begins at 0
+APPEND(values, 21)
+OUTPUT LENGTH(values), first</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A list holds ordered values. Its indexes start at zero and can be used to read or replace elements.</p><ol class="foundation-steps">
 <li>Create a list with square brackets.</li>
 <li>Use len(values) to learn its length.</li>
 <li>Use append to add a value and slicing to select a range.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Explore a small list of measurements.</p><div class="python-runner"><label for="foundation-15-example">Editable Python program</label><textarea id="foundation-15-example" class="py-source" rows="8" spellcheck="false" aria-label="Python example 15: example">measurements = [18, 20, 17]
 print(&#x27;First:&#x27;, measurements[0])
 measurements.append(21)
@@ -419,13 +484,18 @@ print(values[-1])</textarea><div class="runner-actions"><button type="button" cl
 <p class="foundation-connection"><strong>Connection to ML:</strong> Datasets are collections of observations, and many basic algorithms operate on sequences.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-16">
-<summary><span class="foundation-no">16</span><span class="foundation-summary"><strong>List traversal, filtering, searching and frequencies</strong><small>One pass through a list can calculate totals, locate a target, count matching values or build a frequency table.</small></span><span class="foundation-tag">Core algorithm</span></summary>
+<summary><span class="foundation-no">16</span><span class="foundation-summary"><strong>List traversal, filtering, searching and frequencies</strong></span><span class="foundation-tag">Core algorithm</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>One pass through a list can calculate totals, locate a target, count matching values or build a frequency table.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>counts ← [0, 0, 0]
+FOR EACH label IN labels DO
+    counts[label] ← counts[label] + 1
+END FOR
+OUTPUT counts</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>One pass through a list can calculate totals, locate a target, count matching values or build a frequency table.</p><ol class="foundation-steps">
 <li>Start counters and accumulators before the loop.</li>
 <li>Inspect each element exactly once for a linear scan.</li>
 <li>Use a dictionary or frequency list when you need counts by value.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Analyse a small set of integer labels.</p><div class="python-runner"><label for="foundation-16-example">Editable Python program</label><textarea id="foundation-16-example" class="py-source" rows="8" spellcheck="false" aria-label="Python example 16: example">labels = [1, 0, 2, 1, 0, 1]
 counts = [0, 0, 0]
 for label in labels:
@@ -447,13 +517,17 @@ print(count)</textarea><div class="runner-actions"><button type="button" class="
 <h2 id="group-5">Further algorithmic practice</h2>
 <p class="foundations-group-note">Optional extensions from the textbook. Understand the idea and run the examples; these are not prerequisites for Week 1.</p>
 <details class="foundation-lesson" id="topic-17">
-<summary><span class="foundation-no">17</span><span class="foundation-summary"><strong>Euclid&#x27;s algorithm and prime factorisation</strong><small>Number-theoretic algorithms illustrate repetition and the advantage of reducing a problem at each step.</small></span><span class="foundation-tag">Optional</span></summary>
+<summary><span class="foundation-no">17</span><span class="foundation-summary"><strong>Euclid&#x27;s algorithm and prime factorisation</strong></span><span class="foundation-tag">Optional</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Number-theoretic algorithms illustrate repetition and the advantage of reducing a problem at each step.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>WHILE b ≠ 0 DO
+    (a, b) ← (b, a MOD b)
+END WHILE
+OUTPUT a                   // greatest common divisor</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Number-theoretic algorithms illustrate repetition and the advantage of reducing a problem at each step.</p><ol class="foundation-steps">
 <li>Euclid replaces (a,b) with (b, a % b) until b becomes zero.</li>
 <li>To factorise a positive number, repeatedly divide by small factors.</li>
 <li>Use these examples to practise loop conditions and correctness.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Find the greatest common divisor of two positive integers.</p><div class="python-runner"><label for="foundation-17-example">Editable Python program</label><textarea id="foundation-17-example" class="py-source" rows="5" spellcheck="false" aria-label="Python example 17: example">a, b = 84, 30
 while b != 0:
     a, b = b, a % b
@@ -473,13 +547,20 @@ print(factors)</textarea><div class="runner-actions"><button type="button" class
 <p class="foundation-connection"><strong>Connection to ML:</strong> The same idea of shrinking the remaining problem appears in more advanced algorithms.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-18">
-<summary><span class="foundation-no">18</span><span class="foundation-summary"><strong>Stacks and queues</strong><small>A stack removes the most recently added item (LIFO). A queue removes the earliest added item (FIFO).</small></span><span class="foundation-tag">Optional</span></summary>
+<summary><span class="foundation-no">18</span><span class="foundation-summary"><strong>Stacks and queues</strong></span><span class="foundation-tag">Optional</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>A stack removes the most recently added item (LIFO). A queue removes the earliest added item (FIFO).</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>PUSH(stack, &quot;A&quot;)
+PUSH(stack, &quot;B&quot;)
+OUTPUT POP(stack)           // &quot;B&quot; (LIFO)
+
+ENQUEUE(queue, &quot;A&quot;)
+ENQUEUE(queue, &quot;B&quot;)
+OUTPUT DEQUEUE(queue)       // &quot;A&quot; (FIFO)</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>A stack removes the most recently added item (LIFO). A queue removes the earliest added item (FIFO).</p><ol class="foundation-steps">
 <li>For a small stack, list.append adds and list.pop removes.</li>
 <li>For a queue, collections.deque supports append and popleft.</li>
 <li>Choose the abstraction that matches the required order.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>See last-in-first-out and first-in-first-out behaviour.</p><div class="python-runner"><label for="foundation-18-example">Editable Python program</label><textarea id="foundation-18-example" class="py-source" rows="9" spellcheck="false" aria-label="Python example 18: example">from collections import deque
 stack = []
 stack.append(&#x27;A&#x27;)
@@ -497,13 +578,21 @@ while stack:
 <p class="foundation-connection"><strong>Connection to ML:</strong> Stacks and queues show up in algorithmic search and workflow scheduling, though not in our first ML exercises.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-19">
-<summary><span class="foundation-no">19</span><span class="foundation-summary"><strong>Sorting: selection sort and bubble sort</strong><small>Elementary sorting methods help explain comparisons, exchanges and loop invariants, even though built-in sorted(...) is normally preferable.</small></span><span class="foundation-tag">Optional</span></summary>
+<summary><span class="foundation-no">19</span><span class="foundation-summary"><strong>Sorting: selection sort and bubble sort</strong></span><span class="foundation-tag">Optional</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Elementary sorting methods help explain comparisons, exchanges and loop invariants, even though built-in sorted(...) is normally preferable.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>// Selection sort: move the minimum into place
+FOR i ← 0 TO n - 2 DO
+    min_pos ← INDEX_OF_MINIMUM(A, i, n - 1)
+    SWAP(A[i], A[min_pos])
+END FOR
+
+// Bubble sort: swap out-of-order neighbours
+IF A[j] &gt; A[j + 1] THEN SWAP(A[j], A[j + 1])</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Elementary sorting methods help explain comparisons, exchanges and loop invariants, even though built-in sorted(...) is normally preferable.</p><ol class="foundation-steps">
 <li>Selection sort puts the smallest remaining value into its next final position.</li>
 <li>Bubble sort repeatedly swaps neighbouring values in the wrong order.</li>
 <li>Both have quadratic worst-case time for lists of length n.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Compare two algorithms on the same small input.</p><div class="python-runner"><label for="foundation-19-example">Editable Python program</label><textarea id="foundation-19-example" class="py-source" rows="17" spellcheck="false" aria-label="Python example 19: example">values = [7, 2, 5, 1]
 a = values[:]
 for i in range(len(a)):
@@ -526,13 +615,20 @@ print(sorted(values, reverse=True))</textarea><div class="runner-actions"><butto
 <p class="foundation-connection"><strong>Connection to ML:</strong> Sorting can prepare ranked lists, such as the highest scores or nearest points.</p>
 </div></details>
 <details class="foundation-lesson" id="topic-20">
-<summary><span class="foundation-no">20</span><span class="foundation-summary"><strong>Counting sort and systematic generation</strong><small>When integer values come from a small known range, a frequency list can also reconstruct a sorted sequence.</small></span><span class="foundation-tag">Optional</span></summary>
+<summary><span class="foundation-no">20</span><span class="foundation-summary"><strong>Counting sort and systematic generation</strong></span><span class="foundation-tag">Optional</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>When integer values come from a small known range, a frequency list can also reconstruct a sorted sequence.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>FOR EACH value IN data DO
+    frequency[value] ← frequency[value] + 1
+END FOR
+FOR value ← 0 TO max_value DO
+    REPEAT frequency[value] TIMES:
+        OUTPUT value
+END FOR</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>When integer values come from a small known range, a frequency list can also reconstruct a sorted sequence.</p><ol class="foundation-steps">
 <li>Count how many times each value occurs.</li>
 <li>Visit the possible values in order.</li>
 <li>Repeat each value according to its frequency.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Sort a list of tiny integer categories using counts.</p><div class="python-runner"><label for="foundation-20-example">Editable Python program</label><textarea id="foundation-20-example" class="py-source" rows="10" spellcheck="false" aria-label="Python example 20: example">values = [2, 0, 3, 1, 2, 0, 2]
 frequency = [0] * 4
 for value in values:
@@ -553,13 +649,20 @@ print(squares)</textarea><div class="runner-actions"><button type="button" class
 <section class="foundations-group" aria-labelledby="group-6">
 <h2 id="group-6">Bridge to Machine Learning</h2>
 <details class="foundation-lesson" id="topic-21">
-<summary><span class="foundation-no">21</span><span class="foundation-summary"><strong>Mini-project: a rule-based classifier</strong><small>Put the pieces together: input data, loops, decisions, functions, lists and evaluation. This is a hand-written rule, not a trained ML model.</small></span><span class="foundation-tag">Apply it</span></summary>
+<summary><span class="foundation-no">21</span><span class="foundation-summary"><strong>Mini-project: a rule-based classifier</strong></span><span class="foundation-tag">Apply it</span></summary>
 <div class="foundation-body">
-<h3>Core idea</h3><p>Put the pieces together: input data, loops, decisions, functions, lists and evaluation. This is a hand-written rule, not a trained ML model.</p><ol class="foundation-steps">
+<div class="foundation-core" aria-label="Core algorithmic takeaway"><span class="foundation-core-label">Core idea · algorithmic notation</span><pre class="foundation-algorithm"><code>FUNCTION predict(temperature)
+    IF temperature ≥ 20 THEN RETURN &quot;warm&quot;
+    RETURN &quot;cold&quot;
+END FUNCTION
+
+accuracy ← correct_predictions / total_examples
+OUTPUT accuracy</code></pre></div>
+<details class="foundation-subdetail"><summary>Explanation</summary><p>Put the pieces together: input data, loops, decisions, functions, lists and evaluation. This is a hand-written rule, not a trained ML model.</p><ol class="foundation-steps">
 <li>Represent each example as a value and its correct label.</li>
 <li>Write a reusable prediction function.</li>
 <li>Compare predicted labels to the expected ones.</li>
-</ol>
+</ol></details>
 <details class="foundation-subdetail"><summary>Worked example · Run and modify</summary><p>Evaluate a temperature threshold rule against labelled examples.</p><div class="python-runner"><label for="foundation-21-example">Editable Python program</label><textarea id="foundation-21-example" class="py-source" rows="14" spellcheck="false" aria-label="Python example 21: example">temperatures = [12, 18, 23, 29]
 actual = [&#x27;cold&#x27;, &#x27;cold&#x27;, &#x27;warm&#x27;, &#x27;warm&#x27;]
 

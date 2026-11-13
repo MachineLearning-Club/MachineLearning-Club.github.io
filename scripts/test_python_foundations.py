@@ -16,11 +16,22 @@ assert len(lessons) == 21
 assert page.count('class="foundation-lesson"') == len(lessons)
 assert page.count('class="foundation-solution"') == len(lessons)
 assert page.count('class="python-runner"') == 2 * len(lessons)
+assert page.count('class="foundation-core"') == len(lessons)
+assert page.count('class="foundation-algorithm"') == len(lessons)
+assert page.count('<summary>Explanation</summary>') == len(lessons)
+assert page.count('<div class="foundation-body">\n<div class="foundation-core"') == len(lessons)
+assert '<section class="foundations-intro"' not in page
+assert '<p class="foundations-lede">' not in page
+assert '<p class="foundations-meta">' not in page
+assert 'How to use this guide' not in page
+assert 'Browser execution:' not in page
+assert 'Beginner-friendly · 21 short topics' not in page
 assert '/guides/python/' in home and '/guides/python/' in publisher
 assert 'assets/academic-ui.js' in page
 assert 'assets/python-foundations.css' in page
 
 for number, lesson in enumerate(lessons, 1):
+    assert 'algorithm' in lesson and len(lesson['algorithm'].splitlines()) >= 2
     assert f'id="topic-{number:02d}"' in page
     for key in ("code", "solution"):
         code = lesson[key]
