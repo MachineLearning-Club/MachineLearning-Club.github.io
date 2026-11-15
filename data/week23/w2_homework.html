@@ -1,0 +1,29 @@
+<section class="scenario"><h2>Real-life situation — planning the school sports afternoon</h2><p>The school's organisers have recorded the sky, wind, temperature and whether previous outdoor games went ahead. The committee needs a <strong>transparent prediction assistant</strong>: it should explain which questions led to a yes/no prediction and identify when it does not know the answer.</p>
+<p>You will use <a href="club-events.csv" download><strong>club-events.csv</strong></a> (12 labelled examples). This exercise concerns a simplified diary; a real school should still follow weather warnings and its safety policy.</p></section>
+<section><h2>Mandatory <span class="point-value">(1p)</span> — Read the data and find a rule</h2>
+<ol><li>Open <a href="/jupyter/lab/index.html?path=w2-id3-training.ipynb" target="_blank" rel="noopener noreferrer">the prepared ID3 notebook</a>. First run it unchanged. The data are already loaded.</li>
+<li>Identify the three input <strong>features</strong> and the target <strong>label</strong>. Count all <code>yes</code> and <code>no</code> results.</li>
+<li>Use the browser <a href="/w2/lab/#w2-lab-app">information-gain experiment</a> to compare Sky, Wind and Temperature.</li>
+<li>Show why <code>IG(sky) ≈ 0.667</code> bits using the group counts and formula below. Name the best root question.</li>
+<li>Draw a simple decision tree that classifies the twelve rows and trace one prediction for <code>cloudy / calm / cold</code>.</li></ol>
+<div class="formula-guide"><strong>Formula guide</strong>
+<p>Entropy of a group of yes/no outcomes:</p><p><code>H = −p_yes log₂(p_yes) − p_no log₂(p_no)</code>.</p>
+<p>Information gain of a question:</p><p><code>IG(feature) = H(all) − Σ (number in branch / total rows) × H(branch)</code>.</p>
+<p>For Sky use <code>H(all)=1</code>, <code>H(sunny)=0</code>, <code>H(cloudy)=1</code>, <code>H(rainy)=0</code>, each with 4 of 12 examples. Therefore <code>IG(sky)=1−(4/12×0+4/12×1+4/12×0)</code>.</p>
+</div>
+<details><summary>Check the first classification</summary><p><code>Sky=cloudy → Wind=calm → Go=yes</code>. Temperature is unused in this tree, even though it is present in the original table.</p></details></section>
+<section><h2>Homework <span class="point-value">(2p)</span> — Make the classifier useful</h2>
+<p>Imagine the school collects more diary entries and encounters weather conditions that were missing from the old data.</p>
+<ol><li><strong>Reserve test cases.</strong> In <code>club-events.csv</code>, set aside rows <strong>4, 7 and 11</strong> (counting the first data row as 1). Do not train on those three; only the other nine may determine the learned tree.</li>
+<li><strong>Retrain.</strong> Print the information gain of each root candidate using only the nine training rows. Explain whether the chosen root differs from the full-data tree.</li>
+<li><strong>Explain one prediction.</strong> Add a function that returns the whole decision path, for example <code>sky = cloudy → wind = calm → yes</code>. Display a complete path for each of your three test records.</li>
+<li><strong>Handle unknown input.</strong> Ask for <code>sky=foggy</code>. If the tree has no branch for this category, return the training majority label and print <code>Warning: unseen feature value</code>. If there is a tie, use the alphabetically first label and state that rule.</li>
+<li><strong>Test fairly.</strong> Count correct predictions on the three withheld records and compute <code>accuracy = correct / 3</code>. Include a small table with actual label, predicted label and correct/incorrect.</li>
+<li><strong>Reflect.</strong> Explain in no more than four sentences why a model trained from a tiny fictional dataset should not be used as a real safety policy.</li></ol>
+<div class="formula-guide"><strong>Algorithmic steps</strong><ol>
+<li>Separate the rows into training and testing.</li><li>For each feature, group the training rows by feature value.</li><li>For each group, calculate entropy and take a size-weighted average.</li><li>Choose the feature with the greatest information gain and recurse on mixed groups.</li><li>Traverse the learned tree for each test input; never use its test label during prediction.</li></ol></div>
+<details><summary>Need a starting point?</summary><p>The prepared notebook already contains a categorical ID3 function. Modify its input rows and the function that traverses the tree; do not replace the algorithm with a library classifier. You can use simple lists, dictionaries and counting.</p></details></section>
+<section><h2>Research <span class="point-value">(3p)</span> <span class="optional-mark">(optional)</span></h2>
+<p>Design an example where ID3 chooses a locally promising root but a different tree has fewer decision nodes or levels. The optional <a href="/w2/advanced/">Advanced exercises</a> investigate greedy decisions, unnecessary features and contradictory examples.</p></section>
+<section class="submission"><h2>Submission</h2><p>Submit one edited <code>.ipynb</code> or <code>.py</code>, a picture or text rendering of the learned tree, and your three-row test results. Use the <a href="/w2/lab/#submission">laboratory submission tool</a> to prepare a named ZIP. No account is needed.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>Liviu Ciortuz, §4.1.1, solved problem 2, pp. 490–493, for entropy and ID3 tree construction; solved problem 4, pp. 497–499, for the optional greedy counterexample.</li><li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — classification and decision trees</a></li><li><a href="https://github.com/OlimpiadaAI/szkolenia" target="_blank" rel="noopener noreferrer">Polish AI Olympiad — problem-solving resources (teacher reference)</a></li></ul></section>

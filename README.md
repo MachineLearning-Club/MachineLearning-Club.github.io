@@ -86,3 +86,24 @@ bash scripts/build_jupyterlite.sh
 The JupyterLite bundle is committed as static files. It uses a Python (Pyodide) kernel running in the browser, with no login. The initial visit requires an internet connection to download the engine. Its build script removes unused JavaScript source maps to reduce repository size. No uploaded class data are sent to a backend.
 
 The Homework includes a worked formula guide, elementary probability events, distribution selection and an interactive probability chart. The advanced page extends the original problem set with weighted sums, expected values, variance and covariance, including SVG graphs and worked solutions.
+
+## Detailed Weeks 2 and 3 — teacher-authored sequence
+
+Weeks 2 and 3 now have their own source fragments in `data/week23/` for Course, Laboratory, Homework and Advanced. Update the fragments, then execute `python3 scripts/update_week23.py`. The main curriculum generator **preserves** these pages instead of replacing them with generic summaries. Teacher-reviewed source content and reusable interactions live in `assets/week23-interactive.js` and `assets/week23.css`.
+
+Week 2 uses the same 12-entry fictional school activity dataset throughout Course, Lab and Homework (`w2/homework/club-events.csv`). Students progress through features/labels, pure and mixed splits, entropy, weighted gain, categorical tree construction, handling unseen values, and testing on held-out records. The live visualization computes information gain for sky (~0.667), wind (~0.082) and temperature (0). The Advanced exercises include an elementary greedy counterexample and a preserved downloadable PDF booklet.
+
+Week 3 adapts the **mathematical data** of Liviu Ciortuz's K-means solved problem 7 (§7.1.2, printed pp. 853–856) to a delivery-service story: A(-1,0), B(1,0), C(0,1), D(3,0), E(3,1). K=2 starts at centroids A and E, yields clusters ABC and DE, then new centres (0,1/3) and (3,1/2), reducing squared error from 7 to 19/6. Students explore assignments, arithmetic means, convergence, initialisation and outliers. A separate ten-point fictional neighbourhood appears in `w3/homework/delivery-points.csv` and the delivery notebook.
+
+The handbook files supplied by the teacher are **not rehosted** in this public repository; each page cites the original author, section and printed page numbers. Student exercises and explanatory prose are original adaptations, with selected links to public external training resources.
+
+There are two additional preloaded JupyterLite notebooks per week, under `w2/lab/notebooks/` and `w3/lab/notebooks/`. `scripts/generate_week23_notebooks.py` creates them. Run `bash scripts/build_jupyterlite.sh` to include all seven introductory notebooks (three from Week 1, two from Week 2, two from Week 3) in `/jupyter/lab/`. `scripts/refresh_week23_quizzes.py` regenerates draft practice questions based on the actual lesson datasets, not unrelated sample gains.
+
+Useful checks (when the site is served locally at port 8877):
+
+```sh
+node tests/test_week23.js
+node quiz/test_quiz.js
+```
+
+All exercises remain classroom materials awaiting final teacher review; not all final real-world constraints, grades or challenge formats are fixed.

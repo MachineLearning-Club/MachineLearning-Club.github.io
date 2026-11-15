@@ -1,6 +1,6 @@
 const puppeteer = require('/usr/lib/node_modules/@wonderwhy-er/desktop-commander/node_modules/puppeteer');
-const path = '/home/admin/projects/mlc-site-update-2026/quiz/';
-const base='http://127.0.0.1:8765';
+const path = __dirname + '/';
+const base=process.env.MLC_TEST_BASE || 'http://127.0.0.1:8877';
 (async()=>{
  const browser=await puppeteer.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  try{
@@ -27,7 +27,7 @@ const base='http://127.0.0.1:8765';
   await page.waitForSelector('#question-dialog[open]',{timeout:5000});
   if(!(await page.$eval('#review-explanation',e=>e.hidden)))throw Error('Answers leaked during test');
   const qText=await page.$eval('#question-text',e=>e.textContent);
-  if(!qText.toLowerCase().includes('decision tree'))throw Error('Week2 first question missing');
+  if(!qText.toLowerCase().includes('target label'))throw Error('Week2 first question missing');
   await page.screenshot({path:'/tmp/mlclub-quiz-exam.png'});
   const fs=require('fs');
   const bank=JSON.parse(fs.readFileSync(path+'data/week-02.json','utf8'));

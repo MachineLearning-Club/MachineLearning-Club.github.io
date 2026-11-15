@@ -1,0 +1,59 @@
+<div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Laboratory contents"><details class="toc-panel" open><summary>Contents</summary><ul>
+<li><a href="#w3-lab-map">1. Start with the map</a></li><li><a href="#w3-lab-app">2. Move the centroids</a></li><li><a href="#w3-lab-maths">3. Work out the next positions</a></li><li><a href="#w3-lab-notebook">4. Run a complete experiment</a></li><li><a href="#w3-lab-compare">5. Change the start</a></li><li><a href="#w3-lab-research">Research (3p)</a></li><li><a href="#submission">Submission</a></li><li><a href="#w3-lab-refs">Bibliography</a></li></ul></details></nav></aside>
+<article class="course-article">
+<section id="w3-lab-map" class="lab-step"><h2>1. A map with five delivery locations</h2><p>You are placing two collection points on a simplified city grid. The coordinates are:</p>
+<p><code>A(−1,0), B(1,0), C(0,1), D(3,0), E(3,1)</code>.</p>
+<ol><li>Draw the five locations on paper or use the interactive grid below.</li><li>Predict two groups by eye. What made you choose them?</li><li>If K=2, how many centroid positions should the algorithm maintain?</li></ol><details><summary>Check</summary><p>Two centroids. An intuitive grouping is A/B/C and D/E, but K-means must discover it through distance comparisons, not through human-supplied class names.</p></details>
+</section>
+<section id="w3-lab-app" class="lab-step"><h2>2. Step through K-means visually</h2><p>Press <strong>Next</strong> to see the first assignment, the centroid updates and the final stable grouping. Watch the squared-distance table change when a centre moves.</p>
+<div data-kmeans-demo class="kmeans-demo"><div class="id3-step-toolbar"><button data-kmeans-back type="button">← Back</button><span data-kmeans-step-label>Start</span><button data-kmeans-next type="button">Next step →</button><button data-kmeans-reset type="button">Reset</button></div>
+<svg viewBox="0 0 720 420" role="img" aria-label="K-means animation with assignments and centroids"></svg><p data-kmeans-explain aria-live="polite"></p>
+<div class="table-hscroll"><table class="teaching-data"><thead><tr><th>Point</th><th>Distance² to μ₁</th><th>Distance² to μ₂</th><th>Assigned group</th></tr></thead><tbody data-kmeans-distance-rows></tbody></table></div></div>
+<ol><li>At the starting step, compute the distance from B to both centroids.</li><li>Advance once. Which points are coloured with A?</li><li>Advance again. Where did each centroid move?</li><li>Advance to convergence. Did any point change group?</li></ol>
+<p><a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/" target="_blank" rel="noopener noreferrer">Try a second K-means visualiser (Naftali Harris) ↗</a> — optional comparison, using a different dataset.</p>
+</section>
+<section id="w3-lab-maths" class="lab-step"><h2>3. Calculate the means and squared error yourself</h2><p>The first assignment is A/B/C to cluster 1 and D/E to cluster 2.</p>
+<div class="formula-sheet"><table><thead><tr><th>Cluster</th><th>Mean x</th><th>Mean y</th></tr></thead><tbody><tr><td>1: A, B, C</td><td>(−1+1+0)/3 = <strong>0</strong></td><td>(0+0+1)/3 = <strong>1/3</strong></td></tr><tr><td>2: D, E</td><td>(3+3)/2 = <strong>3</strong></td><td>(0+1)/2 = <strong>1/2</strong></td></tr></tbody></table></div>
+<div class="worked"><h3>Compare squared distances before and after the update</h3>
+<p>Before the first update, the sum of the squared distances to the assigned initial centres is <strong>7</strong>.</p>
+<p>After the update, the squared distances are <code>10/9, 10/9, 4/9, 1/4, 1/4</code>.</p><p>Sum: <code>24/9 + 1/2 = 8/3 + 1/2 = 19/6 ≈ 3.167</code>.</p>
+<p><strong>Explain:</strong> why is a smaller number desirable for this objective?</p></div>
+</section>
+<section id="w3-lab-notebook" class="lab-step"><h2>4. Run K-means with prepared Python</h2>
+<p>All data are included. The small example runs inside this page. The full JupyterLite notebooks generate their own graphs, too.</p>
+<div class="python-runner"><label for="w3-code">One iteration of K-means</label>
+<textarea id="w3-code" class="py-source" rows="17" spellcheck="false">points={"A":(-1,0),"B":(1,0),"C":(0,1),"D":(3,0),"E":(3,1)}
+centres=[(-1,0),(3,1)]
+def squared_distance(a,b):
+ return (a[0]-b[0])**2 + (a[1]-b[1])**2
+groups=[[],[]]
+for name,point in points.items():
+ closest=min(range(2), key=lambda i:squared_distance(point,centres[i]))
+ groups[closest].append((name,point))
+for i,group in enumerate(groups):
+ n=len(group)
+ centre=(sum(p[0] for _,p in group)/n, sum(p[1] for _,p in group)/n)
+ print("Cluster",i+1, "members:",[name for name,_ in group])
+ print("New centre:",centre)
+ print("Squared error:",round(sum(squared_distance(p,centre) for _,p in group),4))</textarea>
+<button type="button" class="run-python">Run Python</button><output class="py-output" aria-live="polite">Press Run Python to calculate the two new centres.</output></div>
+<div class="lab-launches"><p><a href="/jupyter/lab/index.html?path=w3-kmeans-steps.ipynb" target="_blank" rel="noopener noreferrer">Open K-means step-by-step notebook ↗</a> · <a href="/w3/lab/notebooks/w3-kmeans-steps.ipynb" download>Download notebook</a></p>
+<p><a href="/jupyter/lab/index.html?path=w3-kmeans-deliveries.ipynb" target="_blank" rel="noopener noreferrer">Open delivery-zones notebook ↗</a> · <a href="/w3/lab/notebooks/w3-kmeans-deliveries.ipynb" download>Download notebook</a></p></div>
+<ol><li>Run all pre-filled cells in the first notebook and inspect the first picture.</li><li>Change one starting centroid. Run again and compare its final groups.</li><li>Use the second notebook to visualise a larger set of delivery locations, without writing plotting code from scratch.</li></ol></section>
+<section id="w3-lab-compare" class="lab-step"><h2>5. Does the starting position change the outcome?</h2>
+<p>Use the external K-means visualiser or edit the two initial centroids in the prepared notebook. Run from the beginning after changing them.</p>
+<div class="table-hscroll"><table class="teaching-data"><thead><tr><th>Test</th><th>Starting centroids</th><th>Final groups</th><th>Final squared error</th></tr></thead><tbody>
+<tr><td>1</td><td>A and E</td><td>________</td><td>________</td></tr><tr><td>2</td><td>A and B</td><td>________</td><td>________</td></tr></tbody></table></div>
+<p><strong>Conclusion:</strong> does the algorithm promise the best possible clustering from any starting points?</p>
+<details><summary>Expected reasoning</summary><p>No. K-means repeatedly improves its current assignment and centroids, but the final outcome can depend on the initial centres. Its objective value is not a certificate of the only meaningful real-world grouping.</p></details></section>
+<section id="w3-lab-research" class="lab-step"><h2>Research (3p) <span class="optional-mark">(optional)</span></h2>
+<p>Invent a sixth delivery location that is far away from the five existing points. Add it to the notebook and investigate how far the nearest centroid moves. Does the new centre still represent the five original locations well?</p>
+<details><summary>How to present your finding</summary><ol><li>Show a plot before and after adding the outlier.</li><li>Record both new centroid coordinates.</li><li>Compute the change in the sum of squared distances.</li><li>Explain one limitation of using an arithmetic mean for outlier-rich data.</li></ol></details></section>
+<section id="submission" class="submission-drop"><h2>Submission</h2><p>Prepare your modified notebook, a screenshot of the clusters and a two-row comparison table. Enter your name to download a named ZIP.</p>
+<div class="submission-form" data-submission-week="3"><label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label>
+<label class="file-drop">Choose files<input class="submission-files" type="file" accept=".ipynb,.py,.csv,.pdf,.zip,.txt" multiple></label><p class="submission-selected" aria-live="polite">No file selected.</p><button class="prepare-submission" type="button">Download named submission</button><p class="submission-status" aria-live="polite"></p></div><p class="understated">Preparing the ZIP does not upload it. The teacher must separately supply the collection location.</p></section>
+<section id="w3-lab-refs" class="page-bibliography"><h2>Bibliography</h2><ul>
+<li>Liviu Ciortuz, §7.1.2, solved problem 7, pp. 853–856 — point coordinates, numerical iterations and squared-error comparison.</li>
+<li><a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/" target="_blank" rel="noopener noreferrer">Naftali Harris — Visualizing K-means</a>.</li>
+<li><a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" rel="noopener noreferrer">Microsoft ML for Beginners — clustering</a>.</li></ul></section>
+</article></div>

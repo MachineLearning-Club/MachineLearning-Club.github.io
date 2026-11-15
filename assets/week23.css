@@ -1,0 +1,102 @@
+/* Weeks 2 & 3 — restrained academic design aligned with Week 1. */
+body:has(.week23-academic){max-width:1130px}
+.week23-academic .course-layout{margin:20px 0 0}
+.week23-academic .course-article>section{scroll-margin-top:18px}
+.week23-academic .course-article>section:not(.page-bibliography){border-top:1px solid #d9e3ea;margin:35px 0 0;padding:14px 0 0}
+.week23-academic .course-article>section:first-of-type{margin-top:0}
+.week23-academic .course-article>section>h2{font-weight:400;font-size:1.4rem;line-height:1.4;color:#234b67;border:0;margin:4px 0 17px}
+.week23-academic .course-article>section>h3{font-size:1.12rem;margin:18px 0 9px}
+.week23-academic .course-article p{line-height:1.66}
+.week23-academic .course-article .teacher-guide{background:#fff;border:1px solid #dbe4ea;margin:0 0 31px}
+.week23-academic .teacher-guide>summary{padding:12px 15px;color:#2d5977;font-weight:600;font-size:.91rem;cursor:pointer}
+.week23-academic .teacher-guide-hint{font-weight:400;color:#617b8e;margin-left:12px;font-size:.78rem}
+.week23-academic .teacher-guide-body{padding:15px 19px 18px;border-top:1px solid #e2e9ef}
+.week23-academic .teacher-guide-body h2{font-size:1.15rem;font-weight:600;margin:8px 0}
+.week23-academic .teacher-guide .pedagogical-table{border-collapse:collapse;width:100%;font-size:.85rem}
+.week23-academic .teacher-guide .pedagogical-table td,.week23-academic .teacher-guide .pedagogical-table th{border-bottom:1px solid #e1e8ec;text-align:left;padding:9px 11px;vertical-align:top}
+.week23-academic .teacher-guide .pedagogical-table thead{background:#f3f7fa}
+.week23-academic .course-article .core-idea{padding:12px 16px;margin:18px 0 25px}
+.week23-academic .concept-contrast{margin:22px 0}
+.week23-academic .concept-contrast>div{min-width:0}
+.week23-academic .concept-contrast code{overflow-wrap:anywhere}
+.week23-academic .chapter-section>details{border-top:1px solid #e6ecf0;padding:12px 0;margin:20px 0}
+.week23-academic .chapter-section>details summary,.week23-academic .lab-step>details summary{font-size:.9rem;color:#2d5a7b;cursor:pointer}
+.week23-academic .teaching-data{border-collapse:collapse;width:100%;font-size:.85rem;margin:15px 0 22px}
+.week23-academic .teaching-data caption{font-size:.8rem;color:#637987;text-align:left;margin:4px 0 9px}
+.week23-academic .teaching-data th,.week23-academic .teaching-data td{padding:8px 10px;border:1px solid #e0e7ed;text-align:left}
+.week23-academic .teaching-data th{background:#f4f7fa;color:#365469;font-weight:600}
+.week23-academic .teaching-data tbody tr:nth-child(even){background:#fcfdfd}
+.week23-academic .table-hscroll{max-width:100%;overflow-x:auto}
+.week23-academic .table-hscroll>table{min-width:475px}
+.week23-academic .three-entropy-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:21px 0}
+.week23-academic .three-entropy-examples>div{border:1px solid #dbe4ea;padding:13px 12px;min-width:0}
+.week23-academic .three-entropy-examples strong{font-size:.93rem;display:block;color:#35566c;margin-bottom:9px}
+.week23-academic .three-entropy-examples small{font-size:.77rem;display:block;color:#536c7b;margin-top:8px}
+.entropy-visual,.id3-split-bar{display:flex;overflow:hidden;height:17px;background:#f4f6f8;border:1px solid #e3e9ed}
+.entropy-visual>i,.id3-split-bar>span{display:block;height:100%;flex:0 0 auto}
+.id3-split-bar>.positive{background:#5a9476}
+.id3-split-bar>.negative{background:#bf8460}
+.week23-academic .decision-playground,.week23-academic .kmeans-demo{
+ border-top:1px solid #c4d5e1;border-bottom:1px solid #c4d5e1;
+ padding:19px 0;margin:23px 0 29px
+}
+.week23-academic .decision-playground h3{font-size:1.13rem;font-weight:600;margin:9px 0 14px}
+.week23-academic .activity-kicker{font-size:.73rem;color:#617c8f;letter-spacing:.055em}
+.id3-controls,.id3-step-toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:15px 0}
+.id3-controls button,.id3-step-toolbar button{font:.85rem Georgia,serif;padding:9px 12px;border:1px solid #a9becd;background:#fff;color:#2a5672;cursor:pointer}
+.id3-controls button[aria-pressed=true]{background:#e6f1f7;border-color:#4e86a9;font-weight:600}
+.id3-step-toolbar button:disabled{opacity:.42;cursor:default}
+.id3-step-toolbar span{font-size:.83rem;color:#5b7588;margin:0 5px}
+.id3-group-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.id3-group{padding:12px;border:1px solid #dbe5ed;background:#fdfefe;min-width:0}
+.id3-group>strong{color:#2b536f;display:block;font-size:.93rem}
+.id3-group>small{font-size:.76rem;color:#627c8e;display:block;margin:9px 0}
+.id3-result{font-weight:600;color:#284f69;font-size:.87rem;line-height:1.6}
+.id3-tree-demo,.kmeans-demo{max-width:100%;margin:18px 0}
+.id3-tree-demo svg,.kmeans-demo svg{display:block;width:100%;height:auto;background:#fff;border:1px solid #e0e7ed}
+.id3-tree-demo svg .graph-label,.kmeans-demo svg .graph-label{font-size:15px;fill:#244b65;font-family:Georgia,serif;font-weight:600}
+.id3-tree-demo svg .graph-small,.kmeans-demo svg .graph-small{font-size:12px;fill:#5b768a;font-family:Georgia,serif}
+.id3-tree-demo>p,.kmeans-demo>p{font-size:.89rem;color:#49677a;margin:12px 0 22px}
+.week23-academic .worked{padding:13px 17px;margin:22px 0;border-left:3px solid #91adbf;background:#f8fafc}
+.week23-academic .worked h3{font-weight:600;margin:5px 0 9px;color:#315875;font-size:1.07rem}
+.week23-academic .worked ol{margin:11px 0 7px;padding-left:23px}
+.week23-academic .worked li{margin:7px 0}
+.week23-academic .practice-check{margin:24px 0;border-left:3px solid #a5bbc9;padding:12px 16px;background:#fafbfd}
+.week23-academic .practice-check>strong{font-size:.88rem;color:#365e7d}
+.week23-academic .practice-check details{padding:9px 0}
+.week23-academic .formula-guide{border-left:3px solid #a2b7c7;padding:12px 17px;margin:16px 0 25px;background:#f8fafc}
+.week23-academic .formula-guide>strong{font-size:.9rem;color:#315a76}
+.week23-academic .formula-guide code{overflow-wrap:anywhere}
+.week23-academic .lab-step .python-runner{padding:15px;margin:20px 0;border:1px solid #dbe5eb}
+.week23-academic .lab-step .py-source{font-family:Consolas,monospace;width:100%;font-size:.8rem}
+.week23-academic .lab-launches{border-top:1px solid #e0e8ee;padding:5px 0;margin:21px 0}
+.week23-academic .lab-launches p{margin:9px 0;font-size:.86rem}
+.week23-academic .advanced-problems article{border-top:1px solid #dbe5eb;padding:19px 0;margin:0}
+.week23-academic .advanced-problems h3{margin:0 0 12px;font-size:1.13rem;font-weight:600;color:#315a76}
+.week23-academic .advanced-problems ol{margin-top:11px}
+.week23-academic .advanced-problems details{padding:7px 0;font-size:.88rem}
+.week23-academic .advanced-problems details summary{cursor:pointer;color:#2d607d}
+.week23-academic .page-bibliography{border-top:1px solid #d4e0e7;padding-top:15px;margin-top:44px}
+.week23-academic .page-bibliography h2{font-size:1.2rem;margin:10px 0 17px}
+.week23-academic .page-bibliography li{font-size:.88rem;line-height:1.7;margin:8px 0}
+.week23-academic .page-bibliography small{color:#697d88;font-size:.79rem}
+@media(max-width:850px){.week23-academic .course-layout{gap:25px;grid-template-columns:170px minmax(0,1fr)}}
+@media(max-width:680px){
+ .week23-academic .course-layout{display:block}
+ .week23-academic .course-sidebar .toc{position:static;margin:15px 0 28px}
+ .week23-academic .teacher-guide-hint{display:block;margin:5px 0 0}
+ .week23-academic .three-entropy-examples{grid-template-columns:1fr;gap:7px}
+ .week23-academic .id3-group-board{grid-template-columns:1fr;gap:8px}
+ .week23-academic .course-article>section>h2{font-size:1.24rem}
+ .week23-academic .teacher-guide-body{padding:12px}
+ .week23-academic .teacher-guide .pedagogical-table{font-size:.81rem}
+ .week23-academic .worked{padding:12px}
+ .week23-academic .concept-contrast{display:block}
+ .week23-academic .concept-contrast>div{border-left:0!important;border-top:1px solid #dce4e9}
+}
+@media print{
+ body:has(.week23-academic){max-width:none}
+ .week23-academic .course-layout{display:block}
+ .week23-academic .course-sidebar,.week23-academic .id3-controls,.week23-academic .id3-step-toolbar{display:none}
+ .week23-academic .worked,.week23-academic .advanced-problems article{break-inside:avoid}
+}

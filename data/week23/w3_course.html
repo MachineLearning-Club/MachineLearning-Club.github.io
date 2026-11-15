@@ -1,0 +1,91 @@
+<div class="course-layout">
+<aside class="course-sidebar"><nav class="toc" aria-label="Course contents"><details class="toc-panel" open><summary>Contents</summary><ul>
+<li><a href="#w3-problem">3.1. Groups without labels</a></li>
+<li><a href="#w3-points">3.2. Points, distance and centroids</a></li>
+<li><a href="#w3-assign">3.3. Assign → update</a></li>
+<li><a href="#w3-cost">3.4. Why centres move</a></li>
+<li><a href="#w3-repeat">3.5. Repeat until stable</a></li>
+<li><a href="#w3-limits">3.6. When clustering misleads</a></li>
+<li><a href="#w3-check">Checkpoint</a></li>
+<li><a href="#w3-refs">Bibliography</a></li>
+</ul></details></nav></aside><article class="course-article">
+<details class="teacher-guide"><summary>Teacher Guide <span class="teacher-guide-hint">Sequence and achievement checkpoints</span></summary><div class="teacher-guide-body">
+<h2>Course summary</h2><p>Week 2 uses labels to learn decision rules; Week 3 removes labels and introduces geometric clustering. A five-point K-means example is adapted directly from Ciortuz, §7.1.2, solved problem 7 (pp. 853–856). Students first group points by sight, then apply distance and averages, then execute iterations and measure squared error.</p>
+<div class="table-hscroll"><table class="pedagogical-table"><thead><tr><th>Stage</th><th>Demonstration</th><th>Student evidence</th></tr></thead><tbody>
+<tr><td>Observe</td><td>Five delivery locations, two collection zones</td><td>Distinguish unlabelled points from known classes</td></tr>
+<tr><td>Measure</td><td>Draw distances to two initial centroids</td><td>Assign each point to its nearest centre</td></tr>
+<tr><td>Update</td><td>Average each coordinate inside a cluster</td><td>Calculate (0,1/3) and (3,1/2)</td></tr>
+<tr><td>Evaluate</td><td>Square the distances to the centre</td><td>Explain reduction from 7 to 19/6</td></tr>
+<tr><td>Generalise</td><td>Change K or the starting points</td><td>Identify a choice that changes the result</td></tr></tbody></table></div>
+<p><strong>Entry prerequisites:</strong> 2D coordinates, arithmetic mean, addition of squares. Square roots and optimisation proofs remain optional.</p></div></details>
+<section class="chapter-section" id="w3-problem"><h2>3.1. Finding groups when the answers are unknown</h2>
+<div class="core-idea"><strong>Core idea</strong><p><strong>Unlabelled examples → measure similarity → organise examples into clusters.</strong> K-means does not receive correct cluster names during training; it uses distances and centres to discover a grouping.</p></div>
+<p>A neighbourhood delivery company wants <strong>two collection points</strong> so parcels do not have to travel as far to customers. The map contains five delivery locations. Nobody has said which location belongs to which centre.</p>
+<div class="concept-contrast"><div><strong>Supervised — Week 2</strong><p>Known labels: <code>go = yes/no</code></p><small>Learn how to predict the answer.</small></div><div><strong>Unsupervised — Week 3</strong><p>Coordinates only: <code>(x,y)</code></p><small>Discover groups without labelled answers.</small></div><div><strong>K-means output</strong><p>Two groups and their average positions.</p><small>They are numbered cluster 1 and 2; the numbers are arbitrary.</small></div></div>
+<details><summary>Check before continuing</summary><p>Can K-means tell you whether a delivery location is “good” or “bad”? No. It groups locations based on the features and distance you choose. The algorithm does not know that these are delivery addresses.</p></details></section>
+<section class="chapter-section" id="w3-points"><h2>3.2. Plot the locations and measure distance</h2>
+<p>We use the five original mathematical points from Ciortuz's first solved 2-means example, with a new delivery-service interpretation.</p>
+<div class="table-hscroll"><table class="teaching-data"><thead><tr><th>Location</th><th>x</th><th>y</th></tr></thead><tbody>
+<tr><td>A</td><td>−1</td><td>0</td></tr><tr><td>B</td><td>1</td><td>0</td></tr><tr><td>C</td><td>0</td><td>1</td></tr><tr><td>D</td><td>3</td><td>0</td></tr><tr><td>E</td><td>3</td><td>1</td></tr></tbody></table></div>
+<p>We choose <strong>K=2</strong> clusters, with the initial centroids <code>μ₁ = (−1,0)</code> and <code>μ₂ = (3,1)</code>.</p>
+<div class="concept-formula"><span>Euclidean distance in two dimensions</span><strong>d((x,y),(a,b)) = √((x−a)² + (y−b)²)</strong><small>To compare which distance is smaller, we can compare the squared distances and omit the square root. This does not change the nearest centre.</small></div>
+<div class="worked"><h3>Worked example — where should B(1,0) belong?</h3>
+<ol><li>Distance from B to μ₁: <code>√((1−(−1))²+(0−0)²) = 2</code>.</li>
+<li>Distance from B to μ₂: <code>√((1−3)²+(0−1)²) = √5 ≈ 2.24</code>.</li>
+<li><strong>2 is smaller than √5</strong>, so B belongs to cluster 1 in the first assignment.</li></ol></div>
+<div class="practice-check"><strong>Your turn</strong><p>Calculate the two squared distances from D(3,0). Which centroid is nearer?</p><details><summary>Show solution</summary><p>To μ₁: <code>(3+1)² + 0² = 16</code>. To μ₂: <code>(3−3)² + (0−1)² = 1</code>. D belongs to cluster 2.</p></details></div>
+</section>
+<section class="chapter-section" id="w3-assign"><h2>3.3. K-means is an alternating process</h2>
+<p>Instead of guessing a complete grouping once, K-means <strong>alternates two steps</strong>: assign every point to its closest centre, then update each centre to the mean of its assigned points.</p>
+<div data-kmeans-demo class="kmeans-demo"><div class="activity-kicker">INTERACTIVE RECONSTRUCTION OF CIORTUZ, SOLVED PROBLEM 7</div>
+<div class="id3-step-toolbar"><button data-kmeans-back type="button">← Previous</button><span data-kmeans-step-label>Start</span><button data-kmeans-next type="button">Next step →</button><button data-kmeans-reset type="button">Reset</button></div>
+<svg viewBox="0 0 720 420" role="img" aria-label="Five locations and two k-means centroids with progression through assignments and updates"></svg>
+<p data-kmeans-explain aria-live="polite"></p><div class="table-hscroll"><table class="teaching-data"><thead><tr><th>Point</th><th>Distance² to μ₁</th><th>Distance² to μ₂</th><th>Assigned group</th></tr></thead><tbody data-kmeans-distance-rows></tbody></table></div>
+</div>
+<div class="worked"><h3>Worked — recomputing the two centres</h3>
+<ol><li>The first group contains <strong>A(−1,0), B(1,0), C(0,1)</strong>.</li>
+<li>Average the x coordinates: <code>(−1+1+0)/3 = 0</code>. Average the y coordinates: <code>(0+0+1)/3 = 1/3</code>.</li>
+<li>So the new centre is <strong>μ₁ = (0,1/3)</strong>.</li>
+<li>The second group is <strong>D(3,0), E(3,1)</strong>; its mean is <strong>μ₂ = (3,1/2)</strong>.</li></ol>
+</div>
+<div class="concept-formula"><span>How to find a centroid</span><strong>centroid = (average x coordinate, average y coordinate)</strong><small>This is just the familiar arithmetic mean, applied independently to each coordinate.</small></div>
+<details><summary>What does one complete K-means iteration mean?</summary><p>One iteration consists of assigning each point to its nearest current centroid and moving each centroid to the mean of its assigned points. The next iteration uses those updated positions for reassignment.</p></details></section>
+<section class="chapter-section" id="w3-cost"><h2>3.4. How can we tell the centres improved?</h2>
+<p>We measure the total squared distance of every point from its assigned centroid. Call this <strong>J</strong> or the <strong>within-cluster sum of squares</strong>.</p>
+<div class="concept-formula"><span>Objective function</span><strong>J = Σ [ (xᵢ−μₓ)² + (yᵢ−μᵧ)² ]</strong><small>Sum over all points, using the centroid to which each point is currently assigned.</small></div>
+<div class="worked"><h3>Numerical comparison from the source example</h3>
+<p>Using the initial centroids and first assignments, the total squared distance is:</p><p><code>J(before update) = 0 + 4 + 2 + 1 + 0 = 7</code>.</p>
+<p>After recomputing the means, the squared distances become:</p><p><code>10/9 + 10/9 + 4/9 + 1/4 + 1/4 = 19/6 ≈ 3.167</code>.</p>
+<p><strong>The cost has decreased:</strong> <code>7 → 3.167</code>.</p></div>
+<p>The update to the arithmetic mean reduces (or leaves unchanged) the sum of squared distances for the current cluster. Reassignment to a nearer centre also cannot increase that sum. See Advanced for the reasoning.</p></section>
+<section class="chapter-section" id="w3-repeat"><h2>3.5. Continue until the assignments stop changing</h2>
+<p>With new centres, check all five points again. In this example, the two groups stay the same. Their means stay the same too, so the algorithm <strong>converges</strong> (stops changing).</p>
+<pre><code>CHOOSE K initial centroids
+REPEAT:
+    ASSIGN every point to its nearest centroid
+    UPDATE each centroid to the mean of its group
+UNTIL no point changes group (or the centroids stop moving)</code></pre>
+<p>Real implementations also need a maximum iteration count, an explicit strategy for empty clusters, and a consistent way to handle points exactly equidistant from two centres.</p>
+<details><summary>Why does the algorithm have to stop on this small example?</summary><p>The total squared distance never increases for ordinary assignment/update steps, and here the second assignment is identical to the first. Recomputing the means therefore changes nothing. More generally, the finite number of possible assignments helps explain termination under suitable deterministic tie handling.</p></details>
+</section>
+<section class="chapter-section" id="w3-limits"><h2>3.6. K-means does not always find the “right” groups</h2>
+<table class="teaching-data"><thead><tr><th>Choice</th><th>Why it matters</th></tr></thead><tbody>
+<tr><td><strong>K</strong> (number of groups)</td><td>The algorithm will create the number you request, even if reality has a different number</td></tr>
+<tr><td>Starting centroids</td><td>Different starting positions can converge to different solutions</td></tr>
+<tr><td>Feature units / scale</td><td>One large-number feature can dominate distance</td></tr>
+<tr><td>Outliers</td><td>A faraway point can pull a mean away from most others</td></tr>
+<tr><td>Shape of the data</td><td>Curved or interlocking groups may not be handled meaningfully by ordinary K-means</td></tr></tbody></table>
+<p>Clusters are a <strong>model of similarity</strong>, not automatically real-world categories or proof that one location is important. Students must ask: does the mathematical distance represent the practical problem?</p>
+<details><summary>What if we measure metres in one feature and kilometres in the other?</summary><p>Euclidean distance depends on scale. Convert to consistent units before clustering; otherwise the larger numerical scale can dominate, even if it is not more important.</p></details></section>
+<section class="chapter-section" id="w3-check"><h2>Checkpoint before the laboratory</h2>
+<ol><li>Explain the difference between ID3 labels and K-means groups.</li>
+<li>Assign B(1,0) by comparing its two distances.</li><li>Calculate the mean of A, B and C.</li>
+<li>Explain in one sentence why updating centroids is useful.</li><li>Read the graph and state why the second iteration is stable.</li><li>Name one reason clusters may not reflect real-world meaning.</li></ol>
+<p><a href="/w3/lab/">Continue to the K-means laboratory →</a></p></section>
+<section class="page-bibliography" id="w3-refs"><h2>Bibliography</h2><ul>
+<li>Liviu Ciortuz, <em>Culegerea de exerciții de învățare automată</em>, §7.1.2, solved problem 7, pp. 853–856: the five 2D points, starting centroids, two iterations and cost 7 → 19/6. <small>Direct mathematical source; delivery-service story is a classroom interpretation.</small></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">Naftali Harris — Visualizing K-means</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://www.pyml.ro/machine-learning-lectii-online-in-python.php">pyml.ro — Machine learning in Python for high-school students</a></li>
+<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/OlimpiadaAI/szkolenia">Polish AI Olympiad — training materials</a></li>
+</ul></section>
+</article></div>

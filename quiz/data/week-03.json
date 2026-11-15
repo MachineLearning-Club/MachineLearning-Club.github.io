@@ -3,179 +3,180 @@
   "title": "Unsupervised Learning: K-Means",
   "durationSeconds": 300,
   "maximumPoints": 10,
-  "status": "Draft practice quiz; teacher review required",
-  "instructions": "Ten questions. Select all correct options in multiple-choice items. One point for an exact match.",
+  "status": "Draft practice quiz — teacher review required",
+  "instructions": "Ten questions about the examples taught this week. Select all correct choices where instructed; exact matches earn full credit.",
   "questions": [
     {
       "id": "w3q1",
       "type": "single",
-      "prompt": "A dataset contains six 2D points but no class labels. You want to group nearby points. Which algorithm fits best?",
+      "prompt": "You have delivery coordinates but no correct group labels. Which task is K-means designed for?",
       "options": [
-        "Categorical ID3",
-        "K-Means",
-        "Text tokenisation",
-        "Binary search"
+        "Supervised regression",
+        "Unsupervised clustering",
+        "Boolean equation solving",
+        "Sentence tokenisation"
       ],
       "correct": [
         1
       ],
-      "explanation": "K-Means groups unlabelled observations into clusters.",
-      "topic": "Unsupervised learning",
+      "explanation": "K-means groups numerical observations without known cluster labels.",
+      "topic": "Learning families",
       "points": 1
     },
     {
       "id": "w3q2",
       "type": "single",
-      "prompt": "What does K mean in K-Means?",
+      "prompt": "What does K=2 mean?",
       "options": [
-        "Number of clusters requested",
-        "Number of correct answers",
-        "Number of input dimensions",
-        "Number of training epochs"
+        "Two features",
+        "Two target labels supplied by the teacher",
+        "Two centroids / clusters requested",
+        "Two Python loops"
       ],
       "correct": [
-        0
+        2
       ],
-      "explanation": "K is the chosen number of cluster centres.",
-      "topic": "Unsupervised learning",
+      "explanation": "K is the chosen number of clusters.",
+      "topic": "K parameter",
       "points": 1
     },
     {
       "id": "w3q3",
       "type": "single",
-      "prompt": "A cluster contains (1,1), (2,1), (3,1). What is its centroid?",
+      "prompt": "For B(1,0), initial centroids μ₁=(-1,0), μ₂=(3,1), what are the squared distances?",
       "options": [
-        "(1,1)",
-        "(2,1)",
-        "(3,3)",
-        "(6,3)"
+        "2 and 5",
+        "4 and 5",
+        "5 and 4",
+        "4 and 9"
       ],
       "correct": [
         1
       ],
-      "explanation": "Average x: (1+2+3)/3=2; average y: (1+1+1)/3=1.",
-      "topic": "Unsupervised learning",
+      "explanation": "d²(B,μ₁)=(1+1)²=4; d²(B,μ₂)=(1−3)²+(0−1)²=5.",
+      "topic": "Distance calculation",
       "points": 1
     },
     {
       "id": "w3q4",
       "type": "single",
-      "prompt": "What usually happens after a K-Means algorithm assigns every point to its nearest centre?",
+      "prompt": "With the initial centroids A and E, which points join the first cluster?",
       "options": [
-        "Update each centre to the mean of assigned points",
-        "Predict a supervised class label",
-        "Train a text tokenizer",
-        "Immediately delete every centre"
+        "A, B and C",
+        "A and E",
+        "D and E",
+        "All five"
       ],
       "correct": [
         0
       ],
-      "explanation": "The update step calculates new centroids from assigned points.",
-      "topic": "Unsupervised learning",
+      "explanation": "A, B and C are nearest to μ₁; D and E to μ₂.",
+      "topic": "Assignment step",
       "points": 1
     },
     {
       "id": "w3q5",
       "type": "single",
-      "prompt": "Two points have coordinates (0,0) and (3,4). Their Euclidean distance is:",
+      "prompt": "What is the mean of A(-1,0), B(1,0), C(0,1)?",
       "options": [
-        "1",
-        "3",
-        "5",
-        "7"
+        "(-1,0)",
+        "(0,1/3)",
+        "(1,1/3)",
+        "(0,1)"
       ],
       "correct": [
-        2
+        1
       ],
-      "explanation": "By Pythagoras, sqrt(3²+4²)=5.",
-      "topic": "Unsupervised learning",
+      "explanation": "Average x=(-1+1+0)/3=0 and y=(0+0+1)/3=1/3.",
+      "topic": "Updating the first centroid",
       "points": 1
     },
     {
       "id": "w3q6",
       "type": "single",
-      "prompt": "An algorithm starts with different random centres and ends with different groupings. What does this illustrate?",
+      "prompt": "The second cluster contains D(3,0), E(3,1). What is its new centroid?",
       "options": [
-        "K-Means can be sensitive to its initial centres",
-        "K-Means always gives the true labels",
-        "The dataset was necessarily corrupted",
-        "Euclidean distance must be negative"
+        "(3,1/2)",
+        "(3,1)",
+        "(6,1)",
+        "(1.5,0.5)"
       ],
       "correct": [
         0
       ],
-      "explanation": "Initialisation can affect convergence and the final grouping.",
-      "topic": "Unsupervised learning",
+      "explanation": "Average x=3 and average y=(0+1)/2=0.5.",
+      "topic": "Updating the second centroid",
       "points": 1
     },
     {
       "id": "w3q7",
       "type": "single",
-      "prompt": "A new point is placed at the same coordinates as an existing cluster centre. Which centre is nearest?",
+      "prompt": "The total squared error decreases from 7 to 19/6 after updating centroids. What does that indicate?",
       "options": [
-        "That centre, at distance 0",
-        "Always the centre with the largest index",
-        "The centre that has the most labels",
-        "No centre can be nearest"
+        "Assigned points are collectively closer in squared distance to their centres",
+        "All points now have the same labels",
+        "The number of points has changed",
+        "K became larger"
       ],
       "correct": [
         0
       ],
-      "explanation": "Identical coordinates have zero distance.",
-      "topic": "Unsupervised learning",
+      "explanation": "The within-cluster sum of squared distances has decreased.",
+      "topic": "Objective function",
       "points": 1
     },
     {
       "id": "w3q8",
       "type": "single",
-      "prompt": "Why should K-Means cluster IDs not be treated automatically as the real class labels?",
+      "prompt": "Why does K-means use the arithmetic mean when updating a centroid?",
       "options": [
-        "Clusters are discovered without known target labels",
-        "K-Means only works on text",
-        "The algorithm never processes numbers",
-        "Every dataset has exactly two classes"
+        "The mean minimises the sum of squared distances within a fixed group",
+        "The mean always equals an existing point",
+        "The mean guarantees correct human labels",
+        "The mean does not depend on outliers"
       ],
       "correct": [
         0
       ],
-      "explanation": "Clustering identifies geometric groups; their meaning requires separate interpretation.",
-      "topic": "Unsupervised learning",
+      "explanation": "For a fixed group, the average coordinate minimises squared Euclidean distance to its members.",
+      "topic": "Centroid and squared error",
       "points": 1
     },
     {
       "id": "w3q9",
       "type": "multiple",
-      "prompt": "Select ALL statements that describe ordinary K-Means.",
+      "prompt": "Which steps describe an ordinary K-means iteration?",
       "options": [
-        "It repeatedly assigns points and updates centroids",
-        "It needs a chosen number K of clusters",
-        "It always uses provided yes/no target labels",
-        "It guarantees a global optimum for every initialisation"
+        "Assign each point to its closest current centroid",
+        "Update each centroid to its group average",
+        "Read known supervised class labels",
+        "Ask the student to calculate entropy"
       ],
       "correct": [
         0,
         1
       ],
-      "explanation": "K-Means alternates assignments and centroid updates; it is unsupervised and sensitive to initial conditions.",
-      "topic": "Unsupervised learning",
+      "explanation": "An iteration alternates nearest-centroid assignment with arithmetic-mean updating.",
+      "topic": "Algorithm mechanics",
       "points": 1
     },
     {
       "id": "w3q10",
       "type": "multiple",
-      "prompt": "Select ALL useful checks when presenting a cluster analysis.",
+      "prompt": "Which factors can change the quality or meaning of a K-means result?",
       "options": [
-        "Plot the points and the selected centres",
-        "Compare the result when K or initial centres change",
-        "Assume two clusters prove two real-world categories exist",
-        "Ignore the distance units of the features"
+        "Starting centroid positions",
+        "The chosen K",
+        "Outliers and feature units",
+        "The arbitrary name assigned to a cluster"
       ],
       "correct": [
         0,
-        1
+        1,
+        2
       ],
-      "explanation": "Visual inspection and sensitivity checks help interpret the grouping without overclaiming meaning.",
-      "topic": "Unsupervised learning",
+      "explanation": "Initialisation, K, scale and outliers affect the geometry; renaming cluster 1 as cluster A does not.",
+      "topic": "Interpreting clusters",
       "points": 1
     }
   ]

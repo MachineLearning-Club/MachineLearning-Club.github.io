@@ -1,0 +1,67 @@
+<div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Laboratory contents"><details class="toc-panel" open><summary>Contents</summary><ul>
+<li><a href="#w2-lab-predict">1. Make a prediction</a></li><li><a href="#w2-lab-app">2. Compare questions</a></li><li><a href="#w2-lab-build">3. Build a tree</a></li><li><a href="#w2-lab-python">4. Run Python</a></li><li><a href="#w2-lab-test">5. Test unfamiliar cases</a></li><li><a href="#w2-lab-research">Research (3p)</a></li><li><a href="#submission">Submission</a></li><li><a href="#w2-lab-refs">Bibliography</a></li></ul></details></nav></aside>
+<article class="course-article">
+<section id="w2-lab-predict" class="lab-step"><h2>1. Predict before opening the model</h2><p>Go back to the <a href="/w2/course/#w2-data">twelve-row activity diary</a>. Do not start by writing code. Start by noticing what the examples have in common.</p>
+<ol><li>How many training records say <strong>yes</strong> and how many say <strong>no</strong>?</li>
+<li>Look at the four sunny records. Are their answers identical?</li>
+<li>Look at the four cloudy records. Which other feature separates the two answers?</li>
+<li>Write your guess: what question should go at the top of the tree?</li></ol>
+<details><summary>Reveal the initial observations</summary><p>There are six yes and six no labels. All four sunny records are yes. The cloudy group contains two yes (calm) and two no (windy). Sky is the useful root question; Wind is useful for the remaining cloudy records.</p></details>
+</section>
+<section id="w2-lab-app" class="lab-step"><h2>2. Compare candidate features interactively</h2>
+<p>Use the same miniature classifier as the Course. Toggle a feature, inspect the positive and negative counts, then reveal the exact information gain.</p>
+<div class="decision-playground" data-id3-playground>
+<div class="id3-controls" role="group" aria-label="Compare features"><button type="button" data-id3-feature="sky" aria-pressed="true">Sky</button><button type="button" data-id3-feature="wind" aria-pressed="false">Wind</button><button type="button" data-id3-feature="temperature" aria-pressed="false">Temperature</button></div>
+<div class="id3-group-board" data-id3-groups aria-live="polite"></div><p class="id3-result" data-id3-gain aria-live="polite"></p>
+<details><summary>Show the numerical entropy calculation</summary><div data-id3-maths></div></details></div>
+<div class="exercise"><strong>Checkpoint</strong><ol type="a"><li>Find the question with the greatest information gain.</li><li>Find the least informative feature.</li><li>Explain one difference between a large information gain and a large number of training examples.</li></ol></div>
+<p><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Optional: compare with the Experience AI decision-tree activity ↗</a>. The embedded visualiser above works without a login.</p>
+</section>
+<section id="w2-lab-build" class="lab-step"><h2>3. Build a full tree, one step at a time</h2>
+<div class="id3-tree-demo" data-id3-tree><div class="id3-step-toolbar"><button type="button" data-id3-previous>← Back</button><span data-id3-step-label>Step 1 / 4</span><button type="button" data-id3-next>Next step →</button></div>
+<svg viewBox="0 0 730 400" role="img" aria-label="Build a categorical decision tree incrementally"></svg><p data-id3-step-explanation></p></div>
+<ol><li>Stop at the two branches where all training labels agree.</li><li>For the mixed cloudy branch, find the better remaining question.</li><li>Trace <code>cloudy → windy</code> and <code>cloudy → calm</code> to the final predicted labels.</li></ol>
+</section>
+<section id="w2-lab-python" class="lab-step"><h2>4. Run the ID3 notebook — no account required</h2>
+<p>The code below contains all twelve examples, calculates their class entropy and compares the candidate questions. Press <strong>Run Python</strong>; then change the feature name and run it again.</p>
+<div class="python-runner"><label for="w2-code">Ready-to-run Python — question quality</label>
+<textarea class="py-source" id="w2-code" spellcheck="false" rows="17">from collections import Counter
+from math import log2
+rows = [
+ ("sunny", "calm", "yes"), ("sunny", "calm", "yes"),
+ ("sunny", "windy", "yes"), ("sunny", "windy", "yes"),
+ ("cloudy","calm","yes"), ("cloudy","calm","yes"),
+ ("cloudy","windy","no"), ("cloudy","windy","no"),
+ ("rainy", "calm", "no"), ("rainy", "calm", "no"),
+ ("rainy", "windy", "no"), ("rainy", "windy", "no")]
+def entropy(labels):
+ counts=Counter(labels); n=len(labels)
+ return -sum((v/n)*log2(v/n) for v in counts.values())
+base=entropy([r[2] for r in rows])
+for column, feature in [(0,"sky"),(1,"wind")]:
+ groups={v:[r[2] for r in rows if r[column]==v] for v in set(r[column] for r in rows)}
+ remainder=sum(len(g)/len(rows)*entropy(g) for g in groups.values())
+ print(feature, "information gain =",round(base-remainder,3))</textarea>
+<button type="button" class="run-python">Run Python</button><output class="py-output" aria-live="polite">Press Run Python to see the information gains.</output></div>
+<div class="lab-launches"><p><a href="/jupyter/lab/index.html?path=w2-id3-training.ipynb" target="_blank" rel="noopener noreferrer">Open prepared ID3 notebook in JupyterLite ↗</a> · <a href="/w2/lab/notebooks/w2-id3-training.ipynb" download>Download notebook</a></p>
+<p><a href="/jupyter/lab/index.html?path=w2-id3-visual.ipynb" target="_blank" rel="noopener noreferrer">Open the decision-tree diagram notebook ↗</a> · <a href="/w2/lab/notebooks/w2-id3-visual.ipynb" download>Download notebook</a></p></div>
+<ol><li>Open the training notebook. Run its cells in order.</li><li>Compare the root question against your earlier guess.</li><li>Change one training answer, rerun and observe the new information gain.</li><li>Open the visual notebook and inspect the generated tree diagram.</li></ol>
+</section>
+<section id="w2-lab-test" class="lab-step"><h2>5. Test a prediction the model did not see</h2>
+<p>The finished tree predicts <code>sky=cloudy, wind=calm → yes</code>. Try <code>sky=rainy, wind=calm</code>. Then imagine a never-seen value <code>sky=foggy</code>.</p>
+<div class="table-hscroll"><table class="teaching-data"><thead><tr><th>New input</th><th>Prediction or warning</th><th>How confident should you be?</th></tr></thead><tbody>
+<tr><td>cloudy / calm</td><td>________</td><td>Seen combination</td></tr>
+<tr><td>rainy / windy</td><td>________</td><td>Seen combination</td></tr>
+<tr><td>foggy / calm</td><td>________</td><td>No trained sky branch</td></tr></tbody></table></div>
+<p><strong>Explain:</strong> what does “unseen” mean? Why is a warning more useful than a random guess?</p>
+</section>
+<section id="w2-lab-research" class="lab-step"><h2>Research (3p) <span class="optional-mark">(optional)</span></h2>
+<p>Invent four extra rows for the weather diary. First make them agree with the original patterns, then change one label so the dataset becomes noisy. Compare how much the <strong>root gain</strong> changes and whether the constructed tree becomes more complicated.</p>
+<details><summary>Suggested investigation</summary><ol><li>Copy the original notebook, preserving the first run.</li><li>Add or modify one example at a time.</li><li>Record the gain for all features, not just the best one.</li><li>Write two sentences explaining whether the chosen root remains unchanged.</li></ol></details>
+</section>
+<section id="submission" class="submission-drop"><h2>Submission</h2><p>Save the notebook or Python file and a short table with the three candidate gains and two test predictions. Optionally include your decision-tree diagram.</p>
+<div class="submission-form" data-submission-week="2"><label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label>
+<label class="file-drop">Choose files<input class="submission-files" type="file" accept=".ipynb,.py,.csv,.pdf,.zip,.txt" multiple></label><p class="submission-selected" aria-live="polite">No file selected.</p><button class="prepare-submission" type="button">Download named submission</button><p class="submission-status" aria-live="polite"></p></div><p class="understated">The download is local. Collection becomes possible after the teacher supplies an upload link.</p></section>
+<section id="w2-lab-refs" class="page-bibliography"><h2>Bibliography</h2><ul><li>Liviu Ciortuz, §4.1.1, solved problem 2, pp. 490–493; school-weather dataset adapted for this lesson.</li>
+<li><a href="https://experience-ai.org/ro/units/foundations-of-ai-11-14" target="_blank" rel="noopener noreferrer">Experience AI — decisions trees and activity worksheets</a></li><li><a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" rel="noopener noreferrer">Microsoft — ML for Beginners</a></li></ul></section>
+</article></div>
