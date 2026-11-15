@@ -1,0 +1,57 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-11-15T15:47:00.497003Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-15T15:46:57.653173Z",
+      "mimetype": null,
+      "name": "01-nearest-prototype.ipynb",
+      "path": "01-nearest-prototype.ipynb",
+      "size": 2660,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-11-15T15:47:00.497261Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-15T15:46:57.655003Z",
+      "mimetype": null,
+      "name": "02-biased-die.ipynb",
+      "path": "02-biased-die.ipynb",
+      "size": 2455,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-11-15T15:47:00.497505Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-11-15T15:46:57.657126Z",
+      "mimetype": null,
+      "name": "03-learn-thermostat.ipynb",
+      "path": "03-learn-thermostat.ipynb",
+      "size": 2622,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-11-15T15:47:00.497505Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-11-15T15:47:00.497505Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

@@ -1,0 +1,40 @@
+/* Probability and statistics: mathematical clarity with responsive diagrams. */
+.week1-foundations .formula-guide{padding:12px 15px;margin:17px 0;border-left:3px solid #87a7bb;background:#f7fafc;font-size:.88rem;line-height:1.62}
+.week1-foundations .formula-guide>strong{color:#2f526d}
+.week1-foundations .formula-guide ol{margin:7px 0 0;padding-left:23px}
+.week1-foundations .formula-guide li{margin:5px 0}
+.week1-foundations .distributions-table select{width:100%;min-width:146px;padding:8px 6px;border:1px solid #b6c9d7;font:.85rem Georgia,serif;background:#fff;color:#234660}
+.week1-foundations .distributions-table select.choice-right{border-color:#418057;background:#effaf2}
+.week1-foundations .distributions-table select.choice-wrong{border-color:#a44848;background:#fff3f1}
+.week1-foundations .distribution-reference dl{display:grid;grid-template-columns:135px 1fr;gap:5px 13px;font-size:.88rem}
+.week1-foundations .distribution-reference dt{font-weight:600;color:#2e536b}
+.week1-foundations .distribution-reference dd{margin:0 0 10px;color:#526b79}
+.week1-foundations [data-check-distributions]{border:1px solid #719bb9;background:#f8fafc;color:#24567c;padding:9px 13px;font:.88rem Georgia,serif;margin:12px 8px 0 0}
+.week1-foundations [data-distributions-result]{display:inline-block;color:#356079;font-size:.87rem;margin:13px 0}
+.week1-foundations .probability-interactive{border-top:1px solid #cbdce8;padding-top:13px;margin-top:39px}
+.week1-foundations .probability-lab,.week1-foundations .variance-interactive,.week1-foundations .covariance-interactive{margin:22px 0 27px;padding:17px 20px;border:1px solid #d7e3eb;background:#fafcfe}
+.week1-foundations .probability-lab label,.week1-foundations .variance-interactive label{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:.93rem;color:#37566d}
+.week1-foundations input[type=range]{width:100%;accent-color:#3f7eaa;cursor:pointer;margin:16px 0 13px;min-height:25px}
+.week1-foundations .probability-lab svg,.week1-foundations .variance-interactive svg,.week1-foundations .covariance-interactive svg{display:block;width:100%;height:auto;max-width:680px;margin:13px auto}
+.week1-foundations .probability-lab svg text,.week1-foundations .variance-interactive svg text,.week1-foundations .covariance-interactive svg text{fill:#33556c;font:14px Georgia,serif}
+.week1-foundations .probability-lab>p{font-size:.9rem;color:#435e72;margin:10px 0}
+.week1-foundations .probability-results{background:#fff;border-top:1px solid #e0e9f0;padding:13px 0 0;font:.88rem/1.6 Georgia,serif;color:#315b77}
+.week1-foundations .covariance-mode{display:flex;flex-wrap:wrap;gap:5px 12px;margin-bottom:7px}
+.week1-foundations .covariance-mode button[aria-pressed=true]{background:#e6f1f9;border-color:#4e88b0;font-weight:600}
+.week1-foundations .covariance-interactive output{display:block;line-height:1.65;font-size:.87rem;color:#315975;padding:9px 0}
+.week1-foundations #weighted-probabilities,.week1-foundations #build-variance,.week1-foundations #build-covariance{border-top:1px solid #dce5eb;padding-top:16px;margin:34px 0}
+.week1-foundations #weighted-probabilities h2,.week1-foundations #build-variance h2,.week1-foundations #build-covariance h2{font-weight:400;font-size:1.45rem}
+@media(max-width:700px){
+ .week1-foundations .distribution-reference dl{display:block}
+ .week1-foundations .distribution-reference dt{margin-top:10px}
+ .week1-foundations .distribution-reference dd{margin:3px 0}
+ .week1-foundations .probability-lab,.week1-foundations .variance-interactive,.week1-foundations .covariance-interactive{padding:10px}
+ .week1-foundations .distributions-table select{min-width:128px}
+ .week1-foundations .formula-sheet table{min-width:0}
+ .week1-foundations #weighted-probabilities h2,.week1-foundations #build-variance h2,.week1-foundations #build-covariance h2{font-size:1.24rem}
+}
+@media print{
+ .week1-foundations input[type=range],.week1-foundations .covariance-mode button{display:none}
+ .week1-foundations svg{break-inside:avoid-page}
+ .week1-foundations .advanced-problems article{break-inside:auto}
+}

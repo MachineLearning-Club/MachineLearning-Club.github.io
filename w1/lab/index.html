@@ -1,48 +1,173 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Laboratory"><title>What Is AI? Rules and Learning — Laboratory · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="lab" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/lab/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content week1-foundations"><p class="eyebrow">Week 01 · Laboratory</p><h1>AI Tools — Exploration Laboratory</h1><p class="deck">Explore several real AI systems, compare what they do, and record where they succeed or fail. No coding required.</p>
-<section class="scenario"><h2>Laboratory — explore AI in practice</h2><p>Work individually or in pairs. Try a drawing recogniser, train a small image classifier, then compare a generative assistant with another AI system. Your goal is to <strong>observe the different tasks</strong>, not just click through demos.</p></section>
-<section><h2>Before you start</h2>
-<div class="lab-ground-rules"><strong>Use safe examples</strong><p>Draw simple objects and use ordinary classroom objects such as a pen, ruler, bottle or notebook. Do not upload classmates' faces, voices, personal messages, or private information. Accounts and cameras may be optional; ask the teacher before signing into third-party services.</p></div>
-<p>Record observations in a text document or on paper. If a website is unavailable or blocked, use another activity below and record the reason.</p></section>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Laboratory"><title>What Is AI? Rules and Learning — Laboratory · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script><link rel="stylesheet" href="/assets/course-interactive.css"><link rel="stylesheet" href="/assets/week1-lab-experiments.css"><script defer src="/assets/week1-lab-experiments.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="lab" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/lab/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/" aria-current="page">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content week1-foundations lab-lesson"><p class="eyebrow">Week 01 · Laboratory</p>
+<h1>AI Experiments — Laboratory</h1>
+<div class="course-layout">
+  <aside class="course-sidebar" aria-label="Laboratory navigation">
+    <nav class="toc" aria-label="Laboratory contents">
+      <details class="toc-panel" open>
+        <summary>Contents</summary>
+        <ul>
+          <li><a href="#lab-draw">1. Quick, Draw!</a></li>
+          <li><a href="#lab-pixel">2. Semantic Pixel Search</a></li>
+          <li><a href="#lab-vision">3. Recognise an image</a></li>
+          <li><a href="#lab-creative">4. Creative AI experiments</a></li>
+          <li><a href="#lab-web">5. Generate a coffee-shop website</a></li>
+          <li><a href="#lab-notebooks">6. One-click Python notebooks</a></li>
+          <li><a href="#lab-reflection">7. Compare the systems</a></li>
+          <li><a href="#submission">Submission</a></li>
+        </ul>
+      </details>
+    </nav>
+  </aside>
+  <article class="course-article">
+    <section id="lab-draw" class="lab-step">
+      <h2>1. Quick, Draw! — can a model guess your sketch?</h2>
+      <p class="activity-lead">The AI sees your drawing as you make it and predicts an object category.</p>
+      <p class="launch"><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Open Quick, Draw! ↗</a> <span class="lab-tag">No login · Drawing</span></p>
+      <ol>
+        <li>Play one complete round (six sketches).</li>
+        <li>Write down one correct guess and one wrong or late guess.</li>
+        <li>Try an unusual but recognisable drawing. Did the model understand it?</li>
+      </ol>
+      <details><summary>What is the model actually doing?</summary><p><strong>Input:</strong> drawn strokes. <strong>Processing:</strong> a trained drawing recogniser estimates a category from those strokes. <strong>Output:</strong> its current guess. It was trained before you opened the game.</p></details>
+    </section>
 
-<section id="lab-draw"><h2>1. Quick, Draw! — an AI recognises sketches</h2>
-<div class="lab-tool"><div class="lab-tool-label">GOOGLE · COMPUTER VISION</div><strong>Quick, Draw!</strong><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Open Quick, Draw!</a></div>
-<ol><li>Play at least <strong>five rounds</strong>. Draw the prompted objects as normally as you can.</li><li>Record <strong>two correct guesses</strong> and <strong>one unsuccessful or late guess</strong>.</li><li>Explain why a recogniser may fail even when the drawing is understandable to a person.</li></ol>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>The tool predicts categories from a drawing. This is an example of <strong>computer vision and classification</strong>.</p></div>
-</section>
+    <section id="lab-pixel" class="lab-step">
+      <h2>2. Hugging Face Pixel Search — search by meaning</h2>
+      <p class="activity-lead">The search engine finds pixel-art images using semantic similarity, not only exact word matches.</p>
+      <p class="launch"><a href="https://huggingface.co/spaces/cfahlgren1/pixel-search?q=earth" target="_blank" rel="noopener noreferrer">Open Pixel Search — “earth” ↗</a> <span class="lab-tag">Public static Space · No HF token</span></p>
+      <ol>
+        <li>Start with <code>earth</code>. Inspect the pictures ranked near the top.</li>
+        <li>Try <code>planet</code> and <code>world</code>. Which pictures remain similar?</li>
+        <li>Try <code>red planet</code> and then <code>red fruit</code>. Record a surprising result.</li>
+      </ol>
+      <details><summary>Why can different words retrieve similar pictures?</summary><p>Models may convert descriptions and images into numerical representations. Search compares those representations using a similarity measure. A near match is not proof the result has the meaning you intended.</p></details>
+      <p class="understated">The model may download data on first use; this activity needs a modern browser and an internet connection. If it is slow, continue with Activity 3.</p>
+    </section>
 
-<section id="lab-teach"><h2>2. Teachable Machine — train your own classifier</h2>
-<div class="lab-tool"><div class="lab-tool-label">GOOGLE · SUPERVISED LEARNING</div><strong>Teachable Machine</strong><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Open Teachable Machine</a></div>
-<ol><li>Choose an <strong>Image Project</strong> with two classes, for example <strong>Pen</strong> and <strong>Notebook</strong>.</li><li>Provide around <strong>10 varied examples for each class</strong> using ordinary objects. Change the angle, position or background.</li><li>Select <strong>Train Model</strong> and test at least four fresh examples.</li><li>Record the predicted category, whether it was correct, and any displayed prediction scores.</li></ol>
-<div class="lab-comparison-table"><table><caption>Record your four new tests</caption><thead><tr><th>Test</th><th>Actual object</th><th>Predicted class</th><th>Correct?</th></tr></thead><tbody><tr><td>1</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>2</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>3</td><td>________</td><td>________</td><td>_____</td></tr><tr><td>4</td><td>________</td><td>________</td><td>_____</td></tr></tbody></table></div>
-<p class="understated">If image capture or uploads are not permitted, observe the teacher's demonstration and describe which examples would help each class. Do not upload personal photographs.</p></section>
+    <section id="lab-vision" class="lab-step">
+      <h2>3. Recognise an image — use an already-trained model</h2>
+      <p class="activity-lead">Contrast a classifier that already knows categories with one that you train yourself.</p>
+      <div class="lab-choices">
+        <div><strong>Hugging Face Image Classifier</strong><p><a href="https://huggingface.co/spaces/mizoo12/image-classifier" target="_blank" rel="noopener noreferrer">Launch the browser-based classifier ↗</a></p><small>Free, public static Space; the model runs on your device. Try the built-in sample image first, then an ordinary object image if permitted.</small></div>
+        <div><strong>Google Teachable Machine</strong><p><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Train your own image model ↗</a></p><small>Optional experiment: collect two classes of classroom objects, train, then test a new example. Requires suitable camera access or non-personal sample images.</small></div>
+      </div>
+      <ol>
+        <li>Observe which labels the pretrained model suggests and how it expresses confidence.</li>
+        <li>Try one image the model may not have a suitable category for.</li>
+        <li>Explain the difference between <em>using</em> a pretrained model and <em>training</em> a new model with your examples.</li>
+      </ol>
+    </section>
 
-<section id="lab-assistant"><h2>3. Generative AI — test a claim, not just a response</h2>
-<div class="lab-tool"><div class="lab-tool-label">GOOGLE · GENERATIVE AI</div><strong>Gemini</strong><a href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">Open Gemini (if available)</a></div>
-<p>Use this <strong>non-personal</strong> prompt with a generative assistant:</p>
-<blockquote>“Explain in 80 words how a neural network differs from a rule-based program. Give one real example of each.”</blockquote>
-<ol><li>Record the two examples the assistant gives.</li><li>Check one claim against the course definitions or another reliable source.</li><li>Ask a follow-up that requests a clearer or shorter explanation. Did the answer become more useful?</li></ol>
-<div class="observation"><span class="label-word observation-label">Observation</span><p>A fluent answer is <strong>not proof of correctness</strong>. A generative model produces content; it does not necessarily verify every statement it makes.</p></div></section>
+    <section id="lab-creative" class="lab-step">
+      <h2>4. Creative AI — what changes when you control the input?</h2>
+      <p>Choose <strong>one</strong> of these account-free browser experiences.</p>
+      <div class="lab-choices">
+        <div><strong>Google AutoDraw</strong><p><a href="https://www.autodraw.com/" target="_blank" rel="noopener noreferrer">Open AutoDraw ↗</a></p><small>Draw an object roughly. What does the assistant suggest before you finish?</small></div>
+        <div><strong>Google Blob Opera</strong><p><a href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw" target="_blank" rel="noopener noreferrer">Open Blob Opera ↗</a></p><small>Move one blob to change the voice. Observe how other voices respond. Turn down the sound before starting.</small></div>
+        <div><strong>Google Guess the Line</strong><p><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Open Guess the Line in Play with AI ↗</a></p><small>Compare this drawing game with Quick, Draw!: what is the task, input and output?</small></div>
+      </div>
+      <p><strong>Explain:</strong> which part did you control, and which part did the learned model generate or suggest?</p>
+    </section>
 
-<section id="lab-other"><h2>4. Compare another AI tool</h2>
-<div class="lab-tool-list">
-<div class="lab-tool"><div class="lab-tool-label">OTHER PROVIDER · GENERATIVE AI</div><strong>ChatGPT</strong><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open ChatGPT</a><p>Try the same prompt as in activity 3 and compare the explanations.</p></div>
-<div class="lab-tool"><div class="lab-tool-label">OTHER PROVIDER · AI DEMOS</div><strong>Hugging Face Spaces</strong><a href="https://huggingface.co/spaces" target="_blank" rel="noopener noreferrer">Browse Spaces</a><p>Find a public demo of classification, translation, or image recognition. Use only examples you may share.</p></div>
-<div class="lab-tool"><div class="lab-tool-label">GOOGLE · OPTIONAL EXPERIMENT</div><strong>Google Arts & Culture</strong><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Explore AI games</a><p>Try a creative experiment and identify its likely input and output.</p></div>
+    <section id="lab-web" class="lab-step">
+      <h2>5. Generate an interactive coffee-shop website</h2>
+      <p class="activity-lead">Use one free generative AI tool to turn a detailed description into working HTML, CSS and JavaScript.</p>
+      <div class="prompt-builder" data-coffee-prompt>
+        <label>Theme <input data-theme value="cosy forest library" maxlength="90" aria-label="Coffee shop theme"></label>
+        <label>Brand colour <input data-color value="deep emerald green" maxlength="65" aria-label="Brand colour"></label>
+        <label>Character or mascot <input data-character value="a curious red fox" maxlength="90" aria-label="Shop character"></label>
+        <div class="prompt-preview"><strong>Your prompt</strong><p data-prompt-text></p></div>
+        <button type="button" data-copy-prompt>Copy prompt</button>
+        <span data-prompt-status role="status" aria-live="polite"></span>
+      </div>
+      <p><strong>Choose a generator:</strong> these tools offer free access without an account, though some have usage or device limits.</p>
+      <div class="lab-choices ai-generators">
+        <div><strong>PageGen</strong><p><a href="https://pagegen.ai/" target="_blank" rel="noopener noreferrer">Generate a single-file website ↗</a></p><small>Built for HTML pages; free use with an hourly limit.</small></div>
+        <div><strong>AICreate HTML Generator</strong><p><a href="https://aicreate.com/html-code-generator/" target="_blank" rel="noopener noreferrer">Generate and preview HTML ↗</a></p><small>Free without signup; runs in-browser when supported, otherwise via its server.</small></div>
+        <div><strong>Duck.ai</strong><p><a href="https://duck.ai/" target="_blank" rel="noopener noreferrer">Ask a chatbot to produce HTML ↗</a></p><small>Free, no required account; daily usage limits.</small></div>
+        <div><strong>Free.ai HTML Generator</strong><p><a href="https://free.ai/code/html/" target="_blank" rel="noopener noreferrer">Try an HTML generator ↗</a></p><small>Free models available without signup; some premium models require payment.</small></div>
+      </div>
+      <ol>
+        <li>Choose a theme, colour and mascot; copy the prompt to your chosen tool.</li>
+        <li>Check that the generated page includes a menu, an <em>Add to cart</em> control and a cart total.</li>
+        <li>Add two coffees. Does the displayed sum match the listed prices?</li>
+        <li>Try the checkout button. It must only <strong>simulate</strong> an order, never accept real payment details.</li>
+      </ol>
+      <details><summary>How should you judge a generated website?</summary><p>Verify that its buttons actually change the cart; prices add correctly; the text is readable on a small screen; and checkout is explicitly labelled as a demonstration. A convincing screenshot is not evidence of functioning software.</p></details>
+    </section>
+
+    <section id="lab-notebooks" class="lab-step">
+      <h2>6. One-click Python experiments</h2>
+      <p class="activity-lead">Press <strong>Run Python</strong> on each prepared example. No account, coding setup or external notebook sign-in is needed. The first run loads Python into your browser.</p>
+      <div class="lab-notebook-grid">
+        <article class="lab-mini-notebook"><h3>6.1. Prediction from two examples</h3><p>Change the new point to see how its predicted category changes.</p>
+          <div class="python-runner"><label for="w1-predict">Ready-to-run Python</label><textarea id="w1-predict" class="py-source" spellcheck="false" rows="11">from math import dist
+prototypes = {"A": (2,2), "B": (8,8)}
+new = (3,3)
+label = min(prototypes, key=lambda k: dist(new, prototypes[k]))
+print("New observation:", new)
+print("Predicted category:", label)
+print("Distances:", {k: round(dist(new,v),2) for k,v in prototypes.items()})</textarea><button class="run-python" type="button">Run Python</button><output class="py-output" aria-live="polite">Press Run Python to see a prediction.</output></div>
+          <p><a href="/jupyter/lab/index.html?path=01-nearest-prototype.ipynb" target="_blank" rel="noopener noreferrer">Run in JupyterLite ↗</a> · <a href="/w1/lab/notebooks/01-nearest-prototype.ipynb" download>Download notebook (.ipynb)</a></p>
+        </article>
+        <article class="lab-mini-notebook"><h3>6.2. Make a probability histogram</h3><p>Watch what happens when a die becomes biased toward a particular face.</p>
+          <div class="python-runner"><label for="w1-die">Ready-to-run Python</label><textarea id="w1-die" class="py-source" spellcheck="false" rows="12">import random
+random.seed(7)
+faces = [1,2,3,4,5,6]
+weights = [1,1,1,1,1,5]
+rolls = random.choices(faces, weights=weights, k=200)
+for face in faces:
+    count = rolls.count(face)
+    print(face, "|" + "#"*(count//3), count)
+print("Observed mean:", round(sum(rolls)/len(rolls),2))</textarea><button class="run-python" type="button">Run Python</button><output class="py-output" aria-live="polite">Press Run Python to see a histogram.</output></div>
+          <p><a href="/jupyter/lab/index.html?path=02-biased-die.ipynb" target="_blank" rel="noopener noreferrer">Run in JupyterLite ↗</a> · <a href="/w1/lab/notebooks/02-biased-die.ipynb" download>Download notebook (.ipynb)</a></p>
+        </article>
+        <article class="lab-mini-notebook"><h3>6.3. Watch a simple model learn</h3><p>Compare an initial rule with a boundary computed from labelled examples.</p>
+          <div class="python-runner"><label for="w1-rule">Ready-to-run Python</label><textarea id="w1-rule" class="py-source" spellcheck="false" rows="12">temperatures = [16,17,18,20,21,23]
+wanted_on = [1,1,1,0,0,0]
+best = None
+for threshold in range(15,25):
+    correct = sum(int(t < threshold)==y for t,y in zip(temperatures,wanted_on))
+    if best is None or correct > best[1]:
+        best = (threshold,correct)
+print("Learned threshold:",best[0],"degrees")
+print("Correct training examples:",best[1],"/",len(temperatures))
+print("At 19°C:", "ON" if 19 < best[0] else "OFF")</textarea><button class="run-python" type="button">Run Python</button><output class="py-output" aria-live="polite">Press Run Python to train a small rule.</output></div>
+          <p><a href="/jupyter/lab/index.html?path=03-learn-thermostat.ipynb" target="_blank" rel="noopener noreferrer">Run in JupyterLite ↗</a> · <a href="/w1/lab/notebooks/03-learn-thermostat.ipynb" download>Download notebook (.ipynb)</a></p>
+        </article>
+      </div>
+      <p class="lab-notebook-help"><a href="/jupyter/lab/index.html" target="_blank" rel="noopener noreferrer">Open the club’s JupyterLite ↗</a>. The links above open notebooks with all data and code already included. Press the ▶ button beside the code cell to run it. The first visit loads the Python engine; no account is required. <a href="/guides/notebooks/">Step-by-step notebook guide</a>.</p>
+    </section>
+
+    <section id="lab-reflection" class="lab-step">
+      <h2>7. Compare the systems</h2>
+      <div class="table-hscroll"><table><thead><tr><th>Experiment</th><th>What did you give it?</th><th>What did it produce?</th><th>What can fail?</th></tr></thead>
+        <tbody><tr><td>Quick, Draw!</td><td>Your sketch</td><td>A class guess</td><td>Unusual drawing</td></tr>
+        <tr><td>Pixel Search</td><td>Text description</td><td>Similar images</td><td>Incorrect meaning</td></tr>
+        <tr><td>HTML generator</td><td>A description</td><td>Website code</td><td>Broken cart or fake buttons</td></tr>
+        <tr><td>Python prediction</td><td>Numbers + training examples</td><td>A predicted category</td><td>Unseen cases</td></tr></tbody>
+      </table></div>
+      <p><strong>Exit ticket:</strong> Pick two experiments. Explain their input, processing and output, and describe one real mistake you saw.</p>
+    </section>
+
+    <section id="submission" class="submission-drop"><h2>Submit your observations</h2>
+      <p>Save your short notes and comparison table as a <code>.txt</code>, <code>.pdf</code> or <code>.md</code> file. Optionally include a notebook.</p>
+      <div class="submission-form" data-submission-week="1">
+        <label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label>
+        <label class="file-drop">Drop a file here or choose one<input class="submission-files" type="file" accept=".ipynb,.py,.csv,.zip,.txt,.pdf,.md" multiple></label>
+        <p class="submission-selected" aria-live="polite">No file selected.</p>
+        <button type="button" class="prepare-submission">Download named submission</button><p class="submission-status" aria-live="polite"></p>
+      </div>
+      <p class="understated">This prepares a named ZIP locally. It does not upload files; use the teacher-provided collection link when announced.</p>
+    </section>
+    <section class="page-bibliography"><h2>Bibliography</h2><ul>
+      <li><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Quick, Draw!</a></li>
+      <li><a href="https://huggingface.co/spaces/cfahlgren1/pixel-search" target="_blank" rel="noopener noreferrer">Hugging Face Pixel Search</a></li>
+      <li><a href="https://huggingface.co/spaces/mizoo12/image-classifier" target="_blank" rel="noopener noreferrer">Hugging Face browser image-classification Space</a></li>
+      <li><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Google Arts &amp; Culture — Play with AI</a></li>
+      <li><a href="https://pagegen.ai/" target="_blank" rel="noopener noreferrer">PageGen — free HTML generator</a></li>
+      <li><a href="https://jupyterlite.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">JupyterLite documentation</a></li>
+    </ul></section>
+  </article>
 </div>
-<p>Choose <strong>one</strong> alternative. Record the task, the input you supplied, the output obtained, and one limitation.</p></section>
-
-<section id="lab-reflection"><h2>5. Compare the systems</h2>
-<div class="table-hscroll"><table class="lab-summary"><thead><tr><th>System</th><th>Input</th><th>Output</th><th>Learning task</th></tr></thead>
-<tbody><tr><th>Quick, Draw!</th><td>Sketch</td><td>Object label</td><td>Image classification</td></tr>
-<tr><th>Teachable Machine</th><td>Examples + new image</td><td>Predicted class</td><td>Supervised classification</td></tr>
-<tr><th>Gemini / ChatGPT</th><td>Text prompt</td><td>Generated text</td><td>Language generation</td></tr>
-<tr><th>Your fourth tool</th><td>________</td><td>________</td><td>________</td></tr></tbody></table></div>
-<div class="exercise"><span class="label-word exercise-label">Exit ticket</span><div class="exercise-parts"><span>1)</span><ol type="a">
-<li>Which tool did you provide training examples to directly?</li>
-<li>Which tools used models that were already trained before you opened them?</li>
-<li>Give one observed failure and one change that might improve the result.</li></ol></div></div></section>
-<section id="submission" class="submission-drop"><h2>Submit your laboratory work</h2><p>Save your brief experiment notes as a <code>.txt</code> or <code>.pdf</code> file, and prepare the named local submission. Include the comparison table and exit ticket. You can prepare a clearly named file for the teacher.</p><div class="submission-form" data-submission-week="1"><label>Student name<input type="text" class="student-name" placeholder="First name, last name" maxlength="90" autocomplete="name"></label><label class="file-drop">Drop a file here or choose one<input class="submission-files" type="file" accept=".txt,.pdf,.md,.zip" multiple></label><p class="submission-selected" aria-live="polite">No file selected.</p><button type="button" class="prepare-submission">Download named submission</button><p class="submission-status" aria-live="polite"></p></div><p class="understated">Uploads are not enabled yet. This prepares files locally; it does not send them to the teacher. When a teacher-approved Dropbox File Request is configured, its collection link appears here. Until then, keep the ZIP locally.</p></section><section class="page-bibliography"><h2>Bibliography</h2><ul>
-<li><a href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Quick, Draw!</a></li>
-<li><a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Teachable Machine</a></li>
-<li><a href="https://artsandculture.google.com/project/play-with-ai" target="_blank" rel="noopener noreferrer">Google Arts &amp; Culture — Play with AI</a></li>
-<li><a href="https://huggingface.co/spaces" target="_blank" rel="noopener noreferrer">Hugging Face Spaces</a></li></ul></section><nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>
+<nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

@@ -1,0 +1,53 @@
+/* Week 1 exploration: same responsive sticky contents as the Course. */
+body:has(.lab-lesson){max-width:1130px}
+.lab-lesson .course-layout{margin-top:12px}
+.lab-lesson .course-article>section.lab-step{border-top:1px solid #d8e1e8;margin:30px 0 0;padding-top:15px}
+.lab-lesson .course-article>section.lab-step:first-child{margin-top:0}
+.lab-lesson .course-article>section>h2{margin:4px 0 13px;font-weight:400;font-size:1.4rem;line-height:1.35;color:#274d69}
+.lab-lesson .activity-lead{font-size:.96rem;line-height:1.65;color:#4f6678}
+.lab-lesson .launch{display:flex;align-items:center;gap:9px 17px;flex-wrap:wrap;margin:18px 0}
+.lab-lesson .launch>a{border-bottom:1px solid #8ca9c0;padding:6px 0;text-decoration:none;font-size:.96rem}
+.lab-tag{font-size:.75rem;color:#667e8d}
+.lab-lesson .lab-step>ol{margin:16px 0 24px}
+.lab-lesson .lab-step>ol li{padding-left:3px;margin:8px 0;line-height:1.6}
+.lab-lesson .course-sidebar .toc li a{font-size:.84rem}
+.lab-lesson .course-sidebar .toc{z-index:2;background:#fff}
+.lab-lesson .lab-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.lab-choices>div{padding:16px;border:1px solid #dce5ec;min-width:0}
+.lab-choices>div>strong{font-size:1.03rem;color:#284e69}
+.lab-choices>div p{margin:8px 0}
+.lab-choices>div small{display:block;color:#5f7483;line-height:1.54;font-size:.81rem}
+.prompt-builder{padding:17px 19px;border:1px solid #d1dee7;background:#f9fbfd;margin:20px 0}
+.prompt-builder>label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:11px 0;color:#36566a;font-size:.88rem}
+.prompt-builder input{background:#fff;border:1px solid #b6c9d7;border-radius:2px;padding:9px 10px;font: .87rem Georgia,serif;width:min(61%,380px);min-width:0}
+.prompt-preview{background:#fff;border-top:1px solid #d5e0e8;margin:18px 0 12px;padding:16px 0 0}
+.prompt-preview>strong{display:block;font-size:.86rem;color:#3c6078;margin-bottom:7px}
+.prompt-preview p{font-size:.87rem;line-height:1.65;margin:5px 0}
+.prompt-builder button,.covariance-mode button{font:.85rem Georgia,serif;border:1px solid #a6bfd0;background:#fff;color:#225a83;padding:8px 12px;margin:4px 0}
+.prompt-builder [data-prompt-status]{font-size:.8rem;color:#41714d;margin-left:10px}
+.lab-notebook-grid{display:grid;grid-template-columns:1fr;gap:19px;margin:24px 0}
+.lab-mini-notebook{border:1px solid #d9e3e9;padding:16px 19px;min-width:0}
+.lab-mini-notebook h3{font-size:1.08rem!important;margin:0 0 9px!important}
+.lab-mini-notebook>p{font-size:.86rem;color:#607788;line-height:1.5}
+.lab-mini-notebook .python-runner{margin:14px 0 8px;padding:0;border:none}
+.lab-mini-notebook .python-runner .py-source{background:#f7f9fb}
+.lab-mini-notebook>p:last-child{margin:9px 0 0}
+.lab-notebook-help{font-size:.86rem;color:#647989}
+.lab-lesson .table-hscroll{max-width:100%;overflow-x:auto}
+.lab-lesson .table-hscroll table{min-width:530px}
+.lab-lesson .table-hscroll td,.lab-lesson .table-hscroll th{padding:9px 10px}
+.lab-lesson .submission-drop{margin-top:40px}
+@media(max-width:700px){
+ .lab-lesson .lab-choices{grid-template-columns:1fr}
+ .lab-lesson .lab-tool-list{grid-template-columns:1fr}
+ .prompt-builder{padding:14px}
+ .prompt-builder>label{display:block}
+ .prompt-builder input{display:block;width:100%;margin-top:5px}
+ .lab-mini-notebook{padding:13px}
+ .lab-lesson .course-article>section>h2{font-size:1.22rem}
+}
+@media print{
+ body:has(.lab-lesson){max-width:none}
+ .lab-lesson .course-layout{display:block}
+ .lab-lesson .course-sidebar,.prompt-builder button,.lab-mini-notebook button{display:none}
+}

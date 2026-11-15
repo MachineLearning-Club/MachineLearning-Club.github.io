@@ -291,6 +291,11 @@ def render_quiz_placeholder(w):
        '<script defer src="/assets/weekly-quiz.js"></script>')
 
 def make_week(w,kind):
+    # Week 1 is authored with its own richer teaching materials, rather than
+    # generated from the outline template. Run update_week1_practice.py for
+    # the lab/homework/advanced fragments instead. Never overwrite it here.
+    if w["n"] == 1:
+        return
     body=week_start(w,kind)
     if kind=="course":body+=course_content(w)
     elif kind=="lab":body+=lab_content(w)

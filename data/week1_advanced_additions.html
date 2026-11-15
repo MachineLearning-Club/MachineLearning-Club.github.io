@@ -1,0 +1,87 @@
+<section id="weighted-probabilities"><h2>Weighted sums of probabilities</h2>
+  <p>The overall chance of an event can be found by considering all the distinct ways it could happen. The weights are the probabilities of entering each situation; the numbers being averaged are the chances of success <em>within</em> those situations.</p>
+  <div class="formula-sheet"><table><tbody>
+    <tr><th>Law of total probability</th><td><code>P(S) = Σ P(S | Rᵢ) × P(Rᵢ)</code>, when the routes Rᵢ cover all cases without overlap</td></tr>
+    <tr><th>Weighted average</th><td><code>E[X] = Σ pᵢ × xᵢ</code>, where all weights are nonnegative and <code>Σpᵢ = 1</code></td></tr>
+    <tr><th>Affine transformation</th><td><code>E[aX + b] = aE[X] + b</code></td></tr>
+    <tr><th>Sum of two variables</th><td><code>E[X + Y] = E[X] + E[Y]</code> (even if the variables are dependent)</td></tr>
+  </tbody></table></div>
+  <div class="advanced-problems">
+    <article><h3>6. A weighted probability: two delivery routes</h3>
+      <p>A delivery company uses Route A for <strong>70%</strong> of its parcels and Route B for the remaining <strong>30%</strong>. A parcel arrives on time with probability <strong>90%</strong> on A and <strong>60%</strong> on B.</p>
+      <ol type="a"><li>Draw two branches, each with a route probability and a conditional on-time probability.</li><li>Compute the overall probability of arriving on time.</li><li>Explain why your result must lie between 60% and 90%.</li></ol>
+      <details><summary>Show the worked solution</summary><p><code>0.70×0.90 + 0.30×0.60 = 0.63+0.18 = 0.81</code>. The result is an <strong>81%</strong> weighted probability. It is a convex combination of 60% and 90%, so it cannot be outside that interval.</p></details>
+    </article>
+    <article><h3>7. Why weighted averages behave predictably</h3>
+      <p>A game gives <strong>0 points</strong> with probability 0.20, <strong>5 points</strong> with probability 0.30 and <strong>10 points</strong> with probability 0.50.</p>
+      <ol type="a"><li>Check that the weights add to 1, then compute <code>E[X]</code>.</li><li>If the teacher doubles every score and adds 2 bonus points, find <code>E[2X+2]</code> without recomputing the full table.</li><li>Can the original expected score exceed 10 or be negative? Explain using the nonnegative weights.</li></ol>
+      <details><summary>Show the worked solution</summary><p><strong>a)</strong> <code>0×0.20 + 5×0.30 + 10×0.50 = 6.50</code>. <strong>b)</strong> <code>E[2X+2] = 2×6.50 + 2 = 15</code>. <strong>c)</strong> No: the mean is a weighted average of values between 0 and 10, using nonnegative weights summing to 1.</p></details>
+    </article>
+  </div>
+</section>
+<section id="build-variance"><h2>Building variance from the idea of an average</h2>
+  <p>The expected value gives the <em>centre</em> of a distribution. But it does not explain whether most outcomes stay near that centre or lie far away. Variance measures the average <strong>squared distance</strong> from the mean.</p>
+  <div class="formula-sheet"><p><strong>From an average to a spread:</strong></p>
+    <ol><li>Compute the weighted centre: <code>μ = E[X] = Σ pᵢxᵢ</code>.</li>
+      <li>Measure the deviation of each outcome: <code>xᵢ − μ</code>.</li>
+      <li>Square deviations so negative and positive distances do not cancel.</li>
+      <li>Average those squares: <code>Var(X) = Σ pᵢ(xᵢ − μ)²</code>.</li></ol>
+    <p>Equivalent shortcut: <code>Var(X) = E[X²] − (E[X])²</code>.</p>
+  </div>
+  <div class="variance-interactive" data-variance-visual>
+    <label for="variance-slider">Chance of scoring 10 points: <strong data-variance-p>50%</strong></label>
+    <input id="variance-slider" type="range" min="0" max="100" value="50" step="5" data-variance-slider>
+    <svg viewBox="0 0 640 255" role="img" aria-label="Two outcomes, 0 and 10, with their probabilities and the movable expected value">
+      <line x1="65" y1="205" x2="580" y2="205" stroke="#a6b7c5" stroke-width="2"/>
+      <line x1="95" y1="20" x2="95" y2="205" stroke="#9cabb7"/>
+      <rect x="140" y="105" width="112" height="100" fill="#6c91b9" data-variance-bar-zero/>
+      <rect x="380" y="105" width="112" height="100" fill="#c09166" data-variance-bar-ten/>
+      <text x="196" y="234" text-anchor="middle">0 points</text>
+      <text x="436" y="234" text-anchor="middle">10 points</text>
+      <text x="196" y="88" text-anchor="middle" data-variance-label-zero>50%</text>
+      <text x="436" y="88" text-anchor="middle" data-variance-label-ten>50%</text>
+      <line data-variance-mean-line x1="316" y1="26" x2="316" y2="205" stroke="#ba3842" stroke-width="3" stroke-dasharray="5 5"/>
+      <text data-variance-mean-label x="316" y="16" fill="#993542" text-anchor="middle">Mean 5.0</text>
+    </svg>
+    <div class="probability-results"><output data-variance-result aria-live="polite">E[X] = 5; Var(X) = 25.</output></div>
+  </div>
+  <div class="advanced-problems">
+    <article><h3>8. Does the same mean imply the same variance?</h3>
+      <p>Compare <strong>Distribution A</strong>: X is always 5, with <strong>Distribution B</strong>: X is 0 or 10 with equal probabilities.</p>
+      <ol type="a"><li>Find the expected value of both variables.</li><li>For each variable, calculate the squared deviations from its mean.</li><li>Find each variance and explain what “spread” means here.</li><li>Use the slider above to investigate the new variance when P(X=10)=0.25.</li></ol>
+      <details><summary>Show the worked solution</summary><p>Both means are <strong>5</strong>. A has variance <strong>0</strong> (always at the mean). B has variance <code>0.5(0−5)² + 0.5(10−5)² = 25</code>. With P(10)=0.25, the mean is 2.5 and variance is <code>0.75(0−2.5)²+0.25(10−2.5)²=18.75</code>.</p></details>
+    </article>
+  </div>
+</section>
+<section id="build-covariance"><h2>Covariance — when two quantities change together</h2>
+  <p>Variance describes the spread of <em>one</em> variable. Covariance describes the joint movement of <em>two</em> variables: do they tend to be above their averages at the same time, or in opposite directions?</p>
+  <div class="formula-sheet"><p><code>Cov(X,Y) = E[(X−E[X])(Y−E[Y])]</code></p>
+    <p><code>= Σ pᵢ (xᵢ−μₓ)(yᵢ−μᵧ) = E[XY] − E[X]E[Y]</code>.</p></div>
+  <div data-covariance-visual class="covariance-interactive">
+    <div class="covariance-mode" role="group" aria-label="Choose how points are paired">
+      <button type="button" data-cov-mode="positive" aria-pressed="true">Move together</button>
+      <button type="button" data-cov-mode="negative" aria-pressed="false">Move oppositely</button>
+      <button type="button" data-cov-mode="zero" aria-pressed="false">No association</button>
+    </div>
+    <svg viewBox="0 0 610 320" role="img" aria-label="Scatterplot showing the relationship between two binary variables">
+      <rect x="85" y="25" width="440" height="235" fill="#fafcfe" stroke="#d9e3eb"/>
+      <line x1="85" y1="143" x2="525" y2="143" stroke="#c4d1dc" stroke-dasharray="4 4"/>
+      <line x1="305" y1="25" x2="305" y2="260" stroke="#c4d1dc" stroke-dasharray="4 4"/>
+      <text x="305" y="305" text-anchor="middle">X (0 → 1)</text>
+      <text x="22" y="140" text-anchor="middle" transform="rotate(-90 22 140)">Y (0 → 1)</text>
+      <text x="105" y="282">0</text><text x="508" y="282">1</text>
+      <circle data-cov-point="a" cx="125" cy="240" r="13" fill="#5187ae"/>
+      <circle data-cov-point="b" cx="485" cy="45" r="13" fill="#bc7c52"/>
+      <circle data-cov-point="c" cx="125" cy="45" r="13" fill="#5187ae" opacity="0"/>
+      <circle data-cov-point="d" cx="485" cy="240" r="13" fill="#bc7c52" opacity="0"/>
+    </svg>
+    <output data-cov-result aria-live="polite">E[X] = 0.50; E[Y] = 0.50; Cov(X,Y) = +0.25.</output>
+  </div>
+  <div class="advanced-problems">
+    <article><h3>9. Calculate covariance using a tiny joint distribution</h3>
+      <p>Compare three equally likely sets of pairs: <strong>A</strong> {(0,0),(1,1)}; <strong>B</strong> {(0,1),(1,0)}; <strong>C</strong> {(0,0),(0,1),(1,0),(1,1)}.</p>
+      <ol type="a"><li>Find E[X] and E[Y] for each set.</li><li>Find E[XY] and use <code>Cov(X,Y) = E[XY]−E[X]E[Y]</code>.</li><li>Explain what the sign of covariance means for each set.</li><li>Why does covariance zero not always prove independence for arbitrary distributions?</li></ol>
+      <details><summary>Show the worked solution</summary><p>All three sets have <code>E[X] = E[Y] = 0.5</code>. A: E[XY]=0.5, covariance <strong>+0.25</strong>. B: E[XY]=0, covariance <strong>−0.25</strong>. C: E[XY]=0.25, covariance <strong>0</strong>. Independence implies zero covariance (when defined), but zero covariance alone does not generally imply independence.</p></details>
+    </article>
+  </div>
+</section>

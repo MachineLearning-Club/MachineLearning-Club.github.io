@@ -1,5 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Homework"><title>What Is AI? Rules and Learning — Homework · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="homework" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/homework/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/" aria-current="page">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content week1-foundations"><p class="eyebrow">Week 01 · Homework</p><h1>Choose the Method &amp; Probability Practice</h1><p class="deck">Choose an appropriate AI approach for real problems, then practise elementary probability calculations.</p>
-<section><h2>Mandatory <span class="point-value">(1p)</span> — Choose an approach</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="What Is AI? Rules and Learning — Homework"><title>What Is AI? Rules and Learning — Homework · Machine Learning Club</title><link rel="stylesheet" href="/assets/academic.css"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/week1-foundations.css"><script defer src="/assets/academic-ui.js"></script><link rel="stylesheet" href="/assets/week1-probability.css"><script defer src="/assets/week1-probability.js"></script></head><body><header class="lesson-header"><div class="lesson-topbar"><a href="/">Machine Learning Club</a><label class="week-picker">Go to week <select data-week-picker data-kind="homework" aria-label="Select a week"><option value="1" selected>Week 01 — What Is AI? Rules and Learning</option><option value="2">Week 02 — Supervised Learning: ID3</option><option value="3">Week 03 — Unsupervised Learning: K-Means</option><option value="4">Week 04 — Revision: Supervised and Unsupervised Learning</option><option value="5">Week 05 — Computer Vision: Images as Data</option><option value="6">Week 06 — Perceptrons: A First Learning Neuron</option><option value="7">Week 07 — Neural Networks and Training</option><option value="8">Week 08 — Revision: Computer Vision and Neural Networks</option><option value="9">Week 09 — Mid-Term Evaluation</option><option value="10">Week 10 — Generative AI: GPT, Data and Society</option><option value="11">Week 11 — Software Engineering Techniques</option><option value="12">Week 12 — FIICode I: Understanding the Challenge</option><option value="13">Week 13 — FIICode II: Implementing the Application</option><option value="14">Week 14 — FIICode III: Improving and Testing</option><option value="15">Week 15 — FIICode IV: Hackathon</option></select></label><nav class="week-arrows" aria-label="Week navigation"><a href="/">← All weeks</a> <span>·</span> <a href="/w2/homework/">Week 2 →</a></nav></div><nav class="lesson-tabs" aria-label="Week 1 materials"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/" aria-current="page">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></header><main class="lesson-content week1-foundations homework-probability"><p class="eyebrow">Week 01 · Homework</p><h1>Choose the Method &amp; Probability Practice</h1><p class="deck">Recognise the right computational approach and practise probability using clear formulas.</p><section><h2>Mandatory <span class="point-value">(1p)</span> — Choose an approach</h2>
 <p>For every situation, name the <strong>task</strong> (classification, regression, clustering, generation, planning, or control) and suggest a reasonable <strong>approach</strong> (rule-based program, search, supervised learning, unsupervised learning, reinforcement learning, etc.). Some situations allow more than one valid approach; explain your choice in one sentence.</p>
 <table class="assignment-table"><thead><tr><th>#</th><th>Problem</th><th>What does the system need to produce?</th></tr></thead>
 <tbody>
@@ -15,19 +14,88 @@
 <div class="exercise"><span class="label-word exercise-label">Explain</span><div class="exercise-parts"><span>1)</span><ol type="a">
 <li>Which examples involve learning from <strong>labelled answers</strong>?</li><li>Which examples can be solved <strong>without machine learning</strong>?</li><li>Does “computer vision” name a task or one particular model architecture?</li>
 </ol></div><details><summary>Check your reasoning after answering</summary><p><strong>1</strong> fixed rule; <strong>2</strong> graph search; <strong>3</strong> supervised image classification (a computer-vision task); <strong>4</strong> supervised regression; <strong>5</strong> unsupervised clustering; <strong>6</strong> hierarchical clustering; <strong>7</strong> reinforcement learning; <strong>8</strong> generative AI. In 3 and 4, labelled examples are provided; 1 and 2 need no learning. Computer vision describes an image-related task, not one specific model.</p></details></div>
-</section>
-<section><h2>Homework <span class="point-value">(2p)</span> — Compute probabilities</h2>
-<p>Show the <strong>sample space</strong>, relevant event counts or probabilities, your calculation, and a final answer. A calculator is allowed.</p>
+</section><section id="probability-homework"><h2>Homework <span class="point-value">(2p)</span> — Probability and distributions</h2>
+<p>For every calculation, write the formula first, substitute the numerical values, and explain the final answer in one sentence. A calculator is permitted.</p>
+<div class="formula-sheet">
+  <h3>Formulas you may use</h3>
+  <table><tbody>
+    <tr><th>Equally likely outcomes</th><td><code>P(A) = favourable outcomes ÷ possible outcomes</code></td></tr>
+    <tr><th>Two events together</th><td><code>P(A ∩ B) = P(A) × P(B | A)</code></td></tr>
+    <tr><th>Independent events</th><td><code>P(A ∩ B) = P(A) × P(B)</code></td></tr>
+    <tr><th>Conditional probability</th><td><code>P(A | B) = P(A ∩ B) / P(B)</code>, when <code>P(B) &gt; 0</code></td></tr>
+    <tr><th>Weighted probability</th><td><code>P(S) = P(S | R₁)P(R₁) + P(S | R₂)P(R₂)</code> for two routes covering all cases</td></tr>
+    <tr><th>Expected numerical value</th><td><code>E[X] = Σ (possible value × its probability)</code></td></tr>
+  </tbody></table>
+</div>
 <div class="homework-problems">
-<article><h3>1. A ten-sided die</h3>
-<p>Roll a fair ten-sided die. Let X be the face it shows.</p>
-<ol type="a"><li>Calculate P(X = 4).</li><li>Calculate P(X is even).</li><li>Given that X is even, find P(X = 4 | X is even).</li><li>Explain why your answers to (a) and (c) differ.</li></ol>
-<small>Practice on sample spaces and conditional probability from the Week 1 course.</small></article>
-<article><h3>2. Two objects from a bag</h3><p>A bag contains <strong>3 red</strong> and <strong>2 blue</strong> tokens.</p><ol type="a"><li>If a token is replaced after the first draw, what is the probability of drawing <strong>two red tokens</strong>?</li><li>If it is <strong>not replaced</strong>, what is the probability of drawing two red tokens?</li><li>Why are the answers different?</li></ol><small>New practice problem on independence and conditional probability.</small></article>
-<article><h3>3. Did the student know the answer?</h3><p>A student has a <strong>60%</strong> chance of knowing a true/false answer. Otherwise they guess, with a 50% chance of answering correctly. You observe a correct answer.</p><ol type="a"><li>Find P(correct).</li><li>Use Bayes' rule to find P(knew | correct).</li><li>Why is the result not 100%?</li></ol><small>Numeric adaptation of the provided probability handout, worked exercise 7.</small></article>
+  <article><h3>1. A ten-sided die</h3>
+    <p>Roll a fair ten-sided die with faces numbered 1 to 10. Let <code>X</code> be the observed face.</p>
+    <ol type="a"><li>Find <code>P(X = 4)</code>.</li><li>Find <code>P(X is even)</code>.</li><li>Given the result is even, calculate <code>P(X = 4 | X is even)</code>.</li><li>Explain why the first and third probabilities differ.</li></ol>
+    <details><summary>Which formula should I use?</summary><p>For (a) and (b), count favourable faces and divide by ten. For (c), the new possible outcomes are only <code>{2, 4, 6, 8, 10}</code>; alternatively use <code>P(A | B) = P(A ∩ B) / P(B)</code>.</p></details>
+  </article>
+  <article><h3>2. Two objects from a bag</h3>
+    <p>A bag holds <strong>3 red</strong> and <strong>2 blue</strong> tokens. You draw two tokens in a row. Call the events <code>R₁</code> (first token is red) and <code>R₂</code> (second token is red).</p>
+    <ol type="a"><li><strong>With replacement:</strong> put the first token back. Calculate <code>P(R₁ ∩ R₂)</code>.</li>
+      <li><strong>Without replacement:</strong> keep the first token out. Calculate <code>P(R₁ ∩ R₂)</code>.</li>
+      <li>Explain which calculation involves independent draws and why the other second probability changes.</li></ol>
+    <div class="formula-guide"><strong>Use these steps</strong>
+      <ol><li>Both cases: <code>P(R₁) = 3/5</code>.</li>
+        <li><strong>With replacement:</strong> <code>P(R₂ | R₁) = 3/5</code> because the bag is restored to its original contents.</li>
+        <li><strong>Without replacement:</strong> <code>P(R₂ | R₁) = 2/4</code> because only two red tokens remain among four.</li>
+        <li>Multiply: <code>P(R₁ ∩ R₂) = P(R₁) × P(R₂ | R₁)</code>.</li>
+      </ol>
+    </div>
+    <details><summary>Check the worked answer after solving</summary><p>With replacement: <code>(3/5) × (3/5) = 9/25 = 0.36</code>. Without replacement: <code>(3/5) × (2/4) = 3/10 = 0.30</code>. The second draw depends on the first only when the first token is not returned.</p></details>
+  </article>
+  <article id="distribution-choice"><h3>3. Which probability distribution fits?</h3>
+    <p>For each real-world situation, select the most appropriate introductory model. You do not need to calculate any distribution formula.</p>
+    <details class="distribution-reference"><summary>Quick reference — what does each model describe?</summary><dl>
+      <dt>Bernoulli</dt><dd>One yes/no trial, such as success or failure.</dd>
+      <dt>Binomial</dt><dd>Number of successes in a fixed number of independent yes/no trials with the same success probability.</dd>
+      <dt>Discrete uniform</dt><dd>Each outcome in a finite set has the same probability.</dd>
+      <dt>Poisson</dt><dd>Count of events over a fixed interval, under a constant-rate and independence model.</dd>
+      <dt>Normal</dt><dd>Continuous measurements that are approximately bell-shaped around a mean.</dd>
+    </dl></details>
+    <div class="table-hscroll"><table class="distributions-table">
+      <thead><tr><th>Situation</th><th>Choose a model</th></tr></thead>
+      <tbody>
+        <tr><td>A single coin toss: heads or tails</td><td><select data-dist-choice data-correct="bernoulli" aria-label="Distribution for a coin toss"><option value="">Choose…</option><option value="bernoulli">Bernoulli</option><option value="binomial">Binomial</option><option value="uniform">Discrete uniform</option><option value="poisson">Poisson</option><option value="normal">Normal</option></select></td></tr>
+        <tr><td>How many successes occur in 20 independent trials, each with the same success chance?</td><td><select data-dist-choice data-correct="binomial" aria-label="Distribution for count of successes"><option value="">Choose…</option><option value="bernoulli">Bernoulli</option><option value="binomial">Binomial</option><option value="uniform">Discrete uniform</option><option value="poisson">Poisson</option><option value="normal">Normal</option></select></td></tr>
+        <tr><td>Rolling a fair six-sided die once</td><td><select data-dist-choice data-correct="uniform" aria-label="Distribution for fair die"><option value="">Choose…</option><option value="bernoulli">Bernoulli</option><option value="binomial">Binomial</option><option value="uniform">Discrete uniform</option><option value="poisson">Poisson</option><option value="normal">Normal</option></select></td></tr>
+        <tr><td>Number of incoming calls in one hour, assuming a stable independent arrival rate</td><td><select data-dist-choice data-correct="poisson" aria-label="Distribution for call count"><option value="">Choose…</option><option value="bernoulli">Bernoulli</option><option value="binomial">Binomial</option><option value="uniform">Discrete uniform</option><option value="poisson">Poisson</option><option value="normal">Normal</option></select></td></tr>
+        <tr><td>A large group of measured heights, approximately symmetric and bell-shaped</td><td><select data-dist-choice data-correct="normal" aria-label="Distribution for heights"><option value="">Choose…</option><option value="bernoulli">Bernoulli</option><option value="binomial">Binomial</option><option value="uniform">Discrete uniform</option><option value="poisson">Poisson</option><option value="normal">Normal</option></select></td></tr>
+      </tbody>
+    </table></div>
+    <button type="button" data-check-distributions>Check my matches</button><output data-distributions-result aria-live="polite"></output>
+    <p><strong>Explain:</strong> why does counting successes over 20 trials require a different distribution than predicting one success/failure outcome?</p>
+  </article>
 </div>
 </section>
-<section><h2>Optional challenge</h2><p>Complete an <a href="/w1/advanced/">Advanced information-theory exercise</a> on surprise or entropy. This is separate from the compulsory homework.</p></section>
-<section class="submission"><h2>Submission</h2><p>Submit one clearly named <strong>PDF or text document</strong> containing your eight model choices, short explanations, and probability workings. No notebook, training code, GitHub account or dataset download is needed.</p></section>
-<section class="page-bibliography"><h2>Bibliography</h2><p>Primary source: provided <em>Random Events and Bayes' Formula</em>, worked exercises 2 and 7 (printed pp. 24 and 28). Additional scenarios and the token exercise are created for Week 1.</p></section>
+<section id="probability-intuition" class="probability-interactive">
+  <h2>Explore probability by moving a slider</h2>
+  <p>Suppose a bag contains red and blue tokens. Move the slider to change the chance of choosing red. Observe what happens to the graph and to the weighted average of 0 and 1.</p>
+  <div class="probability-lab" data-probability-lab>
+    <label>Probability of red, <code>p</code>: <strong data-p-label>50%</strong>
+      <input data-probability-slider type="range" min="0" max="100" step="5" value="50">
+    </label>
+    <svg data-probability-figure viewBox="0 0 580 225" role="img" aria-label="Two probability bars for red and blue."><line x1="70" y1="185" x2="525" y2="185" stroke="#9cabb7"/><rect x="120" y="65" width="110" height="120" fill="#bf6561" data-bar-red/><rect x="350" y="65" width="110" height="120" fill="#6c91b9" data-bar-blue/><text x="175" y="207" text-anchor="middle">Red</text><text x="405" y="207" text-anchor="middle">Blue</text><text x="175" y="49" text-anchor="middle" data-prob-label-red>50%</text><text x="405" y="49" text-anchor="middle" data-prob-label-blue>50%</text></svg>
+    <p data-probability-result aria-live="polite">P(red) + P(blue) = 0.50 + 0.50 = 1.</p>
+    <p data-expected-result>Let X = 1 for red, 0 for blue. E[X] = 1×0.50 + 0×0.50 = 0.50.</p>
+  </div>
+  <details><summary>Why must probabilities add to 1?</summary><p>These two events are mutually exclusive and together cover every possible outcome. A probability cannot be negative or exceed 1, and the probability of the complete set of outcomes is exactly 1.</p></details>
+  <h3>Weighted probability: which route arrives on time?</h3>
+  <p>A delivery company uses Route A <strong>70%</strong> of the time (90% on-time) and Route B <strong>30%</strong> of the time (60% on-time). Find the total on-time chance.</p>
+  <p><strong>Use:</strong> <code>P(on time) = 0.70×0.90 + 0.30×0.60</code>.</p>
+  <details><summary>Show the weighted calculation</summary><p><code>0.63 + 0.18 = 0.81</code>, so the overall on-time probability is <strong>81%</strong>. The weights 0.70 and 0.30 add to 1, and the result must be between 60% and 90%.</p></details>
+</section>
+<section id="optional-probability"><h2>Optional challenge — Did the student know the answer?</h2>
+  <p>A student has a <strong>60%</strong> chance of knowing a true/false answer. Otherwise the student guesses, with a 50% chance of being correct. You observe a correct answer.</p>
+  <ol><li>Find <code>P(correct)</code> by combining the two possible routes: knew / guessed.</li><li>Use Bayes' rule to find <code>P(knew | correct)</code>.</li><li>Explain why a correct response does not prove that the student knew the answer.</li></ol>
+  <p><strong>Formulas:</strong> <code>P(C) = P(C|K)P(K) + P(C|G)P(G)</code> and <code>P(K|C) = P(C|K)P(K) / P(C)</code>.</p>
+  <details><summary>Show the complete worked solution</summary><p><code>P(C) = 1×0.60 + 0.50×0.40 = 0.80</code>. Therefore <code>P(K|C) = (1×0.60)/0.80 = 0.75</code>, or <strong>75%</strong>. A correct answer may also result from guessing.</p></details>
+</section>
+<section class="submission"><h2>Submission</h2>
+<p>Submit your eight method choices, calculations for the die and bag, distribution matches and one observation from the slider experiment in a single clearly named PDF or text file. The Bayes challenge is optional.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2>
+<p><em>Random Events and Bayes' Formula</em> (provided workbook), worked exercises 2 and 7; and elementary random-variable/distribution examples from the course handouts. The practical contexts and browser exercises are original exercises for this lesson.</p></section>
 <nav class="week-bottom-links" aria-label="Other learning activities"><a href="/w1/course/">Course</a><a href="/w1/lab/">Laboratory</a><a href="/w1/homework/">Homework</a><a href="/w1/advanced/">Advanced</a><a href="/w1/quiz/">Quiz</a></nav></main><footer class="site"><span>Independent educational project operated by <a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · <a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></footer></body></html>

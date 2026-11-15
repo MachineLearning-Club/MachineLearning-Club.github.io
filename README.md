@@ -69,3 +69,20 @@ The `/resources/` page is titled **Bibliography**. Each Course, Lab, Homework an
 ## Ownership and contact
 
 The club and website are independently operated by **BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ**. The hosting repository is maintained by the [MachineLearning-Club GitHub organisation](https://github.com/MachineLearning-Club). The participating school is a programme partner, not the owner of the club.
+
+## Week 1 exploratory laboratory and probability practice
+
+Week 1 has an authored laboratory (`data/week1_lab_active.html`), probability homework (`data/week1_probability_homework.html`), and additional advanced problems (`data/week1_advanced_additions.html`). After changing any of those fragments, execute `python3 scripts/update_week1_practice.py`. The main curriculum generator deliberately preserves Week 1 to avoid overwriting teacher-approved materials. Its remaining weeks are still generated normally.
+
+The Week 1 lab uses the same sticky chapter navigation as the first Course, and links to Quick, Draw!, HF Pixel Search, a browser-only HF image classifier, Google creative experiments and account-free generative HTML tools. The editable coffee-shop prompt specifies a simulated, non-payment checkout. Always confirm external service availability and school policies before a lesson.
+
+The laboratory also contains three **run-now Python examples** plus three complete notebooks. The club's account-free JupyterLite lives under `/jupyter/lab/index.html`, with direct `?path=01-nearest-prototype.ipynb` (or `02-biased-die.ipynb`, `03-learn-thermostat.ipynb`) links. To update or rebuild this JupyterLite distribution:
+
+```bash
+python3 scripts/generate_week1_notebooks.py
+bash scripts/build_jupyterlite.sh
+```
+
+The JupyterLite bundle is committed as static files. It uses a Python (Pyodide) kernel running in the browser, with no login. The initial visit requires an internet connection to download the engine. Its build script removes unused JavaScript source maps to reduce repository size. No uploaded class data are sent to a backend.
+
+The Homework includes a worked formula guide, elementary probability events, distribution selection and an interactive probability chart. The advanced page extends the original problem set with weighted sums, expected values, variance and covariance, including SVG graphs and worked solutions.
