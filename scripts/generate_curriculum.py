@@ -3,3 +3,5 @@
 from pathlib import Path
 import runpy
 runpy.run_path(str(Path(__file__).with_name("publish_academic.py")), run_name="__main__")
+from apply_site_footer import main as apply_footer
+apply_footer()

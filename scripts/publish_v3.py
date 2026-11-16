@@ -8,6 +8,7 @@ from pathlib import Path
 from html import escape as E
 import json, re
 from urllib.parse import urlparse
+from site_footer import site_footer
 
 ROOT = Path(__file__).resolve().parents[1]
 W = []
@@ -51,11 +52,10 @@ def page_start(title,styles="/assets/academic.css",extra=""):
       '<meta name="viewport" content="width=device-width,initial-scale=1">'
       '<meta name="description" content="'+E(title,quote=True)+'">'
       '<title>'+E(title)+' · Machine Learning Club</title>'
-      '<link rel="stylesheet" href="'+styles+'"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css">'+extra+'</head><body>')
+      '<link rel="stylesheet" href="'+styles+'"><link rel="stylesheet" href="/assets/v3.css"><link rel="stylesheet" href="/assets/v4.css"><link rel="stylesheet" href="/assets/site-footer.css">'+extra+'</head><body>')
 
 def footer():
-    return ('<footer class="site"><span>Independent educational project operated by '
-      +a(OWNER_LINK,PFA)+'</span> · '+a(ORG_LINK,"GitHub organisation")+'</footer>')
+    return site_footer()
 
 def tabs(n,current=None):
     return '<nav class="lesson-tabs" aria-label="Week '+str(n)+' materials">'+''.join(

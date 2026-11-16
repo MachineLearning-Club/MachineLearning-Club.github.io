@@ -1,0 +1,64 @@
+/* Shared site-wide footer: minimal, readable, accessible, and mobile-first. */
+footer.site.mlclub-footer {
+  max-width: none;
+  margin: 65px 0 16px;
+  padding: 26px 0 0;
+  border-top: 1px solid #d8e3e9;
+  background: transparent;
+  color: #5b6e7c;
+  font: 0.86rem/1.65 Georgia, "Times New Roman", serif;
+  text-align: left;
+}
+.mlclub-footer a { color: #345f7e; text-decoration: none; text-underline-offset: 3px; }
+.mlclub-footer a:hover, .mlclub-footer a:focus-visible { text-decoration: underline; }
+.mlclub-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);
+  gap: 20px 36px;
+  align-items: start;
+}
+.mlclub-footer-about p {
+  margin: 8px 0 0;
+  max-width: 300px;
+  line-height: 1.7;
+}
+.mlclub-footer .mlclub-footer-brand {
+  display: inline-block;
+  color: #223b52;
+  font: 500 1.07rem/1.35 Georgia, "Times New Roman", serif;
+}
+.mlclub-footer-links h2 {
+  font: 600 0.86rem/1.4 Georgia, "Times New Roman", serif;
+  margin: 2px 0 10px;
+  padding: 0;
+  color: #294860;
+  border: none;
+}
+.mlclub-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mlclub-footer-links li { padding: 0; margin: 0 0 6px; }
+.mlclub-footer-bottom {
+  margin-top: 23px;
+  padding-top: 13px;
+  border-top: 1px solid #e4eaee;
+  display: flex;
+  gap: 8px 25px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 0.77rem;
+  color: #72808a;
+}
+.mlclub-footer-bottom p { margin: 0; }
+@media (max-width: 650px) {
+  footer.site.mlclub-footer { margin-top: 48px; padding-top: 19px; }
+  .mlclub-footer-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 20px 15px; }
+  .mlclub-footer-about { grid-column: 1 / -1; }
+  .mlclub-footer-about p { max-width: none; }
+  .mlclub-footer-bottom { display: block; }
+  .mlclub-footer-bottom p + p { margin-top: 6px; }
+}
+@media print { footer.site.mlclub-footer { display: none !important; } }

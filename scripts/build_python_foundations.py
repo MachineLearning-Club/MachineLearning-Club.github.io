@@ -5,6 +5,7 @@ from __future__ import annotations
 import html
 import json
 from pathlib import Path
+from site_footer import site_footer
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data/python_foundations_lessons.json"
@@ -41,6 +42,7 @@ def page() -> str:
         '<link rel="stylesheet" href="/assets/v3.css">',
         '<link rel="stylesheet" href="/assets/v4.css">',
         '<link rel="stylesheet" href="/assets/python-foundations.css">',
+        '<link rel="stylesheet" href="/assets/site-footer.css">',
         '<script defer src="/assets/academic-ui.js"></script></head><body>',
         '<a class="foundations-skip" href="#lessons">Skip to lessons</a>',
         '<header class="foundations-head">',
@@ -114,11 +116,7 @@ def page() -> str:
         'This is independently written English material with original examples. '
         'Text-file processing, graphical interfaces and object-oriented programming from the wider textbook '
         'are intentionally deferred beyond this introductory guide.</p></section>',
-        '</main><footer class="site"><span>Independent educational project operated by '
-        '<a href="https://github.com/dbxdrgsl" target="_blank" rel="noopener noreferrer">'
-        'BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</a></span> · '
-        '<a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">'
-        'GitHub organisation</a></footer>',
+        '</main>'+site_footer(),
         '</body></html>'])
     return "\n".join(html_parts)+"\n"
 
