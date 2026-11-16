@@ -1,0 +1,64 @@
+/* Weeks 4–7 interactive demonstrations; keep the Week 1/classic typography and spacing. */
+.week47-academic .revision-knn,.week47-academic .pixel-lab,.week47-academic .perceptron-demo,
+.week47-academic .perceptron-train,.week47-academic .xor-demo,.week47-academic .gradient-demo{
+ margin:22px 0 28px;padding:16px 0;border-top:1px solid #d3e0e9;border-bottom:1px solid #d3e0e9;
+}
+.week47-academic .revision-knn h3,.week47-academic .perceptron-demo h3,.week47-academic .xor-demo h3,
+.week47-academic .perceptron-train h3,.week47-academic .gradient-demo h3{
+ font-size:1.08rem;font-weight:600;color:#2d5773;margin:0 0 14px;
+}
+.week47-academic .revision-knn label,.week47-academic .pixel-lab label,.week47-academic .perceptron-demo label,
+.week47-academic .perceptron-train label,.week47-academic .xor-demo label,.week47-academic .gradient-demo label{
+ display:flex;align-items:center;justify-content:flex-start;gap:14px;flex-wrap:wrap;margin:12px 0;
+ font-size:.89rem;color:#355976;
+}
+.week47-academic input[type=range]{accent-color:#527d9c;width:min(240px,80vw);max-width:100%;cursor:pointer}
+.week47-academic .revision-knn select,.week47-academic .xor-demo select{border:1px solid #aac0ce;border-radius:0;padding:7px;background:#fff;color:#263f51;font:inherit}
+.week47-academic .revision-knn svg,.week47-academic .perceptron-demo svg,.week47-academic .xor-demo svg{
+ display:block;width:100%;height:auto;max-height:450px;margin:15px 0;border:1px solid #e2e9ed;background:#fff
+}
+.week47-academic .revision-knn p,.week47-academic .perceptron-demo p,.week47-academic .xor-demo p,.week47-academic .gradient-demo p{
+ font-size:.91rem;line-height:1.6;margin:12px 0;
+}
+.week47-academic .pixel-cells{
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;
+ width:min(100%,400px);max-width:100%;margin:18px auto;
+}
+.week47-academic .pixel-cell{
+ aspect-ratio:1;min-width:0;padding:0;border:1px solid #728b9b;
+ font-family:Consolas,monospace;font-size:.86rem;cursor:pointer;transition:border-color .14s;
+}
+.week47-academic .pixel-cell:focus-visible,.week47-academic .pixel-cell:hover{outline:3px solid #4a7794;outline-offset:1px}
+.week47-academic .rgb-preview{width:130px;height:55px;border:1px solid #647d8d;margin:12px 0}
+.week47-academic .gradient-demo>div[data-gradient-output]{
+ margin:14px 0;padding:14px;background:#f6f9fb;border-left:3px solid #a2b6c4
+}
+.week47-academic .perceptron-train pre{
+ white-space:pre-wrap;overflow-wrap:anywhere;min-height:100px;line-height:1.6;
+ font-size:.84rem;background:#f6f9fb;padding:14px;border:1px solid #dbe5ed
+}
+.week47-academic [data-perceptron-reset],.week47-academic [data-train-step],
+.week47-academic [data-train-epoch],.week47-academic [data-train-reset],
+.week47-academic [data-gradient-next],.week47-academic [data-gradient-reset]{
+ border:1px solid #abc1d0;background:#fff;color:#305a77;padding:8px 12px;
+ font: .86rem Georgia,serif;cursor:pointer;margin:7px 6px 7px 0
+}
+.week47-academic .course-article>section:not(.page-bibliography){border-top:1px solid #dce5ea;margin-top:33px;padding-top:12px}
+.week47-academic .teaching-data td,.week47-academic .teaching-data th{vertical-align:top}
+.week47-academic .week47-inline-formula{font-size:.9rem;color:#274b61}
+.week47-academic .concept-formula strong{display:block;line-height:1.7}
+.week47-academic .practice-check{margin:22px 0}
+.week47-academic .submission-drop .submission-form{margin:17px 0;padding:15px;border:1px solid #dce5e9}
+.week47-academic .submission-drop label{display:block;margin:12px 0;font-size:.89rem}
+.week47-academic .submission-drop input[type=text]{border:1px solid #b7cbd7;padding:8px;max-width:100%;width:320px}
+.week47-academic .submission-drop .prepare-submission{border:1px solid #9db8c9;background:#fff;color:#294e68;padding:8px 13px}
+@media(max-width:680px){
+ .week47-academic .pixel-cell{font-size:.75rem}
+ .week47-academic .revision-knn svg,.week47-academic .perceptron-demo svg,.week47-academic .xor-demo svg{max-height:none}
+ .week47-academic .revision-knn,.week47-academic .pixel-lab,.week47-academic .perceptron-demo,
+ .week47-academic .perceptron-train,.week47-academic .xor-demo,.week47-academic .gradient-demo{padding:13px 0}
+}
+@media print{
+ .week47-academic .id3-step-toolbar,.week47-academic .pixel-cells button,.week47-academic input[type=range],
+ .week47-academic .run-python{display:none}
+}

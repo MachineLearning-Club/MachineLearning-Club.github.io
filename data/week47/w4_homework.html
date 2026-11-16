@@ -1,0 +1,16 @@
+<section class="scenario"><h2>Revision challenge — explain what you already know</h2><p>A school wants to predict whether an outdoor activity can take place, group parcel locations into collection zones, and classify a new player from labelled examples. These are three different questions. Your job is to select and justify a method, not simply run a library.</p></section>
+<section><h2>Mandatory (1p) — reconstruct the essentials</h2><ol>
+<li><strong>ID3:</strong> from the Week 2 twelve-row diary, calculate the information gain of Sky using [6+,6−] before the split and [4+,0−], [2+,2−], [0+,4−] afterward. Draw the learned tree.</li>
+<li><strong>K-means:</strong> given the five Week 3 points and starting centroids A(−1,0), E(3,1), write the first two clusters and their new means.</li>
+<li><strong>Algorithm selection:</strong> state whether known labels are required for each of ID3, K-means and KNN.</li>
+<li><strong>Evaluation:</strong> from TP=2,TN=2,FP=1,FN=1, compute test accuracy and describe one limitation of six test records.</li></ol>
+<details><summary>Solution check after attempting</summary><p>ID3 gain 2/3; tree Sky→sunny yes, rainy no, cloudy→Wind (calm yes, windy no). K-means centres (0,1/3) and (3,1/2). ID3 and KNN need known training labels; K-means does not. Test accuracy 4/6≈66.7%, which is not a reliable real-world performance estimate.</p></details></section>
+<section><h2>Homework (2p) — build a small revision report</h2><ol>
+<li>Open the <a href="/jupyter/lab/index.html?path=w4-revision-checkpoints.ipynb" target="_blank" rel="noopener noreferrer">prepared notebook</a> and rerun its provided calculations.</li>
+<li>Consider new point Q(2,2) with class-A examples (1,1),(1,2),(2,1) and class-B examples (4,4),(4,5),(5,4). Calculate all six squared distances. Classify Q using KNN with K=3.</li>
+<li>Create a table with four rows (ID3, K-means, KNN, confusion matrix). For each give the required inputs, output and one limitation.</li>
+<li>Change one test result from correct to incorrect. Recalculate accuracy. Explain why training accuracy cannot replace this check.</li>
+<li>Write a concise reflection: which part of Week 2 or Week 3 remains hardest, and what computation would you practise again?</li></ol></section>
+<section><h2>Research (3p) — optional comparison</h2><p>Design a data set on which KNN (supervised majority vote) and K-means (unsupervised two-centroid grouping) put a new point into visibly different regions. State what each algorithm is being asked to do and why their outputs should not be compared as if they were identical labels.</p></section>
+<section class="submission"><h2>What to submit</h2><p>One revision notebook or PDF with your handwritten ID3 gain, centroid calculation, KNN distance table, confusion matrix and reflection. Use the <a href="/w4/lab/#submission">laboratory download-preparation area</a>.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>Ciortuz, ID3 solved problem 2 (pp. 490–493), K-means solved problem 7 (pp. 853–856).</li><li><a href="/w2/course/">Week 2 worked lesson</a> and <a href="/w3/course/">Week 3 worked lesson</a>.</li></ul></section>

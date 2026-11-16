@@ -1,0 +1,16 @@
+<section class="scenario"><h2>Situation — a sorter learns a Boolean rule</h2><p>Two binary sensors determine whether a hypothetical recycling-station gate activates. A threshold perceptron must learn the AND rule from four labelled examples. This is a safe simulated control problem, not a device to use in real machinery.</p></section>
+<section><h2>Mandatory (1p) — one neuron, four predictions</h2><ol>
+<li>For <code>w₁=1,w₂=1,b=−1.5</code> and <code>step(z)=1 if z≥0 else 0</code>, complete the weighted sum and output for all four input pairs.</li>
+<li>Explain geometrically what the equation <code>x₁+x₂−1.5=0</code> represents.</li>
+<li>Start from <code>w₁=w₂=0,b=−1</code>. For one training example <code>(x₁,x₂,t)=(1,1,1)</code> and <code>η=1</code>, compute the prediction, error and new parameters.</li>
+<li>Check that the corrected parameters now predict 1 for (1,1). Why is this not yet a guarantee of perfect classification on all four examples?</li></ol>
+<details><summary>Check your hand calculation</summary><p>The initial AND truth table is 0,0,0,1. The boundary is a line. For (1,1), initial z=−1→ŷ=0; t−ŷ=1, so w₁=1,w₂=1,b=0. That fixes one row but may misclassify the others.</p></details></section>
+<section><h2>Homework (2p) — implement and inspect training</h2><ol>
+<li>Open the <a href="/jupyter/lab/index.html?path=w6-perceptron-trace.ipynb" target="_blank" rel="noopener noreferrer">prepared training notebook</a>; first execute it unchanged.</li>
+<li>Use the four AND records in the same order. Run for at most 20 epochs; print the mistake count and all three parameters after every epoch.</li>
+<li>Compare learning rates η=0.2 and η=0.5. Does each converge within 20 epochs? Do the final parameters have to be identical?</li>
+<li>Test one intermediate input <code>(0.75,0.75)</code> and explain that the model is defined on real inputs even though the training truth table contained only bits.</li>
+<li>Change only the target labels to XOR [0,1,1,0]. Record evidence that a single line cannot represent them all.</li></ol></section>
+<section><h2>Research (3p) — optional</h2><p>Write a concise geometric argument showing that the two positive XOR corners and the two negative XOR corners have the same midpoint (0.5,0.5). Explain why this blocks a strict straight-line separator. Then build a two-hidden-unit solution using Week 7's Boolean construction.</p></section>
+<section class="submission"><h2>What to submit</h2><p>One notebook with a four-row truth table, one manually calculated update, two training histories and a short XOR explanation. Use <a href="/w6/lab/#submission">Week 6 Laboratory</a> to prepare the local file.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>Liviu Ciortuz, §6.1.1, solved problem 2 (pp. 762–764), and §6.1.2, solved problem 11 (pp. 771–773), adapted to 0/1 labels.</li><li>UAIC Neural Networks course description: perceptron online training.</li></ul></section>

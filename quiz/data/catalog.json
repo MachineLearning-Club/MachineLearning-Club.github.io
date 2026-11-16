@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "notice": "Practice quizzes in Weeks 1\u20133; Weeks 4\u201315 will be authored after lesson-by-lesson approval.",
+  "notice": "Practice quizzes in Weeks 1\u20137; Weeks 8\u201315 remain planned.",
   "quizzes": [
     {
       "week": 1,
@@ -37,40 +37,40 @@
       "id": "mlc-04",
       "title": "Revision: Supervised and Unsupervised Learning",
       "subject": "Which algorithm fits the question? \u00b7 K-nearest neighbours",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 5,
       "id": "mlc-05",
       "title": "Computer Vision: Images as Data",
       "subject": "The picture is a grid of numbers \u00b7 Colours, channels and dimensions",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 6,
       "id": "mlc-06",
       "title": "Perceptrons: A First Learning Neuron",
       "subject": "A neuron computes a weighted sum \u00b7 Weights change the decision",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 7,
       "id": "mlc-07",
       "title": "Neural Networks and Training",
       "subject": "Why a network needs hidden layers \u00b7 From input to output: forward pass",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 8,

@@ -1,0 +1,35 @@
+<div class="course-layout"><aside class="course-sidebar"><nav class="toc" aria-label="Laboratory contents"><details class="toc-panel" open><summary>Contents</summary><ul><li><a href="#p-l1">1. Predict the truth table</a></li><li><a href="#p-l2">2. Explore the boundary</a></li><li><a href="#p-l3">3. Train a perceptron</a></li><li><a href="#p-l4">4. Reproduce it in Python</a></li><li><a href="#p-l5">5. Investigate errors</a></li><li><a href="#submission">Submission</a></li></ul></details></nav></aside><article class="course-article">
+<section id="p-l1" class="lab-step"><h2>1. Compute four outputs without a computer</h2><p>The recycling-station model uses <code>z=w₁x₁+w₂x₂+b</code> and returns 1 if <code>z≥0</code>. Let <code>w₁=w₂=1</code>, <code>b=−1.5</code>.</p>
+<ol><li>Complete the four-row truth table for inputs (0,0), (1,0), (0,1), (1,1).</li><li>Which input is the only one that produces a positive result?</li><li>Change only the bias to −0.5. Predict two values that will change.</li></ol><details><summary>Check</summary><p>The four original weighted sums are −1.5, −0.5, −0.5, 0.5, giving outputs 0,0,0,1 (AND). With bias −0.5 the outputs become 0,1,1,1 (OR).</p></details></section>
+<section id="p-l2" class="lab-step"><h2>2. Move the straight-line boundary</h2><p>Use the three sliders. Keep all values except bias constant, predict the output for each corner, then compare against the displayed table.</p>
+<div data-perceptron-demo class="perceptron-demo"><label>Weight w₁ <input type="range" min="-2" max="2" step=".25" value="1" data-weight="w1"/></label><label>Weight w₂ <input type="range" min="-2" max="2" step=".25" value="1" data-weight="w2"/></label><label>Bias b <input type="range" min="-3" max="2" step=".25" value="-1.5" data-weight="b"/></label><svg viewBox="0 0 690 370" role="img" aria-label="Linear separator and the four Boolean corner points"></svg><p data-perceptron-summary aria-live="polite"></p><div class="table-hscroll"><table class="teaching-data"><tr><th>Input</th><th>z</th><th>Prediction</th><th>Target</th></tr><tbody data-perceptron-rows></tbody></table></div><button type="button" data-perceptron-reset>Restore AND</button></div>
+<p><strong>Checkpoint:</strong> how can the graph show four predictions without being “trained”? The sliders manually select a model, unlike the update algorithm below.</p></section>
+<section id="p-l3" class="lab-step"><h2>3. Let the perceptron learn from its mistakes</h2>
+<p>Initially <code>w=(0,0), b=−1</code>. Set the learning rate, then press the button to process the next labelled example. Record the prediction, target, error signal and updated parameters for at least four records.</p>
+<div data-perceptron-train class="perceptron-train"><label>Learning rate η <input type="range" min="0.1" max="1" step=".1" value=".5" data-train-rate/></label>
+<div class="id3-step-toolbar"><button type="button" data-train-step>Next training example</button><button type="button" data-train-epoch>Complete an epoch</button><button type="button" data-train-reset>Reset</button></div><pre data-train-output aria-live="polite"></pre></div>
+<ol><li>Identify a row where no update is necessary.</li><li>Find a row where the sign of <code>target−prediction</code> is positive.</li><li>Explain why the bias is updated even when an input feature is zero.</li><li>Run enough epochs to classify all four AND records or explain why you stopped.</li></ol></section>
+<section id="p-l4" class="lab-step"><h2>4. Run exactly the same rule in Python</h2><div class="python-runner"><label for="w6-code">Perceptron learning — one dataset, no libraries</label><textarea class="py-source" id="w6-code" rows="17" spellcheck="false">examples=[(0,0,0),(1,0,0),(0,1,0),(1,1,1)]
+w1,w2,b=0.0,0.0,-1.0
+rate=0.5
+for epoch in range(12):
+ errors=0
+ for x1,x2,target in examples:
+  z=w1*x1+w2*x2+b
+  prediction=int(z>=0)
+  diff=target-prediction
+  errors+=int(diff!=0)
+  w1+=rate*diff*x1
+  w2+=rate*diff*x2
+  b+=rate*diff
+ print("epoch",epoch+1,"errors",errors,"parameters",round(w1,2),round(w2,2),round(b,2))
+ if errors==0:break
+for x1,x2,target in examples:
+ print((x1,x2),"target",target,"predicted",int(w1*x1+w2*x2+b>=0))</textarea><button type="button" class="run-python">Run Python</button><output class="py-output" aria-live="polite">Run the training loop and read the final truth table.</output></div>
+<p><a href="/jupyter/lab/index.html?path=w6-perceptron-trace.ipynb" target="_blank" rel="noopener noreferrer">Open step-by-step perceptron training notebook ↗</a> · <a href="/w6/lab/notebooks/w6-perceptron-trace.ipynb" download>Download</a></p>
+<p><a href="/jupyter/lab/index.html?path=w6-separator-experiment.ipynb" target="_blank" rel="noopener noreferrer">Open boundary comparison notebook ↗</a> · <a href="/w6/lab/notebooks/w6-separator-experiment.ipynb" download>Download</a></p>
+<p><strong>Modify:</strong> change the learning rate from 0.5 to 0.2. Explain what changes in the number of epochs and what need not change in the final prediction table.</p></section>
+<section id="p-l5" class="lab-step"><h2>5. Compare AND with XOR</h2><p>Change the last target in the training table to XOR targets (0,1,1,0), preserving the four input coordinates. Run for several epochs and observe whether a single threshold neuron can fit all four at once.</p>
+<details><summary>Research (3p)</summary><p>Show geometrically why no straight line separates the XOR-positive opposite corners from both negative corners. Then inspect <a href="/w7/course/">Week 7</a> for an architecture with two hidden neurons and a single output neuron that does produce XOR.</p></details></section>
+<section id="submission" class="submission-drop"><h2>Submission</h2><p>Prepare your truth-table calculation, one complete hand-written mistake update, one training trace and a paragraph comparing AND versus XOR. This is a local-download preparation, not an online upload.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>Liviu Ciortuz, §6.1.1, solved problem 2, printed pp. 762–764 (threshold boolean functions), and §6.1.2, solved problem 11, pp. 771–773 (incremental perceptron training).</li><li>UAIC Neural Networks course description, pp. 2–3.</li></ul></section></article></div>

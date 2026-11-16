@@ -1,0 +1,182 @@
+{
+  "week": 4,
+  "title": "Revision: Supervised and Unsupervised Learning",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz — teacher review required",
+  "instructions": "Ten questions drawn from the worked examples in the Course and Laboratory. Some questions require selecting all correct answers. Exact matches earn one point.",
+  "questions": [
+    {
+      "prompt": "Which task has NO known class labels during training?",
+      "options": [
+        "Predicting yes/no using ID3",
+        "Grouping five delivery coordinates using K-means",
+        "Using KNN to classify a labelled player",
+        "Checking whether a prediction matches a true class"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "K-means uses numerical data without supplied target classes.",
+      "topic": "Learning families",
+      "id": "w4q1",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "The 12-row diary has six yes and six no labels. What is its binary entropy?",
+      "options": [
+        "0 bits",
+        "1 bit",
+        "2 bits",
+        "6 bits"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Balanced binary outcomes have entropy 1 bit.",
+      "topic": "ID3",
+      "id": "w4q2",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Sky creates three four-row groups with entropies 0, 1, and 0. What is the weighted entropy after splitting?",
+      "options": [
+        "0",
+        "1/3 bit",
+        "2/3 bit",
+        "1 bit"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Each branch gets weight 4/12, so the sum is 1/3.",
+      "topic": "Weighted averages",
+      "id": "w4q3",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "What is the information gain of the Sky question?",
+      "options": [
+        "0",
+        "1/3 bit",
+        "2/3 bit",
+        "1 bit"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "1−1/3=2/3 ≈0.667 bits.",
+      "topic": "Information gain",
+      "id": "w4q4",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "K-means first groups A(-1,0), B(1,0), C(0,1). What is their mean?",
+      "options": [
+        "(0,1/3)",
+        "(0,1)",
+        "(1,0)",
+        "(3,1/2)"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Average the coordinates independently.",
+      "topic": "Centroids",
+      "id": "w4q5",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "What happened to J in the Ciortuz five-point example after recomputing means?",
+      "options": [
+        "It increased from 7 to 9",
+        "It decreased from 7 to 19/6",
+        "It remained 7",
+        "It became exactly zero"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "The new within-cluster squared error is 19/6≈3.167.",
+      "topic": "K-means objective",
+      "id": "w4q6",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For KNN, K=3 means what?",
+      "options": [
+        "Three unlabeled clusters",
+        "Three known labels as outputs",
+        "Three nearest labelled training records vote",
+        "Three hidden layers"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "KNN counts nearby labelled examples, unlike K-means which specifies cluster count.",
+      "topic": "KNN preview",
+      "id": "w4q7",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Given TP=2, TN=2, FP=1 and FN=1, what is accuracy?",
+      "options": [
+        "1/6",
+        "2/6",
+        "4/6",
+        "6/6"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Four of six predictions were correct: (TP+TN)/N=4/6.",
+      "topic": "Evaluation",
+      "id": "w4q8",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Which statements about a six-example test are defensible?",
+      "options": [
+        "It is useful for practising a confusion matrix",
+        "It cannot establish reliable real-world accuracy",
+        "It proves the model will generalise forever",
+        "It can replace collecting more diverse test records"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "A tiny test is a teaching aid, not a strong estimate of deployment performance.",
+      "topic": "Evaluation limits",
+      "id": "w4q9",
+      "type": "multiple",
+      "points": 1
+    },
+    {
+      "prompt": "Which procedures require labelled training examples?",
+      "options": [
+        "ID3 classification",
+        "K-nearest neighbour classification",
+        "Ordinary K-means clustering",
+        "Unlabelled geometric grouping"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "ID3 and KNN are supervised; K-means is unsupervised.",
+      "topic": "Algorithm selection",
+      "id": "w4q10",
+      "type": "multiple",
+      "points": 1
+    }
+  ]
+}

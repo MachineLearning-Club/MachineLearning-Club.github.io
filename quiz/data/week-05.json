@@ -1,0 +1,181 @@
+{
+  "week": 5,
+  "title": "Computer Vision: Images as Data",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz — teacher review required",
+  "instructions": "Ten questions drawn from the worked examples in the Course and Laboratory. Some questions require selecting all correct answers. Exact matches earn one point.",
+  "questions": [
+    {
+      "prompt": "What does I[row][column] return for a grayscale image?",
+      "options": [
+        "A whole neural network",
+        "The intensity at one pixel",
+        "A colour class label",
+        "The number of images in a folder"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "An image can be represented as a 2D table of pixel intensities.",
+      "topic": "Pixels",
+      "id": "w5q1",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "How many channel values are in a 6-by-4 RGB image with three channels per pixel?",
+      "options": [
+        "10",
+        "24",
+        "48",
+        "72"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "6×4×3=72 values before compression or metadata.",
+      "topic": "Image dimensions",
+      "id": "w5q2",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "What is the simple channel average for RGB=(120,180,240)?",
+      "options": [
+        "120",
+        "172",
+        "180",
+        "240"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "(120+180+240)/3=180.",
+      "topic": "RGB means",
+      "id": "w5q3",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Using 0.2126R+0.7152G+0.0722B, which result is closest for RGB=(120,180,240)?",
+      "options": [
+        "85",
+        "128",
+        "172",
+        "240"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "The weighted result is 171.576, approximately 172.",
+      "topic": "Weighted grayscale",
+      "id": "w5q4",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "With T=128, rule input<T→0 else 255, what happens to value 127?",
+      "options": [
+        "0",
+        "127",
+        "128",
+        "255"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "127 is below 128, so it becomes black.",
+      "topic": "Threshold",
+      "id": "w5q5",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "With T=128, how is intensity 128 classified?",
+      "options": [
+        "0",
+        "1",
+        "128",
+        "255"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Equality belongs to the ≥ threshold branch, giving 255.",
+      "topic": "Threshold boundary",
+      "id": "w5q6",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "A 3×3 patch contains four values 255 and five zero. What is its mean, approximately?",
+      "options": [
+        "0",
+        "113.3",
+        "127.5",
+        "255"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "4×255/9≈113.333.",
+      "topic": "Mean filtering",
+      "id": "w5q7",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Why must a filter define what happens at image boundaries?",
+      "options": [
+        "Some neighbouring coordinates lie outside the image",
+        "All image borders must be black",
+        "Every 3×3 kernel has nine zero coefficients",
+        "Pixels have no coordinates"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Padding, replication and valid-only convolution produce different results.",
+      "topic": "Border convention",
+      "id": "w5q8",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Which observations about filters are correct?",
+      "options": [
+        "Smoothing can reduce isolated pixel noise",
+        "Smoothing may blur thin writing",
+        "Thresholding always preserves faint handwriting",
+        "Sharpening cannot amplify noise"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Processing trades noise removal against preservation of detail.",
+      "topic": "Quality trade-offs",
+      "id": "w5q9",
+      "type": "multiple",
+      "points": 1
+    },
+    {
+      "prompt": "A filter response equals 1020 but the output image stores 8-bit grayscale values. What must be specified?",
+      "options": [
+        "A clipping or scaling convention",
+        "The number of hidden neurons",
+        "A K-means label",
+        "A gradient descent learning rate"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "An 8-bit output stores only 0–255; the display rule matters.",
+      "topic": "Value range",
+      "id": "w5q10",
+      "type": "single",
+      "points": 1
+    }
+  ]
+}

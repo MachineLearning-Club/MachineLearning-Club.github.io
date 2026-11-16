@@ -1,0 +1,16 @@
+<section class="scenario"><h2>Situation — recognise a two-bit pattern</h2><p>Your first single-neuron classifier could not solve XOR. A network with two hidden Boolean detectors can express it. Separately, a smooth sigmoid neuron can move its weights to reduce a numerical error. Your task is to distinguish representation from training.</p></section>
+<section><h2>Mandatory (1p) — trace the full network</h2><ol>
+<li>For input <code>(x₁,x₂)=(1,0)</code>, calculate <code>h₁=step(x₁+x₂−0.5)</code> and <code>h₂=step(x₁+x₂−1.5)</code>.</li>
+<li>Calculate <code>ŷ=step(h₁−2h₂−0.5)</code> and compare it with XOR(1,0).</li>
+<li>Repeat the forward pass for (1,1), showing both hidden sums, not only final output.</li>
+<li>For a separate smooth neuron with <code>x=1,w=0,b=0,t=1</code>, calculate sigmoid output, squared loss, gradient and updated weight at η=0.4.</li></ol>
+<details><summary>Check the results</summary><p>(1,0): h₁=1, h₂=0, output=1. (1,1): h₁=1,h₂=1,output=0. Smooth-neuron step: output 0.5, loss 0.125, gradient −0.125, new weight +0.05.</p></details></section>
+<section><h2>Homework (2p) — compare two learning steps</h2><ol>
+<li>Open the <a href="/jupyter/lab/index.html?path=w7-backprop-training.ipynb" target="_blank" rel="noopener noreferrer">two-layer gradient notebook</a> and execute its provided forward pass.</li>
+<li>Show the hidden output, final output and loss before the first update. Identify which weights influence the loss through the hidden neuron.</li>
+<li>Verify one gradient by changing its weight by a tiny amount (finite-difference calculation is provided).</li>
+<li>Run five update steps for learning rates 0.1 and 0.5, recording both output and loss.</li>
+<li>Explain why a decrease in training loss does not prove a network will perform well on an unseen image.</li></ol><p>All data are invented and numeric. Full image-classification training is deliberately outside this 60-minute introduction.</p></section>
+<section><h2>Research (3p) — optional</h2><p>Derive the chain-rule gradients for the one-hidden-neuron network <code>h=σ(w₁x)</code>, <code>ŷ=σ(w₂h)</code>, <code>L=½(t−ŷ)²</code>. Show that <code>∂L/∂w₂=(ŷ−t)ŷ(1−ŷ)h</code> and <code>∂L/∂w₁=(ŷ−t)ŷ(1−ŷ)w₂h(1−h)x</code>. Compare them against the notebook's numerical gradients.</p></section>
+<section class="submission"><h2>What to submit</h2><p>Submit the hand calculation for two XOR inputs, one sigmoid update, and a notebook containing the before/after loss table. Use <a href="/w7/lab/#submission">Week 7 Laboratory</a> to prepare a named file locally.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>Liviu Ciortuz, §6.1.1, problem 2, pp. 762–764 (two-layer XOR); §6.1.3, problem 20, pp. 789–792 (sigmoid feed-forward backpropagation).</li><li>UAIC Neural Networks syllabi: activation, loss and gradient descent.</li></ul></section>

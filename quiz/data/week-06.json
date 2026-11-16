@@ -1,0 +1,182 @@
+{
+  "week": 6,
+  "title": "Perceptrons: A First Learning Neuron",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz — teacher review required",
+  "instructions": "Ten questions drawn from the worked examples in the Course and Laboratory. Some questions require selecting all correct answers. Exact matches earn one point.",
+  "questions": [
+    {
+      "prompt": "For a perceptron with two inputs, what is its weighted sum?",
+      "options": [
+        "w1+x1+w2+x2",
+        "w1×x1+w2×x2+b",
+        "x1×x2 only",
+        "K nearest points"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "A perceptron sums weighted features plus a bias.",
+      "topic": "Weighted sum",
+      "id": "w6q1",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "With step(z)=1 for z≥0, what is step(-0.5)?",
+      "options": [
+        "-1",
+        "0",
+        "0.5",
+        "1"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Negative z maps to output 0.",
+      "topic": "Activation",
+      "id": "w6q2",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For w1=w2=1,b=-1.5 and input (1,1), what is the output?",
+      "options": [
+        "0",
+        "0.5",
+        "1",
+        "-1"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "z=1+1−1.5=0.5 gives 1.",
+      "topic": "AND example",
+      "id": "w6q3",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For the same weights and input (1,0), what is the output?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Unknown"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "z=1+0−1.5=−0.5 gives 0.",
+      "topic": "AND example",
+      "id": "w6q4",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Changing the bias to -0.5 with weights 1 and 1 implements which Boolean function?",
+      "options": [
+        "AND",
+        "OR",
+        "XOR",
+        "NOT"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "The outputs become 0,1,1,1 (OR).",
+      "topic": "Bias",
+      "id": "w6q5",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "A single two-input threshold perceptron has what kind of decision boundary?",
+      "options": [
+        "Always a circle",
+        "A straight line when weights are not both zero",
+        "A random spiral",
+        "One independent tree for each feature"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "The equation w1 x1+w2 x2+b=0 is linear.",
+      "topic": "Geometry",
+      "id": "w6q6",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Initial weights (0,0), bias -1. Input (1,1) target 1 with eta=1. What are the new weights and bias?",
+      "options": [
+        "(0,0,-1)",
+        "(1,1,0)",
+        "(-1,-1,-2)",
+        "(2,2,1)"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Mistake signal=1, so both weights and bias increase by 1.",
+      "topic": "Update",
+      "id": "w6q7",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "If target equals prediction, what is the perceptron mistake-update signal?",
+      "options": [
+        "-1",
+        "0",
+        "0.5",
+        "1"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "t−prediction=0; no change for that example.",
+      "topic": "Update rule",
+      "id": "w6q8",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Why can one straight-line threshold perceptron not fit binary XOR exactly?",
+      "options": [
+        "Positive and negative examples alternate on opposite corners",
+        "XOR has no targets",
+        "The algorithm needs seven clusters",
+        "It only works on images"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "XOR is not linearly separable.",
+      "topic": "Limitations",
+      "id": "w6q9",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Which statements are correct when interpreting perceptron training?",
+      "options": [
+        "One corrected row does not guarantee all examples are correct",
+        "The training order and rate can affect the trace",
+        "Perceptrons automatically solve contradictory labels",
+        "A training epoch means one full pass through the examples"
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Training is iterative; it can have multiple errors and epochs.",
+      "topic": "Training",
+      "id": "w6q10",
+      "type": "multiple",
+      "points": 1
+    }
+  ]
+}

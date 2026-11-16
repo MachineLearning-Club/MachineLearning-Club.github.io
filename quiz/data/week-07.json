@@ -1,0 +1,182 @@
+{
+  "week": 7,
+  "title": "Neural Networks and Training",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz — teacher review required",
+  "instructions": "Ten questions drawn from the worked examples in the Course and Laboratory. Some questions require selecting all correct answers. Exact matches earn one point.",
+  "questions": [
+    {
+      "prompt": "Why do hidden layers help with XOR?",
+      "options": [
+        "They let simple intermediate decisions combine into a nonlinear overall rule",
+        "XOR has no input data",
+        "They eliminate the need for calculations",
+        "One straight line already solves XOR"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Two simple detectors for OR and AND can combine into XOR.",
+      "topic": "Architecture",
+      "id": "w7q1",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For inputs (1,0), what are the hidden outputs OR and AND?",
+      "options": [
+        "(0,0)",
+        "(1,0)",
+        "(0,1)",
+        "(1,1)"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "OR=1 and AND=0.",
+      "topic": "Forward pass",
+      "id": "w7q2",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For inputs (1,1), final XOR output should be:",
+      "options": [
+        "0",
+        "0.5",
+        "1",
+        "2"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Both hidden detectors are true, and the output is 0.",
+      "topic": "XOR",
+      "id": "w7q3",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "What is the standard sigmoid output σ(0)?",
+      "options": [
+        "0",
+        "0.25",
+        "0.5",
+        "1"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "1/(1+exp(0))=1/2.",
+      "topic": "Activation",
+      "id": "w7q4",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "For target 1 and prediction 0.5, squared loss L=0.5(t−y)^2 equals:",
+      "options": [
+        "0",
+        "0.125",
+        "0.25",
+        "0.5"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "0.5×0.5²=0.125.",
+      "topic": "Loss",
+      "id": "w7q5",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "With w=0,x=1,b=0,target=1 and sigmoid, what is dL/dw?",
+      "options": [
+        "−0.125",
+        "0",
+        "0.125",
+        "1"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "(0.5−1)×0.5×(1−0.5)×1=−0.125.",
+      "topic": "Gradient",
+      "id": "w7q6",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "With learning rate η=0.4, what is the first updated weight?",
+      "options": [
+        "−0.4",
+        "−0.05",
+        "0",
+        "0.05"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "w_new=0−0.4×(−0.125)=0.05.",
+      "topic": "Gradient descent",
+      "id": "w7q7",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "During a forward pass through a neural network, in which direction are activations computed?",
+      "options": [
+        "From input to output",
+        "From loss to input",
+        "Only within the bias",
+        "From a test set to a training set"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "A forward pass calculates layer activations and then the loss.",
+      "topic": "Forward pass",
+      "id": "w7q8",
+      "type": "single",
+      "points": 1
+    },
+    {
+      "prompt": "Which statements correctly describe backpropagation?",
+      "options": [
+        "It computes the sensitivity of loss to weights",
+        "Hidden-layer gradients depend on downstream weights",
+        "It requires a hidden neuron to be a decision tree",
+        "It means labels are never used"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Backpropagation applies the chain rule from output toward earlier layers.",
+      "topic": "Backward pass",
+      "id": "w7q9",
+      "type": "multiple",
+      "points": 1
+    },
+    {
+      "prompt": "Which of these is a valid interpretation of lower training loss?",
+      "options": [
+        "The model fits the training example better",
+        "It does not prove generalisation to new images",
+        "It guarantees no overfitting",
+        "It makes a held-out test unnecessary"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Training loss improvement alone does not establish reliable performance on unseen data.",
+      "topic": "Evaluation",
+      "id": "w7q10",
+      "type": "multiple",
+      "points": 1
+    }
+  ]
+}

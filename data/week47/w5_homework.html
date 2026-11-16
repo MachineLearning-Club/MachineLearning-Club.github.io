@@ -1,0 +1,17 @@
+<section class="scenario"><h2>Situation — recover a faint worksheet</h2><p>A teacher has a low-contrast synthetic worksheet represented as a table of pixel intensities. Your task is to separate dark writing from pale paper, show every numerical decision, and explain the cost of changing the image.</p></section>
+<section><h2>Mandatory (1p) — process six pixels by hand</h2><ol>
+<li>Apply threshold <code>T=128</code> to <code>[30,100,127,128,220,250]</code> with the convention <code>v&lt;T→0</code> and <code>v≥T→255</code>.</li>
+<li>Repeat the calculation with <code>T=200</code>. How many pixels change output?</li>
+<li>For RGB=(120,180,240), compute the arithmetic mean and the weighted grayscale value <code>0.2126R+0.7152G+0.0722B</code>.</li>
+<li>Using patch <code>[[0,0,0],[0,255,255],[0,255,255]]</code>, calculate the 3×3 mean.</li></ol>
+<details><summary>Check only after attempting</summary><p>T=128: [0,0,0,255,255,255]. T=200: [0,0,0,0,255,255], so one output changes. RGB mean 180; weighted 171.576 (about 172); 3×3 mean 1020/9≈113.33.</p></details></section>
+<section><h2>Homework (2p) — evaluate three processing choices</h2><ol>
+<li>Open the <a href="/jupyter/lab/index.html?path=w5-pixels-grayscale.ipynb" target="_blank" rel="noopener noreferrer">prepared image notebook</a> and plot its original 5×5 numerical image.</li>
+<li>Compare thresholding at 55, 128 and 200. For each record the number of black pixels and include the resulting image or matrix.</li>
+<li>Change one bright-background pixel to intensity 0 to simulate a noisy sensor. Show the original and altered array.</li>
+<li>Try the provided 3×3 smoothing function. Explain whether it removes the artificial speck, and whether it blurs nearby strokes.</li>
+<li>Write a five-sentence recommendation for improving worksheet readability without promising perfect optical character recognition.</li></ol>
+<p><strong>Submission format:</strong> one notebook with three images or text grids, a small comparison table and your explanation. All images are synthetic; no student photographs are needed.</p></section>
+<section><h2>Research (3p) — optional</h2><p>Implement the Vision Lab 1 kernel <code>[[0,-2,0],[-2,8,-2],[0,-2,0]]</code> on the central 3×3 patch. Show the nine products and sum. State whether you used clipping to 0–255; discuss one situation where sharpening amplifies noise.</p></section>
+<section class="submission"><h2>What to submit</h2><p>Use the <a href="/w5/lab/#submission">Week 5 laboratory submission area</a> to prepare a named ZIP of the notebook and your calculations. This does not transmit files to the teacher automatically.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li>UAIC computer vision exercises: <em>Lab 1 – Image Enhancement</em> and <em>Lab 2 – RGB to Grayscale Conversions</em>, PDF pp. 1–4.</li></ul></section>

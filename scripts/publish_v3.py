@@ -291,10 +291,10 @@ def render_quiz_placeholder(w):
        '<script defer src="/assets/weekly-quiz.js"></script>')
 
 def make_week(w,kind):
-    # Weeks 1–3 are teacher-authored modules with independent textbook, lab,
-    # homework and advanced source fragments. Preserve them on regeneration.
-    # Use scripts/update_week1_practice.py or scripts/update_week23.py to edit.
-    if w["n"] in (1, 2, 3):
+    # Weeks 1–7 contain reviewed teacher-authored Course, Lab, Homework and
+    # Advanced materials. Do not replace them with generic scaffold templates.
+    # Use update_week1_practice, update_week23 or update_week47 to edit.
+    if w["n"] in (1, 2, 3, 4, 5, 6, 7):
         return
     body=week_start(w,kind)
     if kind=="course":body+=course_content(w)
@@ -401,7 +401,7 @@ def render_bibliography():
 def render_catalog():
     path=ROOT/'quiz/data/catalog.json'
     meta=json.loads(path.read_text())
-    available={1,2,3}
+    available={1,2,3,4,5,6,7}
     quizzes=[]
     for w in W:
         n=w["n"]
@@ -410,7 +410,7 @@ def render_catalog():
             status="demo" if n in available else "planned",
             durationMinutes=5,questionCount=10 if n in available else None,
             maxPoints=10 if n in available else None))
-    path.write_text(json.dumps({"version":3,"notice":"Practice quizzes in Weeks 1–3; Weeks 4–15 will be authored after lesson-by-lesson approval.","quizzes":quizzes},indent=2)+"\n")
+    path.write_text(json.dumps({"version":3,"notice":"Practice quizzes in Weeks 1–7; Weeks 8–15 remain planned.","quizzes":quizzes},indent=2)+"\n")
 
 def patch_supporting():
     # Retire obsolete resource indexes instead of leaving conflicting week plans online.
