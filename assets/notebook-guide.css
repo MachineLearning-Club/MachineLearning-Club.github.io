@@ -5,3 +5,16 @@
 .notebook-guide .notebook-cell-explainer pre{margin:8px 0;max-width:450px}
 .notebook-guide .notebook-cell-type{font-size:.78rem;font-weight:700;color:#3e6c86;font-variant:small-caps;letter-spacing:.05em}
 .notebook-guide .guide-shot img{width:100%;max-width:800px;height:auto}
+
+/* Real notebooks load on demand to avoid two large kernels on the guide page. */
+.notebook-guide .embedded-notebook{padding:15px 0 20px;border-top:1px solid #d9e5eb;margin:18px 0}
+.notebook-guide .embedded-notebook h3{font-size:1.15rem;font-weight:500;margin:2px 0 10px}
+.notebook-guide .embedded-notebook-actions{display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.notebook-guide .embedded-notebook-actions button{padding:8px 14px;cursor:pointer;color:#245775;background:#fff;border:1px solid #91aec0;font:inherit}
+.notebook-guide .embedded-notebook-actions button:hover,.notebook-guide .embedded-notebook-actions button:focus-visible{background:#edf5fa;outline-offset:3px}
+.notebook-guide .embedded-notebook-actions a{font-size:.88rem}
+.notebook-guide .embedded-notebook-frame{margin:15px 0 7px;border:1px solid #bfd1de;background:#f4f8fb;padding:9px;max-width:100%}
+.notebook-guide .embedded-notebook-status{font-size:.83rem;color:#566e7f;margin:3px 0 8px}
+.notebook-guide .iframe-scroll{max-width:100%;overflow:auto}
+.notebook-guide iframe{display:block;border:1px solid #d6e1e7;background:white;width:100%;height:650px;min-width:650px}
+@media(max-width:720px){.notebook-guide iframe{min-width:760px;height:550px}.notebook-guide .embedded-notebook-frame{padding:5px}}

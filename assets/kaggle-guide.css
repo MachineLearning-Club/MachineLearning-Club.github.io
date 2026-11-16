@@ -1,0 +1,24 @@
+/* Kaggle competition walkthrough — same minimalist handbook components. */
+.kaggle-guide .kaggle-data-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:23px 0}
+.kaggle-guide .kaggle-data-flow>div{border-top:2px solid #9cb5c5;border-bottom:1px solid #d6e3eb;padding:12px 10px;min-width:0}
+.kaggle-guide .kaggle-data-flow strong,.kaggle-guide .kaggle-data-flow span,.kaggle-guide .kaggle-data-flow small{display:block;overflow-wrap:anywhere}
+.kaggle-guide .kaggle-data-flow strong{color:#244d68;font-size:.89rem}
+.kaggle-guide .kaggle-data-flow span{font-size:.8rem;margin-top:7px}
+.kaggle-guide .kaggle-data-flow small{color:#698291;font-size:.73rem;margin-top:8px}
+.kaggle-guide .kaggle-course-plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:20px 0}
+.kaggle-guide .kaggle-course-plan>div{border-top:1px solid #adc4d3;padding:13px 10px}
+.kaggle-guide .kaggle-course-plan strong{font-size:.92rem}
+.kaggle-guide .kaggle-course-plan p{font-size:.83rem;margin:9px 0}
+.kaggle-guide .kaggle-example pre{max-width:100%;overflow:auto;padding:16px;background:#f7fafc;border:1px solid #d8e4eb;font-size:.82rem;line-height:1.55}
+.kaggle-guide .guide-copy{border:1px solid #9cb8cb;background:#fff;color:#235a7d;padding:8px 13px;cursor:pointer}
+.kaggle-guide .kaggle-table-illustration{margin:18px 0 24px}
+.kaggle-guide .kaggle-mini-simulator{margin:20px 0 22px;padding:17px 20px;background:#f7f9fb;border:1px solid #d8e3e9}
+.kaggle-guide .kaggle-mini-simulator h3{font-size:1rem;font-weight:600;margin:0 0 13px}
+.kaggle-guide .kaggle-controls{display:flex;flex-wrap:wrap;gap:10px 18px;margin:16px 0}
+.kaggle-guide .kaggle-controls label{display:flex;flex-direction:column;gap:6px;font-size:.82rem}
+.kaggle-guide .kaggle-controls select{max-width:220px;font:inherit;background:white;border:1px solid #b2c4d0;padding:9px}
+.kaggle-guide .kaggle-csv-preview{background:white;border:1px solid #dae4ec;padding:15px;overflow:auto;white-space:pre;font:0.85rem/1.6 ui-monospace,Consolas,monospace;color:#24445b}
+.kaggle-guide [data-download-practice]{padding:9px 14px;border:1px solid #8cadbf;color:#235577;background:white;cursor:pointer;font:inherit}
+.kaggle-guide [data-download-practice]:hover,.kaggle-guide [data-download-practice]:focus-visible{background:#e9f2f7;outline-offset:2px}
+@media(max-width:750px){.kaggle-guide .kaggle-data-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.kaggle-guide .kaggle-course-plan{grid-template-columns:1fr}}
+@media(max-width:440px){.kaggle-guide .kaggle-mini-simulator{padding:12px}.kaggle-guide .kaggle-controls select{max-width:100%}}

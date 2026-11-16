@@ -339,6 +339,8 @@ def render_home():
             result+='<aside class="prerequisite-strip" aria-label="Module III prerequisite"><span class="prerequisite-label">Before Module III</span>'+a('/guides/github-ai/','Git, GitHub & AI Code Editing')+'</aside>'
         result+='<section class="module" id="module-'+roman.lower()+'"><h2>Module '+roman+' — '+E(name)+'</h2>'
         for n in range(first,last+1):
+            if n==12:
+                result+='<aside class="prerequisite-strip" aria-label="Competition preparation"><span class="prerequisite-label">Before FiiCode</span>'+a('/guides/kaggle/','Kaggle Competitions · Step-by-step guide')+'</aside>'
             w=W[n-1]
             result+='<article class="week"><h3>Week '+str(n)+' — '+E(w["title"])+'</h3>'+tabs(n)+'</article>'
         result+='</section>'
@@ -371,10 +373,24 @@ def render_guides():
     body=body.replace('<main class="guide">','<main class="guide github-guide notebook-guide">',1)
     body=body.replace('</head>',
           '<link rel="stylesheet" href="/assets/github-guide.css">'
-          '<link rel="stylesheet" href="/assets/notebook-guide.css"></head>',1)
+          '<link rel="stylesheet" href="/assets/notebook-guide.css"><script defer src="/assets/notebook-guide.js"></script></head>',1)
     body+=(ROOT/'data/guides/notebooks.html').read_text(encoding='utf8')
     body+='</main>'+footer()+'</body></html>'
     path=ROOT/'guides/notebooks/index.html'
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(body,encoding='utf8')
+    # Separate beginner Kaggle competition guide; the host of FiiCode remains unverified.
+    body=guide_start("How to participate in a Kaggle competition",
+                     "From train.csv to a first prediction submission — beginner tutorial.")
+    body=body.replace('<main class="guide">','<main class="guide github-guide kaggle-guide">',1)
+    body=body.replace('</head>',
+          '<link rel="stylesheet" href="/assets/github-guide.css">'
+          '<link rel="stylesheet" href="/assets/kaggle-guide.css">'
+          '<script defer src="/assets/github-guide.js"></script>'
+          '<script defer src="/assets/kaggle-guide.js"></script></head>',1)
+    body+=(ROOT/'data/guides/kaggle.html').read_text(encoding='utf8')
+    body+='</main>'+footer()+'</body></html>'
+    path=ROOT/'guides/kaggle/index.html'
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(body,encoding='utf8')
     # The GitHub prerequisite is a teacher-authored, screenshot-led project handbook.
@@ -418,6 +434,14 @@ def render_bibliography():
       '<li>'+a("https://jupyterlab.readthedocs.io/en/stable/user/interface.html", "JupyterLab — Interface")+' — file browser, editor, notebook toolbar.</li>'
       '<li>'+a("https://jupyterlite.readthedocs.io/en/latest/howto/content/readonly.html", "JupyterLite — Read-only content")+' — saving editable copies when an original notebook is read-only.</li>'
       '</ul><p>'+a('/guides/notebooks/','See the account-free notebook guide with screenshots')+'</p></section>')
+    html+=('<section><h2>Kaggle courses and competition tutorials</h2><ul>'
+      '<li>'+a("https://www.kaggle.com/learn/intro-to-programming", "Kaggle Learn — Intro to Programming")+' — first Python exercises.</li>'
+      '<li>'+a("https://www.kaggle.com/learn/pandas", "Kaggle Learn — Pandas")+' — reading and exploring CSV data.</li>'
+      '<li>'+a("https://www.kaggle.com/learn/intro-to-machine-learning", "Kaggle Learn — Intro to Machine Learning")+' — models, validation and competitions.</li>'
+      '<li>'+a("https://www.kaggle.com/learn-guide/kaggle-competitions", "Kaggle Competitions Guide")+' — beginner challenges and learning pathway.</li>'
+      '<li>'+a("https://www.kaggle.com/docs/competitions", "Kaggle — Competitions documentation")+' — participation, submissions and leaderboard rules.</li>'
+      '<li>'+a("https://www.kaggle.com/docs/notebooks", "Kaggle — Notebooks documentation")+' — model development, versions, input and output.</li>'
+      '</ul><p>'+a('/guides/kaggle/','See the beginner Kaggle competition tutorial with screenshots')+'</p></section>')
     html+='</main>'+footer()+'</body></html>'
     (ROOT/'resources/index.html').write_text(html)
 
