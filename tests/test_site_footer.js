@@ -37,10 +37,17 @@ const base='http://127.0.0.1:8877';
    assert(result.footerLeft>=-2&&result.footerRight<=result.viewport+2,'Footer exceeds viewport '+sitepath+' '+width);
    assert(result.label==='Machine Learning Club footer','Accessibility label wrong');
    const links=Object.fromEntries(result.anchors.map(x=>[x.label,x.href]));
-   for(const [name,url] of Object.entries({'Dragoș-Andrei Bobu':'https://dragosandreibobu.github.io/','All lessons':'/','Timetable':'/timetable/','Bibliography':'/resources/','Weekly quizzes':'/quiz/','GitHub organisation':'https://github.com/MachineLearning-Club','Website source':'https://github.com/MachineLearning-Club/MachineLearning-Club.github.io','Seven Hills International School':'https://sevenhills.ro/','Personal website':'https://dragosandreibobu.github.io/'})){
+   for(const [name,url] of Object.entries({'Dragoș-Andrei Bobu':'https://dragosandreibobu.github.io/','All lessons':'/','Timetable':'/timetable/','Bibliography':'/resources/','Weekly quizzes':'/quiz/','GitHub organisation':'https://github.com/MachineLearning-Club','Website source':'https://github.com/MachineLearning-Club/MachineLearning-Club.github.io','Seven Hills International School':'https://sevenhills.ro/','Personal website':'https://dragosandreibobu.github.io/','GitHub profile':'https://github.com/dragosandreibobu'})){
      assert(links[name]===url,'Missing or wrong link '+name+' on '+sitepath+' got '+links[name]);
    }
    assert(result.legal.includes('BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ'),'Legal operator not present');
+   if(sitepath==='/'){
+     const bib=await page.$('.bibliography-link');
+     assert(bib,'Missing bibliography CTA');
+     assert((await page.$eval('.bibliography-link',e=>e.getAttribute('href')))==='/resources/','Wrong bibliography destination');
+     assert(!(await page.$eval('.bibliography-entry',e=>e.textContent)).includes('Original syllabi'),'Old descriptive text remains');
+     assert((await page.$eval('.bibliography-link',e=>getComputedStyle(e).textDecorationLine)).includes('underline'),'Bibliography is not clearly styled as a hyperlink');
+   }
    if(width===390&&['/','/w4/course/','/quiz/'].includes(sitepath))await page.screenshot({path:'/tmp/mlclub-footer-'+(sitepath==='/'?'home':sitepath==='/quiz/'?'quiz':'course')+'-mobile.png',fullPage:true});
    if(width===1280&&sitepath==='/')await page.screenshot({path:'/tmp/mlclub-footer-home-desktop.png',fullPage:true});
    console.log('PASS',width,sitepath,result.anchors.length,'links');

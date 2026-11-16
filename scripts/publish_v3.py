@@ -40,7 +40,7 @@ PFA="BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ"
 SCHOOL_LINK="https://sevenhills.ro/"
 SCHOOLS=json.loads((ROOT/"data/schools.json").read_text())["partners"]
 assert len(SCHOOLS)>=1
-OWNER_LINK="https://github.com/dbxdrgsl"
+OWNER_LINK="https://github.com/dragosandreibobu"
 ORG_LINK="https://github.com/MachineLearning-Club"
 
 def a(url,title):
@@ -343,7 +343,7 @@ def render_home():
             w=W[n-1]
             result+='<article class="week"><h3>Week '+str(n)+' — '+E(w["title"])+'</h3>'+tabs(n)+'</article>'
         result+='</section>'
-    result+='<section class="bibliography-entry"><h2>'+a('/resources/','Bibliography')+'</h2><p>Original syllabi, school textbooks, laboratories, problem collections and interactive tools.</p></section>'
+    result+='<section class="bibliography-entry" aria-label="Bibliography"><h2><a class="bibliography-link" href="/resources/">Bibliography <span aria-hidden="true">→</span></a></h2></section>'
     return result+'</main>'+footer()+'</body></html>'
 
 def timetable():

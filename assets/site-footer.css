@@ -1,10 +1,11 @@
 /* Shared site-wide footer: minimal, readable, accessible, and mobile-first. */
 footer.site.mlclub-footer {
   max-width: none;
-  margin: 65px 0 16px;
-  padding: 26px 0 0;
-  border-top: 1px solid #d8e3e9;
-  background: transparent;
+  margin: 80px 0 18px;
+  padding: 29px 28px 18px;
+  border-top: 3px solid #91aebe;
+  border-bottom: 1px solid #d6e1e8;
+  background: #f2f6f9;
   color: #5b6e7c;
   font: 0.86rem/1.65 Georgia, "Times New Roman", serif;
   text-align: left;
@@ -43,7 +44,7 @@ footer.site.mlclub-footer {
 .mlclub-footer-bottom {
   margin-top: 23px;
   padding-top: 13px;
-  border-top: 1px solid #e4eaee;
+  border-top: 1px solid #d6e1e8;
   display: flex;
   gap: 8px 25px;
   flex-wrap: wrap;
@@ -54,7 +55,7 @@ footer.site.mlclub-footer {
 }
 .mlclub-footer-bottom p { margin: 0; }
 @media (max-width: 650px) {
-  footer.site.mlclub-footer { margin-top: 48px; padding-top: 19px; }
+  footer.site.mlclub-footer { margin-top: 54px; padding: 22px 18px 17px; }
   .mlclub-footer-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 20px 15px; }
   .mlclub-footer-about { grid-column: 1 / -1; }
   .mlclub-footer-about p { max-width: none; }

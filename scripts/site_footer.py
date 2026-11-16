@@ -10,7 +10,7 @@ LEGAL_OPERATOR = "BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ"
 ORG_URL = "https://github.com/MachineLearning-Club"
 CODE_URL = "https://github.com/MachineLearning-Club/MachineLearning-Club.github.io"
 SCHOOL_URL = "https://sevenhills.ro/"
-PROFILE_URL = "https://github.com/dbxdrgsl"
+PROFILE_URL = "https://github.com/dragosandreibobu"
 
 def link(url, label, *, external=True):
     attributes=' target="_blank" rel="noopener noreferrer"' if external else ''

@@ -18,7 +18,12 @@ body{max-width:850px;margin:36px auto;padding:0 24px;background:#fff;color:var(-
 .homepage-content .prerequisite{margin:40px 0 32px;padding:5px 0 4px 17px;border-left:2px solid #9ab4c9}
 .homepage-content .prerequisite h2{border:0;padding:0;margin:0 0 8px;font-size:1.1rem}
 .homepage-content .prerequisite p{margin:6px 0 12px}
-.bibliography-entry h2{border:0;padding:0}
+.bibliography-entry{margin:44px 0 0;padding:18px 0 0;border-top:1px solid #dce3e9}
+.bibliography-entry h2{border:0;padding:0;margin:0;font-size:1.19rem;font-weight:500}
+.bibliography-entry .bibliography-link{display:inline-block;color:#175381;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.bibliography-entry .bibliography-link:hover,.bibliography-entry .bibliography-link:focus-visible{color:#123c60;text-decoration-thickness:2px}
+.bibliography-entry .bibliography-link span{display:inline-block;margin-left:5px;font-size:1rem;text-decoration:none}
+
 .lesson-header{margin:0 0 33px}
 .lesson-topbar{display:flex;align-items:center;justify-content:space-between;gap:8px 13px;flex-wrap:wrap;font-size:.88rem;margin-bottom:19px}
 .lesson-topbar>a{color:#244e70;font-weight:500}
