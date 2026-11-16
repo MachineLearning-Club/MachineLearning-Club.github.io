@@ -371,18 +371,19 @@ def render_guides():
     body+='<section><h2>4. Save and submit</h2><ol><li>Use JupyterLite’s download option to save the changed notebook to your computer.</li><li>Check that the file still ends with <code>.ipynb</code>.</li><li>Use the submission area on the Laboratory page to prepare a named file.</li><li>Upload it only to the teacher-approved collection location once announced.</li></ol><p><strong>Optional:</strong> '+a('https://colab.research.google.com/','Google Colab')+' requires a Google account to execute; it is not the club default.</p></section>'
     body+='</main>'+footer()+'</body></html>'
     path=ROOT/'guides/notebooks/index.html';path.parent.mkdir(parents=True,exist_ok=True);path.write_text(body)
-    body=guide_start("Git, GitHub and AI-assisted code editing","An introductory version-control guide before Module III.")
-    body+='<section><h2>1. Why keep versions?</h2><p>You fix a bug, but your next edit breaks the program. A version history lets you identify the change and return to a working state.</p><p>The smallest cycle is <strong>edit → inspect → test → save a version</strong>.</p></section>'
-    body+='<section><h2>2. Try a miniature Git workflow</h2><div class="git-simulator"><p>Use the controls to modify a simulated project and record two commits. It is a learning activity, not a real Git repository.</p><textarea rows="4" class="git-code" spellcheck="false">def predict(x):\n    return x > 10</textarea><div><button type="button" data-git-test>Test</button> <button type="button" data-git-commit>Commit current version</button> <button type="button" data-git-undo>Restore last commit</button></div><output class="git-output" aria-live="polite">Working tree has uncommitted text.</output><ol class="git-history"></ol></div></section>'
-    body+='<section><h2>3. The equivalent real Git commands</h2><pre><code>git status\ngit add main.py\ngit commit -m "Add missing-input check"\ngit log --oneline</code></pre><p>A repository tracks project files. A commit records a state. A branch is a separate line of changes. A pull request proposes merging reviewed work.</p><p>Using '+a('https://github.dev/','github.dev')+' or '+a('https://vscode.dev/','vscode.dev')+' for reading/editing source may be possible without an account; publishing to GitHub requires an account and appropriate permissions. That remains optional for students.</p></section>'
-    body+='<section><h2>4. Using an AI coding assistant responsibly</h2><p>Give the assistant a small goal and the relevant code, not an entire secret project.</p><div class="worked"><strong>Example instruction:</strong><p>“Explain this Python function to a beginner. Suggest one small improvement, show exactly which lines change, and give a test input that would fail before the change.”</p></div><ol><li>Read the proposed change before applying it.</li><li>Run the example and one new test yourself.</li><li>Save a new version only if the result is understood and correct.</li><li>Never paste classmates’ personal data, passwords, keys or private records into an AI tool.</li></ol></section>'
-    body+=('<section class="page-bibliography"><h2>Bibliography</h2><ul>'
-      '<li>'+a("https://docs.github.com/en/get-started/using-github/hello-world", "GitHub Docs — Hello World")+' — primary beginner reference: repository, branch, commit and pull request.</li>'
-      '<li>'+a("https://github.com/skills/introduction-to-github", "GitHub Skills — Introduction to GitHub")+' — optional real repository exercise; requires GitHub sign-in.</li>'
-      '<li>'+a("https://code.visualstudio.com/docs/setup/copilot/", "Visual Studio Code — Set up GitHub Copilot")+' — optional AI editor reference; account requirements and usage limits apply.</li>'
-      '</ul><p class="understated">The club simulator above runs without registration. The official tutorials describe real services and may require accounts.</p></section>')
+    # The GitHub prerequisite is a teacher-authored, screenshot-led project handbook.
+    # Keep its contents separate from the generic guide scaffold for maintenance.
+    body=guide_start("Git, GitHub and AI-assisted code editing",
+                     "From your first repository to a public website — with Codespaces and an AI coding agent.")
+    body=body.replace('<main class="guide">','<main class="guide github-guide">',1)
+    body=body.replace('</head>',
+          '<link rel="stylesheet" href="/assets/github-guide.css">'
+          '<script defer src="/assets/github-guide.js"></script></head>',1)
+    body+=(ROOT/'data/guides/github-ai.html').read_text(encoding='utf8')
     body+='</main>'+footer()+'</body></html>'
-    path=ROOT/'guides/github-ai/index.html' ;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(body)
+    path=ROOT/'guides/github-ai/index.html'
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(body,encoding='utf8')
 
 def render_bibliography():
     groups=[

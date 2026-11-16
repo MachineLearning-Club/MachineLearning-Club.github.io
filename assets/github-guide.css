@@ -1,0 +1,76 @@
+/* GitHub/VS Code/Codespaces handbook: readable screenshots in a minimalist document. */
+body:has(.github-guide){max-width:1190px;margin-top:35px}
+.github-guide{max-width:none}
+.github-guide a{text-decoration:underline;text-underline-offset:3px}
+.github-guide h2{font-size:1.44rem;border:0;margin:8px 0 17px;padding:0;font-weight:400;color:#244b66}
+.github-guide h3{font-size:1.1rem;color:#294d62}
+.github-guide-intro{max-width:940px;margin-bottom:40px}
+.github-guide .guide-lede{font-size:1.11rem;line-height:1.68;color:#264659}
+.github-guide .guide-rules{font-size:.95rem}
+.github-guide .guide-workflow{display:flex;align-items:stretch;gap:7px;flex-wrap:wrap;margin:25px 0 22px}
+.github-guide .guide-workflow span{flex:1 1 125px;min-width:0;border-top:2px solid #9db7c8;border-bottom:1px solid #d9e4ec;padding:14px 11px;font-size:.85rem;text-align:center;color:#254a64}
+.github-guide .guide-workflow b{align-self:center;color:#7c96a5;font-weight:400}
+.github-guide .guide-teacher{border:1px solid #e0e8ed;padding:15px 18px;background:#f7fafb;margin:26px 0}
+.github-guide .guide-teacher summary{cursor:pointer;color:#284f6b;font-weight:600}
+.github-guide .guide-teacher p{font-size:.88rem}
+.github-guide-layout{display:grid;grid-template-columns:200px minmax(0,1fr);gap:48px}
+.github-guide-sidebar{min-width:0}
+.github-guide-sidebar nav{position:sticky;top:16px;border-top:1px solid #cddbe4;border-bottom:1px solid #cddbe4;padding:15px 0}
+.github-guide-sidebar strong{display:block;margin:0 0 12px;font-size:.87rem;color:#263f53}
+.github-guide-sidebar a{display:block;border-left:2px solid transparent;padding:7px 8px;font-size:.84rem;line-height:1.4;color:#49667d;text-decoration:none}
+.github-guide-sidebar a:hover,.github-guide-sidebar a:focus-visible{background:#f3f7f9;color:#164866;border-left-color:#507d9d}
+.github-guide-main{min-width:0;max-width:860px}
+.github-guide-step{border-top:1px solid #d5e1e9;margin:0 0 45px;padding-top:16px;scroll-margin-top:20px}
+.github-guide-step p,.github-guide-step li{max-width:800px}
+.github-guide-step>ol{padding-left:22px}
+.github-guide-step>ol li{margin:12px 0;line-height:1.6}
+.github-guide .step-number{font:.7rem/1.5 Georgia,serif;color:#668298;letter-spacing:.13em;font-weight:700;margin:0 0 10px}
+.github-guide .guide-gallery{display:grid;grid-template-columns:1fr;gap:0}
+.github-guide .guide-shot{max-width:800px;min-width:0;margin:23px 0 25px}
+.github-guide .guide-shot>a{display:block;text-decoration:none}
+.github-guide .guide-shot img{display:block;max-width:100%;height:auto;border:1px solid #d5e1e8;background:#f5f9fa;transition:border-color .1s}
+.github-guide .guide-shot a:hover img,.github-guide .guide-shot a:focus-visible img{border-color:#527d97}
+.github-guide .guide-shot figcaption{margin:7px 0 0;font-size:.79rem;line-height:1.5;color:#607481}
+.github-guide .guide-note,.github-guide .guide-check{border-left:2px solid #9bb8c8;padding:8px 0 8px 14px;margin:19px 0;color:#506a7a;font-size:.91rem}
+.github-guide .guide-check details{margin-top:10px}
+.github-guide pre{max-width:100%;overflow:auto;font-size:.91rem;line-height:1.55;white-space:pre}
+.github-guide .guide-prompt{max-width:100%;padding:0}
+.github-guide .guide-prompt pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.github-guide .guide-prompt .guide-copy{margin-top:0}
+.github-guide details:not(.guide-teacher){border-top:1px solid #dce6ec;padding:12px 0;margin:20px 0;font-size:.91rem}
+.github-guide details summary{cursor:pointer;color:#245775}
+.github-guide .guide-url-demo{background:#f7f9fb;border:1px solid #e0e9ef;margin:25px 0;padding:15px 18px}
+.github-guide .guide-url-demo label{display:flex;flex-wrap:wrap;align-items:center;gap:10px;color:#34516a;font-size:.89rem}
+.github-guide .guide-url-demo input{min-width:0;width:min(260px,100%);padding:7px 9px;border:1px solid #afc3d0;font:inherit}
+.github-guide .guide-url-demo output{font-size:.85rem;font-family:Consolas,monospace;overflow-wrap:anywhere;color:#255a80}
+.github-guide .guide-checklist .guide-check-items{display:grid;grid-template-columns:1fr;gap:8px}
+.github-guide .guide-checklist label{display:flex;align-items:flex-start;gap:9px;padding:7px 0;font-size:.95rem;cursor:pointer}
+.github-guide .guide-checklist input[type=checkbox]{accent-color:#437694;margin-top:6px;min-width:16px;min-height:16px}
+.github-guide .guide-bibliography{font-size:.89rem}
+.github-guide .guide-bibliography li{margin:10px 0}
+@media(max-width:800px){
+ body:has(.github-guide){max-width:850px;margin:24px auto}
+ .github-guide-layout{display:block}
+ .github-guide-sidebar{margin:12px 0 32px}
+ .github-guide-sidebar nav{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 6px}
+ .github-guide-sidebar strong{grid-column:1/-1}
+ .github-guide-sidebar a{font-size:.81rem}
+ .github-guide-intro{margin-bottom:28px}
+}
+@media(max-width:430px){
+ .github-guide .guide-workflow{display:grid;grid-template-columns:1fr;gap:3px}
+ .github-guide .guide-workflow b{text-align:center;line-height:1}
+ .github-guide .guide-workflow span{min-width:0;flex:unset;padding:9px}
+ .github-guide-sidebar a{font-size:.76rem;padding:7px 4px}
+ .github-guide .guide-shot{margin:19px 0}
+ .github-guide .guide-shot figcaption{font-size:.74rem}
+ .github-guide pre{padding:11px}
+ .github-guide h2{font-size:1.29rem}
+}
+@media print{
+ body:has(.github-guide){max-width:none}
+ .github-guide-layout{display:block}
+ .github-guide-sidebar,.github-guide .guide-copy,.github-guide .guide-url-demo button{display:none}
+ .github-guide .guide-shot{break-inside:avoid}
+ .github-guide-step{break-before:page}
+}

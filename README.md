@@ -139,3 +139,15 @@ The following references inform **teacher preparation** but are not pupil requir
 - GitHub Docs *Hello World* and GitHub Skills *Introduction to GitHub* are linked in `/guides/github-ai/`, with the account-free simulation mandatory and real GitHub optional. VS Code's official Copilot setup is an optional, account-based reference.
 
 Regression: `node tests/test_week1011.js` against the local server on port 8877; the notebooks are executable with standard Python, no third-party libraries. Existing quiz placeholders for Weeks 10–11 are intentionally unchanged until the teacher reviews these lessons.
+
+## Screenshot-led GitHub/Codespaces/VS Code Agent tutorial
+
+The Module III prerequisite lives at `/guides/github-ai/`. Its authored body is `data/guides/github-ai.html`, and `scripts/publish_v3.py` wraps it with the existing school website chrome. CSS and small controls live at `assets/github-guide.css` and `assets/github-guide.js`. The tutorial is regenerated with `python3 scripts/generate_curriculum.py` and is stable across runs.
+
+Instructional route: student creates their own eligible GitHub account → creates a **public** repository (`my-first-ai-site`, initial README) → uses **Code → Codespaces → Create codespace on main** (browser VS Code running in a cloud container) → creates a self-contained `index.html` → works with the VS Code agent in the Chat view (Copilot sign-in/allowance as applicable) → previews on port 8000 → inspects, commits and **pushes to main** → enables **Settings → Pages → Deploy from a branch → main / (root)** → checks the public project-site URL → stops the Codespace. Branches and pull requests are explained as later collaboration techniques, not mandatory first-day steps. Underage students must not be asked to create prohibited accounts; GitHub's minimum is 13 with possible higher local minimums.
+
+There are 13 *annotated real interface screenshots* in `assets/guides/github-ai/*.webp` (~400 KB combined), adapted from official GitHub Docs, VS Code Docs or an unsigned public ML Club repository capture. Captions credit original sources and note where labels or example repository names differ. The blue arrows are teaching annotations, not synthetic interface elements; screenshot layouts can evolve. Do not redistribute raw screenshot sources or suggest that unauthenticated GitHub views show Codespaces controls.
+
+A fully offline-inference, browser-only sample coffee-shop cart is available at `/guides/github-ai/starter/`. It uses basic HTML, CSS and JavaScript, with no payments, third-party services, secret keys or server. Both the guide and starter retain the shared site footer.
+
+Regression: `node tests/test_github_guide.js` with the local site running on port 8877 checks annotated screenshot loading, responsive mobile/tablet/desktop layout, in-page links, public project URL generation and working café cart. Official references include GitHub account onboarding and Terms, GitHub Codespaces quickstart, VS Code agent quickstart, GitHub Pages quickstart and publishing configuration. GitHub Codespaces and Copilot have variable usage quotas; they are not unlimited free services.

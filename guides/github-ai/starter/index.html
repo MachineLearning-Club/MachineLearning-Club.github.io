@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My First Café — ML Club example</title>
+  <style>
+    * { box-sizing:border-box }
+    body { max-width:610px; margin:55px auto; padding:0 22px; color:#273a4c; background:#fffefa; font:17px/1.6 Georgia,serif }
+    h1 { font-weight:400; font-size:2.3rem; margin-bottom:3px }
+    .sub { color:#667b86; margin-bottom:36px }
+    .product { display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #d5dede;padding:16px 0 }
+    button { border:1px solid #426783;background:#fff;color:#28506e;padding:8px 12px;cursor:pointer;font:inherit }
+    button:hover { background:#edf3f6 }
+    button:focus-visible { outline:2px solid #174a7e;outline-offset:3px }
+    .total { border-top:2px solid #4c7c96;padding:18px 0;font-size:1.17rem }
+    .note { color:#667784;font-size:.84rem }
+    a { color:#245f81 }
+  </style>
+<link rel="stylesheet" href="/assets/site-footer.css">
+</head>
+<body>
+  <p><a href="/guides/github-ai/">← Back to the GitHub guide</a></p>
+  <h1>My First Café</h1>
+  <p class="sub">A small fictional menu — HTML, CSS and JavaScript only</p>
+  <div class="product"><div><strong>Coffee</strong><br><small>5 lei</small></div><button type="button" data-price="5">Add coffee</button></div>
+  <div class="product"><div><strong>Tea</strong><br><small>4 lei</small></div><button type="button" data-price="4">Add tea</button></div>
+  <div class="total">Cart total: <output id="total" aria-live="polite">0</output> lei</div>
+  <button type="button" id="reset">Clear cart</button>
+  <p class="note">Illustrative shopping cart; no payment system and no personal data.</p>
+  <script>
+    let total=0;
+    const display=()=>{document.getElementById('total').textContent=total};
+    document.querySelectorAll('[data-price]').forEach(button=>{
+      button.addEventListener('click',()=>{total+=Number(button.dataset.price);display()});
+    });
+    document.getElementById('reset').addEventListener('click',()=>{total=0;display()});
+  </script>
+<footer class="site mlclub-footer" aria-label="Machine Learning Club footer"><div class="mlclub-footer-grid"><div class="mlclub-footer-about"><a class="mlclub-footer-brand" href="/">Machine Learning Club</a><p>Independent educational project created by <a href="https://dragosandreibobu.github.io/" target="_blank" rel="noopener noreferrer">Dragoș-Andrei Bobu</a>.</p></div><nav class="mlclub-footer-links" aria-label="Explore the club"><h2>Explore</h2><ul><li><a href="/">All lessons</a></li><li><a href="/timetable/">Timetable</a></li><li><a href="/resources/">Bibliography</a></li><li><a href="/quiz/">Weekly quizzes</a></li></ul></nav><nav class="mlclub-footer-links" aria-label="Project and partners"><h2>Project &amp; partners</h2><ul><li><a href="https://github.com/MachineLearning-Club" target="_blank" rel="noopener noreferrer">GitHub organisation</a></li><li><a href="https://github.com/MachineLearning-Club/MachineLearning-Club.github.io" target="_blank" rel="noopener noreferrer">Website source</a></li><li><a href="https://sevenhills.ro/" target="_blank" rel="noopener noreferrer">Seven Hills International School</a></li></ul></nav></div><div class="mlclub-footer-bottom"><p>© 2026 BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ AUTORIZATĂ</p><p><a href="https://dragosandreibobu.github.io/" target="_blank" rel="noopener noreferrer">Personal website</a> <span aria-hidden="true">·</span> <a href="https://github.com/dragosandreibobu" target="_blank" rel="noopener noreferrer">GitHub profile</a></p></div></footer>
+</body>
+</html>
