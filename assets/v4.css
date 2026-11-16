@@ -68,9 +68,9 @@ body:has(.registration-announcement) .homepage-header{margin-top:38px}
   font-size:.88rem
 }
 .prerequisite-strip a{font-weight:500;text-underline-offset:3px}
-.prerequisite-strip-grouped{flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;gap:12px}
-.prerequisite-strip-grouped .prerequisite-links{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;gap:10px;width:100%}
-.prerequisite-strip-grouped .prerequisite-links a{display:block;line-height:1.5;text-align:left;align-self:flex-start}
+.prerequisite-strip-grouped{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:12px 22px}
+.prerequisite-strip-grouped .prerequisite-links{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;text-align:right;gap:10px;margin-left:auto;max-width:100%}
+.prerequisite-strip-grouped .prerequisite-links a{display:block;line-height:1.5;text-align:right;align-self:flex-end}
 .course-lesson > h1{margin-bottom:20px}
 .course-lesson .teacher-guide{
   display:block;
