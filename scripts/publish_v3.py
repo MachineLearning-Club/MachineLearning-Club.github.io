@@ -291,10 +291,9 @@ def render_quiz_placeholder(w):
        '<script defer src="/assets/weekly-quiz.js"></script>')
 
 def make_week(w,kind):
-    # Weeks 1–7 contain reviewed teacher-authored Course, Lab, Homework and
-    # Advanced materials. Do not replace them with generic scaffold templates.
-    # Use update_week1_practice, update_week23 or update_week47 to edit.
-    if w["n"] in (1, 2, 3, 4, 5, 6, 7):
+    # Weeks 1–7 and 10–11 have teacher-authored material. Preserve these on
+    # regeneration; update_week1011.py owns the last two sets of lesson bodies.
+    if w["n"] in (1, 2, 3, 4, 5, 6, 7, 10, 11):
         return
     body=week_start(w,kind)
     if kind=="course":body+=course_content(w)
@@ -377,8 +376,13 @@ def render_guides():
     body+='<section><h2>2. Try a miniature Git workflow</h2><div class="git-simulator"><p>Use the controls to modify a simulated project and record two commits. It is a learning activity, not a real Git repository.</p><textarea rows="4" class="git-code" spellcheck="false">def predict(x):\n    return x > 10</textarea><div><button type="button" data-git-test>Test</button> <button type="button" data-git-commit>Commit current version</button> <button type="button" data-git-undo>Restore last commit</button></div><output class="git-output" aria-live="polite">Working tree has uncommitted text.</output><ol class="git-history"></ol></div></section>'
     body+='<section><h2>3. The equivalent real Git commands</h2><pre><code>git status\ngit add main.py\ngit commit -m "Add missing-input check"\ngit log --oneline</code></pre><p>A repository tracks project files. A commit records a state. A branch is a separate line of changes. A pull request proposes merging reviewed work.</p><p>Using '+a('https://github.dev/','github.dev')+' or '+a('https://vscode.dev/','vscode.dev')+' for reading/editing source may be possible without an account; publishing to GitHub requires an account and appropriate permissions. That remains optional for students.</p></section>'
     body+='<section><h2>4. Using an AI coding assistant responsibly</h2><p>Give the assistant a small goal and the relevant code, not an entire secret project.</p><div class="worked"><strong>Example instruction:</strong><p>“Explain this Python function to a beginner. Suggest one small improvement, show exactly which lines change, and give a test input that would fail before the change.”</p></div><ol><li>Read the proposed change before applying it.</li><li>Run the example and one new test yourself.</li><li>Save a new version only if the result is understood and correct.</li><li>Never paste classmates’ personal data, passwords, keys or private records into an AI tool.</li></ol></section>'
+    body+=('<section class="page-bibliography"><h2>Bibliography</h2><ul>'
+      '<li>'+a("https://docs.github.com/en/get-started/using-github/hello-world", "GitHub Docs — Hello World")+' — primary beginner reference: repository, branch, commit and pull request.</li>'
+      '<li>'+a("https://github.com/skills/introduction-to-github", "GitHub Skills — Introduction to GitHub")+' — optional real repository exercise; requires GitHub sign-in.</li>'
+      '<li>'+a("https://code.visualstudio.com/docs/setup/copilot/", "Visual Studio Code — Set up GitHub Copilot")+' — optional AI editor reference; account requirements and usage limits apply.</li>'
+      '</ul><p class="understated">The club simulator above runs without registration. The official tutorials describe real services and may require accounts.</p></section>')
     body+='</main>'+footer()+'</body></html>'
-    path=ROOT/'guides/github-ai/index.html';path.parent.mkdir(parents=True,exist_ok=True);path.write_text(body)
+    path=ROOT/'guides/github-ai/index.html' ;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(body)
 
 def render_bibliography():
     groups=[
@@ -395,6 +399,12 @@ def render_bibliography():
             if sid in REGISTRY:
                 name,url=REGISTRY[sid][:2];html+='<li>'+a(url,name)+'</li>'
         html+='</ul></section>'
+    html+=('<section><h2>GitHub, generative AI and introductory software engineering</h2><ul>'
+      '<li>'+a("https://docs.github.com/en/get-started/using-github/hello-world", "GitHub Docs — Hello World")+' — beginner version control (before Module III).</li>'
+      '<li>'+a("https://code.visualstudio.com/docs/setup/copilot/", "VS Code — AI-assisted coding setup")+' — optional account-based reference.</li>'
+      '<li>Dragoș Gavriluț: <em>Agentic AI — Courses 1–3; Labs 1–4; Behind the Scenes</em> (teacher-supplied PDFs). Selected ideas for Week 10 and human-reviewed changes in Week 11; full academic labs are not pupil assignments.</li>'
+      '<li>'+a("https://github.com/UAIC-BSc-ComputerScience/CS2203-SoftwareEngineering/tree/ade24aaa04cfea686fc476387d15320100e4860f/course/eng", "UAIC BSc Software Engineering — English lectures, pinned revision")+' — selected requirements, simple component diagrams and testing concepts for Week 11.</li>'
+      '</ul></section>')
     html+='</main>'+footer()+'</body></html>'
     (ROOT/'resources/index.html').write_text(html)
 

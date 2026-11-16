@@ -1,0 +1,23 @@
+<div class="course-layout"><aside class="course-sidebar"><nav class="toc"><details class="toc-panel" open><summary>Contents</summary><ul><li><a href="#l11-use">1. Define a use case</a></li><li><a href="#l11-flow">2. Follow the pipeline</a></li><li><a href="#l11-code">3. Run and test</a></li><li><a href="#l11-git">4. Save a version</a></li><li><a href="#submission">Submission</a></li></ul></details></nav></aside><article class="course-article">
+<section id="l11-use"><h2>1. State what the program should do</h2><p>A school caretaker wants a monitor that shows a warning when a fictional temperature sensor is disconnected. Write expected outputs for three cases: 17 °C, 21 °C and missing input.</p><details><summary>Check</summary><p>17 °C → HEAT ON; 21 °C → HEAT OFF; missing → CHECK SENSOR. These are rules, not ML predictions.</p></details></section>
+<section id="l11-flow"><h2>2. Follow the components from left to right</h2><div class="engineering-flow"><div><strong>Sensor</strong><small>measurement</small></div><span aria-hidden="true">→</span><div><strong>Check</strong><small>valid?</small></div><span aria-hidden="true">→</span><div><strong>Decide</strong><small>rule</small></div><span aria-hidden="true">→</span><div><strong>Display</strong><small>message</small></div></div>
+<div class="mini-lab" data-g11-pipeline><label>Temperature <input type="range" min="10" max="28" step="1" value="17" data-temperature><output data-temperature-label></output></label><label><input type="checkbox" data-missing> Sensor disconnected</label><div data-pipeline-trace aria-live="polite"></div></div>
+<ol><li>Find the first temperature at which the message becomes HEAT OFF.</li><li>Disconnect the sensor and explain why a real number should no longer reach the controller.</li><li>Name one component to test independently.</li></ol></section>
+<section id="l11-code"><h2>3. Run a small Python program and test it</h2><div class="python-runner"><label for="w11-revised-code">Read → decide → display</label><textarea class="py-source" id="w11-revised-code" rows="15" spellcheck="false">class Sensor:
+    def __init__(self, value): self.value=value
+    def read(self): return self.value
+
+def decide(value):
+    if value is None: return "CHECK SENSOR"
+    return "HEAT ON" if value<19 else "HEAT OFF"
+
+for value in (17,21,None):
+    print(value,"->",decide(Sensor(value).read()))
+assert decide(17)=="HEAT ON"
+assert decide(21)=="HEAT OFF"
+assert decide(None)=="CHECK SENSOR"</textarea><button type="button" class="run-python">Run Python</button><output class="py-output" aria-live="polite">Predict the results and run.</output></div>
+<p><a href="/jupyter/lab/">Open JupyterLite (no account) ↗</a> · <a href="/w11/lab/starter.ipynb" download>Download the Week 11 notebook</a> · <a href="/guides/notebooks/">Notebook guide</a></p><p><strong>Try this:</strong> change the threshold from 19 to 20. Which existing assertions still pass? Add a new test for the boundary.</p></section>
+<section id="l11-git"><h2>4. Review one change and save it</h2><p>Open the <a href="/guides/github-ai/">account-free Git simulation</a>. Edit the miniature program, test it, then commit a meaningful version such as <code>Add missing-sensor warning</code>. Do not create an account unless you want to continue with real GitHub later.</p>
+<details><summary>Research (3p) — optional</summary><p>Write a new component <code>History</code> that remembers the last three fictional readings and prints them. Test that a missing reading is not stored as a real temperature. Explain which existing component needs to know about History, and which should not.</p></details></section>
+<section id="submission"><h2>Submission</h2><p>A notebook with the program, three input/output tests, one before/after code change and an informative commit-message example. No account is required and the submission preparation area does not send files automatically.</p></section>
+<section class="page-bibliography"><h2>Bibliography</h2><ul><li><a href="https://github.com/UAIC-BSc-ComputerScience/CS2203-SoftwareEngineering/blob/ade24aaa04cfea686fc476387d15320100e4860f/course/eng/SE02.pdf" target="_blank" rel="noopener noreferrer">UAIC SE02 — basic requirements and iterative development</a> (teacher excerpt).</li><li><a href="https://github.com/UAIC-BSc-ComputerScience/CS2203-SoftwareEngineering/blob/ade24aaa04cfea686fc476387d15320100e4860f/course/eng/SE06.pdf" target="_blank" rel="noopener noreferrer">UAIC SE06 — testing</a> (teacher excerpt; no JUnit required).</li><li><a href="https://docs.github.com/en/get-started/using-github/hello-world" target="_blank" rel="noopener noreferrer">GitHub Docs — Hello World</a>.</li></ul></section></article></div>

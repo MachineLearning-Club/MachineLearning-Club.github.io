@@ -128,3 +128,14 @@ The project is independently operated by **BOBU DRAGOȘ-ANDREI PERSOANĂ FIZICĂ
 `python3 scripts/generate_curriculum.py` regenerates the core pages and applies the same footer to teacher-authored lessons, the quiz catalogue and the slide landing page. To reapply the footer without regenerating content, run `python3 scripts/apply_site_footer.py`. The Python foundations guide also imports the shared footer directly from its generator.
 
 Browser check against local server on port 8877: `node tests/test_site_footer.js` (homepage, lessons, guides, quiz and slides at mobile, tablet and desktop widths).
+
+## School-level Generative AI and Software Engineering — Weeks 10–11
+
+`data/week1011/` is the source for the eight authored Course, Laboratory, Homework and Advanced pages. `scripts/update_week1011.py` installs these into the existing minimalist page chrome; `scripts/generate_week1011_starters.py` creates one eight-cell, account-free notebook per week. Both are called by `scripts/generate_curriculum.py`. `assets/week1011.js` provides local, deterministic teaching examples (token splitter, invented next-token candidates, two-category recommendation ranking, sensor-to-display pipeline), styled by `assets/week1011.css`. No API keys, accounts, third-party file uploads or live model endpoints are needed.
+
+The following references inform **teacher preparation** but are not pupil requirements or copied to the public repository:
+- Dragoș Gavriluț, *Agentic AI Course 1–3*, *Labs 1–4*, *Lab 1–3 Solutions*, and *Behind the Scenes*. Week 10 extracts the intuition behind tokens, text generation, observed behaviour, fact checking, and human approval. Week 11 uses the source's division of a product idea into verifiable parts and its example of correcting an AI coding agent mid-task.
+- UAIC-BSc-ComputerScience/CS2203-SoftwareEngineering, `course/eng` at `ade24aaa04cfea686fc476387d15320100e4860f`: SE02 requirements, SE03 class diagrams, SE06 unit tests, SE11 usability and quality. The student-facing course uses only a tiny Sensor/Validator/Controller/Display example, simple classes and three assertions; full UML, SOLID, design pattern catalogues, formal Scrum and Java testing frameworks are excluded.
+- GitHub Docs *Hello World* and GitHub Skills *Introduction to GitHub* are linked in `/guides/github-ai/`, with the account-free simulation mandatory and real GitHub optional. VS Code's official Copilot setup is an optional, account-based reference.
+
+Regression: `node tests/test_week1011.js` against the local server on port 8877; the notebooks are executable with standard Python, no third-party libraries. Existing quiz placeholders for Weeks 10–11 are intentionally unchanged until the teacher reviews these lessons.

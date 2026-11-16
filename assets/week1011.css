@@ -1,0 +1,50 @@
+/* School-level Week 10–11 activities, matching the established minimal academic style. */
+.week1011-academic .mini-lab{
+  border-top:1px solid #d2e1ea;border-bottom:1px solid #d2e1ea;
+  padding:16px 0;margin:18px 0 24px;color:#294b62
+}
+.week1011-academic .mini-lab>label,.week1011-academic .mini-lab label{
+  display:flex;align-items:center;gap:10px 15px;margin:10px 0;font-size:.91rem;flex-wrap:wrap
+}
+.week1011-academic .mini-lab input[type=text]{
+  font:inherit;border:1px solid #abc0ce;padding:7px 10px;width:min(420px,100%);min-width:0;color:#203c50
+}
+.week1011-academic .mini-lab input[type=range]{width:min(235px,85vw);accent-color:#527a98}
+.week1011-academic .mini-lab input[type=checkbox]{accent-color:#507d99;min-width:18px;min-height:18px}
+.week1011-academic .mini-lab output{font-variant-numeric:tabular-nums}
+.week1011-academic .token-chips{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0 5px}
+.week1011-academic .token-chips span{display:inline-block;border:1px solid #bed0db;background:#f5f8fa;
+  padding:5px 8px;font:.83rem/1.4 ui-monospace,Consolas,monospace;color:#26485f}
+.week1011-academic .model-stem{font-size:1.02rem;font-style:italic;color:#203f59}
+.week1011-academic .word-options{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
+.week1011-academic .word-options button{font:.91rem Georgia,serif;color:#315c7b;background:white;
+  border:1px solid #aec3d2;padding:8px 12px;cursor:pointer}
+.week1011-academic .word-options button[aria-pressed=true]{background:#e7f0f6;border-color:#557c98}
+.week1011-academic .word-options button:hover,.week1011-academic .word-options button:focus-visible{outline:2px solid #8fb2c7;outline-offset:2px}
+.week1011-academic .feed-bars{margin:16px 0}
+.week1011-academic .feed-line{display:grid;grid-template-columns:75px minmax(0,1fr) 25px;gap:8px;align-items:center;margin:10px 0;font-size:.85rem}
+.week1011-academic .feed-rail{min-width:0;height:16px;background:#edf2f5}
+.week1011-academic .feed-bar{height:100%;background:#84a9bf;transition:width .16s ease}
+.week1011-academic .engineering-flow{display:flex;align-items:center;justify-content:space-between;gap:4px 6px;padding:18px 0;margin:17px 0;flex-wrap:wrap}
+.week1011-academic .engineering-flow>div{border:1px solid #cddbe5;padding:11px 8px;flex:1 1 105px;min-width:0;text-align:center}
+.week1011-academic .engineering-flow strong{display:block;color:#2c5572;font-size:.88rem}
+.week1011-academic .engineering-flow small{display:block;font-size:.72rem;color:#627785;margin-top:4px}
+.week1011-academic .engineering-flow>span{font-size:1.15rem;color:#688ca4}
+.week1011-academic .pipeline-trace{margin:15px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.week1011-academic .pipeline-stage{border-top:2px solid #99b2c2;padding:9px 8px;background:#f7fafb;min-width:0}
+.week1011-academic .pipeline-stage strong{display:block;font-size:.8rem;color:#294d65}
+.week1011-academic .pipeline-stage span{display:block;font-size:.8rem;color:#526a78;margin:6px 0;overflow-wrap:anywhere}
+.week1011-academic .page-bibliography{padding-top:14px;border-top:1px solid #d3e0e8;margin-top:34px}
+.week1011-academic .page-bibliography li{margin-bottom:9px}
+@media(max-width:680px){
+ .week1011-academic .engineering-flow{gap:3px}
+ .week1011-academic .engineering-flow>div{flex-basis:40%}
+ .week1011-academic .pipeline-trace{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .week1011-academic .engineering-flow>span:nth-child(4){display:none}
+}
+@media print{
+ .week1011-academic .mini-lab button,.week1011-academic .mini-lab input{display:none}
+}/* Preserve inline emphasis inside the shared 'Core idea' lead paragraph. */
+.week1011-academic .core-idea p strong{
+ display:inline;font:inherit;font-weight:700;color:inherit;letter-spacing:normal;text-transform:none;margin:0
+}
