@@ -336,11 +336,9 @@ def render_home():
         if first==4:
             result+='<aside class="prerequisite-strip" aria-label="Module II prerequisite"><span class="prerequisite-label">Before Module II</span>'+a('/guides/notebooks/','Python Notebooks · Step-by-step guide')+'</aside>'
         if first==10:
-            result+='<aside class="prerequisite-strip" aria-label="Module III prerequisite"><span class="prerequisite-label">Before Module III</span>'+a('/guides/github-ai/','Git, GitHub & AI Code Editing')+'</aside>'
+            result+='<aside class="prerequisite-strip" aria-label="Module III prerequisites"><span class="prerequisite-label">Before Module III</span><span class="prerequisite-links">'+a('/guides/github-ai/','Git, GitHub & AI Code Editing')+a('/guides/kaggle/','Kaggle Competitions · Step-by-step guide')+'</span></aside>'
         result+='<section class="module" id="module-'+roman.lower()+'"><h2>Module '+roman+' — '+E(name)+'</h2>'
         for n in range(first,last+1):
-            if n==12:
-                result+='<aside class="prerequisite-strip" aria-label="Competition preparation"><span class="prerequisite-label">Before FiiCode</span>'+a('/guides/kaggle/','Kaggle Competitions · Step-by-step guide')+'</aside>'
             w=W[n-1]
             result+='<article class="week"><h3>Week '+str(n)+' — '+E(w["title"])+'</h3>'+tabs(n)+'</article>'
         result+='</section>'
