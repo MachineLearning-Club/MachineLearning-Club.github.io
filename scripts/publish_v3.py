@@ -364,13 +364,19 @@ def guide_start(title,intro):
       '<header class="guide-head"><p>'+a('/','← Machine Learning Club')+'</p><h1>'+E(title)+'</h1><p>'+E(intro)+'</p></header><main class="guide">')
 
 def render_guides():
-    body=guide_start("How to use a Python notebook","A short, accountless start before Module II.")
-    body+='<section><h2>1. What is a .ipynb file?</h2><p>It is a notebook containing text, executable code cells and saved outputs. Each cell is a small experiment, not a separate program you must install.</p><pre><code>temperature = 18\nprint(temperature + 2)</code></pre><p>Predict the result (20), then run the cell.</p></section>'
-    body+='<section><h2>2. Open an account-free editor</h2><ol><li>'+a('https://jupyterlite.github.io/demo/lab/','Open JupyterLite')+' in a recent browser.</li><li>Wait for the notebook environment to load. No account is required.</li><li>Download the starter <code>.ipynb</code> from your week’s Laboratory page.</li><li>Upload or drag the notebook into the JupyterLite file browser, then open it.</li></ol><p>JupyterLite stores files in this browser; a different device will not automatically have them.</p></section>'
-    body+='<section><h2>3. Run and change cells</h2><ol><li>Click the first code cell and press <kbd>Shift</kbd> + <kbd>Enter</kbd>.</li><li>Read its output before editing anything.</li><li>Change one number, run the cell again and compare.</li><li>If a cell uses a variable from an earlier cell, run the earlier cell first.</li></ol><details><summary>Why does it say NameError?</summary><p>The variable may not yet exist in this running kernel. Restart and run the cells from the top in order.</p></details></section>'
-    body+='<section><h2>4. Save and submit</h2><ol><li>Use JupyterLite’s download option to save the changed notebook to your computer.</li><li>Check that the file still ends with <code>.ipynb</code>.</li><li>Use the submission area on the Laboratory page to prepare a named file.</li><li>Upload it only to the teacher-approved collection location once announced.</li></ol><p><strong>Optional:</strong> '+a('https://colab.research.google.com/','Google Colab')+' requires a Google account to execute; it is not the club default.</p></section>'
+    # The Module II notebook prerequisite uses actual screenshots captured from
+    # our live JupyterLite.  Reuse the GitHub guide's minimalist sticky TOC.
+    body=guide_start("How to use a Python notebook",
+                     "From prepared examples to editable Python experiments — no account needed.")
+    body=body.replace('<main class="guide">','<main class="guide github-guide notebook-guide">',1)
+    body=body.replace('</head>',
+          '<link rel="stylesheet" href="/assets/github-guide.css">'
+          '<link rel="stylesheet" href="/assets/notebook-guide.css"></head>',1)
+    body+=(ROOT/'data/guides/notebooks.html').read_text(encoding='utf8')
     body+='</main>'+footer()+'</body></html>'
-    path=ROOT/'guides/notebooks/index.html';path.parent.mkdir(parents=True,exist_ok=True);path.write_text(body)
+    path=ROOT/'guides/notebooks/index.html'
+    path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(body,encoding='utf8')
     # The GitHub prerequisite is a teacher-authored, screenshot-led project handbook.
     # Keep its contents separate from the generic guide scaffold for maintenance.
     body=guide_start("Git, GitHub and AI-assisted code editing",
@@ -406,6 +412,12 @@ def render_bibliography():
       '<li>Dragoș Gavriluț: <em>Agentic AI — Courses 1–3; Labs 1–4; Behind the Scenes</em> (teacher-supplied PDFs). Selected ideas for Week 10 and human-reviewed changes in Week 11; full academic labs are not pupil assignments.</li>'
       '<li>'+a("https://github.com/UAIC-BSc-ComputerScience/CS2203-SoftwareEngineering/tree/ade24aaa04cfea686fc476387d15320100e4860f/course/eng", "UAIC BSc Software Engineering — English lectures, pinned revision")+' — selected requirements, simple component diagrams and testing concepts for Week 11.</li>'
       '</ul></section>')
+    html+=('<section><h2>Notebook interfaces and browser-based experiments</h2><ul>'
+      '<li>'+a("https://jupyterlite.readthedocs.io/en/stable/quickstart/using.html", "JupyterLite — Using an existing deployment")+' — opening and uploading notebook files, local browser storage.</li>'
+      '<li>'+a("https://jupyterlab.readthedocs.io/en/stable/user/notebook.html", "JupyterLab — Notebooks")+' — cell types, editing, execution and cell outputs.</li>'
+      '<li>'+a("https://jupyterlab.readthedocs.io/en/stable/user/interface.html", "JupyterLab — Interface")+' — file browser, editor, notebook toolbar.</li>'
+      '<li>'+a("https://jupyterlite.readthedocs.io/en/latest/howto/content/readonly.html", "JupyterLite — Read-only content")+' — saving editable copies when an original notebook is read-only.</li>'
+      '</ul><p>'+a('/guides/notebooks/','See the account-free notebook guide with screenshots')+'</p></section>')
     html+='</main>'+footer()+'</body></html>'
     (ROOT/'resources/index.html').write_text(html)
 

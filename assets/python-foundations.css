@@ -75,3 +75,38 @@
  .foundation-lesson{break-inside:avoid-page}
  .foundations-toc{display:none}
 }
+
+/* Same sticky left contents navigation as the GitHub prerequisite handbook. */
+body:has(.foundations-page){max-width:1180px;margin-top:35px}
+.foundations-head{max-width:960px;margin:0 0 28px}
+.foundations-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:46px;align-items:start}
+.foundations-layout .foundations-toc{position:sticky;top:15px;max-height:calc(100vh - 30px);overflow:auto;min-width:0;padding:13px 0;margin:0;border-top:1px solid #cddbe4;border-bottom:1px solid #cddbe4}
+.foundations-toc-details>summary{cursor:pointer;color:#263f53;font-weight:600;font-size:.88rem;list-style:none;margin:0 0 14px}
+.foundations-toc-details>summary::-webkit-details-marker{display:none}
+.foundations-toc-details>summary::after{content:' ▾';color:#7990a0;font-weight:400}
+.foundations-toc-details:not([open])>summary{margin:0}
+.foundations-toc-group{margin:0 0 20px}
+.foundations-toc-group h3{font-size:.78rem;color:#5c7383;margin:0 0 7px;line-height:1.4}
+.foundations-toc-group ol{display:block;list-style:none;gap:0;margin:0;padding:0}
+.foundations-toc-group li{font-size:.83rem;line-height:1.45;margin:0;padding:0}
+.foundations-toc-group a{display:block;padding:7px 6px;color:#49667d;text-decoration:none;border-left:2px solid transparent}
+.foundations-toc-group a:hover,.foundations-toc-group a:focus-visible,.foundations-toc-group a[aria-current="location"]{background:#f3f7f9;color:#164866;border-left-color:#507d9d}
+.foundations-sections{min-width:0}
+.foundation-lesson{scroll-margin-top:22px}
+.foundations-page>.foundations-next{max-width:870px;margin:38px 0 45px auto}
+@media(max-width:800px){
+ body:has(.foundations-page){max-width:850px;margin:24px auto}
+ .foundations-layout{display:block}
+ .foundations-layout .foundations-toc{position:static;max-height:none;overflow:visible;margin:0 0 30px}
+ .foundations-toc-list{max-height:52vh;overflow:auto}
+ .foundations-toc-group ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px 10px}
+ .foundations-page>.foundations-next{margin:38px 0 45px}
+}
+@media(max-width:480px){
+ .foundations-toc-group ol{grid-template-columns:1fr}
+ .foundations-toc-group a{font-size:.86rem}
+}
+@media print{
+ .foundations-layout{display:block}
+ .foundations-layout .foundations-toc{display:none}
+}

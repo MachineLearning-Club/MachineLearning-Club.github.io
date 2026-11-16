@@ -42,6 +42,7 @@ def page() -> str:
         '<link rel="stylesheet" href="/assets/v3.css">',
         '<link rel="stylesheet" href="/assets/v4.css">',
         '<link rel="stylesheet" href="/assets/python-foundations.css">',
+        '<script defer src="/assets/python-foundations-nav.js"></script>',
         '<link rel="stylesheet" href="/assets/site-footer.css">',
         '<script defer src="/assets/academic-ui.js"></script></head><body>',
         '<a class="foundations-skip" href="#lessons">Skip to lessons</a>',
@@ -51,8 +52,9 @@ def page() -> str:
         '<h1>Python Programming Foundations</h1>',
         '</header>',
         '<main class="foundations-page">',
+        '<div class="foundations-layout">',
         '<nav class="foundations-toc" aria-label="Python foundations contents">',
-        '<h2>Contents</h2>',
+        '<details class="foundations-toc-details" open><summary>Contents</summary><div class="foundations-toc-list">',
     ]
     for group in groups:
         group_lessons = [(i, l) for i, l in enumerate(lessons, 1) if l["group"] == group]
@@ -60,7 +62,7 @@ def page() -> str:
         for i, lesson in group_lessons:
             html_parts.append(f'<li><a href="#topic-{i:02d}">{e(lesson["title"])}</a></li>')
         html_parts.append('</ol></div>')
-    html_parts.extend(['</nav>', '<div id="lessons" class="foundations-sections">'])
+    html_parts.extend(['</div></details></nav>', '<div id="lessons" class="foundations-sections">'])
     for group in groups:
         group_lessons = [(i,l) for i,l in enumerate(lessons,1) if l["group"] == group]
         name_id = f"group-{groups.index(group)+1}"
@@ -106,7 +108,7 @@ def page() -> str:
             html_parts.append('</div></details>')
         html_parts.append('</section>')
     html_parts.extend([
-        '</div><section class="foundations-next"><h2>What comes next?</h2>',
+        '</div></div><section class="foundations-next"><h2>What comes next?</h2>',
         '<p>Once you can work with conditions, loops, functions and lists, begin&nbsp;',
         '<a href="/w1/course/">Week 1 — What Is AI? Rules and Learning</a>. '
         'You can revisit this guide whenever an algorithm or Python concept needs a refresher.</p>',
