@@ -26,10 +26,10 @@ for week,title in [
   main+=fragment+default_end+'</main>'
   page,num=re.subn(r'<main\b[^>]*>.*?</main>',lambda _:main,page,count=1,flags=re.S)
   assert num==1,(week,kind)
-  for css in ('course-interactive.css','week23.css','learning-transfers.css','visual-discovery.css'):
+  for css in ('course-interactive.css','week23.css','learning-transfers.css','visual-discovery.css') + (('week2-probability-studio.css',) if week==2 and kind=='course' else ()):
    tag='<link rel="stylesheet" href="/assets/'+css+'">'
    if tag not in page:page=page.replace('</head>',tag+'</head>',1)
-  for js in ('week23-interactive.js','visual-discovery.js'):
+  for js in ('week23-interactive.js','visual-discovery.js') + (('week2-probability-studio.js',) if week==2 and kind=='course' else ()):
    tag='<script defer src="/assets/'+js+'"></script>'
    if tag not in page:page=page.replace('</head>',tag+'</head>',1)
   file.write_text(page,encoding='utf-8')

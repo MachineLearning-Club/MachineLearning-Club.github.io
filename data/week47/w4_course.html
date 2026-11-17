@@ -18,11 +18,38 @@
 <section class="chapter-section" id="r-knn"><h2>4.4. One new idea: nearest-neighbour voting</h2><p><strong>KNN is a short preview, not a third full lesson.</strong> Suppose six known players are points, with three class A examples <code>(1,1), (1,2), (2,1)</code> and three class B examples <code>(4,4), (4,5), (5,4)</code>. We want a label for a new player <code>Q=(2,2)</code>.</p>
 <div class="worked"><h3>Worked prediction with K=3</h3><ol><li>Squared distances to A points: <code>2, 1, 1</code>.</li><li>Squared distances to B points: <code>8, 13, 13</code>.</li><li>The three nearest records are all class A: <code>(1,2), (2,1), (1,1)</code>.</li><li>Majority vote predicts <strong>A</strong> for Q. Unlike K-means, the neighbours have known labels.</li></ol></div>
 <div data-revision-knn class="revision-knn"><label for="rev-k">Try a different number of neighbours</label><select id="rev-k" data-revision-k><option value="1">K = 1</option><option value="3" selected>K = 3</option><option value="5">K = 5</option></select><div data-revision-results aria-live="polite"></div></div>
+<div class="revision-prob-studio" data-knn-vote-panel>
+<span class="revision-prob-kicker">Evidence studio · What does K out of K mean?</span>
+<h3>Why a unanimous vote is not a guarantee</h3>
+<p>Move the new point Q, and change K in the experiment above. We will display <strong>which labelled neighbours voted</strong> and how their votes add up. Their vote fraction is <em>not automatically a calibrated probability</em> of a correct prediction.</p>
+<div class="rev-votes-list" data-rev-neighbour-votes role="list" aria-label="Labels of the selected nearest neighbours"></div>
+<div class="rev-vote-count"><strong data-rev-vote-result>3 A, 0 B</strong><span data-rev-vote-fraction>3/3 votes for A</span></div>
+<div class="rev-vote-stacked" role="img" aria-label="Proportions of nearest neighbours belonging to class A and B"><span data-rev-vote-a></span><span data-rev-vote-b></span></div>
+<p data-rev-vote-explain class="rev-prob-feedback" role="status" aria-live="polite"></p>
+<details class="rev-prob-explain"><summary>Why does 3/3 not mean a 100% chance of being correct?</summary><p>The neighbours are a small selected subset of a fictional training set. We need a sufficiently representative, separate labelled evaluation set to measure prediction reliability. Distance, sample quality and the choice of K matter; a vote ratio by itself is not a measured probability that a future label will match.</p></details>
+</div>
 <p><strong>Potential confusion:</strong> the letter K occurs in both names, but K-means uses K <em>groups</em> while KNN uses K <em>neighbours</em>. That distinction matters more than the notation.</p></section>
 <section class="chapter-section" id="r-evaluate"><h2>4.5. Check your model fairly</h2><p>Training accuracy asks how well a model matches examples already used to construct it. A separate test set asks how well it predicts records it has not used to learn. Do not allow test answers to influence training.</p>
 <div class="worked"><h3>Compute a small confusion matrix</h3><p>A toy model is evaluated on six previously withheld cases. The actual/predicted labels are:</p><table class="teaching-data"><tr><th>Case</th><th>Actual</th><th>Predicted</th></tr><tr><td>1</td><td>yes</td><td>yes</td></tr><tr><td>2</td><td>yes</td><td>yes</td></tr><tr><td>3</td><td>yes</td><td>no</td></tr><tr><td>4</td><td>no</td><td>no</td></tr><tr><td>5</td><td>no</td><td>no</td></tr><tr><td>6</td><td>no</td><td>yes</td></tr></table>
 <p>Taking <code>yes</code> as the positive class: TP=2, TN=2, FP=1, FN=1. Accuracy = <code>(TP+TN)/6 = 4/6 ≈ 66.7%</code>. A high training score could coexist with a lower test score.</p></div>
 <div class="revision-knn" data-confusion-demo><h3>Adjust two mistake counts</h3><label>False positives <input type="range" min="0" max="3" value="1" data-fp></label><label>False negatives <input type="range" min="0" max="3" value="1" data-fn></label><p data-confusion-output aria-live="polite"></p></div>
+<div class="revision-prob-studio" data-confusion-evaluation-panel>
+<span class="revision-prob-kicker">Probability and evaluation · Conditions go in two directions</span>
+<h3>Precision and recall ask different questions</h3>
+<p>This is a <strong>synthetic six-case test exercise</strong>, not a model's measured performance in a real school. Change the false-positive and false-negative sliders above, and compare the proportions in the confusion table.</p>
+<div class="rev-confusion-table-wrap"><table class="rev-confusion-table">
+<caption>Actual labels in rows, predicted labels in columns</caption>
+<thead><tr><th scope="col">Actual / predicted</th><th scope="col">YES</th><th scope="col">NO</th></tr></thead>
+<tbody>
+<tr><th scope="row">YES</th><td class="rev-confusion-correct"><strong data-rev-tp>2</strong><small>TP · correct YES</small></td><td class="rev-confusion-mistake"><strong data-rev-fn>1</strong><small>FN · missed YES</small></td></tr>
+<tr><th scope="row">NO</th><td class="rev-confusion-mistake"><strong data-rev-fp>1</strong><small>FP · false alarm</small></td><td class="rev-confusion-correct"><strong data-rev-tn>2</strong><small>TN · correct NO</small></td></tr>
+</tbody></table></div>
+<div class="rev-confusion-metrics">
+<div><span>Precision · P(actual YES | predicted YES)</span><strong data-rev-precision>2/3 = 66.7%</strong><small data-rev-precision-note>Of all YES predictions, how many were correct?</small></div>
+<div><span>Recall · P(predicted YES | actual YES)</span><strong data-rev-recall>2/3 = 66.7%</strong><small>Of all actual YES cases, how many were found?</small></div>
+</div>
+<p class="rev-prob-feedback"><strong>Week 1 connection:</strong> the event after the vertical bar is the condition we know. Reversing the condition gives a different question, just as with Bayes' theorem. Precision and recall are conditional proportions <em>in this test set</em>, not proof of future reliability.</p>
+</div>
 <details><summary>Why should this tiny percentage not be reported as a reliable real-world accuracy?</summary><p>Six test examples are far too few to establish generalisation. The sample is fictional, and we have not checked whether it represents other days or students. The fraction is for practicing the calculation only.</p></details></section>
 <section class="chapter-section" id="r-exit"><h2>Revision checkpoint</h2><ol><li>For each of three proposed tasks, state whether labels are given and select the appropriate method.</li><li>Recalculate one ID3 root gain and trace a prediction.</li><li>Calculate one K-means assignment and one centroid update.</li><li>Explain in one sentence why K in KNN does not mean the same thing as K in K-means.</li><li>From a six-row test result, identify TP, FP, TN, FN and calculate accuracy.</li></ol><p><a href="/w4/lab/">Practice these comparisons in the laboratory →</a></p></section>
 <section class="chapter-section learning-transfer" id="learning-transfer-w4"><p class="transfer-kicker">Concept transfer · Week 4 to Week 5</p><h2>4 → 5 · Decide what your features actually are</h2>

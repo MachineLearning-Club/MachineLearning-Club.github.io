@@ -1,0 +1,200 @@
+/* Week 2 probability → ID3: a careful, visual accounting of information gain. */
+.week23-academic .id3-probability-studio{
+ --studio-yes:#327a5d;--studio-no:#b66b4c;--studio-ink:#285672;
+ border:1px solid #cddfe8;border-radius:12px;
+ background:linear-gradient(150deg,#f3f9fc 0%,#fff 63%);
+ padding:clamp(15px,2.6vw,24px);
+ margin:22px 0 32px;
+ box-shadow:0 12px 27px -24px #24516d;
+}
+.week23-academic .id3-prob-kicker,
+.week23-academic .id3-prob-stage{
+ display:block;font:700 .73rem/1.4 system-ui,-apple-system,sans-serif;
+ color:#426e89;letter-spacing:.065em;text-transform:uppercase;
+ margin-bottom:8px;
+}
+.week23-academic .id3-probability-studio h3{
+ font-size:1.19rem;line-height:1.38;color:#234f6b;margin:3px 0 12px;
+}
+.week23-academic .id3-probability-studio h4{
+ font-size:1.02rem;color:#315a76;margin:2px 0 9px;
+}
+.week23-academic .id3-probability-studio p{
+ font-size:.9rem;line-height:1.58;margin:9px 0;
+}
+.week23-academic .id3-prob-overview{
+ display:grid;grid-template-columns:minmax(0,1.18fr) auto minmax(0,1fr);
+ gap:16px;align-items:stretch;margin:19px 0 21px;
+}
+.week23-academic .id3-prob-before,
+.week23-academic .id3-prob-after{
+ border:1px solid #d6e4ed;background:#fff;border-radius:9px;
+ padding:15px 17px;min-width:0;
+}
+.week23-academic .id3-prob-before>strong,.week23-academic .id3-prob-after>strong{
+ color:#285c7c;font-size:1.02rem;display:block;
+}
+.week23-academic .id3-prob-direction{font-size:1.7rem;align-self:center;color:#6d93a8}
+.week23-academic .id3-prob-cases{
+ display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;
+ margin:14px 0;max-width:365px;
+}
+.week23-academic .id3-prob-tile{
+ display:grid;place-items:center;aspect-ratio:1.3/1;border:1px solid transparent;
+ border-radius:5px;font:bold 1.12rem system-ui,-apple-system,sans-serif;
+}
+.week23-academic .id3-prob-tile.is-yes{
+ background:#dfeee5;border-color:#bcdccb;color:#226b4d;
+}
+.week23-academic .id3-prob-tile.is-no{
+ background:#fae9e2;border-color:#edd0c2;color:#a05736;
+}
+.week23-academic .id3-prob-measure{
+ display:flex;gap:8px 13px;justify-content:space-between;align-items:center;
+ flex-wrap:wrap;border-top:1px solid #e5edf1;padding-top:10px;
+ font-size:.82rem;color:#486c81;
+}
+.week23-academic .id3-prob-measure>strong{color:#245c7a;font-size:1rem;font-variant-numeric:tabular-nums}
+.week23-academic .id3-prob-feature-select{
+ display:flex;gap:6px;flex-wrap:wrap;margin:15px 0 4px;
+}
+.week23-academic .id3-prob-feature-select button,
+.week23-academic .id3-prob-local-controls button{
+ cursor:pointer;border:1px solid #9ebed0;border-radius:6px;
+ background:#fff;color:#315e7b;min-height:40px;padding:8px 12px;
+ font:600 .84rem system-ui,-apple-system,sans-serif;
+}
+.week23-academic .id3-prob-feature-select button[aria-pressed=true],
+.week23-academic .id3-prob-local-controls button[aria-pressed=true]{
+ border-color:#417c9d;background:#e2f1f8;color:#1b5474;
+}
+.week23-academic .id3-probability-studio button:focus-visible{
+ outline:3px solid #83b7d0;outline-offset:2px;
+}
+.week23-academic .id3-prob-branches,
+.week23-academic .id3-prob-local-grid{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;
+ margin:13px 0 20px;
+}
+.week23-academic .id3-prob-branch{
+ min-width:0;border:1px solid #dbe7ed;border-radius:8px;
+ padding:13px 12px;background:#fff;
+ display:flex;flex-direction:column;
+}
+.week23-academic .id3-prob-branch-head{
+ display:flex;gap:6px 10px;justify-content:space-between;align-items:baseline;flex-wrap:wrap;
+ color:#295975;
+}
+.week23-academic .id3-prob-branch-head>strong{font-size:.93rem}
+.week23-academic .id3-prob-size{font-size:.74rem;color:#5a7180;font-variant-numeric:tabular-nums}
+.week23-academic .id3-prob-pair-bar{display:flex;height:23px;margin:12px 0 5px;background:#e8f0f4;border-radius:4px;overflow:hidden}
+.week23-academic .id3-prob-yesbar{background:#5d9e7d}
+.week23-academic .id3-prob-nobar{background:#c78b6e}
+.week23-academic .id3-prob-branch-ratio{
+ color:#2f6179;font:600 .79rem/1.5 system-ui,-apple-system,sans-serif!important;
+ overflow-wrap:anywhere;
+}
+.week23-academic .id3-prob-branch-stats{
+ display:grid;gap:5px;border-top:1px solid #e8eef2;
+ padding-top:9px;margin:7px 0;color:#426479;
+ font:.78rem/1.5 system-ui,-apple-system,sans-serif;
+ font-variant-numeric:tabular-nums;
+}
+.week23-academic .id3-prob-branch>small{
+ color:#657d8b;font-size:.75rem;line-height:1.45;margin-top:auto;
+}
+.week23-academic .id3-prob-equation{
+ display:grid;grid-template-columns:minmax(0,1fr) 18px minmax(0,1fr) 18px minmax(0,1.1fr);
+ gap:8px;align-items:center;padding:16px;
+ border:1px solid #cfdfe8;border-radius:8px;background:#f5fafc;
+}
+.week23-academic .id3-prob-equation>div{min-width:0}
+.week23-academic .id3-prob-equation small{
+ display:block;color:#52758b;font:650 .65rem/1.45 system-ui,sans-serif;letter-spacing:.035em;
+}
+.week23-academic .id3-prob-equation strong{
+ display:block;font:700 clamp(.96rem,2.3vw,1.31rem)/1.5 system-ui,sans-serif;
+ color:#2b607f;font-variant-numeric:tabular-nums;
+}
+.week23-academic .id3-prob-equation>span{color:#64889c;text-align:center;font-size:1.1rem}
+.week23-academic .id3-prob-outcome{
+ border-left:2px solid #6caa8b;padding-left:11px;
+}
+.week23-academic .id3-prob-outcome strong{color:#287455}
+.week23-academic .id3-prob-gauge{
+ height:24px;display:flex;overflow:hidden;
+ margin:15px 0 7px;border-radius:5px;background:#e6edf2;
+}
+.week23-academic .id3-prob-gauge span{display:block;height:100%;transition:width .24s ease}
+.week23-academic [data-id3-prob-remaining]{background:#7699b0}
+.week23-academic [data-id3-prob-learned]{background:#62a785}
+.week23-academic .id3-prob-legend{
+ display:flex;gap:10px 19px;flex-wrap:wrap;color:#587489;
+ font-size:.78rem;margin:5px 0 13px;
+}
+.week23-academic .id3-prob-legend span{display:flex;gap:6px;align-items:center}
+.week23-academic .id3-prob-legend i{display:block;width:13px;height:13px;border-radius:2px;background:#7699b0}
+.week23-academic .id3-prob-legend i.learned{background:#62a785}
+.week23-academic .id3-prob-conclusion{
+ color:#2e617e;background:#edf6fa;padding:12px 14px;
+ border-left:3px solid #83afc4;border-radius:4px;
+}
+.week23-academic .id3-prob-gain-ranking{
+ margin:20px 0 16px;padding:15px;background:#fff;border:1px solid #e0eaf0;border-radius:8px;
+}
+.week23-academic .id3-prob-ranks{display:grid;gap:8px}
+.week23-academic .id3-prob-rank{
+ cursor:pointer;display:grid;grid-template-columns:minmax(70px,110px) minmax(30px,1fr) 84px;
+ gap:9px;align-items:center;text-align:left;border:1px solid transparent;
+ border-radius:5px;padding:10px 8px;background:#f8fafc;
+ color:#41647b;font:600 .8rem system-ui,sans-serif;min-width:0;
+}
+.week23-academic .id3-prob-rank:hover{border-color:#aac8d8}
+.week23-academic .id3-prob-rank[aria-pressed=true]{background:#e7f2f8;border-color:#8fb9ce}
+.week23-academic .id3-prob-rank-bar{
+ height:13px;border-radius:10px;background:#e1eaf0;overflow:hidden;
+}
+.week23-academic .id3-prob-rank-bar i{display:block;height:100%;border-radius:10px;background:#5d9c80}
+.week23-academic .id3-prob-rank>strong{text-align:right;font-variant-numeric:tabular-nums}
+.week23-academic .id3-prob-maths{
+ padding:10px 14px;margin:17px 0;border:1px solid #d7e5ec;
+ border-radius:7px;background:#f8fafc;
+}
+.week23-academic .id3-prob-maths>summary{cursor:pointer;font-weight:650;color:#315e7b}
+.week23-academic .id3-prob-maths p{overflow-wrap:anywhere}
+.week23-academic .id3-prob-next{
+ padding:18px;margin:23px 0;
+ border:1px solid #c8dfe9;border-radius:9px;background:#f5fafc;
+}
+.week23-academic .id3-prob-local-controls{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 8px}
+.week23-academic .id3-prob-local-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.week23-academic .id3-prob-local-score{font-weight:700;color:#255e7b}
+.week23-academic .id3-prob-local-message{border-left:3px solid #79a98e;padding:7px 10px;background:#fff}
+.week23-academic .id3-prob-tip{font-size:.84rem!important;color:#486c80!important}
+.week23-academic .id3-prob-caveat{
+ margin:17px 0 5px!important;padding:13px 16px;
+ border-left:3px solid #bca27b;background:#fffaf2;
+ color:#594e42;font-size:.86rem!important;
+}
+@media(max-width:760px){
+ .week23-academic .id3-prob-overview{grid-template-columns:1fr;gap:9px}
+ .week23-academic .id3-prob-direction{transform:rotate(90deg);text-align:center}
+ .week23-academic .id3-prob-branches{grid-template-columns:1fr}
+ .week23-academic .id3-prob-local-grid{grid-template-columns:1fr}
+ .week23-academic .id3-prob-before,.week23-academic .id3-prob-after{padding:13px}
+}
+@media(max-width:440px){
+ .week23-academic .id3-prob-equation{padding:9px;gap:4px}
+ .week23-academic .id3-prob-equation small{font-size:.57rem}
+ .week23-academic .id3-prob-equation strong{font-size:.83rem}
+ .week23-academic .id3-prob-rank{grid-template-columns:78px minmax(20px,1fr) 64px;gap:5px;font-size:.74rem}
+ .week23-academic .id3-prob-rank>strong{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .week23-academic .id3-prob-gauge span{transition:none}
+}
+@media print{
+ .week23-academic .id3-probability-studio{background:#fff;box-shadow:none}
+ .week23-academic .id3-prob-feature-select,.week23-academic .id3-prob-local-controls{display:none}
+ .week23-academic .id3-probability-studio .id3-prob-gauge span{print-color-adjust:exact}
+}

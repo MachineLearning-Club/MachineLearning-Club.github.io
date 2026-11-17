@@ -40,10 +40,10 @@ for week,title in TITLES.items():
   old=path.read_text(encoding='utf-8')
   new,count=re.subn(r'<main\b[^>]*>.*?</main>',lambda _:main,old,count=1,flags=re.S)
   assert count==1,(week,kind)
-  for css in ('course-interactive.css','week23.css','week47.css','learning-transfers.css'):
+  for css in ('course-interactive.css','week23.css','week47.css','learning-transfers.css') + (('week4-probability-evidence.css',) if week==4 and kind=='course' else ()):
    tag=f'<link rel="stylesheet" href="/assets/{css}">'
    if tag not in new:new=new.replace('</head>',tag+'</head>',1)
-  for js in ('week23-interactive.js','week47-interactive.js'):
+  for js in ('week23-interactive.js','week47-interactive.js') + (('week4-probability-evidence.js',) if week==4 and kind=='course' else ()):
    tag=f'<script defer src="/assets/{js}"></script>'
    if tag not in new:new=new.replace('</head>',tag+'</head>',1)
   path.write_text(new,encoding='utf-8')

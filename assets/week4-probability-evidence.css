@@ -1,0 +1,74 @@
+/* Week 4: follow the evidence without conflating voting and probability. */
+.week47-academic .revision-prob-studio{
+ margin:20px 0 28px;padding:clamp(14px,2.5vw,22px);
+ border:1px solid #d5e3ec;border-radius:10px;
+ background:linear-gradient(160deg,#f4f9fc,#fff 75%);
+}
+.week47-academic .revision-prob-kicker{
+ display:block;font:700 .75rem/1.45 system-ui,sans-serif;
+ color:#416d87;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px;
+}
+.week47-academic .revision-prob-studio h3{
+ color:#285570;font-size:1.16rem;margin:3px 0 10px;
+}
+.week47-academic .revision-prob-studio>p{
+ font-size:.88rem;line-height:1.58;color:#456779;
+}
+.week47-academic .rev-votes-list{display:flex;flex-wrap:wrap;gap:8px;margin:19px 0 14px}
+.week47-academic .rev-neighbour{
+ min-width:0;display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+ padding:9px 11px;border-radius:7px;border:1px solid #d5e3ea;background:#fff;
+ font:600 .82rem system-ui,sans-serif;
+}
+.week47-academic .rev-neighbour.is-a{border-color:#c4d9e8}
+.week47-academic .rev-neighbour.is-b{border-color:#e9d5c2}
+.week47-academic .rev-neighbour-class{
+ display:grid;place-items:center;border-radius:50%;width:27px;height:27px;
+ color:#fff;background:#5484a8;font-weight:700;
+}
+.week47-academic .rev-neighbour.is-b .rev-neighbour-class{background:#c18a60}
+.week47-academic .rev-neighbour-name{color:#315d78}
+.week47-academic .rev-neighbour-distance{font-size:.75rem;font-weight:400;color:#637f8e}
+.week47-academic .rev-vote-count{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:baseline;gap:6px 15px;margin:7px 0}
+.week47-academic .rev-vote-count strong{color:#2b5a79;font-size:1.12rem}
+.week47-academic .rev-vote-count span{font-size:.85rem;color:#476f85}
+.week47-academic .rev-vote-stacked{display:flex;height:24px;overflow:hidden;border-radius:5px;background:#e5ebf1}
+.week47-academic .rev-vote-stacked>span{display:block;min-width:0;transition:width .2s ease}
+.week47-academic [data-rev-vote-a]{background:#5484a8}
+.week47-academic [data-rev-vote-b]{background:#c18a60}
+.week47-academic .rev-prob-feedback{
+ border-left:3px solid #92b1c4;background:#f1f7fa;
+ padding:11px 14px;margin:15px 0 8px;font-size:.87rem;
+ color:#486879;line-height:1.6;
+}
+.week47-academic .rev-prob-explain{margin-top:15px;border-top:1px solid #d8e5ed;padding-top:10px}
+.week47-academic .rev-prob-explain summary{cursor:pointer;font-weight:600;color:#305f7b}
+.week47-academic .rev-prob-explain p{font-size:.84rem;line-height:1.55}
+.week47-academic .rev-confusion-table-wrap{overflow-x:auto;max-width:100%;margin:15px 0}
+.week47-academic .rev-confusion-table{width:100%;min-width:300px;border-collapse:separate;border-spacing:5px}
+.week47-academic .rev-confusion-table caption{text-align:left;color:#587587;font-size:.79rem;margin:0 0 8px}
+.week47-academic .rev-confusion-table th{color:#385d75;font-size:.82rem;text-align:center}
+.week47-academic .rev-confusion-table td{width:38%;text-align:center;border-radius:6px;padding:13px 8px;border:1px solid transparent}
+.week47-academic .rev-confusion-table td strong{
+ display:block;font:700 1.55rem/1.2 system-ui,sans-serif;
+}
+.week47-academic .rev-confusion-table td small{
+ display:block;font-size:.72rem;line-height:1.4;margin-top:7px;
+}
+.week47-academic .rev-confusion-correct{background:#e5f3eb;border-color:#bfdfcc!important;color:#276648}
+.week47-academic .rev-confusion-mistake{background:#faf0e8;border-color:#edd5c6!important;color:#995a39}
+.week47-academic .rev-confusion-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.week47-academic .rev-confusion-metrics>div{min-width:0;border:1px solid #d8e5ee;background:#fff;padding:14px;border-radius:7px}
+.week47-academic .rev-confusion-metrics span{font-size:.82rem;color:#436982;display:block}
+.week47-academic .rev-confusion-metrics strong{
+ font:700 clamp(1rem,2.3vw,1.3rem)/1.5 system-ui,sans-serif;
+ display:block;color:#245877;margin:9px 0;font-variant-numeric:tabular-nums;
+}
+.week47-academic .rev-confusion-metrics small{font-size:.78rem;line-height:1.5;color:#587689;display:block}
+@media(max-width:680px){
+ .week47-academic .rev-confusion-metrics{grid-template-columns:1fr}
+ .week47-academic .rev-confusion-table{min-width:0}
+ .week47-academic .rev-confusion-table td{padding:10px 4px}
+}
+@media(prefers-reduced-motion:reduce){.week47-academic .rev-vote-stacked>span{transition:none}}
+@media print{.week47-academic .revision-prob-studio{box-shadow:none;background:#fff;break-inside:avoid}}

@@ -31,6 +31,9 @@ for(const root of all('[data-revision-knn]')){
   }
   s+='<circle cx="'+px(x)+'" cy="'+py(y)+'" r="13" fill="#fff" stroke="#222" stroke-width="3"/><text x="'+(px(x)+17)+'" y="'+(py(y)+18)+'" font-size="15">Q</text>';
   makeSvg(img,s);
+  const evidence={query:{x,y},k,neighbours:near.map(p=>({name:p.name,cls:p.cls,d2:p.d2})),votes,prediction:choice};
+  root.dataset.knnEvidence=JSON.stringify(evidence);
+  root.dispatchEvent(new CustomEvent('mlclub:knn-update',{detail:evidence}));
   out.innerHTML='<p>Q = ('+fmt(x,1)+', '+fmt(y,1)+') · nearest '+k+' labels: <strong>'+near.map(p=>p.cls).join(', ')+'</strong> · votes A='+votes.A+', B='+votes.B+' · prediction: <strong>'+choice+'</strong></p>'+
    '<p class="understated">Sorted squared distances: '+ranked.map(p=>p.name+': '+fmt(p.d2,2)).join(' · ')+'</p>';
  }
@@ -41,6 +44,9 @@ for(const root of all('[data-confusion-demo]')){
  const fp=one('[data-fp]',root),fn=one('[data-fn]',root),out=one('[data-confusion-output]',root);
  if(!fp||!fn||!out)continue;
  function render(){const Fp=+fp.value,Fn=+fn.value,Tp=3-Fn,Tn=3-Fp,accuracy=(Tp+Tn)/6;
+  const evidence={tp:Tp,tn:Tn,fp:Fp,fn:Fn,total:6};
+  root.dataset.confusionEvidence=JSON.stringify(evidence);
+  root.dispatchEvent(new CustomEvent('mlclub:confusion-update',{detail:evidence}));
   out.innerHTML='<strong>TP='+Tp+', TN='+Tn+', FP='+Fp+', FN='+Fn+'</strong> · correct '+(Tp+Tn)+'/6 · accuracy <strong>'+fmt(accuracy*100,1)+'%</strong>.'+
    '<p class="understated">Three actual positives and three actual negatives stay fixed as the two error counts change.</p>';}
  fp.addEventListener('input',render);fn.addEventListener('input',render);render();
