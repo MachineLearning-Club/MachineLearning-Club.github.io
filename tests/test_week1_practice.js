@@ -12,12 +12,13 @@ const BASE='http://127.0.0.1:8877';
    const info=await page.evaluate(()=>({width:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth,
      sidebar:!!document.querySelector('.course-sidebar .toc-panel'),
      navCount:document.querySelectorAll('.course-sidebar a[href^="#"]').length,
+     transfer:!!document.querySelector('.course-sidebar a[href="#learning-transfer-lab-w1"]'),
      intro:document.body.textContent.includes('Laboratory — explore AI in practice'),
      safe:document.body.textContent.includes('Use safe examples'),
      runner:document.querySelectorAll('.lab-mini-notebook .python-runner').length,
      prompt:!!document.querySelector('[data-coffee-prompt]'),
      links:[...document.querySelectorAll('.lab-lesson a[href^="https://"]')].every(a=>a.target==='_blank')}));
-   if(info.width>info.viewport+3||!info.sidebar||info.navCount!==8||info.intro||info.safe||info.runner!==3||!info.prompt||!info.links)
+   if(info.width>info.viewport+3||!info.sidebar||info.navCount!==9||!info.transfer||info.intro||info.safe||info.runner!==3||!info.prompt||!info.links)
      throw Error('Lab '+width+' '+JSON.stringify(info));
    if(width===390&&await page.$eval('.toc-panel',x=>x.open))throw Error('Mobile TOC should start collapsed');
    if(width===1280&&!(await page.$eval('.toc-panel',x=>x.open)))throw Error('Desktop TOC should start open');

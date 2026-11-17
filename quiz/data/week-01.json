@@ -1,10 +1,10 @@
 {
   "week": 1,
-  "title": "Learning Families, Conditional Probability and Distributions",
+  "title": "AI, Probability and Learning from Data",
   "durationSeconds": 300,
   "maximumPoints": 10,
   "status": "Draft practice quiz; teacher review required",
-  "instructions": "Ten questions. Select all correct options in multiple-choice items. One point for an exact match.",
+  "instructions": "Ten questions: five on AI and learning, five on probability and uncertain evidence. Multiple-choice items require every correct option. One point for an exact match.",
   "questions": [
     {
       "id": "w1q1",
@@ -111,18 +111,18 @@
     {
       "id": "w1q7",
       "type": "single",
-      "prompt": "Which example is primarily a classical algorithm rather than a learned prediction?",
+      "topic": "Bayes' theorem",
+      "prompt": "In the fictional class of 100, 60 know the true/false answer and the remaining 40 guess. If a correct answer is observed, what is P(knew | correct)?",
       "options": [
-        "A phone learns your favourite next word",
-        "A program turns on a lamp when brightness < 200",
-        "An image network learns cats from photos",
-        "A classifier infers class from learned prototypes"
+        "60%",
+        "75%",
+        "80%",
+        "100%"
       ],
       "correct": [
         1
       ],
-      "explanation": "Checking a fixed threshold is classical control logic.",
-      "topic": "AI foundations",
+      "explanation": "All 60 who know answer correctly, and 20 of the 40 who guess are correct on average. Of the 80 correct answers, 60 came from knowledge: 60/80 = 75%.",
       "points": 1
     },
     {
@@ -145,37 +145,37 @@
     {
       "id": "w1q9",
       "type": "multiple",
-      "prompt": "Select ALL statements that are correct about machine learning.",
+      "topic": "Conditional probability",
+      "prompt": "Select ALL correct statements about the Week 1 Bayes experiment.",
       "options": [
-        "Some models learn from labelled examples",
-        "K-Means can discover groups without labels",
-        "Every ML algorithm must use a neural network",
-        "Perfect training accuracy guarantees correct answers on all new data"
+        "In the simplified model, P(correct | knew) = 100%.",
+        "P(knew | correct) always equals P(correct | knew).",
+        "For the initial 60% who know, P(knew | correct) = 75%.",
+        "A correct true/false answer proves the pupil knew."
       ],
       "correct": [
         0,
-        1
+        2
       ],
-      "explanation": "Supervised models may use labelled data, and clustering can use unlabelled data. Neither a neural network nor universal accuracy is guaranteed.",
-      "topic": "AI foundations",
+      "explanation": "We assume someone who knows answers correctly, but some guesses are correct too. Reversing the given condition changes the probability.",
       "points": 1
     },
     {
       "id": "w1q10",
       "type": "multiple",
-      "prompt": "Select ALL sensible steps when evaluating a trained classroom image classifier.",
+      "topic": "Probability distributions",
+      "prompt": "Select ALL conclusions supported by the fair-versus-tricky ten-sided die experiments.",
       "options": [
-        "Test ordinary objects not shown during training",
-        "Record some failed predictions and possible causes",
-        "Only test pictures already used for training",
-        "Photograph classmates without asking permission"
+        "The fair and tricky distributions both have expected value 5.5.",
+        "Two different distributions can have the same expected value.",
+        "If 30 rolls have average 5.5, the die must be fair.",
+        "Every sample of 30 rolls must exactly match the probability distribution."
       ],
       "correct": [
         0,
         1
       ],
-      "explanation": "New test examples and documented errors help evaluate generalisation. Respect privacy and consent.",
-      "topic": "AI foundations",
+      "explanation": "The fair die is uniform; the tricky die favours 1 and 10. Both have the same mean 5.5, but their distributions differ, and finite samples vary.",
       "points": 1
     }
   ]

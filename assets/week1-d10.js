@@ -133,6 +133,7 @@
       button.setAttribute("aria-pressed",String(button.dataset.dieType===selected));
     });
     sample.hidden=true;
+    demo.dispatchEvent(new CustomEvent('mlclub:die-type',{detail:{type:selected}}));
   }
   demo.querySelectorAll("[data-die-type]").forEach(button=>{
     button.addEventListener("click",()=>{
@@ -158,6 +159,9 @@
     q("[data-observed-mean]",demo).textContent=(total/30).toFixed(2);
     q("[data-observed-ones]",demo).textContent=counts[0]+" / 30";
     sample.hidden=false;
+    demo.dispatchEvent(new CustomEvent('mlclub:die-roll',{
+      detail:{type:selected,counts:counts.slice(),probs:probs.slice(),total}
+    }));
   });
   draw();
 })();

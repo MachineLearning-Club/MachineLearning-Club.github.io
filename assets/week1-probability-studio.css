@@ -1,0 +1,131 @@
+/* Probability made concrete: a 100-case Bayes thought experiment,
+ * measured sampling frequencies and a short bridge to ID3 uncertainty.
+ */
+.week1-foundations .prob-studio{
+ --prob-blue:#376b8b;--prob-green:#33785f;--prob-orange:#b87d58;
+ border:1px solid #d2e2eb;border-radius:12px;
+ background:linear-gradient(155deg,#f6fafc 0%,#fff 72%);
+ padding:clamp(14px,2.8vw,23px);
+ margin:22px 0 29px;box-shadow:0 10px 24px -22px #365e79;
+}
+.week1-foundations .prob-studio-eyebrow{
+ display:block;color:#386988;font:700 .74rem/1.5 system-ui,sans-serif;
+ text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px;
+}
+.week1-foundations .prob-studio h4{margin:4px 0 10px;font-size:1.12rem;color:#254e6b}
+.week1-foundations .prob-studio p{margin:8px 0 12px;font-size:.92rem;line-height:1.58}
+.week1-foundations .prob-experiment-controls{
+ display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;
+ margin:17px 0;padding:13px 15px;border:1px solid #dce7ed;background:#fff;border-radius:8px;
+}
+.week1-foundations .prob-experiment-controls label{font-weight:600;color:#285775;font-size:.87rem}
+.week1-foundations .prob-experiment-controls input[type=range]{
+ display:block;width:min(100%,355px);margin:11px 0 0;accent-color:#367d99;min-height:26px;
+}
+.week1-foundations .prob-experiment-controls output{
+ font:700 1.5rem/1.3 system-ui,sans-serif;color:#295d7d;font-variant-numeric:tabular-nums;
+}
+.week1-foundations .bayes-grid{
+ display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;
+ margin:16px auto 12px;max-width:560px;
+}
+.week1-foundations .bayes-person{
+ min-width:0;aspect-ratio:1/1;display:grid;place-items:center;
+ border:1px solid transparent;border-radius:4px;
+ font:650 .8rem/1 system-ui,sans-serif;
+ color:#fff;transition:opacity .15s ease,background .15s ease;
+}
+.week1-foundations .bayes-person.is-known{background:#3b79a0}
+.week1-foundations .bayes-person.is-lucky{background:#4a9072}
+.week1-foundations .bayes-person.is-wrong{background:#be875f}
+.week1-foundations .bayes-person.is-filtered{opacity:.13;filter:grayscale(.65)}
+.week1-foundations .prob-legend{display:flex;gap:7px 15px;flex-wrap:wrap;color:#506a7e;font-size:.8rem;margin:12px 0}
+.week1-foundations .prob-legend span{display:flex;align-items:center;gap:6px}
+.week1-foundations .prob-legend i{width:12px;height:12px;display:inline-block;background:#3b79a0;border-radius:2px}
+.week1-foundations .prob-legend .is-lucky i{background:#4a9072}
+.week1-foundations .prob-legend .is-wrong i{background:#be875f}
+.week1-foundations .prob-legend output{font-variant-numeric:tabular-nums;font-weight:650}
+.week1-foundations .prob-action-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.week1-foundations .prob-action-row button,.week1-foundations .prob-check button{
+ cursor:pointer;padding:10px 14px;border:1px solid #2c6585;border-radius:6px;
+ background:#2c6585;color:#fff;font:500 .87rem system-ui,sans-serif;min-height:42px;
+}
+.week1-foundations .prob-studio button:focus-visible,.week1-foundations .prob-studio select:focus-visible{
+ outline:3px solid #83b3d0;outline-offset:2px;
+}
+.week1-foundations .prob-action-row button:hover,.week1-foundations .prob-check button:hover{background:#1c4964}
+.week1-foundations .prob-action-row .prob-caption{flex:1;color:#587588;font-size:.85rem}
+.week1-foundations .bayes-result{
+ padding:15px 17px;background:#eaf4f8;border-radius:8px;
+ border:1px solid #cde0e9;
+}
+.week1-foundations .bayes-result strong{display:block;font:700 clamp(1.35rem,4vw,1.9rem)/1.2 system-ui,sans-serif;color:#1f5b7e}
+.week1-foundations .bayes-result small{color:#466a7e;font-size:.82rem}
+.week1-foundations .bayes-result code{display:block;margin:7px 0;font-size:.9rem;overflow-wrap:anywhere}
+.week1-foundations .prob-check{
+ padding:14px 16px;margin:15px 0 2px;border-left:3px solid #86aac0;background:#fff;
+}
+.week1-foundations .prob-check label{display:block;font-size:.89rem;margin:8px 0}
+.week1-foundations .prob-check select{
+ max-width:100%;padding:8px 12px;border:1px solid #b6cbd8;
+ border-radius:5px;background:#fff;font:inherit;min-height:39px;
+}
+.week1-foundations .prob-check [role=status]{margin:10px 0 0!important;font-size:.88rem}
+.week1-foundations .prob-check [role=status].is-correct{color:#206344}
+.week1-foundations .die-observation-chart{
+ border:1px solid #d8e5ec;background:#fbfdfe;border-radius:9px;
+ padding:14px 16px;margin:16px 0;
+}
+.week1-foundations .die-observation-chart[hidden]{display:none}
+.week1-foundations .die-observation-chart h4{font-size:.99rem;color:#315b78;margin:2px 0 4px}
+.week1-foundations .die-observation-chart p{font-size:.85rem;color:#5b7484;margin:8px 0}
+.week1-foundations .die-frequency-board{
+ display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:7px;
+ height:190px;margin:18px 0 8px;
+}
+.week1-foundations .die-frequency-col{min-width:0;display:flex;align-items:stretch;flex-direction:column;text-align:center;gap:6px}
+.week1-foundations .die-frequency-col strong{font:600 .77rem system-ui,sans-serif;color:#345f7b;font-variant-numeric:tabular-nums}
+.week1-foundations .die-frequency-col small{font-size:.77rem;color:#537386}
+.week1-foundations .die-frequency-track{position:relative;flex:1;border-bottom:1px solid #8faebe;background:#eef4f7}
+.week1-foundations .die-frequency-fill{position:absolute;bottom:0;left:15%;width:70%;max-height:100%;background:#4e87aa;border-radius:3px 3px 0 0;transition:height .2s ease}
+.week1-foundations .die-frequency-expected{position:absolute;left:5%;width:90%;border-top:3px solid #c48853}
+.week1-foundations .die-legend{display:flex;gap:10px 22px;flex-wrap:wrap;font-size:.78rem;color:#576f7e}
+.week1-foundations .die-legend i{width:17px;height:12px;display:inline-block;vertical-align:middle;background:#4e87aa;margin-right:5px}
+.week1-foundations .die-legend .mark{background:none;border-top:3px solid #c48853;height:3px}
+.week1-foundations .prob-bridge-studio .uncertainty-choices{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.week1-foundations .prob-bridge-studio button{
+ cursor:pointer;min-height:40px;border:1px solid #adc4d0;background:#fff;
+ padding:9px 14px;border-radius:5px;color:#2d5c76;font:500 .86rem system-ui,sans-serif;
+}
+.week1-foundations .prob-bridge-studio button[aria-pressed=true]{background:#e2f0f7;border-color:#4987a8;font-weight:700}
+.week1-foundations .uncertainty-dots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;max-width:410px;margin:14px 0}
+.week1-foundations .uncertainty-case{border:1px solid transparent;border-radius:6px;aspect-ratio:1.25/1;display:grid;place-items:center;font:bold 1.2rem system-ui,sans-serif}
+.week1-foundations .uncertainty-case.is-yes{background:#dfefe5;color:#256c4f;border-color:#bfe0cc}
+.week1-foundations .uncertainty-case.is-no{background:#f8e8e1;color:#a25b3e;border-color:#e9caba}
+.week1-foundations .uncertainty-outcome{display:grid;gap:5px;margin:12px 0}
+.week1-foundations .uncertainty-outcome strong{font-size:1.08rem;color:#2e5b77}
+.week1-foundations .uncertainty-outcome output{color:#527185}
+.week1-foundations .prob-math-optional{border-top:1px solid #d8e4e9;margin:16px 0 0;padding-top:12px}
+.week1-foundations .prob-math-optional summary{cursor:pointer;color:#305d78;font-weight:600;font-size:.88rem}
+.week1-foundations .prob-math-optional p{font-size:.85rem}
+.week1-foundations .lesson-prob-route{border:1px solid #d8e5ec;border-radius:9px;padding:14px 18px;background:#f5fafc;margin:16px 0}
+.week1-foundations .lesson-prob-route>strong{color:#2d5a78}
+.week1-foundations .lesson-prob-route ol{margin:10px 0;padding-left:22px}
+.week1-foundations .lesson-prob-route li{font-size:.9rem;margin:6px 0}
+.week1-foundations .lesson-prob-route p{font-size:.86rem}
+@media(max-width:700px){
+ .week1-foundations .prob-legend{font-size:.73rem}
+ .week1-foundations .bayes-grid{gap:3px}
+ .week1-foundations .bayes-person{font-size:.65rem}
+ .week1-foundations .prob-experiment-controls{padding:10px}
+ .week1-foundations .die-frequency-board{gap:3px;height:152px}
+ .week1-foundations .die-observation-chart{padding:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .week1-foundations .bayes-person,.week1-foundations .die-frequency-fill{transition:none}
+}
+@media print{
+ .week1-foundations .prob-check,.week1-foundations .prob-action-row,.week1-foundations .uncertainty-choices{display:none}
+ .week1-foundations .prob-studio{break-inside:avoid;box-shadow:none;background:#fff}
+ .week1-foundations .bayes-person,.week1-foundations .die-frequency-fill{print-color-adjust:exact}
+}

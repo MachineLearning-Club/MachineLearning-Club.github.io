@@ -5,8 +5,8 @@
     {
       "week": 1,
       "id": "mlc-01",
-      "title": "What Is AI? Rules and Learning",
-      "subject": "Programming a fixed rule · Search is not the same as learning",
+      "title": "AI, Probability and Learning from Data",
+      "subject": "AI foundations · Conditional probability · Bayes · Expected value · Distributions",
       "status": "demo",
       "durationMinutes": 5,
       "questionCount": 10,
