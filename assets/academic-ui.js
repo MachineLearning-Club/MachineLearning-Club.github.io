@@ -1,6 +1,20 @@
 /* Shared, dependency-free site interactions. */
 (() => {
 "use strict";
+// The lesson navigation contains two rows and may wrap on small screens.
+// Measure its actual height so in-page links do not hide headings behind it.
+const lessonHeader=document.querySelector('.lesson-header');
+if(lessonHeader){
+  const updateHeaderHeight=()=>document.documentElement.style.setProperty(
+    '--lesson-header-height',Math.ceil(lessonHeader.getBoundingClientRect().height)+'px');
+  updateHeaderHeight();
+  if(typeof ResizeObserver!=='undefined')new ResizeObserver(updateHeaderHeight).observe(lessonHeader);
+  else window.addEventListener('resize',updateHeaderHeight);
+  const updateStickyState=()=>lessonHeader.classList.toggle('is-scrolled',
+    window.scrollY>18 && lessonHeader.getBoundingClientRect().top<=1);
+  window.addEventListener('scroll',updateStickyState,{passive:true});
+  updateStickyState();
+}
 const by=(q,root=document)=>root.querySelector(q);
 const all=(q,root=document)=>Array.from(root.querySelectorAll(q));
 all('[data-week-picker]').forEach(select=>{

@@ -24,7 +24,17 @@ body{max-width:850px;margin:36px auto;padding:0 24px;background:#fff;color:var(-
 .bibliography-entry .bibliography-link:hover,.bibliography-entry .bibliography-link:focus-visible{color:#123c60;text-decoration-thickness:2px}
 .bibliography-entry .bibliography-link span{display:inline-block;margin-left:5px;font-size:1rem;text-decoration:none}
 
-.lesson-header{margin:0 0 33px}
+.lesson-header{
+ position:sticky;
+ top:0;
+ z-index:100;
+ margin:0 0 33px;
+ background:#fff;
+ isolation:isolate;
+}
+/* Keep both navigation rows visible during scrolling; do not change the print layout. */
+.lesson-header.is-scrolled{box-shadow:0 8px 18px -15px rgba(35,62,82,.45)}
+html:has(.lesson-header){scroll-padding-top:calc(var(--lesson-header-height,120px) + 14px)}
 .lesson-topbar{display:flex;align-items:center;justify-content:space-between;gap:8px 13px;flex-wrap:wrap;font-size:.88rem;margin-bottom:19px}
 .lesson-topbar>a{color:#244e70;font-weight:500}
 .week-picker{display:inline-flex;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
