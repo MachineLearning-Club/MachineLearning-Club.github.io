@@ -77,7 +77,8 @@ const base='http://127.0.0.1:8877',assert=(ok,msg)=>{if(!ok)throw Error(msg)};
  for(let w=4;w<=7;w++){
   await page.goto(base+'/w'+w+'/lab/',{waitUntil:'networkidle0'});
   const links=await page.$$eval('a[href*="/jupyter/lab/index.html?path="]',nodes=>nodes.map(n=>n.getAttribute('href')));
-  assert(links.length===2,'Missing prepared notebooks week '+w+' '+links);
+  assert(links.length===(w===7?3:2),'Missing prepared notebooks week '+w+' '+links);
+  if(w===7)assert(links.some(href=>href.includes('w7-starter.ipynb')),'Missing portable Week 7 starter link');
   console.log('W'+w+' notebook links OK');
  }
  // Verify 4 draft quiz banks render through the existing quiz client.

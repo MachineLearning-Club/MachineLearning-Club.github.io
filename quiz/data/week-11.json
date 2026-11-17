@@ -1,0 +1,182 @@
+{
+  "week": 11,
+  "title": "Software Engineering: Components, Tests and Git",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice questions; teacher review required",
+  "instructions": "Open practice based on the published course and lab. Local scores are not official grades.",
+  "questions": [
+    {
+      "id": "w11q1",
+      "topic": "Requirements",
+      "prompt": "For the fictional classroom sensor, which description is a testable requirement?",
+      "options": [
+        "The program should be intelligent",
+        "If the reading is missing, display CHECK SENSOR",
+        "The UI should feel modern",
+        "Every result should sound confident"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "A requirement should identify observable behaviour for a specified condition."
+    },
+    {
+      "id": "w11q2",
+      "topic": "Rule",
+      "prompt": "With the original threshold 19°C, what should the program display at 17°C?",
+      "options": [
+        "HEAT OFF",
+        "CHECK SENSOR",
+        "HEAT ON",
+        "No message can ever be shown"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The program returns HEAT ON for values below 19°C."
+    },
+    {
+      "id": "w11q3",
+      "topic": "Boundary",
+      "prompt": "With 'HEAT ON if value < 19 else HEAT OFF', what should 19°C produce?",
+      "options": [
+        "HEAT ON",
+        "HEAT OFF",
+        "CHECK SENSOR",
+        "The sensor object is deleted"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The comparison is strictly less than 19, so the boundary value produces HEAT OFF."
+    },
+    {
+      "id": "w11q4",
+      "topic": "Missing reading",
+      "prompt": "Which is the expected output when the sensor returns None?",
+      "options": [
+        "HEAT ON",
+        "HEAT OFF",
+        "CHECK SENSOR",
+        "None must be treated as 0°C"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The program checks for missing data before comparing temperatures."
+    },
+    {
+      "id": "w11q5",
+      "topic": "Pipeline",
+      "prompt": "Which is the correct sequence of the four-stage classroom flow?",
+      "options": [
+        "Display → Decide → Check → Sensor",
+        "Sensor → Check → Decide → Display",
+        "Commit → Sensor → Login → Train",
+        "Random guess → Label → Delete"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The reading is checked, a decision is made, and then a message is shown."
+    },
+    {
+      "id": "w11q6",
+      "topic": "Objects",
+      "prompt": "In the Week 11 Python example, what is Sensor(17)?",
+      "options": [
+        "A class definition",
+        "An object instantiated from Sensor",
+        "A Git repository",
+        "A neural network"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Sensor is the class, and Sensor(17) creates one object with its own stored reading."
+    },
+    {
+      "id": "w11q7",
+      "topic": "Tests",
+      "prompt": "What is the purpose of assert decide(None) == 'CHECK SENSOR'?",
+      "options": [
+        "To prove all possible programs are correct",
+        "To compare actual behaviour with a stated expectation",
+        "To train the model on a test label",
+        "To change the sensor hardware"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "An assertion checks a specified test case and fails if the result differs."
+    },
+    {
+      "id": "w11q8",
+      "topic": "Controlled change",
+      "prompt": "After changing the threshold from 19 to 20, which test would detect the changed boundary?",
+      "options": [
+        "decide(19) == 'HEAT ON'",
+        "decide(None) == 'HEAT ON'",
+        "decide(19) == 'CHECK SENSOR'",
+        "Every temperature is converted to a string before comparison"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "At 19, the old rule returned HEAT OFF but the revised threshold-20 rule returns HEAT ON. This test distinguishes the versions."
+    },
+    {
+      "id": "w11q9",
+      "topic": "Version control",
+      "prompt": "Which actions are part of the real GitHub workflow? Select ALL.",
+      "options": [
+        "Review the code diff before committing",
+        "Choose a meaningful commit message and push the commit",
+        "Share passwords publicly in the repository",
+        "Claim files are on GitHub even if they were never pushed"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Version history should include reviewed, intentionally committed changes that reach the repository."
+    },
+    {
+      "id": "w11q10",
+      "topic": "Engineering responsibility",
+      "prompt": "Which statements are supported by the sensor example? Select ALL.",
+      "options": [
+        "Input checking can be tested independently of the display",
+        "A passing three-case test proves all possible real sensors are safe",
+        "Small components make it easier to isolate a fault",
+        "A Git commit replaces the need to test code"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Components and tests aid reasoning, but finite checks do not prove universal physical-system correctness."
+    }
+  ]
+}

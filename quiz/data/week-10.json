@@ -1,0 +1,182 @@
+{
+  "week": 10,
+  "title": "Generative AI: Language, Recommendations and Verification",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice questions; teacher review required",
+  "instructions": "Open practice based on the published course and lab. Local scores are not official grades.",
+  "questions": [
+    {
+      "id": "w10q1",
+      "topic": "Tokens",
+      "prompt": "Which statement best describes real language-model tokens?",
+      "options": [
+        "Each token is always exactly one English word",
+        "Tokens may represent whole words, parts of words, punctuation or other units",
+        "A token is always one pixel",
+        "A token is a verified fact"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Tokenisation maps input text to a sequence of units. Our on-page splitter is a deliberately simplified demonstration."
+    },
+    {
+      "id": "w10q2",
+      "topic": "Toy splitting",
+      "prompt": "The classroom toy splits 'AI can help students!' into which sequence?",
+      "options": [
+        "AI, can, help, students, !",
+        "One token containing the entire sentence",
+        "One token per letter, always",
+        "Five numeric probabilities, with no text units"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "In the lesson's simplified representation punctuation is separated from the words; this is not a claim about a real GPT tokenizer."
+    },
+    {
+      "id": "w10q3",
+      "topic": "Prediction",
+      "prompt": "A toy model assigns 60% to 'blue' after 'Today the sky looks ...'. What does that mean?",
+      "options": [
+        "The sky is certainly blue right now",
+        "The model has checked the weather",
+        "'blue' is the highest-scoring illustrated continuation among the three given choices",
+        "A 60% chance that all model-generated sentences are true"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The displayed numbers are illustrative candidate preferences, not verified statements about the world."
+    },
+    {
+      "id": "w10q4",
+      "topic": "Clicks",
+      "prompt": "A toy recommender has 5 science clicks and 2 music clicks. Which topic ranks first?",
+      "options": [
+        "Science",
+        "Music",
+        "They always tie",
+        "The system needs pupil names to decide"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "In this teaching example the larger click count ranks ahead."
+    },
+    {
+      "id": "w10q5",
+      "topic": "Meaning of clicks",
+      "prompt": "Why is a single click an incomplete measure of someone's preference?",
+      "options": [
+        "Clicks are always random",
+        "A person may click because of curiosity, surprise or disagreement",
+        "Clicks contain the entire person's biography",
+        "A click guarantees the content is accurate"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "An interaction is evidence of behaviour; motives are not known from that signal alone."
+    },
+    {
+      "id": "w10q6",
+      "topic": "Verification",
+      "prompt": "A newsletter says 80% voted yes. The tally is 12 yes and 8 no. What percentage is correct?",
+      "options": [
+        "12%",
+        "20%",
+        "60%",
+        "80%"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "12/(12+8)=12/20=0.60=60%. The draft must be corrected."
+    },
+    {
+      "id": "w10q7",
+      "topic": "Claim and evidence",
+      "prompt": "Which is the independent evidence for the newsletter vote claim?",
+      "options": [
+        "How fluent the AI wording sounds",
+        "The original anonymous tally of yes and no",
+        "The model's confidence in its own wording",
+        "The length of the generated sentence"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Compare the claim with the actual original count, not a generated paraphrase."
+    },
+    {
+      "id": "w10q8",
+      "topic": "Data protection",
+      "prompt": "Which actions are appropriate when using AI-assisted writing? Select ALL.",
+      "options": [
+        "Review and correct important factual claims before publishing",
+        "Paste classmates' passwords to provide context",
+        "Use anonymous or invented data in classroom examples",
+        "Publish an AI draft without reading it"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Verification and minimal-data handling are part of a responsible workflow."
+    },
+    {
+      "id": "w10q9",
+      "topic": "Agent permissions",
+      "prompt": "What distinguishes a text suggestion from an authorised automated action?",
+      "options": [
+        "Any generated sentence automatically grants permission to publish",
+        "A tool-using program must have explicit permission to perform its action",
+        "A chatbot message is identical to a sent email",
+        "Checking permissions makes code unable to run"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Generating a suggested message is not the same as being authorised to send or publish it."
+    },
+    {
+      "id": "w10q10",
+      "topic": "Model limits",
+      "prompt": "Which statements follow from the Week 10 exercises? Select ALL.",
+      "options": [
+        "Our tokenizer and feed ranker are classroom demonstrations, not real platform implementations",
+        "The largest next-word score is not proof that the sentence is true",
+        "Real GPT models always use the exact split from the demo",
+        "A persuasive claim needs no independent evidence"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Do not conflate illustrative toy systems with operational production models or treat plausibility as truth."
+    }
+  ]
+}

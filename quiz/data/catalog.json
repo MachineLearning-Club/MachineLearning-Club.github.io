@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "notice": "Practice quizzes available for Weeks 1–9 and 12–14. Week 15 is a project review; Weeks 10–11 question banks remain in development.",
+  "notice": "Public five-minute practice quizzes are available for Weeks 1–14; Week 15 uses a practical 20-point project rubric.",
   "quizzes": [
     {
       "week": 1,
@@ -95,22 +95,22 @@
     {
       "week": 10,
       "id": "mlc-10",
-      "title": "Generative AI: GPT, Data and Society",
-      "subject": "How language models predict text · Where training data come from",
-      "status": "planned",
+      "title": "Generative AI: Language, Recommendations and Verification",
+      "subject": "Toy token sequences · Feed ranking · Verifying factual claims",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 11,
       "id": "mlc-11",
-      "title": "Software Engineering Techniques",
-      "subject": "From one long script to several components · Objects and methods",
-      "status": "planned",
+      "title": "Software Engineering: Components, Tests and Git",
+      "subject": "Sensor pipeline · Input checks · Assertions · Git workflow",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 12,

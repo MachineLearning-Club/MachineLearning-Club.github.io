@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Short, runnable 2026–27 club notebooks, matching the revised weekly titles."""
+"""Legacy notebook generator for Weeks 3–6 only.
+
+Do not overwrite reviewed Week 7–15 starter notebooks with legacy outlines.
+Week 7 is owned by refresh_week7_starter.py; later weeks have dedicated builders.
+"""
 from pathlib import Path
 import json,ast
 ROOT=Path(__file__).resolve().parents[1]
@@ -214,7 +218,7 @@ def cell(kind,value):
     return d
 for w in weeks:
     n=w["n"]
-    if n<3:continue
+    if n<3 or n>6:continue
     code=S[n]
     intro=f'# Week {n} — {w["title"]}\n\n**Machine Learning Club · Laboratory**\n\n**Real-life situation:** {w["lab"]["context"]}\n\n1. Predict the outcome.\n2. Run the code in sequence.\n3. Change one value or parameter.\n4. Record the new output and explain its meaning.'
     notebook={"cells":[cell("markdown",intro),cell("code",code),
@@ -226,4 +230,4 @@ for w in weeks:
       "nbformat":4,"nbformat_minor":5}
     target=ROOT/f'w{n}/lab/starter.ipynb'
     target.write_text(json.dumps(notebook,indent=1,ensure_ascii=False)+'\n')
-print("Generated 13 aligned student notebooks (Weeks 3–15), preserving Weeks 1–2.")
+print("Generated four legacy starter notebooks (Weeks 3–6); reviewed Weeks 7–15 preserved.")
