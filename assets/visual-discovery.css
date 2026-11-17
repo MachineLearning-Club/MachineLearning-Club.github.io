@@ -1,0 +1,168 @@
+/* Accessible visual learning studios for the pre-university Course.
+ * More expressive representations, but consistent with the academic site.
+ */
+.week23-academic .discovery-studio{
+ --experiment-blue:#325e7a;
+ --experiment-yes:#357a60;
+ --experiment-no:#af6548;
+ --experiment-border:#d5e2eb;
+ padding:clamp(15px,2.5vw,24px);
+ margin:25px 0 35px;
+ border:1px solid var(--experiment-border);
+ border-radius:12px;
+ background:linear-gradient(155deg,#f8fbfe 0%,#fff 65%);
+ box-shadow:0 8px 28px -23px rgba(32,70,100,.28);
+}
+.week23-academic .discovery-mission{
+ border-bottom:1px solid #dfe9ef;
+ padding:0 0 13px;
+ margin:0 0 18px;
+}
+.week23-academic .discovery-mission p{margin:8px 0 10px;font-size:.94rem;line-height:1.6}
+.week23-academic .discovery-eyebrow{
+ display:block;color:#3b6581;
+ letter-spacing:.065em;text-transform:uppercase;
+ font:700 .74rem/1.5 system-ui,-apple-system,sans-serif;
+ margin:0 0 6px;
+}
+.week23-academic .discovery-action-hint{color:#576c79;font-size:.87rem!important}
+.week23-academic .discovery-day{
+ display:grid;place-items:center;
+ min-width:31px;min-height:35px;
+ border-radius:6px;font:700 1.1rem/1 system-ui,-apple-system,sans-serif;
+ border:1px solid transparent;
+ transition:transform .16s ease,background .16s ease;
+}
+.week23-academic .discovery-day.is-yes{background:#e2f2e9;color:#25664b;border-color:#c3e3d0}
+.week23-academic .discovery-day.is-no{background:#f9e9e2;color:#995338;border-color:#f0d3c5}
+.week23-academic .discovery-cases{
+ display:flex;flex-wrap:wrap;gap:5px;
+ margin:12px 0 14px;
+}
+.week23-academic .id3-group{border-radius:9px;padding:15px;background:#fff;box-shadow:0 4px 16px -14px rgba(33,65,83,.32)}
+.week23-academic .id3-group>strong{font-size:1.04rem}
+.week23-academic .id3-group>small{margin:8px 0}
+.week23-academic .discovery-summary{
+ display:flex;align-items:center;gap:15px;padding:14px 17px;
+ margin:14px 0 12px;
+ border:1px solid #ccdfe6;background:#edf5f8;border-radius:9px;
+}
+.week23-academic .discovery-big-number{
+ flex:0 0 auto;font:700 clamp(1.2rem,3vw,1.65rem)/1.2 system-ui,-apple-system,sans-serif;
+ color:#1f5673;font-variant-numeric:tabular-nums;
+}
+.week23-academic .discovery-summary-copy{min-width:0}
+.week23-academic .discovery-summary-copy strong{display:block;font-size:.85rem;color:#264d66}
+.week23-academic .discovery-summary-copy p{margin:5px 0 0!important;font-size:.85rem!important}
+.week23-academic .discovery-challenge{
+ padding:14px 16px;margin:22px 0 14px;
+ background:#fff;border:1px solid #d7e4e9;border-left:3px solid #6d9db9;
+ border-radius:7px;
+}
+.week23-academic .discovery-challenge p{margin:7px 0}
+.week23-academic .discovery-challenge label{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.91rem}
+.week23-academic .discovery-challenge select{
+ border:1px solid #a8becc;border-radius:5px;
+ background:#fff;padding:8px 10px;min-height:38px;max-width:100%;color:#264c64;
+ font:inherit;
+}
+.week23-academic .discovery-challenge button{
+ margin:10px 8px 4px 0;min-height:40px;
+ background:#325e7a;border:1px solid #325e7a;color:#fff;
+ border-radius:6px;padding:8px 14px;font:.85rem system-ui,-apple-system,sans-serif;
+}
+.week23-academic .discovery-challenge button:hover{background:#244b66}
+.week23-academic .discovery-challenge button[aria-pressed=true]{background:#173f58;box-shadow:0 0 0 2px #a6c7d9}
+.week23-academic .discovery-challenge [role=status]:not(:empty){
+ margin-top:10px;padding:9px 12px;background:#f5f8fa;
+ border-radius:5px;font-size:.88rem;
+}
+.week23-academic .discovery-challenge .discovery-correct{color:#235d45;background:#e7f5ed!important}
+.week23-academic .discovery-stepper{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ margin:12px 0 19px;padding:0;list-style:none;
+ gap:8px;counter-reset:discovery-step;
+}
+.week23-academic .discovery-stepper li{
+ margin:0;padding:12px 8px;
+ border:1px solid #dae5ec;border-radius:7px;
+ background:#fff;color:#71808b;
+ font:600 .77rem/1.35 system-ui,-apple-system,sans-serif;
+ display:flex;align-items:center;gap:7px;
+}
+.week23-academic .discovery-stepper li::before{
+ counter-increment:discovery-step;content:counter(discovery-step);
+ display:grid;place-items:center;
+ width:24px;height:24px;flex:0 0 24px;
+ border:1px solid currentColor;border-radius:50%;
+}
+.week23-academic .discovery-stepper li.is-current{background:#e8f1f8;border-color:#87adc4;color:#2f617f}
+.week23-academic .discovery-stepper li.is-complete{color:#37785c;background:#edf7f0;border-color:#cde4d6}
+.week23-academic .discovery-cost{
+ margin:17px 0 20px;border-radius:9px;padding:15px 17px;
+ border:1px solid #d9e6ed;background:#f7fbfd;
+}
+.week23-academic .discovery-cost-header{display:flex;align-items:baseline;gap:5px 16px;flex-wrap:wrap;margin-bottom:13px}
+.week23-academic .discovery-cost-header>strong{color:#244d66;font-size:.94rem}
+.week23-academic .discovery-cost-header>span{color:#58717e;font-size:.82rem}
+.week23-academic .discovery-score-row{
+ display:grid;grid-template-columns:minmax(90px,135px) minmax(80px,1fr) 55px;
+ align-items:center;gap:12px;margin:10px 0;
+ font:500 .83rem system-ui,-apple-system,sans-serif;color:#476172;
+}
+.week23-academic .discovery-score-row>strong{text-align:right;color:#214b65;font-variant-numeric:tabular-nums}
+.week23-academic .discovery-meter{height:19px;overflow:hidden;border-radius:12px;background:#e6edf2}
+.week23-academic .discovery-meter i{display:block;height:100%;background:#7f9daf;border-radius:12px;transition:width .3s ease}
+.week23-academic .discovery-meter.improved i{background:#4e9b80}
+.week23-academic .discovery-score-explain{font-size:.84rem!important;color:#4e6574!important;margin:12px 0 0!important}
+.week23-academic .id3-result{font-size:.81rem;color:#657b8a;font-weight:400}
+@media (max-width:680px){
+ .week23-academic .discovery-studio{padding:14px;margin-inline:-2px}
+ .week23-academic .discovery-summary{flex-direction:column;align-items:flex-start;gap:6px}
+ .week23-academic .discovery-stepper{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .week23-academic .discovery-score-row{grid-template-columns:86px minmax(55px,1fr) 44px;gap:7px}
+}
+@media(prefers-reduced-motion:reduce){
+ .week23-academic .discovery-day,.week23-academic .discovery-meter i{transition:none}
+}
+@media print{
+ .week23-academic .discovery-challenge,.week23-academic .discovery-stepper{display:none}
+ .week23-academic .discovery-studio{box-shadow:none;background:white}
+ .week23-academic .discovery-meter i{print-color-adjust:exact}
+}
+
+/* Core concepts come first; mathematical extensions remain accessible. */
+.week23-academic .learning-intention{
+ border-radius:10px;
+ padding:15px 19px 14px;
+ margin:19px 0 25px;
+ border:1px solid #dae4ea;
+ background:#f6fafc;
+}
+.week23-academic .learning-intention-label{
+ font:700 .74rem/1.4 system-ui,-apple-system,sans-serif;
+ text-transform:uppercase;letter-spacing:.06em;
+ color:#456a83;margin:0 0 7px;
+}
+.week23-academic .learning-intention>p{margin:7px 0 11px;font-size:.92rem}
+.week23-academic .learning-intention ol{margin:9px 0;padding-left:21px}
+.week23-academic .learning-intention li{margin:6px 0;font-size:.91rem}
+.week23-academic .learning-before-experiment{
+ border-left:3px solid #6d9db9;
+ padding:10px 14px;margin:20px 0 14px;
+ background:#f7fafb;font-size:.92rem;
+}
+.week23-academic .discovery-math{
+ margin:20px 0;padding:8px 13px 15px;
+ border:1px solid #d5e3e9;
+ border-radius:8px;background:#f8fbfd;
+}
+.week23-academic .discovery-math>summary{
+ font-weight:650;color:#315c78;cursor:pointer;
+ padding:7px 2px;
+}
+.week23-academic .discovery-math .worked{margin:14px 0 0}
+@media print{
+ .week23-academic .discovery-math{break-inside:avoid-page}
+ .week23-academic .discovery-math:not([open]){display:none}
+}

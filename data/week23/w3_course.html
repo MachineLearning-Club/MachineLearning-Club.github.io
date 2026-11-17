@@ -19,6 +19,12 @@
 <tr><td>Generalise</td><td>Change K or the starting points</td><td>Identify a choice that changes the result</td></tr></tbody></table></div>
 <p><strong>Entry prerequisites:</strong> 2D coordinates, arithmetic mean, addition of squares. Square roots and optimisation proofs remain optional.</p></div></details>
 <section class="chapter-section" id="w3-problem"><h2>3.1. Finding groups when the answers are unknown</h2>
+<div class="learning-intention"><p class="learning-intention-label">One-hour learning goal</p>
+<p>By the end, you should be able to explain how <strong>K-means</strong> makes groups of nearby points <em>without knowing correct class labels</em>.</p>
+<ol><li><strong>Recognise:</strong> describe five points and two starting centres.</li>
+<li><strong>Experiment:</strong> place each point with a nearby centre, then move each centre to its group's average.</li>
+<li><strong>Explain:</strong> show why the centres moved and how to decide when to stop.</li></ol>
+<p><strong>Not required for the core lesson:</strong> proving why squared-distance error decreases. The numerical derivation is optional.</p></div>
 <div class="core-idea"><strong>Core idea</strong><p><strong>Unlabelled examples → measure similarity → organise examples into clusters.</strong> K-means does not receive correct cluster names during training; it uses distances and centres to discover a grouping.</p></div>
 <p>A neighbourhood delivery company wants <strong>two collection points</strong> so parcels do not have to travel as far to customers. The map contains five delivery locations. Nobody has said which location belongs to which centre.</p>
 <div class="concept-contrast"><div><strong>Supervised — Week 2</strong><p>Known labels: <code>go = yes/no</code></p><small>Learn how to predict the answer.</small></div><div><strong>Unsupervised — Week 3</strong><p>Coordinates only: <code>(x,y)</code></p><small>Discover groups without labelled answers.</small></div><div><strong>K-means output</strong><p>Two groups and their average positions.</p><small>They are numbered cluster 1 and 2; the numbers are arbitrary.</small></div></div>
@@ -37,7 +43,8 @@
 </section>
 <section class="chapter-section" id="w3-assign"><h2>3.3. K-means is an alternating process</h2>
 <p>Instead of guessing a complete grouping once, K-means <strong>alternates two steps</strong>: assign every point to its closest centre, then update each centre to the mean of its assigned points.</p>
-<div data-kmeans-demo class="kmeans-demo"><div class="activity-kicker">INTERACTIVE RECONSTRUCTION OF CIORTUZ, SOLVED PROBLEM 7</div>
+<p class="learning-before-experiment"><strong>Before interacting:</strong> imagine placing a shared meeting point in the middle of a few nearby locations. Would you leave it at the first point, or move it closer to the group's middle? Watch the two centre markers as the algorithm repeats that idea.</p>
+<div data-kmeans-demo class="kmeans-demo"><div class="activity-kicker">INTERACTIVE EXPERIMENT · TWO CENTRES, FIVE LOCATIONS</div>
 <div class="id3-step-toolbar"><button data-kmeans-back type="button">← Previous</button><span data-kmeans-step-label>Start</span><button data-kmeans-next type="button">Next step →</button><button data-kmeans-reset type="button">Reset</button></div>
 <svg viewBox="0 0 720 420" role="img" aria-label="Five locations and two k-means centroids with progression through assignments and updates"></svg>
 <p data-kmeans-explain aria-live="polite"></p><div class="table-hscroll"><table class="teaching-data"><thead><tr><th>Point</th><th>Distance² to μ₁</th><th>Distance² to μ₂</th><th>Assigned group</th></tr></thead><tbody data-kmeans-distance-rows></tbody></table></div>
@@ -51,12 +58,12 @@
 <div class="concept-formula"><span>How to find a centroid</span><strong>centroid = (average x coordinate, average y coordinate)</strong><small>This is just the familiar arithmetic mean, applied independently to each coordinate.</small></div>
 <details><summary>What does one complete K-means iteration mean?</summary><p>One iteration consists of assigning each point to its nearest current centroid and moving each centroid to the mean of its assigned points. The next iteration uses those updated positions for reassignment.</p></details></section>
 <section class="chapter-section" id="w3-cost"><h2>3.4. How can we tell the centres improved?</h2>
-<p>We measure the total squared distance of every point from its assigned centroid. Call this <strong>J</strong> or the <strong>within-cluster sum of squares</strong>.</p>
-<div class="concept-formula"><span>Objective function</span><strong>J = Σ [ (xᵢ−μₓ)² + (yᵢ−μᵧ)² ]</strong><small>Sum over all points, using the centroid to which each point is currently assigned.</small></div>
+<p>We want group centres to sit <strong>closer to the points that belong to them</strong>. The interactive bars compare how far apart everything is, before and after the move. For a more precise comparison, mathematicians add the <em>squared distances</em> to produce a score called <strong>J</strong>. Smaller is better for this specific exercise.</p>
+<details class="discovery-math"><summary>Optional mathematics: measure improvement with squared distances</summary><div class="concept-formula"><span>Objective function</span><strong>J = Σ [ (xᵢ−μₓ)² + (yᵢ−μᵧ)² ]</strong><small>Sum over all points, using the centroid to which each point is currently assigned.</small></div>
 <div class="worked"><h3>Numerical comparison from the source example</h3>
 <p>Using the initial centroids and first assignments, the total squared distance is:</p><p><code>J(before update) = 0 + 4 + 2 + 1 + 0 = 7</code>.</p>
 <p>After recomputing the means, the squared distances become:</p><p><code>10/9 + 10/9 + 4/9 + 1/4 + 1/4 = 19/6 ≈ 3.167</code>.</p>
-<p><strong>The cost has decreased:</strong> <code>7 → 3.167</code>.</p></div>
+<p><strong>The cost has decreased:</strong> <code>7 → 3.167</code>.</p></div></details>
 <p>The update to the arithmetic mean reduces (or leaves unchanged) the sum of squared distances for the current cluster. Reassignment to a nearer centre also cannot increase that sum. See Advanced for the reasoning.</p></section>
 <section class="chapter-section" id="w3-repeat"><h2>3.5. Continue until the assignments stop changing</h2>
 <p>With new centres, check all five points again. In this example, the two groups stay the same. Their means stay the same too, so the algorithm <strong>converges</strong> (stops changing).</p>
