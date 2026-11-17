@@ -1,0 +1,183 @@
+{
+  "week": 14,
+  "title": "Week 14 — Study Space Challenge practice",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice questions; teacher review required",
+  "instructions": "Public self-assessment based on this week's lesson; not a confidential FiiCode examination.",
+  "questions": [
+    {
+      "id": "w14q1",
+      "topic": "Validation comparison",
+      "prompt": "Which k scores 41/45 on the supplied validation split?",
+      "options": [
+        "Only k=3",
+        "k=1 and k=7",
+        "Only k=5",
+        "Every possible k"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "With the fixed settings k=1 and k=7 tie at 41/45."
+    },
+    {
+      "id": "w14q2",
+      "topic": "Tie-break",
+      "prompt": "The top validation scores tie at k=1 and k=7. Which k does the documented rule select?",
+      "options": [
+        "1",
+        "7",
+        "3",
+        "5"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Choose the smaller k when correct counts tie."
+    },
+    {
+      "id": "w14q3",
+      "topic": "Accuracy",
+      "prompt": "41 correct of 45 examples corresponds to approximately:",
+      "options": [
+        "41%",
+        "84.4%",
+        "91.1%",
+        "98%"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "41/45 is about 91.1%."
+    },
+    {
+      "id": "w14q4",
+      "topic": "Confusion matrix",
+      "prompt": "Which cells count a correct prediction?",
+      "options": [
+        "Off-diagonal cells",
+        "Diagonal cells",
+        "Only the last column",
+        "Only cells containing zero"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "True class and predicted class agree only on the diagonal."
+    },
+    {
+      "id": "w14q5",
+      "topic": "Worked recall",
+      "prompt": "With 13 correctly predicted good examples out of 15 actual good examples, recall(good) is:",
+      "options": [
+        "13/15",
+        "15/13",
+        "13/45",
+        "2/15"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Recall is true positives divided by all actual positives for that class."
+    },
+    {
+      "id": "w14q6",
+      "topic": "Leakage",
+      "prompt": "What should NOT influence k before the final evaluation?",
+      "options": [
+        "Fixed training features",
+        "Validation result counts",
+        "The final test labels",
+        "Documented tie-break rules"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Final-test scores must remain outside parameter selection."
+    },
+    {
+      "id": "w14q7",
+      "topic": "Controlled ablation",
+      "prompt": "In the Week 14 experiment, removing the Wi-Fi weight changes validation score from:",
+      "options": [
+        "41/45 to 39/45",
+        "15/45 to 45/45",
+        "38/45 to 45/45",
+        "39/45 to 41/45"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The reference ablation reduces correct predictions by two."
+    },
+    {
+      "id": "w14q8",
+      "topic": "Fair comparison",
+      "prompt": "Select ALL elements to keep fixed when comparing k values.",
+      "options": [
+        "Validation examples",
+        "Feature scaling and distance definition",
+        "Reported denominator",
+        "Predictions manually corrected using real labels"
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "A controlled comparison changes k rather than multiple factors."
+    },
+    {
+      "id": "w14q9",
+      "topic": "Interpreting improvement",
+      "prompt": "Which conclusion is supported by the Wi-Fi ablation?",
+      "options": [
+        "Wi-Fi always matters in real schools",
+        "On this validation split the chosen weighted model gets two more right",
+        "The final test is automatically improved",
+        "Wi-Fi caused the label to be correct"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Ablation supports a narrow observation, not universal generalisation."
+    },
+    {
+      "id": "w14q10",
+      "topic": "Choice quality",
+      "prompt": "Select ALL sound evaluation habits.",
+      "options": [
+        "Record both failures and successes",
+        "Freeze settings before the test",
+        "Keep trying weights on final test until score is highest",
+        "Report only a headline percent without denominator"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Document limits and preserve an untouched final evaluation."
+    }
+  ]
+}

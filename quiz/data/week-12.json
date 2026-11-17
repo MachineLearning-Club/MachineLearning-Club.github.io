@@ -1,0 +1,182 @@
+{
+  "week": 12,
+  "title": "Week 12 — Study Space Challenge practice",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice questions; teacher review required",
+  "instructions": "Public self-assessment based on this week's lesson; not a confidential FiiCode examination.",
+  "questions": [
+    {
+      "id": "w12q1",
+      "topic": "Prediction contract",
+      "prompt": "What is the Study Space Challenge's target label?",
+      "options": [
+        "The numeric noise value",
+        "One of avoid, consider or good",
+        "A student's name",
+        "A room's street address"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The output is one of three synthetic suitability classes."
+    },
+    {
+      "id": "w12q2",
+      "topic": "Feature dictionary",
+      "prompt": "Which value is a feature rather than the target?",
+      "options": [
+        "Wi-Fi signal 1–5",
+        "The word 'good'",
+        "Validation accuracy",
+        "A confusion-matrix label"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Wi-Fi strength is one of five input measurements."
+    },
+    {
+      "id": "w12q3",
+      "topic": "Dataset provenance",
+      "prompt": "Which statement correctly describes the classroom dataset?",
+      "options": [
+        "It measures real pupils",
+        "It is an official FiiCode dataset",
+        "It is a reproducible synthetic simulation",
+        "It contains student account details"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The example is simulated and independent of the actual competition."
+    },
+    {
+      "id": "w12q4",
+      "topic": "Training set",
+      "prompt": "How many labelled training rows are available?",
+      "options": [
+        "45",
+        "150",
+        "2400",
+        "15"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The 240-row artificial dataset is split into 150 training, 45 validation and 45 test rows."
+    },
+    {
+      "id": "w12q5",
+      "topic": "Validation",
+      "prompt": "What is the validation set primarily used for?",
+      "options": [
+        "Choosing model settings",
+        "Publicly declaring a final independent score",
+        "Inventing actual labels",
+        "Proving what every real pupil prefers"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Validation is for model selection; the final test is reserved."
+    },
+    {
+      "id": "w12q6",
+      "topic": "Baseline",
+      "prompt": "The training class frequencies tie. How is the constant label selected?",
+      "options": [
+        "Randomly each time",
+        "By looking at test labels",
+        "Alphabetically among tied majority labels",
+        "Always the longest label"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "All three training classes have 50 rows; alphabetical tie-break returns avoid."
+    },
+    {
+      "id": "w12q7",
+      "topic": "Worked score",
+      "prompt": "The constant baseline gets 15 of 45 validation labels right. What is its accuracy?",
+      "options": [
+        "15%",
+        "33.3%",
+        "45%",
+        "66.7%"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "15÷45=1/3."
+    },
+    {
+      "id": "w12q8",
+      "topic": "Leakage",
+      "prompt": "Which action invalidates the independence of the final test?",
+      "options": [
+        "Writing down the random seed",
+        "Separating examples before training",
+        "Choosing k from final test results",
+        "Running an independent smoke test"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Final-test feedback must not be used to choose model settings."
+    },
+    {
+      "id": "w12q9",
+      "topic": "Data integrity",
+      "prompt": "Select ALL checks that help guard against unreliable splits.",
+      "options": [
+        "Check for duplicate input examples across splits",
+        "Verify feature ranges and required fields",
+        "Insert the test labels into training",
+        "Ignore missing values"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Duplicates and invalid fields can undermine the exercise."
+    },
+    {
+      "id": "w12q10",
+      "topic": "Scope",
+      "prompt": "Select ALL claims supported by this practice benchmark.",
+      "options": [
+        "It includes no real student records",
+        "Its three labels are artificially balanced",
+        "It is a validated school booking service",
+        "It establishes actual room comfort with known accuracy"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "The data are synthetic and do not establish real-world service performance."
+    }
+  ]
+}

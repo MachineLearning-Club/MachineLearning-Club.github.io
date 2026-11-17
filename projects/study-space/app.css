@@ -1,0 +1,34 @@
+/* Study Space Challenge — same minimal typography and colours as the club site. */
+.ss-studio{border:1px solid #cfdbdc;background:#fafcfc;border-radius:10px;padding:clamp(14px,2.5vw,26px);margin:18px 0 26px}
+.ss-studio h3{margin:0 0 9px}
+.ss-intro{font-size:.93rem;color:#53636c;margin:0 0 17px}
+.ss-layout{display:grid;grid-template-columns:minmax(210px,1fr) minmax(230px,1fr);gap:22px}
+.ss-controls{display:grid;gap:11px}
+.ss-controls label{display:flex;flex-direction:column;gap:4px;color:#25384b;font-size:.94rem;font-weight:600}
+.ss-controls label.ss-checkbox{flex-direction:row;align-items:center}
+.ss-controls input[type="range"]{width:100%;accent-color:#375d78}
+.ss-controls output{font-variant-numeric:tabular-nums;color:#375d78;font-weight:650}
+.ss-controls select{padding:8px;border:1px solid #b4c5cf;border-radius:5px;background:#fff}
+.ss-result{border-left:3px solid #92abb9;padding-left:15px;min-width:0}
+.ss-prediction{font-size:1.8rem;color:#24465c;font-weight:700;line-height:1.3;margin:8px 0}
+.ss-neighbours{padding-left:22px;max-height:190px;overflow:auto;font-variant-numeric:tabular-nums;font-size:.9rem}
+.ss-neighbours li{margin-bottom:5px}
+.ss-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.ss-actions button{border-radius:5px;border:1px solid #315d79;background:#315d79;color:#fff;padding:9px 14px;cursor:pointer;font-size:.9rem}
+.ss-actions button.secondary{background:transparent;color:#315d79}
+.ss-actions button:focus-visible,.ss-controls input:focus-visible,.ss-controls select:focus-visible{outline:3px solid #86b7dc;outline-offset:2px}
+.ss-metrics{margin-top:14px}
+.ss-metrics table{width:100%;border-collapse:collapse;text-align:right;font-variant-numeric:tabular-nums}
+.ss-metrics th,.ss-metrics td{border-bottom:1px solid #d8e0e4;padding:7px;white-space:nowrap;font-size:.88rem}
+.ss-metrics th:first-child,.ss-metrics td:first-child{text-align:left}
+.ss-metrics p{margin:9px 0}
+.ss-note{font-size:.87rem;color:#566775}
+.ss-steps{counter-reset:projectstep;padding-left:22px}
+.ss-steps li{margin:11px 0}
+.ss-evidence{border-left:2px solid #9db0b8;padding:9px 14px;margin:14px 0;background:#f6f9f9}
+.ss-resource-links{display:flex;gap:8px 20px;flex-wrap:wrap;margin:15px 0}
+.ss-resource-links a{font-weight:600}
+.ss-source-card{padding:10px 16px;border:1px solid #d9e1e5;border-radius:6px}
+.ss-source-card p{margin:7px 0}
+@media(max-width:720px){.ss-layout{grid-template-columns:1fr}.ss-result{border-left:0;border-top:2px solid #92abb9;padding-left:0;padding-top:14px}.ss-studio{padding:14px}}
+@media print{.ss-actions,.ss-controls,.ss-neighbours{display:none}.ss-studio{break-inside:avoid;background:#fff}.ss-evidence{break-inside:avoid}}

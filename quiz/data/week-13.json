@@ -1,0 +1,182 @@
+{
+  "week": 13,
+  "title": "Week 13 — Study Space Challenge practice",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice questions; teacher review required",
+  "instructions": "Public self-assessment based on this week's lesson; not a confidential FiiCode examination.",
+  "questions": [
+    {
+      "id": "w13q1",
+      "topic": "Pipeline",
+      "prompt": "What happens immediately after entering a room profile in k-NN?",
+      "options": [
+        "A language model writes an essay",
+        "Distances to labelled training examples are computed",
+        "The validation set is permanently rewritten",
+        "The dataset is discarded"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Distances make it possible to select neighbours."
+    },
+    {
+      "id": "w13q2",
+      "topic": "K meaning",
+      "prompt": "If k=3, how many labelled neighbours vote?",
+      "options": [
+        "3",
+        "30",
+        "150",
+        "All 240"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The closest three training examples contribute votes."
+    },
+    {
+      "id": "w13q3",
+      "topic": "Input units",
+      "prompt": "Why does the distance formula scale each feature?",
+      "options": [
+        "To guarantee every prediction is correct",
+        "To compare measurements with different numeric ranges",
+        "To hide the dataset",
+        "To turn this into clustering"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Features have different units and ranges."
+    },
+    {
+      "id": "w13q4",
+      "topic": "Worked distance",
+      "prompt": "With scale 100 and weight 1, what is the squared-distance contribution of a 20-point occupancy difference?",
+      "options": [
+        "0.04",
+        "0.2",
+        "4",
+        "20"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "(20/100)² = 0.04."
+    },
+    {
+      "id": "w13q5",
+      "topic": "Training",
+      "prompt": "What does this introductory k-NN model store?",
+      "options": [
+        "Only a trained neural-network weight tensor",
+        "150 labelled training rows",
+        "The final test answers as lookup rules",
+        "No examples at all"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "This method compares new samples directly to stored labelled examples."
+    },
+    {
+      "id": "w13q6",
+      "topic": "Voting",
+      "prompt": "Labels among nearest neighbours are good, good, avoid. What is the majority vote?",
+      "options": [
+        "Avoid",
+        "Consider",
+        "Good",
+        "A numeric average"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Good receives two votes."
+    },
+    {
+      "id": "w13q7",
+      "topic": "Input validation",
+      "prompt": "How should the Python interface handle Wi-Fi strength 8?",
+      "options": [
+        "Quietly change it to 5",
+        "Accept it because numbers are valid",
+        "Raise a clear validation error",
+        "Retrain on the test set"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Wi-Fi must be an integer between 1 and 5."
+    },
+    {
+      "id": "w13q8",
+      "topic": "Prediction interpretation",
+      "prompt": "Which is true if all three nearest neighbours vote good?",
+      "options": [
+        "The prediction is 100% guaranteed",
+        "The votes support good but are not a calibrated probability",
+        "The classifier is unsupervised",
+        "There is no chance of label noise"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "A vote fraction is not automatically calibrated confidence."
+    },
+    {
+      "id": "w13q9",
+      "topic": "Separation of components",
+      "prompt": "Select ALL good software engineering practices.",
+      "options": [
+        "Validate inputs independently of UI widgets",
+        "Separate prediction logic from the interface",
+        "Hardcode the correct test labels inside the predictor",
+        "Hide the distance calculation from tests"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "The model should be independently testable and the UI should enforce clear contracts."
+    },
+    {
+      "id": "w13q10",
+      "topic": "Reproducibility",
+      "prompt": "Select ALL factors needed to reproduce a k-NN result.",
+      "options": [
+        "Fixed dataset split and feature values",
+        "Specified distance, k and tie-break",
+        "Just a screenshot of the percentage",
+        "An invented probability score"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Settings and data completely determine the deterministic classifier."
+    }
+  ]
+}

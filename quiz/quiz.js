@@ -61,8 +61,8 @@
       const main = element("strong", quiz.title);
       title.appendChild(main);
       title.appendChild(element("span", quiz.subject, "topic"));
-      cell(row, quiz.status === "demo" ? quiz.durationMinutes + " min" : "—");
-      cell(row, quiz.status === "demo" ? quiz.questionCount : "—");
+      cell(row, quiz.status === "demo" ? quiz.durationMinutes + " min" : quiz.status === "review" ? "Project" : "—");
+      cell(row, quiz.status === "demo" ? quiz.questionCount : quiz.status === "review" ? "Rubric" : "—");
       cell(row, quiz.subject);
       const scoreCell = cell(row);
       const latest = mostRecentScore(quiz.week);
@@ -70,7 +70,7 @@
         const score = element("span", latest.score + " / " + quiz.maxPoints, "score " + (latest.score>=7?"good":"mid"));
         scoreCell.appendChild(score);
       } else {
-        scoreCell.appendChild(element("span", quiz.status==="demo"?"Not taken":"Not available", "label-status "+(quiz.status==="demo"?"ready":"pending")));
+        scoreCell.appendChild(element("span", quiz.status==="demo"?"Not taken":quiz.status==="review"?"20-point rubric":"Not available", "label-status "+((quiz.status==="demo"||quiz.status==="review")?"ready":"pending")));
       }
       const actionCell = cell(row);
       if (quiz.status==="demo") {
@@ -79,6 +79,10 @@
         b.setAttribute("aria-label","Open access code for Week "+quiz.week);
         b.addEventListener("click",()=>openAccess("MLC"+pad2(quiz.week)));
         actionCell.appendChild(b);
+      } else if (quiz.status==="review") {
+        const a=element("a","Open project rubric","button button-quiet");
+        a.href="/w"+quiz.week+"/quiz/";
+        actionCell.appendChild(a);
       } else {
         const label = element("span","Planned","label-status pending");
         label.title = "Question bank not approved yet";

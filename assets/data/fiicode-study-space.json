@@ -1,0 +1,2220 @@
+{
+  "name": "Study Space Challenge (synthetic classroom practice)",
+  "notice": "Artificial labelled examples; no real student or classroom measurements; not a FIICode task or dataset.",
+  "seed": 20261117,
+  "features": [
+    {
+      "name": "occupancy",
+      "unit": "%",
+      "range": [
+        0,
+        100
+      ]
+    },
+    {
+      "name": "noise",
+      "unit": "illustrative dB",
+      "range": [
+        20,
+        95
+      ]
+    },
+    {
+      "name": "wifi",
+      "unit": "signal levels",
+      "range": [
+        1,
+        5
+      ]
+    },
+    {
+      "name": "outlets",
+      "unit": "available (0/1)",
+      "range": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "minutes",
+      "unit": "study duration",
+      "range": [
+        15,
+        120
+      ]
+    }
+  ],
+  "labels": [
+    "avoid",
+    "consider",
+    "good"
+  ],
+  "data": {
+    "train": [
+      {
+        "occupancy": 67,
+        "noise": 75,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS024",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 54,
+        "noise": 51,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS142",
+        "label": "consider"
+      },
+      {
+        "occupancy": 53,
+        "noise": 53,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS227",
+        "label": "good"
+      },
+      {
+        "occupancy": 98,
+        "noise": 76,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS035",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 38,
+        "noise": 32,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS232",
+        "label": "good"
+      },
+      {
+        "occupancy": 74,
+        "noise": 70,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS021",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 47,
+        "noise": 41,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS167",
+        "label": "good"
+      },
+      {
+        "occupancy": 36,
+        "noise": 50,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS153",
+        "label": "consider"
+      },
+      {
+        "occupancy": 97,
+        "noise": 78,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS015",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 17,
+        "noise": 31,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS193",
+        "label": "good"
+      },
+      {
+        "occupancy": 69,
+        "noise": 63,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS125",
+        "label": "consider"
+      },
+      {
+        "occupancy": 30,
+        "noise": 48,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS202",
+        "label": "good"
+      },
+      {
+        "occupancy": 43,
+        "noise": 55,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS149",
+        "label": "consider"
+      },
+      {
+        "occupancy": 78,
+        "noise": 64,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS109",
+        "label": "consider"
+      },
+      {
+        "occupancy": 36,
+        "noise": 43,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS209",
+        "label": "good"
+      },
+      {
+        "occupancy": 93,
+        "noise": 73,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS032",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 62,
+        "noise": 67,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS088",
+        "label": "consider"
+      },
+      {
+        "occupancy": 49,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS138",
+        "label": "consider"
+      },
+      {
+        "occupancy": 56,
+        "noise": 54,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS107",
+        "label": "consider"
+      },
+      {
+        "occupancy": 9,
+        "noise": 45,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS230",
+        "label": "good"
+      },
+      {
+        "occupancy": 42,
+        "noise": 48,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS179",
+        "label": "good"
+      },
+      {
+        "occupancy": 88,
+        "noise": 72,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS030",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 84,
+        "noise": 69,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS003",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 93,
+        "noise": 77,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS070",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 80,
+        "noise": 66,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS077",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 78,
+        "noise": 54,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS110",
+        "label": "consider"
+      },
+      {
+        "occupancy": 54,
+        "noise": 48,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS238",
+        "label": "good"
+      },
+      {
+        "occupancy": 15,
+        "noise": 54,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS174",
+        "label": "good"
+      },
+      {
+        "occupancy": 40,
+        "noise": 55,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS112",
+        "label": "consider"
+      },
+      {
+        "occupancy": 81,
+        "noise": 67,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS049",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 51,
+        "noise": 56,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS086",
+        "label": "consider"
+      },
+      {
+        "occupancy": 69,
+        "noise": 48,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS100",
+        "label": "consider"
+      },
+      {
+        "occupancy": 74,
+        "noise": 84,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS016",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 40,
+        "noise": 52,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS160",
+        "label": "consider"
+      },
+      {
+        "occupancy": 38,
+        "noise": 36,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS196",
+        "label": "good"
+      },
+      {
+        "occupancy": 99,
+        "noise": 66,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS068",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 46,
+        "noise": 68,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS082",
+        "label": "consider"
+      },
+      {
+        "occupancy": 24,
+        "noise": 42,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS203",
+        "label": "good"
+      },
+      {
+        "occupancy": 89,
+        "noise": 75,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS073",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 40,
+        "noise": 30,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS169",
+        "label": "good"
+      },
+      {
+        "occupancy": 36,
+        "noise": 51,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS155",
+        "label": "consider"
+      },
+      {
+        "occupancy": 73,
+        "noise": 43,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS087",
+        "label": "consider"
+      },
+      {
+        "occupancy": 19,
+        "noise": 37,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS164",
+        "label": "good"
+      },
+      {
+        "occupancy": 68,
+        "noise": 76,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS037",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 31,
+        "noise": 54,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS210",
+        "label": "good"
+      },
+      {
+        "occupancy": 78,
+        "noise": 60,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS090",
+        "label": "consider"
+      },
+      {
+        "occupancy": 71,
+        "noise": 62,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS089",
+        "label": "consider"
+      },
+      {
+        "occupancy": 86,
+        "noise": 63,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS013",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 76,
+        "noise": 54,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS119",
+        "label": "consider"
+      },
+      {
+        "occupancy": 46,
+        "noise": 69,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS091",
+        "label": "consider"
+      },
+      {
+        "occupancy": 98,
+        "noise": 78,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS042",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 90,
+        "noise": 76,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS074",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 23,
+        "noise": 32,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS168",
+        "label": "good"
+      },
+      {
+        "occupancy": 69,
+        "noise": 56,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS096",
+        "label": "consider"
+      },
+      {
+        "occupancy": 36,
+        "noise": 59,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS114",
+        "label": "consider"
+      },
+      {
+        "occupancy": 71,
+        "noise": 60,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS001",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 74,
+        "noise": 50,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS102",
+        "label": "consider"
+      },
+      {
+        "occupancy": 81,
+        "noise": 87,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS029",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 54,
+        "noise": 64,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS131",
+        "label": "consider"
+      },
+      {
+        "occupancy": 15,
+        "noise": 54,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS237",
+        "label": "good"
+      },
+      {
+        "occupancy": 28,
+        "noise": 41,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS162",
+        "label": "good"
+      },
+      {
+        "occupancy": 70,
+        "noise": 66,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS062",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 73,
+        "noise": 69,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS020",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 40,
+        "noise": 47,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS231",
+        "label": "good"
+      },
+      {
+        "occupancy": 65,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS076",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 18,
+        "noise": 38,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS206",
+        "label": "good"
+      },
+      {
+        "occupancy": 55,
+        "noise": 54,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS218",
+        "label": "good"
+      },
+      {
+        "occupancy": 16,
+        "noise": 36,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS214",
+        "label": "good"
+      },
+      {
+        "occupancy": 36,
+        "noise": 32,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS216",
+        "label": "good"
+      },
+      {
+        "occupancy": 25,
+        "noise": 40,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS224",
+        "label": "good"
+      },
+      {
+        "occupancy": 51,
+        "noise": 44,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS173",
+        "label": "good"
+      },
+      {
+        "occupancy": 92,
+        "noise": 86,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS079",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 69,
+        "noise": 64,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS028",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 56,
+        "noise": 67,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS081",
+        "label": "consider"
+      },
+      {
+        "occupancy": 46,
+        "noise": 50,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS184",
+        "label": "good"
+      },
+      {
+        "occupancy": 48,
+        "noise": 43,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS092",
+        "label": "consider"
+      },
+      {
+        "occupancy": 80,
+        "noise": 81,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS050",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 24,
+        "noise": 34,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS165",
+        "label": "good"
+      },
+      {
+        "occupancy": 81,
+        "noise": 70,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS011",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 81,
+        "noise": 61,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS093",
+        "label": "consider"
+      },
+      {
+        "occupancy": 15,
+        "noise": 44,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS180",
+        "label": "good"
+      },
+      {
+        "occupancy": 66,
+        "noise": 63,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS085",
+        "label": "consider"
+      },
+      {
+        "occupancy": 41,
+        "noise": 46,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS191",
+        "label": "good"
+      },
+      {
+        "occupancy": 56,
+        "noise": 64,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS094",
+        "label": "consider"
+      },
+      {
+        "occupancy": 86,
+        "noise": 74,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS051",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 28,
+        "noise": 33,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS236",
+        "label": "good"
+      },
+      {
+        "occupancy": 31,
+        "noise": 36,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS226",
+        "label": "good"
+      },
+      {
+        "occupancy": 12,
+        "noise": 34,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS204",
+        "label": "good"
+      },
+      {
+        "occupancy": 77,
+        "noise": 68,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS123",
+        "label": "consider"
+      },
+      {
+        "occupancy": 22,
+        "noise": 38,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS221",
+        "label": "good"
+      },
+      {
+        "occupancy": 13,
+        "noise": 54,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS199",
+        "label": "good"
+      },
+      {
+        "occupancy": 70,
+        "noise": 79,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS044",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 44,
+        "noise": 40,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS200",
+        "label": "good"
+      },
+      {
+        "occupancy": 40,
+        "noise": 52,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS130",
+        "label": "consider"
+      },
+      {
+        "occupancy": 58,
+        "noise": 59,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS129",
+        "label": "consider"
+      },
+      {
+        "occupancy": 50,
+        "noise": 45,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS171",
+        "label": "good"
+      },
+      {
+        "occupancy": 53,
+        "noise": 53,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS161",
+        "label": "good"
+      },
+      {
+        "occupancy": 46,
+        "noise": 54,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS176",
+        "label": "good"
+      },
+      {
+        "occupancy": 12,
+        "noise": 35,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS234",
+        "label": "good"
+      },
+      {
+        "occupancy": 99,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS038",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 66,
+        "noise": 66,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS117",
+        "label": "consider"
+      },
+      {
+        "occupancy": 62,
+        "noise": 83,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS053",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 68,
+        "noise": 64,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS078",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 42,
+        "noise": 51,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS152",
+        "label": "consider"
+      },
+      {
+        "occupancy": 63,
+        "noise": 64,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS095",
+        "label": "consider"
+      },
+      {
+        "occupancy": 62,
+        "noise": 66,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS071",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 70,
+        "noise": 47,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS156",
+        "label": "consider"
+      },
+      {
+        "occupancy": 80,
+        "noise": 83,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS067",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 41,
+        "noise": 40,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS163",
+        "label": "good"
+      },
+      {
+        "occupancy": 81,
+        "noise": 45,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS099",
+        "label": "consider"
+      },
+      {
+        "occupancy": 22,
+        "noise": 38,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS186",
+        "label": "good"
+      },
+      {
+        "occupancy": 76,
+        "noise": 66,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS046",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 66,
+        "noise": 80,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS025",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 79,
+        "noise": 76,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS041",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 66,
+        "noise": 67,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS105",
+        "label": "consider"
+      },
+      {
+        "occupancy": 20,
+        "noise": 41,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS188",
+        "label": "good"
+      },
+      {
+        "occupancy": 61,
+        "noise": 43,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS158",
+        "label": "consider"
+      },
+      {
+        "occupancy": 77,
+        "noise": 83,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS069",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 35,
+        "noise": 63,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS132",
+        "label": "consider"
+      },
+      {
+        "occupancy": 35,
+        "noise": 53,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS183",
+        "label": "good"
+      },
+      {
+        "occupancy": 70,
+        "noise": 79,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS006",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 73,
+        "noise": 86,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS019",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 47,
+        "noise": 29,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS197",
+        "label": "good"
+      },
+      {
+        "occupancy": 77,
+        "noise": 70,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS027",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 70,
+        "noise": 52,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS157",
+        "label": "consider"
+      },
+      {
+        "occupancy": 42,
+        "noise": 47,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS108",
+        "label": "consider"
+      },
+      {
+        "occupancy": 8,
+        "noise": 29,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS223",
+        "label": "good"
+      },
+      {
+        "occupancy": 26,
+        "noise": 50,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS187",
+        "label": "good"
+      },
+      {
+        "occupancy": 83,
+        "noise": 69,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS047",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 90,
+        "noise": 83,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS017",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 45,
+        "noise": 51,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS141",
+        "label": "consider"
+      },
+      {
+        "occupancy": 56,
+        "noise": 62,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS150",
+        "label": "consider"
+      },
+      {
+        "occupancy": 72,
+        "noise": 67,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS127",
+        "label": "consider"
+      },
+      {
+        "occupancy": 46,
+        "noise": 49,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS205",
+        "label": "good"
+      },
+      {
+        "occupancy": 42,
+        "noise": 46,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS228",
+        "label": "good"
+      },
+      {
+        "occupancy": 81,
+        "noise": 81,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS005",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 86,
+        "noise": 86,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS031",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 85,
+        "noise": 63,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS040",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 81,
+        "noise": 44,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS145",
+        "label": "consider"
+      },
+      {
+        "occupancy": 46,
+        "noise": 62,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS128",
+        "label": "consider"
+      },
+      {
+        "occupancy": 96,
+        "noise": 86,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS060",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 90,
+        "noise": 74,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS026",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 98,
+        "noise": 69,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS010",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 53,
+        "noise": 53,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS124",
+        "label": "consider"
+      },
+      {
+        "occupancy": 79,
+        "noise": 52,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS098",
+        "label": "consider"
+      },
+      {
+        "occupancy": 77,
+        "noise": 87,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS058",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 58,
+        "noise": 51,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS181",
+        "label": "good"
+      },
+      {
+        "occupancy": 51,
+        "noise": 32,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS201",
+        "label": "good"
+      },
+      {
+        "occupancy": 61,
+        "noise": 45,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS154",
+        "label": "consider"
+      },
+      {
+        "occupancy": 83,
+        "noise": 77,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS048",
+        "label": "avoid"
+      }
+    ],
+    "validation": [
+      {
+        "occupancy": 83,
+        "noise": 73,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS066",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 47,
+        "noise": 69,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS103",
+        "label": "consider"
+      },
+      {
+        "occupancy": 59,
+        "noise": 62,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS084",
+        "label": "consider"
+      },
+      {
+        "occupancy": 12,
+        "noise": 47,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS175",
+        "label": "good"
+      },
+      {
+        "occupancy": 76,
+        "noise": 65,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS135",
+        "label": "consider"
+      },
+      {
+        "occupancy": 38,
+        "noise": 68,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS137",
+        "label": "consider"
+      },
+      {
+        "occupancy": 42,
+        "noise": 52,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS198",
+        "label": "good"
+      },
+      {
+        "occupancy": 63,
+        "noise": 68,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS036",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 45,
+        "noise": 31,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS185",
+        "label": "good"
+      },
+      {
+        "occupancy": 62,
+        "noise": 76,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS056",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 27,
+        "noise": 46,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS217",
+        "label": "good"
+      },
+      {
+        "occupancy": 69,
+        "noise": 51,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS121",
+        "label": "consider"
+      },
+      {
+        "occupancy": 21,
+        "noise": 30,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS190",
+        "label": "good"
+      },
+      {
+        "occupancy": 76,
+        "noise": 43,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS111",
+        "label": "consider"
+      },
+      {
+        "occupancy": 81,
+        "noise": 66,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS002",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 41,
+        "noise": 54,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS211",
+        "label": "good"
+      },
+      {
+        "occupancy": 9,
+        "noise": 50,
+        "wifi": 5,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS212",
+        "label": "good"
+      },
+      {
+        "occupancy": 66,
+        "noise": 60,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS147",
+        "label": "consider"
+      },
+      {
+        "occupancy": 31,
+        "noise": 32,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS222",
+        "label": "good"
+      },
+      {
+        "occupancy": 59,
+        "noise": 61,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS148",
+        "label": "consider"
+      },
+      {
+        "occupancy": 72,
+        "noise": 52,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS113",
+        "label": "consider"
+      },
+      {
+        "occupancy": 68,
+        "noise": 83,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS054",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 37,
+        "noise": 44,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS136",
+        "label": "consider"
+      },
+      {
+        "occupancy": 73,
+        "noise": 53,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS126",
+        "label": "consider"
+      },
+      {
+        "occupancy": 11,
+        "noise": 47,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS213",
+        "label": "good"
+      },
+      {
+        "occupancy": 47,
+        "noise": 35,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS192",
+        "label": "good"
+      },
+      {
+        "occupancy": 33,
+        "noise": 54,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS170",
+        "label": "good"
+      },
+      {
+        "occupancy": 79,
+        "noise": 64,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS064",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 67,
+        "noise": 55,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS120",
+        "label": "consider"
+      },
+      {
+        "occupancy": 35,
+        "noise": 41,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS195",
+        "label": "good"
+      },
+      {
+        "occupancy": 80,
+        "noise": 66,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS101",
+        "label": "consider"
+      },
+      {
+        "occupancy": 60,
+        "noise": 48,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS083",
+        "label": "consider"
+      },
+      {
+        "occupancy": 69,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS052",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 98,
+        "noise": 75,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS055",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 67,
+        "noise": 63,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS009",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 65,
+        "noise": 80,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS080",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 100,
+        "noise": 74,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS063",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 40,
+        "noise": 56,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS134",
+        "label": "consider"
+      },
+      {
+        "occupancy": 13,
+        "noise": 31,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS239",
+        "label": "good"
+      },
+      {
+        "occupancy": 94,
+        "noise": 83,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS004",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 72,
+        "noise": 78,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS007",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 44,
+        "noise": 37,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS215",
+        "label": "good"
+      },
+      {
+        "occupancy": 32,
+        "noise": 51,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS225",
+        "label": "good"
+      },
+      {
+        "occupancy": 62,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS065",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 89,
+        "noise": 78,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS045",
+        "label": "avoid"
+      }
+    ],
+    "test": [
+      {
+        "occupancy": 46,
+        "noise": 49,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS133",
+        "label": "consider"
+      },
+      {
+        "occupancy": 42,
+        "noise": 67,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS097",
+        "label": "consider"
+      },
+      {
+        "occupancy": 75,
+        "noise": 75,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS023",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 17,
+        "noise": 54,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS177",
+        "label": "good"
+      },
+      {
+        "occupancy": 22,
+        "noise": 34,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS220",
+        "label": "good"
+      },
+      {
+        "occupancy": 65,
+        "noise": 74,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS072",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 84,
+        "noise": 80,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS012",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 20,
+        "noise": 36,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS194",
+        "label": "good"
+      },
+      {
+        "occupancy": 61,
+        "noise": 47,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS104",
+        "label": "consider"
+      },
+      {
+        "occupancy": 55,
+        "noise": 44,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS208",
+        "label": "good"
+      },
+      {
+        "occupancy": 51,
+        "noise": 63,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS159",
+        "label": "consider"
+      },
+      {
+        "occupancy": 77,
+        "noise": 64,
+        "wifi": 4,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS144",
+        "label": "consider"
+      },
+      {
+        "occupancy": 78,
+        "noise": 77,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS057",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 67,
+        "noise": 45,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS106",
+        "label": "consider"
+      },
+      {
+        "occupancy": 69,
+        "noise": 76,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS043",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 70,
+        "noise": 49,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS143",
+        "label": "consider"
+      },
+      {
+        "occupancy": 25,
+        "noise": 47,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS229",
+        "label": "good"
+      },
+      {
+        "occupancy": 53,
+        "noise": 46,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS233",
+        "label": "good"
+      },
+      {
+        "occupancy": 65,
+        "noise": 87,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS022",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 69,
+        "noise": 86,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS059",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 47,
+        "noise": 53,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS182",
+        "label": "good"
+      },
+      {
+        "occupancy": 98,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS034",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 69,
+        "noise": 50,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 45,
+        "id": "SS146",
+        "label": "consider"
+      },
+      {
+        "occupancy": 32,
+        "noise": 45,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS219",
+        "label": "good"
+      },
+      {
+        "occupancy": 53,
+        "noise": 39,
+        "wifi": 4,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS235",
+        "label": "good"
+      },
+      {
+        "occupancy": 39,
+        "noise": 46,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS118",
+        "label": "consider"
+      },
+      {
+        "occupancy": 48,
+        "noise": 52,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 90,
+        "id": "SS140",
+        "label": "consider"
+      },
+      {
+        "occupancy": 55,
+        "noise": 46,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS178",
+        "label": "good"
+      },
+      {
+        "occupancy": 25,
+        "noise": 41,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS207",
+        "label": "good"
+      },
+      {
+        "occupancy": 72,
+        "noise": 66,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS039",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 94,
+        "noise": 82,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 60,
+        "id": "SS014",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 78,
+        "noise": 82,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS018",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 72,
+        "noise": 80,
+        "wifi": 1,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS061",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 14,
+        "noise": 45,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS172",
+        "label": "good"
+      },
+      {
+        "occupancy": 33,
+        "noise": 52,
+        "wifi": 5,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS189",
+        "label": "good"
+      },
+      {
+        "occupancy": 76,
+        "noise": 61,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 120,
+        "id": "SS116",
+        "label": "consider"
+      },
+      {
+        "occupancy": 38,
+        "noise": 45,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 45,
+        "id": "SS151",
+        "label": "consider"
+      },
+      {
+        "occupancy": 7,
+        "noise": 31,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS166",
+        "label": "good"
+      },
+      {
+        "occupancy": 87,
+        "noise": 63,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS075",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 21,
+        "noise": 44,
+        "wifi": 3,
+        "outlets": 0,
+        "minutes": 30,
+        "id": "SS240",
+        "label": "good"
+      },
+      {
+        "occupancy": 96,
+        "noise": 63,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS008",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 97,
+        "noise": 76,
+        "wifi": 1,
+        "outlets": 1,
+        "minutes": 60,
+        "id": "SS033",
+        "label": "avoid"
+      },
+      {
+        "occupancy": 81,
+        "noise": 65,
+        "wifi": 2,
+        "outlets": 1,
+        "minutes": 90,
+        "id": "SS122",
+        "label": "consider"
+      },
+      {
+        "occupancy": 74,
+        "noise": 56,
+        "wifi": 2,
+        "outlets": 0,
+        "minutes": 120,
+        "id": "SS139",
+        "label": "consider"
+      },
+      {
+        "occupancy": 35,
+        "noise": 56,
+        "wifi": 3,
+        "outlets": 1,
+        "minutes": 30,
+        "id": "SS115",
+        "label": "consider"
+      }
+    ]
+  }
+}
