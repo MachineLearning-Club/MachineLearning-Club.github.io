@@ -1,0 +1,182 @@
+{
+  "week": 8,
+  "title": "Revision: Computer Vision and Neural Networks",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz; teacher review required",
+  "instructions": "Ten publicly answerable practice questions from the Course and Laboratory. Results remain only in your browser; not an official exam grade.",
+  "questions": [
+    {
+      "id": "w8q1",
+      "topic": "Pixels",
+      "prompt": "What describes one handwritten image in the Week 8 experiment?",
+      "options": [
+        "8 numbers from 0 to 255",
+        "64 numbers from 0 to 16",
+        "One text string containing the digit",
+        "Three RGB channel averages"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "An 8×8 grid contains 64 block-activity counts, each between 0 and 16."
+    },
+    {
+      "id": "w8q2",
+      "topic": "Training and testing",
+      "prompt": "What was kept out of training when building the classifier?",
+      "options": [
+        "200 different labelled images",
+        "Only the number zero",
+        "All 600 training images",
+        "The teacher's handwritten notes"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Two hundred images were withheld so we can evaluate on examples not used in the model's neighbour search."
+    },
+    {
+      "id": "w8q3",
+      "topic": "Supervised learning",
+      "prompt": "Why is predicting handwritten digits supervised learning?",
+      "options": [
+        "It has no examples",
+        "It receives known digit labels for its training images",
+        "It only groups images without labels",
+        "It uses a human-written threshold without learning"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The training images each have a known target digit, and predictions use those labelled examples."
+    },
+    {
+      "id": "w8q4",
+      "topic": "Nearest neighbours",
+      "prompt": "With k=3, a k-nearest-neighbour classifier does what?",
+      "options": [
+        "Creates three clusters from unlabelled images",
+        "Selects three closest labelled training examples to vote",
+        "Uses three neural layers",
+        "Tests each digit three times then memorises the answer"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "k is the number of labelled neighbours voting, not the number of unsupervised clusters."
+    },
+    {
+      "id": "w8q5",
+      "topic": "Distance",
+      "prompt": "For Q=(2,1) and A=(2,4), what is squared Euclidean distance?",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "16"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "(2-2)^2+(1-4)^2 = 0+9 = 9."
+    },
+    {
+      "id": "w8q6",
+      "topic": "Voting",
+      "prompt": "The nearest training labels are 8, 1 and 8. What is the 3-NN prediction?",
+      "options": [
+        "1",
+        "8",
+        "The mean 5.67",
+        "Undetermined because digits cannot be voted on"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Two votes go to digit 8 and one to digit 1."
+    },
+    {
+      "id": "w8q7",
+      "topic": "Accuracy",
+      "prompt": "If 196 of 200 held-out predictions are correct, what is accuracy?",
+      "options": [
+        "1%",
+        "2%",
+        "98%",
+        "196%"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "196/200=0.98, or 98% correct on that specific subset."
+    },
+    {
+      "id": "w8q8",
+      "topic": "Errors",
+      "prompt": "Which observation is a genuine error in the model's default test?",
+      "options": [
+        "A 1 incorrectly predicted as 8",
+        "A pixel that has intensity 16",
+        "A model using 64 features",
+        "A properly withheld image"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Held-out example 17 is truly a 1 but is predicted as an 8 with k=3."
+    },
+    {
+      "id": "w8q9",
+      "topic": "Interpreting results",
+      "prompt": "Select ALL statements supported by an evaluation of 200 held-out images.",
+      "options": [
+        "The result concerns those specific 200 examples",
+        "The model will be correct on every camera photo",
+        "Its test errors should be examined",
+        "A 98% test score guarantees 98% calibrated confidence for each answer"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "A finite held-out result supports limited empirical claims. It does not establish universal accuracy or calibrated probabilities."
+    },
+    {
+      "id": "w8q10",
+      "topic": "Preprocessing",
+      "prompt": "Select ALL sensible rules for a fair comparison of a pixel threshold.",
+      "options": [
+        "Keep the test examples fixed",
+        "Secretly replace all incorrect predictions with known answers",
+        "Compare results before and after the threshold change",
+        "Report any changed score without its dataset denominator"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "A controlled experiment changes one feature-processing choice while retaining the same examples and reporting the denominator."
+    }
+  ]
+}

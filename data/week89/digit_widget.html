@@ -1,0 +1,46 @@
+<div class="digit-demo" data-digit-lab>
+<h3>Investigate a real digit classifier</h3>
+<p class="digit-intro">The pixels and labels come from a fixed, credited 800-image classroom subset of the UCI handwritten-digits dataset. Training uses 600 different images. You inspect 200 images withheld from that training. Nothing is submitted to a server.</p>
+<div class="digit-toolbar">
+<label>Neighbours to vote
+<select data-k-select aria-label="Number of nearest training neighbours">
+<option value="1">k = 1</option><option value="3" selected>k = 3</option><option value="5">k = 5</option>
+</select></label>
+<label>Pixel processing
+<select data-threshold-select aria-label="Preprocessing threshold">
+<option value="0" selected>Original grey levels (0–16)</option>
+<option value="4">Black/white at 4</option>
+<option value="8">Black/white at 8</option>
+<option value="12">Black/white at 12</option>
+</select></label>
+<label>Test example
+<input data-case-index type="number" min="1" max="200" value="1" aria-label="Held-out example index"></label>
+<button type="button" data-previous-case>← Previous</button>
+<button type="button" data-next-case>Next →</button>
+<button type="button" data-next-error>Find next error</button>
+</div>
+<p class="digit-status" data-digit-status aria-live="polite">Loading digit examples…</p>
+<div class="digit-demo-main">
+ <div class="digit-image-group">
+  <div class="digit-grid" data-digit-grid aria-label="Editable 8 by 8 greyscale image"></div>
+  <div class="digit-actions"><button type="button" data-reset-pixels>Restore original pixels</button></div>
+  <p class="understated">Click any pixel to increase its intensity by four, cycling through 0, 4, 8, 12 and 16. It changes only your inspected image, not the training/test sets.</p>
+ </div>
+ <div>
+  <div data-digit-output class="digit-result" aria-live="polite"></div>
+  <h4>Nearest labelled training images</h4>
+  <div class="digit-neighbours" data-digit-neighbours></div>
+  <p class="understated">These really are the nearest training images under the selected pixel-processing rule. Squared distances are shown; the classifier votes by label. A tie is resolved by total distance, then by the smaller label.</p>
+ </div>
+</div>
+<div class="digit-evaluation">
+ <h4>Evaluate all 200 untouched test images</h4>
+ <button type="button" data-evaluate>Run held-out evaluation</button>
+ <p data-evaluation-output aria-live="polite">Run the evaluation to count predictions for all 200 unmodified held-out images.</p>
+ <details><summary>Inspect the confusion matrix and individual errors</summary>
+  <p>Rows are the true digit, columns the predicted digit. A number off the diagonal is a mistake. Scroll the table sideways on narrow screens.</p>
+  <div class="digit-matrix-scroll" data-digit-matrix></div>
+  <h4>Explore these mistakes</h4><div class="digit-errors" data-digit-errors></div>
+ </details>
+</div>
+</div>

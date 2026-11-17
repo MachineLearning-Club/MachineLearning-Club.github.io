@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "notice": "Practice quizzes in Weeks 1\u20137; Weeks 8\u201315 remain planned.",
+  "notice": "Practice quizzes in Weeks 1\u20139; Weeks 10\u201315 remain planned.",
   "quizzes": [
     {
       "week": 1,
@@ -77,20 +77,20 @@
       "id": "mlc-08",
       "title": "Revision: Computer Vision and Neural Networks",
       "subject": "From pixels to predictions \u00b7 Revision: what models actually learn",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 9,
       "id": "mlc-09",
       "title": "Mid-Term Evaluation",
       "subject": "Review the core ideas \u00b7 A practical evaluation procedure",
-      "status": "planned",
+      "status": "demo",
       "durationMinutes": 5,
-      "questionCount": null,
-      "maxPoints": null
+      "questionCount": 10,
+      "maxPoints": 10
     },
     {
       "week": 10,

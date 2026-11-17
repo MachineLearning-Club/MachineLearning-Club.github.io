@@ -1,0 +1,182 @@
+{
+  "week": 9,
+  "title": "Mid-Term Evaluation — practice knowledge check",
+  "durationSeconds": 300,
+  "maximumPoints": 10,
+  "status": "Draft practice quiz; teacher review required",
+  "instructions": "Ten publicly answerable practice questions from the Course and Laboratory. Results remain only in your browser; not an official exam grade.",
+  "questions": [
+    {
+      "id": "w9q1",
+      "topic": "Algorithm selection",
+      "prompt": "You need to switch a fan on whenever temperature exceeds 26 °C. What's the simplest first solution?",
+      "options": [
+        "A K-means model",
+        "An ordinary if statement",
+        "A ten-layer neural network",
+        "A random classifier"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "A precise deterministic rule needs no training data or learned model."
+    },
+    {
+      "id": "w9q2",
+      "topic": "Algorithm selection",
+      "prompt": "You have delivery coordinates without any correct group labels. What is the relevant first learning method?",
+      "options": [
+        "Unsupervised clustering",
+        "Supervised classification with ID3",
+        "Predicting a known digit",
+        "A language model as the only option"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "K-means can group unlabelled spatial examples."
+    },
+    {
+      "id": "w9q3",
+      "topic": "Labels and features",
+      "prompt": "In the digit recognition experiment, what is the target label?",
+      "options": [
+        "A pixel intensity from 0 to 16",
+        "The original row ID",
+        "The handwritten digit 0–9",
+        "The number of test examples"
+      ],
+      "correct": [
+        2
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The target is which digit the image represents; 64 pixel values are features."
+    },
+    {
+      "id": "w9q4",
+      "topic": "Leakage",
+      "prompt": "What happens if a classifier uses the known test labels to choose nearest neighbours?",
+      "options": [
+        "It gives a more independent test",
+        "It leaks answers into the model, invalidating independent evaluation",
+        "It automatically discovers meaningful clusters",
+        "It makes the image physically larger"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Test labels may only be consulted after predictions for evaluation."
+    },
+    {
+      "id": "w9q5",
+      "topic": "Calculations",
+      "prompt": "With 196 correct and 4 incorrect out of 200 tests, what is the error rate?",
+      "options": [
+        "2%",
+        "4%",
+        "98%",
+        "200%"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "4/200 = 0.02 = 2%."
+    },
+    {
+      "id": "w9q6",
+      "topic": "Model comparison",
+      "prompt": "On the same 200-image test subset, k=3 gets 196 correct and k=5 gets 195. How many percentage points separate their accuracies?",
+      "options": [
+        "0.05",
+        "0.5",
+        "1.0",
+        "5.0"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "98.0% minus 97.5% equals 0.5 percentage points."
+    },
+    {
+      "id": "w9q7",
+      "topic": "Confusion matrix",
+      "prompt": "Where do incorrect predictions appear in a confusion matrix with actual labels as rows and predicted labels as columns?",
+      "options": [
+        "Only on the diagonal",
+        "In off-diagonal cells",
+        "Only in row zero",
+        "They are excluded from the matrix"
+      ],
+      "correct": [
+        1
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "The diagonal records a correct label. Off-diagonal counts show which labels are confused."
+    },
+    {
+      "id": "w9q8",
+      "topic": "Reproducibility",
+      "prompt": "Which information is necessary to reproduce the classroom classifier?",
+      "options": [
+        "Dataset split, distance function, k and preprocessing",
+        "Only its website colours",
+        "Only the name of the pupil",
+        "Only the score without numerator"
+      ],
+      "correct": [
+        0
+      ],
+      "type": "single",
+      "points": 1,
+      "explanation": "Data, settings and evaluation procedure must be specified."
+    },
+    {
+      "id": "w9q9",
+      "topic": "Claim checking",
+      "prompt": "Select ALL defensible statements about 196/200 correct results.",
+      "options": [
+        "This score applies to the fixed held-out classroom subset",
+        "Every person's handwriting is now guaranteed readable",
+        "Four of these particular test digits were misclassified",
+        "The system has 98% confidence in every individual prediction"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Report the sample and denominator; do not generalise beyond the observed data."
+    },
+    {
+      "id": "w9q10",
+      "topic": "Fair evaluation",
+      "prompt": "Select ALL good evaluation habits.",
+      "options": [
+        "Choose settings on validation data and reserve a final test set",
+        "Explain at least one failure",
+        "Use the test answers to train the model, then claim independent accuracy",
+        "Publish only a percentage and hide the denominator"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "type": "multiple",
+      "points": 1,
+      "explanation": "Separating training, model selection and final evaluation reduces bias; honest error analysis matters."
+    }
+  ]
+}
