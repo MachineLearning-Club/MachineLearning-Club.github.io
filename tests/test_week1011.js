@@ -49,8 +49,31 @@ const base='http://127.0.0.1:8877';const check=(v,m)=>{if(!v)throw Error(m)};
  await page.click('[data-missing]');
  check((await page.$eval('[data-pipeline-trace]',el=>el.textContent)).includes('CHECK SENSOR'),'missing sensor check');
  console.log('W11 INTERACTIVE PASS');
+ // Previously missing Week 10/11 file-selection/download workflow.
+ const fs=require('fs');
+ const sample='/tmp/mlc-week1011-submission.txt';
+ fs.writeFileSync(sample,'A classroom-only notebook observation.\\n');
+ for(const week of [10,11]){
+  await page.goto(base+'/w'+week+'/lab/',{waitUntil:'networkidle0'});
+  const formInfo=await page.evaluate(()=>({
+   week:document.querySelector('.submission-form')?.dataset.submissionWeek,
+   upload:!!document.querySelector('.submission-files'),
+   download:!!document.querySelector('.prepare-submission'),
+   guide:document.querySelector('#l11-git')?.textContent||''
+  }));
+  check(formInfo.week===String(week) && formInfo.upload && formInfo.download,'Missing submission controls '+week);
+  if(week===11) check(formInfo.guide.includes('real GitHub') && formInfo.guide.includes('push'),'Outdated Git workflow');
+  await page.type('.student-name','Test Student');
+  await (await page.$('.submission-files')).uploadFile(sample);
+  const chosen=await page.$eval('.submission-selected',e=>e.textContent);
+  check(chosen.includes('mlc-week1011-submission.txt'),'file selection not reflected '+week);
+  await page.click('.prepare-submission');
+  await page.waitForFunction(()=>document.querySelector('.submission-status').textContent.includes('Downloaded a named ZIP'),{timeout:12000});
+  check((await page.$eval('.submission-status',e=>e.textContent)).includes('does not upload'),'misleading delivery status '+week);
+  console.log('WEEK '+week+' SUBMISSION UI PASS');
+ }
  await page.goto(base+'/guides/github-ai/',{waitUntil:'networkidle0'});
- check((await page.$eval('.page-bibliography',el=>el.textContent)).includes('GitHub Docs'),'GitHub Guide bibliography missing');
+ check((await page.$eval('#gg-sources',el=>el.textContent)).includes('GitHub Docs'),'GitHub Guide bibliography missing');
  await page.goto(base+'/resources/',{waitUntil:'networkidle0'});
  check((await page.$eval('main',el=>el.textContent)).includes('Gavriluț'),'Resource index bibliography missing');
  check(!errors.length,'JS exceptions '+JSON.stringify(errors));
